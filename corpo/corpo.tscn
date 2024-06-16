@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqjr0fqhpb884" path="res://corpo/corpo_idle_walk_stun_sheet.png" id="1_s0aj2"]
 [ext_resource type="Script" path="res://corpo/corpo.gd" id="1_urmq4"]
-[ext_resource type="PackedScene" uid="uid://cu6eudauejyhw" path="res://hitzone.tscn" id="2_uuobg"]
+[ext_resource type="PackedScene" uid="uid://cu6eudauejyhw" path="res://corpo/hitzone.tscn" id="2_uuobg"]
 
 [sub_resource type="Animation" id="Animation_ax2n3"]
 length = 0.001

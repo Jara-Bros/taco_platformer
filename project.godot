@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Taco & Bleu"
-run/main_scene="res://playground.tscn"
+run/main_scene="res://levels/texico_town/texico_town.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+
+[autoload]
+
+SceneManager="*res://autoloads/scene_manager.gd"
+
+[global_group]
+
+gameplay=""
 
 [input]
 

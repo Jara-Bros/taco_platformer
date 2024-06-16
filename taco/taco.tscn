@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d2nvjfxk0ropj"]
 
-[ext_resource type="Script" path="res://taco/taco.gd" id="1_q403v"]
+[ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://cfhrs6ooxi538" path="res://taco/sprites/taco_idle_walk_jump_sheet_.png" id="2_6wtde"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5bk0"]
@@ -116,7 +116,7 @@ position = Vector2(0, -14)
 collision_layer = 2
 script = ExtResource("1_q403v")
 speed = 175
-jump_velocity = -300
+jump_velocity = -400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)

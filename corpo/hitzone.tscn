@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu6eudauejyhw"]
 
-[ext_resource type="Script" path="res://hitzone.gd" id="1_80fye"]
+[ext_resource type="Script" path="res://corpo/hitzone.gd" id="1_80fye"]
 
 [node name="Hitzone" type="Area2D"]
 collision_mask = 2

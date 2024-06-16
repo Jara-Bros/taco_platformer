@@ -1,7 +1,9 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
+@export var input_enabled:bool = true
 
 @export var speed : int
+@export var acceleration : int
 @export var jump_velocity : int
 @export var gravity : int = 980
 
@@ -9,16 +11,16 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
+	if not input_enabled:
+		return
 	
 	var direction = Input.get_axis("move_left", "move_right")
-	var acceleration : int = 1
-	
+
+
 	# For walk and run speeds
 	velocity.x += speed * delta
 
-		
-		
 	if direction:
 		velocity.x = direction * speed
 	else:
@@ -56,4 +58,12 @@ func _physics_process(delta):
 			animation_player.play("jump")
 		if velocity.y > 0:
 			animation_player.play("idle")
+
+
+func disable():
+	input_enabled = false
+	animation_player.play("idle")
 	
+func enable():
+	input_enabled = true
+	visible = true
