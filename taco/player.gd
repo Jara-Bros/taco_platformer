@@ -10,7 +10,6 @@ class_name Player extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
-
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
 		return

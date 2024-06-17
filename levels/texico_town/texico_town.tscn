@@ -127,10 +127,9 @@ texture = ExtResource("1_nodut")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j10qx")
 
-[node name="TexicoTown" type="Node2D" node_paths=PackedStringArray("player", "doors") groups=["gameplay"]]
+[node name="TexicoTown" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_l6gdf")
 player = NodePath("Taco")
-doors = [NodePath("WozDoor")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
@@ -148,10 +147,9 @@ collision_layer = 1
 [node name="WozHouse" parent="." instance=ExtResource("3_s5a8y")]
 position = Vector2(-100, 69)
 
-[node name="WozDoor" parent="." instance=ExtResource("4_j1ymd")]
-position = Vector2(-86, -16)
+[node name="WozDoor" parent="WozHouse" instance=ExtResource("4_j1ymd")]
+position = Vector2(-4, 16)
 entry_direction = 1
-transition_type = "no_transition"
-push_distance = 16
+transition_type = "fade_to_black"
 path_to_new_scene = "res://levels/texico_town/woz_house_interior.tscn"
 entry_door_name = "ExitDoor"
