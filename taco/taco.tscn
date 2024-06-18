@@ -115,7 +115,7 @@ _data = {
 position = Vector2(0, -14)
 collision_layer = 2
 script = ExtResource("1_q403v")
-speed = 175
+speed = 150
 jump_velocity = -400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

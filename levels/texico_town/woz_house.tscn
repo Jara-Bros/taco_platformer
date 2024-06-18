@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm5qmkgbscwpn"]
-
-[ext_resource type="Texture2D" uid="uid://dktkn7a2gum8u" path="res://levels/texico_town/sprites/new_woz_house.png" id="1_pncic"]
-
-[node name="WozHouse" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pncic")
