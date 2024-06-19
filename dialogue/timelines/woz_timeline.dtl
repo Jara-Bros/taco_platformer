@@ -1,0 +1,16 @@
+join woz 3
+[style name="woz_style_vn"]
+woz (woz_default): Excuse me. Sir?
+woz (woz_default): Are you...
+woz (woz_default): ...a pickle?
+- Yes
+	woz (woz_default): Hmm...
+	woz (woz_default): I keep an open mind.
+- No
+	woz (woz_default): Really? No pickles in your tree?
+- Prefer not to say
+	woz (woz_default): Oh! I've been there.
+	woz (woz_default): Hey.
+	woz (woz_default): When things look sour...
+	woz (woz_default): Make a funny face!
+[end_timeline]

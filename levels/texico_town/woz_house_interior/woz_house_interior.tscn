@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=4 uid="uid://co82qr0oc6pek"]
+[gd_scene load_steps=15 format=4 uid="uid://co82qr0oc6pek"]
 
 [ext_resource type="Script" path="res://levels/texico_town/woz_house_interior/woz_house_interior.gd" id="1_s64ea"]
 [ext_resource type="Texture2D" uid="uid://cubb57hcgpqa8" path="res://tilesets/tea_room_tileset.png" id="2_obq6r"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_17qvk"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="4_14lig"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]
-[ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz_idle_walk_sheet.png" id="6_umnpt"]
+[ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="7_i7g6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6swg"]
 texture = ExtResource("2_obq6r")
@@ -279,12 +280,16 @@ sources/0 = SubResource("TileSetAtlasSource_31q87")
 radius = 5.0
 height = 42.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4exe"]
+size = Vector2(52, 31)
+
 [node name="WozHouseInterior" type="Node2D"]
 script = ExtResource("1_s64ea")
 
 [node name="Taco" parent="." instance=ExtResource("3_17qvk")]
 position = Vector2(152, -5)
-collision_layer = 1
+collision_layer = 5
+collision_mask = 5
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -3
@@ -321,4 +326,14 @@ hframes = 16
 position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_vvktj")
 
+[node name="WozTalkTrigger" parent="." instance=ExtResource("7_i7g6a")]
+position = Vector2(113, -2)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WozTalkTrigger"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_w4exe")
+
 [connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
+[connection signal="body_entered" from="WozTalkTrigger" to="." method="_on_woz_talk_trigger_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6y7oud0pushc"
-path="res://.godot/imported/woz_idle_walk_sheet.png-c00a079d05b6430504f66c3aeeaa39ff.ctex"
+uid="uid://cc535ctey546h"
+path="res://.godot/imported/woz_idle_portrait.png-1c3d83b84a6cc3908c7da09b159125c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/woz_idle_walk_sheet.png"
-dest_files=["res://.godot/imported/woz_idle_walk_sheet.png-c00a079d05b6430504f66c3aeeaa39ff.ctex"]
+source_file="res://NPC/sprites/woz/woz_idle_portrait.png"
+dest_files=["res://.godot/imported/woz_idle_portrait.png-1c3d83b84a6cc3908c7da09b159125c8.ctex"]
 
 [params]
 

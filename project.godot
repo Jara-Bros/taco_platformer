@@ -17,19 +17,45 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"woz": "res://dialogue/characters/woz.dch"
+}
+directories/dtl_directory={
+"woz_timeline": "res://dialogue/timelines/woz_timeline.dtl"
+}
+layout/style_list=["res://dialogue/styles/woz_style_vn.tres"]
+layout/default_style="res://dialogic/styles/woz_style.tres"
+variables={}
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+animations/cross_fade_default_wait=true
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+glossary/default_case_sensitive=true
+layout/end_behaviour=1
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
-
-[global_group]
-
-gameplay=""
 
 [input]
 

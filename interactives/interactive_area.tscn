@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://wqu01jgru5l3"]
+
+[node name="InteractiveArea" type="Area2D"]
+monitorable = false

@@ -111,7 +111,7 @@ _data = {
 "walk": SubResource("Animation_hs2mm")
 }
 
-[node name="Taco" type="CharacterBody2D"]
+[node name="Taco" type="CharacterBody2D" groups=["Persist"]]
 position = Vector2(0, -14)
 collision_layer = 2
 script = ExtResource("1_q403v")

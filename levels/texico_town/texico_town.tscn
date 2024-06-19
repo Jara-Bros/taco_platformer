@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dpmfc7qc230lv" path="res://tilesets/texmex_town_tileset.png" id="5_fd0te"]
 [ext_resource type="Texture2D" uid="uid://2t4y7mat46yb" path="res://levels/texico_town/sprites/Pickle_house.png" id="6_ddipk"]
 [ext_resource type="Texture2D" uid="uid://bop8noa81plmj" path="res://levels/texico_town/sprites/new_barb_house.png" id="6_qjvgf"]
-[ext_resource type="Texture2D" uid="uid://bdv4sq6dtp25b" path="res://levels/texico_town/sprites/woz_shoji.png" id="9_rgl4t"]
+[ext_resource type="Texture2D" uid="uid://c5w2h8beb5tyb" path="res://levels/texico_town/sprites/woz_shoji.png" id="9_rgl4t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucfg7"]
 texture = ExtResource("1_nodut")

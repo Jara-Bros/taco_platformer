@@ -23,3 +23,11 @@ func _on_exit_door_body_entered(_body: Node2D) -> void:
 
 func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
+
+
+func _on_woz_talk_trigger_body_entered(_body: Node2D) -> void:
+	taco.input_enabled = false
+	taco.animation_player.play("idle")
+	Dialogic.start("woz_timeline")
+	await Dialogic.timeline_ended
+	taco.input_enabled = true
