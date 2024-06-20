@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw2d8pldb2ilc"
-path="res://.godot/imported/Screenshot 2024-06-17 143058.png-f76aea795eae93d5c565b5aed5ec2168.ctex"
+uid="uid://2t4y7mat46yb"
+path="res://.godot/imported/Pickle_house.png-532e7c55c846dc262ba44a8f433cad96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/sprites/Screenshot 2024-06-17 143058.png"
-dest_files=["res://.godot/imported/Screenshot 2024-06-17 143058.png-f76aea795eae93d5c565b5aed5ec2168.ctex"]
+source_file="res://levels/texico_town/woz_house/Pickle_house.png"
+dest_files=["res://.godot/imported/Pickle_house.png-532e7c55c846dc262ba44a8f433cad96.ctex"]
 
 [params]
 
