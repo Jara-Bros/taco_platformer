@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 var player_spawn_location_dict = {
 	woz_front_door = Vector2(-90, 99),
 	barb_front_door = Vector2(215, 12)
