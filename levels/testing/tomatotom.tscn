@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdkjrl50gogol"]
+[gd_scene load_steps=4 format=3 uid="uid://cdkjrl50gogol"]
 
 [ext_resource type="Texture2D" uid="uid://v75iafst1mug" path="res://corpo/Demo_TTomG.png" id="1_50agq"]
+[ext_resource type="Script" path="res://levels/testing/tomatotom.gd" id="1_t0wb6"]
 
-[node name="tomatotom" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i24o0"]
+radius = 8.0
+
+[node name="tomatotom" type="RigidBody2D"]
+collision_layer = 2
+script = ExtResource("1_t0wb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_50agq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_i24o0")
+
+[node name="Direction" type="Timer" parent="."]
+
+[node name="Jumping" type="Timer" parent="."]
+wait_time = 0.75
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Direction" to="." method="_on_direction_timeout"]
+[connection signal="timeout" from="Jumping" to="." method="_on_jumping_timeout"]
