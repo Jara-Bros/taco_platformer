@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://daosforg6mcb6"]
 
-[ext_resource type="Script" path="res://levels/texico_town/barb_house_interior/barb_house_interior.gd" id="1_ttktl"]
+[ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_house_interior.gd" id="1_ttktl"]
 [ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/kitchen_tileset.png" id="1_ugfht"]
 [ext_resource type="Texture2D" uid="uid://fswtcx2emt2v" path="res://tilesets/rothko_room_tileset.png" id="2_x0wpb"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_ntmss"]
-[ext_resource type="Texture2D" uid="uid://4ouga48pnuuw" path="res://levels/texico_town/barb_house_interior/Screenshot 2024-06-17 161845.png" id="5_lxtf6"]
+[ext_resource type="Texture2D" uid="uid://4ouga48pnuuw" path="res://levels/texico_town/barb_house/Screenshot 2024-06-17 161845.png" id="5_lxtf6"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="6_ngyj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js2js"]
@@ -236,7 +236,6 @@ script = ExtResource("1_ttktl")
 
 [node name="Taco" parent="." instance=ExtResource("3_ntmss")]
 position = Vector2(48, -7)
-collision_layer = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1

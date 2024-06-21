@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PauseMenu="*res://gui/pause_menu/pause_menu.tscn"
+SaveManager="*res://autoloads/save_manager/save_manager.gd"
 
 [dialogic]
 

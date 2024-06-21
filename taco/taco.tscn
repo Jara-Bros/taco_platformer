@@ -113,9 +113,8 @@ _data = {
 
 [node name="Taco" type="CharacterBody2D" groups=["Persist"]]
 position = Vector2(0, -14)
-collision_layer = 2
 script = ExtResource("1_q403v")
-speed = 150
+speed = 125
 jump_velocity = -400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -134,4 +133,4 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 4)
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)

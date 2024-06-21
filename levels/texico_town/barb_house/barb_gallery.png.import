@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5w2h8beb5tyb"
-path="res://.godot/imported/woz_shoji.png-bd0ade83e51a9cab95b0d59ccf562f13.ctex"
+uid="uid://45jda77gluja"
+path="res://.godot/imported/barb_gallery.png-35ee02668ad46a6af855f0517fdf7c93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/sprites/woz_shoji.png"
-dest_files=["res://.godot/imported/woz_shoji.png-bd0ade83e51a9cab95b0d59ccf562f13.ctex"]
+source_file="res://levels/texico_town/barb_house/barb_gallery.png"
+dest_files=["res://.godot/imported/barb_gallery.png-35ee02668ad46a6af855f0517fdf7c93.ctex"]
 
 [params]
 
