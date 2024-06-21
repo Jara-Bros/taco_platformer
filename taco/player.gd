@@ -58,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			animation_player.play("idle")
 
-
 func disable():
 	input_enabled = false
 	animation_player.play("idle")
@@ -66,3 +65,14 @@ func disable():
 func enable():
 	input_enabled = true
 	visible = true
+
+
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+		"persistence" : [],
+	}
+	return save_dict

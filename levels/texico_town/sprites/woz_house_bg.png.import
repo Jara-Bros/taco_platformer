@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ouga48pnuuw"
-path="res://.godot/imported/Screenshot 2024-06-17 161845.png-4efff991b8ac956ab93f661adad02c2d.ctex"
+uid="uid://b8hhwoovvfj8g"
+path="res://.godot/imported/woz_house_bg.png-0e8f2ba0cd5522590c5338a033c02383.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/barb_house_interior/Screenshot 2024-06-17 161845.png"
-dest_files=["res://.godot/imported/Screenshot 2024-06-17 161845.png-4efff991b8ac956ab93f661adad02c2d.ctex"]
+source_file="res://levels/texico_town/sprites/woz_house_bg.png"
+dest_files=["res://.godot/imported/woz_house_bg.png-0e8f2ba0cd5522590c5338a033c02383.ctex"]
 
 [params]
 
