@@ -1,0 +1,9 @@
+[style name="limona_style_textbox"]
+limona (limona_idle): . . . 
+[wait time="0.8"]
+limona (limona_talk): Hey.
+[wait time="1.2"]
+limona (limona_question): You tryna boogie?
+- Yes
+- No
+- I...I don't really know...

@@ -1,11 +1,10 @@
 join woz 3
-[style name="woz_style_vn"]
-woz (woz_default): Excuse me. Sir?
-woz (woz_default): Are you...
+woz (woz_default): Aaahhh excuse me...
+woz (woz_default): Do you happen to be...
 woz (woz_default): ...a pickle?
 - Yes
 	woz (woz_default): Hmm...
-	woz (woz_default): I keep an open mind.
+	woz (woz_default): I'll keep an open mind.
 - No
 	woz (woz_default): Really? No pickles in your tree?
 - Prefer not to say
