@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7mjifuy35bc"
-path="res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"
+uid="uid://cmqd3k33lmq0s"
+path="res://.godot/imported/barb_idle_portrait.png-cfacb2cff3ebf76cc9b5f4c2bb81def1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texico_town_tileset.png"
-dest_files=["res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"]
+source_file="res://NPC/sprites/barb/barb_idle_portrait.png"
+dest_files=["res://.godot/imported/barb_idle_portrait.png-cfacb2cff3ebf76cc9b5f4c2bb81def1.ctex"]
 
 [params]
 

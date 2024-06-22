@@ -62,4 +62,4 @@ script = ExtResource("10_as6a8")
 name = "woz_style_vn"
 base_overrides = {}
 layers = Array[ExtResource("1_2l6hx")]([SubResource("Resource_4a45v"), SubResource("Resource_prapn"), SubResource("Resource_rn6jl"), SubResource("Resource_cqe1j"), SubResource("Resource_rsyo8")])
-metadata/_latest_layer = -1
+metadata/_latest_layer = 2

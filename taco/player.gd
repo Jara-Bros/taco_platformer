@@ -10,6 +10,7 @@ class_name Player extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
+
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
 		return
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += 1.5 * gravity * delta
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():

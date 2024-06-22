@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7mjifuy35bc"
-path="res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"
+uid="uid://c7rq7c586xmo8"
+path="res://.godot/imported/barb_happy_portrait.png-f5bbc1b8ca6136500cb6ee4b388f833f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texico_town_tileset.png"
-dest_files=["res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"]
+source_file="res://NPC/sprites/barb/barb_happy_portrait.png"
+dest_files=["res://.godot/imported/barb_happy_portrait.png-f5bbc1b8ca6136500cb6ee4b388f833f.ctex"]
 
 [params]
 
