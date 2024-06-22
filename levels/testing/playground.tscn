@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://c0vhvglx6s7ib"]
+[gd_scene load_steps=6 format=4 uid="uid://c0vhvglx6s7ib"]
 
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/platform_demo_tileset.png" id="1_ugepv"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_v2e3s"]
+[ext_resource type="PackedScene" uid="uid://cdkjrl50gogol" path="res://levels/testing/tomatotom.tscn" id="3_jkn23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
 texture = ExtResource("1_ugepv")
@@ -31,5 +32,12 @@ tile_map_data = PackedByteArray("AAD8/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD+/wAAAAAAAAE
 tile_set = SubResource("TileSet_uhxb8")
 
 [node name="Taco" parent="." instance=ExtResource("2_v2e3s")]
-position = Vector2(0, -15)
+position = Vector2(1, -15)
+collision_layer = 3
 jump_velocity = -500
+
+[node name="tomatotom" parent="." instance=ExtResource("3_jkn23")]
+position = Vector2(187, -18)
+lock_rotation = true
+jump_velocity_y = -200
+jump_velocity_x = 200
