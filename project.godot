@@ -24,10 +24,12 @@ ItemManager="*res://autoloads/item_manager/item_manager.gd"
 
 directories/dch_directory={
 "barb": "res://dialogue/characters/barb.dch",
+"limona": "res://dialogue/characters/limona.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
+"limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl"
 }
 layout/style_list=["res://dialogue/styles/woz_style_vn.tres"]
@@ -109,6 +111,21 @@ pause={
 item={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+aim_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+aim_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+aim_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
 ]
 }
 

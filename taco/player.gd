@@ -1,13 +1,19 @@
 class_name Player extends CharacterBody2D
 
+signal AimingKick
+
+
 @export var input_enabled:bool = true
 
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
-@export var gravity : int = 980
+@export var gravity : int = 1250
 var item = null
 
+
+enum player_state {MOVING, KICKING, AIMING}
+var current_state = player_state.MOVING
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -36,7 +42,8 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+		if current_state == player_state.MOVING:
+			velocity.y = jump_velocity
 	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = jump_velocity / 2
@@ -44,6 +51,9 @@ func _physics_process(delta: float) -> void:
 		
 	# Handle action
 	if Input.is_action_just_pressed("item"):
+		if current_state == player_state.MOVING:
+			$AimingTimer.start()
+	if Input.is_action_just_released("item") and $AimingTimer.is_stopped() == false:
 		do_item_action()
 	
 	# Flip sprite
@@ -64,6 +74,9 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			animation_player.play("idle")
 
+func _input(event):
+	if event.is_action_pressed("item") and current_state == player_state.AIMING:
+		AimingKick.emit()
 
 func disable():
 	input_enabled = false
@@ -77,7 +90,23 @@ func set_item(item_node):
 	item = item_node
 	
 func do_item_action():
+	current_state = player_state.KICKING
 	if item != null:
 		item.action(animation_player, position)
 		item = null
-	
+
+func aim():
+	current_state = player_state.AIMING
+	animation_player.play("fall")
+	await AimingKick
+	# now trigger 
+
+
+func _on_aiming_timer_timeout():
+	if Input.is_action_just_pressed("item"):
+		pass
+	pass # Replace with function body.
+
+
+func _on_aiming_kick():
+	pass # Replace with function body.
