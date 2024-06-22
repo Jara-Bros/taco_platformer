@@ -30,7 +30,7 @@ directories/dtl_directory={
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl"
 }
-layout/style_list=["res://dialogue/styles/woz_style_vn.tres", "res://dialogue/styles/barb_style.tres"]
+layout/style_list=["res://dialogue/styles/woz_style_vn.tres"]
 layout/default_style="res://dialogic/styles/woz_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
@@ -112,6 +112,14 @@ item={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="wall"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="balls"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+

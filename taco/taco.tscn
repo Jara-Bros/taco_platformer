@@ -22,8 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yyh6x"]
 resource_name = "fall"
-length = 0.5
-loop_mode = 1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,8 +70,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_eqele"]
 resource_name = "land"
-length = 0.5
-loop_mode = 1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -116,6 +114,7 @@ _data = {
 [node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
 collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_q403v")
 speed = 150
 jump_velocity = -400
