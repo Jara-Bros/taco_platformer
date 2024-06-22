@@ -13,15 +13,11 @@ func _process(delta):
 	if current_state == freedom_state.COLLECTED:
 		follow_player()
 
-func action(animation_player, player_position):
-	## TODO : CHANGE TO KICK
+func action(animation_player, impulse, type):
 	current_state = freedom_state.REMOVED
-	animation_player.play("fall")
+	animation_player.play("kick")
 	gravity_scale = 0
-	if player_position.x < position.x:
-		apply_impulse(Vector2(400,-600))
-	else:
-		apply_impulse(Vector2(-400,-600))	
+	apply_impulse(impulse)
 	$GoneTime.start()
 	
 

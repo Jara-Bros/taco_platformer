@@ -1,8 +1,11 @@
 class_name Player extends CharacterBody2D
 
-signal AimingKick
-
-
+signal AimingKick(aiming_direction)
+var aim_kick_up : Vector2 = Vector2(0, -800)
+var aim_kick_left : Vector2 = Vector2(-400, -300)
+var aim_kick_right : Vector2 = Vector2(400, -300)
+var pass_kick_left : Vector2 = Vector2(-400, 0)
+var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var input_enabled:bool = true
 
 @export var speed : int
@@ -10,6 +13,8 @@ signal AimingKick
 @export var jump_velocity : int
 @export var gravity : int = 1250
 var item = null
+enum player_direction {LEFT,RIGHT}
+var current_direction = player_direction.RIGHT
 
 
 enum player_state {MOVING, KICKING, AIMING}
@@ -75,8 +80,13 @@ func _physics_process(delta: float) -> void:
 			animation_player.play("idle")
 
 func _input(event):
-	if event.is_action_pressed("item") and current_state == player_state.AIMING:
-		AimingKick.emit()
+	if current_state == player_state.AIMING and Input.is_action_just_pressed("item"):
+		if event.is_action_pressed("aim_up"):
+			AimingKick.emit("aim_up")
+		elif event.is_action_pressed("aim_left"):
+			AimingKick.emit("aim_left")
+		elif event.is_action_pressed("aim_right"):
+			AimingKick.emit("aim_right")
 
 func disable():
 	input_enabled = false
@@ -92,21 +102,33 @@ func set_item(item_node):
 func do_item_action():
 	current_state = player_state.KICKING
 	if item != null:
-		item.action(animation_player, position)
+		if current_direction == player_direction.LEFT:
+			item.action(animation_player, pass_kick_left, "kick")
+		else:
+			item.action(animation_player, pass_kick_right, "kick")
 		item = null
 
 func aim():
+	print("made it to aim")
 	current_state = player_state.AIMING
-	animation_player.play("fall")
+	animation_player.play("aim")
 	await AimingKick
-	# now trigger 
 
 
 func _on_aiming_timer_timeout():
-	if Input.is_action_just_pressed("item"):
-		pass
+	if Input.is_action_just_pressed("item") and item != null:
+		aim()
 	pass # Replace with function body.
 
 
-func _on_aiming_kick():
-	pass # Replace with function body.
+func _on_aiming_kick(aiming_direction):
+	match aiming_direction:
+		"aim_up":
+			item.action(animation_player, aim_kick_up, "aim_kick")
+		"aim_left":
+			if current_direction == player_direction.LEFT:
+				item.action(animation_player, aim_kick_left, "aim_kick")
+		"aim_right":
+			if current_direction == player_direction.RIGHT:
+				item.action(animation_player, aim_kick_right, "aim_kick")
+	
