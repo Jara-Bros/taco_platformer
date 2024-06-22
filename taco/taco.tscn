@@ -113,10 +113,11 @@ _data = {
 "walk": SubResource("Animation_hs2mm")
 }
 
-[node name="Taco" type="CharacterBody2D" groups=["Persist"]]
+[node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
+collision_layer = 2
 script = ExtResource("1_q403v")
-speed = 125
+speed = 150
 jump_velocity = -400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -128,11 +129,11 @@ hframes = 7
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_j5bk0")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
 "": SubResource("AnimationLibrary_040re")
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 4)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4)
