@@ -23,12 +23,14 @@ ItemManager="*res://autoloads/item_manager/item_manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"barb": "res://dialogue/characters/barb.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
+"barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl"
 }
-layout/style_list=["res://dialogue/styles/woz_style_vn.tres"]
+layout/style_list=["res://dialogue/styles/woz_style_vn.tres", "res://dialogue/styles/barb_style.tres"]
 layout/default_style="res://dialogic/styles/woz_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
