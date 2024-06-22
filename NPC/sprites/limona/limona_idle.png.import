@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7mjifuy35bc"
-path="res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"
+uid="uid://cbnactlcssaa5"
+path="res://.godot/imported/limona_idle.png-132c81569e6552c76c007e2eab834bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texico_town_tileset.png"
-dest_files=["res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"]
+source_file="res://NPC/sprites/limona/limona_idle.png"
+dest_files=["res://.godot/imported/limona_idle.png-132c81569e6552c76c007e2eab834bfd.ctex"]
 
 [params]
 

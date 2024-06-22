@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7mjifuy35bc"
-path="res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"
+uid="uid://c4ilw0wp0lifm"
+path="res://.godot/imported/boogie_boards.png-1330f084929f500190ed25c4af06e611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texico_town_tileset.png"
-dest_files=["res://.godot/imported/texico_town_tileset.png-c490f75ba3121810d99d3e561f6b9b35.ctex"]
+source_file="res://levels/texico_town/barb_house/boogie_boards.png"
+dest_files=["res://.godot/imported/boogie_boards.png-1330f084929f500190ed25c4af06e611.ctex"]
 
 [params]
 

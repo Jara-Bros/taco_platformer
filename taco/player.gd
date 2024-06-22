@@ -6,9 +6,12 @@ class_name Player extends CharacterBody2D
 @export var acceleration : int
 @export var jump_velocity : int
 @export var gravity : int = 980
+var item = null
+
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+
 
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
@@ -31,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += 1.5 * gravity * delta
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -38,7 +42,11 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = jump_velocity / 2
-	
+		
+		
+	# Handle action
+	if Input.is_action_just_pressed("item"):
+		do_item_action()
 	
 	# Flip sprite
 	if direction > 0:
@@ -58,6 +66,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			animation_player.play("idle")
 
+
 func disable():
 	input_enabled = false
 	animation_player.play("idle")
@@ -65,14 +74,12 @@ func disable():
 func enable():
 	input_enabled = true
 	visible = true
-
-
-func save():
-	var save_dict = {
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x,
-		"pos_y" : position.y,
-		"persistence" : [],
-	}
-	return save_dict
+	
+func set_item(item_node):
+	item = item_node
+	
+func do_item_action():
+	if item != null:
+		item.action(animation_player, position)
+		item = null
+	
