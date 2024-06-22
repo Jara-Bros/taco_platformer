@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=13 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
-[ext_resource type="Texture2D" uid="uid://cfhrs6ooxi538" path="res://taco/sprites/taco_idle_walk_jump_sheet_.png" id="2_6wtde"]
+[ext_resource type="Texture2D" uid="uid://dvhkhnmd0pud1" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5bk0"]
 
@@ -103,12 +103,47 @@ tracks/0/keys = {
 "values": [1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_v2aro"]
+resource_name = "aim"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_l60be"]
+resource_name = "kick"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_040re"]
 _data = {
 "RESET": SubResource("Animation_msvav"),
+"aim": SubResource("Animation_v2aro"),
 "fall": SubResource("Animation_yyh6x"),
 "idle": SubResource("Animation_jd1ku"),
 "jump": SubResource("Animation_v756h"),
+"kick": SubResource("Animation_l60be"),
 "land": SubResource("Animation_eqele"),
 "walk": SubResource("Animation_hs2mm")
 }
@@ -122,8 +157,8 @@ jump_velocity = -400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
-texture = ExtResource("2_6wtde")
-hframes = 7
+texture = ExtResource("2_ctlwh")
+hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
