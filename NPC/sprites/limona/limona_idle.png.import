@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4etnc07ywkbt"
-path="res://.godot/imported/limona_idle_talking_sheet.png-2acf7883fadc3a18cd2041202f7fc21c.ctex"
+uid="uid://cbnactlcssaa5"
+path="res://.godot/imported/limona_idle.png-132c81569e6552c76c007e2eab834bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/limona/limona_idle_talking_sheet.png"
-dest_files=["res://.godot/imported/limona_idle_talking_sheet.png-2acf7883fadc3a18cd2041202f7fc21c.ctex"]
+source_file="res://NPC/sprites/limona/limona_idle.png"
+dest_files=["res://.godot/imported/limona_idle.png-132c81569e6552c76c007e2eab834bfd.ctex"]
 
 [params]
 

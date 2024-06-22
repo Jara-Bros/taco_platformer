@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b2jbr7nrfib7g"]
+[gd_scene load_steps=28 format=4 uid="uid://b2jbr7nrfib7g"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_5vicu"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_gallery.gd" id="1_ww1fr"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dxajh5inpt6kr" path="res://levels/texico_town/barb_house/board_ramp.png" id="7_yqr6q"]
 [ext_resource type="Texture2D" uid="uid://dpmfc7qc230lv" path="res://tilesets/texmex_town_tileset.png" id="8_u7g55"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="9_d4jo0"]
-[ext_resource type="Texture2D" uid="uid://r1vpr4jpnc1k" path="res://NPC/sprites/limona/limona_idle_talking_sheet.png" id="10_15jbx"]
+[ext_resource type="Texture2D" uid="uid://d4etnc07ywkbt" path="res://NPC/sprites/limona/limona_idle_talking_sheet.png" id="10_15jbx"]
+[ext_resource type="Texture2D" uid="uid://c4ilw0wp0lifm" path="res://levels/texico_town/barb_house/boogie_boards.png" id="11_xciwa"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="12_thlu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhoss"]
 texture = ExtResource("3_ouott")
@@ -259,8 +261,81 @@ texture = ExtResource("8_u7g55")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_g62ai")
 
+[sub_resource type="Animation" id="Animation_ifs0o"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_hdogq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_xqd0m"]
+resource_name = "talk"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_gmiwo"]
+resource_name = "question"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3aq8s"]
+_data = {
+"RESET": SubResource("Animation_hdogq"),
+"idle": SubResource("Animation_ifs0o"),
+"question": SubResource("Animation_gmiwo"),
+"talk": SubResource("Animation_xqd0m")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85m37"]
 height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldd7x"]
 
 [node name="BarbGallery" type="Node2D"]
 script = ExtResource("1_ww1fr")
@@ -308,30 +383,46 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryRoomOne"]
 shape = SubResource("RectangleShape2D_782oy")
 
-[node name="BoardRamp" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(153, 528.75)
-scale = Vector2(1.56818, 0.710938)
-texture = ExtResource("7_yqr6q")
-
 [node name="Collisions" type="TileMapLayer" parent="."]
 z_index = -3
 tile_map_data = PackedByteArray("AAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAAAAAABAB8AAAAAAAAAAAABACAAAAAAAAAAAAABACEAAAAAAAAAAAABACIAAAAAAAAAAAACACIAAAAAAAAAAAADACIAAAAAAAAAAAAEACIAAAAAAAAAAAAFACIAAAAAAAAAAAAGACIAAAAAAAAAAAAHACIAAAAAAAAAAAAIACIAAAAAAAAAAAAJACIAAAAAAAAAAAAKACIAAAAAAAAAAAALACIAAAAAAAAAAAAMACIAAAAAAAAAAAANACIAAAAAAAAAAAAOACIAAAAAAAAAAAAPACIAAAAAAAAAAAAQACIAAAAAAAAAAAACACEAAAABAAAAAFACACAAAAABAAAAAFACABwAAAABAAAAAFACAB0AAAABAAAAAFACAB4AAAABAAAAAFACAB8AAAABAAAAAFAQACEAAAABAAAAAGAQACAAAAABAAAAAGAQAB8AAAABAAAAAGAQAB4AAAABAAAAAGAQAB0AAAABAAAAAGAQABwAAAABAAAAAGARABwAAAAAAAAAAAARAB0AAAAAAAAAAAARAB4AAAAAAAAAAAARAB8AAAAAAAAAAAARACAAAAAAAAAAAAARACEAAAAAAAAAAAARACIAAAAAAAAAAAACABsAAAABAAAAAFACABoAAAABAAAAAFA=")
 tile_set = SubResource("TileSet_6s15d")
 
-[node name="NPC" parent="." instance=ExtResource("9_d4jo0")]
+[node name="Limona" parent="." instance=ExtResource("9_d4jo0")]
 position = Vector2(64, 520)
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+[node name="Sprite2D" type="Sprite2D" parent="Limona"]
 texture = ExtResource("10_15jbx")
 hframes = 3
 frame = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Limona"]
+libraries = {
+"": SubResource("AnimationLibrary_3aq8s")
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limona"]
 position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_85m37")
 
+[node name="BoardRamp2" type="Node" parent="."]
+
+[node name="Ramp" type="Sprite2D" parent="BoardRamp2"]
+z_index = 2
+position = Vector2(153, 528.75)
+scale = Vector2(1.56818, 0.710938)
+texture = ExtResource("7_yqr6q")
+
+[node name="BgBoards" type="Sprite2D" parent="BoardRamp2"]
+position = Vector2(229, 513)
+texture = ExtResource("11_xciwa")
+
+[node name="LimonaTalkTrigger" parent="." instance=ExtResource("12_thlu8")]
+position = Vector2(89, 527)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimonaTalkTrigger"]
+shape = SubResource("RectangleShape2D_ldd7x")
+
 [connection signal="body_entered" from="TacoHouseBottom" to="." method="_on_taco_house_bottom_body_entered"]
 [connection signal="body_entered" from="GalleryRoomOne" to="." method="_on_gallery_room_one_body_entered"]
+[connection signal="body_entered" from="LimonaTalkTrigger" to="." method="_on_limona_talk_trigger_body_entered"]

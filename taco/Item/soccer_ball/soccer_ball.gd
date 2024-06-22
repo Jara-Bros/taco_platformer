@@ -17,11 +17,12 @@ func action(animation_player, player_position):
 	## TODO : CHANGE TO KICK
 	current_state = freedom_state.REMOVED
 	animation_player.play("fall")
+	gravity_scale = 0
 	if player_position.x < position.x:
 		apply_impulse(Vector2(400,-600))
 	else:
 		apply_impulse(Vector2(-400,-600))	
-	#$GoneTime.start()
+	$GoneTime.start()
 	
 
 func _on_body_entered(body):
@@ -42,4 +43,5 @@ func follow_player():
 
 
 func _on_gone_time_timeout():
-	current_state = freedom_state.COLLECTED
+	gravity_scale = 1
+	#current_state = freedom_state.COLLECTED

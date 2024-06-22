@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4etnc07ywkbt"
-path="res://.godot/imported/limona_idle_talking_sheet.png-2acf7883fadc3a18cd2041202f7fc21c.ctex"
+uid="uid://c4ilw0wp0lifm"
+path="res://.godot/imported/boogie_boards.png-1330f084929f500190ed25c4af06e611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/limona/limona_idle_talking_sheet.png"
-dest_files=["res://.godot/imported/limona_idle_talking_sheet.png-2acf7883fadc3a18cd2041202f7fc21c.ctex"]
+source_file="res://levels/texico_town/barb_house/boogie_boards.png"
+dest_files=["res://.godot/imported/boogie_boards.png-1330f084929f500190ed25c4af06e611.ctex"]
 
 [params]
 
