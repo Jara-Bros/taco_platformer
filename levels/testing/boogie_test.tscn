@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://2fqman1hrmkq"]
+[gd_scene load_steps=5 format=4 uid="uid://2fqman1hrmkq"]
+
+[ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/testing/taco_boogie.tscn" id="1_l6ymw"]
+[ext_resource type="Texture2D" uid="uid://dsfhtcw2x4rfy" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_f7brt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwnhp"]
+texture = ExtResource("2_f7brt")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2, 4, 0, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -8, 8, 1, -8, 1)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, 1, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 1, 4, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1k6ry"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wwnhp")
 
 [node name="BoogieTest" type="Node2D"]
+
+[node name="TacoBoogie" parent="." instance=ExtResource("1_l6ymw")]
+position = Vector2(0, 1)
+speed = 200
+jump_velocity = -300
+
+[node name="Floor" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAACAAAAABAFAAAAAAACAAEAAAAGAAEAAAACAAAAABAHAAEAAAACAAEAAAAIAAIAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAQAAAAAAAEAAAALAAUAAAABAAAAAAALAAYAAAABAAEAAAAMAAcAAAABAAAAAAAMAAgAAAABAAEAAAANAAkAAAABAAAAAAANAAoAAAABAAEAAAAOAAsAAAAAAAEAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAsAAAACAAEAABASAAsAAAACAAAAAAATAAoAAAAAAAEAABAUAAkAAAAAAAEAABAVAAgAAAACAAEAABAWAAgAAAAAAAAAACAaAAgAAAAAAAAAACAbAAgAAAACAAEAAAAcAAkAAAAAAAEAAAAdAAoAAAAAAAEAAAAeAAsAAAACAAAAABAfAAsAAAACAAEAAAAgAAwAAAAAAAAAAAAhAAwAAAAAAAAAAAAiAAwAAAAAAAAAAAAjAAwAAAAAAAAAAAAkAAwAAAAAAAAAAAAlAAwAAAAAAAAAAAAmAAwAAAAAAAAAAAAnAAwAAAAAAAAAAAAoAAwAAAAAAAAAAAApAAwAAAACAAAAABAqAAwAAAACAAEAAAArAA0AAAAAAAAAAAAsAA0AAAAAAAAAAAAtAA0AAAACAAAAABA0ABIAAAACAAEAABA1ABIAAAAAAAAAACA2ABIAAAACAAEAAAA3ABMAAAAAAAAAAAA4ABIAAAACAAEAABA5ABIAAAAAAAAAACA6ABIAAAACAAEAAAA7ABMAAAAAAAAAAAA8ABIAAAACAAEAABA9ABIAAAAAAAAAACA+ABIAAAACAAEAAAAuAA0AAAACAAEAAAAvAA4AAAABAAAAAAAvAA8AAAABAAEAAAAwABAAAAABAAAAAAAwABEAAAABAAEAAAAxABIAAAAAAAEAAAAyABMAAAAAAAAAAAAzABMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1k6ry")
