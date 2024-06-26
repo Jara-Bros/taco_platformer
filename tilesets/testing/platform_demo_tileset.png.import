@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfhrs6ooxi538"
-path="res://.godot/imported/taco_idle_walk_jump_sheet_.png-6a87a743f405a7cfbbefa8dcfd6c490a.ctex"
+uid="uid://gbqrvvd6bt1a"
+path="res://.godot/imported/platform_demo_tileset.png-43886f86b024b00fac1134c28c26ab86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taco/sprites/taco_idle_walk_jump_sheet_.png"
-dest_files=["res://.godot/imported/taco_idle_walk_jump_sheet_.png-6a87a743f405a7cfbbefa8dcfd6c490a.ctex"]
+source_file="res://tilesets/testing/platform_demo_tileset.png"
+dest_files=["res://.godot/imported/platform_demo_tileset.png-43886f86b024b00fac1134c28c26ab86.ctex"]
 
 [params]
 

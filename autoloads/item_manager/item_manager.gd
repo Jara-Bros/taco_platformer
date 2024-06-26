@@ -8,10 +8,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func follow_with_item(item_type, location):
+func follow_with_item(_item_type, location):
 	var player_node = get_player()
 	var player_position = player_node.position
 	var distance = player_position.distance_to(location)
