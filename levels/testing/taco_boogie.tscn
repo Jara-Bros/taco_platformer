@@ -5,23 +5,45 @@
 [sub_resource type="GDScript" id="GDScript_j1o1u"]
 script/source = "extends CharacterBody2D
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
-@export var speed = 300
-@export var jump_velocity = -400
+
+@export var speed : int
+@export var jump_velocity : int
 
 func _ready() -> void:
 	velocity.x = speed
 
 func _physics_process(delta: float) -> void:
+	
+	print_debug(get_floor_angle())
+	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-
+		velocity += ((get_gravity() * 0.75) * delta)
+	
+	# to accelerate/slow down Taco on decline
+	# TODO make the speed slow down incrementally on an incline
+	velocity.x = speed * (get_floor_angle() + 0.5)
+	
+	
 	# Handle jump.
+
 	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = jump_velocity
 
 	move_and_slide()
+	
+	# To match Taco's sprite with incline of slope
+	# TODO: get sprite to rotate correctly when sliding up slopes
+	
+	if not is_on_floor():
+		sprite_2d.rotation = 0
+	else:
+		sprite_2d.rotation = get_floor_angle()
+	
+	
+	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv21g"]
@@ -29,6 +51,7 @@ size = Vector2(19.75, 13)
 
 [node name="TacoBoogie" type="CharacterBody2D"]
 script = SubResource("GDScript_j1o1u")
+speed = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)

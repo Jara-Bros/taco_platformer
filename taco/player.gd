@@ -6,12 +6,11 @@ class_name Player extends CharacterBody2D
 @export var acceleration : int
 @export var jump_velocity : int
 @export var gravity : int = 980
-var item = null
-
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
+var item = null
 
 func _physics_process(delta: float) -> void:
 	if not input_enabled:

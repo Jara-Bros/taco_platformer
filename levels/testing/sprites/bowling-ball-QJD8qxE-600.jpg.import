@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cblnycn5tj6wl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://cr0rdkfavikwh"
+path="res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://levels/testing/sprites/bowling-ball-QJD8qxE-600.jpg"
+dest_files=["res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"]
 
 [params]
 
