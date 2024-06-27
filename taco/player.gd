@@ -5,7 +5,7 @@ class_name Player extends CharacterBody2D
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
-@export var gravity : int = 980
+@export var gravity : int
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
@@ -38,13 +38,12 @@ func _physics_process(delta: float) -> void:
 		
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		velocity.y = jump_velocity
-	
-	if Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y = jump_velocity / 2
+		if velocity.y >= 0:
+			jump_velocity / 2
 		
-		
+
 	# Handle action
 	if Input.is_action_just_pressed("item"):
 		do_item_action()

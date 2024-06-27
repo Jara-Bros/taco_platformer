@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var taco: Player = $Taco
-@onready var phantom_cam: PhantomCamera2D = $PhantomCam
-@onready var phantom_cam_2: PhantomCamera2D = $PhantomCam2
+@onready var phantom_cam_right: PhantomCamera2D = $PhantomCamRight
+@onready var phantom_cam_left: PhantomCamera2D = $PhantomCamLeft
 
 
 func _ready():
@@ -11,6 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if taco.direction > 0:
-		phantom_cam.priority = 1
+		phantom_cam_right.priority = 1
 	if taco.direction < 0:
-		phantom_cam_2.priority = 1
+		phantom_cam_left.priority = 1
