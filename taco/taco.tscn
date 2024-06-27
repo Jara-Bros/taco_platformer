@@ -168,7 +168,3 @@ shape = SubResource("CircleShape2D_j5bk0")
 libraries = {
 "": SubResource("AnimationLibrary_040re")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 4)
-zoom = Vector2(4, 4)
