@@ -154,6 +154,7 @@ collision_layer = 3
 script = ExtResource("1_q403v")
 speed = 150
 jump_velocity = -400
+gravity = 980
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
