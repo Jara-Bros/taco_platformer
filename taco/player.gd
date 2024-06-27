@@ -12,11 +12,13 @@ class_name Player extends CharacterBody2D
 
 var item = null
 
+var direction
+	
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
 		return
 	
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 
 
 	# For walk and run speeds
