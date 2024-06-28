@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://dvbpk6ncl00ut"
+path="res://.godot/imported/blue_chip.png-89625b1eac942161578e7cb4fae6e3cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://platforms/sprites/blue_chip.png"
+dest_files=["res://.godot/imported/blue_chip.png-89625b1eac942161578e7cb4fae6e3cb.ctex"]
 
 [params]
 

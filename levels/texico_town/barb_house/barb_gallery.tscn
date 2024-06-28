@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="9_d4jo0"]
 [ext_resource type="Texture2D" uid="uid://d4etnc07ywkbt" path="res://NPC/sprites/limona/limona_idle_talking_sheet.png" id="10_15jbx"]
 [ext_resource type="Texture2D" uid="uid://c4ilw0wp0lifm" path="res://levels/texico_town/barb_house/boogie_boards.png" id="11_xciwa"]
-[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="12_thlu8"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="12_thlu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhoss"]
 texture = ExtResource("3_ouott")

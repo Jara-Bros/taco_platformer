@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brvvbetpekqp5"]
+
+[ext_resource type="Texture2D" uid="uid://dvbpk6ncl00ut" path="res://platforms/sprites/blue_chip.png" id="1_t1yic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ylw1"]
+size = Vector2(207.506, 12.2481)
+
+[node name="ChipPlatformFall" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.87466
+texture = ExtResource("1_t1yic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.753, -54.124)
+shape = SubResource("RectangleShape2D_5ylw1")

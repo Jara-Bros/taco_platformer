@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://cvhaagowd5g4c"
+path="res://.godot/imported/chip.png-3cb6d511051bc91842f554e7a28a115d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://platforms/sprites/chip.png"
+dest_files=["res://.godot/imported/chip.png-3cb6d511051bc91842f554e7a28a115d.ctex"]
 
 [params]
 

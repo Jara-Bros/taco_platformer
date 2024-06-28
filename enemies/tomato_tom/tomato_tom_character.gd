@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var ray_cast_right: RayCast2D = $RayCastRight
+@onready var ray_cast_left: RayCast2D = $RayCastLeft
 
 
 @export var speed : int
@@ -9,8 +11,8 @@ extends CharacterBody2D
 
 func _ready():
 	
+	# Randomizes the sprite color
 	var sprite_color = randi_range(1, 3) 
-
 	match sprite_color:
 		1:
 			sprite_2d.frame = 0
@@ -45,10 +47,21 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.flip_h = true
 	else:
 		pass
-
+	
+	# Checks for ledges
+	if ray_cast_left.is_colliding():
+		pass
+	else:
+		velocity.x = speed * -1
+	
+	if ray_cast_right.is_colliding():
+		pass
+	else:
+		velocity.x = speed * -1
+	
 
 	move_and_slide()
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
+func _on_hit_box_body_entered(_body: Node2D) -> void:
 	queue_free()

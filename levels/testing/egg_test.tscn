@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csne2bw37r38i" path="res://levels/testing/sprites/egg.jpg" id="3_ewh0f"]
 [ext_resource type="Texture2D" uid="uid://dvhkhnmd0pud1" path="res://taco/sprites/taco_animation_sheet.png" id="4_4bnb2"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/pokemon-emerald.ttf" id="5_cnhqo"]
-[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="7_nipdh"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="7_nipdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3roib"]
 texture = ExtResource("2_vmsgt")
