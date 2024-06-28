@@ -8,8 +8,8 @@ var player_spawn_location_dict = {
 }
 
 
-var woz_house_interior = preload("res://levels/texico_town/woz_house_interior/woz_house_interior.tscn").instantiate() 
-var barb_house_interior = preload("res://levels/texico_town/barb_house_interior/barb_gallery_one.tscn").instantiate()
+var woz_house_interior = preload("res://levels/texico_town/woz_house/woz_house_interior.tscn").instantiate() 
+var barb_house_interior = preload("res://levels/texico_town/barb_house/barb_gallery_one.tscn").instantiate()
 
 
 func _on_room_transition_body_entered(_body: Node2D) -> void:

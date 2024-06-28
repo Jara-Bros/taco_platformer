@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://3adip62hd16w"]
+
+[ext_resource type="Script" path="res://taco/Item/transformation_box/transform_block.gd" id="1_mwwn8"]
+[ext_resource type="Texture2D" uid="uid://bx5t1n247r3p8" path="res://taco/Item/transformation_box/1200px-Question_Block_-_Nintendo_JP_website.png" id="2_brojb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m2ac"]
+
+[node name="TransformBlock" type="Area2D"]
+script = ExtResource("1_mwwn8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -1)
+scale = Vector2(0.0154167, 0.0149999)
+texture = ExtResource("2_brojb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3m2ac")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
