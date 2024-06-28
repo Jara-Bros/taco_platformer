@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dvhkhnmd0pud1" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j5bk0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8snm4"]
+size = Vector2(16, 19)
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -150,7 +151,9 @@ _data = {
 
 [node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
-collision_layer = 3
+collision_layer = 7
+collision_mask = 3
+floor_max_angle = 1.309
 script = ExtResource("1_q403v")
 speed = 150
 jump_velocity = -400
@@ -162,10 +165,13 @@ texture = ExtResource("2_ctlwh")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_j5bk0")
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_8snm4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
 "": SubResource("AnimationLibrary_040re")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

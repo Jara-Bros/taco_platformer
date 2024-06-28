@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://co82qr0oc6pek"]
 
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/woz_house_interior.gd" id="1_s64ea"]
-[ext_resource type="Texture2D" uid="uid://cubb57hcgpqa8" path="res://tilesets/tea_room_tileset.png" id="2_obq6r"]
+[ext_resource type="Texture2D" uid="uid://cubb57hcgpqa8" path="res://tilesets/texico_town/tea_room_tileset.png" id="2_obq6r"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_17qvk"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="4_14lig"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]

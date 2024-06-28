@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpmfc7qc230lv"
-path="res://.godot/imported/texmex_town_tileset.png-b55044d01bab29cc7483d6417c7e8ef9.ctex"
+uid="uid://cuf3dqgwfyo46"
+path="res://.godot/imported/character_box_bleu.png-9717f4b7fa5cbe742452b68fd898ce79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texmex_town_tileset.png"
-dest_files=["res://.godot/imported/texmex_town_tileset.png-b55044d01bab29cc7483d6417c7e8ef9.ctex"]
+source_file="res://interactives/sprites/character_box_bleu.png"
+dest_files=["res://.godot/imported/character_box_bleu.png-9717f4b7fa5cbe742452b68fd898ce79.ctex"]
 
 [params]
 

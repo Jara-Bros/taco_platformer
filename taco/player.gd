@@ -13,6 +13,10 @@ class_name Player extends CharacterBody2D
 var item = null
 
 var direction
+
+
+
+
 	
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
