@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://deqawkg5e163u"]
+
+[ext_resource type="Texture2D" uid="uid://ca3xm08hipdam" path="res://interactives/sprites/character_box_taco.png" id="1_lhqhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8k44y"]
+size = Vector2(17, 18)
+
+[node name="CharacterBoxTaco" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lhqhx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_8k44y")

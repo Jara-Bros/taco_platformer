@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="4_14lig"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]
 [ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
-[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="7_i7g6a"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="7_i7g6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6swg"]
 texture = ExtResource("2_obq6r")
