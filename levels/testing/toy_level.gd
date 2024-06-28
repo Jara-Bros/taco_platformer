@@ -7,6 +7,8 @@ var bowling_transform_character = preload("res://levels/testing/transformations/
 @onready var egg_box: Area2D = $EggBox
 @onready var bowling_box: Area2D = $BowlingBox
 @onready var transform_return_box: Area2D = $TransformReturnBox
+@onready var trap_door: TileMapLayer = $TrapDoor
+
 
 @onready var taco: Player = $Taco
 
@@ -62,3 +64,7 @@ func _on_bowling_box_body_entered(_body: Node2D) -> void:
 	remove_child(taco)
 	call_deferred("add_child", bowling_transform_character)
 	bowling_box.queue_free()
+
+
+func _on_trap_door_button_body_entered(body: Node2D) -> void:
+	trap_door.queue_free()
