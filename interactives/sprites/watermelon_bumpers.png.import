@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://tnjexk8brcjc"
+path="res://.godot/imported/watermelon_bumpers.png-63ef10032ecf3883b2a15ae2c27fbb24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://interactives/sprites/watermelon_bumpers.png"
+dest_files=["res://.godot/imported/watermelon_bumpers.png-63ef10032ecf3883b2a15ae2c27fbb24.ctex"]
 
 [params]
 

@@ -23,6 +23,7 @@ var item = null
 
 var direction
 var player_facing
+
 	
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor_only():
 		velocity.y += 1.5 * gravity * delta
 
 	# Handle jump.
@@ -57,6 +58,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_velocity
 		if velocity.y >= 0:
 			jump_velocity / 2
+
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor_only():
+			velocity.y = jump_velocity
+
 	# Handle action
 	if Input.is_action_just_pressed("item"):
 		prev_state = current_state

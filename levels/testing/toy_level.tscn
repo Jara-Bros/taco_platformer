@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://b3af46s62ake4"]
+[gd_scene load_steps=28 format=4 uid="uid://b3af46s62ake4"]
 
 [ext_resource type="Script" path="res://levels/testing/toy_level.gd" id="1_47bhp"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ov4el"]
-[ext_resource type="Texture2D" uid="uid://cblnycn5tj6wl" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_tckuy"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_6sbsj"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_x3wxl"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_tcqrw"]
+[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_tckuy"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="6_lgl5d"]
+[ext_resource type="Texture2D" uid="uid://tnjexk8brcjc" path="res://interactives/sprites/watermelon_bumpers.png" id="7_l4paw"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="7_rqdrp"]
+[ext_resource type="Texture2D" uid="uid://ktic2jd52k75" path="res://interactives/sprites/egg_box.png" id="8_yh074"]
+[ext_resource type="Texture2D" uid="uid://bj58mfgwbr8bt" path="res://interactives/sprites/bowling_box.png" id="9_aswjk"]
+[ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="10_ho07g"]
+[ext_resource type="PackedScene" uid="uid://7kx4m3takljm" path="res://platforms/scenes/chip_platform_ud.tscn" id="11_7owkw"]
+[ext_resource type="PackedScene" uid="uid://deqawkg5e163u" path="res://interactives/scenes/character_box_taco.tscn" id="12_p5sbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nne3y"]
 texture = ExtResource("2_tckuy")
@@ -16,12 +21,15 @@ texture = ExtResource("2_tckuy")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4, 0, 0, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -8, 8, 1, -8, 1)
+2:0/0/physics_layer_0/polygon_0/one_way = true
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, 0, 8, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/one_way = true
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -1, 3, 8, 8, -8, 8)
+2:1/0/physics_layer_0/polygon_0/one_way = true
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -29,53 +37,233 @@ texture = ExtResource("2_tckuy")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nne3y")
 
-[sub_resource type="Resource" id="Resource_0ucwf"]
-script = ExtResource("5_tcqrw")
-duration = 1.0
-transition = 0
-ease = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erwms"]
+size = Vector2(17, 3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ly3j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sd0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_485md"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4w4p"]
+size = Vector2(18, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64k45"]
+size = Vector2(28, 27)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsqyx"]
+texture = ExtResource("2_tckuy")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_7uxr1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jsqyx")
+
+[sub_resource type="Animation" id="Animation_oc5qp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1400, -383)]
+}
+
+[sub_resource type="Animation" id="Animation_u80yc"]
+resource_name = "move"
+length = 2.25
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, -383), Vector2(1465, -382)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_evj2f"]
+_data = {
+"RESET": SubResource("Animation_oc5qp"),
+"move": SubResource("Animation_u80yc")
+}
+
+[sub_resource type="Animation" id="Animation_dynx4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1598, -379)]
+}
+
+[sub_resource type="Animation" id="Animation_yk34f"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1598, -379), Vector2(1598, -439)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v465x"]
+_data = {
+"RESET": SubResource("Animation_dynx4"),
+"move": SubResource("Animation_yk34f")
+}
 
 [node name="ToyLevel" type="Node2D"]
 script = ExtResource("1_47bhp")
 
 [node name="Taco" parent="." instance=ExtResource("1_ov4el")]
+position = Vector2(-68, 7)
+collision_mask = 5
+floor_max_angle = 0.785398
 
 [node name="Floor" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAAOAAAAAAAAAAAAAAAFAP//AAAAAAEAABAGAP//AAAAAAAAAAAHAP//AAAAAAEAAAALAP//AAAAAAEAABAMAP7/AAAAAAEAABANAP7/AAAAAAAAAAAOAP7/AAAAAAAAAAAPAP7/AAAAAAEAAAAQAP//AAAAAAEAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAATAAAAAAAAAAAAAAASAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAVAAAAAAACAAAAABAWAAAAAAACAAEAAAAXAAEAAAAAAAEAAAAYAAIAAAAAAAEAAAAZAAMAAAABAAAAAAAZAAQAAAABAAEAAAAaAAUAAAAAAAEAAAAbAAYAAAAAAAAAAAAcAAYAAAAAAAAAAAAdAAUAAAAAAAEAABAeAAMAAAABAAAAABAeAAQAAAABAAEAABAfAAIAAAACAAEAABAgAAIAAAAAAAAAACAhAAIAAAAAAAAAACAiAAIAAAAAAAAAACAEAPz/AAAAAAAAACAFAPz/AAAAAAAAACAGAPz/AAAAAAAAACAHAPz/AAAAAAAAACAIAPz/AAAAAAAAACA=")
+tile_map_data = PackedByteArray("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AADyAB8AAAABAAEAAADoAAoAAAABAAAAAADoAAsAAAABAAEAAAD0ACEAAAAAAAEAAAD1ACIAAAACAAAAABDzACAAAAAAAAEAAAD2ACIAAAAAAAAAACD3ACIAAAAAAAAAACD4ACIAAAACAAAAAAD5ACEAAAAAAAEAABD6ACAAAAAAAAEAABD7AB8AAAAAAAEAABD8AB4AAAACAAEAABD9AB4AAAAAAAAAACD+AB4AAAACAAEAAAAIAUIAAAAAAAAAAGAIAUMAAAAAAAAAAGAJAUAAAAABAAAAABAJAUEAAAABAAEAABAKAT4AAAABAAAAABAKAT8AAAABAAEAABAIAUQAAAAAAAAAAGAIAUUAAAAAAAAAAGACAVAAAAABAAAAABACAVEAAAABAAEAABADAU4AAAABAAAAABADAU8AAAABAAEAABAEAUwAAAABAAAAABAEAU0AAAABAAEAABAFAUoAAAABAAAAABAFAUsAAAABAAEAABAGAUgAAAABAAAAABAGAUkAAAABAAEAABAHAUYAAAABAAAAABAHAUcAAAABAAEAABD6AGAAAAABAAAAABD6AGEAAAABAAEAABD7AF4AAAABAAAAABD7AF8AAAABAAEAABD8AFwAAAABAAAAABD8AF0AAAABAAEAABD9AFoAAAABAAAAABD9AFsAAAABAAEAABD+AFgAAAABAAAAABD+AFkAAAABAAEAABD/AFYAAAABAAAAABD/AFcAAAABAAEAABAAAVQAAAABAAAAABAAAVUAAAABAAEAABABAVIAAAABAAAAABABAVMAAAABAAEAABDyAHAAAAABAAAAABDyAHEAAAABAAEAABDzAG4AAAABAAAAABDzAG8AAAABAAEAABD0AGwAAAABAAAAABD0AG0AAAABAAEAABD1AGoAAAABAAAAABD1AGsAAAABAAEAABD2AGgAAAABAAAAABD2AGkAAAABAAEAABD3AGYAAAABAAAAABD3AGcAAAABAAEAABD4AGQAAAABAAAAABD4AGUAAAABAAEAABD5AGIAAAABAAAAABD5AGMAAAABAAEAABDsAHwAAAABAAAAABDsAH0AAAABAAEAABDtAHoAAAABAAAAABDtAHsAAAABAAEAABDuAHgAAAABAAAAABDuAHkAAAABAAEAABDvAHYAAAABAAAAABDvAHcAAAABAAEA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")
 tile_set = SubResource("TileSet_b86qm")
 
-[node name="LevelCamera" type="Camera2D" parent="."]
-physics_interpolation_mode = 1
-position = Vector2(65, -14)
-zoom = Vector2(4, 4)
-editor_draw_limits = true
+[node name="TomatoToms" type="Node" parent="."]
 
-[node name="PhantomCameraHost" type="Node" parent="LevelCamera"]
-script = ExtResource("3_6sbsj")
+[node name="TomatoTomCharacter4" parent="TomatoToms" instance=ExtResource("7_rqdrp")]
+position = Vector2(535, 39)
 
-[node name="PhantomCamRight" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
-position = Vector2(65, -14)
-script = ExtResource("4_x3wxl")
-follow_mode = 2
-follow_target = NodePath("../Taco")
-zoom = Vector2(4, 4)
-tween_resource = SubResource("Resource_0ucwf")
-follow_offset = Vector2(65, 0)
-follow_damping_value = Vector2(1, 0)
-dead_zone_width = 0.2
-dead_zone_height = 0.2
-draw_limits = true
+[node name="TomatoTomCharacter2" parent="TomatoToms" instance=ExtResource("7_rqdrp")]
+position = Vector2(748, -17)
 
-[node name="PhantomCamLeft" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
-position = Vector2(-65, -14)
-script = ExtResource("4_x3wxl")
-follow_mode = 2
-follow_target = NodePath("../Taco")
-zoom = Vector2(4, 4)
-frame_preview = false
-tween_resource = SubResource("Resource_0ucwf")
-follow_offset = Vector2(-65, 0)
-follow_damping_value = Vector2(1, 0)
-dead_zone_width = 0.2
-dead_zone_height = 0.2
-draw_limits = true
+[node name="TomatoTomCharacter" parent="TomatoToms" instance=ExtResource("7_rqdrp")]
+position = Vector2(227, -33)
+
+[node name="TomatoTomCharacter3" parent="TomatoToms" instance=ExtResource("7_rqdrp")]
+position = Vector2(1509, -436)
+
+[node name="EggBox" type="Area2D" parent="."]
+position = Vector2(895, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="EggBox"]
+texture = ExtResource("8_yh074")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EggBox"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_erwms")
+
+[node name="Bumpers" type="Node" parent="."]
+
+[node name="BumperLeft" parent="Bumpers" instance=ExtResource("6_lgl5d")]
+position = Vector2(1077, -181)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpers/BumperLeft"]
+shape = SubResource("CircleShape2D_3ly3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bumpers/BumperLeft"]
+texture = ExtResource("7_l4paw")
+flip_h = true
+flip_v = true
+
+[node name="BumperUp" parent="Bumpers" instance=ExtResource("6_lgl5d")]
+position = Vector2(848, -183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpers/BumperUp"]
+shape = SubResource("CircleShape2D_7sd0r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bumpers/BumperUp"]
+texture = ExtResource("7_l4paw")
+
+[node name="BumperRight" parent="Bumpers" instance=ExtResource("6_lgl5d")]
+position = Vector2(850, -307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumpers/BumperRight"]
+shape = SubResource("CircleShape2D_485md")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bumpers/BumperRight"]
+texture = ExtResource("7_l4paw")
+flip_v = true
+
+[node name="BowlingBox" type="Area2D" parent="."]
+position = Vector2(1929, -645)
+
+[node name="Sprite2D" type="Sprite2D" parent="BowlingBox"]
+position = Vector2(0, 1)
+texture = ExtResource("9_aswjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlingBox"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_y4w4p")
+
+[node name="TrapDoorButton" type="Area2D" parent="."]
+position = Vector2(3536, 665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrapDoorButton"]
+shape = SubResource("RectangleShape2D_64k45")
+
+[node name="TrapDoor" type="TileMapLayer" parent="."]
+position = Vector2(1070, 234)
+tile_map_data = PackedByteArray("AACdACAAAAAAAAIAAACcACAAAAAAAAIAAACbACAAAAAAAAIAAACaACAAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_7uxr1")
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="ChipPlatformLR" parent="Platforms" instance=ExtResource("10_ho07g")]
+position = Vector2(1400, -383)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/ChipPlatformLR"]
+libraries = {
+"": SubResource("AnimationLibrary_evj2f")
+}
+autoplay = "move"
+
+[node name="ChipPlatformUD" parent="Platforms" instance=ExtResource("11_7owkw")]
+position = Vector2(1598, -379)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/ChipPlatformUD"]
+libraries = {
+"": SubResource("AnimationLibrary_v465x")
+}
+autoplay = "move"
+
+[node name="CharacterBoxTaco" parent="." instance=ExtResource("12_p5sbe")]
+position = Vector2(1065, -310)
+
+[node name="CharacterBoxTaco2" parent="." instance=ExtResource("12_p5sbe")]
+position = Vector2(3687, 2181)
+
+[connection signal="body_entered" from="EggBox" to="." method="_on_egg_box_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperLeft" to="." method="_on_bumper_left_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperUp" to="." method="_on_bumper_up_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperRight" to="." method="_on_bumper_right_body_entered"]
+[connection signal="body_entered" from="BowlingBox" to="." method="_on_bowling_box_body_entered"]
+[connection signal="body_entered" from="TrapDoorButton" to="." method="_on_trap_door_button_body_entered"]
+[connection signal="body_entered" from="CharacterBoxTaco" to="." method="_on_character_box_taco_body_entered"]
+[connection signal="body_entered" from="CharacterBoxTaco2" to="." method="_on_character_box_taco_2_body_entered"]

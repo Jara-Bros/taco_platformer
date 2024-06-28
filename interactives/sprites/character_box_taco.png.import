@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://ca3xm08hipdam"
+path="res://.godot/imported/character_box_taco.png-53d1816b32d11ef8a9d78bf06b2ebfed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://interactives/sprites/character_box_taco.png"
+dest_files=["res://.godot/imported/character_box_taco.png-53d1816b32d11ef8a9d78bf06b2ebfed.ctex"]
 
 [params]
 

@@ -114,7 +114,10 @@ func _on_area_2d_body_entered(body):
 			current_state = freedom_state.COLLECTED
 	elif body.get_name() == "wall":
 		if current_state == freedom_state.KICKED:
-			print("made tif")
 			moving_direction = 0
-	 
+	elif body.get_name() == "TomatoTomCharacter":
+		for enemey in get_tree().get_nodes_in_group("Enemies"):
+			if enemey.get_instance_id() == body.get_instance_id():
+				enemey.queue_free()
+				queue_free()
 	

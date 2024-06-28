@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://cbram5nofadaw"
+path="res://.godot/imported/kitchen_tileset.png-16960a128ce1c97257e52bf9dd87484f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://tilesets/texico_town/kitchen_tileset.png"
+dest_files=["res://.godot/imported/kitchen_tileset.png-16960a128ce1c97257e52bf9dd87484f.ctex"]
 
 [params]
 

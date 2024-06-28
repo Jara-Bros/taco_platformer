@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_oupue"]
 [ext_resource type="Texture2D" uid="uid://cblnycn5tj6wl" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_ba0lj"]
-[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="3_jfbr8"]
+[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="3_jfbr8"]
 [ext_resource type="Texture2D" uid="uid://cr0rdkfavikwh" path="res://levels/testing/sprites/bowling-ball-QJD8qxE-600.jpg" id="4_kj7l1"]
 [ext_resource type="Texture2D" uid="uid://dvhkhnmd0pud1" path="res://taco/sprites/taco_animation_sheet.png" id="5_nysih"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/pokemon-emerald.ttf" id="6_yxswc"]

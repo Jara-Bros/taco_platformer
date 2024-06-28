@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpmfc7qc230lv"
-path="res://.godot/imported/texmex_town_tileset.png-b55044d01bab29cc7483d6417c7e8ef9.ctex"
+uid="uid://ktic2jd52k75"
+path="res://.godot/imported/egg_box.png-34319021a96a94fcb5baf73f69103534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/texmex_town_tileset.png"
-dest_files=["res://.godot/imported/texmex_town_tileset.png-b55044d01bab29cc7483d6417c7e8ef9.ctex"]
+source_file="res://interactives/sprites/egg_box.png"
+dest_files=["res://.godot/imported/egg_box.png-34319021a96a94fcb5baf73f69103534.ctex"]
 
 [params]
 

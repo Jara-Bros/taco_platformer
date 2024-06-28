@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fswtcx2emt2v"
-path="res://.godot/imported/rothko_room_tileset.png-9151fa6d2b3a448aaa85bdae4ccb2b98.ctex"
+uid="uid://dvbpk6ncl00ut"
+path="res://.godot/imported/blue_chip.png-89625b1eac942161578e7cb4fae6e3cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/rothko_room_tileset.png"
-dest_files=["res://.godot/imported/rothko_room_tileset.png-9151fa6d2b3a448aaa85bdae4ccb2b98.ctex"]
+source_file="res://platforms/sprites/blue_chip.png"
+dest_files=["res://.godot/imported/blue_chip.png-89625b1eac942161578e7cb4fae6e3cb.ctex"]
 
 [params]
 

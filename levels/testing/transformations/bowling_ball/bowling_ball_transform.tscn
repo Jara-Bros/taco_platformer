@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfwcte2n74fsh" path="res://levels/testing/sprites/taco_bowling_ball.png" id="1_uneui"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_doggc"]
+friction = 0.5
 
 [sub_resource type="GDScript" id="GDScript_6juu2"]
 resource_name = "bowling_ball_movement"
@@ -13,8 +14,8 @@ script/source = "extends RigidBody2D
 @onready var raycast_right: RayCast2D = $RayCastRight
 @onready var raycast_up: RayCast2D = $RayCastUp
 
-
-var jump = Vector2(10, -400)
+# Set to 0 to disable it temporarily
+var jump = Vector2(0, 0)
 
 
 # Handles jump only when player is on ground
@@ -30,8 +31,10 @@ func _integrate_forces(state):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rdffd"]
+radius = 13.0
 
 [node name="BowlingBallTransform" type="RigidBody2D"]
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_doggc")
 script = SubResource("GDScript_6juu2")
 

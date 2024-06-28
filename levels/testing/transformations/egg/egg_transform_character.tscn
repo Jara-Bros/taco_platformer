@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxbiyb6k6luyx"]
 
-[ext_resource type="Script" path="res://levels/testing/transformations/egg_transform_character.gd" id="1_2bd2i"]
+[ext_resource type="Script" path="res://levels/testing/transformations/egg/egg_transform_character.gd" id="1_2bd2i"]
 [ext_resource type="Texture2D" uid="uid://bfunmmcy3vpsm" path="res://levels/testing/sprites/taco_egg.png" id="1_jnq37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4ox0"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xvdeb13egwl"
-path="res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"
+uid="uid://bo7mjifuy35bc"
+path="res://.godot/imported/texico_town_tileset.png-bb2439b65ecb1728cf0c37cf44ca9a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/testing/boogie_demo_tileset.png"
-dest_files=["res://.godot/imported/boogie_demo_tileset.png-3293dbc38481b40c085cbeeb9af6978e.ctex"]
+source_file="res://tilesets/texico_town/texico_town_tileset.png"
+dest_files=["res://.godot/imported/texico_town_tileset.png-bb2439b65ecb1728cf0c37cf44ca9a40.ctex"]
 
 [params]
 
