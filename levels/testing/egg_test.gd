@@ -10,6 +10,7 @@ var egg_transform_character = preload("res://levels/testing/transformations/egg_
 var player_spawn_location_dict = {
 	egg_spawn = Vector2(222, -64),
 	transformation_return = Vector2(640, -16)
+
 }
 
 

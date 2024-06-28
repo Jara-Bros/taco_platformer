@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cubb57hcgpqa8"
-path="res://.godot/imported/tea_room_tileset.png-489213692ab2f19f4a6a43261e1ef210.ctex"
+uid="uid://fswtcx2emt2v"
+path="res://.godot/imported/rothko_room_tileset.png-26e9e27134e20d880b923f57faa97db3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/tea_room_tileset.png"
-dest_files=["res://.godot/imported/tea_room_tileset.png-489213692ab2f19f4a6a43261e1ef210.ctex"]
+source_file="res://tilesets/texico_town/rothko_room_tileset.png"
+dest_files=["res://.godot/imported/rothko_room_tileset.png-26e9e27134e20d880b923f57faa97db3.ctex"]
 
 [params]
 

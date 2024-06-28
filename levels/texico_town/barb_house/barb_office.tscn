@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_office.gd" id="1_esbgu"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_amgsr"]
-[ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/kitchen_tileset.png" id="3_gbmgk"]
+[ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/texico_town/kitchen_tileset.png" id="3_gbmgk"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="4_cqi45"]
 [ext_resource type="Texture2D" uid="uid://c12qt0c32eimy" path="res://NPC/sprites/barb/barb_idle_happy_sheet.png" id="5_snnxt"]
 [ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/interactive_area.tscn" id="6_64ofh"]

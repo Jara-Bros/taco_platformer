@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c0vhvglx6s7ib"]
 
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
-[ext_resource type="Texture2D" uid="uid://dpmfc7qc230lv" path="res://tilesets/texmex_town_tileset.png" id="2_gb2vh"]
+[ext_resource type="Texture2D" uid="uid://dpmfc7qc230lv" path="res://tilesets/texico_town/texmex_town_tileset.png" id="2_gb2vh"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_v2e3s"]
 [ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="4_vhj3j"]
 

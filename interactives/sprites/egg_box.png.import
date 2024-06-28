@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbram5nofadaw"
-path="res://.godot/imported/kitchen_tileset.png-efec3afc9d3e09dd9e312d0d35fef90c.ctex"
+uid="uid://ktic2jd52k75"
+path="res://.godot/imported/egg_box.png-34319021a96a94fcb5baf73f69103534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/kitchen_tileset.png"
-dest_files=["res://.godot/imported/kitchen_tileset.png-efec3afc9d3e09dd9e312d0d35fef90c.ctex"]
+source_file="res://interactives/sprites/egg_box.png"
+dest_files=["res://.godot/imported/egg_box.png-34319021a96a94fcb5baf73f69103534.ctex"]
 
 [params]
 
