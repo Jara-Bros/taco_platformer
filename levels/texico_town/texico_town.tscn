@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/texico_town.gd" id="1_86lqk"]
-[ext_resource type="Texture2D" uid="uid://cmdpo0cidwr53" path="res://tilesets/texico_town_tileset.png" id="1_nodut"]
+[ext_resource type="Texture2D" uid="uid://dq5rbrbcgcscb" path="res://tilesets/texico_town/texico_town_tileset.png" id="1_nodut"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
 [ext_resource type="Texture2D" uid="uid://bps5dl864lpxj" path="res://levels/texico_town/sprites/Untitled.png" id="3_o2iw2"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="5_aholj"]
@@ -183,7 +183,7 @@ script = ExtResource("1_86lqk")
 
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
 z_index = 1
-position = Vector2(-1030, 300)
+position = Vector2(-1052, -65)
 collision_layer = 7
 collision_mask = 7
 

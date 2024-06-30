@@ -9,6 +9,7 @@ class_name Player extends CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var camera_2d: Camera2D = $Camera2D
 
 var item = null
 

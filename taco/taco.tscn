@@ -174,4 +174,5 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(50, -25)
 zoom = Vector2(3, 3)
