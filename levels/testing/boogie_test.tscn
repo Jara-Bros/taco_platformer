@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://2fqman1hrmkq"]
 
 [ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/testing/taco_boogie.tscn" id="1_l6ymw"]
-[ext_resource type="Texture2D" uid="uid://dsfhtcw2x4rfy" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_f7brt"]
+[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_f7brt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwnhp"]
 texture = ExtResource("2_f7brt")

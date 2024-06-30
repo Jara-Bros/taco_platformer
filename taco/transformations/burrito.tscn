@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v7uq00o81nhf"]
+
+[ext_resource type="Script" path="res://taco/transformations/burrito.gd" id="1_3ue1c"]
+
+[node name="Burrito" type="CharacterBody2D"]
+script = ExtResource("1_3ue1c")
