@@ -57,8 +57,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		change_state(player_state.IN_AIR)
 		velocity.y = jump_velocity
-		if velocity.y >= 0:
-			jump_velocity / 2
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():

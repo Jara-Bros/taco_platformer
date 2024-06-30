@@ -17,8 +17,6 @@ var barb_gallery = preload("res://levels/texico_town/barb_house/barb_gallery.tsc
 
 
 func _on_room_transition_body_entered(_body: Node2D) -> void:
-
-
 	woz_house_interior.get_child(0).position = woz_house_interior.get_spawn_location("exit_door")
 	SceneManager.swap_scenes(woz_house_interior)
 	queue_free()
@@ -28,7 +26,6 @@ func get_spawn_location(_spawn : String):
 
 
 func _on_barb_door_body_entered(_body: Node2D) -> void:
-	
 	barb_house_interior.get_child(0).position = barb_house_interior.get_spawn_location("exit_door")
 	SceneManager.swap_scenes(barb_house_interior)
 	queue_free()

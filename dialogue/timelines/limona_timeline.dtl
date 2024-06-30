@@ -1,8 +1,8 @@
 [style name="limona_style_textbox"]
-limona (limona_idle): . . . 
-[wait time="0.8"]
+limona (limona_idle): . . .
+[wait time="0.5"]
 limona (limona_talk): Hey.
-[wait time="1.2"]
+[wait time="0.8"]
 limona (limona_question): You tryna boogie?
 - Yes
 - No
