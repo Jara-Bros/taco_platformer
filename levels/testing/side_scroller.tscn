@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2rwxhkwk1prk"]
-
-[ext_resource type="PackedScene" uid="uid://biapxm1puxux5" path="res://taco/tb_car.tscn" id="1_fcf18"]
-
-[node name="SideScroller" type="Node2D"]
-
-[node name="Node2D" parent="." instance=ExtResource("1_fcf18")]

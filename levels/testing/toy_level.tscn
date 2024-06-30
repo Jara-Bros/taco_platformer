@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dq5rbrbcgcscb" path="res://tilesets/texico_town/texico_town_tileset.png" id="7_x2vxo"]
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="10_ho07g"]
 [ext_resource type="PackedScene" uid="uid://7kx4m3takljm" path="res://platforms/scenes/chip_platform_ud.tscn" id="11_7owkw"]
-[ext_resource type="PackedScene" uid="uid://cx2sijxxlvrsv" path="res://interactives/scenes/canon_box.tscn" id="11_48sqk"]
+[ext_resource type="PackedScene" path="res://interactives/scenes/canon_box.tscn" id="11_48sqk"]
 [ext_resource type="PackedScene" uid="uid://deqawkg5e163u" path="res://interactives/scenes/character_box_taco.tscn" id="12_p5sbe"]
 [ext_resource type="Texture2D" uid="uid://cgbaq8slor452" path="res://levels/testing/sprites/pngtree-mexican-tortilla-isolated-png-image_11502935.png" id="15_cx3if"]
 [ext_resource type="Texture2D" uid="uid://by6id6c2phn2f" path="res://levels/testing/sprites/basketball-hoop-isolated-transparent-png.png" id="16_w0han"]
@@ -855,6 +855,7 @@ tile_map_data = PackedByteArray("AAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAA
 tile_set = SubResource("TileSet_b86qm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AAAaAAIAAAAIAAcAAAAbAAIAAAAHAAcAAAAcAAIAAAAJAAcAAAAdAAIAAAAHAAcAAAArAP//AAAIAAcAAAAsAP//AAAHAAcAAAAtAP//AAAJAAcAAAAuAP//AAAIAAcAAAAvAP//AAAHAAcAAABbAOX/AAAIAAcAAABcAOX/AAAHAAcAAABdAOX/AAAJAAcAAABeAOX/AAAIAAcAAABfAOX/AAAHAAcAAABgAOX/AAAJAAcAAAA=")
 tile_set = SubResource("TileSet_axebm")
 
@@ -1101,11 +1102,11 @@ shape = SubResource("RectangleShape2D_t2unv")
 
 [connection signal="pressed" from="Quit/QuitScreen/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Bumpers/BumperLeft" to="." method="_on_bumper_left_body_entered"]
-[connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_2_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperUp" to="." method="_on_bumper_up_body_entered"]
-[connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_2_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperRight" to="." method="_on_bumper_right_body_entered"]
 [connection signal="body_entered" from="BowlingBox" to="." method="_on_bowling_box_body_entered"]
 [connection signal="body_entered" from="CharacterBoxTaco" to="." method="_on_character_box_taco_body_entered"]

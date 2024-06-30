@@ -49,7 +49,7 @@ sources/0 = SubResource("TileSetAtlasSource_garfx")
 position = Vector2(-35, -15)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_vhj3j")]
-position = Vector2(63, -36)
+position = Vector2(68, -6)
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1

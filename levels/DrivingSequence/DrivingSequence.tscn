@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cifjqyt16abnb"]
+
+[ext_resource type="Texture2D" uid="uid://bgs8747yevb6v" path="res://levels/DrivingSequence/Taz-Mania-Genesis-60.jpg" id="1_kkkdr"]
+
+[sub_resource type="TileSet" id="TileSet_y4mgw"]
+
+[node name="DrivingSequence" type="Node2D"]
+
+[node name="Taz-mania-genesis-60" type="Sprite2D" parent="."]
+position = Vector2(577, 323.25)
+scale = Vector2(3.30286, 2.62653)
+texture = ExtResource("1_kkkdr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_y4mgw")
