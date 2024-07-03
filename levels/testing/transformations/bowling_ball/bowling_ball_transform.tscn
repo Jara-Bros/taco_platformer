@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfwcte2n74fsh" path="res://levels/testing/sprites/taco_bowling_ball.png" id="1_uneui"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_doggc"]
+resource_local_to_scene = true
 friction = 0.5
 
 [sub_resource type="GDScript" id="GDScript_6juu2"]
@@ -34,7 +35,7 @@ func _integrate_forces(state):
 radius = 13.0
 
 [node name="BowlingBallTransform" type="RigidBody2D"]
-mass = 0.5
+mass = 0.25
 physics_material_override = SubResource("PhysicsMaterial_doggc")
 script = SubResource("GDScript_6juu2")
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://crcerumau54xn"]
+
+[ext_resource type="Script" path="res://gui/reload_screen/reload_screen.gd" id="1_bag5v"]
+[ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_n52cg"]
+
+[node name="ReloadMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bag5v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("1_n52cg")

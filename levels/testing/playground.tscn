@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="1_206o4"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ryeh2"]
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
-[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/boogie_demo_tileset.png" id="4_erttb"]
+[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="4_erttb"]
 [ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="4_vhj3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]

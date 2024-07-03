@@ -1,0 +1,267 @@
+[gd_scene load_steps=22 format=4 uid="uid://c7evesaotjqsb"]
+
+[ext_resource type="Script" path="res://levels/texico_town/texico_start/texico_start.gd" id="1_86lqk"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
+[ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="3_ptwvw"]
+[ext_resource type="PackedScene" uid="uid://cq07tc1kxdb1x" path="res://platforms/chips/white_chip.tscn" id="4_8qs0v"]
+[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="4_wk666"]
+[ext_resource type="PackedScene" uid="uid://cos6tnjxn68bl" path="res://platforms/chips/orange_chip.tscn" id="5_4idp4"]
+[ext_resource type="PackedScene" uid="uid://b5obv2chr5j4v" path="res://platforms/chips/purple_chip.tscn" id="6_06j4d"]
+[ext_resource type="Texture2D" uid="uid://bhmr5es5lk8dn" path="res://levels/texico_town/tb_house/ukulele_house-removebg-preview.png" id="7_4oxdy"]
+[ext_resource type="PackedScene" uid="uid://bdhx8jan11upp" path="res://platforms/chips/red_chip.tscn" id="7_n4cno"]
+[ext_resource type="PackedScene" uid="uid://bik5j3tf8g2k0" path="res://platforms/chips/blue_chip.tscn" id="8_rwr0i"]
+[ext_resource type="Texture2D" uid="uid://b385ymc4iokkt" path="res://platforms/sprites/Screenshot_2024-07-02_130440-removebg-preview.png" id="9_2ik8g"]
+[ext_resource type="PackedScene" uid="uid://ccwhya1i0s87x" path="res://platforms/chips/green_chip.tscn" id="10_n7n2f"]
+[ext_resource type="Texture2D" uid="uid://c1agfylelnpg7" path="res://levels/texico_town/sprites/Screenshot_2024-07-03_160116-removebg-preview.png" id="11_q1qto"]
+[ext_resource type="Texture2D" uid="uid://ciclbkgjm2mmv" path="res://levels/texico_town/woz_house/woz_house_.png" id="13_augcr"]
+[ext_resource type="Texture2D" uid="uid://7wqcs5din3l1" path="res://levels/texico_town/woz_house/woz_shoji_doors.png" id="14_8bkwh"]
+[ext_resource type="Script" path="res://levels/texico_town/woz_house/shoji_door.gd" id="14_7450t"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
+[ext_resource type="Texture2D" uid="uid://bm5ho6i3468cc" path="res://levels/texico_town/barb_house/Screenshot_2024-07-03_155645-removebg-preview.png" id="17_8qu6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
+size = Vector2(438.312, 195.875)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twkdy"]
+texture = ExtResource("4_wk666")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, 1, 0, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, 8, -8, 8, 1, -8, 1)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, 0, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 0, 3, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oj3gu"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_twkdy")
+
+[node name="TexicoStart" type="Node2D"]
+script = ExtResource("1_86lqk")
+
+[node name="Taco" parent="." instance=ExtResource("2_0cacu")]
+z_index = 1
+position = Vector2(257, 66)
+collision_mask = 6
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -23.0
+offset_top = -2.0
+offset_right = 1149.0
+offset_bottom = 664.0
+texture = ExtResource("3_ptwvw")
+
+[node name="TBChips" type="Node" parent="."]
+
+[node name="WhiteChip" parent="TBChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(183, 59)
+rotation = -0.282743
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip2" parent="TBChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(252, 152)
+rotation = -0.282743
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip3" parent="TBChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(199, 133)
+rotation = 0.777526
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip4" parent="TBChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(170, 218)
+rotation = 1.7606
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip5" parent="TBChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(196, 91)
+rotation = 1.7606
+scale = Vector2(0.343572, 0.375086)
+
+[node name="OrangeChip" parent="TBChips" instance=ExtResource("5_4idp4")]
+position = Vector2(259, 93)
+rotation = 2.85364
+scale = Vector2(0.100879, 0.121547)
+
+[node name="OrangeChip2" parent="TBChips" instance=ExtResource("5_4idp4")]
+position = Vector2(296, 78)
+rotation = 0.876636
+scale = Vector2(0.0687444, 0.0771177)
+
+[node name="OrangeChip3" parent="TBChips" instance=ExtResource("5_4idp4")]
+position = Vector2(328, 71)
+rotation = 0.876636
+scale = Vector2(0.0687444, 0.0771177)
+
+[node name="PurpleChip" parent="TBChips" instance=ExtResource("6_06j4d")]
+position = Vector2(281, 82)
+rotation = 0.399893
+scale = Vector2(0.0760379, 0.0839731)
+
+[node name="PurpleChip2" parent="TBChips" instance=ExtResource("6_06j4d")]
+position = Vector2(314, 74)
+rotation = 0.386304
+scale = Vector2(0.0683179, 0.0721393)
+
+[node name="RedChip" parent="TBChips" instance=ExtResource("7_n4cno")]
+position = Vector2(233, 104)
+scale = Vector2(0.158845, 0.146667)
+
+[node name="RedChip4" parent="TBChips" instance=ExtResource("7_n4cno")]
+position = Vector2(218, 183)
+scale = Vector2(0.158845, 0.146667)
+
+[node name="BlueChip" parent="TBChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(193, 125)
+rotation = 0.85525
+scale = Vector2(0.137981, 0.155767)
+
+[node name="BlueChip2" parent="TBChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(247, 173)
+rotation = 0.85525
+scale = Vector2(0.137981, 0.155767)
+
+[node name="BlueChip4" parent="TBChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(265, 173)
+rotation = 0.863755
+scale = Vector2(0.137981, 0.155767)
+
+[node name="RedChip2" parent="TBChips" instance=ExtResource("7_n4cno")]
+position = Vector2(173, 124)
+scale = Vector2(0.0830325, 0.0711111)
+
+[node name="RedChip3" parent="TBChips" instance=ExtResource("7_n4cno")]
+position = Vector2(210, 153)
+rotation = 2.94946
+scale = Vector2(0.0951205, 0.0800499)
+
+[node name="BlueChip3" parent="TBChips" instance=ExtResource("7_n4cno")]
+position = Vector2(153, 134)
+rotation = 2.92654
+scale = Vector2(0.0566282, 0.0531932)
+texture = ExtResource("9_2ik8g")
+
+[node name="GreenChip" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(139, 141)
+rotation = 0.208199
+scale = Vector2(0.0959148, 0.0902935)
+
+[node name="GreenChip3" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(104, 139)
+rotation = 1.33645
+scale = Vector2(0.0626681, 0.0679704)
+
+[node name="GreenChip4" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(87, 129)
+rotation = 1.33645
+scale = Vector2(0.0626681, 0.0679704)
+
+[node name="GreenChip2" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(122, 141)
+rotation = 0.75007
+scale = Vector2(0.0606529, 0.0576253)
+
+[node name="GreenChip5" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(59, 138)
+rotation = 2.89087
+scale = Vector2(0.148786, 0.143251)
+
+[node name="PinkChip" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(299, 160)
+rotation = 0.291978
+scale = Vector2(0.0606529, 0.0576253)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip3" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(311, 164)
+rotation = 0.548664
+scale = Vector2(0.0708387, 0.0735146)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip2" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(330, 165)
+rotation = 2.92314
+scale = Vector2(0.128205, 0.108966)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip4" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(377, 165)
+rotation = 2.92314
+scale = Vector2(0.128205, 0.108966)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip5" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(360, 157)
+rotation = 3.20534
+scale = Vector2(0.128205, 0.108966)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip6" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(326, 157)
+rotation = 2.53314
+scale = Vector2(0.128205, 0.108966)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip7" parent="TBChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(342, 151)
+rotation = 3.01061
+scale = Vector2(0.066021, 0.0584651)
+texture = ExtResource("11_q1qto")
+
+[node name="TBHouse" type="Node" parent="."]
+
+[node name="UkuleleHouse" type="Sprite2D" parent="TBHouse"]
+position = Vector2(357, 36)
+rotation = 1.55588
+scale = Vector2(0.582699, 0.467423)
+texture = ExtResource("7_4oxdy")
+
+[node name="WozTeahouse" type="Node" parent="."]
+
+[node name="PickleHouse" type="Sprite2D" parent="WozTeahouse"]
+z_index = -1
+position = Vector2(59, 90)
+scale = Vector2(0.246377, 0.248619)
+texture = ExtResource("13_augcr")
+
+[node name="ShojiDoor" type="Sprite2D" parent="WozTeahouse"]
+z_index = -1
+position = Vector2(60, 104)
+scale = Vector2(0.0854575, 0.0828877)
+texture = ExtResource("14_8bkwh")
+script = ExtResource("14_7450t")
+
+[node name="InteractionArea" parent="WozTeahouse/ShojiDoor" instance=ExtResource("14_lnglo")]
+position = Vector2(0, -0.000108719)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WozTeahouse/ShojiDoor/InteractionArea"]
+position = Vector2(0, 3.14713e-05)
+shape = SubResource("RectangleShape2D_8rjpq")
+
+[node name="BarbGallery" type="Node" parent="."]
+
+[node name="Gallery" type="Sprite2D" parent="BarbGallery"]
+position = Vector2(390, 113)
+scale = Vector2(0.228, 0.176)
+texture = ExtResource("17_8qu6n")
+
+[node name="Collisions" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAQAAAACAAEAABASAAQAAAAAAAAAACATAAQAAAACAAAAAAAUAAQAAAAAAAAAAAAOAAUAAAAAAAEAABANAAYAAAAAAAEAABAMAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAACAAAAAAAHAAgAAAAAAAAAACAGAAgAAAACAAAAABAFAAcAAAACAAEAAAAEAAcAAAAAAAAAACADAAcAAAAAAAAAACACAAcAAAAAAAAAACAKAAgAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAkAAAACAAEAABAOAAoAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAATAAkAAAACAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_oj3gu")
