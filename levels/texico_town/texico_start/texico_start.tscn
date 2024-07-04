@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=4 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=27 format=4 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/texico_start/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="3_ptwvw"]
+[ext_resource type="Texture2D" uid="uid://h8ka3e0fl6kq" path="res://platforms/sprites/cloud-removebg-preview.png" id="4_7td6k"]
 [ext_resource type="PackedScene" uid="uid://cq07tc1kxdb1x" path="res://platforms/chips/white_chip.tscn" id="4_8qs0v"]
 [ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="4_wk666"]
 [ext_resource type="PackedScene" uid="uid://cos6tnjxn68bl" path="res://platforms/chips/orange_chip.tscn" id="5_4idp4"]
@@ -13,14 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://b385ymc4iokkt" path="res://platforms/sprites/Screenshot_2024-07-02_130440-removebg-preview.png" id="9_2ik8g"]
 [ext_resource type="PackedScene" uid="uid://ccwhya1i0s87x" path="res://platforms/chips/green_chip.tscn" id="10_n7n2f"]
 [ext_resource type="Texture2D" uid="uid://c1agfylelnpg7" path="res://levels/texico_town/sprites/Screenshot_2024-07-03_160116-removebg-preview.png" id="11_q1qto"]
+[ext_resource type="PackedScene" uid="uid://dqu00asxkw81y" path="res://platforms/chips/yellow_chip.tscn" id="12_fb47g"]
 [ext_resource type="Texture2D" uid="uid://ciclbkgjm2mmv" path="res://levels/texico_town/woz_house/woz_house_.png" id="13_augcr"]
+[ext_resource type="Texture2D" uid="uid://1qs4opr12yyv" path="res://platforms/sprites/Screenshot_2024-07-02_130414-removebg-preview.png" id="14_0ngwb"]
 [ext_resource type="Texture2D" uid="uid://7wqcs5din3l1" path="res://levels/texico_town/woz_house/woz_shoji_doors.png" id="14_8bkwh"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/shoji_door.gd" id="14_7450t"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
 [ext_resource type="Texture2D" uid="uid://bm5ho6i3468cc" path="res://levels/texico_town/barb_house/Screenshot_2024-07-03_155645-removebg-preview.png" id="17_8qu6n"]
+[ext_resource type="Script" path="res://levels/texico_town/barb_house/gallery.gd" id="18_ycis3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiurn"]
+size = Vector2(18, 48)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twkdy"]
 texture = ExtResource("4_wk666")
@@ -31,12 +38,15 @@ texture = ExtResource("4_wk666")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, 1, 0, 8, -8, 8)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, 8, -8, 8, 1, -8, 1)
+2:0/0/physics_layer_0/polygon_0/one_way = true
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, 0, 8, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/one_way = true
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 0, 3, 8, 8, -8, 8)
+2:1/0/physics_layer_0/polygon_0/one_way = true
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
@@ -51,184 +61,423 @@ script = ExtResource("1_86lqk")
 
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
 z_index = 1
-position = Vector2(257, 66)
+position = Vector2(242, 56)
 collision_mask = 6
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
-offset_left = -23.0
-offset_top = -2.0
-offset_right = 1149.0
-offset_bottom = 664.0
+offset_left = -503.0
+offset_top = -71.0
+offset_right = 989.0
+offset_bottom = 622.0
 texture = ExtResource("3_ptwvw")
 
-[node name="TBChips" type="Node" parent="."]
+[node name="Clouds" type="Node" parent="."]
 
-[node name="WhiteChip" parent="TBChips" instance=ExtResource("4_8qs0v")]
+[node name="Cloud" type="TextureRect" parent="Clouds"]
+offset_left = -693.0
+offset_top = 394.0
+offset_right = -73.0
+offset_bottom = 796.0
+texture = ExtResource("4_7td6k")
+
+[node name="Cloud2" type="TextureRect" parent="Clouds"]
+offset_left = -482.0
+offset_top = 396.0
+offset_right = 138.0
+offset_bottom = 798.0
+texture = ExtResource("4_7td6k")
+
+[node name="Cloud3" type="TextureRect" parent="Clouds"]
+offset_left = -186.0
+offset_top = 398.0
+offset_right = 434.0
+offset_bottom = 800.0
+texture = ExtResource("4_7td6k")
+
+[node name="Cloud4" type="TextureRect" parent="Clouds"]
+offset_left = 42.0
+offset_top = 381.0
+offset_right = 662.0
+offset_bottom = 783.0
+texture = ExtResource("4_7td6k")
+
+[node name="Cloud5" type="TextureRect" parent="Clouds"]
+offset_left = 368.0
+offset_top = 407.0
+offset_right = 988.0
+offset_bottom = 809.0
+texture = ExtResource("4_7td6k")
+
+[node name="Cloud6" type="TextureRect" parent="Clouds"]
+offset_left = 636.0
+offset_top = 392.0
+offset_right = 1256.0
+offset_bottom = 794.0
+texture = ExtResource("4_7td6k")
+
+[node name="Chips" type="Node" parent="."]
+
+[node name="WhiteChips" type="Node" parent="Chips"]
+
+[node name="WhiteChip" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
 z_index = -1
-position = Vector2(183, 59)
+position = Vector2(183, 19)
+rotation = -2.29416
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip2" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(231, 89)
 rotation = -0.282743
 scale = Vector2(0.343572, 0.375086)
 
-[node name="WhiteChip2" parent="TBChips" instance=ExtResource("4_8qs0v")]
+[node name="WhiteChip3" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
 z_index = -1
-position = Vector2(252, 152)
-rotation = -0.282743
-scale = Vector2(0.343572, 0.375086)
-
-[node name="WhiteChip3" parent="TBChips" instance=ExtResource("4_8qs0v")]
-z_index = -1
-position = Vector2(199, 133)
+position = Vector2(176, 75.0001)
 rotation = 0.777526
 scale = Vector2(0.343572, 0.375086)
 
-[node name="WhiteChip4" parent="TBChips" instance=ExtResource("4_8qs0v")]
+[node name="WhiteChip4" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
 z_index = -1
-position = Vector2(170, 218)
+position = Vector2(301, 182)
 rotation = 1.7606
 scale = Vector2(0.343572, 0.375086)
 
-[node name="WhiteChip5" parent="TBChips" instance=ExtResource("4_8qs0v")]
+[node name="WhiteChip5" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
 z_index = -1
-position = Vector2(196, 91)
-rotation = 1.7606
+position = Vector2(235, 168)
+rotation = 2.79941
 scale = Vector2(0.343572, 0.375086)
 
-[node name="OrangeChip" parent="TBChips" instance=ExtResource("5_4idp4")]
-position = Vector2(259, 93)
-rotation = 2.85364
-scale = Vector2(0.100879, 0.121547)
+[node name="WhiteChip6" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(139, 112)
+rotation = 1.56723
+scale = Vector2(0.375179, 0.394103)
 
-[node name="OrangeChip2" parent="TBChips" instance=ExtResource("5_4idp4")]
-position = Vector2(296, 78)
-rotation = 0.876636
-scale = Vector2(0.0687444, 0.0771177)
+[node name="WhiteChip7" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(176, 183)
+rotation = 1.56723
+scale = Vector2(0.343572, 0.375086)
 
-[node name="OrangeChip3" parent="TBChips" instance=ExtResource("5_4idp4")]
-position = Vector2(328, 71)
-rotation = 0.876636
-scale = Vector2(0.0687444, 0.0771177)
+[node name="WhiteChip8" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(135, 176)
+rotation = 0.371208
+scale = Vector2(0.343572, 0.375086)
 
-[node name="PurpleChip" parent="TBChips" instance=ExtResource("6_06j4d")]
-position = Vector2(281, 82)
-rotation = 0.399893
-scale = Vector2(0.0760379, 0.0839731)
+[node name="WhiteChip9" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(102, 236)
+rotation = -0.586946
+scale = Vector2(0.343572, 0.375086)
 
-[node name="PurpleChip2" parent="TBChips" instance=ExtResource("6_06j4d")]
-position = Vector2(314, 74)
-rotation = 0.386304
-scale = Vector2(0.0683179, 0.0721393)
+[node name="WhiteChip10" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(96, 336)
+rotation = 1.39932
+scale = Vector2(0.343572, 0.375086)
 
-[node name="RedChip" parent="TBChips" instance=ExtResource("7_n4cno")]
-position = Vector2(233, 104)
+[node name="WhiteChip11" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(68, 454)
+rotation = -0.448775
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip12" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(355, 257)
+rotation = -0.266504
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip13" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(418, 349)
+rotation = -0.266504
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip14" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(483, 441)
+rotation = -0.266504
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip15" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(549, 533)
+rotation = -0.266504
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip16" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(208, 229)
+rotation = 0.692981
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip17" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(139, 295)
+rotation = 0.52184
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip18" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(126, 395)
+rotation = 2.28119
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip19" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(119, 454)
+rotation = 3.05392
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip20" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(14, 570)
+rotation = -2.20677
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip21" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(98, 515)
+rotation = 2.54198
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip22" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(176, 491)
+rotation = 1.9663
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip23" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(236, 459)
+rotation = 0.779866
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip24" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(296, 484)
+rotation = 1.75428
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip25" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(340, 451)
+rotation = -1.34435
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip26" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(416, 469)
+rotation = 1.85291
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip27" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(449, 524)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip28" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(501, 522)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip29" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(222, 386)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip30" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(330, 357)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip31" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(234, 287)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip32" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(290, 252)
+rotation = 2.59448
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip33" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(310, 264)
+rotation = -1.94284
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip34" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(188, 330)
+rotation = -2.7099
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip35" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(178, 431)
+rotation = -2.7099
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip36" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(285, 313)
+rotation = -2.7796
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip37" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(374, 320)
+rotation = 0.926478
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip38" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(288, 390)
+rotation = 1.52188
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip39" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(350, 422)
+rotation = 2.32621
+scale = Vector2(0.343572, 0.375086)
+
+[node name="WhiteChip40" parent="Chips/WhiteChips" instance=ExtResource("4_8qs0v")]
+z_index = -1
+position = Vector2(426, 425)
+rotation = 2.76874
+scale = Vector2(0.375607, 0.401486)
+
+[node name="TBChips" type="Node" parent="Chips"]
+
+[node name="OrangeChip" parent="Chips/TBChips" instance=ExtResource("5_4idp4")]
+position = Vector2(345, 52)
+rotation = 0.918845
+scale = Vector2(0.223279, 0.263259)
+
+[node name="PurpleChip" parent="Chips/TBChips" instance=ExtResource("6_06j4d")]
+position = Vector2(301, 67)
+rotation = 2.08758
+scale = Vector2(0.212705, 0.214671)
+
+[node name="BarbChips" type="Node" parent="Chips"]
+
+[node name="PinkChip6" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(353, 168)
+rotation = 2.93771
+scale = Vector2(0.250177, 0.198211)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip7" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(397, 180)
+rotation = -0.198978
+scale = Vector2(0.250177, 0.198211)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip8" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(431, 151)
+rotation = 0.616487
+scale = Vector2(0.250177, 0.198211)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip9" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(404, 120)
+rotation = -0.208645
+scale = Vector2(0.250177, 0.198211)
+texture = ExtResource("11_q1qto")
+
+[node name="WozChips" type="Node" parent="Chips"]
+
+[node name="GreenChip5" parent="Chips/WozChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(69, 157)
+rotation = 2.87191
+scale = Vector2(0.20544, 0.226367)
+
+[node name="LimonaChips" type="Node" parent="Chips"]
+
+[node name="YellowChip" parent="Chips/LimonaChips" instance=ExtResource("12_fb47g")]
+position = Vector2(-22, 469)
+rotation = 2.93131
+scale = Vector2(0.351708, 0.271347)
+
+[node name="YellowChip2" parent="Chips/LimonaChips" instance=ExtResource("12_fb47g")]
+position = Vector2(-5.00001, 491)
+rotation = -1.41028
+scale = Vector2(0.230789, 0.191855)
+
+[node name="RedChips" type="Node" parent="Chips"]
+
+[node name="RedChip" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(236, 94)
+rotation = 0.771985
+scale = Vector2(0.174797, 0.161307)
+
+[node name="RedChip5" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(120, 132)
+rotation = 0.286783
+scale = Vector2(0.174797, 0.161307)
+
+[node name="RedChip4" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(137, 216)
 scale = Vector2(0.158845, 0.146667)
 
-[node name="RedChip4" parent="TBChips" instance=ExtResource("7_n4cno")]
-position = Vector2(218, 183)
-scale = Vector2(0.158845, 0.146667)
+[node name="RedChip2" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(171, 141)
+rotation = -2.59956
+scale = Vector2(0.14362, 0.118824)
 
-[node name="BlueChip" parent="TBChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(193, 125)
-rotation = 0.85525
-scale = Vector2(0.137981, 0.155767)
+[node name="BlueChips" type="Node" parent="Chips"]
 
-[node name="BlueChip2" parent="TBChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(247, 173)
-rotation = 0.85525
-scale = Vector2(0.137981, 0.155767)
+[node name="BlueChip" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(183, 107)
+rotation = -1.64858
+scale = Vector2(0.168623, 0.194696)
 
-[node name="BlueChip4" parent="TBChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(265, 173)
+[node name="BlueChip2" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(244, 173)
+rotation = -1.2298
+scale = Vector2(0.153409, 0.176048)
+
+[node name="BlueChip4" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(217, 158)
 rotation = 0.863755
-scale = Vector2(0.137981, 0.155767)
+scale = Vector2(0.152645, 0.169812)
 
-[node name="RedChip2" parent="TBChips" instance=ExtResource("7_n4cno")]
-position = Vector2(173, 124)
-scale = Vector2(0.0830325, 0.0711111)
-
-[node name="RedChip3" parent="TBChips" instance=ExtResource("7_n4cno")]
-position = Vector2(210, 153)
-rotation = 2.94946
-scale = Vector2(0.0951205, 0.0800499)
-
-[node name="BlueChip3" parent="TBChips" instance=ExtResource("7_n4cno")]
-position = Vector2(153, 134)
-rotation = 2.92654
-scale = Vector2(0.0566282, 0.0531932)
+[node name="BlueChip3" parent="Chips/BlueChips" instance=ExtResource("7_n4cno")]
+position = Vector2(150, 124)
+rotation = 2.89184
+scale = Vector2(0.119946, 0.112827)
 texture = ExtResource("9_2ik8g")
 
-[node name="GreenChip" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(139, 141)
-rotation = 0.208199
-scale = Vector2(0.0959148, 0.0902935)
+[node name="BlueChip5" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(174, 212)
+rotation = 2.86057
+scale = Vector2(0.166309, 0.183944)
 
-[node name="GreenChip3" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(104, 139)
-rotation = 1.33645
-scale = Vector2(0.0626681, 0.0679704)
-
-[node name="GreenChip4" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(87, 129)
-rotation = 1.33645
-scale = Vector2(0.0626681, 0.0679704)
-
-[node name="GreenChip2" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(122, 141)
-rotation = 0.75007
-scale = Vector2(0.0606529, 0.0576253)
-
-[node name="GreenChip5" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(59, 138)
-rotation = 2.89087
-scale = Vector2(0.148786, 0.143251)
-
-[node name="PinkChip" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(299, 160)
-rotation = 0.291978
-scale = Vector2(0.0606529, 0.0576253)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip3" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(311, 164)
-rotation = 0.548664
-scale = Vector2(0.0708387, 0.0735146)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip2" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(330, 165)
-rotation = 2.92314
-scale = Vector2(0.128205, 0.108966)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip4" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(377, 165)
-rotation = 2.92314
-scale = Vector2(0.128205, 0.108966)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip5" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(360, 157)
-rotation = 3.20534
-scale = Vector2(0.128205, 0.108966)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip6" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(326, 157)
-rotation = 2.53314
-scale = Vector2(0.128205, 0.108966)
-texture = ExtResource("11_q1qto")
-
-[node name="PinkChip7" parent="TBChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(342, 151)
-rotation = 3.01061
-scale = Vector2(0.066021, 0.0584651)
-texture = ExtResource("11_q1qto")
+[node name="RedChip" parent="Chips/BlueChips/BlueChip5" instance=ExtResource("8_rwr0i")]
+position = Vector2(-318.988, 58.2083)
+rotation = -0.752192
+scale = Vector2(0.889093, 0.994615)
+skew = -0.0880656
+texture = ExtResource("14_0ngwb")
 
 [node name="TBHouse" type="Node" parent="."]
 
 [node name="UkuleleHouse" type="Sprite2D" parent="TBHouse"]
-position = Vector2(357, 36)
-rotation = 1.55588
+position = Vector2(382, -9)
+rotation = 1.55117
 scale = Vector2(0.582699, 0.467423)
 texture = ExtResource("7_4oxdy")
 
@@ -236,13 +485,13 @@ texture = ExtResource("7_4oxdy")
 
 [node name="PickleHouse" type="Sprite2D" parent="WozTeahouse"]
 z_index = -1
-position = Vector2(59, 90)
+position = Vector2(56, 99)
 scale = Vector2(0.246377, 0.248619)
 texture = ExtResource("13_augcr")
 
 [node name="ShojiDoor" type="Sprite2D" parent="WozTeahouse"]
 z_index = -1
-position = Vector2(60, 104)
+position = Vector2(57, 113)
 scale = Vector2(0.0854575, 0.0828877)
 texture = ExtResource("14_8bkwh")
 script = ExtResource("14_7450t")
@@ -257,11 +506,19 @@ shape = SubResource("RectangleShape2D_8rjpq")
 [node name="BarbGallery" type="Node" parent="."]
 
 [node name="Gallery" type="Sprite2D" parent="BarbGallery"]
-position = Vector2(390, 113)
-scale = Vector2(0.228, 0.176)
+position = Vector2(408, 111)
+rotation = -1.77894
+scale = Vector2(0.137814, 0.190008)
 texture = ExtResource("17_8qu6n")
+script = ExtResource("18_ycis3")
+
+[node name="InteractionArea" parent="BarbGallery" instance=ExtResource("14_lnglo")]
+position = Vector2(379, 118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarbGallery/InteractionArea"]
+shape = SubResource("RectangleShape2D_oiurn")
 
 [node name="Collisions" type="TileMapLayer" parent="."]
 z_index = 1
-tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAQAAAACAAEAABASAAQAAAAAAAAAACATAAQAAAACAAAAAAAUAAQAAAAAAAAAAAAOAAUAAAAAAAEAABANAAYAAAAAAAEAABAMAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAACAAAAAAAHAAgAAAAAAAAAACAGAAgAAAACAAAAABAFAAcAAAACAAEAAAAEAAcAAAAAAAAAACADAAcAAAAAAAAAACACAAcAAAAAAAAAACAKAAgAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAkAAAACAAEAABAOAAoAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAATAAkAAAACAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAkAAEAAAAAAAIAAAAkAAIAAAAAAAIAAAAlAAEAAAAAAAIAAAAlAAIAAAAAAAIAAAAmAAEAAAAAAAIAAAAnAAEAAAAAAAIAAAAoAAEAAAAAAAIAAAApAAEAAAAAAAIAAAAqAAEAAAAAAAIAAAAQAAQAAAAAAAEAABARAAMAAAAAAAEAABASAAIAAAAAAAEAABATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAACAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAEAAAAIAAcAAAAAAAAAAAAHAAcAAAACAAAAAAALAAUAAAACAAEAABAGAAcAAAACAAEAABAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAkAAAACAAEAABASAAkAAAACAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAIAAwAAAAAAAEAABAHAA0AAAAAAAEAABAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAD6/xsAAAAAAAAAAAD7/xsAAAAAAAAAAAD8/xsAAAAAAAAAAAD9/xsAAAAAAAAAAAD+/xsAAAAAAAAAAAD//xsAAAAAAAAAAAAAABsAAAAAAAAAAAABABsAAAAAAAAAAAACABsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_oj3gu")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n0mcm4cpeenu"
-path="res://.godot/imported/barb_gallery_building.png-30a7bc565a20e8370d26b3514589db58.ctex"
+uid="uid://ci7wixlfuroca"
+path="res://.godot/imported/Screenshot_2024-07-03_160116-removebg-preview.png-8b6d07bcc2ec2b8a27d7f5f9178e5a41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/barb_house/barb_gallery_building.png"
-dest_files=["res://.godot/imported/barb_gallery_building.png-30a7bc565a20e8370d26b3514589db58.ctex"]
+source_file="res://platforms/sprites/Screenshot_2024-07-03_160116-removebg-preview.png"
+dest_files=["res://.godot/imported/Screenshot_2024-07-03_160116-removebg-preview.png-8b6d07bcc2ec2b8a27d7f5f9178e5a41.ctex"]
 
 [params]
 
