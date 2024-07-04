@@ -423,7 +423,6 @@ script = ExtResource("1_esbgu")
 
 [node name="Taco" parent="." instance=ExtResource("2_amgsr")]
 position = Vector2(-13, -6)
-collision_layer = 5
 collision_mask = 5
 
 [node name="Floor" type="TileMapLayer" parent="."]

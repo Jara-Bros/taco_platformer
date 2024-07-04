@@ -12,9 +12,10 @@ var player_spawn_location_dict = {
 
 
 func _ready():
-		taco.get_child(3).set_limit(SIDE_BOTTOM, 16)
-		taco.get_child(3).set_limit(SIDE_LEFT, -48)
+		taco.get_child(3).set_limit(SIDE_BOTTOM, 15)
+		taco.get_child(3).set_limit(SIDE_LEFT, -40)
 		taco.get_child(3).set_limit(SIDE_RIGHT, 720)
+		taco.get_child(3).set_limit(SIDE_TOP, -175)
 
 func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
