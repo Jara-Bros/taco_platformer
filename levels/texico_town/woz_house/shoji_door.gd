@@ -5,7 +5,6 @@ extends Sprite2D
 @onready var texico_start: Node2D = $"../.."
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
