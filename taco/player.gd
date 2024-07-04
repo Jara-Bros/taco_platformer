@@ -57,6 +57,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		change_state(player_state.IN_AIR)
 		velocity.y = jump_velocity
+		if velocity.y >= 0:
+			jump_velocity / 2
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():
@@ -135,3 +137,13 @@ func _on_animation_player_animation_finished(anim_name):
 		else:
 			current_state = prev_state
 	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	if body.get_name() == "CorpoCharacter":
+		bounce()
+	
+func bounce():
+	velocity.y = jump_velocity
+	if velocity.y >= 0:
+		jump_velocity / 2
