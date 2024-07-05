@@ -79,7 +79,6 @@ func _on_movement_timeout():
 
 
 func _on_head_body_entered(body):
-	
 	if body.get_name() == "Taco":
 		current_state = state_machine.HIT
 		movement_timer.stop()
@@ -104,3 +103,10 @@ func _on_colliding_timeout():
 func _on_hit_timer_timeout():
 	movement_timer.start()
 	current_state = state_machine.MOVING
+
+
+func _on_body_body_entered(body):
+	if body.get_name() == "Bleu":
+		current_state = state_machine.HIT
+		movement_timer.stop()
+		hit_timer.start()

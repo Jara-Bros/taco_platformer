@@ -102,8 +102,8 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v4aey"]
-radius = 12.0
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6xnpp"]
+points = PackedVector2Array(0, -17, -17, 7, 17, 7)
 
 [node name="Bleu" type="CharacterBody2D" groups=["bleu"]]
 collision_layer = 16
@@ -157,10 +157,11 @@ position = Vector2(1, 1)
 rotation = -1.14417
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_v4aey")
+shape = SubResource("ConvexPolygonShape2D_6xnpp")
 
 [connection signal="path_complete" from="." to="." method="_on_path_complete"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

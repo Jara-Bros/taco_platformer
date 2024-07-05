@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=15 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]

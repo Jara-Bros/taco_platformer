@@ -76,8 +76,8 @@ func _physics_process(delta: float) -> void:
 			#animation_player.play("kick")
 			item.kick()
 			item = null
-	
 	if Input.is_action_just_pressed("bleu"):
+		
 		if item != null:
 			## TODO : ADD THROW ANIMATION
 			#animation_player.play("kick")
