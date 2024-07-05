@@ -50,25 +50,6 @@ func _process(delta):
 		move_and_slide()	
 
 
-func handle_state_movement(state, direction):
-	match state:
-		0:
-			var player_direction = ItemManager.get_player().get_direction()
-			move_and_collide(direction * translation_speed )
-		1:
-			move_and_collide(direction  * translation_speed)
-			pass
-		2:
-			
-			# MOVE RIGHT
-			var new_direction = direction 
-			move_and_collide(new_direction * translation_speed)
-			pass
-		
-		3:
-			# IN AIR
-			pass
-
 func is_currently_on_flor():
 	if $RayCast2D.get_collider() != null:
 		if $RayCast2D.get_collider().get_name() == "floor":
@@ -111,7 +92,7 @@ func _on_area_2d_body_entered(body):
 	print(body.get_name())
 	if body.get_name() == "Taco":
 		if current_state == freedom_state.REMOVED or current_state == freedom_state.KICKED:
-			ItemManager.connect_item_to_player(get_instance_id())
+			ItemManager.connect_item_to_player(get_instance_id(), "soccer_ball")
 			current_state = freedom_state.COLLECTED
 	elif body.get_name() == "wall":
 		if current_state == freedom_state.KICKED:

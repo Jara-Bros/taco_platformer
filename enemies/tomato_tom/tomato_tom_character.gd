@@ -64,4 +64,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hit_box_body_entered(_body: Node2D) -> void:
-	queue_free()
+	if _body.get_name() == "Taco":
+		queue_free()

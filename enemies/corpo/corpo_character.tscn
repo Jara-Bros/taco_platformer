@@ -38,6 +38,22 @@ tracks/0/keys = {
 "values": [4, 3, 4, 5, 4]
 }
 
+[sub_resource type="Animation" id="Animation_nmet2"]
+resource_name = "still"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
 [sub_resource type="Animation" id="Animation_ff6sb"]
 resource_name = "walk"
 length = 0.75
@@ -55,22 +71,6 @@ tracks/0/keys = {
 "values": [1, 2, 1]
 }
 
-[sub_resource type="Animation" id="Animation_nmet2"]
-resource_name = "still"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e4dko"]
 _data = {
 "RESET": SubResource("Animation_xyyy4"),
@@ -80,9 +80,11 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hov56"]
-size = Vector2(20, 12)
+size = Vector2(20, 14)
 
-[node name="CorpoCharacter" type="CharacterBody2D"]
+[node name="CorpoCharacter" type="AnimatableBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_3ovqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -107,14 +109,24 @@ target_position = Vector2(14, 0)
 target_position = Vector2(-14, 0)
 
 [node name="Movement" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="Head" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
-position = Vector2(0, -20)
+position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_hov56")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Colliding" type="Timer" parent="."]
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="flip_action" from="." to="." method="_on_flip_action"]
 [connection signal="timeout" from="Movement" to="." method="_on_movement_timeout"]
 [connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
+[connection signal="timeout" from="Colliding" to="." method="_on_colliding_timeout"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
