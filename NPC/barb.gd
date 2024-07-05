@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 
 
-func _on_barb_talk_body_entered(body: Node2D) -> void:
+func _on_barb_talk_body_entered(_body: Node2D) -> void:
 	taco.input_enabled = false
 	taco.animation_player.play("idle")
 	animation_player.play("idle")
