@@ -1,22 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://buo6w46yqhs5t"]
+[gd_scene load_steps=4 format=3 uid="uid://buo6w46yqhs5t"]
 
 [ext_resource type="Texture2D" uid="uid://btq3xisburuti" path="res://taco/Item/soccer_ball/c52b96dd75f0cbcacb11da2535745c8d-removebg-preview.png" id="1_ggngm"]
 [ext_resource type="Script" path="res://taco/Item/soccer_ball/soccer_ball.gd" id="1_i5kw0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fp6mm"]
-radius = 9.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_sto86"]
 
 [node name="SoccerBall" type="CharacterBody2D" groups=["soccer_ball"]]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 8
 script = ExtResource("1_i5kw0")
-translation_speed = 20
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = -1
-shape = SubResource("CircleShape2D_fp6mm")
+translation_speed = 200
+rotation_speed = 400
+idle_jump_velocity = -25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.125023, 0.875015)
@@ -24,11 +18,17 @@ scale = Vector2(0.0482336, 0.0482338)
 texture = ExtResource("1_ggngm")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 7)
 collision_mask = 3
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_sto86")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

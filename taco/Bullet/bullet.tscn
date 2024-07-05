@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://j016p4xfn0ya"]
+
+[ext_resource type="Script" path="res://taco/Bullet/bullet.gd" id="1_ipeir"]
+[ext_resource type="Texture2D" uid="uid://c6ibcnqiwyswh" path="res://taco/Bullet/Bullet-blue.png" id="2_y0ceb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io0et"]
+radius = 5.0
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_ipeir")
+bullet_speed = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.4375, 0.4375)
+scale = Vector2(0.0145582, 0.0145582)
+texture = ExtResource("2_y0ceb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_io0et")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://taco/tb_car.gd" id="1_dm1af"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1lph"]
+size = Vector2(112, 22)
 
 [node name="TBCar" type="CharacterBody2D"]
 script = ExtResource("1_dm1af")
@@ -13,10 +14,7 @@ position = Vector2(4, 17)
 texture = ExtResource("1_1533s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(-4, -9)
 shape = SubResource("RectangleShape2D_s1lph")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)

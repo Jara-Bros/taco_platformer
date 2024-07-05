@@ -4,113 +4,95 @@ extends CharacterBody2D
 
 enum freedom_state {REMOVED, COLLECTED, KICKED}
 var current_state = freedom_state.REMOVED
+enum vertical_state_machine {GROUND, AIR}
+var current_vertical_state = vertical_state_machine.GROUND
 var moving_direction
 @export var translation_speed : int
+@export var rotation_speed : int
+@export var idle_jump_velocity : int
 var MAX_DISTANCE  = 1000
-# Called when the node enters the scene tree for the first time.
+var player_mapping_vectors = {
+	-1: Vector2(20,-5),
+	1: Vector2(-20,-5)
+}
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if current_state == freedom_state.COLLECTED:
-	#	var player_direction = ItemManager.get_player().get_direction()
-	#	if player_direction > 0:
-		#if abs(global_position.distance_to(ItemManager.get_player().global_position)) > 20:
-			
-		var new_player_position =ItemManager.get_player().global_position
-		var distanceToPlayer = global_position.direction_to(new_player_position)
-		var player_state = ItemManager.get_player().get_state()
-		var collide = move_and_collide(distanceToPlayer * translation_speed)
-		#handle_state_movement(player_state, distanceToPlayer)
-	#	else:
-	#		var new_player_position =ItemManager.get_player().global_position + Vector2(-20,5)
-	#		var distanceToPlayer = global_position.direction_to(new_player_position)
-	#		var player_state = ItemManager.get_player().get_state()
-	#		handle_state_movement(player_state, distanceToPlayer)
+
+		var player_direction = ItemManager.get_player().get_direction()
+		update_ball_speed()	
+		rotate_ball(delta)
+		var ideal_ball_position = ItemManager.get_player().global_position-player_mapping_vectors[player_direction]
+		if abs(global_position.distance_to(ideal_ball_position)) > 7:
+			var distanceToPlayer = global_position.direction_to(ideal_ball_position)
+			var player_state = ItemManager.get_player().get_state()
+			var collide = move_and_collide(distanceToPlayer * delta * translation_speed)
+	
 	elif current_state == freedom_state.KICKED:
-		#print(moving_direction)
+		velocity.y = 0
 		if moving_direction > 0:
 			velocity.x = 500
 			move_and_slide()
 		else:
 			velocity.x = -500
 			move_and_slide()
-	#var direction_to_player = global_position.direction_to(ItemManager.get_player().global_position)
-	#$RayCast2D.target_position = ItemManager.get_player().global_position
-	#await get_tree().create_timer(0.2 * delta).timeout
-	#$RayCast2D.force_raycast_update()
-	#var collision_object = $RayCast2D.get_collider()
-	#if collision_object == ItemManager.get_player():
-		#pass
-	#follow_player(direction_to_player, ItemManager.get_player().global_position)
-	
-	
-
-#func _on_body_entered(body):
-	#print_debug("made it")
-	##if body.get_name() == "Taco":
-		##if current_state == freedom_state.REMOVED:
-			##ItemManager.connect_item_to_player(get_instance_id())
-			##await get_tree().create_timer(1).timeout
-			##current_state = freedom_state.COLLECTED
 			
-#func _integrate_forces(state):
-	#if current_state == freedom_state.COLLECTED:
-		#if  global_position.distance_to(ItemManager.get_player().global_position) > 20:
-			#var direction_to_player = global_position.direction_to(ItemManager.get_player().global_position)
-			#apply_central_impulse(direction_to_player * 15)
-	#
+	elif current_state == freedom_state.REMOVED:
+		if not is_currently_on_flor():
+			velocity +=  (get_gravity()/30) * delta
 #
-#func follow_player(direction, player_position):
-	#if  current_state == freedom_state.COLLECTED:
-		#gravity_scale = 0
-		#global_position = $RayCast2D.target_position
-		##apply_impulse(direction)
-	
-	#if player_direction > 0:
-			## player facing right
-		#var new_location = player_vector 
-		#
-	#else:
-		#var new_location = player_vector
-		#translate(new_location * 3 )
+		## Handles and randomizes jump.
+		if is_currently_on_flor():
+			velocity.y = idle_jump_velocity 
+		move_and_slide()	
 
-func handle_state_movement(state, direction):
-	match state:
-		0:
-			var player_direction = ItemManager.get_player().get_direction()
-			move_and_collide(direction * translation_speed )
-		1:
-			move_and_collide(direction  * translation_speed)
-			pass
-		2:
-			
-			# MOVE RIGHT
-			var new_direction = direction 
-			move_and_collide(new_direction * translation_speed)
-			pass
-		
-		3:
-			# IN AIR
-			pass
+
+func is_currently_on_flor():
+	if $RayCast2D.get_collider() != null:
+		if $RayCast2D.get_collider().get_name() == "floor":
+			return true
+	return false
+
 
 func kick():
 	current_state = freedom_state.KICKED
-	$CollisionShape2D.call_deferred("set_disabled", true)
-	#$CollisionShape2D.call_deferred("set_disabled", false)
 	moving_direction = ItemManager.get_player().get_direction()
-	#move_and_collide(direction)
 
+func update_ball_speed():
+	var player_position = ItemManager.get_player().global_position
+	var player_direction = ItemManager.get_player().get_direction()
+	if player_direction > 0:
+		## we are facing right
+		if position.x > player_position.x + 10:
+			translation_speed = 200
+		else:
+			translation_speed = 500
+	else:
+		## we are facing left
+		if position.x < player_position.x - 10:
+			translation_speed = 200
+		else:
+			translation_speed = 500
 			
+func rotate_ball(delta):
+	var player_velocity = ItemManager.get_player().velocity
+	if player_velocity.x != 0:
+		if player_velocity.x < 0:
+		# rotate left
+			rotation_degrees += -1 * rotation_speed * delta
+		else:
+		# rotate right
+			rotation_degrees += 1 * rotation_speed * delta
 
 
 func _on_area_2d_body_entered(body):
 	print(body.get_name())
 	if body.get_name() == "Taco":
-		$CollisionShape2D.call_deferred("set_disabled", false)
 		if current_state == freedom_state.REMOVED or current_state == freedom_state.KICKED:
-			ItemManager.connect_item_to_player(get_instance_id())
+			ItemManager.connect_item_to_player(get_instance_id(), "soccer_ball")
 			current_state = freedom_state.COLLECTED
 	elif body.get_name() == "wall":
 		if current_state == freedom_state.KICKED:
@@ -121,3 +103,8 @@ func _on_area_2d_body_entered(body):
 				enemey.queue_free()
 				queue_free()
 	
+
+
+func _on_visible_on_screen_enabler_2d_screen_exited():
+	current_state = freedom_state.REMOVED
+	velocity=Vector2(0,0)

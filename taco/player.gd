@@ -25,6 +25,9 @@ var item = null
 var direction
 var player_facing
 
+func _ready():
+	player_facing = 1
+	
 	
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
@@ -57,9 +60,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		change_state(player_state.IN_AIR)
 		velocity.y = jump_velocity
+		if velocity.y >= 0:
+			jump_velocity / 2
 
-	if Input.is_action_pressed("ui_up"):
-		return
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor_only():
+			velocity.y = jump_velocity
 
 	# Handle action
 	if Input.is_action_just_pressed("item"):
@@ -71,6 +77,19 @@ func _physics_process(delta: float) -> void:
 			item.kick()
 			item = null
 	
+	if Input.is_action_just_pressed("bleu"):
+		if item != null:
+			## TODO : ADD THROW ANIMATION
+			#animation_player.play("kick")
+			item.throw()
+			#item = null
+	if Input.is_action_just_pressed("ground_pound"):
+		# stick in ground
+		if item != null:
+			## TODO : ADD THROW ANIMATION
+			#animation_player.play("kick")
+			item.stick()
+			#item = null
 	# Flip sprite
 	if direction > 0:
 		player_facing = 1
@@ -134,3 +153,13 @@ func _on_animation_player_animation_finished(anim_name):
 		else:
 			current_state = prev_state
 	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
+		bounce()
+	
+func bounce():
+	velocity.y = jump_velocity
+	if velocity.y >= 0:
+		jump_velocity / 2
