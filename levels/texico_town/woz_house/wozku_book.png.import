@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdu0yfq4i17e"
-path="res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"
+uid="uid://dfacw550fpvko"
+path="res://.godot/imported/wozku_book.png-1a4036f321c5b335e2e45ca88202babe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taco/sprites/taco_animation_sheet.png"
-dest_files=["res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"]
+source_file="res://levels/texico_town/woz_house/wozku_book.png"
+dest_files=["res://.godot/imported/wozku_book.png-1a4036f321c5b335e2e45ca88202babe.ctex"]
 
 [params]
 

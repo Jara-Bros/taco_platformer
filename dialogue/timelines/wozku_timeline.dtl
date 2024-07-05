@@ -1,0 +1,27 @@
+[style name="woz_style_vn"]
+Daily Picklings\:\
+A Collection of Wozku
+Read one?
+- Yes
+	All day spent climbing \
+a mountain.
+	What did I find at the top?
+	A pickle.
+	Read another?
+	- Yes
+		Stargazing on a\
+cloudy night.
+		Seeing me disappointed,
+		the fireflies twinkle!
+		Read another?
+		- Yes
+			Went to smell new flowers
+			But bees were already there.
+			I wait my turn.
+			[end_timeline]
+		- No
+			[end_timeline]
+	- No
+		[end_timeline]
+- No
+	[end_timeline]

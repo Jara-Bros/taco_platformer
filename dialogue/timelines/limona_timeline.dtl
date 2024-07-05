@@ -4,6 +4,4 @@ limona (limona_idle): . . .
 limona (limona_talk): Hey.
 [wait time="0.8"]
 limona (limona_question): You tryna boogie?
-- Yes
-- No
-- I...I don't really know...
+[end_timeline]

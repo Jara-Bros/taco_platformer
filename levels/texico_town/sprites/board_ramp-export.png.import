@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdu0yfq4i17e"
-path="res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"
+uid="uid://b3x58i4mudm6j"
+path="res://.godot/imported/board_ramp-export.png-6eb4263ffb4996fc7b150271afc4f6e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taco/sprites/taco_animation_sheet.png"
-dest_files=["res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"]
+source_file="res://levels/texico_town/sprites/board_ramp-export.png"
+dest_files=["res://.godot/imported/board_ramp-export.png-6eb4263ffb4996fc7b150271afc4f6e1.ctex"]
 
 [params]
 

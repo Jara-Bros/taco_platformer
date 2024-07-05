@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_amgsr"]
 [ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/texico_town/kitchen_tileset.png" id="3_gbmgk"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="4_cqi45"]
+[ext_resource type="Script" path="res://NPC/barb.gd" id="5_rfdt5"]
 [ext_resource type="Texture2D" uid="uid://c12qt0c32eimy" path="res://NPC/sprites/barb/barb_idle_happy_sheet.png" id="5_snnxt"]
-[ext_resource type="PackedScene" uid="uid://wqu01jgru5l3" path="res://interactives/scenes/interactive_area.tscn" id="6_64ofh"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="7_dimcd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_552cj"]
@@ -387,6 +387,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_gd6cl"]
 resource_name = "idle_up"
 length = 0.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -412,8 +413,7 @@ _data = {
 radius = 4.0
 height = 36.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oecxw"]
-size = Vector2(12.5, 36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxvht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypiwq"]
 size = Vector2(20, 144)
@@ -422,7 +422,7 @@ size = Vector2(20, 144)
 script = ExtResource("1_esbgu")
 
 [node name="Taco" parent="." instance=ExtResource("2_amgsr")]
-position = Vector2(-13, -6)
+position = Vector2(4, -7)
 collision_mask = 5
 
 [node name="Floor" type="TileMapLayer" parent="."]
@@ -444,6 +444,7 @@ tile_set = SubResource("TileSet_atpon")
 
 [node name="Barb" parent="." instance=ExtResource("4_cqi45")]
 position = Vector2(583, -15)
+script = ExtResource("5_rfdt5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Barb"]
 texture = ExtResource("5_snnxt")
@@ -459,13 +460,11 @@ autoplay = "idle_up"
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_cund5")
 
-[node name="BarbTalkTrigger" parent="." instance=ExtResource("6_64ofh")]
-position = Vector2(570, -14)
-collision_layer = 4
-collision_mask = 4
+[node name="BarbTalk" type="Area2D" parent="Barb"]
+position = Vector2(-18, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarbTalkTrigger"]
-shape = SubResource("RectangleShape2D_oecxw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barb/BarbTalk"]
+shape = SubResource("CircleShape2D_vxvht")
 
 [node name="GalleryTwo" parent="." instance=ExtResource("7_dimcd")]
 position = Vector2(-57, -66)
@@ -473,5 +472,5 @@ position = Vector2(-57, -66)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryTwo"]
 shape = SubResource("RectangleShape2D_ypiwq")
 
-[connection signal="body_entered" from="BarbTalkTrigger" to="." method="_on_interactive_area_body_entered"]
+[connection signal="body_entered" from="Barb/BarbTalk" to="Barb" method="_on_barb_talk_body_entered"]
 [connection signal="body_entered" from="GalleryTwo" to="." method="_on_gallery_two_body_entered"]

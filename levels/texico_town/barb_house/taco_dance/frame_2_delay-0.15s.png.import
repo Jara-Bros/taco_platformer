@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdu0yfq4i17e"
-path="res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"
+uid="uid://bqhisjn6rig5m"
+path="res://.godot/imported/frame_2_delay-0.15s.png-bfb4dbff206b037d71459349cc097af7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taco/sprites/taco_animation_sheet.png"
-dest_files=["res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"]
+source_file="res://levels/texico_town/barb_house/taco_dance/frame_2_delay-0.15s.png"
+dest_files=["res://.godot/imported/frame_2_delay-0.15s.png-bfb4dbff206b037d71459349cc097af7.ctex"]
 
 [params]
 

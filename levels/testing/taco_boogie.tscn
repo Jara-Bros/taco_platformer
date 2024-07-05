@@ -1,66 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://78x5qmlegq2w"]
+[gd_scene load_steps=5 format=3 uid="uid://78x5qmlegq2w"]
 
 [ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_um1j8"]
 
-[sub_resource type="GDScript" id="GDScript_j1o1u"]
-script/source = "extends CharacterBody2D
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bndao"]
+friction = 0.5
 
+[sub_resource type="GDScript" id="GDScript_j1o1u"]
+script/source = "extends RigidBody2D
+
+@onready var raycast_down: RayCast2D = $RayCastDown
+@onready var raycast_left: RayCast2D = $RayCastLeft
+@onready var raycast_right: RayCast2D = $RayCastRight
+@onready var raycast_up: RayCast2D = $RayCastUp
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+@onready var taco_boogie: RigidBody2D = $\".\"
 
-@export var speed : int
-@export var jump_velocity : int
 
-func _ready() -> void:
-	velocity.x = speed
+
+func _ready():
+	sprite_2d.flip_h = true
+	sprite_2d.rotation_degrees = 0
+
+# Set to 0 to disable it temporarily
+var jump = Vector2(0, 0)
+
 
 func _physics_process(delta: float) -> void:
-	
-	print_debug(get_floor_angle())
-	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += ((get_gravity() * 0.75) * delta)
-	
-	# to accelerate/slow down Taco on decline
-	# TODO make the speed slow down incrementally on an incline
-	velocity.x = speed * (get_floor_angle() + 0.5)
-	
-	
-	# Handle jump.
-
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
-		velocity.y = jump_velocity
-
-	move_and_slide()
-	
-	# To match Taco's sprite with incline of slope
-	# TODO: get sprite to rotate correctly when sliding up slopes
-	
-	if not is_on_floor():
-		sprite_2d.rotation = 0
-	else:
-		sprite_2d.rotation = get_floor_angle()
-	
-	
-	
+	taco_boogie.sprite_2d.rotation_degrees = 0
+# Handles jump only when player is on ground
+# func _integrate_forces(state):
+	# if Input.is_action_just_pressed(\"jump\") && (
+		#raycast_down.is_colliding() || 
+		#raycast_left.is_colliding() ||
+		#raycast_right.is_colliding() ||
+		#raycast_up.is_colliding()):
+		#state.apply_central_impulse(jump)
+	#else:
+		#state.apply_central_impulse(Vector2())
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv21g"]
-size = Vector2(19.75, 13)
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrlo6"]
+radius = 11.0
 
-[node name="TacoBoogie" type="CharacterBody2D"]
+[node name="TacoBoogie" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_bndao")
 script = SubResource("GDScript_j1o1u")
-speed = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
 texture = ExtResource("1_um1j8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.875, -9.5)
-shape = SubResource("RectangleShape2D_fv21g")
+position = Vector2(2, -11)
+shape = SubResource("CircleShape2D_lrlo6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2, -9)
+position = Vector2(2, -11)
 zoom = Vector2(3, 3)

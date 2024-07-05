@@ -1,10 +1,6 @@
 extends Node2D
 
-
-
-
 @onready var taco: Player = $Taco
-
 
 var player_spawn_location_dict = {
 	woz_front_door = Vector2(-90, 99),

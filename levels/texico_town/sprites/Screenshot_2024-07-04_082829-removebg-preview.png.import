@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdu0yfq4i17e"
-path="res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"
+uid="uid://b02c5abj85sol"
+path="res://.godot/imported/Screenshot_2024-07-04_082829-removebg-preview.png-3888068a1570137081b0f76b0c516be9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taco/sprites/taco_animation_sheet.png"
-dest_files=["res://.godot/imported/taco_animation_sheet.png-be80a1e10415365065df559422d37e33.ctex"]
+source_file="res://levels/texico_town/sprites/Screenshot_2024-07-04_082829-removebg-preview.png"
+dest_files=["res://.godot/imported/Screenshot_2024-07-04_082829-removebg-preview.png-3888068a1570137081b0f76b0c516be9.ctex"]
 
 [params]
 
