@@ -3,6 +3,10 @@ extends Node2D
 @onready var taco: Player = $Taco
 
 @onready var barb_office = preload("res://levels/texico_town/barb_house/barb_office.tscn").instantiate()
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var taco_dance: AnimatedSprite2D = $TacoDance
+@onready var timer: Timer = $Timer
+@onready var art_trigger: Area2D = $ArtTrigger
 
 
 var player_spawn_location_dict = {
@@ -12,6 +16,7 @@ var player_spawn_location_dict = {
 
 
 func _ready():
+
 		taco.get_child(3).set_limit(SIDE_BOTTOM, 16)
 		taco.get_child(3).set_limit(SIDE_LEFT, -125)
 		taco.get_child(3).set_limit(SIDE_RIGHT, 775)
@@ -25,10 +30,6 @@ func _on_exit_door_body_entered(_body: Node2D) -> void:
 	queue_free()
 
 
-func _on_gallery_office_body_entered(_body: Node2D) -> void:
+func _on_office_door_body_entered(_body: Node2D) -> void:
 	SceneManager.swap_scenes(barb_office)
 	queue_free()
-
-
-func _on_office_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

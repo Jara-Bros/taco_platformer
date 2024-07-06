@@ -4,6 +4,7 @@ var egg_transform_character = preload("res://levels/testing/transformations/egg/
 var egg_transform_character_2 = preload("res://levels/testing/transformations/egg/egg_transform_character_2.tscn").instantiate()
 var bowling_transform_character = preload("res://levels/testing/transformations/bowling_ball/bowling_ball_transform.tscn").instantiate()
 var new_taco = preload("res://taco/taco.tscn").instantiate()
+var bleu = preload("res://tBleu/bleu.tscn").instantiate()
 
 
 @onready var canon_box: Area2D = $CanonBox
@@ -144,3 +145,10 @@ func _on_leftover_talk_trigger_body_entered(_body: Node2D) -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_enter_bleu_area_body_entered(body: Node2D) -> void:
+	bleu.position = get_spawn_location("bowling_spawn")
+	remove_child(taco)
+	call_deferred("add_child", bowling_transform_character)
+	bowling_box.queue_free()

@@ -9,7 +9,10 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
+	var boogie_test = load("res://levels/testing/boogie_test.tscn").instantiate()
 	taco.input_enabled = false
 	Dialogic.start("limona_timeline")
 	await Dialogic.timeline_ended
+	SceneManager.swap_scenes(boogie_test)
 	taco.input_enabled = true
+	dios_mio.queue_free()

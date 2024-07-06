@@ -19,7 +19,7 @@ func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
 
 
-func _on_gallery_one_body_entered(_body: Node2D) -> void:
+func _on_exit_door_body_entered(_body: Node2D) -> void:
 	var barb_gallery_one = load("res://levels/texico_town/barb_house/barb_gallery_one.tscn").instantiate()
 	SceneManager.swap_scenes(barb_gallery_one)
 	queue_free()

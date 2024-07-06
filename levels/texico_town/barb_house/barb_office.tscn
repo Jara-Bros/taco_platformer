@@ -423,7 +423,6 @@ script = ExtResource("1_esbgu")
 
 [node name="Taco" parent="." instance=ExtResource("2_amgsr")]
 position = Vector2(4, -7)
-collision_mask = 5
 
 [node name="Floor" type="TileMapLayer" parent="."]
 z_index = -1
@@ -462,15 +461,20 @@ shape = SubResource("CapsuleShape2D_cund5")
 
 [node name="BarbTalk" type="Area2D" parent="Barb"]
 position = Vector2(-18, 1)
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barb/BarbTalk"]
 shape = SubResource("CircleShape2D_vxvht")
 
-[node name="GalleryTwo" parent="." instance=ExtResource("7_dimcd")]
+[node name="ExitDoor" parent="." instance=ExtResource("7_dimcd")]
 position = Vector2(-57, -66)
+collision_layer = 0
+collision_mask = 2
+script = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryTwo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
 shape = SubResource("RectangleShape2D_ypiwq")
 
 [connection signal="body_entered" from="Barb/BarbTalk" to="Barb" method="_on_barb_talk_body_entered"]
-[connection signal="body_entered" from="GalleryTwo" to="." method="_on_gallery_two_body_entered"]
+[connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]

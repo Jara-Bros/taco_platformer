@@ -3,47 +3,28 @@
 [ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_um1j8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bndao"]
-friction = 0.5
+friction = 0.0
 
 [sub_resource type="GDScript" id="GDScript_j1o1u"]
 script/source = "extends RigidBody2D
 
-@onready var raycast_down: RayCast2D = $RayCastDown
-@onready var raycast_left: RayCast2D = $RayCastLeft
-@onready var raycast_right: RayCast2D = $RayCastRight
-@onready var raycast_up: RayCast2D = $RayCastUp
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var taco_boogie: RigidBody2D = $\".\"
+@onready var ray_cast_down: RayCast2D = $RayCastDown
 
 
 
 func _ready():
 	sprite_2d.flip_h = true
-	sprite_2d.rotation_degrees = 0
-
-# Set to 0 to disable it temporarily
-var jump = Vector2(0, 0)
-
-
-func _physics_process(delta: float) -> void:
-	taco_boogie.sprite_2d.rotation_degrees = 0
-# Handles jump only when player is on ground
-# func _integrate_forces(state):
-	# if Input.is_action_just_pressed(\"jump\") && (
-		#raycast_down.is_colliding() || 
-		#raycast_left.is_colliding() ||
-		#raycast_right.is_colliding() ||
-		#raycast_up.is_colliding()):
-		#state.apply_central_impulse(jump)
-	#else:
-		#state.apply_central_impulse(Vector2())
+	taco_boogie.get_child(2).set_limit(SIDE_LEFT, -2000)
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_52pn0"]
-size = Vector2(33, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw0u3"]
+size = Vector2(23.5, 7)
 
 [node name="TacoBoogie" type="RigidBody2D"]
+mass = 0.25
 physics_material_override = SubResource("PhysicsMaterial_bndao")
 script = SubResource("GDScript_j1o1u")
 
@@ -52,9 +33,12 @@ position = Vector2(0, -12)
 texture = ExtResource("1_um1j8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -11)
-shape = SubResource("RectangleShape2D_52pn0")
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_tw0u3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, -11)
 zoom = Vector2(3, 3)
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
