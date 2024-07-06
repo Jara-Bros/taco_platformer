@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			var collide = move_and_collide(distanceToPlayer * delta * translation_speed)
 		
 		
-		update_path_positions(global_position)
+		update_path_positions(position)
 		#position = global_position
 		#left_path_parent.position = global_position
 		#print(left_path.position, right_path.position, position)
@@ -111,25 +111,27 @@ func update_bleu_speed():
 		if position.x > player_position.x + 10:
 			translation_speed = 200
 		else:
-			translation_speed = 500
+			translation_speed = 600
 	else:
 		## we are facing left
 		if position.x < player_position.x - 10:
 			translation_speed = 200
 		else:
-			translation_speed = 500
+			translation_speed = 600
 			
 func throw():
-	if current_state == bleu_state.STUCK:
-		current_state = bleu_state.FOLLOWING
-		rotation = 0
+	if current_state == bleu_state.FLYING or current_state == bleu_state.STUCK or current_state == bleu_state.PATH_TRACKING:
+		reset_bleu()
 	else:
 		type_of_path = "throw"
 		current_state = bleu_state.PATH_TRACKING
 	
 func stick():
-	type_of_path = "stick"
-	current_state = bleu_state.PATH_TRACKING
+	if current_state == bleu_state.STUCK:
+		reset_bleu()
+	else:
+		type_of_path = "stick"
+		current_state = bleu_state.PATH_TRACKING
 
 func update_path_positions(pos):
 	left_path_parent.curve.set_point_position(0,global_position)
@@ -184,3 +186,13 @@ func _on_area_2d_body_entered(body):
 				for board in get_tree().get_nodes_in_group("cracked_board"):
 					if board.get_instance_id() == stuck_platform_instance_id:
 						board.queue_free()
+	elif body.get_name() == "CorpoCharacter":
+		if current_state == bleu_state.FLYING:	
+			current_state = bleu_state.FOLLOWING
+			rotation = 0
+
+func reset_bleu():
+	set_collision_mask_value(2,false)
+	ItemManager.get_player().set_collision_mask_value(5,false)
+	rotation = 0
+	current_state = bleu_state.FOLLOWING

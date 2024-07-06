@@ -17,6 +17,7 @@ script/source = "extends RigidBody2D
 
 func _ready():
 	sprite_2d.flip_h = true
+	taco_boogie.get_child(2).set_limit(SIDE_LEFT, -2000)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw0u3"]

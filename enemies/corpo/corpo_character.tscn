@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw2fe1baj0dnu"]
+[gd_scene load_steps=11 format=3 uid="uid://dw2fe1baj0dnu"]
 
 [ext_resource type="Script" path="res://enemies/corpo/corpo_character.gd" id="1_3ovqs"]
 [ext_resource type="Texture2D" uid="uid://bx8exrmbqq4t0" path="res://corpo/corpo_idle_walk_stun_sheet.png" id="1_nxc80"]
@@ -82,6 +82,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hov56"]
 size = Vector2(20, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nogkq"]
+size = Vector2(28, 54)
+
 [node name="CorpoCharacter" type="AnimatableBody2D"]
 collision_layer = 4
 collision_mask = 3
@@ -125,8 +128,16 @@ shape = SubResource("RectangleShape2D_hov56")
 [node name="HitTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Body" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_nogkq")
+
 [connection signal="flip_action" from="." to="." method="_on_flip_action"]
 [connection signal="timeout" from="Movement" to="." method="_on_movement_timeout"]
 [connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
 [connection signal="timeout" from="Colliding" to="." method="_on_colliding_timeout"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
+[connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
