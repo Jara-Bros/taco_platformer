@@ -166,6 +166,7 @@ func _on_path_complete(direc):
 		ItemManager.get_player().input_enabled = true
 		current_state = bleu_state.STUCK
 		set_collision_mask_value(2,true)
+		ItemManager.get_player().set_collision_mask_value(5,true)
 
 
 func _on_area_2d_body_entered(body):
