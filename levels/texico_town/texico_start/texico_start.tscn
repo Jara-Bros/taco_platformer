@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=32 format=4 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/texico_start/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -22,12 +22,19 @@
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
 [ext_resource type="Texture2D" uid="uid://bm5ho6i3468cc" path="res://levels/texico_town/barb_house/Screenshot_2024-07-03_155645-removebg-preview.png" id="17_8qu6n"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/gallery.gd" id="18_ycis3"]
+[ext_resource type="Texture2D" uid="uid://b02c5abj85sol" path="res://levels/texico_town/sprites/Screenshot_2024-07-04_082829-removebg-preview.png" id="22_qmq4k"]
+[ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
+[ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
+[ext_resource type="Script" path="res://NPC/limona.gd" id="25_lycvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiurn"]
 size = Vector2(18, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2e0x"]
+size = Vector2(32, 30)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twkdy"]
 texture = ExtResource("4_wk666")
@@ -56,20 +63,21 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_twkdy")
 
-[node name="TexicoStart" type="Node2D"]
+[node name="DiosMio" type="Node2D" groups=["Level"]]
 script = ExtResource("1_86lqk")
 
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
 z_index = 1
-position = Vector2(242, 56)
+position = Vector2(217, 65)
 collision_mask = 6
+speed = 150
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
 offset_left = -503.0
-offset_top = -71.0
+offset_top = -218.0
 offset_right = 989.0
-offset_bottom = 622.0
+offset_bottom = 769.0
 texture = ExtResource("3_ptwvw")
 
 [node name="Clouds" type="Node" parent="."]
@@ -433,9 +441,18 @@ scale = Vector2(0.174797, 0.161307)
 position = Vector2(137, 216)
 scale = Vector2(0.158845, 0.146667)
 
+[node name="RedChip6" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(74, 247)
+scale = Vector2(0.158845, 0.146667)
+
 [node name="RedChip2" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
 position = Vector2(171, 141)
 rotation = -2.59956
+scale = Vector2(0.14362, 0.118824)
+
+[node name="RedChip3" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
+position = Vector2(295, 160)
+rotation = 0.324524
 scale = Vector2(0.14362, 0.118824)
 
 [node name="BlueChips" type="Node" parent="Chips"]
@@ -466,11 +483,16 @@ position = Vector2(174, 212)
 rotation = 2.86057
 scale = Vector2(0.166309, 0.183944)
 
-[node name="RedChip" parent="Chips/BlueChips/BlueChip5" instance=ExtResource("8_rwr0i")]
-position = Vector2(-318.988, 58.2083)
-rotation = -0.752192
-scale = Vector2(0.889093, 0.994615)
-skew = -0.0880656
+[node name="BlueChip6" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(100, 237)
+rotation = 2.85004
+scale = Vector2(0.100102, 0.112135)
+
+[node name="RedChip" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
+position = Vector2(222, 187)
+rotation = 2.05801
+scale = Vector2(0.155381, 0.173442)
+skew = 0.01258
 texture = ExtResource("14_0ngwb")
 
 [node name="TBHouse" type="Node" parent="."]
@@ -497,7 +519,7 @@ texture = ExtResource("14_8bkwh")
 script = ExtResource("14_7450t")
 
 [node name="InteractionArea" parent="WozTeahouse/ShojiDoor" instance=ExtResource("14_lnglo")]
-position = Vector2(0, -0.000108719)
+position = Vector2(-23.4034, -1.66741e-05)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WozTeahouse/ShojiDoor/InteractionArea"]
 position = Vector2(0, 3.14713e-05)
@@ -518,7 +540,31 @@ position = Vector2(379, 118)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarbGallery/InteractionArea"]
 shape = SubResource("RectangleShape2D_oiurn")
 
-[node name="Collisions" type="TileMapLayer" parent="."]
+[node name="Boogie" type="Node" parent="."]
+
+[node name="BoogieSign" type="Sprite2D" parent="Boogie"]
+position = Vector2(101, 189)
+scale = Vector2(0.133739, 0.121581)
+texture = ExtResource("22_qmq4k")
+
+[node name="BoogieRamp" type="Sprite2D" parent="Boogie"]
 z_index = 1
-tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAkAAEAAAAAAAIAAAAkAAIAAAAAAAIAAAAlAAEAAAAAAAIAAAAlAAIAAAAAAAIAAAAmAAEAAAAAAAIAAAAnAAEAAAAAAAIAAAAoAAEAAAAAAAIAAAApAAEAAAAAAAIAAAAqAAEAAAAAAAIAAAAQAAQAAAAAAAEAABARAAMAAAAAAAEAABASAAIAAAAAAAEAABATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAACAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAEAAAAIAAcAAAAAAAAAAAAHAAcAAAACAAAAAAALAAUAAAACAAEAABAGAAcAAAACAAEAABAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAkAAAACAAEAABASAAkAAAACAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAIAAwAAAAAAAEAABAHAA0AAAAAAAEAABAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAD6/xsAAAAAAAAAAAD7/xsAAAAAAAAAAAD8/xsAAAAAAAAAAAD9/xsAAAAAAAAAAAD+/xsAAAAAAAAAAAD//xsAAAAAAAAAAAAAABsAAAAAAAAAAAABABsAAAAAAAAAAAACABsAAAAAAAAAAAA=")
+position = Vector2(-10, 404)
+texture = ExtResource("23_dj0b6")
+
+[node name="Limona" type="Sprite2D" parent="Boogie"]
+position = Vector2(-72, 405)
+texture = ExtResource("24_26xmj")
+script = ExtResource("25_lycvo")
+
+[node name="InteractionArea" parent="Boogie/Limona" instance=ExtResource("14_lnglo")]
+position = Vector2(30, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boogie/Limona/InteractionArea"]
+shape = SubResource("RectangleShape2D_j2e0x")
+
+[node name="Collisions" type="TileMapLayer" parent="."]
+visible = false
+z_index = 1
+tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAQAAQAAAAAAAEAABARAAMAAAAAAAEAABASAAIAAAAAAAEAABATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAACAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAEAAAAIAAcAAAAAAAAAAAAHAAcAAAACAAAAAAALAAUAAAACAAEAABAGAAcAAAACAAEAABAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAkAAAACAAEAABASAAkAAAACAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAIAAwAAAAAAAEAABAHAA0AAAAAAAEAABAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAD6/xsAAAAAAAAAAAD7/xsAAAAAAAAAAAD8/xsAAAAAAAAAAAD9/xsAAAAAAAAAAAD+/xsAAAAAAAAAAAD//xsAAAAAAAAAAAAAABsAAAAAAAAAAAABABsAAAAAAAAAAAACABsAAAAAAAAAAAAXAAEAAAAAAAIAAAAXAAAAAAAAAAIAAAAXAP//AAAAAAIAAAAXAP7/AAAAAAIAAAAXAP3/AAAAAAIAAAAXAPz/AAAAAAIAAAAXAPv/AAAAAAIAAAAXAPr/AAAAAAIAAAAXAPn/AAAAAAIAAAABAAgAAAAAAAIAAAABAAcAAAAAAAIAAAABAAYAAAAAAAIAAAABAAUAAAAAAAIAAAABAAQAAAAAAAIAAAABAAMAAAAAAAIAAAABAAIAAAAAAAIAAAABAP7/AAAAAAIAAAABAP//AAAAAAIAAAABAAAAAAAAAAIAAAABAAEAAAAAAAIAAAAYAAkAAAAAAAIAAAAZAAgAAAAAAAIAAAAZAAcAAAAAAAIAAAAZAAYAAAAAAAIAAAAZAAUAAAAAAAIAAAAZAAQAAAAAAAIAAAAZAAMAAAAAAAIAAAAZAAIAAAAAAAIAAAAZAAEAAAAAAAIAAAD5/xsAAAAAAAIAAAD5/xoAAAAAAAIAAAD5/xkAAAAAAAIAAAD5/xgAAAAAAAIAAAD5/xcAAAAAAAIAAAD5/xYAAAAAAAIAAAD5/xUAAAAAAAIAAAD5/xIAAAAAAAIAAAD5/xMAAAAAAAIAAAD5/xQAAAAAAAIAAAAEAA4AAAAAAAEAABADAA8AAAAAAAEAABADABsAAAAAAAIAAAADABoAAAAAAAIAAAADABkAAAAAAAIAAAADABgAAAAAAAIAAAADABcAAAAAAAIAAAADABYAAAAAAAIAAAADABUAAAAAAAIAAAADABQAAAAAAAIAAAADABMAAAAAAAIAAAADABIAAAAAAAIAAAADABEAAAAAAAIAAAADABAAAAAAAAIAAAD5/xAAAAAAAAIAAAD5/xEAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_oj3gu")

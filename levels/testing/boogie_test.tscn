@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://2fqman1hrmkq"]
+[gd_scene load_steps=10 format=4 uid="uid://2fqman1hrmkq"]
 
+[ext_resource type="Script" path="res://levels/testing/boogie_test.gd" id="1_143n2"]
 [ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/testing/taco_boogie.tscn" id="1_l6ymw"]
+[ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="2_drpj1"]
 [ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="2_f7brt"]
+[ext_resource type="PackedScene" uid="uid://bdhx8jan11upp" path="res://platforms/chips/red_chip.tscn" id="5_r60cr"]
+[ext_resource type="PackedScene" uid="uid://cq07tc1kxdb1x" path="res://platforms/chips/white_chip.tscn" id="6_xjti1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwnhp"]
 texture = ExtResource("2_f7brt")
@@ -10,7 +14,7 @@ texture = ExtResource("2_f7brt")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2, 4, 0, 8, -8, 8)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, -8, 8, 1, -8, 1)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2, 8, -7, 8, 1, -8, 1)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, 1, 8, 8, -8, 8)
 1:1/0 = 0
@@ -22,17 +26,146 @@ texture = ExtResource("2_f7brt")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wwnhp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahxpu"]
+size = Vector2(94, 180)
+
 [node name="BoogieTest" type="Node2D"]
+script = ExtResource("1_143n2")
 
 [node name="TacoBoogie" parent="." instance=ExtResource("1_l6ymw")]
-position = Vector2(29, 1)
-wall_min_slide_angle = 0.0
-floor_max_angle = 1.36136
-floor_snap_length = 16.0
-speed = 175
-jump_velocity = -125
+position = Vector2(92, -15)
+collision_layer = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -3817.0
+offset_top = -407.0
+offset_right = 591.0
+offset_bottom = 2295.0
+texture = ExtResource("2_drpj1")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAATAAsAAAACAAAAABAUAAsAAAAAAAAAACAGAAAAAAACAAAAABAHAAAAAAACAAEAAAAIAAEAAAACAAAAABAJAAEAAAACAAEAAAAKAAIAAAAAAAEAAAALAAMAAAAAAAEAAAAMAAQAAAAAAAEAAAANAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAcAAAAAAAEAAAAQAAgAAAAAAAEAAAARAAkAAAAAAAEAAAASAAoAAAAAAAEAAAAVAAsAAAAAAAAAACAWAAsAAAAAAAAAACA6ACUAAAAAAAEAAAA7ACYAAAAAAAEAAAA8ACcAAAAAAAEAAAA9ACgAAAACAAAAABA+ACgAAAAAAAAAACA/ACgAAAACAAAAAABBACcAAAAAAAAAACBAACcAAAACAAEAABBCACcAAAAAAAAAACBDACcAAAAAAAAAACAzACYAAAAAAAAAACA0ACYAAAAAAAAAACA1ACYAAAACAAAAAAAXAAsAAAACAAEAAAAYAAwAAAAAAAEAAAAZAA0AAAAAAAEAAAAaAA4AAAAAAAEAAAAbAA8AAAAAAAEAAAAcABAAAAAAAAEAAAAdABEAAAAAAAEAAAAeABIAAAAAAAEAAAAfABMAAAAAAAEAAAAgABQAAAAAAAEAAAAhABUAAAAAAAEAAAAiABYAAAAAAAEAAAAjABcAAAAAAAEAAAAkABgAAAAAAAEAAAAlABkAAAAAAAEAAAAmABoAAAAAAAEAAAAnABsAAAAAAAEAAAAoABwAAAAAAAEAAAApAB0AAAAAAAEAAAAqAB4AAAAAAAEAAAArAB8AAAAAAAEAAAAsACAAAAAAAAEAAAAtACEAAAAAAAEAAAAuACIAAAAAAAEAAAAvACMAAAAAAAEAAAAwACQAAAAAAAEAAAAxACUAAAAAAAEAAAAyACYAAAACAAAAABA2ACUAAAAAAAEAABBOADYAAAACAAAAAABEACcAAAACAAEAAABFACgAAAABAAAAAABFACkAAAABAAEAAABGACoAAAABAAAAAABGACsAAAABAAEAAABHACwAAAABAAAAAABHAC0AAAABAAEAAABIAC4AAAABAAAAAABIAC8AAAABAAEAAABJADAAAAABAAAAAABJADEAAAABAAEAAABKADIAAAABAAAAAABKADMAAAABAAEAAABLADQAAAABAAAAAABLADUAAAABAAEAAABMADYAAAACAAAAABBNADYAAAAAAAAAACBPADQAAAABAAAAABBPADUAAAABAAEAABBpAEgAAAACAAEAABBZADUAAAAAAAAAAABaADUAAAAAAAEAAABbADYAAAABAAAAAABbADcAAAABAAEAAABcADgAAAABAAAAAABcADkAAAABAAEAAABdADoAAAABAAAAAABdADsAAAABAAEAAABeADwAAAABAAAAAABeAD0AAAABAAEAAABfAD4AAAABAAAAAABfAD8AAAABAAEAAABgAEAAAAABAAAAAABgAEEAAAABAAEAAABhAEIAAAABAAAAAABhAEMAAAABAAEAAABiAEQAAAABAAAAAABiAEUAAAABAAEAAABjAEYAAAABAAAAAABjAEcAAAABAAEAAABkAEgAAAABAAAAAABkAEkAAAABAAEAAABlAEoAAAACAAAAABBmAEoAAAACAAAAAABnAEkAAAACAAEAABBoAEkAAAACAAAAAAB1AEkAAAACAAAAAAB2AEkAAAACAAAAABB3AEkAAAACAAAAAAB4AEkAAAACAAAAABB5AEkAAAACAAAAAAB6AEkAAAAAAAEAAABvAEgAAAAAAAAAACBwAEgAAAACAAEAAABxAEkAAAACAAAAABByAEkAAAAAAAAAACB7AEoAAAABAAAAAAB7AEsAAAABAAEAAAB8AEwAAAABAAAAAAB8AE0AAAABAAEAAAB9AE4AAAABAAAAAAB9AE8AAAABAAEAAAB+AFAAAAABAAAAAAB+AFEAAAABAAEAAAB/AFIAAAABAAAAAAB/AFMAAAABAAEAAACAAFQAAAABAAAAAACAAFUAAAABAAEAAACBAFYAAAABAAAAAACBAFcAAAABAAEAAACCAFgAAAABAAAAAACCAFkAAAABAAEAAABzAEkAAAAAAAAAACB0AEkAAAAAAAAAACA3ACUAAAAAAAAAAAA5ACUAAAAAAAAAAACDAFoAAAABAAAAAACDAFsAAAABAAEAAACEAFwAAAABAAAAAACEAF0AAAABAAEAAACFAF4AAAABAAAAAACFAF8AAAABAAEAAACHAGIAAAAAAAEAAACGAGAAAAABAAAAAACGAGEAAAABAAEAAACIAGMAAAAAAAAAAACJAGIAAAACAAEAABCKAGIAAAACAAAAAACPAGIAAAACAAAAABCSAGIAAAACAAEAABCQAGIAAAACAAEAAACRAGMAAAAAAAAAAACTAGIAAAACAAAAAACWAGIAAAACAAAAABCXAGIAAAACAAEAAACYAGMAAAAAAAAAAACZAGIAAAACAAEAABCaAGIAAAACAAAAAACdAGMAAAACAAAAABCeAGMAAAAAAAAAACCfAGMAAAAAAAAAACCgAGMAAAAAAAAAACChAGMAAAAAAAAAACCiAGMAAAAAAAAAACCjAGIAAAAAAAAAACCjAGMAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_1k6ry")
+
+[node name="RedChip" parent="." instance=ExtResource("5_r60cr")]
+position = Vector2(-1895.26, 952.697)
+scale = Vector2(0.4522, 0.392458)
+
+[node name="RedChip2" parent="." instance=ExtResource("5_r60cr")]
+position = Vector2(-1969, 976)
+rotation = 2.24088
+scale = Vector2(0.4522, 0.392458)
+
+[node name="RedChip4" parent="." instance=ExtResource("5_r60cr")]
+position = Vector2(-2028, 899)
+rotation = 2.24088
+scale = Vector2(0.4522, 0.392458)
+
+[node name="RedChip3" parent="." instance=ExtResource("5_r60cr")]
+position = Vector2(-2079, 808)
+scale = Vector2(0.4522, 0.392458)
+
+[node name="RedChip5" parent="." instance=ExtResource("5_r60cr")]
+position = Vector2(-2124, 1087)
+rotation = -0.162685
+scale = Vector2(2.47292, 2.07111)
+
+[node name="WhiteChip14" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-748, 760)
+rotation = 2.15102
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip15" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-32, 458)
+rotation = 2.5447
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip16" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-294, 765)
+rotation = 3.2554
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip17" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-888, 1322)
+rotation = 3.00618
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip18" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1385, 1451)
+rotation = 1.48497
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip19" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1191, 1373)
+rotation = 1.48497
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip20" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1697, 1474)
+rotation = 1.48497
+scale = Vector2(3.07082, 3.20362)
+
+[node name="WhiteChip" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1719, 1049)
+rotation = 2.89544
+
+[node name="WhiteChip2" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1471, 969)
+rotation = 0.390546
+
+[node name="WhiteChip3" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1400, 935)
+rotation = 0.390546
+
+[node name="WhiteChip4" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-1122, 751)
+rotation = 2.09818
+
+[node name="WhiteChip5" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-891, 525)
+rotation = 2.09818
+
+[node name="WhiteChip6" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-743, 381)
+rotation = 2.1597
+
+[node name="WhiteChip7" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-526, 321)
+rotation = 2.90404
+
+[node name="WhiteChip8" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-366, 288)
+rotation = 2.37755
+
+[node name="WhiteChip9" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-134, 212)
+rotation = 2.37755
+
+[node name="WhiteChip10" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(35, 160)
+rotation = 2.37755
+
+[node name="WhiteChip11" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(112, 171)
+rotation = 2.95106
+
+[node name="WhiteChip12" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(-113, 244)
+rotation = 2.95106
+
+[node name="WhiteChip13" parent="." instance=ExtResource("6_xjti1")]
+position = Vector2(253, 82)
+rotation = 0.787942
+
+[node name="ToyLevelDoor" type="Area2D" parent="."]
+position = Vector2(-1930, 926)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToyLevelDoor"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ahxpu")
+
+[connection signal="body_entered" from="ToyLevelDoor" to="." method="_on_toy_level_door_body_entered"]

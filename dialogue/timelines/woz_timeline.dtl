@@ -1,15 +1,10 @@
 join woz 3
-woz (woz_default): Aaahhh excuse me...
-woz (woz_default): Do you happen to be...
+woz (woz_default): Pardon me sir...
+woz (woz_default): But are you...
 woz (woz_default): ...a pickle?
 - Yes
 	woz (woz_default): Hmm...
-	woz (woz_default): I'll keep an open mind.
+	woz (woz_default): I find that hard to believe.
 - No
-	woz (woz_default): Really? No pickles in your tree?
-- Prefer not to say
-	woz (woz_default): Oh! I've been there.
-	woz (woz_default): Hey.
-	woz (woz_default): When things look sour...
-	woz (woz_default): Make a funny face!
+	woz (woz_default): I appreciate the honesty.
 [end_timeline]

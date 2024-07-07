@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ouga48pnuuw"
-path="res://.godot/imported/Screenshot 2024-06-17 161845.png-36a0a4e52f447b5df976b5160376ef33.ctex"
+uid="uid://caeannx8rsrun"
+path="res://.godot/imported/foresttisha-85sstock.png-e39cf4d7718fb8995cab5ddd2284ce64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/barb_house/Screenshot 2024-06-17 161845.png"
-dest_files=["res://.godot/imported/Screenshot 2024-06-17 161845.png-36a0a4e52f447b5df976b5160376ef33.ctex"]
+source_file="res://levels/jungle_level/sprites/foresttisha-85sstock.png"
+dest_files=["res://.godot/imported/foresttisha-85sstock.png-e39cf4d7718fb8995cab5ddd2284ce64.ctex"]
 
 [params]
 

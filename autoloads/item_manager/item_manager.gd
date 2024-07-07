@@ -20,8 +20,8 @@ func _process(_delta):
 	#else:
 		#return null
 
-func connect_item_to_player(instance_id):
-	var list_of_balls = get_tree().get_nodes_in_group("soccer_ball")
+func connect_item_to_player(instance_id, group):
+	var list_of_balls = get_tree().get_nodes_in_group(group)
 	for ball in list_of_balls:
 		if ball.get_instance_id() == instance_id:
 			var player = get_player()

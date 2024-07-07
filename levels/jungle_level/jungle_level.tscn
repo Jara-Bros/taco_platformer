@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://c612sst2ruwnf"]
+
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
+[ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="2_i3p6d"]
+[ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="3_ijhxa"]
+[ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_b2672"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
+
+[node name="JungleLevel" type="Node2D"]
+
+[node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
+position = Vector2(-26, -18)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+texture = ExtResource("2_i3p6d")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 1000)
+
+[node name="LeafBendPlatform" parent="." instance=ExtResource("3_ijhxa")]
+position = Vector2(-879, 39)
+
+[node name="LeafBendPlatform2" parent="." instance=ExtResource("3_ijhxa")]
+position = Vector2(-984, 224)
+
+[node name="LeafBendPlatform3" parent="." instance=ExtResource("3_ijhxa")]
+position = Vector2(-1083, 214)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="WaterLabel" parent="Labels" instance=ExtResource("4_b2672")]
+offset_left = -1341.0
+offset_top = 40.0
+offset_right = -1095.0
+offset_bottom = 85.0
+text = "water (shallow)"
+
+[node name="SpringLabel" parent="Labels" instance=ExtResource("4_b2672")]
+offset_left = -818.0
+offset_top = 368.0
+offset_right = -572.0
+offset_bottom = 413.0
+text = "spring platform"
+
+[node name="MovingLabel" parent="Labels" instance=ExtResource("4_b2672")]
+offset_left = -1365.0
+offset_top = -109.0
+offset_right = -1119.0
+offset_bottom = -64.0
+text = "moving platform"
+
+[node name="Land" parent="." instance=ExtResource("6_xxo7e")]
+position = Vector2(91, 35)
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-434, 32, -525, 77, -589, 76, -634, 96, -665, 116, -767, 115, -779, 123, -798, 142, -827, 155, -856, 157, -875, 139, -864, 115, -861, 92, -875, 78, -969, 79, -987, 62, -989, -35, -1003, -46, -1069, -46, -1083, -36, -1120, -35, -1130, -24, -1147, -20, -1164, -19, -1179, -8, -1195, -3, -1283, -2, -1360, -2, -1499, -2, -1499, 5, -1148, 10, -1027, -26, -1004, 71, -785, 239, -94, 55, -92, -35, -154, -31, -170, -18, -187, -10, -235, -10, -273, -33, -296, -35, -316, -31, -348, -8, -376, 0)
+
+[node name="Line2D" parent="Land" index="1"]
+position = Vector2(3, 1)
+points = PackedVector2Array(-434, 32, -525, 77, -589, 76, -634, 96, -665, 116, -767, 115, -779, 123, -798, 142, -827, 155, -856, 157, -875, 139, -864, 115, -861, 92, -875, 78, -969, 79, -987, 62, -989, -35, -1003, -46, -1069, -46, -1083, -36, -1120, -35, -1130, -24, -1147, -20, -1164, -19, -1179, -8, -1195, -3, -1283, -2, -1360, -2, -1499, -2, -1499, 5, -1148, 10, -1027, -26, -1004, 71, -785, 239, -94, 55, -92, -35, -154, -31, -170, -18, -187, -10, -235, -10, -273, -33, -296, -35, -316, -31, -348, -8, -376, 0, -434, 32)
+
+[editable path="Land"]
