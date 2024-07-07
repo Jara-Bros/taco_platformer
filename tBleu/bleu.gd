@@ -178,15 +178,15 @@ func _on_area_2d_body_entered(body):
 		for enemey in get_tree().get_nodes_in_group("Enemies"):
 			if enemey.get_instance_id() == body.get_instance_id():
 				enemey.queue_free()
-	elif body.get_name() == "Taco":
-		if current_state == bleu_state.STUCK:
-			stuck_count += 1
-			if stuck_count == 3:
-				current_state = bleu_state.FOLLOWING
-				set_collision_mask_value(2,false)
-				for board in get_tree().get_nodes_in_group("cracked_board"):
-					if board.get_instance_id() == stuck_platform_instance_id:
-						board.queue_free()
+	#elif body.get_name() == "Taco":
+		#if current_state == bleu_state.STUCK:
+			#stuck_count += 1
+			#if stuck_count == 3:
+				#current_state = bleu_state.FOLLOWING
+				#set_collision_mask_value(2,false)
+				#for board in get_tree().get_nodes_in_group("cracked_board"):
+					#if board.get_instance_id() == stuck_platform_instance_id:
+						#board.queue_free()
 	elif body.get_name() == "CorpoCharacter":
 		if current_state == bleu_state.FLYING:	
 			current_state = bleu_state.FOLLOWING
@@ -197,3 +197,7 @@ func reset_bleu():
 	ItemManager.get_player().set_collision_mask_value(5,false)
 	rotation = 0
 	current_state = bleu_state.FOLLOWING
+
+
+func _on_visible_on_screen_enabler_2d_screen_exited():
+	reset_bleu()

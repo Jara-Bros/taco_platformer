@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfitd643ung0c"]
+
+[ext_resource type="Script" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.gd" id="1_mm67i"]
+[ext_resource type="Texture2D" uid="uid://cuh401llvokts" path="res://platforms/leaf_bend_platforms/leaf_platform.png" id="2_hnvpb"]
+
+[node name="LeafBendPlatform" type="AnimatableBody2D"]
+collision_mask = 2
+script = ExtResource("1_mm67i")
+rotation_speed = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24.9843, 11.3036)
+rotation = 0.652705
+scale = Vector2(0.166057, 0.151504)
+texture = ExtResource("2_hnvpb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(51, 1)
+polygon = PackedVector2Array(3, 1, -36, -19, -56, -7, -54, 8, -43, 21, -29, 28, -6, 26, 15, 10)
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerDetector"]
+position = Vector2(53.2529, 0.773254)
+polygon = PackedVector2Array(-1, 0, -36, -21, -57, -13, -57, 3, -33, 27, -4, 27, 17, 10)
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

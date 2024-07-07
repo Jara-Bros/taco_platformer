@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://c0vhvglx6s7ib"]
+[gd_scene load_steps=9 format=4 uid="uid://c0vhvglx6s7ib"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ryeh2"]
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
 [ext_resource type="PackedScene" uid="uid://c0um3phj8j8wk" path="res://tBleu/bleu.tscn" id="2_ic0fa"]
-[ext_resource type="PackedScene" uid="uid://dw2fe1baj0dnu" path="res://enemies/corpo/corpo_character.tscn" id="3_i6730"]
-[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="3_pft0h"]
+[ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="3_dayyq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
 texture = ExtResource("1_ugepv")
@@ -50,21 +49,15 @@ sources/0 = SubResource("TileSetAtlasSource_3gfnr")
 [node name="Playground" type="Node2D"]
 
 [node name="Taco" parent="." instance=ExtResource("1_ryeh2")]
+position = Vector2(201, -18)
+input_enabled = true
+acceleration = 0
 
 [node name="Bleu" parent="." instance=ExtResource("2_ic0fa")]
-position = Vector2(-32, -19)
+position = Vector2(182, -41)
 
-[node name="TomatoTomCharacter" parent="." instance=ExtResource("3_pft0h")]
-position = Vector2(196, -5)
-
-[node name="TomatoTomCharacter2" parent="." instance=ExtResource("3_pft0h")]
-position = Vector2(159, -4)
-
-[node name="TomatoTomCharacter3" parent="." instance=ExtResource("3_pft0h")]
-position = Vector2(123, -4)
-
-[node name="CorpoCharacter" parent="." instance=ExtResource("3_i6730")]
-position = Vector2(427, -27)
+[node name="LeafBendPlatform" parent="." instance=ExtResource("3_dayyq")]
+position = Vector2(94, -47)
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1

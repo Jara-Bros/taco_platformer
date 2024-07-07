@@ -12,6 +12,8 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var acceleration : int
 @export var jump_velocity : int
 @export var gravity : int
+@export var coyote_time : float
+var was_on_floor:bool
 enum player_state {STILL,MOVING_LEFT,MOVING_RIGHT, IN_AIR, KICKING, AIMING}
 var current_state = player_state.STILL
 var prev_state
@@ -25,9 +27,18 @@ var item = null
 var direction
 var player_facing
 
+
 func _ready():
 	player_facing = 1
 	
+
+#func _input(event):
+	## coyote timer
+	#if Input.is_action_just_pressed("jump") and !is_on_floor_only() and coyote_time > 0:
+		#print("made it")
+		#jump()
+	#
+
 	
 func _physics_process(delta: float) -> void:
 	if not input_enabled:
@@ -49,13 +60,18 @@ func _physics_process(delta: float) -> void:
 		change_state(player_state.STILL)
 		velocity.x = move_toward(velocity.x, 0, speed)
 
+	var was_on_floor = is_on_floor()
 	move_and_slide()
-	
-	
+
 	# Add the gravity.
 	if not is_on_floor_only():
 		velocity.y += 1.5 * gravity * delta
-
+	if velocity.y >0:
+		coyote_time -= delta
+		
+	if is_on_floor_only():
+		coyote_time = 0.1	
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor_only():
 		change_state(player_state.IN_AIR)
@@ -157,9 +173,9 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
-		bounce()
+		jump()
 	
-func bounce():
+func jump():
 	velocity.y = jump_velocity
 	if velocity.y >= 0:
 		jump_velocity / 2

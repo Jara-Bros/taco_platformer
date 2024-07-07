@@ -1649,11 +1649,11 @@ texture = ExtResource("4_w6l36")
 
 [connection signal="pressed" from="Quit/QuitScreen/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Bumpers/BumperLeft" to="." method="_on_bumper_left_body_entered"]
-[connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_2_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperLeft2" to="." method="_on_bumper_left_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperUp" to="." method="_on_bumper_up_body_entered"]
-[connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_2_body_entered"]
+[connection signal="body_entered" from="Bumpers/BumperUp2" to="." method="_on_bumper_up_body_entered"]
 [connection signal="body_entered" from="Bumpers/BumperRight" to="." method="_on_bumper_right_body_entered"]
 [connection signal="body_entered" from="BowlingBox" to="." method="_on_bowling_box_body_entered"]
 [connection signal="body_entered" from="CharacterBoxTaco" to="." method="_on_character_box_taco_body_entered"]
