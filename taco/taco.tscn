@@ -176,9 +176,9 @@ floor_stop_on_slope = false
 floor_max_angle = 1.13446
 script = ExtResource("1_q403v")
 speed = 200
+acceleration = 15
 jump_velocity = -400
 gravity = 980
-coyote_time = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
@@ -197,16 +197,25 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="TacoShoes" type="Area2D" parent="."]
 position = Vector2(0, 9)
 collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TacoShoes"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_seodx")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="BufferTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="VariableJumpHeightTimer" type="Timer" parent="."]
+wait_time = 0.07
 one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="TacoShoes" to="." method="_on_area_2d_body_entered"]

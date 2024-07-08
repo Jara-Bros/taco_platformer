@@ -55,7 +55,7 @@ position = Vector2(201, -18)
 position = Vector2(182, -41)
 
 [node name="ZipLine" parent="." instance=ExtResource("4_2ui8p")]
-position = Vector2(518, -30)
+position = Vector2(512, -34)
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1
