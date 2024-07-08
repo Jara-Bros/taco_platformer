@@ -1,20 +1,15 @@
-[gd_scene load_steps=35 format=4 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=35 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/texico_start/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="3_ptwvw"]
 [ext_resource type="Texture2D" uid="uid://h8ka3e0fl6kq" path="res://platforms/sprites/cloud-removebg-preview.png" id="4_7td6k"]
-[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="4_wk666"]
 [ext_resource type="PackedScene" uid="uid://cos6tnjxn68bl" path="res://platforms/chips/orange_chip.tscn" id="5_4idp4"]
 [ext_resource type="PackedScene" uid="uid://b5obv2chr5j4v" path="res://platforms/chips/purple_chip.tscn" id="6_06j4d"]
-[ext_resource type="PackedScene" uid="uid://bdhx8jan11upp" path="res://platforms/chips/red_chip.tscn" id="7_n4cno"]
-[ext_resource type="PackedScene" uid="uid://bik5j3tf8g2k0" path="res://platforms/chips/blue_chip.tscn" id="8_rwr0i"]
-[ext_resource type="Texture2D" uid="uid://b385ymc4iokkt" path="res://platforms/sprites/Screenshot_2024-07-02_130440-removebg-preview.png" id="9_2ik8g"]
 [ext_resource type="PackedScene" uid="uid://ccwhya1i0s87x" path="res://platforms/chips/green_chip.tscn" id="10_n7n2f"]
 [ext_resource type="Texture2D" uid="uid://c1agfylelnpg7" path="res://levels/texico_town/sprites/Screenshot_2024-07-03_160116-removebg-preview.png" id="11_q1qto"]
 [ext_resource type="PackedScene" uid="uid://dqu00asxkw81y" path="res://platforms/chips/yellow_chip.tscn" id="12_fb47g"]
 [ext_resource type="Texture2D" uid="uid://ciclbkgjm2mmv" path="res://levels/texico_town/woz_house/woz_house_.png" id="13_augcr"]
-[ext_resource type="Texture2D" uid="uid://1qs4opr12yyv" path="res://platforms/sprites/Screenshot_2024-07-02_130414-removebg-preview.png" id="14_0ngwb"]
 [ext_resource type="Texture2D" uid="uid://7wqcs5din3l1" path="res://levels/texico_town/woz_house/woz_shoji_doors.png" id="14_8bkwh"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/shoji_door.gd" id="14_7450t"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
@@ -23,12 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://bygxkq2cupvjv" path="res://levels/texico_town/tb_house/Flag_of_Bavaria_(state).png" id="16_apinb"]
 [ext_resource type="Texture2D" uid="uid://bm5ho6i3468cc" path="res://levels/texico_town/barb_house/Screenshot_2024-07-03_155645-removebg-preview.png" id="17_8qu6n"]
 [ext_resource type="Texture2D" uid="uid://bqvmtlgroh552" path="res://levels/texico_town/tb_house/Flag_of_Colombia.png" id="17_ng0rk"]
+[ext_resource type="Texture2D" uid="uid://c4iql1deag2yo" path="res://levels/texico_town/tb_house/vegas_sticker.png" id="18_7qekv"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/gallery.gd" id="18_ycis3"]
+[ext_resource type="Texture2D" uid="uid://ceffl8g1n22vl" path="res://levels/texico_town/tb_house/Screenshot_2024-07-07_174454-removebg-preview.png" id="19_74rp8"]
+[ext_resource type="Texture2D" uid="uid://4uvwprb1hrwm" path="res://levels/texico_town/tb_house/locoroco_kulche.png" id="20_1sb0f"]
 [ext_resource type="Texture2D" uid="uid://b02c5abj85sol" path="res://levels/texico_town/sprites/Screenshot_2024-07-04_082829-removebg-preview.png" id="22_qmq4k"]
 [ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
 [ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
 [ext_resource type="Script" path="res://NPC/limona.gd" id="25_lycvo"]
+[ext_resource type="Texture2D" uid="uid://d4ac3qvr4p0nv" path="res://levels/texico_town/sprites/white_thumbtack.png" id="28_tluoy"]
+[ext_resource type="Texture2D" uid="uid://bly5m086ha6t6" path="res://levels/texico_town/sprites/thumb_tack-removebg-preview.png" id="28_wxdb2"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="28_x3vh2"]
+[ext_resource type="Texture2D" uid="uid://bhk0lcto22uch" path="res://levels/texico_town/sprites/gold_thumbtack.png" id="30_seg0j"]
+[ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
@@ -39,41 +41,12 @@ size = Vector2(18, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2e0x"]
 size = Vector2(32, 30)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twkdy"]
-texture = ExtResource("4_wk666")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
-0:0/0/physics_layer_0/polygon_0/one_way = true
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3, 1, 0, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, 8, -8, 8, 1, -8, 1)
-2:0/0/physics_layer_0/polygon_0/one_way = true
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, 0, 8, 8, -8, 8)
-0:1/0/physics_layer_0/polygon_0/one_way = true
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 0, 3, 8, 8, -8, 8)
-2:1/0/physics_layer_0/polygon_0/one_way = true
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_oj3gu"]
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_twkdy")
-
 [node name="DiosMio" type="Node2D" groups=["Level"]]
 script = ExtResource("1_86lqk")
 
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
-z_index = 1
-position = Vector2(217, 65)
-collision_mask = 6
-speed = 150
+z_index = 5
+position = Vector2(410, -99)
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
@@ -82,6 +55,28 @@ offset_top = -802.0
 offset_right = 2022.0
 offset_bottom = 1353.0
 texture = ExtResource("3_ptwvw")
+
+[node name="Land" parent="." instance=ExtResource("28_x3vh2")]
+z_index = 2
+position = Vector2(351, 18)
+collision_mask = 2
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-164, 74, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -296, 10, -278, 28, -263, 46, -239, 85, -212, 13)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-164, 74, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -296, 10, -278, 28, -263, 46, -239, 85, -212, 13, -164, 74)
+
+[node name="Land2" parent="." instance=ExtResource("28_x3vh2")]
+position = Vector2(-2, 17)
+rotation = 0.286837
+collision_mask = 2
+
+[node name="Polygon2D" parent="Land2" index="0"]
+polygon = PackedVector2Array(16.9613, 39.8286, 63.028, 61.6885, 5.28647, 120.424, -6.43755, 66.5399, -20.5696, 36.3028, -36.1432, 110.75, -69.5203, 78.8919, -102.269, 56.2314, -120.307, 83.4464, -139.351, 121.385, -165.745, 70.7847, -188.903, 45.295, -199.633, 107.888, -204.477, 119.743, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -87.7236, 38.3871, -58.3835, 31.8178, -31.9208, 26.0972, -20.5214, 25.8626, -5.78917, 29.8578)
+
+[node name="Line2D" parent="Land2" index="1"]
+points = PackedVector2Array(16.9613, 39.8286, 63.028, 61.6885, 5.28647, 120.424, -6.43755, 66.5399, -20.5696, 36.3028, -36.1432, 110.75, -69.5203, 78.8919, -102.269, 56.2314, -120.307, 83.4464, -139.351, 121.385, -165.745, 70.7847, -188.903, 45.295, -199.633, 107.888, -204.477, 119.743, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -87.7236, 38.3871, -58.3835, 31.8178, -31.9208, 26.0972, -20.5214, 25.8626, -5.78917, 29.8578, 16.9613, 39.8286)
 
 [node name="Clouds" type="Node" parent="."]
 
@@ -132,47 +127,110 @@ texture = ExtResource("4_7td6k")
 [node name="TBChips" type="Node" parent="Chips"]
 
 [node name="OrangeChip" parent="Chips/TBChips" instance=ExtResource("5_4idp4")]
-position = Vector2(345, 52)
-rotation = 0.918845
-scale = Vector2(0.223279, 0.263259)
+z_index = 3
+position = Vector2(439, -36)
+rotation = 4.48114
+scale = Vector2(0.256891, 0.299691)
+
+[node name="OrangeChip2" parent="Chips/TBChips" instance=ExtResource("5_4idp4")]
+z_index = 3
+position = Vector2(274, 20)
+rotation = 4.49089
+scale = Vector2(0.256891, 0.299691)
+
+[node name="OrangeChip3" parent="Chips/TBChips" instance=ExtResource("5_4idp4")]
+z_index = 3
+position = Vector2(106, 56)
+rotation = 2.82765
+scale = Vector2(0.256891, 0.299691)
 
 [node name="PurpleChip" parent="Chips/TBChips" instance=ExtResource("6_06j4d")]
-position = Vector2(301, 67)
-rotation = 2.08758
-scale = Vector2(0.212705, 0.214671)
+z_index = 2
+position = Vector2(346, -7.00001)
+rotation = 4.98495
+scale = Vector2(0.251611, 0.297599)
+
+[node name="PurpleChip2" parent="Chips/TBChips" instance=ExtResource("6_06j4d")]
+z_index = 2
+position = Vector2(181, 48)
+rotation = 4.98495
+scale = Vector2(0.251611, 0.297599)
 
 [node name="BarbChips" type="Node" parent="Chips"]
 
 [node name="PinkChip6" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(353, 168)
-rotation = 2.93771
-scale = Vector2(0.250177, 0.198211)
+position = Vector2(87, 233)
+rotation = 5.12244
+scale = Vector2(0.325349, 0.29759)
 texture = ExtResource("11_q1qto")
 
 [node name="PinkChip7" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(397, 180)
-rotation = -0.198978
-scale = Vector2(0.250177, 0.198211)
+position = Vector2(209, 242)
+rotation = 3.01594
+scale = Vector2(0.325349, 0.29759)
 texture = ExtResource("11_q1qto")
 
 [node name="PinkChip8" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(431, 151)
-rotation = 0.616487
-scale = Vector2(0.250177, 0.198211)
+position = Vector2(311, 267)
+rotation = 3.23102
+scale = Vector2(0.325349, 0.29759)
 texture = ExtResource("11_q1qto")
 
 [node name="PinkChip9" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(404, 120)
-rotation = -0.208645
-scale = Vector2(0.250177, 0.198211)
+position = Vector2(433, 290)
+rotation = 2.95026
+scale = Vector2(0.325349, 0.29759)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip10" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+z_index = 3
+position = Vector2(556, 279)
+rotation = 2.67213
+scale = Vector2(0.325349, 0.29759)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip11" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+z_index = 3
+position = Vector2(659, 241)
+rotation = 0.339107
+scale = Vector2(0.325349, 0.29759)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip12" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+z_index = 3
+position = Vector2(750, 194)
+rotation = 2.302
+scale = Vector2(0.325349, 0.29759)
+texture = ExtResource("11_q1qto")
+
+[node name="PinkChip13" parent="Chips/BarbChips" instance=ExtResource("10_n7n2f")]
+z_index = 3
+position = Vector2(616, 120)
+rotation = -0.324576
+scale = Vector2(0.325349, 0.29759)
 texture = ExtResource("11_q1qto")
 
 [node name="WozChips" type="Node" parent="Chips"]
 
 [node name="GreenChip5" parent="Chips/WozChips" instance=ExtResource("10_n7n2f")]
-position = Vector2(69, 157)
-rotation = 2.87191
-scale = Vector2(0.20544, 0.226367)
+position = Vector2(-160, 49)
+rotation = 3.22102
+scale = Vector2(0.258454, 0.288256)
+
+[node name="GreenChip8" parent="Chips/WozChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(-235, 30)
+rotation = 2.87899
+scale = Vector2(0.258454, 0.288256)
+
+[node name="GreenChip6" parent="Chips/WozChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(-72, 68)
+rotation = 2.89804
+scale = Vector2(0.258454, 0.288256)
+
+[node name="GreenChip7" parent="Chips/WozChips" instance=ExtResource("10_n7n2f")]
+position = Vector2(-9, 96)
+rotation = 3.52074
+scale = Vector2(0.258454, 0.288256)
 
 [node name="LimonaChips" type="Node" parent="Chips"]
 
@@ -186,83 +244,27 @@ position = Vector2(-5.00001, 491)
 rotation = -1.41028
 scale = Vector2(0.230789, 0.191855)
 
-[node name="RedChips" type="Node" parent="Chips"]
+[node name="GoldChips" type="Node" parent="Chips"]
 
-[node name="RedChip" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(236, 94)
-rotation = 0.771985
-scale = Vector2(0.174797, 0.161307)
-
-[node name="RedChip5" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(120, 132)
-rotation = 0.286783
-scale = Vector2(0.174797, 0.161307)
-
-[node name="RedChip4" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(137, 216)
-scale = Vector2(0.158845, 0.146667)
-
-[node name="RedChip6" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(74, 247)
-scale = Vector2(0.158845, 0.146667)
-
-[node name="RedChip2" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(171, 141)
-rotation = -2.59956
-scale = Vector2(0.14362, 0.118824)
-
-[node name="RedChip3" parent="Chips/RedChips" instance=ExtResource("7_n4cno")]
-position = Vector2(295, 160)
-rotation = 0.324524
-scale = Vector2(0.14362, 0.118824)
-
-[node name="BlueChips" type="Node" parent="Chips"]
-
-[node name="BlueChip" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(183, 107)
-rotation = -1.64858
-scale = Vector2(0.168623, 0.194696)
-
-[node name="BlueChip2" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(244, 173)
-rotation = -1.2298
-scale = Vector2(0.153409, 0.176048)
-
-[node name="BlueChip4" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(217, 158)
-rotation = 0.863755
-scale = Vector2(0.152645, 0.169812)
-
-[node name="BlueChip3" parent="Chips/BlueChips" instance=ExtResource("7_n4cno")]
-position = Vector2(150, 124)
-rotation = 2.89184
-scale = Vector2(0.119946, 0.112827)
-texture = ExtResource("9_2ik8g")
-
-[node name="BlueChip5" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(174, 212)
-rotation = 2.86057
-scale = Vector2(0.166309, 0.183944)
-
-[node name="BlueChip6" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(100, 237)
-rotation = 2.85004
-scale = Vector2(0.100102, 0.112135)
-
-[node name="RedChip" parent="Chips/BlueChips" instance=ExtResource("8_rwr0i")]
-position = Vector2(222, 187)
-rotation = 2.05801
-scale = Vector2(0.155381, 0.173442)
-skew = 0.01258
-texture = ExtResource("14_0ngwb")
-
-[node name="YellowChips" type="Node" parent="Chips"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Chips/YellowChips"]
+[node name="Sprite2D" type="Sprite2D" parent="Chips/GoldChips"]
 z_index = -2
 position = Vector2(143, -30)
 rotation = 2.01557
 scale = Vector2(1.81284, 1.59735)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(455, 60)
+rotation = 0.187548
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(-199, 64)
+rotation = 0.763704
+scale = Vector2(0.807585, 0.702425)
 texture = ExtResource("14_yo5bf")
 
 [node name="TBHouse" type="Node" parent="."]
@@ -274,29 +276,48 @@ scale = Vector2(0.735456, 0.709245)
 texture = ExtResource("15_eggqw")
 
 [node name="BavFlag" type="Sprite2D" parent="TBHouse"]
-position = Vector2(292, -118)
+position = Vector2(293, -123)
 rotation = 0.467907
 scale = Vector2(0.11, 0.116667)
 texture = ExtResource("16_apinb")
 
 [node name="ColomFlag" type="Sprite2D" parent="TBHouse"]
+z_index = 5
 position = Vector2(493, -79)
 rotation = -0.803925
 scale = Vector2(0.0145875, 0.013311)
 texture = ExtResource("17_ng0rk")
 
+[node name="Vegas" type="Sprite2D" parent="TBHouse"]
+position = Vector2(295, -73)
+rotation = -0.264937
+scale = Vector2(0.137413, 0.136276)
+texture = ExtResource("18_7qekv")
+
+[node name="MexAmer" type="Sprite2D" parent="TBHouse"]
+position = Vector2(444, -149)
+rotation = -0.34442
+scale = Vector2(0.0956023, 0.0754717)
+texture = ExtResource("19_74rp8")
+
+[node name="Loco" type="Sprite2D" parent="TBHouse"]
+position = Vector2(375, -125)
+rotation = -0.927585
+scale = Vector2(0.0636956, 0.0669196)
+texture = ExtResource("20_1sb0f")
+
 [node name="WozTeahouse" type="Node" parent="."]
 
 [node name="PickleHouse" type="Sprite2D" parent="WozTeahouse"]
 z_index = -1
-position = Vector2(56, 99)
-scale = Vector2(0.246377, 0.248619)
+position = Vector2(-206, -44)
+scale = Vector2(0.405797, 0.39779)
 texture = ExtResource("13_augcr")
 
 [node name="ShojiDoor" type="Sprite2D" parent="WozTeahouse"]
 z_index = -1
-position = Vector2(57, 113)
-scale = Vector2(0.0854575, 0.0828877)
+position = Vector2(-206, -32)
+scale = Vector2(0.173913, 0.176471)
 texture = ExtResource("14_8bkwh")
 script = ExtResource("14_7450t")
 
@@ -310,9 +331,8 @@ shape = SubResource("RectangleShape2D_8rjpq")
 [node name="BarbGallery" type="Node" parent="."]
 
 [node name="Gallery" type="Sprite2D" parent="BarbGallery"]
-position = Vector2(408, 111)
-rotation = -1.77894
-scale = Vector2(0.137814, 0.190008)
+position = Vector2(587, 152)
+scale = Vector2(0.544, 0.624)
 texture = ExtResource("17_8qu6n")
 script = ExtResource("18_ycis3")
 
@@ -325,7 +345,7 @@ shape = SubResource("RectangleShape2D_oiurn")
 [node name="Boogie" type="Node" parent="."]
 
 [node name="BoogieSign" type="Sprite2D" parent="Boogie"]
-position = Vector2(101, 189)
+position = Vector2(-164, 215)
 scale = Vector2(0.133739, 0.121581)
 texture = ExtResource("22_qmq4k")
 
@@ -345,12 +365,133 @@ position = Vector2(30, 6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boogie/Limona/InteractionArea"]
 shape = SubResource("RectangleShape2D_j2e0x")
 
-[node name="Collisions" type="TileMapLayer" parent="."]
-visible = false
-z_index = 1
-tile_map_data = PackedByteArray("AAAPAAUAAAAAAAAAAAALAAgAAAAAAAEAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAEAABAMAAsAAAAAAAEAABALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAQAAQAAAAAAAEAABARAAMAAAAAAAEAABASAAIAAAAAAAEAABATAAIAAAAAAAAAAAAUAAIAAAAAAAAAAAAVAAIAAAAAAAAAAAAWAAIAAAAAAAAAAAAXAAIAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAACAAAAAAAKAAYAAAACAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAEAAAAIAAcAAAAAAAAAAAAHAAcAAAACAAAAAAALAAUAAAACAAEAABAGAAcAAAACAAEAABAEAAgAAAAAAAAAAAADAAgAAAAAAAAAAAACAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAkAAAACAAEAABASAAkAAAACAAAAAAATAAkAAAAAAAAAAAAUAAkAAAAAAAAAAAAVAAkAAAAAAAAAAAAWAAkAAAAAAAAAAAAXAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAIAAwAAAAAAAEAABAHAA0AAAAAAAEAABAGAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAD6/xsAAAAAAAAAAAD7/xsAAAAAAAAAAAD8/xsAAAAAAAAAAAD9/xsAAAAAAAAAAAD+/xsAAAAAAAAAAAD//xsAAAAAAAAAAAAAABsAAAAAAAAAAAABABsAAAAAAAAAAAACABsAAAAAAAAAAAAXAAEAAAAAAAIAAAAXAAAAAAAAAAIAAAAXAP//AAAAAAIAAAAXAP7/AAAAAAIAAAAXAP3/AAAAAAIAAAAXAPz/AAAAAAIAAAAXAPv/AAAAAAIAAAAXAPr/AAAAAAIAAAAXAPn/AAAAAAIAAAABAAgAAAAAAAIAAAABAAcAAAAAAAIAAAABAAYAAAAAAAIAAAABAAUAAAAAAAIAAAABAAQAAAAAAAIAAAABAAMAAAAAAAIAAAABAAIAAAAAAAIAAAABAP7/AAAAAAIAAAABAP//AAAAAAIAAAABAAAAAAAAAAIAAAABAAEAAAAAAAIAAAAYAAkAAAAAAAIAAAAZAAgAAAAAAAIAAAAZAAcAAAAAAAIAAAAZAAYAAAAAAAIAAAAZAAUAAAAAAAIAAAAZAAQAAAAAAAIAAAAZAAMAAAAAAAIAAAAZAAIAAAAAAAIAAAAZAAEAAAAAAAIAAAD5/xsAAAAAAAIAAAD5/xoAAAAAAAIAAAD5/xkAAAAAAAIAAAD5/xgAAAAAAAIAAAD5/xcAAAAAAAIAAAD5/xYAAAAAAAIAAAD5/xUAAAAAAAIAAAD5/xIAAAAAAAIAAAD5/xMAAAAAAAIAAAD5/xQAAAAAAAIAAAAEAA4AAAAAAAEAABADAA8AAAAAAAEAABADABsAAAAAAAIAAAADABoAAAAAAAIAAAADABkAAAAAAAIAAAADABgAAAAAAAIAAAADABcAAAAAAAIAAAADABYAAAAAAAIAAAADABUAAAAAAAIAAAADABQAAAAAAAIAAAADABMAAAAAAAIAAAADABIAAAAAAAIAAAADABEAAAAAAAIAAAADABAAAAAAAAIAAAD5/xAAAAAAAAIAAAD5/xEAAAAAAAIAAAA=")
-tile_set = SubResource("TileSet_oj3gu")
+[node name="ThumbTacks" type="Node" parent="."]
 
-[node name="Land" parent="." instance=ExtResource("28_x3vh2")]
+[node name="Red" type="Node" parent="ThumbTacks"]
+
+[node name="Sprite2D7" type="Sprite2D" parent="ThumbTacks/Red"]
+z_index = 4
+position = Vector2(40, 93)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_wxdb2")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ThumbTacks/Red"]
+z_index = 4
+position = Vector2(-30, 39)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_wxdb2")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ThumbTacks/Red"]
+z_index = 4
+position = Vector2(-117, 33)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_wxdb2")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ThumbTacks/Red"]
+z_index = 4
+position = Vector2(-195, 2.00001)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_wxdb2")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ThumbTacks/Red"]
+z_index = 4
+position = Vector2(-285, -5)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_wxdb2")
+
+[node name="White" type="Node" parent="ThumbTacks"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(394, -34)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(306, -26)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(229, 22)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(140, 29)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(58, 28)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ThumbTacks/White"]
+z_index = 4
+position = Vector2(468, -80)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("28_tluoy")
+
+[node name="Gold" type="Node" parent="ThumbTacks"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ThumbTacks/Gold"]
+position = Vector2(-113, 8)
+scale = Vector2(0.0715631, 0.0638298)
+texture = ExtResource("30_seg0j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ThumbTacks/Gold"]
+position = Vector2(329, 74)
+scale = Vector2(0.0715631, 0.0638298)
+texture = ExtResource("30_seg0j")
+
+[node name="Blue" type="Node" parent="ThumbTacks"]
+
+[node name="Sprite2D7" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(49, 205)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(150, 202)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(265, 218)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(372, 254)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(490, 261)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(600, 237)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
+
+[node name="Sprite2D13" type="Sprite2D" parent="ThumbTacks/Blue"]
+z_index = 4
+position = Vector2(684, 200)
+scale = Vector2(0.064, 0.052)
+texture = ExtResource("31_4jadm")
 
 [editable path="Land"]
+[editable path="Land2"]
