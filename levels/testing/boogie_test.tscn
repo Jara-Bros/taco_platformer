@@ -1,166 +1,127 @@
-[gd_scene load_steps=10 format=4 uid="uid://2fqman1hrmkq"]
+[gd_scene load_steps=11 format=3 uid="uid://2fqman1hrmkq"]
 
 [ext_resource type="Script" path="res://levels/testing/boogie_test.gd" id="1_143n2"]
 [ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/testing/taco_boogie.tscn" id="1_l6ymw"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="2_drpj1"]
-[ext_resource type="Texture2D" uid="uid://b2xvdeb13egwl" path="res://tilesets/testing/collision_tileset.png" id="2_f7brt"]
-[ext_resource type="PackedScene" uid="uid://bdhx8jan11upp" path="res://platforms/chips/red_chip.tscn" id="5_r60cr"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="4_84nhj"]
+[ext_resource type="Texture2D" uid="uid://dqg5g7r27tok5" path="res://levels/texico_town/sprites/gold_chip.png" id="5_dt6co"]
+[ext_resource type="Texture2D" uid="uid://4eonpltpsc5c" path="res://levels/texico_town/sprites/cloud-removebg-preview.png" id="6_okyc3"]
 [ext_resource type="PackedScene" uid="uid://cq07tc1kxdb1x" path="res://platforms/chips/white_chip.tscn" id="6_xjti1"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwnhp"]
-texture = ExtResource("2_f7brt")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2, 4, 0, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -2, 8, -7, 8, 1, -8, 1)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, 1, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 1, 4, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_1k6ry"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wwnhp")
+[ext_resource type="Script" path="res://levels/testing/zoom_out.gd" id="8_et32p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahxpu"]
 size = Vector2(94, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3agvj"]
+size = Vector2(134, 408)
 
 [node name="BoogieTest" type="Node2D"]
 script = ExtResource("1_143n2")
 
 [node name="TacoBoogie" parent="." instance=ExtResource("1_l6ymw")]
-position = Vector2(92, -15)
+position = Vector2(5169, -3866)
 collision_layer = 3
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-1265, -124)
+repeat_size = Vector2(250, 0)
+repeat_times = 99
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(1.04839, 0.348259)
+texture = ExtResource("6_okyc3")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(-437, 428)
+scale = Vector2(5.84355, 3.37562)
+texture = ExtResource("6_okyc3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
-offset_left = -3817.0
-offset_top = -407.0
-offset_right = 591.0
-offset_bottom = 2295.0
+offset_left = -27322.0
+offset_top = -4319.0
+offset_right = 5794.0
+offset_bottom = 12193.0
 texture = ExtResource("2_drpj1")
 
-[node name="Floor" type="TileMapLayer" parent="."]
-z_index = -1
-tile_map_data = PackedByteArray("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")
-tile_set = SubResource("TileSet_1k6ry")
+[node name="Land" parent="." instance=ExtResource("4_84nhj")]
+position = Vector2(4715, -3191)
 
-[node name="RedChip" parent="." instance=ExtResource("5_r60cr")]
-position = Vector2(-1895.26, 952.697)
-scale = Vector2(0.4522, 0.392458)
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(475, -662, 504, -670, 602, -64, 37, 369, -539, 794, -1312, 1228, -2008, 1627, -3796, 3098, -4550, 3551, -6829, 3082, -5742, 3078, -5114, 3061, -4813, 3024, -4460, 2927, -4340, 2805, -4212, 2701, -3951, 2494, -3811, 2359, -3182, 1817, -2779, 1515, -2324, 1202, -2016, 989, -1746, 832, -1467, 653, -1215, 518, -1137, 457, -1000, 372, -798, 255, -695, 202, -631, 173, -533, 83, -506, 62, -493, 50, -461, 25, -431, 2, -389, -30, -320, -80, -281, -111, -195, -174, -112, -228, -77, -247, -42, -276, -23, -294, 32, -343, 123, -416, 158, -444, 271, -529, 377, -607, 438, -645)
 
-[node name="RedChip2" parent="." instance=ExtResource("5_r60cr")]
-position = Vector2(-1969, 976)
-rotation = 2.24088
-scale = Vector2(0.4522, 0.392458)
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(475, -662, 504, -670, 602, -64, 37, 369, -539, 794, -1312, 1228, -2008, 1627, -3796, 3098, -4550, 3551, -6829, 3082, -5742, 3078, -5114, 3061, -4813, 3024, -4460, 2927, -4340, 2805, -4212, 2701, -3951, 2494, -3811, 2359, -3182, 1817, -2779, 1515, -2324, 1202, -2016, 989, -1746, 832, -1467, 653, -1215, 518, -1137, 457, -1000, 372, -798, 255, -695, 202, -631, 173, -533, 83, -506, 62, -493, 50, -461, 25, -431, 2, -389, -30, -320, -80, -281, -111, -195, -174, -112, -228, -77, -247, -42, -276, -23, -294, 32, -343, 123, -416, 158, -444, 271, -529, 377, -607, 438, -645, 475, -662)
 
-[node name="RedChip4" parent="." instance=ExtResource("5_r60cr")]
-position = Vector2(-2028, 899)
-rotation = 2.24088
-scale = Vector2(0.4522, 0.392458)
+[node name="GoldChips" type="Node" parent="."]
 
-[node name="RedChip3" parent="." instance=ExtResource("5_r60cr")]
-position = Vector2(-2079, 808)
-scale = Vector2(0.4522, 0.392458)
+[node name="GoldChip" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(5096, -3501)
+rotation = 2.23383
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="RedChip5" parent="." instance=ExtResource("5_r60cr")]
-position = Vector2(-2124, 1087)
-rotation = -0.162685
-scale = Vector2(2.47292, 2.07111)
+[node name="GoldChip2" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(4541, -3081)
+rotation = 2.23383
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip14" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-748, 760)
-rotation = 2.15102
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip3" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(3953, -2679)
+rotation = 2.35223
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip15" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-32, 458)
-rotation = 2.5447
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip4" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(3385, -2341)
+rotation = 2.34455
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip16" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-294, 765)
-rotation = 3.2554
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip5" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(2821, -1998)
+rotation = 2.32092
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip17" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-888, 1322)
-rotation = 3.00618
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip6" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(2265, -1629)
+rotation = 2.256
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip18" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1385, 1451)
-rotation = 1.48497
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip7" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(1740, -1230)
+rotation = 2.18648
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip19" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1191, 1373)
-rotation = 1.48497
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip8" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(1216, -782)
+rotation = 2.18648
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip20" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1697, 1474)
-rotation = 1.48497
-scale = Vector2(3.07082, 3.20362)
+[node name="GoldChip9" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(695, -339)
+rotation = 2.18648
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
-[node name="WhiteChip" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1719, 1049)
-rotation = 2.89544
-
-[node name="WhiteChip2" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1471, 969)
-rotation = 0.390546
-
-[node name="WhiteChip3" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1400, 935)
-rotation = 0.390546
-
-[node name="WhiteChip4" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-1122, 751)
-rotation = 2.09818
-
-[node name="WhiteChip5" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-891, 525)
-rotation = 2.09818
-
-[node name="WhiteChip6" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-743, 381)
-rotation = 2.1597
-
-[node name="WhiteChip7" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-526, 321)
-rotation = 2.90404
-
-[node name="WhiteChip8" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-366, 288)
-rotation = 2.37755
-
-[node name="WhiteChip9" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-134, 212)
-rotation = 2.37755
-
-[node name="WhiteChip10" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(35, 160)
-rotation = 2.37755
-
-[node name="WhiteChip11" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(112, 171)
-rotation = 2.95106
-
-[node name="WhiteChip12" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(-113, 244)
-rotation = 2.95106
-
-[node name="WhiteChip13" parent="." instance=ExtResource("6_xjti1")]
-position = Vector2(253, 82)
-rotation = 0.787942
+[node name="GoldChip10" parent="GoldChips" instance=ExtResource("6_xjti1")]
+position = Vector2(54, 37)
+rotation = 2.58445
+scale = Vector2(2.09905, 2.15)
+texture = ExtResource("5_dt6co")
 
 [node name="ToyLevelDoor" type="Area2D" parent="."]
-position = Vector2(-1930, 926)
+position = Vector2(6269, 2436)
 collision_layer = 0
 collision_mask = 2
 
@@ -168,4 +129,60 @@ collision_mask = 2
 position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ahxpu")
 
+[node name="Clouds" type="Node" parent="."]
+
+[node name="Cloud2" type="Sprite2D" parent="Clouds"]
+position = Vector2(5262, -4340)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud3" type="Sprite2D" parent="Clouds"]
+position = Vector2(3991, -4491)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud4" type="Sprite2D" parent="Clouds"]
+position = Vector2(5346, -4030)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud5" type="Sprite2D" parent="Clouds"]
+position = Vector2(4108, -4143)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud6" type="Sprite2D" parent="Clouds"]
+position = Vector2(5344, -3473)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud10" type="Sprite2D" parent="Clouds"]
+position = Vector2(3485, -3627)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud21" type="Sprite2D" parent="Clouds"]
+position = Vector2(1129, -2015)
+scale = Vector2(28.6194, 4.42289)
+texture = ExtResource("6_okyc3")
+
+[node name="Cloud11" type="Sprite2D" parent="Clouds"]
+position = Vector2(4639, -2911)
+scale = Vector2(4.2, 3.93035)
+texture = ExtResource("6_okyc3")
+
+[node name="ZoomOut" type="Area2D" parent="."]
+position = Vector2(2457, -2302)
+rotation = -0.692237
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_et32p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomOut"]
+shape = SubResource("RectangleShape2D_3agvj")
+
 [connection signal="body_entered" from="ToyLevelDoor" to="." method="_on_toy_level_door_body_entered"]
+[connection signal="body_entered" from="ZoomOut" to="ZoomOut" method="_on_body_entered"]
+
+[editable path="TacoBoogie"]
+[editable path="Land"]

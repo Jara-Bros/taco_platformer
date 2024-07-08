@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhmr5es5lk8dn"
-path="res://.godot/imported/ukulele_house-removebg-preview.png-3dfadc6d518f08d0663ca61efc657da0.ctex"
+uid="uid://bg3uom21qww82"
+path="res://.godot/imported/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png-30a8892381dc052f005085d12bf1cf13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/texico_town/tb_house/ukulele_house-removebg-preview.png"
-dest_files=["res://.godot/imported/ukulele_house-removebg-preview.png-3dfadc6d518f08d0663ca61efc657da0.ctex"]
+source_file="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png"
+dest_files=["res://.godot/imported/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png-30a8892381dc052f005085d12bf1cf13.ctex"]
 
 [params]
 

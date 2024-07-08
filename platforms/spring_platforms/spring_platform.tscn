@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbaq3wuaykhwp"]
+
+[ext_resource type="Script" path="res://platforms/spring_platforms/spring_platform.gd" id="1_dndxi"]
+[ext_resource type="Texture2D" uid="uid://bc4tlupo1lkxw" path="res://platforms/spring_platforms/SMM-NSMBU-MushroomPlatform-removebg-preview.png" id="1_xmuvn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j78ye"]
+radius = 36.0107
+height = 127.987
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xer1w"]
+size = Vector2(108, 70)
+
+[node name="SpringPlatform" type="AnimatableBody2D"]
+script = ExtResource("1_dndxi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.646067, 0.677778)
+texture = ExtResource("1_xmuvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -23)
+rotation = 1.55638
+shape = SubResource("CapsuleShape2D_j78ye")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -25)
+shape = SubResource("RectangleShape2D_xer1w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
