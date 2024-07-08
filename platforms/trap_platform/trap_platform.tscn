@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cecp5eiasilrg"]
+
+[ext_resource type="Script" path="res://platforms/trap_platform/trap_platform.gd" id="1_nctna"]
+[ext_resource type="Texture2D" uid="uid://duwrdkc86y38a" path="res://levels/jungle_level/sprites/404-4043223_leaves-pile-png-transparent-png-removebg-preview.png" id="2_xxnvq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo54u"]
+size = Vector2(82, 8)
+
+[node name="TrapPlatform" type="Area2D"]
+monitorable = false
+script = ExtResource("1_nctna")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.27374e-13, 0)
+scale = Vector2(0.108466, 0.0909091)
+texture = ExtResource("2_xxnvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jo54u")
