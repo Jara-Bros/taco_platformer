@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmwv73wlokrqx"]
+
+[ext_resource type="Script" path="res://platforms/zipline/zip_line.gd" id="1_5ntwc"]
+[ext_resource type="Texture2D" uid="uid://xjdrxjv0tq4m" path="res://platforms/zipline/vine.png" id="1_s70mm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc246"]
+size = Vector2(486, 2)
+
+[sub_resource type="Curve2D" id="Curve2D_8jrjh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -246, -5, 0, 0, 0, 0, -219.043, -5.62068, 0, 0, 0, 0, -180, -5, 0, 0, 0, 0, -140, -5, 0, 0, 0, 0, -110, -5, 0, 0, 0, 0, -84, -5, 0, 0, 0, 0, -74, -5, 0, 0, 0, 0, -62, -5, 0, 0, 0, 0, -23, -5, 0, 0, 0, 0, 29, -5, 0, 0, 0, 0, 54, -5, 0, 0, 0, 0, 89, -5, 0, 0, 0, 0, 127, -5, 0, 0, 0, 0, 155, -5, 0, 0, 0, 0, 189, -5, 0, 0, 0, 0, 215, -5, 0, 0, 0, 0, 240, -5)
+}
+point_count = 17
+
+[node name="ZipLine" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_5ntwc")
+rail_speed = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 2)
+scale = Vector2(0.679348, 0.1575)
+texture = ExtResource("1_s70mm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -5)
+shape = SubResource("RectangleShape2D_kc246")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8jrjh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-246, -5)
+rotation = -0.0230207
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="rail_complete" from="." to="." method="_on_rail_complete"]

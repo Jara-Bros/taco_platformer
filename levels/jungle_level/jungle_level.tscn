@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dm36t3sxgl3wp" path="res://tilesets/collisions/collisions.tscn" id="1_g81tr"]
 [ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="2_i3p6d"]
 [ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="3_ijhxa"]
-[ext_resource type="PackedScene" path="res://platforms/platform_label.tscn" id="4_b2672"]
+[ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_b2672"]
 
 [node name="JungleLevel" type="Node2D"]
 

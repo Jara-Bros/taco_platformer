@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor_only():
 			velocity.y += 1.5 * 980 * delta
 		var player_direction = ItemManager.get_player().get_direction()
-		#update_bleu_speed()
+		#update_bleu_sped()
 		var ideal_ball_position = ItemManager.get_player().global_position-player_mapping_vectors[player_direction]
 		if abs(global_position.distance_to(ideal_ball_position)) > 7: 
 			var distanceToPlayer = global_position.direction_to(ideal_ball_position)
