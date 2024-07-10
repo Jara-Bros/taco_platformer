@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr0rdkfavikwh"
-path="res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"
+uid="uid://d4ac3qvr4p0nv"
+path="res://.godot/imported/white_thumbtack.png-2b09b96f5ec12f20d3fd483f45445f73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/testing/sprites/bowling-ball-QJD8qxE-600.jpg"
-dest_files=["res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"]
+source_file="res://levels/texico_town/sprites/white_thumbtack.png"
+dest_files=["res://.godot/imported/white_thumbtack.png-2b09b96f5ec12f20d3fd483f45445f73.ctex"]
 
 [params]
 

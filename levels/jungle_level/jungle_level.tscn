@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=40 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="2_i3p6d"]
@@ -8,9 +8,25 @@
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="6_8vxpm"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
 [ext_resource type="Texture2D" uid="uid://c2og30l0otgeo" path="res://levels/jungle_level/sprites/5122e5ac7d77d28c1015c449c5bf0ff6-removebg-preview.png" id="7_uykpy"]
-[ext_resource type="PackedScene" uid="uid://7ktiy52rje38" path="res://platforms/collapsable_platforms/collapsable_platforms.tscn" id="8_5cx0m"]
 [ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="9_p4ruc"]
 [ext_resource type="Texture2D" uid="uid://dyvyy5mlfkjg1" path="res://enemies/tomato_tom/jungle/TTom_Jungle_Sheet-export.png" id="10_cn8j6"]
+[ext_resource type="Script" path="res://platforms/static_platform/static_platform.gd" id="12_1rtoe"]
+[ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="12_4mwl0"]
+[ext_resource type="Texture2D" uid="uid://dme333kt7kmci" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142120-removebg-preview.png" id="12_ym5ky"]
+[ext_resource type="Texture2D" uid="uid://bhrbvh0gomkve" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png" id="13_384fi"]
+[ext_resource type="Script" path="res://levels/jungle_level/parallax_2d.gd" id="13_vw6jl"]
+[ext_resource type="Texture2D" uid="uid://bxi3svkre21d2" path="res://levels/texico_town/sprites/pool_noodle_ends_b-removebg-preview.png" id="16_aluot"]
+[ext_resource type="Texture2D" uid="uid://bhtoghtbyey71" path="res://levels/texico_town/sprites/pool_noodle_ends_r-removebg-preview.png" id="17_s6qb3"]
+[ext_resource type="Texture2D" uid="uid://bn11cu0k0yshu" path="res://levels/texico_town/sprites/pool_noodle_ends_g-removebg-preview.png" id="18_l0l38"]
+[ext_resource type="Texture2D" uid="uid://c28v08um0afam" path="res://levels/jungle_level/sprites/surfb_3.png" id="19_ot8us"]
+[ext_resource type="Script" path="res://platforms/static_platform/static_platform_plinko.gd" id="19_qpb7r"]
+[ext_resource type="PackedScene" uid="uid://cbsmtc48e7t5h" path="res://interactives/scenes/generic_box.tscn" id="21_p4mlw"]
+[ext_resource type="Texture2D" uid="uid://xbpnmfmyu2qy" path="res://levels/testing/sprites/bowling-ball-mdmOVmF-600-removebg-preview.png" id="23_kpcj7"]
+[ext_resource type="PackedScene" uid="uid://bj2oftpiuv11t" path="res://platforms/circle_platform/circle_platform.tscn" id="24_5w2fs"]
+[ext_resource type="Texture2D" uid="uid://ca3xm08hipdam" path="res://interactives/sprites/character_box_taco.png" id="24_7w4ys"]
+[ext_resource type="Texture2D" uid="uid://dea0q8co5k0y4" path="res://platforms/jungle/pngimg.com - bear_PNG1187.png" id="25_7oi40"]
+[ext_resource type="Texture2D" uid="uid://cxjs0v6qfm2u7" path="res://platforms/jungle/sunflower.png" id="26_j1eca"]
+[ext_resource type="Texture2D" uid="uid://ca2mrqkxnp76w" path="res://platforms/jungle/lemur.png" id="27_bo44i"]
 
 [sub_resource type="Animation" id="Animation_kdrfv"]
 length = 0.001
@@ -88,39 +104,67 @@ _data = {
 "move": SubResource("Animation_go2q3")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx31c"]
+size = Vector2(104.007, 19.2253)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sojpg"]
+size = Vector2(104, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27lyu"]
+radius = 27.6586
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l3et"]
+size = Vector2(348, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ko6"]
+size = Vector2(342, 10)
+
+[sub_resource type="Curve2D" id="Curve2D_miw60"]
+_data = {
+"points": PackedVector2Array(-77.8414, -4.27641, 77.8414, 4.27641, 59.0056, -0.569321, 0, 0, 0, 0, 146.521, -70.9324, 9.03706, 23.4717, -9.03706, -23.4717, 143.178, -160.959, 81.7581, 1.98142, -81.7581, -1.98142, 49.5166, -207.644, -13.4744, -36.8017, 13.4744, 36.8017, -26.5029, -68.1953, -73.5581, -9.84036, 73.5581, 9.84036, 58.0127, -1.5766)
+}
+point_count = 6
+
 [node name="JungleLevel" type="Node2D"]
 
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
-position = Vector2(510, -90)
+position = Vector2(568, -335)
 
 [node name="TToms" type="Node" parent="."]
 
 [node name="TomatoTomCharacter" parent="TToms" instance=ExtResource("9_p4ruc")]
-position = Vector2(65, 45)
+position = Vector2(96, -1)
 speed = 30
 
 [node name="Sprite2D" parent="TToms/TomatoTomCharacter" index="0"]
 texture = ExtResource("10_cn8j6")
 
 [node name="TomatoTomCharacter2" parent="TToms" instance=ExtResource("9_p4ruc")]
-position = Vector2(-72, -9)
+position = Vector2(-245, -5)
 speed = 30
 
 [node name="Sprite2D" parent="TToms/TomatoTomCharacter2" index="0"]
 texture = ExtResource("10_cn8j6")
 
 [node name="TomatoTomCharacter3" parent="TToms" instance=ExtResource("9_p4ruc")]
-position = Vector2(65, 45)
+position = Vector2(-318, 38)
 speed = 30
 
 [node name="Sprite2D" parent="TToms/TomatoTomCharacter3" index="0"]
 texture = ExtResource("10_cn8j6")
 
 [node name="TomatoTomCharacter4" parent="TToms" instance=ExtResource("9_p4ruc")]
-position = Vector2(-344, 60)
+position = Vector2(-460, 100)
 speed = 30
 
 [node name="Sprite2D" parent="TToms/TomatoTomCharacter4" index="0"]
+texture = ExtResource("10_cn8j6")
+
+[node name="TomatoTomCharacter5" parent="TToms" instance=ExtResource("9_p4ruc")]
+position = Vector2(-1974, -73)
+speed = 30
+
+[node name="Sprite2D" parent="TToms/TomatoTomCharacter5" index="0"]
 texture = ExtResource("10_cn8j6")
 
 [node name="JungleFG" type="Node" parent="."]
@@ -141,17 +185,10 @@ texture = ExtResource("2_rxjsf")
 
 [node name="Start3" type="Sprite2D" parent="JungleFG"]
 z_index = 1
-position = Vector2(499, -44)
+position = Vector2(500, -38)
 rotation = -0.128305
 scale = Vector2(0.645488, 0.351732)
 texture = ExtResource("2_rxjsf")
-
-[node name="JungleBG" type="Sprite2D" parent="."]
-z_index = -2
-texture_repeat = 2
-texture = ExtResource("2_i3p6d")
-region_enabled = true
-region_rect = Rect2(0, 0, 10000, 1000)
 
 [node name="LeafBendPlatform" parent="." instance=ExtResource("3_ijhxa")]
 position = Vector2(-878, 54)
@@ -177,11 +214,11 @@ position = Vector2(91, 35)
 
 [node name="Polygon2D" parent="Land" index="0"]
 position = Vector2(5, -1)
-polygon = PackedVector2Array(-434, 32, -441, 43, -461, 46, -494, 48, -510, 54, -525, 62, -527, 69, -534, 73, -589, 76, -634, 96, -649, 131, -715, 167, -752, 179, -792, 190, -834, 193, -868, 171, -875, 144, -877, 117, -861, 92, -875, 78, -969, 79, -987, 62, -994, -6, -1026, -9, -1045, -27, -1068, -31, -1085, -27, -1109, -15, -1120, -20, -1135, -26, -1152, -29, -1179, -25, -1193, -10, -1210, 22, -1536, 24, -1534, -93, -1658, -85, -1654, 146, -1755, 147, -1756, -80, -1785, -73, -1815, -66, -2144, -63, -2065, 34, -1974, 168, -1825, 228, -1149, 53, -1072, 64, -1056, 95, -975, 276, -767, 358, -33, 359, 568, 359, 785, 357, 785, 96, 781, -168, 776, -435, 620, -387, 603, -233, 496, -78, 205, -35, 153, -42, 119, -43, 85, -33, 57, 5, -6, 22, -42, 18, -64, -6, -82, -19, -109, -22, -138, -35, -172, -35, -201, -11, -236, -6, -260, -18, -273, -33, -296, -35, -316, -31, -348, -8, -384, -4, -394, 5, -396, 12, -399, 20, -421, 20, -432, 26)
+polygon = PackedVector2Array(-441, 43, -494, 48, -510, 54, -511, 54, -525, 77, -589, 76, -634, 96, -649, 131, -715, 167, -752, 179, -792, 190, -834, 193, -868, 171, -875, 144, -877, 117, -861, 92, -875, 78, -969, 79, -987, 62, -994, -6, -1026, -9, -1045, -27, -1068, -31, -1085, -27, -1109, -15, -1120, -20, -1135, -26, -1152, -29, -1179, -25, -1193, -10, -1210, 22, -1536, 24, -1534, -93, -1658, -85, -1650.22, 64.7284, -1524, 62, -1523, 169, -1647, 171, -1747, 172, -1749, 60, -1761, 60, -1757, 448, -1793, 451, -1796.25, 549.03, -1677, 548, -1677, 601, -1799, 601, -2000, 551, -2057, 499, -2076, 449, -2111, 449, -2117, 168, -2119, 64, -2043, 24, -1756, 27, -1756, -80, -1785, -73, -1815, -66, -2144, -63, -2181, 31, -2348, 31, -2349, 162, -2464, 164, -2492, 197, -2557, 205, -2608, 232, -2644, 264, -2722, 272, -2820, 281, -2855, 325, -2941, 343, -2963, 321, -3005, 322, -3041, 340, -3114, 350, -3095, 624, -2818, 737, -1758, 737, -1411, 733, -1078, 733, -1146, 352, -994, 353, -767, 358, -33, 359, 568, 359, 785, 357, 785, 96, 781, -168, 776, -435, 620, -387, 603, -233, 496, -78, 205, -35, 153, -42, 131, -48, 99, -37, 74, -4, 34, 0, 5, -12, -13, -33, -39, -52, -83, -52, -112, -28, -139, -4, -210, 19, -248, 20, -283, 6, -303, -7, -322, -29, -342, -24, -384, -4, -394, 5, -399, 20, -421, 20, -432, 26)
 
 [node name="Line2D" parent="Land" index="1"]
 position = Vector2(3, 1)
-points = PackedVector2Array(-434, 32, -441, 43, -461, 46, -494, 48, -510, 54, -525, 62, -527, 69, -534, 73, -589, 76, -634, 96, -649, 131, -715, 167, -752, 179, -792, 190, -834, 193, -868, 171, -875, 144, -877, 117, -861, 92, -875, 78, -969, 79, -987, 62, -994, -6, -1026, -9, -1045, -27, -1068, -31, -1085, -27, -1109, -15, -1120, -20, -1135, -26, -1152, -29, -1179, -25, -1193, -10, -1210, 22, -1536, 24, -1534, -93, -1658, -85, -1654, 146, -1755, 147, -1756, -80, -1785, -73, -1815, -66, -2144, -63, -2065, 34, -1974, 168, -1825, 228, -1149, 53, -1072, 64, -1056, 95, -975, 276, -767, 358, -33, 359, 568, 359, 785, 357, 785, 96, 781, -168, 776, -435, 620, -387, 603, -233, 496, -78, 205, -35, 153, -42, 119, -43, 85, -33, 57, 5, -6, 22, -42, 18, -64, -6, -82, -19, -109, -22, -138, -35, -172, -35, -201, -11, -236, -6, -260, -18, -273, -33, -296, -35, -316, -31, -348, -8, -384, -4, -394, 5, -396, 12, -399, 20, -421, 20, -432, 26, -434, 32)
+points = PackedVector2Array(-441, 43, -494, 48, -510, 54, -511, 54, -525, 77, -589, 76, -634, 96, -649, 131, -715, 167, -752, 179, -792, 190, -834, 193, -868, 171, -875, 144, -877, 117, -861, 92, -875, 78, -969, 79, -987, 62, -994, -6, -1026, -9, -1045, -27, -1068, -31, -1085, -27, -1109, -15, -1120, -20, -1135, -26, -1152, -29, -1179, -25, -1193, -10, -1210, 22, -1536, 24, -1534, -93, -1658, -85, -1650.22, 64.7284, -1524, 62, -1523, 169, -1647, 171, -1747, 172, -1749, 60, -1761, 60, -1757, 448, -1793, 451, -1796.25, 549.03, -1677, 548, -1677, 601, -1799, 601, -2000, 551, -2057, 499, -2076, 449, -2111, 449, -2117, 168, -2119, 64, -2043, 24, -1756, 27, -1756, -80, -1785, -73, -1815, -66, -2144, -63, -2181, 31, -2348, 31, -2349, 162, -2464, 164, -2492, 197, -2557, 205, -2608, 232, -2644, 264, -2722, 272, -2820, 281, -2855, 325, -2941, 343, -2963, 321, -3005, 322, -3041, 340, -3114, 350, -3095, 624, -2818, 737, -1758, 737, -1411, 733, -1078, 733, -1146, 352, -994, 353, -767, 358, -33, 359, 568, 359, 785, 357, 785, 96, 781, -168, 776, -435, 620, -387, 603, -233, 496, -78, 205, -35, 153, -42, 131, -48, 99, -37, 74, -4, 34, 0, 5, -12, -13, -33, -39, -52, -83, -52, -112, -28, -139, -4, -210, 19, -248, 20, -283, 6, -303, -7, -322, -29, -342, -24, -384, -4, -394, 5, -399, 20, -421, 20, -432, 26, -441, 43)
 
 [node name="ChipPlatformLR" parent="." instance=ExtResource("6_8vxpm")]
 position = Vector2(-1143, 7)
@@ -219,17 +256,358 @@ libraries = {
 }
 autoplay = "move"
 
-[node name="CollapsablePlatforms" parent="." instance=ExtResource("8_5cx0m")]
-position = Vector2(-1643, -34)
+[node name="StaticPlatform" parent="." instance=ExtResource("12_4mwl0")]
+position = Vector2(-111, -7)
 
-[node name="CollapseTimer" parent="CollapsablePlatforms" index="2"]
-wait_time = 1.5
+[node name="Sprite2D" parent="StaticPlatform" index="0"]
+rotation = -1.57351
+scale = Vector2(0.151319, 0.200165)
+texture = ExtResource("13_384fi")
+
+[node name="CollisionShape2D" parent="StaticPlatform" index="1"]
+rotation = 0.0261083
+shape = SubResource("RectangleShape2D_nx31c")
+one_way_collision = true
+
+[node name="StaticPlatform2" parent="." instance=ExtResource("12_4mwl0")]
+position = Vector2(-1608, -33)
+script = ExtResource("12_1rtoe")
+
+[node name="Sprite2D" parent="StaticPlatform2" index="0"]
+position = Vector2(-2, 0)
+rotation = -1.57351
+scale = Vector2(0.151319, 0.200165)
+texture = ExtResource("12_ym5ky")
+
+[node name="CollisionShape2D" parent="StaticPlatform2" index="1"]
+position = Vector2(-3, 0)
+rotation = 0.00387131
+shape = SubResource("RectangleShape2D_nx31c")
+
+[node name="Area2D" type="Area2D" parent="StaticPlatform2"]
+position = Vector2(-5, -13)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticPlatform2/Area2D"]
+shape = SubResource("RectangleShape2D_sojpg")
+
+[node name="Timer" type="Timer" parent="StaticPlatform2"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -5
+scroll_scale = Vector2(0.05, 0.05)
+repeat_times = 99
+follow_viewport = false
+script = ExtResource("13_vw6jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("2_i3p6d")
+
+[node name="PoolNoodle" type="Node" parent="."]
+
+[node name="PoolNoodleB" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1901, 179)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleB2" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1810, 177)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB2"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB2"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleB3" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1785, 271)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB3"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB3"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleB7" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1873, 273)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB7"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB7"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleB6" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1905, 365)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB6"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB6"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleB8" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1811, 365)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleB8"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("16_aluot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleB8"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleR" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1985, 180)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleR"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("17_s6qb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleR"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleR2" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1963, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleR2"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("17_s6qb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleR2"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleR4" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1989, 366)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleR4"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("17_s6qb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleR4"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleG" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1722, 177)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleG"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("18_l0l38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleG"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleG2" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1698, 272)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleG2"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("18_l0l38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleG2"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="PoolNoodleG4" type="StaticBody2D" parent="PoolNoodle"]
+position = Vector2(-1726, 365)
+
+[node name="Sprite2D" type="Sprite2D" parent="PoolNoodle/PoolNoodleG4"]
+scale = Vector2(0.18241, 0.170213)
+texture = ExtResource("18_l0l38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoolNoodle/PoolNoodleG4"]
+shape = SubResource("CircleShape2D_27lyu")
+
+[node name="StaticPlatform3" parent="." instance=ExtResource("12_4mwl0")]
+position = Vector2(-1850, 123)
+rotation = -0.0529077
+script = ExtResource("19_qpb7r")
+
+[node name="Sprite2D" parent="StaticPlatform3" index="0"]
+position = Vector2(1, 0)
+rotation = -1.56513
+scale = Vector2(0.20068, 0.746601)
+texture = ExtResource("19_ot8us")
+
+[node name="CollisionShape2D" parent="StaticPlatform3" index="1"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_0l3et")
+
+[node name="Area2D" type="Area2D" parent="StaticPlatform3"]
+position = Vector2(4, -17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticPlatform3/Area2D"]
+shape = SubResource("RectangleShape2D_30ko6")
+
+[node name="Timer" type="Timer" parent="StaticPlatform3"]
+
+[node name="GenericBox" parent="." node_paths=PackedStringArray("player_removal_node") instance=ExtResource("21_p4mlw")]
+z_index = 5
+position = Vector2(-1493, 135)
+transformation_node = "res://levels/testing/transformations/bowling_ball/bowling_ball_transform.tscn"
+spawn_location = Vector2(-1800, 100)
+player_removal_node = NodePath("../Taco")
+sprite_2d_image = ExtResource("23_kpcj7")
+
+[node name="Sprite2D" parent="GenericBox" index="0"]
+scale = Vector2(0.128, 0.12)
+texture = ExtResource("23_kpcj7")
+
+[node name="PlinkoBumpers" type="Node" parent="."]
+
+[node name="PlinkoBump1" parent="PlinkoBumpers" instance=ExtResource("6_xxo7e")]
+position = Vector2(321, -77)
+
+[node name="Polygon2D" parent="PlinkoBumpers/PlinkoBump1" index="0"]
+polygon = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603)
+
+[node name="Line2D" parent="PlinkoBumpers/PlinkoBump1" index="1"]
+points = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603, -2235, 565)
+
+[node name="PlinkoBump2" parent="PlinkoBumpers" instance=ExtResource("6_xxo7e")]
+position = Vector2(393, -77)
+
+[node name="Polygon2D" parent="PlinkoBumpers/PlinkoBump2" index="0"]
+polygon = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603)
+
+[node name="Line2D" parent="PlinkoBumpers/PlinkoBump2" index="1"]
+points = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603, -2235, 565)
+
+[node name="PlinkoBump3" parent="PlinkoBumpers" instance=ExtResource("6_xxo7e")]
+position = Vector2(468, -78)
+
+[node name="Polygon2D" parent="PlinkoBumpers/PlinkoBump3" index="0"]
+polygon = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603)
+
+[node name="Line2D" parent="PlinkoBumpers/PlinkoBump3" index="1"]
+points = PackedVector2Array(-2235, 565, -2222, 565, -2222, 603, -2235, 603, -2235, 565)
+
+[node name="GenericBox2" parent="." instance=ExtResource("21_p4mlw")]
+position = Vector2(-1619, 612)
+transformation_node = "res://taco/taco.tscn"
+spawn_location = Vector2(-2350, 100)
+sprite_2d_image = ExtResource("24_7w4ys")
+
+[node name="Sprite2D" parent="GenericBox2" index="0"]
+texture = ExtResource("24_7w4ys")
+
+[node name="Node2D" parent="." instance=ExtResource("24_5w2fs")]
+position = Vector2(-2818, 264)
+curve = SubResource("Curve2D_miw60")
+
+[node name="PathFollow2D" parent="Node2D" index="0"]
+position = Vector2(59.0056, -0.569321)
+rotation = -0.828849
+progress = 0.0
+rotates = false
+
+[node name="AnimatableBody2D" parent="Node2D" index="1"]
+position = Vector2(59.0056, -0.569336)
+rotation = -0.828849
+
+[node name="CollisionShape2D" parent="Node2D/AnimatableBody2D" index="1"]
+rotation = 0.833083
+
+[node name="AnimationPlayer" parent="Node2D" index="2"]
+callback_mode_process = 0
+
+[node name="BouncyBear" type="StaticBody2D" parent="."]
+position = Vector2(-3056, 469)
+
+[node name="Sprite2D" type="Sprite2D" parent="BouncyBear"]
+texture = ExtResource("25_7oi40")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BouncyBear"]
+polygon = PackedVector2Array(-348, -146, -323, -131, -291, -138, -266, -137, -225, -159, -216, -154, -215, -142, -195, -152, -123, -150, -46, -137, -9, -119, 28, -89, 54, -62, -6, -45, -357, -91, -370, -105, -368, -136)
+
+[node name="Sunflower" type="StaticBody2D" parent="."]
+position = Vector2(-3562, 148)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sunflower"]
+position = Vector2(-1, -1)
+scale = Vector2(0.329243, 0.338093)
+texture = ExtResource("26_j1eca")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sunflower"]
+position = Vector2(3599.3, -235.9)
+polygon = PackedVector2Array(-3453, 370, -3502, 321, -3546, 308, -3565, 328, -3599, 360, -3603, 381, -3578, 395, -3517, 386)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sunflower"]
+position = Vector2(3465.3, -180.9)
+polygon = PackedVector2Array(-3512, 313, -3539, 307, -3565, 328, -3599, 360, -3603, 381, -3623, 408, -3589, 396, -3517, 385, -3489, 374, -3482, 358, -3487, 346, -3499, 352)
+
+[node name="Sunflower2" type="StaticBody2D" parent="."]
+position = Vector2(-3886, 176)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sunflower2"]
+position = Vector2(19, -97)
+scale = Vector2(0.329243, 0.338093)
+texture = ExtResource("26_j1eca")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sunflower2"]
+position = Vector2(3624.3, -326.9)
+polygon = PackedVector2Array(-3453, 370, -3502, 321, -3546, 308, -3565, 328, -3599, 360, -3603, 381, -3578, 395, -3517, 386)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Sunflower2"]
+position = Vector2(3490.3, -271.9)
+polygon = PackedVector2Array(-3512, 313, -3539, 307, -3565, 328, -3599, 360, -3603, 381, -3623, 408, -3589, 396, -3517, 385, -3489, 374, -3482, 358, -3487, 346, -3499, 352)
+
+[node name="PlatformLabel" parent="." instance=ExtResource("4_b2672")]
+offset_left = -3732.0
+offset_top = 261.0
+offset_right = -3450.0
+offset_bottom = 306.0
+text = "bending platforms"
+
+[node name="PlatformLabel2" parent="." instance=ExtResource("4_b2672")]
+offset_left = -3322.0
+offset_top = 263.0
+offset_right = -3040.0
+offset_bottom = 308.0
+text = "bouncy platform"
+
+[node name="PlatformLabel3" parent="." instance=ExtResource("4_b2672")]
+offset_left = -4617.0
+offset_top = 155.0
+offset_right = -4335.0
+offset_bottom = 200.0
+text = "sliding platform
+"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-4143, 132)
+rotation = -1.46414
+texture = ExtResource("27_bo44i")
+
+[connection signal="body_entered" from="StaticPlatform2/Area2D" to="StaticPlatform2" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="StaticPlatform2/Timer" to="StaticPlatform2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="StaticPlatform3/Area2D" to="StaticPlatform3" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="StaticPlatform3/Timer" to="StaticPlatform3" method="_on_timer_timeout"]
 
 [editable path="TToms/TomatoTomCharacter"]
 [editable path="TToms/TomatoTomCharacter2"]
 [editable path="TToms/TomatoTomCharacter3"]
 [editable path="TToms/TomatoTomCharacter4"]
+[editable path="TToms/TomatoTomCharacter5"]
 [editable path="Land"]
 [editable path="ChipPlatformLR"]
 [editable path="ChipPlatformLR2"]
-[editable path="CollapsablePlatforms"]
+[editable path="StaticPlatform"]
+[editable path="StaticPlatform2"]
+[editable path="StaticPlatform3"]
+[editable path="GenericBox"]
+[editable path="PlinkoBumpers/PlinkoBump1"]
+[editable path="PlinkoBumpers/PlinkoBump2"]
+[editable path="PlinkoBumpers/PlinkoBump3"]
+[editable path="GenericBox2"]
+[editable path="Node2D"]
