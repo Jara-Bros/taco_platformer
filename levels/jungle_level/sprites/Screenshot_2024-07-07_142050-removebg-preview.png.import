@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr0rdkfavikwh"
-path="res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"
+uid="uid://bhrbvh0gomkve"
+path="res://.godot/imported/Screenshot_2024-07-07_142050-removebg-preview.png-9409b7306fc07c934640b21c8dad05ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/testing/sprites/bowling-ball-QJD8qxE-600.jpg"
-dest_files=["res://.godot/imported/bowling-ball-QJD8qxE-600.jpg-07906d38c32aef7d90619f5494b2da8d.ctex"]
+source_file="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png"
+dest_files=["res://.godot/imported/Screenshot_2024-07-07_142050-removebg-preview.png-9409b7306fc07c934640b21c8dad05ab.ctex"]
 
 [params]
 
