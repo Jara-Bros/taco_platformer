@@ -7,7 +7,7 @@ var aim_kick_right : Vector2 = Vector2(400, -300)
 var pass_kick_left : Vector2 = Vector2(-400, 0)
 var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var input_enabled:bool = true
-
+@export var ignore_camera:bool
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
@@ -37,6 +37,8 @@ var global_delta
 
 func _ready():
 	player_facing = 1
+	if ignore_camera:
+		remove_child(camera_2d)
 	
 #
 #func _input(event):

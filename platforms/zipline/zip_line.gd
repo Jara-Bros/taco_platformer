@@ -15,6 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if rail.progress_ratio >= 0.99:
 		rail_complete.emit()
 	if is_riding:
