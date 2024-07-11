@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://yo2ih5itj6dl"]
+[gd_scene load_steps=4 format=3 uid="uid://yo2ih5itj6dl"]
 
 [ext_resource type="Texture2D" uid="uid://cvhaagowd5g4c" path="res://platforms/sprites/chip.png" id="1_1i71g"]
+[ext_resource type="Script" path="res://platforms/scenes/chip_platform.gd" id="1_qj1bp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftlu0"]
 size = Vector2(46.75, 5.375)
 
 [node name="ChipPlatformLR" type="AnimatableBody2D"]
+script = ExtResource("1_qj1bp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 2.90376
@@ -16,3 +18,7 @@ texture = ExtResource("1_1i71g")
 position = Vector2(-1, -9)
 shape = SubResource("RectangleShape2D_ftlu0")
 one_way_collision = true
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
