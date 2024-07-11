@@ -1,10 +1,14 @@
 join woz 3
-woz (woz_default): Pardon me sir...
-woz (woz_default): But are you...
-woz (woz_default): ...a pickle?
-- Yes
-	woz (woz_default): Hmm...
-	woz (woz_default): I find that hard to believe.
-- No
-	woz (woz_default): I appreciate the honesty.
+woz (woz_default): Good afternoon!
+woz (woz_default): Sir, how can I be of service?
+- Tea
+	woz (woz_default): Of course. Did you bring the water?
+	[end_timeline]
+- Meditation
+	woz (woz_default): Wonderful.
+	woz (woz_default): Take a deep breath.
+	[wait time="9.0"]
+	woz (woz_default): And another.
+	[wait time="8.0"]
+	woz (woz_default): Great work!
 [end_timeline]

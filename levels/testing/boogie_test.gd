@@ -1,7 +1,7 @@
 extends Node2D
 
-var toy_level = preload("res://levels/testing/toy_level.tscn").instantiate()
+@onready var camera_2d: Camera2D = $TacoBoogie/Camera2D
 
-func _on_toy_level_door_body_entered(body: Node2D) -> void:
-	SceneManager.swap_scenes(toy_level)
-	queue_free()
+func _ready() -> void:
+	camera_2d.set_limit(SIDE_BOTTOM, 2050)
+	camera_2d.set_limit(SIDE_LEFT, -3000)

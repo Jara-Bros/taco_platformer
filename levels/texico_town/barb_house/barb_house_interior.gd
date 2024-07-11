@@ -3,11 +3,6 @@ extends Node2D
 @onready var taco: Player = $Taco
 
 @onready var barb_office = preload("res://levels/texico_town/barb_house/barb_office.tscn").instantiate()
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var taco_dance: AnimatedSprite2D = $TacoDance
-@onready var timer: Timer = $Timer
-@onready var art_trigger: Area2D = $ArtTrigger
-
 
 var player_spawn_location_dict = {
 	exit_door = Vector2(32, -5),
@@ -26,6 +21,7 @@ func get_spawn_location(_spawn : String):
 
 func _on_exit_door_body_entered(_body: Node2D) -> void:
 	var texico_start = load("res://levels/texico_town/texico_start/texico_start.tscn").instantiate()
+	texico_start.get_child(0).position = texico_start.get_spawn_location("barb_front_door")
 	SceneManager.swap_scenes(texico_start)
 	queue_free()
 

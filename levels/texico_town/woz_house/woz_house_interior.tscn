@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://co82qr0oc6pek"]
+[gd_scene load_steps=18 format=4 uid="uid://co82qr0oc6pek"]
 
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/woz_house_interior.gd" id="1_s64ea"]
 [ext_resource type="Texture2D" uid="uid://cubb57hcgpqa8" path="res://tilesets/texico_town/tea_room_tileset.png" id="2_obq6r"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
 [ext_resource type="Texture2D" uid="uid://dfacw550fpvko" path="res://levels/texico_town/woz_house/wozku_book.png" id="8_hepsp"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/wozku_book.gd" id="9_hvgsd"]
+[ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="10_3wh4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6swg"]
 texture = ExtResource("2_obq6r")
@@ -345,6 +346,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WozkuBook/Area2D"]
 shape = SubResource("CircleShape2D_htm0a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_3wh4p")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
 [connection signal="body_entered" from="Woz/WozTrigger" to="Woz" method="_on_woz_trigger_body_entered"]

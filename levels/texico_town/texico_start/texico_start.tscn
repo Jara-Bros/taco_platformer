@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=45 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/texico_start/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://bhk0lcto22uch" path="res://levels/texico_town/sprites/gold_thumbtack.png" id="30_seg0j"]
 [ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
 [ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
+[ext_resource type="PackedScene" uid="uid://6wfc0eh5jsn8" path="res://enemies/retryzone.tscn" id="33_s8uci"]
+[ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
@@ -41,6 +43,84 @@ size = Vector2(15.8932, 201.86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2e0x"]
 size = Vector2(32, 30)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ua2"]
+
+[sub_resource type="Animation" id="Animation_0gdbr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D7:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1032, -3.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_qlbil"]
+resource_name = "move"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D7:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1300, -3), Vector2(1500, -3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_16a56"]
+_data = {
+"RESET": SubResource("Animation_0gdbr"),
+"move": SubResource("Animation_qlbil")
+}
+
+[sub_resource type="Animation" id="Animation_xnxn4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1300, 590)]
+}
+
+[sub_resource type="Animation" id="Animation_qqyqg"]
+resource_name = "move"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14.9667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1300, 590), Vector2(1500, 590)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0iky"]
+_data = {
+"RESET": SubResource("Animation_xnxn4"),
+"move": SubResource("Animation_qqyqg")
+}
 
 [node name="DiosMio" type="Node2D" groups=["Level"]]
 script = ExtResource("1_86lqk")
@@ -64,10 +144,10 @@ position = Vector2(351, 18)
 collision_mask = 2
 
 [node name="Polygon2D" parent="TBLand" index="0"]
-polygon = PackedVector2Array(-164, 74, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 47, -239, 85, -212, 13)
+polygon = PackedVector2Array(-162, 21, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 18, -229, 18, -212, 13)
 
 [node name="Line2D" parent="TBLand" index="1"]
-points = PackedVector2Array(-164, 74, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 47, -239, 85, -212, 13, -164, 74)
+points = PackedVector2Array(-162, 21, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 18, -229, 18, -212, 13, -162, 21)
 
 [node name="WozLand" parent="." instance=ExtResource("28_x3vh2")]
 visible = false
@@ -76,10 +156,10 @@ rotation = 0.286837
 collision_mask = 2
 
 [node name="Polygon2D" parent="WozLand" index="0"]
-polygon = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -34.5903, 147.826, -34.0802, 78.8641, -62.9027, 97.7919, -94.3059, 136.248, -108.921, 65.4917, -120.307, 83.4464, -139.351, 121.385, -165.745, 70.7847, -188.903, 45.295, -199.633, 107.888, -204.477, 119.743, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503)
+polygon = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -7.25848, 99.1025, -34.0802, 78.8641, -57.1618, 78.3743, -77.0209, 85.2748, -108.921, 65.4917, -120.307, 83.4464, -141.139, 72.9098, -165.745, 70.7847, -188.903, 45.295, -209.866, 83.799, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503)
 
 [node name="Line2D" parent="WozLand" index="1"]
-points = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -34.5903, 147.826, -34.0802, 78.8641, -62.9027, 97.7919, -94.3059, 136.248, -108.921, 65.4917, -120.307, 83.4464, -139.351, 121.385, -165.745, 70.7847, -188.903, 45.295, -199.633, 107.888, -204.477, 119.743, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503, -31.4374, 66.616)
+points = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -7.25848, 99.1025, -34.0802, 78.8641, -57.1618, 78.3743, -77.0209, 85.2748, -108.921, 65.4917, -120.307, 83.4464, -141.139, 72.9098, -165.745, 70.7847, -188.903, 45.295, -209.866, 83.799, -238.42, 85.9659, -280.822, 58.8548, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503, -31.4374, 66.616)
 
 [node name="BarbLand" parent="." instance=ExtResource("28_x3vh2")]
 visible = false
@@ -138,18 +218,6 @@ texture = ExtResource("5_i4mxj")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Clouds"]
 position = Vector2(1331, 575)
-rotation = -0.0501439
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D6" type="Sprite2D" parent="Clouds"]
-position = Vector2(1817, 432)
-rotation = -0.0501439
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Clouds"]
-position = Vector2(-1644, 690)
 rotation = -0.0501439
 scale = Vector2(2.07097, 1.82587)
 texture = ExtResource("5_i4mxj")
@@ -383,6 +451,69 @@ texture = ExtResource("14_yo5bf")
 z_index = -2
 position = Vector2(55, 435)
 rotation = -1.31154
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(83, 307)
+rotation = 1.8323
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(-106, 160)
+rotation = 3.98379
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(19, 205)
+rotation = 3.54499
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(320, 246)
+rotation = 1.91035
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(531, 417)
+rotation = 1.62215
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(222, 468)
+rotation = 1.49844
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(-85, 446)
+rotation = 1.73318
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(-204, 468)
+rotation = 1.73318
+scale = Vector2(0.807585, 0.702425)
+texture = ExtResource("14_yo5bf")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Chips/GoldChips"]
+z_index = -2
+position = Vector2(-330, 491)
+rotation = 1.73318
 scale = Vector2(0.807585, 0.702425)
 texture = ExtResource("14_yo5bf")
 
@@ -720,6 +851,49 @@ position = Vector2(-521, 418)
 scale = Vector2(0.064, 0.052)
 texture = ExtResource("32_f737g")
 
+[node name="Retryzone" parent="." instance=ExtResource("33_s8uci")]
+position = Vector2(-1, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Retryzone"]
+shape = SubResource("WorldBoundaryShape2D_n0ua2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_rmilw")
+volume_db = 3.0
+autoplay = true
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D7" type="Sprite2D" parent="AnimatableBody2D"]
+modulate = Color(1, 1, 1, 0.745098)
+z_index = 5
+position = Vector2(-1032, -3.00001)
+rotation = -0.0501439
+scale = Vector2(2.07097, 1.82587)
+texture = ExtResource("5_i4mxj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_16a56")
+}
+autoplay = "move"
+
+[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D6" type="Sprite2D" parent="AnimatableBody2D2"]
+z_index = 5
+position = Vector2(-1300, 590)
+rotation = -0.0501439
+scale = Vector2(2.07097, 1.82587)
+texture = ExtResource("5_i4mxj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_m0iky")
+}
+autoplay = "move"
+
+[editable path="Taco"]
 [editable path="TBLand"]
 [editable path="WozLand"]
 [editable path="BarbLand"]

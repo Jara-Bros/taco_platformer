@@ -16,9 +16,14 @@ func _ready():
 func _process(delta):
 	if current_state == player_detector_state_machine.ON:
 		## rotate down 
-		if rotation < 90:
-			rotation += rotation_speed * delta 
-	else:
+		if rotation < 35:
+			rotation += rotation_speed * delta
+		else:
+			pass
+
+  
+# TODO: stop bend leaf jitter aft hitting maximum rotation 
+	if current_state == player_detector_state_machine.OFF:
 		## player not on rotate off
 		if rotation > 0: 
 			rotation -= rotation_speed * delta 
