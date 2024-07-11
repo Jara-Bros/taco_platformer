@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbrd28y2hgqe8"]
+
+[ext_resource type="Script" path="res://platforms/log_platform/log_platform.gd" id="1_u65cr"]
+[ext_resource type="Texture2D" uid="uid://bmda2ju3grxhq" path="res://platforms/log_platform/log.png" id="1_vrcnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwf2d"]
+size = Vector2(129, 33)
+
+[node name="LogPlatform" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_u65cr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_uwf2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vrcnb")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

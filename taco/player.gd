@@ -7,7 +7,7 @@ var aim_kick_right : Vector2 = Vector2(400, -300)
 var pass_kick_left : Vector2 = Vector2(-400, 0)
 var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var input_enabled:bool = true
-
+@export var ignore_camera:bool
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
@@ -28,6 +28,9 @@ var prev_state
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var buffer_timer : Timer = $BufferTimer
 @onready var variable_jump_height_timer : Timer = $VariableJumpHeightTimer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 var item = null
 
 var direction
@@ -37,6 +40,8 @@ var global_delta
 
 func _ready():
 	player_facing = 1
+	if ignore_camera:
+		remove_child(camera_2d)
 	
 #
 #func _input(event):
@@ -69,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		change_state("movement", player_movement_state.WALKING)
 		if Input.is_action_just_pressed("jump"): 
+			audio_player.play()
 			velocity = Vector2.UP * -1 *jump_velocity #Normal Jump action
 			change_state("movement", player_movement_state.IN_AIR)
 			

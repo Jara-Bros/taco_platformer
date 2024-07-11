@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://daosforg6mcb6"]
+[gd_scene load_steps=15 format=4 uid="uid://daosforg6mcb6"]
 
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_house_interior.gd" id="1_ttktl"]
 [ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/texico_town/kitchen_tileset.png" id="1_ugfht"]
 [ext_resource type="Texture2D" uid="uid://fswtcx2emt2v" path="res://tilesets/texico_town/rothko_room_tileset.png" id="2_x0wpb"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_ntmss"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="6_ngyj0"]
+[ext_resource type="Texture2D" uid="uid://dt054u3xb0eoy" path="res://levels/texico_town/sprites/t&b_fan_art_01.jpg" id="6_qbel4"]
+[ext_resource type="Texture2D" uid="uid://88ouql0y3oe5" path="res://levels/texico_town/sprites/picture_frame-removebg-preview.png" id="7_8rym1"]
+[ext_resource type="Texture2D" uid="uid://c7bfti1cb3osm" path="res://levels/texico_town/sprites/t&b_fan_art_02.jpg" id="7_ktco5"]
+[ext_resource type="AudioStream" uid="uid://bomeghq83herd" path="res://audio/music/Fragile State - The Facts And The Dreams.mp3" id="9_dk1tb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js2js"]
 texture = ExtResource("1_ugfht")
@@ -182,6 +186,35 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeDoor"]
 shape = SubResource("RectangleShape2D_ogmlx")
+
+[node name="FanArt" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(158, -79)
+rotation = -1.57254
+scale = Vector2(0.0571515, 0.0630963)
+texture = ExtResource("6_qbel4")
+
+[node name="FanArt2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(525, -88)
+scale = Vector2(0.042, 0.0409051)
+texture = ExtResource("7_ktco5")
+
+[node name="Frame" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(150, -89)
+scale = Vector2(0.480392, 0.485294)
+texture = ExtResource("7_8rym1")
+
+[node name="Frame2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(521, -87)
+scale = Vector2(0.316993, 0.318627)
+texture = ExtResource("7_8rym1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dk1tb")
+autoplay = true
 
 [connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
 [connection signal="body_entered" from="OfficeDoor" to="." method="_on_office_door_body_entered"]

@@ -3,22 +3,33 @@ Daily Picklings\:\
 A Collection of Wozku
 Read one?
 - Yes
-	All day spent climbing \
-a mountain.
-	What did I find at the top?
+	Spent all day \
+climbing a mountain.
+	Look what's at the top!
 	A pickle.
 	Read another?
 	- Yes
 		Stargazing on a\
 cloudy night.
-		Seeing me disappointed,
+		Seeing me \
+disappointed,
 		the fireflies twinkle!
 		Read another?
 		- Yes
-			Went to smell new flowers
-			But bees were already there.
+			Went to smell new flowers.
+			Behind a line of bees,
 			I wait my turn.
-			[end_timeline]
+			Read another?
+			- Yes
+				Raining on the\
+walk back home.
+				Slipped on \
+the mud...
+				Ah - \
+the sky!
+				[end_timeline]
+			- No
+				[end_timeline]
 		- No
 			[end_timeline]
 	- No

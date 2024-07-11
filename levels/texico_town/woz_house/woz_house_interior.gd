@@ -21,6 +21,7 @@ func _ready():
 # Swap scenes from woz house interior to woz house
 func _on_exit_door_body_entered(_body: Node2D) -> void:
 	var texico_start = load("res://levels/texico_town/texico_start/texico_start.tscn").instantiate()
+	texico_start.get_child(0).position = texico_start.get_spawn_location("woz_front_door")
 	SceneManager.swap_scenes(texico_start)
 	queue_free()
 
