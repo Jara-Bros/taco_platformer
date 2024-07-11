@@ -20,7 +20,7 @@ func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
 
 func _on_exit_door_body_entered(_body: Node2D) -> void:
-	var texico_start = load("res://levels/texico_town/texico_start/texico_start.tscn").instantiate()
+	var texico_start = load("res://levels/texico_town/dios_mio/texico_start.tscn").instantiate()
 	texico_start.get_child(0).position = texico_start.get_spawn_location("barb_front_door")
 	SceneManager.swap_scenes(texico_start)
 	queue_free()
