@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mtmk2qt0ik6r"
+path="res://.godot/imported/No copyright, free strong wind sound effect.mp3-9a0a9eaf34202a42a6ce596cdb3a79b4.mp3str"
+
+[deps]
+
+source_file="res://audio/music/No copyright, free strong wind sound effect.mp3"
+dest_files=["res://.godot/imported/No copyright, free strong wind sound effect.mp3-9a0a9eaf34202a42a6ce596cdb3a79b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

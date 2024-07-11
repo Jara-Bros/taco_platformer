@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bomeghq83herd"
+path="res://.godot/imported/Fragile State - The Facts And The Dreams.mp3-2c620e2f18a522d404b5d14fad1a542f.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Fragile State - The Facts And The Dreams.mp3"
+dest_files=["res://.godot/imported/Fragile State - The Facts And The Dreams.mp3-2c620e2f18a522d404b5d14fad1a542f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -5,7 +5,7 @@ extends Node2D
 
 
 var player_spawn_location_dict = {
-	office_exit_door = Vector2(-13, -4)
+	office_exit_door = Vector2(-13, -4),
 }
 
 
@@ -21,5 +21,6 @@ func get_spawn_location(_spawn : String):
 
 func _on_exit_door_body_entered(_body: Node2D) -> void:
 	var barb_gallery_one = load("res://levels/texico_town/barb_house/barb_gallery_one.tscn").instantiate()
+	barb_gallery_one.get_child(0).position = barb_gallery_one.get_spawn_location("gallery_one_door")
 	SceneManager.swap_scenes(barb_gallery_one)
 	queue_free()

@@ -28,6 +28,9 @@ var prev_state
 @onready var coyote_timer : Timer = $CoyoteTimer
 @onready var buffer_timer : Timer = $BufferTimer
 @onready var variable_jump_height_timer : Timer = $VariableJumpHeightTimer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
 var item = null
 
 var direction
@@ -71,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		change_state("movement", player_movement_state.WALKING)
 		if Input.is_action_just_pressed("jump"): 
+			audio_player.play()
 			velocity = Vector2.UP * -1 *jump_velocity #Normal Jump action
 			change_state("movement", player_movement_state.IN_AIR)
 			
