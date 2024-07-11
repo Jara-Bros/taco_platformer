@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var taco: Player = $"../Taco"
 
 
-func _on_woz_trigger_body_entered(body: Node2D) -> void:
+func _on_woz_trigger_body_entered(_body: Node2D) -> void:
 	taco.input_enabled = false
 	taco.animation_player.play("idle")
 	Dialogic.start("woz_timeline")

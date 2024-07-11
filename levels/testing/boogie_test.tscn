@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://cq07tc1kxdb1x" path="res://platforms/chips/white_chip.tscn" id="6_xjti1"]
 [ext_resource type="Script" path="res://levels/testing/zoom_out.gd" id="8_et32p"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="9_jfmnq"]
-[ext_resource type="PackedScene" uid="uid://6wfc0eh5jsn8" path="res://enemies/retryzone.tscn" id="10_wd7pe"]
+[ext_resource type="Script" path="res://levels/jungle_level/jungle_start.gd" id="11_ktx08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3agvj"]
 size = Vector2(134, 408)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7vdrw"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wmp0m"]
 
 [node name="BoogieTest" type="Node2D"]
 script = ExtResource("1_143n2")
@@ -321,13 +321,19 @@ script = ExtResource("8_et32p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoomOut"]
 shape = SubResource("RectangleShape2D_3agvj")
 
-[node name="Retryzone" parent="." instance=ExtResource("10_wd7pe")]
-position = Vector2(-2329, 3042)
+[node name="JungleStart" type="Area2D" parent="."]
+position = Vector2(-2650, 2609)
+script = ExtResource("11_ktx08")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Retryzone"]
-shape = SubResource("WorldBoundaryShape2D_7vdrw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JungleStart"]
+shape = SubResource("WorldBoundaryShape2D_wmp0m")
+
+[node name="Timer" type="Timer" parent="JungleStart"]
+one_shot = true
 
 [connection signal="body_entered" from="ZoomOut" to="ZoomOut" method="_on_body_entered"]
+[connection signal="body_entered" from="JungleStart" to="JungleStart" method="_on_body_entered"]
+[connection signal="timeout" from="JungleStart/Timer" to="JungleStart" method="_on_timer_timeout"]
 
 [editable path="TacoBoogie"]
 [editable path="Land"]

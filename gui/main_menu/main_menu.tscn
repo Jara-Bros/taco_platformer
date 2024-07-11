@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2mtvr7ax7guf"]
+
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/PressStart2P-Regular.ttf" id="1_4l72j"]
+[ext_resource type="Texture2D" uid="uid://b3w73n1e21855" path="res://gui/main_menu/Screenshot 2024-07-10 205518.png" id="1_55a3a"]
+[ext_resource type="Script" path="res://gui/main_menu/main_menu.gd" id="1_fcjyx"]
+[ext_resource type="Texture2D" uid="uid://5teoal8pnapv" path="res://gui/icons/play_button_icon_small.png" id="2_7nn0t"]
+[ext_resource type="Texture2D" uid="uid://bm7matnmtyb2x" path="res://gui/icons/play_button_hover.png" id="5_l5pwn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcjyx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_55a3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.313726, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4l72j")
+theme_override_font_sizes/font_size = 50
+text = "TACO &"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435294, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_4l72j")
+theme_override_font_sizes/font_size = 50
+text = "  BLEU"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_7nn0t")
+texture_hover = ExtResource("5_l5pwn")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
