@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqcxvu1fkoi0"
-path="res://.godot/imported/Bigfishfight.jpg-49e84f0ca9b9c2d77071ec3fdbf6fdbb.ctex"
+uid="uid://bygkq6sed03ua"
+path="res://.godot/imported/water_background.png-c7106745f5550439e324032a969618d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/water_section/Bigfishfight.jpg"
-dest_files=["res://.godot/imported/Bigfishfight.jpg-49e84f0ca9b9c2d77071ec3fdbf6fdbb.ctex"]
+source_file="res://levels/water_section/water_background.png"
+dest_files=["res://.godot/imported/water_background.png-c7106745f5550439e324032a969618d4.ctex"]
 
 [params]
 
