@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://jda2xtcely8x"]
+[gd_scene load_steps=3 format=3 uid="uid://jda2xtcely8x"]
 
 [ext_resource type="Script" path="res://spawner/spawn_manager.gd" id="1_jkym6"]
 
-[node name="SpawnManager" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_qhv86"]
+
+[node name="SpawnManager" type="Area2D"]
 script = ExtResource("1_jkym6")
+
+[node name="RandomPositionTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_qhv86")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[connection signal="timeout" from="RandomPositionTimer" to="." method="_on_random_position_timer_timeout"]

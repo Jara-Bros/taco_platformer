@@ -14,12 +14,8 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var gravity : int
 @export var fallMultiplier = 2 
 @export var lowJumpMultiplier = 10 
-enum player_movement_state {WALKING, IN_AIR}
-enum player_action_state {MOVING,KICKING,AIMING}
-var current_state = {
-	"movement": player_movement_state.WALKING,
-	"action": player_action_state.MOVING
-}
+enum player_state {WALKING, IN_AIR, KICKING}
+var current_state
 var prev_state
 
 @onready var sprite_2d = $Sprite2D
@@ -39,6 +35,7 @@ var global_delta
 
 
 func _ready():
+	current_state  = player_state.WALKING
 	player_facing = 1
 	if ignore_camera:
 		remove_child(camera_2d)
@@ -72,25 +69,25 @@ func _physics_process(delta: float) -> void:
 		velocity += Vector2.UP * (-9.81) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
 
 	if is_on_floor():
-		change_state("movement", player_movement_state.WALKING)
+		#if current_state["movement"] == player_movement_state.IN_AIR:
+			#change_state("movement", player_movement_state.WALKING)
 		if Input.is_action_just_pressed("jump"): 
 			audio_player.play()
 			velocity = Vector2.UP * -1 *jump_velocity #Normal Jump action
-			change_state("movement", player_movement_state.IN_AIR)
+			change_state(player_state.IN_AIR)
 			
 
 	
 	if direction:
-		if current_state["movement"] == player_movement_state.WALKING:
+		if current_state == player_state.WALKING:
 			velocity.x = move_toward(velocity.x, direction * speed, 50)
-		elif current_state["movement"] == player_movement_state.IN_AIR and direction * velocity.x < 0:
-		
+		elif current_state == player_state.IN_AIR and direction * velocity.x < 0:
 			velocity = velocity.lerp(Vector2(direction * speed, velocity.y), acceleration * delta)
 		else:
 			velocity.x = move_toward(velocity.x, direction * speed, 50)
 			
 	else:
-		if current_state["movement"] == player_movement_state.WALKING:
+		if current_state == player_state.WALKING:
 			velocity.x = move_toward(velocity.x, 0, acceleration)
 		else:
 			velocity.x = move_toward(velocity.x, 0, 5)
@@ -147,8 +144,8 @@ func _physics_process(delta: float) -> void:
 		#velocity.y = 0
 	# Handle action
 	if Input.is_action_just_pressed("item"):
-		prev_state = current_state["action"]
-		current_state["action"] = player_action_state.KICKING
+		prev_state = current_state
+		current_state = player_state.KICKING
 		animation_player.play("kick")
 		if item != null:
 			#animation_player.play("kick")
@@ -181,23 +178,23 @@ func _physics_process(delta: float) -> void:
 	# Play animations
 	if is_on_floor():
 		if direction == 0:
-			if current_state["action"] == player_action_state.KICKING:
+			if current_state == player_state.KICKING:
 				animation_player.play("kick")
 			else:
 				animation_player.play("idle")
 		else:
-			if current_state["action"] == player_action_state.KICKING:
+			if current_state == player_state.KICKING:
 				animation_player.play("kick")
 			else:
 				animation_player.play("walk")
 	else:
 		if velocity.y < 0:
-			if current_state["action"] == player_action_state.KICKING:
+			if current_state == player_state.KICKING:
 				animation_player.play("kick")
 			else:
 				animation_player.play("jump")
 		if velocity.y > 0:
-			if current_state["action"] == player_action_state.KICKING:
+			if current_state == player_state.KICKING:
 				animation_player.play("kick")
 			else:
 				animation_player.play("idle")
@@ -218,19 +215,15 @@ func get_state():
 func get_direction():
 	return player_facing
 	
-func change_state(state_machine_type, state):
-	if state_machine_type == "movement":
-		current_state["movement"] = state
-	else:
-		## action
-		current_state["action"] = state
+func change_state(state):
+		current_state = state
 	
 
 
 func _on_animation_player_animation_finished(anim_name):
-	if current_state["action"] == player_action_state.KICKING:
-		if prev_state == player_action_state.KICKING:
-			current_state["action"] = player_action_state.MOVING
+	if current_state == player_state.KICKING:
+		if prev_state == player_state.KICKING:
+			current_state = player_state.WALKING
 		else:
 			current_state = prev_state
 
