@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsmwcwtpe4cni"]
+
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
+[ext_resource type="Script" path="res://levels/river/river.gd" id="1_terlw"]
+[ext_resource type="Texture2D" uid="uid://dlay2f4465u57" path="res://levels/river/sprites/river_bg.jpg" id="3_h0b1v"]
+[ext_resource type="Script" path="res://levels/river/parallax_2d.gd" id="3_uis34"]
+[ext_resource type="Texture2D" uid="uid://bg3uom21qww82" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png" id="5_bbnqc"]
+[ext_resource type="Texture2D" uid="uid://bvlmgm5tul4jf" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview_1_-removebg-preview.png" id="6_6ab7g"]
+[ext_resource type="AudioStream" uid="uid://dyructiqqmquj" path="res://audio/sfx/river_slow_sfx.mp3" id="8_u3i3s"]
+
+[node name="River" type="Node2D"]
+script = ExtResource("1_terlw")
+
+[node name="Taco" parent="." instance=ExtResource("1_1tf14")]
+position = Vector2(732, 192)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(509, 204)
+repeat_times = 99
+script = ExtResource("3_uis34")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -1
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.895425, 0.909536)
+texture = ExtResource("3_h0b1v")
+
+[node name="Land" parent="." instance=ExtResource("1_jcuqo")]
+z_index = -1
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(782, 369, 621, 373, 536, 348, 373, 382, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(782, 369, 621, 373, 536, 348, 373, 382, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169, 782, 369)
+
+[node name="Underbrushes" type="Node" parent="."]
+
+[node name="Underbrush" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(721, 399)
+rotation = 1.56794
+scale = Vector2(0.922375, 0.730966)
+texture = ExtResource("5_bbnqc")
+
+[node name="Underbrush2" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(590, 405)
+rotation = 1.56794
+scale = Vector2(0.922375, 0.730966)
+texture = ExtResource("5_bbnqc")
+
+[node name="Underbrush3" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(369, 431)
+rotation = 0.0239004
+scale = Vector2(0.393746, 0.304036)
+texture = ExtResource("5_bbnqc")
+
+[node name="Underbrush4" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(558, 412)
+rotation = 0.165471
+scale = Vector2(0.393746, 0.304036)
+texture = ExtResource("6_6ab7g")
+
+[node name="Underbrush5" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(733, 409)
+rotation = -1.59393
+scale = Vector2(0.760595, 1.25053)
+texture = ExtResource("6_6ab7g")
+
+[node name="Underbrush8" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(771, 278)
+rotation = -0.00535852
+scale = Vector2(0.494149, 0.610776)
+texture = ExtResource("6_6ab7g")
+flip_h = true
+
+[node name="Underbrush9" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(865, 281)
+rotation = -0.00535852
+scale = Vector2(0.494149, 0.610776)
+texture = ExtResource("6_6ab7g")
+flip_h = true
+
+[node name="Underbrush10" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(855, 285)
+rotation = 0.00614136
+scale = Vector2(0.494149, 0.610776)
+texture = ExtResource("6_6ab7g")
+
+[node name="Underbrush6" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(432, 429)
+rotation = -0.0319284
+scale = Vector2(0.35322, 0.320198)
+texture = ExtResource("6_6ab7g")
+
+[node name="Underbrush7" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(440, 441)
+rotation = -0.243052
+scale = Vector2(0.750036, 0.373878)
+texture = ExtResource("5_bbnqc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_u3i3s")
+autoplay = true
+
+[editable path="Taco"]
+[editable path="Land"]

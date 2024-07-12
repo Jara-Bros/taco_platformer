@@ -1,15 +1,12 @@
 extends Node2D
 
 
-
 @onready var taco: Player = $Taco
-
 
 # Player spawn location from woz house -> woz house interior
 var player_spawn_location_dict = {
 	exit_door = Vector2(162, -4)
 }
-
 
 # Set player camera limits
 func _ready():
@@ -19,11 +16,6 @@ func _ready():
 	taco.get_child(3).set_limit(SIDE_LEFT, -176)
 	
 	
-
-# Swap scenes from woz house interior to woz house
-func _on_exit_door_body_entered(_body: Node2D) -> void:
-	var texico_start = load("res://levels/texico_town/dios_mio/texico_start.tscn").instantiate()
-	SceneManager.swap_scenes(texico_start)
 
 
 func get_spawn_location(_spawn : String):

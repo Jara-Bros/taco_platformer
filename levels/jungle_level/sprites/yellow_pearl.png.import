@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bryfrjfreuvpc"
-path="res://.godot/imported/T&B promotional.png-bd2e89ab69cf1cd947c2bbdcbb0b3d0b.ctex"
+uid="uid://8tao8lvkitko"
+path="res://.godot/imported/yellow_pearl.png-8e454810cdd9630b03466e87db2df5a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/pause_menu/T&B promotional.png"
-dest_files=["res://.godot/imported/T&B promotional.png-bd2e89ab69cf1cd947c2bbdcbb0b3d0b.ctex"]
+source_file="res://levels/jungle_level/sprites/yellow_pearl.png"
+dest_files=["res://.godot/imported/yellow_pearl.png-8e454810cdd9630b03466e87db2df5a1.ctex"]
 
 [params]
 

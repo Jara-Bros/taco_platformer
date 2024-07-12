@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5teoal8pnapv"
-path="res://.godot/imported/play_button_icon_small.png-5993a8418ca8ff87cf0460224fd83ad7.ctex"
+uid="uid://ce4no77qam7km"
+path="res://.godot/imported/sand-beach-png-9.png-e9bbde01188814907102c49c4af063cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/icons/play_button_icon_small.png"
-dest_files=["res://.godot/imported/play_button_icon_small.png-5993a8418ca8ff87cf0460224fd83ad7.ctex"]
+source_file="res://levels/river/sprites/sand-beach-png-9.png"
+dest_files=["res://.godot/imported/sand-beach-png-9.png-e9bbde01188814907102c49c4af063cb.ctex"]
 
 [params]
 
