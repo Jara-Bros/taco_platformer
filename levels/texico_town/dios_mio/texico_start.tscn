@@ -126,8 +126,8 @@ _data = {
 script = ExtResource("1_86lqk")
 
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
-z_index = 5
-position = Vector2(410, -99)
+z_index = 4
+position = Vector2(-475, 298)
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
@@ -603,7 +603,7 @@ scale = Vector2(0.612856, 0.532696)
 texture = ExtResource("24_yprev")
 
 [node name="BoogieRamp" type="Sprite2D" parent="Boogie"]
-z_index = 1
+z_index = 5
 position = Vector2(-534, 332)
 texture = ExtResource("23_dj0b6")
 

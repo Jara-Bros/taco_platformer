@@ -1,19 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=16 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
 [ext_resource type="Script" path="res://levels/river/river.gd" id="1_terlw"]
 [ext_resource type="Texture2D" uid="uid://dlay2f4465u57" path="res://levels/river/sprites/river_bg.jpg" id="3_h0b1v"]
+[ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_s56se"]
 [ext_resource type="Script" path="res://levels/river/parallax_2d.gd" id="3_uis34"]
 [ext_resource type="Texture2D" uid="uid://bg3uom21qww82" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png" id="5_bbnqc"]
+[ext_resource type="Script" path="res://levels/river/parallax_2d_2.gd" id="6_5xcgn"]
 [ext_resource type="Texture2D" uid="uid://bvlmgm5tul4jf" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview_1_-removebg-preview.png" id="6_6ab7g"]
-[ext_resource type="AudioStream" uid="uid://dyructiqqmquj" path="res://audio/sfx/river_slow_sfx.mp3" id="8_u3i3s"]
+[ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river/sprites/sea_png.png" id="7_johfw"]
+[ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="9_7378w"]
+[ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
+[ext_resource type="AudioStream" uid="uid://d4f2oiqn6nsyl" path="res://audio/music/los_cantadores_intro_p2.mp3" id="11_2ywef"]
+[ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river/sprites/plaintain.png" id="14_1db4f"]
+
+[sub_resource type="Curve2D" id="Curve2D_g0wg1"]
 
 [node name="River" type="Node2D"]
 script = ExtResource("1_terlw")
 
+[node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
+
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(732, 192)
+position = Vector2(717, 347)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
@@ -21,11 +31,21 @@ scroll_offset = Vector2(509, 204)
 repeat_times = 99
 script = ExtResource("3_uis34")
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="ForestBG" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 position = Vector2(0, 3.8147e-06)
 scale = Vector2(0.895425, 0.909536)
 texture = ExtResource("3_h0b1v")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-164, 348)
+repeat_times = 99
+script = ExtResource("6_5xcgn")
+
+[node name="RiverFG" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1, 0)
+scale = Vector2(0.317778, 0.190813)
+texture = ExtResource("7_johfw")
 
 [node name="Land" parent="." instance=ExtResource("1_jcuqo")]
 z_index = -1
@@ -100,9 +120,39 @@ rotation = -0.243052
 scale = Vector2(0.750036, 0.373878)
 texture = ExtResource("5_bbnqc")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_u3i3s")
+[node name="RiverSlowBM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7378w")
 autoplay = true
 
+[node name="WingFlapFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(725, 293)
+stream = ExtResource("10_tltc5")
+
+[node name="MusicTransition" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(757, 197)
+stream = ExtResource("11_2ywef")
+
+[node name="PlaintainBoat" type="Path2D" parent="."]
+curve = SubResource("Curve2D_g0wg1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlaintainBoat"]
+position = Vector2(219, 420)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlaintainBoat/PathFollow2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="PlaintainBoat"]
+position = Vector2(219, 420)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlaintainBoat/AnimatableBody2D"]
+rotation = -1.10059
+scale = Vector2(0.0710165, 0.0782459)
+texture = ExtResource("14_1db4f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlaintainBoat/AnimatableBody2D"]
+polygon = PackedVector2Array(-80, -80, -83, -69, -77, -55, -50, -35, -19, -11, 25, 9, 70, 18, 93, 25, 120, 25, 123, 38, 102, 43, 55, 50, 29, 48, -4, 39, -37, 26, -65, 8, -84, -11, -95, -35, -99, -78, -89, -85)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlaintainBoat"]
+
+[editable path="CanvasLayer"]
 [editable path="Taco"]
 [editable path="Land"]

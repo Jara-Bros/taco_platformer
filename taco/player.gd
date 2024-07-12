@@ -39,7 +39,7 @@ var global_delta
 
 
 # Force for pushing rigid bodies
-var push_force = 50.0
+var push_force = 40.0
 
 
 func _ready():
