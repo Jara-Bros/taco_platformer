@@ -1,10 +1,11 @@
-[gd_scene load_steps=64 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=66 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
 [ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="2_i3p6d"]
 [ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="2_rxjsf"]
 [ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="3_ijhxa"]
+[ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_qao02"]
 [ext_resource type="AudioStream" uid="uid://dvhqo8l4tfsdl" path="res://audio/sfx/leave_rustle_fx.wav" id="4_8t4d5"]
 [ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_b2672"]
 [ext_resource type="AudioStream" uid="uid://ci02nbhdskvy0" path="res://audio/sfx/Approval Sound - Sound Effect (HQ)).mp3" id="5_8kqrl"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
 [ext_resource type="Texture2D" uid="uid://c2og30l0otgeo" path="res://levels/jungle_level/sprites/5122e5ac7d77d28c1015c449c5bf0ff6-removebg-preview.png" id="7_uykpy"]
 [ext_resource type="Script" path="res://levels/jungle_level/butterfly_ride.gd" id="8_lnca4"]
+[ext_resource type="AudioStream" uid="uid://dkrteeeyhc8nb" path="res://audio/music/los_cantadores_intro_p1.mp3" id="8_omdnb"]
 [ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="9_p4ruc"]
 [ext_resource type="Texture2D" uid="uid://dyvyy5mlfkjg1" path="res://enemies/tomato_tom/jungle/TTom_Jungle_Sheet-export.png" id="10_cn8j6"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="10_jk1dl"]
@@ -25,13 +27,13 @@
 [ext_resource type="Texture2D" uid="uid://bhrbvh0gomkve" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png" id="13_384fi"]
 [ext_resource type="Script" path="res://levels/jungle_level/parallax_2d.gd" id="13_vw6jl"]
 [ext_resource type="PackedScene" uid="uid://dmii312fxp0ss" path="res://levels/testing/kick_test/butterfly_eggs.tscn" id="14_kdh1r"]
-[ext_resource type="Script" path="res://levels/jungle_level/butterfly_trigger_1.gd" id="15_x26ap"]
 [ext_resource type="Texture2D" uid="uid://bxi3svkre21d2" path="res://levels/texico_town/sprites/pool_noodle_ends_b-removebg-preview.png" id="16_aluot"]
 [ext_resource type="Texture2D" uid="uid://bhtoghtbyey71" path="res://levels/texico_town/sprites/pool_noodle_ends_r-removebg-preview.png" id="17_s6qb3"]
 [ext_resource type="Texture2D" uid="uid://bn11cu0k0yshu" path="res://levels/texico_town/sprites/pool_noodle_ends_g-removebg-preview.png" id="18_l0l38"]
 [ext_resource type="Texture2D" uid="uid://c28v08um0afam" path="res://levels/jungle_level/sprites/surfb_3.png" id="19_ot8us"]
 [ext_resource type="Script" path="res://platforms/static_platform/static_platform_plinko.gd" id="19_qpb7r"]
 [ext_resource type="PackedScene" uid="uid://cbsmtc48e7t5h" path="res://interactives/scenes/generic_box.tscn" id="21_p4mlw"]
+[ext_resource type="Script" path="res://levels/jungle_level/butterfly_trig.gd" id="23_gv1wc"]
 [ext_resource type="Texture2D" uid="uid://xbpnmfmyu2qy" path="res://levels/testing/sprites/bowling-ball-mdmOVmF-600-removebg-preview.png" id="23_kpcj7"]
 [ext_resource type="PackedScene" uid="uid://bj2oftpiuv11t" path="res://platforms/circle_platform/circle_platform.tscn" id="24_5w2fs"]
 [ext_resource type="Texture2D" uid="uid://ca3xm08hipdam" path="res://interactives/sprites/character_box_taco.png" id="24_7w4ys"]
@@ -202,6 +204,8 @@ position = Vector2(-5069, 590)
 [node name="AudioStreamPlayer2D" parent="Taco" index="8"]
 volume_db = -5.0
 
+[node name="CanvasLayer" parent="." instance=ExtResource("3_qao02")]
+
 [node name="AmazonAmbient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_khq5v")
 volume_db = -2.0
@@ -220,6 +224,10 @@ volume_db = 2.0
 [node name="BigWingFlap" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-5429, 704)
 stream = ExtResource("6_vid0p")
+
+[node name="MusicTransition" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-5497, 607)
+stream = ExtResource("8_omdnb")
 
 [node name="ButterflyRide2" type="Path2D" parent="."]
 position = Vector2(-5399, 272)
@@ -423,10 +431,10 @@ points = PackedVector2Array(-441, 43, -494, 48, -510, 54, -511, 54, -525, 77, -5
 position = Vector2(177, 106)
 
 [node name="Polygon2D" parent="Land2" index="0"]
-polygon = PackedVector2Array(-4436, 444, -4590, 326, -4606, 625, -4614, 648, -4634, 666, -4644, 679, -4659, 708, -4670, 742, -4713, 737, -4747, 732, -4775, 739, -4811, 723, -4854, 719, -4873, 691, -4916, 685, -4944, 672, -4982, 661, -4994, 649, -5038, 627, -5092, 595, -5124, 555, -5204, 551, -5243, 536, -5284, 516, -5314, 540, -5304, 637, -5311, 658, -5336, 669, -5413, 683, -5454, 679, -5488, 666, -5527, 666, -5572, 711, -5596, 712, -5619, 703, -5809, 311, -5914, 441, -5847, 801, -5186, 803, -4979, 806, -4859, 800, -4389, 788)
+polygon = PackedVector2Array(-4436, 444, -4590, 326, -4606, 625, -4614, 648, -4634, 666, -4644, 679, -4659, 708, -4670, 742, -4713, 737, -4747, 732, -4775, 739, -4811, 723, -4854, 719, -4873, 691, -4916, 685, -4944, 672, -4982, 661, -4994, 649, -5038, 627, -5092, 595, -5124, 555, -5204, 551, -5243, 536, -5284, 516, -5314, 540, -5304, 637, -5311, 658, -5336, 669, -5413, 683, -5454, 679, -5488, 666, -5527, 666, -5572, 711, -5596, 712, -5619, 703, -5720, 445, -5914, 441, -5847, 801, -5186, 803, -4979, 806, -4859, 800, -4389, 788)
 
 [node name="Line2D" parent="Land2" index="1"]
-points = PackedVector2Array(-4436, 444, -4590, 326, -4606, 625, -4614, 648, -4634, 666, -4644, 679, -4659, 708, -4670, 742, -4713, 737, -4747, 732, -4775, 739, -4811, 723, -4854, 719, -4873, 691, -4916, 685, -4944, 672, -4982, 661, -4994, 649, -5038, 627, -5092, 595, -5124, 555, -5204, 551, -5243, 536, -5284, 516, -5314, 540, -5304, 637, -5311, 658, -5336, 669, -5413, 683, -5454, 679, -5488, 666, -5527, 666, -5572, 711, -5596, 712, -5619, 703, -5809, 311, -5914, 441, -5847, 801, -5186, 803, -4979, 806, -4859, 800, -4389, 788, -4436, 444)
+points = PackedVector2Array(-4436, 444, -4590, 326, -4606, 625, -4614, 648, -4634, 666, -4644, 679, -4659, 708, -4670, 742, -4713, 737, -4747, 732, -4775, 739, -4811, 723, -4854, 719, -4873, 691, -4916, 685, -4944, 672, -4982, 661, -4994, 649, -5038, 627, -5092, 595, -5124, 555, -5204, 551, -5243, 536, -5284, 516, -5314, 540, -5304, 637, -5311, 658, -5336, 669, -5413, 683, -5454, 679, -5488, 666, -5527, 666, -5572, 711, -5596, 712, -5619, 703, -5720, 445, -5914, 441, -5847, 801, -5186, 803, -4979, 806, -4859, 800, -4389, 788, -4436, 444)
 
 [node name="ChrysalisTunnel" type="StaticBody2D" parent="."]
 
@@ -502,13 +510,15 @@ position = Vector2(-5430, 799)
 [node name="ButterflyEggs" parent="ButterflyEgg" instance=ExtResource("14_kdh1r")]
 position = Vector2(-5329, 756)
 
-[node name="ButterflyTrigger1" type="Area2D" parent="."]
+[node name="ButterflyTrig" type="Node2D" parent="."]
+script = ExtResource("23_gv1wc")
+
+[node name="ButterflyTrigger1" type="Area2D" parent="ButterflyTrig"]
 position = Vector2(-5410, 761)
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("15_x26ap")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButterflyTrigger1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButterflyTrig/ButterflyTrigger1"]
 shape = SubResource("RectangleShape2D_38j8y")
 
 [node name="ChipPlatformLR" parent="." instance=ExtResource("6_8vxpm")]
@@ -1027,7 +1037,7 @@ script = ExtResource("35_6s33m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RestartZone"]
 shape = SubResource("WorldBoundaryShape2D_xu6pb")
 
-[connection signal="body_entered" from="ButterflyTrigger1" to="ButterflyTrigger1" method="_on_body_entered"]
+[connection signal="body_entered" from="ButterflyTrig/ButterflyTrigger1" to="ButterflyTrig" method="_on_butterfly_trigger_1_body_entered"]
 [connection signal="body_entered" from="StaticPlatform2/Area2D" to="StaticPlatform2" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="StaticPlatform2/Timer" to="StaticPlatform2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="StaticPlatform3/Area2D" to="StaticPlatform3" method="_on_area_2d_body_entered"]
@@ -1036,6 +1046,7 @@ shape = SubResource("WorldBoundaryShape2D_xu6pb")
 [connection signal="body_entered" from="RestartZone" to="RestartZone" method="_on_body_entered"]
 
 [editable path="Taco"]
+[editable path="CanvasLayer"]
 [editable path="TToms/TomatoTomCharacter"]
 [editable path="TToms/TomatoTomCharacter2"]
 [editable path="TToms/TomatoTomCharacter3"]
