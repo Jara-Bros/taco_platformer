@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doe5o76tgh1jp"
-path="res://.godot/imported/Screenshot 2024-05-04 014511.png-a41bc790c2cc2087e38f752e15e4fcea.ctex"
+uid="uid://cr3up8qcjyuu6"
+path="res://.godot/imported/butterfly_chrysalis_edit.png-bad0680f9570e36d574a3dd8e7123a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/pause_menu/Screenshot 2024-05-04 014511.png"
-dest_files=["res://.godot/imported/Screenshot 2024-05-04 014511.png-a41bc790c2cc2087e38f752e15e4fcea.ctex"]
+source_file="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png"
+dest_files=["res://.godot/imported/butterfly_chrysalis_edit.png-bad0680f9570e36d574a3dd8e7123a07.ctex"]
 
 [params]
 

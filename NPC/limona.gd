@@ -13,6 +13,6 @@ func _on_interact():
 	taco.input_enabled = false
 	Dialogic.start("limona_timeline")
 	await Dialogic.timeline_ended
-	SceneManager.swap_scenes(boogie_test)
+	SceneManager.change_scenes(boogie_test)
 	taco.input_enabled = true
 	dios_mio.queue_free()

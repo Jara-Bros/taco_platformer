@@ -7,7 +7,4 @@ func _on_body_entered(_body: Node2D) -> void:
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	if get_tree():
-		get_tree().call_deferred("reload_current_scene")
-	else:
-		SceneManager.reload_scenes()
+	get_tree().change_scene_to_file("res://levels/texico_town/dios_mio/texico_start.tscn")

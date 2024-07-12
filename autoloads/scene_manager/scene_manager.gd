@@ -1,7 +1,8 @@
 extends Node
 
-func swap_scenes(_scene : Node2D ):
+func start_scene (_scene : Node2D):
 	call_deferred("add_child", _scene)
 
-func change_scenes(pscene : PackedScene):
-	call_deferred("add_child", pscene)
+func change_scenes (_scene : Node2D ):
+	call_deferred("remove_child", get_child(0))
+	call_deferred("add_child", _scene)

@@ -38,6 +38,10 @@ var player_facing
 var global_delta
 
 
+# Force for pushing rigid bodies
+var push_force = 50.0
+
+
 func _ready():
 	player_facing = 1
 	if ignore_camera:
@@ -125,7 +129,14 @@ func _physics_process(delta: float) -> void:
 	#if current_state["vertical"] == player_vertical_movement_state.ON_GROUND:
 		#coyote_timer.start()
 		
-		
+	
+	# Handles pushing RigidBodies
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+
+
 		
 		
 		

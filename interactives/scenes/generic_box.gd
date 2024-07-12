@@ -11,11 +11,11 @@ func _ready():
 	sprite_2d_node.texture = sprite_2d_image
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if transformation_node != null:
 		var instantiated_node = load(transformation_node).instantiate()
 		if spawn_location == Vector2(0,0):

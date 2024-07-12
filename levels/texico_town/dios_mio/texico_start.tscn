@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=45 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://c4iql1deag2yo" path="res://levels/texico_town/tb_house/vegas_sticker.png" id="18_7qekv"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/gallery.gd" id="18_ycis3"]
 [ext_resource type="Texture2D" uid="uid://ceffl8g1n22vl" path="res://levels/texico_town/tb_house/Screenshot_2024-07-07_174454-removebg-preview.png" id="19_74rp8"]
-[ext_resource type="PackedScene" uid="uid://co82qr0oc6pek" path="res://levels/texico_town/woz_house/woz_house_interior.tscn" id="21_6l0v7"]
 [ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
 [ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
 [ext_resource type="Texture2D" uid="uid://co8up0texihcv" path="res://levels/texico_town/sprites/boogie_crossing_sign_orange-removebg-preview.png" id="24_yprev"]
@@ -33,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bhk0lcto22uch" path="res://levels/texico_town/sprites/gold_thumbtack.png" id="30_seg0j"]
 [ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
 [ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
-[ext_resource type="PackedScene" uid="uid://6wfc0eh5jsn8" path="res://enemies/retryzone.tscn" id="33_s8uci"]
+[ext_resource type="Script" path="res://levels/texico_town/dios_mio/restartzone.gd" id="34_lgohi"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
@@ -44,8 +43,6 @@ size = Vector2(15.8932, 201.86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2e0x"]
 size = Vector2(32, 30)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n0ua2"]
 
 [sub_resource type="Animation" id="Animation_0gdbr"]
 length = 0.001
@@ -122,6 +119,8 @@ _data = {
 "RESET": SubResource("Animation_xnxn4"),
 "move": SubResource("Animation_qqyqg")
 }
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u3u38"]
 
 [node name="DiosMio" type="Node2D" groups=["Level"]]
 script = ExtResource("1_86lqk")
@@ -571,7 +570,6 @@ position = Vector2(-206, -32)
 scale = Vector2(0.173913, 0.176471)
 texture = ExtResource("14_8bkwh")
 script = ExtResource("14_7450t")
-change_scene = ExtResource("21_6l0v7")
 
 [node name="InteractionArea" parent="WozTeahouse/ShojiDoor" instance=ExtResource("14_lnglo")]
 position = Vector2(-23.4034, -1.66741e-05)
@@ -853,12 +851,6 @@ position = Vector2(-521, 418)
 scale = Vector2(0.064, 0.052)
 texture = ExtResource("32_f737g")
 
-[node name="Retryzone" parent="." instance=ExtResource("33_s8uci")]
-position = Vector2(-1, 498)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Retryzone"]
-shape = SubResource("WorldBoundaryShape2D_n0ua2")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_rmilw")
 volume_db = 3.0
@@ -895,10 +887,20 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="RestartZone" type="Area2D" parent="."]
+position = Vector2(513, 763)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("34_lgohi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RestartZone"]
+shape = SubResource("WorldBoundaryShape2D_u3u38")
+
+[connection signal="body_entered" from="RestartZone" to="RestartZone" method="_on_body_entered"]
+
 [editable path="Taco"]
 [editable path="TBLand"]
 [editable path="WozLand"]
 [editable path="BarbLand"]
 [editable path="BarbL2"]
 [editable path="LimLand"]
-[editable path="Retryzone"]
