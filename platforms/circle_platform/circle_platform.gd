@@ -17,5 +17,5 @@ func _ready() -> void:
 		set_process(false)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	path_follow_2d.progress += speed

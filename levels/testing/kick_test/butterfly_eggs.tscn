@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmii312fxp0ss"]
+
+[ext_resource type="Texture2D" uid="uid://8tao8lvkitko" path="res://levels/jungle_level/sprites/yellow_pearl.png" id="1_okxp5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u31x4"]
+radius = 14.0357
+
+[node name="ButterflyEggs" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0748032, 0.075388)
+texture = ExtResource("1_okxp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u31x4")

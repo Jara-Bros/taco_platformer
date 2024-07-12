@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2mtvr7ax7guf"]
+
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/PressStart2P-Regular.ttf" id="1_4l72j"]
+[ext_resource type="Texture2D" uid="uid://b3w73n1e21855" path="res://gui/main_menu/Screenshot 2024-07-10 205518.png" id="1_55a3a"]
+[ext_resource type="Script" path="res://gui/main_menu/main_menu.gd" id="1_fcjyx"]
+[ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="3_ghlob"]
+[ext_resource type="Texture2D" uid="uid://dtlxxbaoq1kft" path="res://tBleu/sprites/Bleu-Idle.png" id="4_8cu32"]
+[ext_resource type="Texture2D" uid="uid://dgbmscihiioeh" path="res://gui/icons/play_button.png" id="4_t2nx8"]
+[ext_resource type="Texture2D" uid="uid://cc535ctey546h" path="res://NPC/sprites/woz/woz_idle_portrait.png" id="5_5h5hx"]
+[ext_resource type="Texture2D" uid="uid://c1m8cgt028cpe" path="res://gui/icons/play_button_hover.png" id="5_l5pwn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcjyx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_55a3a")
+
+[node name="Taco" type="Sprite2D" parent="."]
+position = Vector2(245, 398)
+scale = Vector2(5.82857, 5.4375)
+texture = ExtResource("3_ghlob")
+hframes = 11
+
+[node name="Bleu" type="Sprite2D" parent="."]
+position = Vector2(238, 275)
+scale = Vector2(5.82857, 5.4375)
+texture = ExtResource("4_8cu32")
+
+[node name="Woz" type="Sprite2D" parent="."]
+position = Vector2(1004, 646)
+scale = Vector2(7.50001, 6.875)
+texture = ExtResource("5_5h5hx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.313726, 0.00392157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4l72j")
+theme_override_font_sizes/font_size = 50
+text = "TACO &"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.435294, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_4l72j")
+theme_override_font_sizes/font_size = 50
+text = "  BLEU"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_t2nx8")
+texture_hover = ExtResource("5_l5pwn")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
