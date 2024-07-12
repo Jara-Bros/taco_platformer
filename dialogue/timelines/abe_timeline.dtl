@@ -1,0 +1,7 @@
+[style name="limona_style_textbox"]
+abe (abe_default): . . .
+[wait time="2.5"]
+abe (abe_look_right): What do ya think?
+[wait time="2.0"]
+abe (abe_look_smile): If this isn't nice,
+abe (abe_look_smile): I don't know what is!

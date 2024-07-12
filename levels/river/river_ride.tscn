@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dn7r1iycfhomv"]
+
+[ext_resource type="Script" path="res://levels/river/river_ride.gd" id="1_bgrm7"]
+[ext_resource type="Script" path="res://levels/river/forest_bg.gd" id="1_c33bv"]
+[ext_resource type="Texture2D" uid="uid://dlay2f4465u57" path="res://levels/river/sprites/river_bg.jpg" id="2_r7k7k"]
+[ext_resource type="Script" path="res://levels/river/river_bg.gd" id="3_mjc6a"]
+[ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river/sprites/sea_png.png" id="4_7cagb"]
+[ext_resource type="PackedScene" uid="uid://cp6oi7jighbuy" path="res://levels/river/taco_plaintain_ride.tscn" id="5_dgayr"]
+[ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="6_vrsl5"]
+[ext_resource type="Texture2D" uid="uid://ddw7t4fpurv20" path="res://NPC/sprites/abe/abe_happy_portrait.png" id="8_box27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vihf"]
+size = Vector2(370, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_us863"]
+
+[node name="RiverRide" type="Node2D"]
+script = ExtResource("1_bgrm7")
+
+[node name="ForestBG" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(847, 206)
+autoscroll = Vector2(5, 0)
+repeat_times = 99
+script = ExtResource("1_c33bv")
+
+[node name="Forest" type="Sprite2D" parent="ForestBG"]
+texture = ExtResource("2_r7k7k")
+
+[node name="RiverBG" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(252, 331)
+autoscroll = Vector2(45, 0)
+repeat_times = 99
+script = ExtResource("3_mjc6a")
+
+[node name="River" type="Sprite2D" parent="RiverBG"]
+position = Vector2(-47.5, -34)
+scale = Vector2(0.525833, 0.351338)
+texture = ExtResource("4_7cagb")
+
+[node name="TacoPlaintainRide" parent="." instance=ExtResource("5_dgayr")]
+position = Vector2(1028, 495)
+
+[node name="RiverBM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vrsl5")
+autoplay = true
+
+[node name="BarrierT" type="StaticBody2D" parent="."]
+position = Vector2(960, 384)
+
+[node name="BarrierTop" type="CollisionShape2D" parent="BarrierT"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8vihf")
+
+[node name="BarrierB" type="StaticBody2D" parent="."]
+position = Vector2(957, 816)
+
+[node name="BarrierBottom" type="CollisionShape2D" parent="BarrierB"]
+shape = SubResource("RectangleShape2D_8vihf")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_us863")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(138, 489)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D"]
+position = Vector2(138, 489)
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/AnimatableBody2D"]
+texture = ExtResource("8_box27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
+
+[editable path="TacoPlaintainRide"]

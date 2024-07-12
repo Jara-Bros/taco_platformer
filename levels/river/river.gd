@@ -11,9 +11,11 @@ func _ready() -> void:
 	camera_2d.set_limit(SIDE_BOTTOM, 450)
 	camera_2d.set_limit(SIDE_RIGHT, 855)
 	camera_2d.set_limit(SIDE_TOP, 245)
-	taco.input_enabled = false
-	music_transition.play()
-	animation_player.play_backwards("fade_in")
-	await animation_player.animation_finished
-	taco.input_enabled = true
-	river_slow_bm.play()
+	camera_2d.set_limit(SIDE_LEFT, 110)
+	
+	# For level transition
+	#taco.input_enabled = false
+	#music_transition.play()
+	#animation_player.play_backwards("fade_in")
+	#await animation_player.animation_finished
+	#taco.input_enabled = true

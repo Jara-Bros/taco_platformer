@@ -28,12 +28,14 @@ InteractionManager="*res://interaction/interaction_manager.tscn"
 [dialogic]
 
 directories/dch_directory={
+"abe": "res://dialogue/characters/abe.dch",
 "barb": "res://dialogue/characters/barb.dch",
 "bleu_test_character": "res://levels/testing/dialogue_test/bleu_test_character.dch",
 "limona": "res://dialogue/characters/limona.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
+"abe_timeline": "res://dialogue/timelines/abe_timeline.dtl",
 "barb_test_timeline": "res://levels/testing/dialogue_test/barb_test_timeline.dtl",
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "bleu_test_timeline": "res://levels/testing/dialogue_test/bleu_test_timeline.dtl",

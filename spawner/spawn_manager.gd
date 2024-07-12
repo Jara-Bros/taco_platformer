@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _get_configuration_warnings():
-	
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
