@@ -71,18 +71,18 @@ script = ExtResource("1_terlw")
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(717, 347)
+position = Vector2(722, 175)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(509, 204)
+scroll_offset = Vector2(481, 316)
 repeat_times = 99
 script = ExtResource("3_uis34")
 
 [node name="ForestBG" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 position = Vector2(0, 3.8147e-06)
-scale = Vector2(0.895425, 0.909536)
+scale = Vector2(1.16013, 0.845966)
 texture = ExtResource("3_h0b1v")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
@@ -93,7 +93,7 @@ script = ExtResource("6_5xcgn")
 [node name="RiverFG" type="Sprite2D" parent="Parallax2D2"]
 z_index = -1
 position = Vector2(1, 0)
-scale = Vector2(0.317778, 0.190813)
+scale = Vector2(0.758889, 0.317012)
 texture = ExtResource("7_johfw")
 
 [node name="Land" parent="." instance=ExtResource("1_jcuqo")]

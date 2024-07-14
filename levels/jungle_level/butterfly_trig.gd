@@ -12,10 +12,6 @@ var egg_count : int = 0
 
 
 func _on_butterfly_trigger_1_body_entered(body: Node2D) -> void:
-	egg_count += 1
-	print_debug(egg_count)
-	
-	if egg_count >= 2:
 		butterfly_trigger_1.queue_free()
 		approval_sound.play()
 		await approval_sound.finished
@@ -23,6 +19,7 @@ func _on_butterfly_trigger_1_body_entered(body: Node2D) -> void:
 		animation_player.play("lower")
 		await animation_player.animation_finished
 		taco.input_enabled = false
+		taco.animation_player.play("idle")
 		Dialogic.start("butterfly_ride_timeline")
 		await Dialogic.timeline_ended
 		taco.input_enabled = true
