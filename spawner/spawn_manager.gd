@@ -5,10 +5,8 @@ extends Area2D
 var list_of_spawners = []
 
 func _get_configuration_warnings():
-	for child in get_children():
-		if child is GenericSpawner:
-			return []
-	return ["Need at least one spawner"]
+	pass
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

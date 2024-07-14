@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://7x67enshr3f8"]
+
+[ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="1_h6lll"]
+[ext_resource type="Texture2D" uid="uid://brvqg1vuyq0t2" path="res://taco/sprites/taco_idle.png" id="2_0l8yj"]
+[ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="3_u5ssc"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/PressStart2P-Regular.ttf" id="4_r2ll0"]
+
+[node name="budgetJoke" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(465, 335)
+scale = Vector2(5.0625, 4.6875)
+texture = ExtResource("1_h6lll")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(651, 340)
+scale = Vector2(5.0625, 4.6875)
+texture = ExtResource("2_0l8yj")
+flip_h = true
+
+[node name="PlatformLabel" parent="." instance=ExtResource("3_u5ssc")]
+offset_left = 210.0
+offset_top = 170.0
+offset_right = 210.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "What is our budget?
+                        |
+"
+
+[node name="PlatformLabel2" parent="." instance=ExtResource("3_u5ssc")]
+offset_left = -406.0
+offset_top = 212.0
+offset_right = -406.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_r2ll0")
+text = "$0
+"
+horizontal_alignment = 2

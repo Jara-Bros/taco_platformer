@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=24 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
@@ -14,8 +14,56 @@
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
 [ext_resource type="AudioStream" uid="uid://d4f2oiqn6nsyl" path="res://audio/music/los_cantadores_intro_p2.mp3" id="11_2ywef"]
 [ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river/sprites/plaintain.png" id="14_1db4f"]
+[ext_resource type="Script" path="res://levels/river/disable_input.gd" id="15_bwo1d"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coin.tscn" id="16_1nt4r"]
+[ext_resource type="Script" path="res://levels/river/river_ride_enter.gd" id="17_nomcm"]
+[ext_resource type="Texture2D" uid="uid://5udilfsyg6fq" path="res://enemies/tomato_tom/river/ttom_jungle_sleeping.png" id="18_wi32j"]
 
 [sub_resource type="Curve2D" id="Curve2D_g0wg1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 274, 407, 0, 0, 0, 0, 192, 407, 0, 0, 0, 0, 154, 407, 0, 0, 0, 0, 119, 405, 0, 0, 0, 0, 85, 404, 0, 0, 0, 0, 42, 405)
+}
+point_count = 6
+
+[sub_resource type="Animation" id="Animation_ekxuw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_unsem"]
+resource_name = "move"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6kmb"]
+_data = {
+"RESET": SubResource("Animation_ekxuw"),
+"move": SubResource("Animation_unsem")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvoly"]
+size = Vector2(72, 180)
 
 [node name="River" type="Node2D"]
 script = ExtResource("1_terlw")
@@ -23,18 +71,18 @@ script = ExtResource("1_terlw")
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(717, 347)
+position = Vector2(722, 175)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(509, 204)
+scroll_offset = Vector2(481, 316)
 repeat_times = 99
 script = ExtResource("3_uis34")
 
 [node name="ForestBG" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 position = Vector2(0, 3.8147e-06)
-scale = Vector2(0.895425, 0.909536)
+scale = Vector2(1.16013, 0.845966)
 texture = ExtResource("3_h0b1v")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
@@ -43,18 +91,19 @@ repeat_times = 99
 script = ExtResource("6_5xcgn")
 
 [node name="RiverFG" type="Sprite2D" parent="Parallax2D2"]
+z_index = -1
 position = Vector2(1, 0)
-scale = Vector2(0.317778, 0.190813)
+scale = Vector2(0.758889, 0.317012)
 texture = ExtResource("7_johfw")
 
 [node name="Land" parent="." instance=ExtResource("1_jcuqo")]
 z_index = -1
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(782, 369, 621, 373, 536, 348, 373, 382, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169)
+polygon = PackedVector2Array(782, 369, 621, 373, 536, 348, 382, 315, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(782, 369, 621, 373, 536, 348, 373, 382, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169, 782, 369)
+points = PackedVector2Array(782, 369, 621, 373, 536, 348, 382, 315, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169, 782, 369)
 
 [node name="Underbrushes" type="Node" parent="."]
 
@@ -114,6 +163,12 @@ rotation = -0.0319284
 scale = Vector2(0.35322, 0.320198)
 texture = ExtResource("6_6ab7g")
 
+[node name="Underbrush11" type="Sprite2D" parent="Underbrushes"]
+position = Vector2(444, 345)
+rotation = 4.74633
+scale = Vector2(0.35322, 0.320198)
+texture = ExtResource("6_6ab7g")
+
 [node name="Underbrush7" type="Sprite2D" parent="Underbrushes"]
 position = Vector2(440, 441)
 rotation = -0.243052
@@ -136,22 +191,64 @@ stream = ExtResource("11_2ywef")
 curve = SubResource("Curve2D_g0wg1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PlaintainBoat"]
-position = Vector2(219, 420)
+position = Vector2(274, 407)
+rotation = 3.14159
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlaintainBoat/PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="PlaintainBoat"]
-position = Vector2(219, 420)
+position = Vector2(274, 407)
+rotation = -3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="PlaintainBoat/AnimatableBody2D"]
-rotation = -1.10059
-scale = Vector2(0.0710165, 0.0782459)
+rotation = -4.10969
+scale = Vector2(0.048659, 0.0573761)
 texture = ExtResource("14_1db4f")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlaintainBoat/AnimatableBody2D"]
-polygon = PackedVector2Array(-80, -80, -83, -69, -77, -55, -50, -35, -19, -11, 25, 9, 70, 18, 93, 25, 120, 25, 123, 38, 102, 43, 55, 50, 29, 48, -4, 39, -37, 26, -65, 8, -84, -11, -95, -35, -99, -78, -89, -85)
+rotation = -3.02004
+polygon = PackedVector2Array(-72.2743, -146.316, -60, -48, -52, -38, -19, -11, 25, 9, 70, 18, 82.926, 19.0859, 77.7266, -72.9628, 98.0106, -96.5966, 89.3441, 30.3911, 48, 36, 29, 36, -29, 17, -52, 2, -65, -15, -71, -29, -74, -58)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlaintainBoat"]
+libraries = {
+"": SubResource("AnimationLibrary_u6kmb")
+}
+
+[node name="DisableInput" type="Area2D" parent="."]
+position = Vector2(21, 7)
+rotation = 0.00594017
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("15_bwo1d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DisableInput"]
+polygon = PackedVector2Array(208.087, 350.77, 246.929, 388.411, 281.974, 407.327, 321.005, 420.234, 318.998, 417.239, 256.936, 391.387, 204.046, 343.794)
+
+[node name="Coin" parent="." instance=ExtResource("16_1nt4r")]
+position = Vector2(580, 340)
+
+[node name="Coin2" parent="." instance=ExtResource("16_1nt4r")]
+position = Vector2(538, 329)
+
+[node name="Coin3" parent="." instance=ExtResource("16_1nt4r")]
+position = Vector2(492, 320)
+
+[node name="RiverRideEnter" type="Area2D" parent="."]
+position = Vector2(87, 369)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("17_nomcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideEnter"]
+shape = SubResource("RectangleShape2D_fvoly")
+
+[node name="SleepingTom" type="Sprite2D" parent="."]
+position = Vector2(759, 380)
+texture = ExtResource("18_wi32j")
+
+[connection signal="body_entered" from="DisableInput" to="DisableInput" method="_on_body_entered"]
+[connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
 
 [editable path="CanvasLayer"]
 [editable path="Taco"]

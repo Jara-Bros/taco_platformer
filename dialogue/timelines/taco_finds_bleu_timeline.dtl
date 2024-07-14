@@ -1,0 +1,13 @@
+[style name="barb_style"]
+join taco (taco_default) 4
+taco (taco_happy): B!
+join bleu_test_character 1
+bleu_test_character (bleu_idle): Big T!
+bleu_test_character (bleu_idle): Hey you bring the beach ball?
+taco (taco_default): Nope!
+bleu_test_character (bleu_happy): Nice!
+taco (taco_default): I have a plaintain though.
+[wait time="1.0"]
+bleu_test_character (bleu_idle): Hmmm...
+[wait time="1.0"]
+[end_timeline]
