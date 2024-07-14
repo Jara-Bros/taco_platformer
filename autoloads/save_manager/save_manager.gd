@@ -1,6 +1,8 @@
 extends Node
 
 
+
+
 # Go through everything in the persist category and ask them to return a
 # dict of relevant variables.
 
@@ -32,7 +34,7 @@ func on_load_game():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return # Error! We don't have a save to load.
 		
-	# We need to revert the game state so we're not cloing objects
+	# We need to revert the game state so we're not cloning objects
 	# during loading. Saveable objects will be deleted
 	var save_nodes = get_tree().get_nodes_in_group("Persist") 
 	for i in save_nodes:
@@ -56,7 +58,9 @@ func on_load_game():
 		var node_data = json.get_data()
 		
 		# Firstly, we need to create the object and add it to the tree and set its position.
+		
 		var new_object = load(node_data["filename"]).instantiate()
+		
 		get_node(node_data["parent"]).add_child(new_object)
 		new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 		

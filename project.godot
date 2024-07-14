@@ -14,12 +14,13 @@ config/name="Taco & Bleu"
 run/main_scene="res://gui/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="res://gui/boot_page.png"
+boot_splash/image="res://gui/start_screen/boot_page.png"
 boot_splash/use_filter=false
 
 [autoload]
 
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
+SaveManager="*res://autoloads/save_manager/save_manager.gd"
 ResumeQuitMenu="*res://gui/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"

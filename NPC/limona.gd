@@ -15,4 +15,3 @@ func _on_interact():
 	await Dialogic.timeline_ended
 	SceneManager.change_scenes(boogie_test)
 	taco.input_enabled = true
-	dios_mio.queue_free()

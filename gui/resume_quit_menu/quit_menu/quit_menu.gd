@@ -30,3 +30,14 @@ func _on_quit_button_pressed() -> void:
 	
 func _process(_delta: float) -> void:
 	test_escape_key()
+
+func _on_save_button_pressed() -> void:
+	SaveManager.on_save_game()
+	visible = false
+	resume()
+
+
+func _on_load_button_pressed() -> void:
+	SaveManager.on_load_game()
+	visible = false
+	resume()

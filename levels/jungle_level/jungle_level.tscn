@@ -153,9 +153,6 @@ script = ExtResource("1_g1na8")
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
 position = Vector2(509, -431)
 
-[node name="AudioStreamPlayer2D" parent="Taco" index="8"]
-volume_db = -5.0
-
 [node name="CanvasLayer" parent="." instance=ExtResource("3_qao02")]
 
 [node name="AmazonAmbient" type="AudioStreamPlayer" parent="."]
@@ -964,7 +961,6 @@ shape = SubResource("WorldBoundaryShape2D_xu6pb")
 [connection signal="timeout" from="StaticBody2D/Timer" to="StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="RestartZone" to="RestartZone" method="_on_body_entered"]
 
-[editable path="Taco"]
 [editable path="CanvasLayer"]
 [editable path="TToms/TomatoTomCharacter"]
 [editable path="TToms/TomatoTomCharacter2"]
