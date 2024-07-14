@@ -1,37 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqpqfql6kw2n"]
+[gd_scene load_steps=3 format=3 uid="uid://bqpqfql6kw2n"]
 
 [ext_resource type="PackedScene" uid="uid://bna2ts0laxmf2" path="res://levels/water_section/Driver.tscn" id="1_pq3w7"]
-[ext_resource type="Texture2D" uid="uid://cdjls3fx3ina0" path="res://platforms/rock_platform/rock.png" id="2_hwy6p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l8342"]
-size = Vector3(60, 2, 60)
-
-[sub_resource type="BoxMesh" id="BoxMesh_oah2p"]
-size = Vector3(60, 2, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_d5lqn"]
+[ext_resource type="PackedScene" uid="uid://boq3yidn2vc15" path="res://levels/water_section/world_terrain.tscn" id="1_r8vtp"]
 
 [node name="WaterSection" type="Node3D"]
 
+[node name="WorldTerrain" parent="." instance=ExtResource("1_r8vtp")]
+
 [node name="Driver" parent="." instance=ExtResource("1_pq3w7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11735, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89829, 17.0732)
 
-[node name="Ground" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_l8342")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13881, 0)
-mesh = SubResource("BoxMesh_oah2p")
-
-[node name="Rock" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2417, 0, -19.0843)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.827216, 0)
-shape = SubResource("BoxShape3D_d5lqn")
-
-[node name="Sprite3D" type="Sprite3D" parent="Rock"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.143161, 0.678369, -0.0087347)
-texture = ExtResource("2_hwy6p")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.56002, 0)

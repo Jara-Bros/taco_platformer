@@ -76,7 +76,7 @@ movie_writer/movie_file="C:/Users/nicoj/godot_projects/taco_and_bleu_proto/taco_
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [global_group]
 
