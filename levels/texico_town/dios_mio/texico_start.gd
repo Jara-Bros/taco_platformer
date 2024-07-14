@@ -15,3 +15,4 @@ func _ready():
 
 func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
+	

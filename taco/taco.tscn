@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8snm4"]
-size = Vector2(16, 19)
+size = Vector2(16, 22)
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -167,7 +167,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seodx"]
-size = Vector2(16, 6)
+size = Vector2(13, 2)
 
 [node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
@@ -187,7 +187,7 @@ texture = ExtResource("2_ctlwh")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_8snm4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
@@ -199,11 +199,12 @@ libraries = {
 zoom = Vector2(3, 3)
 
 [node name="TacoShoes" type="Area2D" parent="."]
-position = Vector2(0, 9)
-collision_mask = 5
+position = Vector2(0, 12)
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TacoShoes"]
-position = Vector2(0, 3)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_seodx")
 
 [node name="CoyoteTimer" type="Timer" parent="."]

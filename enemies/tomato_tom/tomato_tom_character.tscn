@@ -7,11 +7,10 @@
 radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oqed"]
-size = Vector2(12, 3)
+size = Vector2(18, 3)
 
 [node name="TomatoTomCharacter" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 4
-collision_mask = 3
 script = ExtResource("1_7cemj")
 speed = 50
 jump_velocity = -125
@@ -29,7 +28,7 @@ shape = SubResource("CircleShape2D_kx8ws")
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(0, -16)
-collision_layer = 4
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

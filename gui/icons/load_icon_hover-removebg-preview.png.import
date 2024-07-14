@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch7sw3gnubr7e"
-path="res://.godot/imported/boot_page.png-4df36335900137e8c739786e5908ab43.ctex"
+uid="uid://jug141p3gx33"
+path="res://.godot/imported/load_icon_hover-removebg-preview.png-467197a2f9f402647385857208ca2733.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/boot_page.png"
-dest_files=["res://.godot/imported/boot_page.png-4df36335900137e8c739786e5908ab43.ctex"]
+source_file="res://gui/icons/load_icon_hover-removebg-preview.png"
+dest_files=["res://.godot/imported/load_icon_hover-removebg-preview.png-467197a2f9f402647385857208ca2733.ctex"]
 
 [params]
 
