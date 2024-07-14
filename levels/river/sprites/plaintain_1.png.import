@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csat1a3j01wc4"
-path="res://.godot/imported/plaintain_boat.png-d9250e5c84183b7fa5cf3cc47ebe69d2.ctex"
+uid="uid://bcjx60hloxnq7"
+path="res://.godot/imported/plaintain_1.png-e32ea3b5945bbb85fc28802cc13bf628.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/river/sprites/plaintain_boat.png"
-dest_files=["res://.godot/imported/plaintain_boat.png-d9250e5c84183b7fa5cf3cc47ebe69d2.ctex"]
+source_file="res://levels/river/sprites/plaintain_1.png"
+dest_files=["res://.godot/imported/plaintain_1.png-e32ea3b5945bbb85fc28802cc13bf628.ctex"]
 
 [params]
 

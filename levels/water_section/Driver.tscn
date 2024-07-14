@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bna2ts0laxmf2"]
+
+[ext_resource type="Texture2D" uid="uid://dworexixfuy1e" path="res://levels/water_section/driver_sprite.png" id="1_e2o8w"]
+[ext_resource type="Script" path="res://levels/water_section/driver.gd" id="1_g668b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivr1d"]
+size = Vector3(1, 1.98692, 1.10107)
+
+[node name="Driver" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_g668b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0854828, -0.994907, -0.0534018, 0.0520105, 0.0579809, -0.996962, 0.994981, 0.0824458, 0.056702, 0.0156782, 0.0588637, -0.0365204)
+shape = SubResource("BoxShape3D_ivr1d")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_e2o8w")
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.989824, 0.142301, 0, -0.142301, 0.989824, 2.98023e-08, 0.726757, 2.2632)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

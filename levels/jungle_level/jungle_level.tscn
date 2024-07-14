@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=59 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
@@ -11,7 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://ci02nbhdskvy0" path="res://audio/sfx/Approval Sound - Sound Effect (HQ)).mp3" id="5_8kqrl"]
 [ext_resource type="Texture2D" uid="uid://cwbfinirip5ak" path="res://platforms/leaf_bend_platforms/sunflower(2).png" id="6_0obx7"]
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="6_8vxpm"]
-[ext_resource type="Script" path="res://levels/jungle_level/butterfly_ride_2.gd" id="6_qqgm7"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="6_vid0p"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
 [ext_resource type="Texture2D" uid="uid://c2og30l0otgeo" path="res://levels/jungle_level/sprites/5122e5ac7d77d28c1015c449c5bf0ff6-removebg-preview.png" id="7_uykpy"]
@@ -33,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://c28v08um0afam" path="res://levels/jungle_level/sprites/surfb_3.png" id="19_ot8us"]
 [ext_resource type="Script" path="res://platforms/static_platform/static_platform_plinko.gd" id="19_qpb7r"]
 [ext_resource type="PackedScene" uid="uid://cbsmtc48e7t5h" path="res://interactives/scenes/generic_box.tscn" id="21_p4mlw"]
-[ext_resource type="Script" path="res://levels/jungle_level/butterfly_trig.gd" id="23_gv1wc"]
 [ext_resource type="Texture2D" uid="uid://xbpnmfmyu2qy" path="res://levels/testing/sprites/bowling-ball-mdmOVmF-600-removebg-preview.png" id="23_kpcj7"]
 [ext_resource type="PackedScene" uid="uid://bj2oftpiuv11t" path="res://platforms/circle_platform/circle_platform.tscn" id="24_5w2fs"]
 [ext_resource type="Texture2D" uid="uid://ca3xm08hipdam" path="res://interactives/sprites/character_box_taco.png" id="24_7w4ys"]
@@ -47,54 +45,8 @@
 [ext_resource type="Texture2D" uid="uid://cr3up8qcjyuu6" path="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png" id="35_f3ppe"]
 [ext_resource type="Texture2D" uid="uid://4nu5wdyec3eu" path="res://levels/jungle_level/sprites/monarch-butterfly-K6V8QZD-600-removebg-preview.png" id="40_8hx5d"]
 
-[sub_resource type="Curve2D" id="Curve2D_ks2ys"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5.04736, 75.9969, 0, 0, 0, 0, -6.08447, 134.996, 0, 0, 0, 0, -8.11475, 183.995, 0, 0, 0, 0, -12.1519, 242.992, 0, 0, 0, 0, -12.1904, 304.992, 0, 0, 0, 0, -18.2505, 400.989)
-}
-point_count = 6
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_d8csr"]
 radius = 24.0203
-
-[sub_resource type="Animation" id="Animation_bg6yg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_lk2au"]
-resource_name = "lower"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.96667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jl2dh"]
-_data = {
-"RESET": SubResource("Animation_bg6yg"),
-"lower": SubResource("Animation_lk2au")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38j8y"]
-size = Vector2(84, 12)
 
 [sub_resource type="Animation" id="Animation_kdrfv"]
 length = 0.001
@@ -199,7 +151,7 @@ point_count = 6
 script = ExtResource("1_g1na8")
 
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
-position = Vector2(-5069, 590)
+position = Vector2(509, -431)
 
 [node name="AudioStreamPlayer2D" parent="Taco" index="8"]
 volume_db = -5.0
@@ -210,7 +162,6 @@ volume_db = -5.0
 stream = ExtResource("29_khq5v")
 volume_db = -2.0
 autoplay = true
-bus = &"Music"
 
 [node name="LeafRustle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_8t4d5")
@@ -229,48 +180,28 @@ stream = ExtResource("6_vid0p")
 position = Vector2(-5497, 607)
 stream = ExtResource("8_omdnb")
 
-[node name="ButterflyRide2" type="Path2D" parent="."]
-position = Vector2(-5399, 272)
-rotation = -0.000624543
-curve = SubResource("Curve2D_ks2ys")
-script = ExtResource("6_qqgm7")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="ButterflyRide2"]
-position = Vector2(-5.04736, 75.9969)
-rotation = 1.58837
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="ButterflyRide2/PathFollow2D"]
-rotation = -1.62106
-remote_path = NodePath("../../ButterflyRide")
-
-[node name="ButterflyRide" type="AnimatableBody2D" parent="ButterflyRide2"]
-position = Vector2(-5.04736, 75.9969)
-rotation = -0.0326871
+[node name="ButterflyRide" type="AnimatableBody2D" parent="."]
+position = Vector2(-5377, 700)
+rotation = 0.0994415
 script = ExtResource("8_lnca4")
 
-[node name="Sprite2D" type="Sprite2D" parent="ButterflyRide2/ButterflyRide"]
+[node name="Sprite2D" type="Sprite2D" parent="ButterflyRide"]
 z_index = -1
 position = Vector2(-7.47762, -7.55544)
 rotation = 0.523616
 texture = ExtResource("40_8hx5d")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButterflyRide2/ButterflyRide"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ButterflyRide"]
 polygon = PackedVector2Array(-53, -79, -41, 12, -17, 11, 27, 19, 51, 30, 72.9502, 54.067, 108.945, 60.1001, 107.941, 64.0992, 47, 59, -15, 45, -46, 32, -67, -109)
 one_way_collision = true
 
-[node name="InteractionArea" parent="ButterflyRide2/ButterflyRide" instance=ExtResource("10_jk1dl")]
-position = Vector2(26.2854, -8.12911)
+[node name="InteractionArea" parent="ButterflyRide" instance=ExtResource("10_jk1dl")]
+position = Vector2(3.58656, -14.4273)
 rotation = -0.0127808
 action_name = "ride"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButterflyRide2/ButterflyRide/InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButterflyRide/InteractionArea"]
 shape = SubResource("CircleShape2D_d8csr")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ButterflyRide2"]
-root_node = NodePath("../ButterflyRide")
-libraries = {
-"": SubResource("AnimationLibrary_jl2dh")
-}
 
 [node name="TToms" type="Node" parent="."]
 
@@ -499,7 +430,7 @@ texture = ExtResource("13_1lj0c")
 [node name="ButterflyEgg" type="Node" parent="."]
 
 [node name="ButterflyEggs4" parent="ButterflyEgg" instance=ExtResource("14_kdh1r")]
-position = Vector2(-5228, 764)
+position = Vector2(-5410, 793)
 
 [node name="ButterflyEggs2" parent="ButterflyEgg" instance=ExtResource("14_kdh1r")]
 position = Vector2(-5401, 801)
@@ -508,18 +439,7 @@ position = Vector2(-5401, 801)
 position = Vector2(-5430, 799)
 
 [node name="ButterflyEggs" parent="ButterflyEgg" instance=ExtResource("14_kdh1r")]
-position = Vector2(-5329, 756)
-
-[node name="ButterflyTrig" type="Node2D" parent="."]
-script = ExtResource("23_gv1wc")
-
-[node name="ButterflyTrigger1" type="Area2D" parent="ButterflyTrig"]
-position = Vector2(-5410, 761)
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButterflyTrig/ButterflyTrigger1"]
-shape = SubResource("RectangleShape2D_38j8y")
+position = Vector2(-5419, 800)
 
 [node name="ChipPlatformLR" parent="." instance=ExtResource("6_8vxpm")]
 position = Vector2(-1143, 7)
@@ -1037,7 +957,6 @@ script = ExtResource("35_6s33m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RestartZone"]
 shape = SubResource("WorldBoundaryShape2D_xu6pb")
 
-[connection signal="body_entered" from="ButterflyTrig/ButterflyTrigger1" to="ButterflyTrig" method="_on_butterfly_trigger_1_body_entered"]
 [connection signal="body_entered" from="StaticPlatform2/Area2D" to="StaticPlatform2" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="StaticPlatform2/Timer" to="StaticPlatform2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="StaticPlatform3/Area2D" to="StaticPlatform3" method="_on_area_2d_body_entered"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://c0vhvglx6s7ib"]
+[gd_scene load_steps=8 format=4 uid="uid://c0vhvglx6s7ib"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ryeh2"]
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
-[ext_resource type="PackedScene" uid="uid://c0um3phj8j8wk" path="res://tBleu/bleu.tscn" id="2_ic0fa"]
-[ext_resource type="PackedScene" uid="uid://bmwv73wlokrqx" path="res://platforms/zipline/zip_line.tscn" id="4_2ui8p"]
+[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="2_r3sv1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
 texture = ExtResource("1_ugepv")
@@ -47,15 +46,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3gfnr")
 
 [node name="Playground" type="Node2D"]
+position = Vector2(1, 0)
 
 [node name="Taco" parent="." instance=ExtResource("1_ryeh2")]
-position = Vector2(-1992, -26)
+position = Vector2(95, -15)
 
-[node name="Bleu" parent="." instance=ExtResource("2_ic0fa")]
-position = Vector2(182, -41)
-
-[node name="ZipLine" parent="." instance=ExtResource("4_2ui8p")]
-position = Vector2(518, -30)
+[node name="SoccerBall" parent="." instance=ExtResource("2_r3sv1")]
+position = Vector2(170, -18)
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1

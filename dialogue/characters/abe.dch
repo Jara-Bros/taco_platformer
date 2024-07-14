@@ -1,0 +1,47 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.709804, 0.301961, 0.290196, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "limona_style_textbox"
+},
+"default_portrait": "abe_default",
+"description": "",
+"display_name": "Abe",
+"mirror": false,
+"nicknames": ["Abe"],
+"offset": Vector2(0, 0),
+"portraits": {
+"abe_default": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/abe/abe_happy_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 15),
+"scale": 1.25,
+"scene": ""
+},
+"abe_look_right": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/abe/abe_happy_portrait_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 15),
+"scale": 1.25,
+"scene": ""
+},
+"abe_look_smile": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/abe/abe_happy_portrait_3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 15),
+"scale": 1.25,
+"scene": ""
+}
+},
+"scale": 1.0
+}
