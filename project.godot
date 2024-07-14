@@ -14,13 +14,12 @@ config/name="Taco & Bleu"
 run/main_scene="res://gui/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="res://gui/start_screen/boot_page.png"
+boot_splash/image="res://gui/start_screen/T&BSocial (2).png"
 boot_splash/use_filter=false
 
 [autoload]
 
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
-SaveManager="*res://autoloads/save_manager/save_manager.gd"
 ResumeQuitMenu="*res://gui/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
@@ -29,23 +28,18 @@ InteractionManager="*res://interaction/interaction_manager.tscn"
 [dialogic]
 
 directories/dch_directory={
-"abe": "res://dialogue/characters/abe.dch",
 "barb": "res://dialogue/characters/barb.dch",
 "bleu_test_character": "res://levels/testing/dialogue_test/bleu_test_character.dch",
 "limona": "res://dialogue/characters/limona.dch",
-"taco": "res://dialogue/characters/taco.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
-"abe_timeline": "res://dialogue/timelines/abe_timeline.dtl",
 "barb_test_timeline": "res://levels/testing/dialogue_test/barb_test_timeline.dtl",
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "bleu_test_timeline": "res://levels/testing/dialogue_test/bleu_test_timeline.dtl",
 "butterfly_ride_timeline": "res://dialogue/timelines/hints/butterfly_ride_timeline.dtl",
 "leftover_test_timeline": "res://levels/testing/dialogue_test/leftover_test_timeline.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
-"taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
-"taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
 "wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
 }
@@ -196,11 +190,24 @@ ground_pound={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+move_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
-2d_physics/layer_1="player"
-2d_physics/layer_2="collisions"
+2d_physics/layer_1="walls"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="items"
+2d_physics/layer_5="bleu"
 
 [rendering]
 
