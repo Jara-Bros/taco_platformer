@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr6oyy4m7l0q4"]
+
+[ext_resource type="Texture2D" uid="uid://cgcskghdefymb" path="res://levels/jungle_level/sprites/sharp_rock_cliff.png" id="1_tv14u"]
+
+[node name="RockCliff" type="StaticBody2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.00001, -1)
+rotation = -0.340682
+scale = Vector2(0.618378, 0.605096)
+texture = ExtResource("1_tv14u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-100, 33, -51, -26, -29, -42, -6, -41, 9, -33, 33, -32, 56, -24, 78, -29, 107, -17, 119, -10, 127, 5, 113, 29, 95, 40)
+one_way_collision = true

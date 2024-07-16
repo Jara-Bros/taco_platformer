@@ -1,10 +1,12 @@
 extends StaticBody2D
 
 @onready var timer: Timer = $Timer
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var trigger_shape: CollisionShape2D = $Area2D/CollisionShape2D
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	timer.start()
-	timer.wait_time = 2.5
 
 func _on_timer_timeout() -> void:
-	queue_free()
+	collision_shape.queue_free()
+	trigger_shape.queue_free()

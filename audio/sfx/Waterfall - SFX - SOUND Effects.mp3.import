@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3uvtfqae00ku"
+path="res://.godot/imported/Waterfall - SFX - SOUND Effects.mp3-72cf82296241b8d50be2a5dd6628e893.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3"
+dest_files=["res://.godot/imported/Waterfall - SFX - SOUND Effects.mp3-72cf82296241b8d50be2a5dd6628e893.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

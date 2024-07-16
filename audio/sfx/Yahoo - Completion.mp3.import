@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kqcythi82n32"
+path="res://.godot/imported/Yahoo - Completion.mp3-90c469d2ca35d9630e021df0cf1538df.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/Yahoo - Completion.mp3"
+dest_files=["res://.godot/imported/Yahoo - Completion.mp3-90c469d2ca35d9630e021df0cf1538df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

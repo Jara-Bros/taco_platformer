@@ -1,23 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=21 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
 [ext_resource type="Script" path="res://levels/river/river.gd" id="1_terlw"]
-[ext_resource type="Texture2D" uid="uid://dlay2f4465u57" path="res://levels/river/sprites/river_bg.jpg" id="3_h0b1v"]
 [ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_s56se"]
 [ext_resource type="Script" path="res://levels/river/parallax_2d.gd" id="3_uis34"]
-[ext_resource type="Texture2D" uid="uid://bg3uom21qww82" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png" id="5_bbnqc"]
-[ext_resource type="Script" path="res://levels/river/parallax_2d_2.gd" id="6_5xcgn"]
-[ext_resource type="Texture2D" uid="uid://bvlmgm5tul4jf" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview_1_-removebg-preview.png" id="6_6ab7g"]
-[ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river/sprites/sea_png.png" id="7_johfw"]
-[ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="9_7378w"]
+[ext_resource type="Texture2D" uid="uid://bsj41mbkhyew6" path="res://levels/river/sprites/waterfall_closeup.jpg" id="5_3olem"]
+[ext_resource type="PackedScene" uid="uid://c8ida3dkuhtec" path="res://platforms/river_waterfall/river_rock_2.tscn" id="8_bl4a8"]
+[ext_resource type="AudioStream" uid="uid://b3uvtfqae00ku" path="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3" id="9_n0kkp"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
 [ext_resource type="AudioStream" uid="uid://d4f2oiqn6nsyl" path="res://audio/music/los_cantadores_intro_p2.mp3" id="11_2ywef"]
 [ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river/sprites/plaintain.png" id="14_1db4f"]
 [ext_resource type="Script" path="res://levels/river/disable_input.gd" id="15_bwo1d"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coin.tscn" id="16_1nt4r"]
+[ext_resource type="PackedScene" uid="uid://d0dxh2krrk25w" path="res://platforms/river_waterfall/river_rock_1.tscn" id="16_6ndlo"]
 [ext_resource type="Script" path="res://levels/river/river_ride_enter.gd" id="17_nomcm"]
-[ext_resource type="Texture2D" uid="uid://5udilfsyg6fq" path="res://enemies/tomato_tom/river/ttom_jungle_sleeping.png" id="18_wi32j"]
 
 [sub_resource type="Curve2D" id="Curve2D_g0wg1"]
 _data = {
@@ -71,113 +68,66 @@ script = ExtResource("1_terlw")
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(722, 175)
+position = Vector2(735, 902)
+
+[node name="WaterfallFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_n0kkp")
+volume_db = 2.0
+autoplay = true
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(481, 316)
-repeat_times = 99
+z_index = -2
+scroll_offset = Vector2(479, 632)
 script = ExtResource("3_uis34")
 
 [node name="ForestBG" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
-position = Vector2(0, 3.8147e-06)
-scale = Vector2(1.16013, 0.845966)
-texture = ExtResource("3_h0b1v")
-
-[node name="Parallax2D2" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-164, 348)
-repeat_times = 99
-script = ExtResource("6_5xcgn")
-
-[node name="RiverFG" type="Sprite2D" parent="Parallax2D2"]
-z_index = -1
-position = Vector2(1, 0)
-scale = Vector2(0.758889, 0.317012)
-texture = ExtResource("7_johfw")
+position = Vector2(-555, -48)
+scale = Vector2(0.454, 0.283667)
+texture = ExtResource("5_3olem")
 
 [node name="Land" parent="." instance=ExtResource("1_jcuqo")]
 z_index = -1
+position = Vector2(-598, 664)
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(782, 369, 621, 373, 536, 348, 382, 315, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169)
+polygon = PackedVector2Array(717, 210, 766, 477, 885, 480, 1046, -76, 942, -54, 928, -25, 903, -12, 896, 29, 828, 73, 808, 114, 791, 144, 754, 171)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(782, 369, 621, 373, 536, 348, 382, 315, 355, 482, 577, 482, 766, 477, 885, 480, 876, 172, 783, 169, 782, 369)
+points = PackedVector2Array(717, 210, 766, 477, 885, 480, 1046, -76, 942, -54, 928, -25, 903, -12, 896, 29, 828, 73, 808, 114, 791, 144, 754, 171, 717, 210)
 
-[node name="Underbrushes" type="Node" parent="."]
+[node name="RiverRock" type="Node" parent="."]
 
-[node name="Underbrush" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(721, 399)
-rotation = 1.56794
-scale = Vector2(0.922375, 0.730966)
-texture = ExtResource("5_bbnqc")
+[node name="RiverRock1" parent="RiverRock" instance=ExtResource("16_6ndlo")]
+position = Vector2(736, 935)
+rotation = -0.181386
+scale = Vector2(1, 1)
 
-[node name="Underbrush2" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(590, 405)
-rotation = 1.56794
-scale = Vector2(0.922375, 0.730966)
-texture = ExtResource("5_bbnqc")
+[node name="RiverRock2" parent="RiverRock" instance=ExtResource("8_bl4a8")]
+position = Vector2(686, 946)
 
-[node name="Underbrush3" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(369, 431)
-rotation = 0.0239004
-scale = Vector2(0.393746, 0.304036)
-texture = ExtResource("5_bbnqc")
+[node name="RiverRock3" parent="RiverRock" instance=ExtResource("16_6ndlo")]
+position = Vector2(642, 952)
+rotation = -0.221923
 
-[node name="Underbrush4" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(558, 412)
-rotation = 0.165471
-scale = Vector2(0.393746, 0.304036)
-texture = ExtResource("6_6ab7g")
+[node name="RiverRock4" parent="RiverRock" instance=ExtResource("8_bl4a8")]
+position = Vector2(593, 968)
 
-[node name="Underbrush5" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(733, 409)
-rotation = -1.59393
-scale = Vector2(0.760595, 1.25053)
-texture = ExtResource("6_6ab7g")
+[node name="RiverRock5" parent="RiverRock" instance=ExtResource("16_6ndlo")]
+position = Vector2(454, 967)
+rotation = 0.0717402
 
-[node name="Underbrush8" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(771, 278)
-rotation = -0.00535852
-scale = Vector2(0.494149, 0.610776)
-texture = ExtResource("6_6ab7g")
-flip_h = true
+[node name="RiverRock6" parent="RiverRock" instance=ExtResource("16_6ndlo")]
+position = Vector2(542, 964)
+rotation = 0.125662
 
-[node name="Underbrush9" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(865, 281)
-rotation = -0.00535852
-scale = Vector2(0.494149, 0.610776)
-texture = ExtResource("6_6ab7g")
-flip_h = true
+[node name="RiverRock7" parent="RiverRock" instance=ExtResource("16_6ndlo")]
+position = Vector2(498, 966)
+rotation = -0.102421
 
-[node name="Underbrush10" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(855, 285)
-rotation = 0.00614136
-scale = Vector2(0.494149, 0.610776)
-texture = ExtResource("6_6ab7g")
-
-[node name="Underbrush6" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(432, 429)
-rotation = -0.0319284
-scale = Vector2(0.35322, 0.320198)
-texture = ExtResource("6_6ab7g")
-
-[node name="Underbrush11" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(444, 345)
-rotation = 4.74633
-scale = Vector2(0.35322, 0.320198)
-texture = ExtResource("6_6ab7g")
-
-[node name="Underbrush7" type="Sprite2D" parent="Underbrushes"]
-position = Vector2(440, 441)
-rotation = -0.243052
-scale = Vector2(0.750036, 0.373878)
-texture = ExtResource("5_bbnqc")
-
-[node name="RiverSlowBM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_7378w")
-autoplay = true
+[node name="RiverRock8" parent="RiverRock" instance=ExtResource("8_bl4a8")]
+position = Vector2(307, 1049)
+rotation = -0.0219573
 
 [node name="WingFlapFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(725, 293)
@@ -242,10 +192,6 @@ script = ExtResource("17_nomcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideEnter"]
 shape = SubResource("RectangleShape2D_fvoly")
-
-[node name="SleepingTom" type="Sprite2D" parent="."]
-position = Vector2(759, 380)
-texture = ExtResource("18_wi32j")
 
 [connection signal="body_entered" from="DisableInput" to="DisableInput" method="_on_body_entered"]
 [connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
