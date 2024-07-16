@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0dxh2krrk25w"]
+
+[ext_resource type="Texture2D" uid="uid://enokuby8rg7u" path="res://levels/river/sprites/rock_1.png" id="1_v52ll"]
+
+[node name="RiverRock1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.152381, 0.157895)
+texture = ExtResource("1_v52ll")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.00496, 5.125)
+scale = Vector2(0.161947, 0.291667)
+polygon = PackedVector2Array(-129, -34, -71, -36, 67.954, -34.7143, 142.052, -27.8571, 114, -12, 80, -6, 19, -6, -73, -9, -126, -16)
