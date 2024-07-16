@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwop4ygf5a1gq"
+path="res://.godot/imported/Bear Growl - Sound Effect ProSounds.mp3-127a3d6507b78b5ad44bedf9373d5d03.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/Bear Growl - Sound Effect ProSounds.mp3"
+dest_files=["res://.godot/imported/Bear Growl - Sound Effect ProSounds.mp3-127a3d6507b78b5ad44bedf9373d5d03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
