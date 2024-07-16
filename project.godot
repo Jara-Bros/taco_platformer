@@ -20,6 +20,7 @@ boot_splash/use_filter=false
 [autoload]
 
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
+SaveManager="*res://autoloads/save_manager/save_manager.gd"
 ResumeQuitMenu="*res://gui/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
@@ -28,18 +29,23 @@ InteractionManager="*res://interaction/interaction_manager.tscn"
 [dialogic]
 
 directories/dch_directory={
+"abe": "res://dialogue/characters/abe.dch",
 "barb": "res://dialogue/characters/barb.dch",
 "bleu_test_character": "res://levels/testing/dialogue_test/bleu_test_character.dch",
 "limona": "res://dialogue/characters/limona.dch",
+"taco": "res://dialogue/characters/taco.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
+"abe_timeline": "res://dialogue/timelines/abe_timeline.dtl",
 "barb_test_timeline": "res://levels/testing/dialogue_test/barb_test_timeline.dtl",
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "bleu_test_timeline": "res://levels/testing/dialogue_test/bleu_test_timeline.dtl",
 "butterfly_ride_timeline": "res://dialogue/timelines/hints/butterfly_ride_timeline.dtl",
 "leftover_test_timeline": "res://levels/testing/dialogue_test/leftover_test_timeline.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
+"taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
+"taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
 "wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
 }

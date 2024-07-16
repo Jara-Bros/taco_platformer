@@ -102,7 +102,10 @@ func _physics_process(delta: float) -> void:
 			#velocity.x = move_toward(velocity.x, 0, acceleration)
 #
 	move_and_slide()
-	old_velocity = velocity
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		print("Collided with: ", collision.get_collider().name)
+	#move_and_collide(move_toward(velocity.x, direction * speed, 50))
 	#move_and_slide()
 #
 	## Add the gravity.
@@ -130,8 +133,7 @@ func _physics_process(delta: float) -> void:
 	# Handles pushing RigidBodies
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+		print(c.get_collider().get_property_list())
 
 
 		
