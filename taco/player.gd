@@ -94,7 +94,7 @@ func _physics_process(delta: float) -> void:
 		if current_state == player_state.WALKING:
 			velocity.x = move_toward(velocity.x, 0, acceleration)
 		else:
-			velocity.x = move_toward(velocity.x, 0, 5)
+			velocity.x = move_toward(velocity.x, 0, acceleration)
 		#change_state("lateral", player_lateral_movement_state.STILL)
 		#if not is_on_floor_only():
 			#velocity.x = move_toward(velocity.x, 0, 13)
@@ -102,9 +102,9 @@ func _physics_process(delta: float) -> void:
 			#velocity.x = move_toward(velocity.x, 0, acceleration)
 #
 	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		print("Collided with: ", collision.get_collider().name)
+	#for i in get_slide_collision_count():
+		#var collision = get_slide_collision(i)
+		#print("Collided with: ", collision.get_collider().name)
 	#move_and_collide(move_toward(velocity.x, direction * speed, 50))
 	#move_and_slide()
 #

@@ -13,15 +13,15 @@
 [ext_resource type="Script" path="res://levels/river/beach_enter.gd" id="11_vyrev"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coin.tscn" id="12_7kpjg"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ljtt2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30sn7"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_76jkj"]
 radius = 29.5956
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yu1xc"]
 radius = 30.1496
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ljtt2"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30sn7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhnwf"]
 size = Vector2(60, 262)
@@ -61,6 +61,21 @@ position = Vector2(-45, -29)
 scale = Vector2(0.672778, 0.434124)
 texture = ExtResource("4_7cagb")
 
+[node name="BarrierT" type="StaticBody2D" parent="."]
+position = Vector2(960, 384)
+rotation = 3.13964
+
+[node name="BarrierTop" type="CollisionShape2D" parent="BarrierT"]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_ljtt2")
+
+[node name="BarrierB" type="StaticBody2D" parent="."]
+position = Vector2(957, 816)
+rotation = 0.0263055
+
+[node name="BarrierBottom" type="CollisionShape2D" parent="BarrierB"]
+shape = SubResource("WorldBoundaryShape2D_30sn7")
+
 [node name="Abe" type="CharacterBody2D" parent="."]
 position = Vector2(601, 632)
 collision_mask = 2
@@ -85,21 +100,6 @@ shape = SubResource("CircleShape2D_yu1xc")
 stream = ExtResource("6_vrsl5")
 autoplay = true
 
-[node name="BarrierT" type="StaticBody2D" parent="."]
-position = Vector2(960, 384)
-rotation = 3.13964
-
-[node name="BarrierTop" type="CollisionShape2D" parent="BarrierT"]
-position = Vector2(0, 1)
-shape = SubResource("WorldBoundaryShape2D_ljtt2")
-
-[node name="BarrierB" type="StaticBody2D" parent="."]
-position = Vector2(957, 816)
-rotation = -6.25688
-
-[node name="BarrierBottom" type="CollisionShape2D" parent="BarrierB"]
-shape = SubResource("WorldBoundaryShape2D_30sn7")
-
 [node name="BeachEnter" type="Area2D" parent="."]
 position = Vector2(403, 516)
 collision_layer = 0
@@ -109,14 +109,18 @@ script = ExtResource("11_vyrev")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeachEnter"]
 shape = SubResource("RectangleShape2D_rhnwf")
 
-[node name="Coin" parent="." instance=ExtResource("12_7kpjg")]
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("12_7kpjg")]
 position = Vector2(888, 496)
 
-[node name="Coin2" parent="." instance=ExtResource("12_7kpjg")]
+[node name="Coin2" parent="Coins" instance=ExtResource("12_7kpjg")]
 position = Vector2(865, 522)
 
-[node name="Coin3" parent="." instance=ExtResource("12_7kpjg")]
+[node name="Coin3" parent="Coins" instance=ExtResource("12_7kpjg")]
 position = Vector2(843, 495)
+
+[node name="Barriers" type="Node" parent="."]
 
 [connection signal="body_entered" from="BeachEnter" to="BeachEnter" method="_on_body_entered"]
 
