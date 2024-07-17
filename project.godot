@@ -11,20 +11,24 @@ config_version=5
 [application]
 
 config/name="Taco & Bleu"
-run/main_scene="res://gui/main_menu/main_menu.tscn"
+run/main_scene="res://gui/menus/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="res://gui/start_screen/T&BSocial (2).png"
+boot_splash/image="res://gui/boot_page/boot_page.png"
 boot_splash/use_filter=false
+
+[audio]
+
+buses/default_bus_layout="res://audio/buses/default_bus_layout.tres"
 
 [autoload]
 
 SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
 SaveManager="*res://autoloads/save_manager/save_manager.gd"
-ResumeQuitMenu="*res://gui/resume_quit_menu/resume_quit_menu.tscn"
+ResumeQuitMenu="*res://gui/menus/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
-InteractionManager="*res://interaction/interaction_manager.tscn"
+InteractionManager="*res://interaction/interaction_manager/interaction_manager.tscn"
 
 [dialogic]
 
@@ -75,6 +79,11 @@ text/autopauses={}
 glossary/default_case_sensitive=true
 layout/end_behaviour=1
 choices/hotkey_behaviour=1
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor]
 

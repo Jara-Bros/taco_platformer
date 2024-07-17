@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_17qvk"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="4_14lig"]
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]
-[ext_resource type="Script" path="res://NPC/woz.gd" id="6_0yqhy"]
+[ext_resource type="Script" path="res://NPC/scripts/woz.gd" id="6_0yqhy"]
 [ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
 [ext_resource type="Texture2D" uid="uid://dfacw550fpvko" path="res://levels/texico_town/woz_house/wozku_book.png" id="8_hepsp"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/wozku_book.gd" id="9_hvgsd"]

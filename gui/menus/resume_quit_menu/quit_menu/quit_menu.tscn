@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://dh3qd3cmfq030"]
+
+[ext_resource type="Texture2D" uid="uid://cdfjs38yxb6xl" path="res://taco/sprites/taco_restart.png" id="1_6hljq"]
+[ext_resource type="Script" path="res://gui/menus/resume_quit_menu/quit_menu/quit_menu.gd" id="1_ixbyw"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="2_25hee"]
+[ext_resource type="Texture2D" uid="uid://3bnvo77xqhpi" path="res://gui/icons/resume_quit/resume.png" id="4_lu8wc"]
+[ext_resource type="Texture2D" uid="uid://o16xocle3eg7" path="res://gui/icons/resume_quit/stop_icon.png" id="5_0h45w"]
+[ext_resource type="Texture2D" uid="uid://2mp4vm75yn6x" path="res://gui/icons/resume_quit/resume_hover_icon.png" id="5_7jgtg"]
+[ext_resource type="Texture2D" uid="uid://dq0nybm22rk0p" path="res://gui/icons/resume_quit/stop_icon_hover.png" id="6_6ajgb"]
+[ext_resource type="Texture2D" uid="uid://2agiuh3yweer" path="res://gui/icons/save_load/save_icon_png.png" id="6_x5tt1"]
+[ext_resource type="Texture2D" uid="uid://cj55ro0ooqkuf" path="res://gui/icons/save_load/save_icon_hover.png" id="7_vy0am"]
+[ext_resource type="Texture2D" uid="uid://c55w06fhuj65n" path="res://gui/icons/save_load/load_icon.png" id="8_xlymm"]
+[ext_resource type="Texture2D" uid="uid://jug141p3gx33" path="res://gui/icons/save_load/load_icon_hover-removebg-preview.png" id="9_0gwod"]
+
+[node name="Quit" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ixbyw")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(582, 220)
+scale = Vector2(4.75, 4.25)
+texture = ExtResource("1_6hljq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = 40.0
+offset_right = 575.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Resume" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Label" parent="HBoxContainer/Resume"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_25hee")
+theme_override_font_sizes/font_size = 35
+text = "Resume"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="TextureButton" parent="HBoxContainer/Resume"]
+layout_mode = 2
+texture_normal = ExtResource("4_lu8wc")
+texture_hover = ExtResource("5_7jgtg")
+
+[node name="Save" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Save" type="Label" parent="HBoxContainer/Save"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_25hee")
+theme_override_font_sizes/font_size = 35
+text = "Save"
+horizontal_alignment = 1
+
+[node name="SaveButton" type="TextureButton" parent="HBoxContainer/Save"]
+layout_mode = 2
+texture_normal = ExtResource("6_x5tt1")
+texture_hover = ExtResource("7_vy0am")
+
+[node name="Load" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Load" type="Label" parent="HBoxContainer/Load"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_25hee")
+theme_override_font_sizes/font_size = 35
+text = "Load"
+horizontal_alignment = 1
+
+[node name="LoadButton" type="TextureButton" parent="HBoxContainer/Load"]
+layout_mode = 2
+texture_normal = ExtResource("8_xlymm")
+texture_hover = ExtResource("9_0gwod")
+
+[node name="Quit" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Label" parent="HBoxContainer/Quit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_25hee")
+theme_override_font_sizes/font_size = 35
+text = "Quit"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="HBoxContainer/Quit"]
+layout_mode = 2
+texture_normal = ExtResource("5_0h45w")
+texture_hover = ExtResource("6_6ajgb")
+
+[connection signal="pressed" from="HBoxContainer/Resume/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Save/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Load/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://2qhd2l3yswog"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1sfx3"]
-[ext_resource type="Texture2D" uid="uid://dsfhtcw2x4rfy" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_3xcae"]
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/pokemon-emerald.ttf" id="3_vjeh0"]
+[ext_resource type="Texture2D" path="res://tilesets/testing/boogie_demo_tileset.png" id="2_3xcae"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="3_vjeh0"]
 [ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="4_2hpos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxyn0"]

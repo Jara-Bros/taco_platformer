@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0dxh2krrk25w"]
 
-[ext_resource type="Texture2D" uid="uid://enokuby8rg7u" path="res://levels/river/sprites/rock_1.png" id="1_v52ll"]
+[ext_resource type="Texture2D" uid="uid://enokuby8rg7u" path="res://levels/river_enter/river/sprites/rock_1.png" id="1_v52ll"]
 
 [node name="RiverRock1" type="StaticBody2D"]
 
