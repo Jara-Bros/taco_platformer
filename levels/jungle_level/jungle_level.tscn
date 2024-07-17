@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_qao02"]
 [ext_resource type="AudioStream" uid="uid://bumc3f4eri6h7" path="res://audio/music/jungle_bm.mp3" id="4_7tiu3"]
 [ext_resource type="AudioStream" uid="uid://dvhqo8l4tfsdl" path="res://audio/sfx/leave_rustle_fx.wav" id="4_8t4d5"]
-[ext_resource type="Script" path="res://levels/jungle_level/swap_scene.gd" id="4_y5pbf"]
+[ext_resource type="Script" path="res://levels/jungle_level/change_scene/swap_scene.gd" id="4_y5pbf"]
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="6_8vxpm"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="6_vid0p"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
@@ -16,35 +16,35 @@
 [ext_resource type="Texture2D" uid="uid://dbspl35rj4bcr" path="res://levels/jungle_level/sprites/tree-branch-stick-png.png" id="9_uw3uv"]
 [ext_resource type="Texture2D" uid="uid://dyvyy5mlfkjg1" path="res://enemies/tomato_tom/jungle/TTom_Jungle_Sheet-export.png" id="10_cn8j6"]
 [ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="10_pw77u"]
+[ext_resource type="Script" path="res://levels/jungle_level/platform_start.gd" id="10_ytymv"]
 [ext_resource type="Script" path="res://platforms/static_platform/static_platform.gd" id="12_1rtoe"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="12_4mwl0"]
 [ext_resource type="Texture2D" uid="uid://bg3gsd5lcaivn" path="res://levels/jungle_level/sprites/pink_hawthorn.png" id="13_1lj0c"]
 [ext_resource type="Texture2D" uid="uid://bhrbvh0gomkve" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png" id="13_384fi"]
-[ext_resource type="Script" path="res://levels/jungle_level/parallax_2d.gd" id="13_vw6jl"]
+[ext_resource type="Script" path="res://levels/jungle_level/parallax/parallax_2d.gd" id="13_vw6jl"]
 [ext_resource type="PackedScene" uid="uid://dmii312fxp0ss" path="res://levels/testing/kick_test/butterfly_eggs.tscn" id="14_kdh1r"]
 [ext_resource type="Texture2D" uid="uid://civ6kn5ylsux" path="res://levels/jungle_level/sprites/glass_pineapple.png" id="14_r2e01"]
 [ext_resource type="AudioStream" uid="uid://kqcythi82n32" path="res://audio/sfx/Yahoo - Completion.mp3" id="18_aldl0"]
 [ext_resource type="Texture2D" uid="uid://c5senhg63dm7h" path="res://levels/jungle_level/sprites/Red_Tropical_Flower_PNG_Clipart.png" id="21_fjpp4"]
-[ext_resource type="PackedScene" uid="uid://cbsmtc48e7t5h" path="res://interactives/scenes/generic_box.tscn" id="21_p4mlw"]
+[ext_resource type="PackedScene" uid="uid://cbsmtc48e7t5h" path="res://interaction/interactives/scenes/generic_box.tscn" id="21_p4mlw"]
 [ext_resource type="PackedScene" uid="uid://bj2oftpiuv11t" path="res://platforms/circle_platform/circle_platform.tscn" id="24_5w2fs"]
-[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coin.tscn" id="28_fis8l"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="28_fis8l"]
 [ext_resource type="Texture2D" uid="uid://7gjjo1jf14fw" path="res://levels/jungle_level/sprites/beetle-chrysolina-fastuosa-bright-colorful-beetle-sticker-ub2df-x450-removebg-preview.png" id="29_yrsds"]
 [ext_resource type="Texture2D" uid="uid://dvd5yngh8se7o" path="res://levels/jungle_level/sprites/pngimg.com - bear_PNG1187.png" id="31_w7xyq"]
 [ext_resource type="Texture2D" uid="uid://d2du0rw81aa03" path="res://levels/jungle_level/sprites/forest_floor_bg.png" id="32_8ufg2"]
-[ext_resource type="Script" path="res://levels/jungle_level/platform_start.gd" id="33_he2tf"]
 [ext_resource type="Texture2D" uid="uid://duwrdkc86y38a" path="res://levels/jungle_level/sprites/404-4043223_leaves-pile-png-transparent-png-removebg-preview.png" id="33_pt14t"]
 [ext_resource type="AudioStream" uid="uid://dbcysbxdydmo6" path="res://audio/sfx/leave_crunch_sfx.mp3" id="34_t5h3o"]
-[ext_resource type="Script" path="res://levels/jungle_level/restart_zone.gd" id="35_6s33m"]
+[ext_resource type="Script" path="res://levels/jungle_level/retry_zone/retry_zone.gd" id="35_6s33m"]
 [ext_resource type="Texture2D" uid="uid://cn3ev5vc1yuji" path="res://levels/jungle_level/sprites/mango.png" id="39_cufwd"]
 [ext_resource type="Texture2D" uid="uid://4nu5wdyec3eu" path="res://levels/jungle_level/sprites/monarch-butterfly-K6V8QZD-600-removebg-preview.png" id="40_8hx5d"]
 [ext_resource type="Texture2D" uid="uid://kxkxueh33kq0" path="res://levels/jungle_level/sprites/purple_leaf.png" id="45_ds23g"]
-[ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff.tscn" id="47_84l54"]
-[ext_resource type="Script" path="res://levels/jungle_level/bear_trigger.gd" id="48_lwxuf"]
+[ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff/rock_cliff.tscn" id="47_84l54"]
+[ext_resource type="Script" path="res://levels/jungle_level/animal_scripts/bear_trigger.gd" id="48_lwxuf"]
 [ext_resource type="AudioStream" uid="uid://dwop4ygf5a1gq" path="res://audio/sfx/Bear Growl - Sound Effect ProSounds.mp3" id="49_ais1g"]
 [ext_resource type="Texture2D" uid="uid://dhcdmnu17rxx8" path="res://levels/jungle_level/sprites/tropical_leaf_red.png" id="49_kn5wf"]
 [ext_resource type="Texture2D" uid="uid://bh5qykml1jxxh" path="res://levels/jungle_level/sprites/tropical_leaf_yellow.png" id="50_32kpj"]
 [ext_resource type="Texture2D" uid="uid://ds5h4mi3a8kqk" path="res://levels/jungle_level/sprites/sunflower(1) - Copy.png" id="51_g7skd"]
-[ext_resource type="Script" path="res://levels/jungle_level/butterfly_trigger.gd" id="51_npa2p"]
+[ext_resource type="Script" path="res://levels/jungle_level/animal_scripts/butterfly_trigger.gd" id="51_npa2p"]
 [ext_resource type="Texture2D" uid="uid://ctt8d8q382cdc" path="res://levels/jungle_level/sprites/ladybug.png" id="52_w8qyx"]
 [ext_resource type="Texture2D" uid="uid://b1s7t1daflm8y" path="res://levels/jungle_level/sprites/ivy.png" id="53_2iro0"]
 [ext_resource type="Texture2D" uid="uid://cl3oowcpx33no" path="res://levels/jungle_level/sprites/fern.png" id="54_4tj8e"]
@@ -340,16 +340,29 @@ stream = ExtResource("4_7tiu3")
 volume_db = -2.0
 autoplay = true
 
-[node name="LeafRustle" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_8t4d5")
-autoplay = true
-
 [node name="TreeBranch" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-1188, -73)
 rotation = 3.30654
 scale = Vector2(0.929095, 1)
 texture = ExtResource("9_uw3uv")
+
+[node name="PlatformStart" type="Node" parent="."]
+
+[node name="LeafRustle" type="AudioStreamPlayer2D" parent="PlatformStart"]
+stream = ExtResource("4_8t4d5")
+autoplay = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PlatformStart"]
+script = ExtResource("10_ytymv")
+
+[node name="Timer" type="Timer" parent="PlatformStart/StaticBody2D"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformStart/StaticBody2D"]
+polygon = PackedVector2Array(489, -423, 502, -407, 523, -407, 530, -426, 515, -440, 535, -430, 530, -402, 498, -402, 483, -421, 494, -442, 506, -442)
 
 [node name="JungleFGStart" type="Node" parent="."]
 
@@ -889,19 +902,6 @@ texture = ExtResource("39_cufwd")
 position = Vector2(-2486, 160)
 curve = SubResource("Curve2D_miw60")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(507, -400)
-script = ExtResource("33_he2tf")
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(2, -2)
-polygon = PackedVector2Array(-28, -35, -18, -40, 0, -43, -16, -36, -9, -5, 3, -5, 22, -33, 3, -43, 21, -44, 35, -12, -4, 19, -43, -2)
-
-[node name="Timer" type="Timer" parent="StaticBody2D"]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
 [node name="BearTrigger" type="Area2D" parent="."]
 position = Vector2(-3353, -33)
 collision_layer = 0
@@ -1408,13 +1408,13 @@ shape = SubResource("RectangleShape2D_em0rb")
 
 [connection signal="body_entered" from="RestartZone" to="RestartZone" method="_on_body_entered"]
 [connection signal="body_entered" from="SwapScene" to="SwapScene" method="_on_body_entered"]
+[connection signal="timeout" from="PlatformStart/StaticBody2D/Timer" to="PlatformStart/StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform/Area2D" to="TrapPlatform" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TrapPlatform/Timer" to="TrapPlatform" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform2/Area2D" to="TrapPlatform2" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TrapPlatform2/Timer" to="TrapPlatform2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform3/Area2D" to="TrapPlatform3" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TrapPlatform3/Timer" to="TrapPlatform3" method="_on_timer_timeout"]
-[connection signal="timeout" from="StaticBody2D/Timer" to="StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="BearTrigger" to="BearTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="ButterflyTrigger" to="ButterflyTrigger" method="_on_body_entered"]
 [connection signal="timeout" from="ButterflyTrigger/Timer" to="ButterflyTrigger" method="_on_timer_timeout"]

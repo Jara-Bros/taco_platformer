@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://78x5qmlegq2w"]
+
+[ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_o6lqv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bndao"]
+friction = 0.2
+
+[sub_resource type="GDScript" id="GDScript_j1o1u"]
+script/source = "extends RigidBody2D
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var taco_boogie: RigidBody2D = $\".\"
+
+func _ready():
+	sprite_2d.flip_h = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw0u3"]
+size = Vector2(26, 14)
+
+[node name="TacoBoogie" type="RigidBody2D"]
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_bndao")
+script = SubResource("GDScript_j1o1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_o6lqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_tw0u3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -11)
+zoom = Vector2(3, 3)

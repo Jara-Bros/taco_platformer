@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkrmpx4da2n5k"]
 
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/pokemon-emerald.ttf" id="1_xq1i8"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="1_xq1i8"]
 
 [node name="PlatformLabel" type="Label"]
 anchors_preset = 15

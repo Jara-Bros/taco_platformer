@@ -17,9 +17,9 @@ scene = ExtResource("4_yopyu")
 overrides = {
 "box_wobble_amount": "0.0",
 "box_wobble_speed": "0.1",
-"name_label_font": "\"res://fonts/pokemon-emerald.ttf\"",
+"name_label_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
 "name_label_font_size": "20.0",
-"normal_font": "\"res://fonts/pokemon-emerald.ttf\"",
+"normal_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
 "text_size": "30.0"
 }
 
