@@ -7,15 +7,25 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Taco/Camera2D
 
 
+var player_spawn_location_dict = {
+	normal_enter = Vector2(750, -250),
+	butterfly_enter = Vector2(700, 725)
+}
+
+func get_spawn_location(_spawn : String):
+	return player_spawn_location_dict[_spawn]
 
 func _ready() -> void:
 	camera_2d.set_limit(SIDE_TOP, -260)
 	camera_2d.set_limit(SIDE_RIGHT, 830)
-	# For level transition
+	camera_2d.set_limit(SIDE_LEFT, -550)
 	
-	# taco.input_enabled = false
-	#music_transition.play()
-	#wing_flap_fx.play()
-	#animation_player.play_backwards("fade_in")
-	#await animation_player.animation_finished
-	#taco.input_enabled = true
+	#if taco.position.y > 700:
+		#camera_2d.set_limit(SIDE_TOP, 750)
+		#camera_2d.set_limit(SIDE_LEFT, 25)
+		#taco.input_enabled = false
+		#music_transition.play()
+		#wing_flap_fx.play()
+		#animation_player.play_backwards("fade_in")
+		#await animation_player.animation_finished
+		#taco.input_enabled = true
