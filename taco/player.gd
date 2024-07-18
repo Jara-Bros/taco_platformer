@@ -104,7 +104,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	#for i in get_slide_collision_count():
 		#var collision = get_slide_collision(i)
-		#print("Collided with: ", collision.get_collider().name)
+		#if collision.get_collider().is_in_group("platforms"):
+			#pass
+			#print("Collided with: ", collision.get_collider().get_node("StaticBody2D").get_material())
 	#move_and_collide(move_toward(velocity.x, direction * speed, 50))
 	#move_and_slide()
 #

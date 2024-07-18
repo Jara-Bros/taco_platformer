@@ -101,7 +101,6 @@ points = PackedVector2Array(717, 210, 766, 477, 885, 480, 1046, -76, 942, -54, 9
 [node name="RiverRock1" parent="RiverRock" instance=ExtResource("16_6ndlo")]
 position = Vector2(736, 935)
 rotation = -0.181386
-scale = Vector2(1, 1)
 
 [node name="RiverRock2" parent="RiverRock" instance=ExtResource("8_bl4a8")]
 position = Vector2(686, 946)

@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cn3ev5vc1yuji" path="res://levels/jungle_level/sprites/mango.png" id="39_cufwd"]
 [ext_resource type="Texture2D" uid="uid://4nu5wdyec3eu" path="res://levels/jungle_level/sprites/monarch-butterfly-K6V8QZD-600-removebg-preview.png" id="40_8hx5d"]
 [ext_resource type="Texture2D" uid="uid://kxkxueh33kq0" path="res://levels/jungle_level/sprites/purple_leaf.png" id="45_ds23g"]
-[ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff.tscn" id="47_84l54"]
+[ext_resource type="PackedScene" path="res://levels/jungle_level/rock_cliff.tscn" id="47_84l54"]
 [ext_resource type="Script" path="res://levels/jungle_level/bear_trigger.gd" id="48_lwxuf"]
 [ext_resource type="AudioStream" uid="uid://dwop4ygf5a1gq" path="res://audio/sfx/Bear Growl - Sound Effect ProSounds.mp3" id="49_ais1g"]
 [ext_resource type="Texture2D" uid="uid://dhcdmnu17rxx8" path="res://levels/jungle_level/sprites/tropical_leaf_red.png" id="49_kn5wf"]

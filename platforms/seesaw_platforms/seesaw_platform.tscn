@@ -10,7 +10,7 @@ size = Vector2(351.448, 18.6707)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1c2jx"]
 size = Vector2(354.133, 27.6884)
 
-[node name="SeesawPlatform" type="StaticBody2D"]
+[node name="SeesawPlatform" type="StaticBody2D" groups=["platforms"]]
 collision_mask = 3
 physics_material_override = ExtResource("1_yqeq1")
 script = ExtResource("1_p428a")
