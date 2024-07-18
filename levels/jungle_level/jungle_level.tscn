@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bg3gsd5lcaivn" path="res://levels/jungle_level/sprites/pink_hawthorn.png" id="13_1lj0c"]
 [ext_resource type="Texture2D" uid="uid://bhrbvh0gomkve" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png" id="13_384fi"]
 [ext_resource type="Script" path="res://levels/jungle_level/parallax/parallax_2d.gd" id="13_vw6jl"]
-[ext_resource type="PackedScene" uid="uid://dmii312fxp0ss" path="res://levels/testing/kick_test/butterfly_eggs.tscn" id="14_kdh1r"]
+[ext_resource type="PackedScene" uid="uid://dmii312fxp0ss" path="res://testing/kick_test/butterfly_eggs.tscn" id="14_kdh1r"]
 [ext_resource type="Texture2D" uid="uid://civ6kn5ylsux" path="res://levels/jungle_level/sprites/glass_pineapple.png" id="14_r2e01"]
 [ext_resource type="AudioStream" uid="uid://kqcythi82n32" path="res://audio/sfx/Yahoo - Completion.mp3" id="18_aldl0"]
 [ext_resource type="Texture2D" uid="uid://c5senhg63dm7h" path="res://levels/jungle_level/sprites/Red_Tropical_Flower_PNG_Clipart.png" id="21_fjpp4"]

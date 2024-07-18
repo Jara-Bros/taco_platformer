@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxbiyb6k6luyx"]
+
+[ext_resource type="Script" path="res://testing/transformations/egg/egg_transform_character.gd" id="1_2bd2i"]
+[ext_resource type="Texture2D" uid="uid://bfunmmcy3vpsm" path="res://testing/sprites/taco_egg.png" id="1_jnq37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4ox0"]
+radius = 7.0
+
+[node name="EggTransformCharacter" type="CharacterBody2D" groups=["transformation"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_2bd2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_jnq37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_u4ox0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)
+zoom = Vector2(3, 3)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

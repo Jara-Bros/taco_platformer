@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://co7hi8ieure51"]
+
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_gjot3"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="1_i64tc"]
+[ext_resource type="PackedScene" uid="uid://bowc71pajomo6" path="res://gui/icons/time_out/time_out_hand.tscn" id="1_kurxd"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_qcbp1"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="3_4dsxt"]
+
+[node name="YellowCardTest" type="Node2D"]
+
+[node name="TimeOutHand" parent="." instance=ExtResource("1_kurxd")]
+
+[node name="Taco" parent="." instance=ExtResource("1_gjot3")]
+position = Vector2(65, -70)
+
+[node name="TomatoTomCharacter" parent="." instance=ExtResource("3_4dsxt")]
+position = Vector2(171, -61)
+
+[node name="TomatoTomCharacter2" parent="." instance=ExtResource("3_4dsxt")]
+position = Vector2(171, -61)
+
+[node name="Land" parent="." instance=ExtResource("2_qcbp1")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-142, -34, 517, -54, 541, 70, -205, 88, -224, -44)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-142, -34, 517, -54, 541, 70, -205, 88, -224, -44, -142, -34)
+
+[node name="QuickReload" parent="." instance=ExtResource("1_i64tc")]
+
+[editable path="Taco"]
+[editable path="Land"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be5yquf1mcps2"]
+
+[ext_resource type="Script" path="res://quick_reload.gd" id="1_71prw"]
+
+[node name="QuickReload" type="Node"]
+script = ExtResource("1_71prw")

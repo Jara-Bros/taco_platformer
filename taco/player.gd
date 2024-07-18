@@ -6,6 +6,7 @@ var aim_kick_left : Vector2 = Vector2(-400, -300)
 var aim_kick_right : Vector2 = Vector2(400, -300)
 var pass_kick_left : Vector2 = Vector2(-400, 0)
 var pass_kick_right : Vector2 = Vector2(400, 0)
+
 @export var input_enabled:bool = true
 @export var ignore_camera:bool
 @export var speed : int
@@ -14,6 +15,7 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var gravity : int
 @export var fallMultiplier = 2 
 @export var lowJumpMultiplier = 10 
+
 enum player_state {WALKING, IN_AIR, KICKING}
 var current_state
 var prev_state
@@ -21,10 +23,17 @@ var prev_state
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
-@onready var coyote_timer : Timer = $CoyoteTimer
-@onready var buffer_timer : Timer = $BufferTimer
-@onready var variable_jump_height_timer : Timer = $VariableJumpHeightTimer
-@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+@onready var coyote_timer: Timer = $Timers/CoyoteTimer
+@onready var buffer_timer: Timer = $Timers/BufferTimer
+@onready var variable_jump_height_timer: Timer = $Timers/VariableJumpHeightTimer
+
+@onready var jump_fx: AudioStreamPlayer2D = $JumpFX
+@onready var taco_shoes_collision: CollisionShape2D = $TacoShoes/CollisionShape2D
+
+
+@onready var yellow_red_card: AnimatedSprite2D = $YellowRedCard
+@onready var whistle_fx: AudioStreamPlayer2D = $WhistleFX
 
 
 var item = null
@@ -38,11 +47,17 @@ var global_delta
 var push_force = 40.0
 
 
+# Counter for yellow card hits
+var yellow_card_counter : int = 0
+
+
 func _ready():
-	current_state  = player_state.WALKING
+	current_state = player_state.WALKING
 	player_facing = 1
 	if ignore_camera:
 		remove_child(camera_2d)
+	
+	
 	
 #
 #func _input(event):
@@ -76,8 +91,8 @@ func _physics_process(delta: float) -> void:
 		#if current_state["movement"] == player_movement_state.IN_AIR:
 			#change_state("movement", player_movement_state.WALKING)
 		if Input.is_action_just_pressed("jump"): 
-			audio_player.play()
-			velocity = Vector2.UP * -1 *jump_velocity #Normal Jump action
+			jump_fx.play()
+			velocity = Vector2.UP * -1 * jump_velocity #Normal Jump action
 			change_state(player_state.IN_AIR)
 			
 
@@ -134,6 +149,14 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		print(c.get_collider().get_property_list())
+
+
+	# Handles enable/disable TacoShoe collision box
+	#if is_on_floor():
+		#taco_shoes_collision.set_deferred("disabled", true)
+	#else:
+		#taco_shoes_collision.set_deferred("disabled", false)
+
 
 
 		
@@ -245,11 +268,31 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
 		bounce(1.5)
-	
+		yellow_card_counter += 1
+		change_card_sprite(yellow_card_counter)
+		
+
+func change_card_sprite(c : int):
+	match c:
+		0:
+			yellow_red_card.frame = 0
+		
+		1:
+			yellow_red_card.frame = 1
+		2:
+			yellow_red_card.frame = 2
+		3: 
+			yellow_red_card.frame = 3
+			whistle_fx.play()
+		_:
+			pass
+
+
 func bounce(factor):
 	velocity.y = -1 * 300 * factor
 	if velocity.y >= 0:
-		jump_velocity / 2
+		jump_velocity = jump_velocity / 2.0
+
 
 # To Save Game
 func save():
