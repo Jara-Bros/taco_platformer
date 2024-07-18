@@ -1,11 +1,45 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=22 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
+[ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="3_pr8ws"]
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
+[ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="5_1q463"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8snm4"]
-size = Vector2(16, 22)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lae5"]
+atlas = ExtResource("3_pr8ws")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwinq"]
+atlas = ExtResource("3_pr8ws")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p2l6"]
+atlas = ExtResource("3_pr8ws")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2t21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lae5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwinq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p2l6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5c55u"]
+radius = 11.0
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -167,7 +201,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seodx"]
-size = Vector2(13, 2)
+size = Vector2(14, 4)
 
 [node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
@@ -186,9 +220,13 @@ position = Vector2(0, -2)
 texture = ExtResource("2_ctlwh")
 hframes = 11
 
+[node name="YellowRedCard" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_f2t21")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_8snm4")
+shape = SubResource("CircleShape2D_5c55u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
@@ -199,29 +237,33 @@ libraries = {
 zoom = Vector2(3, 3)
 
 [node name="TacoShoes" type="Area2D" parent="."]
-position = Vector2(0, 12)
-collision_layer = 0
+position = Vector2(0, 16)
+collision_layer = 8
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TacoShoes"]
-position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_seodx")
 
-[node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[node name="BufferTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[node name="VariableJumpHeightTimer" type="Timer" parent="."]
-wait_time = 0.07
-one_shot = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rgfs5")
 volume_db = -4.0
+
+[node name="WhistleFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1q463")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="BufferTimer" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="VariableJumpHeightTimer" type="Timer" parent="Timers"]
+wait_time = 0.07
+one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="TacoShoes" to="." method="_on_area_2d_body_entered"]

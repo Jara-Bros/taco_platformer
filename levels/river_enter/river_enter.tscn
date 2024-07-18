@@ -1,0 +1,158 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgoktp4idsa4y"]
+
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_cwnxr"]
+[ext_resource type="Script" path="res://levels/river_enter/river_enter.gd" id="1_kwksa"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_55oi7"]
+[ext_resource type="Texture2D" uid="uid://bg3uom21qww82" path="res://levels/jungle_level/sprites/360_F_512159585_ATwDiLuOxD4YwQsEi2T0afWIzceddHsx-removebg-preview-removebg-preview.png" id="3_m227m"]
+[ext_resource type="Texture2D" uid="uid://c0nap3q7xwv2j" path="res://levels/river_enter/river/sprites/forest_river_bg.png" id="4_lsqyn"]
+[ext_resource type="Script" path="res://levels/river_enter/river_bg.gd" id="4_qirtr"]
+[ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="5_mf3m7"]
+[ext_resource type="Script" path="res://levels/river_enter/water_bg.gd" id="6_v4pqv"]
+[ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river_enter/river/sprites/sea_png.png" id="7_1yaqj"]
+[ext_resource type="Texture2D" uid="uid://8mugbedvtd2u" path="res://land/river/river_block_grass.png" id="10_wvsr4"]
+[ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="11_w0wt8"]
+[ext_resource type="Texture2D" uid="uid://cv3nnw2pv382v" path="res://platforms/seesaw_platforms/pineapple_slice.png" id="12_0ckr1"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="13_toi5k"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="14_w4jnf"]
+[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://enemies/tomato_tom/river/ttom_river_sheet.png" id="15_ifcf1"]
+[ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://enemies/spawner/enemy_spawner.tscn" id="16_sx0dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7x2f"]
+size = Vector2(97.9584, 15.9932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fux3"]
+size = Vector2(94.0017, 11.9273)
+
+[node name="RiverEnter" type="Node2D"]
+script = ExtResource("1_kwksa")
+
+[node name="Taco" parent="." instance=ExtResource("1_cwnxr")]
+position = Vector2(918, -119)
+
+[node name="Camera2D" parent="Taco" index="3"]
+offset = Vector2(-64, 0)
+
+[node name="CocobirdSpawn" type="Node" parent="."]
+
+[node name="EnemySpawner" parent="CocobirdSpawn" instance=ExtResource("16_sx0dr")]
+position = Vector2(602, -182)
+
+[node name="Land" parent="." instance=ExtResource("2_55oi7")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(1203, -452, 785, -452, 782, -413, 1200, -395, 1196, -181, 1160, -186, 1103, -176, 1056, -151, 1035, -119, 998, -101, 943, -98, 901, -83, 879, -36, 850, -34, 811, -40, 793.519, 74.2608, 785, 133, 788, 151, 814, 234, 1387, 235, 1321, -452)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(1203, -452, 785, -452, 782, -413, 1200, -395, 1196, -181, 1160, -186, 1103, -176, 1056, -151, 1035, -119, 998, -101, 943, -98, 901, -83, 879, -36, 850, -34, 811, -40, 793.519, 74.2608, 785, 133, 788, 151, 814, 234, 1387, 235, 1321, -452, 1203, -452)
+
+[node name="RiverBG" type="Parallax2D" parent="."]
+z_index = -2
+scroll_offset = Vector2(0, -221)
+repeat_times = 99
+script = ExtResource("4_qirtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="RiverBG"]
+texture = ExtResource("4_lsqyn")
+
+[node name="WaterBG" type="Parallax2D" parent="."]
+z_index = 1
+scroll_offset = Vector2(2, -13)
+repeat_times = 99
+script = ExtResource("6_v4pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="WaterBG"]
+position = Vector2(35, -222)
+texture = ExtResource("7_1yaqj")
+
+[node name="RiverFG" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RiverFG"]
+position = Vector2(1190, -237)
+scale = Vector2(0.855422, 0.866667)
+texture = ExtResource("3_m227m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RiverFG"]
+z_index = 2
+position = Vector2(1056, 29)
+scale = Vector2(0.855422, 0.866667)
+texture = ExtResource("5_mf3m7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RiverFG"]
+position = Vector2(1430, -59)
+scale = Vector2(1.0348, 1.23875)
+texture = ExtResource("5_mf3m7")
+
+[node name="Land2" parent="." instance=ExtResource("2_55oi7")]
+position = Vector2(814, -16.5)
+
+[node name="Polygon2D" parent="Land2" index="0"]
+texture = ExtResource("10_wvsr4")
+polygon = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -155, 10.5, -187.963, 8.52783, -234, 2.5, -302, -39.5, -326, -49.5, -366, -38.5, -373, 19.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -590, -12.5, -588, 14.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5)
+
+[node name="Line2D" parent="Land2" index="1"]
+points = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -155, 10.5, -187.963, 8.52783, -234, 2.5, -302, -39.5, -326, -49.5, -366, -38.5, -373, 19.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -590, -12.5, -588, 14.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5, -291, 47.5)
+
+[node name="SeesawPlatform" parent="." instance=ExtResource("11_w0wt8")]
+position = Vector2(135, -43)
+rotation = 0.14047
+angular_velocity = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeesawPlatform/Area2D" index="0"]
+position = Vector2(-0.840046, -5.9409)
+rotation = -0.130978
+shape = SubResource("RectangleShape2D_i7x2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="SeesawPlatform"]
+rotation = -0.910288
+scale = Vector2(0.198916, 0.1893)
+texture = ExtResource("12_0ckr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeesawPlatform"]
+position = Vector2(-0.840057, -5.9409)
+rotation = -0.139583
+shape = SubResource("RectangleShape2D_7fux3")
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("13_toi5k")]
+position = Vector2(570, -42)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("13_toi5k")]
+position = Vector2(570, -42)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("13_toi5k")]
+position = Vector2(531, -66)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("13_toi5k")]
+position = Vector2(292, -114)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("13_toi5k")]
+position = Vector2(261, -106)
+
+[node name="TToms" type="Node" parent="."]
+
+[node name="TomatoTomCharacter" parent="TToms" instance=ExtResource("14_w4jnf")]
+position = Vector2(487, -69)
+
+[node name="Sprite2D" parent="TToms/TomatoTomCharacter" index="0"]
+texture = ExtResource("15_ifcf1")
+
+[node name="TomatoTomCharacter2" parent="TToms" instance=ExtResource("14_w4jnf")]
+position = Vector2(282, -96)
+
+[node name="Sprite2D" parent="TToms/TomatoTomCharacter2" index="0"]
+texture = ExtResource("15_ifcf1")
+
+[node name="TomatoTomCharacter3" parent="TToms" instance=ExtResource("14_w4jnf")]
+position = Vector2(-69, -67)
+
+[node name="Sprite2D" parent="TToms/TomatoTomCharacter3" index="0"]
+texture = ExtResource("15_ifcf1")
+
+[editable path="Taco"]
+[editable path="Land"]
+[editable path="Land2"]
+[editable path="SeesawPlatform"]
+[editable path="TToms/TomatoTomCharacter"]
+[editable path="TToms/TomatoTomCharacter2"]
+[editable path="TToms/TomatoTomCharacter3"]

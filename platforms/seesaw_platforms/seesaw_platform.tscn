@@ -1,38 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck5ad31fi08k3"]
+[gd_scene load_steps=3 format=3 uid="uid://ck5ad31fi08k3"]
 
 [ext_resource type="Script" path="res://platforms/seesaw_platforms/seesaw_platform.gd" id="1_p428a"]
 [ext_resource type="PhysicsMaterial" uid="uid://xq870e7x3e1a" path="res://platforms/materials/sticky.tres" id="1_yqeq1"]
-[ext_resource type="Texture2D" uid="uid://cci62wkdj6e0b" path="res://platforms/seesaw_platforms/seesaw_.png" id="2_tsmi7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sylvl"]
-size = Vector2(351.448, 18.6707)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c2jx"]
-size = Vector2(354.133, 27.6884)
 
 [node name="SeesawPlatform" type="StaticBody2D" groups=["platforms"]]
 collision_mask = 3
 physics_material_override = ExtResource("1_yqeq1")
 script = ExtResource("1_p428a")
-angular_velocty = 0.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.09147, -4.42399)
-rotation = -0.212478
-shape = SubResource("RectangleShape2D_sylvl")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2.32328, -5.6596)
-rotation = -0.209349
-shape = SubResource("RectangleShape2D_1c2jx")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7.62939e-06, 0)
-scale = Vector2(0.630177, 0.651762)
-texture = ExtResource("2_tsmi7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

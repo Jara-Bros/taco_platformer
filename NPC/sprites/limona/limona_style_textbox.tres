@@ -21,10 +21,10 @@ scene = ExtResource("3_3jobp")
 overrides = {
 "box_modulate_custom_color": "Color(0, 0, 0, 1)",
 "box_modulate_global_color": "false",
-"custom_normal_font": "\"res://fonts/pokemon-emerald.ttf\"",
+"custom_normal_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
 "name_label_color_mode": "1",
 "name_label_custom_size": "45.0",
-"name_label_customfont": "\"res://fonts/pokemon-emerald.ttf\"",
+"name_label_customfont": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
 "name_label_use_global_font": "false",
 "name_label_use_global_size": "false",
 "text_custom_size": "50.0",
@@ -72,4 +72,4 @@ base_overrides = {
 "global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
 }
 layers = Array[ExtResource("1_cv83q")]([SubResource("Resource_2t52x"), SubResource("Resource_c4iw0"), SubResource("Resource_ml23i"), SubResource("Resource_b1jp8"), SubResource("Resource_n0v4i"), SubResource("Resource_tjy7l"), SubResource("Resource_jeaxq")])
-metadata/_latest_layer = 0
+metadata/_latest_layer = 1

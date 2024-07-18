@@ -9,17 +9,11 @@ extends CharacterBody2D
 @export var speed : int
 @export var jump_velocity : int
 
-func _ready():
-	
-	# Randomizes the sprite color
-	var sprite_color = randi_range(1, 3) 
-	match sprite_color:
-		1:
-			sprite_2d.frame = 0
-		2:
-			sprite_2d.frame = 1
-		3:
-			sprite_2d.frame = 2
+
+# Counter for hits from player
+
+var hits_from_player : int = 0
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -62,7 +56,22 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
-func _on_hit_box_body_entered(_body: Node2D) -> void:
-	if _body.get_name() == "Taco":
-		queue_free()
+# Handles changing sprites based on hits from player
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.get_name() == "Taco":
+		hits_from_player += 1
+		change_sprite(hits_from_player)
+		
+		
+func change_sprite(c : int):
+	match c:
+		0:
+			sprite_2d.frame = 0
+		
+		1:
+			sprite_2d.frame = 1
+		2:
+			sprite_2d.frame = 2
+		_:
+			pass
+	

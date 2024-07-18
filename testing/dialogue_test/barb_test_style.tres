@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=8 format=3 uid="uid://dmewlbrdsok5o"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_fcrag"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_nxego"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_5vhxo"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_yopyu"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_7lq8s"]
+
+[sub_resource type="Resource" id="Resource_fjakk"]
+script = ExtResource("2_nxego")
+scene = ExtResource("3_5vhxo")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_m5c3v"]
+script = ExtResource("2_nxego")
+scene = ExtResource("4_yopyu")
+overrides = {
+"box_wobble_amount": "0.0",
+"box_wobble_speed": "0.1",
+"name_label_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
+"name_label_font_size": "20.0",
+"normal_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
+"text_size": "30.0"
+}
+
+[resource]
+script = ExtResource("5_7lq8s")
+name = "barb_test_style"
+base_scene = ExtResource("1_fcrag")
+base_overrides = {}
+layers = Array[ExtResource("2_nxego")]([SubResource("Resource_fjakk"), SubResource("Resource_m5c3v")])
+metadata/_latest_layer = 1

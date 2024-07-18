@@ -1,14 +1,14 @@
 join woz 3
-woz (woz_default): Good afternoon!
+woz (woz_happy): Good afternoon!
 woz (woz_default): Sir, how can I be of service?
 - Tea
-	woz (woz_default): Of course. Did you bring the water?
+	woz (woz_happy): Of course. Did you bring the water?
 	[end_timeline]
 - Meditation
 	woz (woz_default): Wonderful.
 	woz (woz_default): Take a deep breath.
 	[wait time="9.0"]
-	woz (woz_default): And another.
+	woz (woz_happy): And another.
 	[wait time="8.0"]
-	woz (woz_default): Great work!
+	woz (woz_happy): Great work!
 [end_timeline]
