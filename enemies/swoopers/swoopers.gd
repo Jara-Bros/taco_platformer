@@ -7,7 +7,7 @@ var flying_speed : int = 5
 @onready var interaction_area: Area2D = $AnimatableBody2D/InteractionArea
 @onready var path_follow : PathFollow2D = $PathFollow2D
 @onready var movement_timer : Timer = $Timer
-@onready var sprite_2d :Sprite2D = $Sprite2D
+@onready var sprite_2d :Sprite2D = $AnimatableBody2D/Sprite2D
 
 
 enum direciton_facing {LEFT, RIGHT}

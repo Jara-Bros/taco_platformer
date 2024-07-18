@@ -147,10 +147,6 @@ func _physics_process(delta: float) -> void:
 		#coyote_timer.start()
 		
 	
-	# Handles pushing RigidBodies
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		print(c.get_collider().get_property_list())
 
 
 	# Handles enable/disable TacoShoe collision box
@@ -256,7 +252,12 @@ func get_direction():
 func change_state(state):
 		current_state = state
 	
-
+func set_acceleration(accel):
+	acceleration = accel
+func set_speed(spe):
+	speed = spe
+func set_jump_velocity(new_jump):
+	jump_velocity = new_jump
 
 func _on_animation_player_animation_finished(anim_name):
 	if current_state == player_state.KICKING:

@@ -306,6 +306,9 @@ script = ExtResource("1_g1na8")
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
 position = Vector2(510, -427)
 
+[node name="WhistleFX" parent="Taco" index="7"]
+stream = null
+
 [node name="ForestBG" type="Parallax2D" parent="."]
 z_index = -5
 scroll_scale = Vector2(0.1, 0.1)
