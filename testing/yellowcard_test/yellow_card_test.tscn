@@ -8,8 +8,6 @@
 
 [node name="YellowCardTest" type="Node2D"]
 
-[node name="TimeOutHand" parent="." instance=ExtResource("1_kurxd")]
-
 [node name="Taco" parent="." instance=ExtResource("1_gjot3")]
 position = Vector2(65, -70)
 
@@ -26,6 +24,8 @@ polygon = PackedVector2Array(-142, -34, 517, -54, 541, 70, -205, 88, -224, -44)
 
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(-142, -34, 517, -54, 541, 70, -205, 88, -224, -44, -142, -34)
+
+[node name="TimeOutHand" parent="." instance=ExtResource("1_kurxd")]
 
 [node name="QuickReload" parent="." instance=ExtResource("1_i64tc")]
 
