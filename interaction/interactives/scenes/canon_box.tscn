@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cif4vn4sju07k"]
 
-[ext_resource type="Texture2D" uid="uid://b4xv1xfnrhm3h" path="res://levels/testing/sprites/volcano.jpg" id="1_m3mue"]
+[ext_resource type="Texture2D" uid="uid://b4xv1xfnrhm3h" path="res://testing/sprites/volcano.jpg" id="1_m3mue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yci2b"]
 size = Vector2(26, 23)
