@@ -867,6 +867,7 @@ texture = ExtResource("32_f737g")
 
 [node name="WindBM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_rmilw")
+volume_db = -10.0
 autoplay = true
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
