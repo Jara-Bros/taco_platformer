@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgoktp4idsa4y"]
+[gd_scene load_steps=27 format=3 uid="uid://cgoktp4idsa4y"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_cwnxr"]
 [ext_resource type="Script" path="res://levels/river_enter/river_enter.gd" id="1_kwksa"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="5_mf3m7"]
 [ext_resource type="Script" path="res://levels/river_enter/water_bg.gd" id="6_v4pqv"]
 [ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river_enter/river/sprites/sea_png.png" id="7_1yaqj"]
+[ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river_enter/river/sprites/plaintain.png" id="9_trfup"]
+[ext_resource type="Script" path="res://levels/river_enter/disable_input.gd" id="10_0yqaf"]
 [ext_resource type="Texture2D" uid="uid://8mugbedvtd2u" path="res://land/river/river_block_grass.png" id="10_wvsr4"]
 [ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="11_w0wt8"]
 [ext_resource type="Texture2D" uid="uid://cv3nnw2pv382v" path="res://platforms/seesaw_platforms/pineapple_slice.png" id="12_0ckr1"]
@@ -16,6 +18,50 @@
 [ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="14_w4jnf"]
 [ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://enemies/tomato_tom/river/ttom_river_sheet.png" id="15_ifcf1"]
 [ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://enemies/spawner/enemy_spawner.tscn" id="16_sx0dr"]
+[ext_resource type="Script" path="res://levels/river_enter/ride_enter.gd" id="19_3jxce"]
+
+[sub_resource type="Curve2D" id="Curve2D_vetbr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -198, -37, 0, 0, 0, 0, -271, -38, 0, 0, 0, 0, -320, -36, 0, 0, 0, 0, -391, -40, 0, 0, 0, 0, -425, -40)
+}
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_kfxwn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2aw44"]
+resource_name = "move"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cep4p"]
+_data = {
+"RESET": SubResource("Animation_kfxwn"),
+"move": SubResource("Animation_2aw44")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7x2f"]
 size = Vector2(97.9584, 15.9932)
@@ -23,19 +69,25 @@ size = Vector2(97.9584, 15.9932)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fux3"]
 size = Vector2(94.0017, 11.9273)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh7x4"]
+size = Vector2(36, 108)
+
 [node name="RiverEnter" type="Node2D"]
 script = ExtResource("1_kwksa")
 
 [node name="Taco" parent="." instance=ExtResource("1_cwnxr")]
-position = Vector2(918, -119)
+position = Vector2(-62, -89)
 
-[node name="Camera2D" parent="Taco" index="3"]
+[node name="Camera2D" parent="Taco" index="4"]
 offset = Vector2(-64, 0)
 
 [node name="CocobirdSpawn" type="Node" parent="."]
 
 [node name="EnemySpawner" parent="CocobirdSpawn" instance=ExtResource("16_sx0dr")]
 position = Vector2(602, -182)
+
+[node name="EnemySpawner2" parent="CocobirdSpawn" instance=ExtResource("16_sx0dr")]
+position = Vector2(-355, -164)
 
 [node name="Land" parent="." instance=ExtResource("2_55oi7")]
 
@@ -64,6 +116,44 @@ script = ExtResource("6_v4pqv")
 position = Vector2(35, -222)
 texture = ExtResource("7_1yaqj")
 
+[node name="PlaintainBoat" type="Path2D" parent="."]
+curve = SubResource("Curve2D_vetbr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlaintainBoat"]
+position = Vector2(-198, -37)
+rotation = -1.5708
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlaintainBoat/PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="PlaintainBoat"]
+position = Vector2(-198, -37)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="PlaintainBoat/AnimatableBody2D"]
+position = Vector2(-7.62939e-06, 3.8147e-06)
+rotation = 0.243275
+scale = Vector2(0.0437864, 0.0456604)
+texture = ExtResource("9_trfup")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlaintainBoat/AnimatableBody2D"]
+polygon = PackedVector2Array(61.0002, -55.9998, 60.0003, -69.9998, 7.20927, -58.3783, -12.7666, -40.3239, -23.0607, -8.8432, -23.8128, 29.9825, -13.7117, 61.6522, 3.99969, 84, 23.9997, 89.0001, 22.9997, 79.0001, 2.99973, 74, 0.742079, 68.0621, -2.76405, 44.2986, -0.889847, 11.367, 3.64989, -12.9104, 17.4521, -42.005, 25.2185, -54.6811)
+
+[node name="DisableInput" type="Area2D" parent="PlaintainBoat/AnimatableBody2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("10_0yqaf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlaintainBoat/AnimatableBody2D/DisableInput"]
+polygon = PackedVector2Array(38.5502, -54.1653, 28.3526, -54.2598, 23.0195, -50.1907, 16.6095, -35.7368, 10.4339, -25.3995, 3.78966, -6.82922, 0.840588, 15.1094, 0.370039, 44.7198, -0.332787, 57.0692, 4.99829, 74.3775, 8.74069, 72.6471, 2.61428, 56.5081, 3.97467, 15.5307, 6.12841, -5.23854, 12.7726, -23.8088, 18.9483, -34.1462, 24.3759, -48.4129, 29.709, -52.4822, 43.0406, -51.9664)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlaintainBoat"]
+root_node = NodePath("../AnimatableBody2D")
+libraries = {
+"": SubResource("AnimationLibrary_cep4p")
+}
+
 [node name="RiverFG" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="RiverFG"]
@@ -87,10 +177,10 @@ position = Vector2(814, -16.5)
 
 [node name="Polygon2D" parent="Land2" index="0"]
 texture = ExtResource("10_wvsr4")
-polygon = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -155, 10.5, -187.963, 8.52783, -234, 2.5, -302, -39.5, -326, -49.5, -366, -38.5, -373, 19.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -590, -12.5, -588, 14.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5)
+polygon = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -162, 8.5, -187.963, 8.52783, -234, 2.5, -271, -52.5, -302, -39.5, -326, -49.5, -366, -38.5, -381, 0.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -593, -41.5, -590, -12.5, -595, 5.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5)
 
 [node name="Line2D" parent="Land2" index="1"]
-points = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -155, 10.5, -187.963, 8.52783, -234, 2.5, -302, -39.5, -326, -49.5, -366, -38.5, -373, 19.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -590, -12.5, -588, 14.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5, -291, 47.5)
+points = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -162, 8.5, -187.963, 8.52783, -234, 2.5, -271, -52.5, -302, -39.5, -326, -49.5, -366, -38.5, -381, 0.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -593, -41.5, -590, -12.5, -595, 5.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5, -291, 47.5)
 
 [node name="SeesawPlatform" parent="." instance=ExtResource("11_w0wt8")]
 position = Vector2(135, -43)
@@ -144,12 +234,24 @@ position = Vector2(282, -96)
 texture = ExtResource("15_ifcf1")
 
 [node name="TomatoTomCharacter3" parent="TToms" instance=ExtResource("14_w4jnf")]
-position = Vector2(-69, -67)
+position = Vector2(141, -67)
 
 [node name="Sprite2D" parent="TToms/TomatoTomCharacter3" index="0"]
 texture = ExtResource("15_ifcf1")
 
+[node name="RideEnter" type="Area2D" parent="."]
+position = Vector2(-400, -55)
+script = ExtResource("19_3jxce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RideEnter"]
+shape = SubResource("RectangleShape2D_vh7x4")
+
+[connection signal="body_entered" from="PlaintainBoat/AnimatableBody2D/DisableInput" to="PlaintainBoat/AnimatableBody2D/DisableInput" method="_on_body_entered"]
+[connection signal="body_entered" from="RideEnter" to="RideEnter" method="_on_body_entered"]
+
 [editable path="Taco"]
+[editable path="CocobirdSpawn/EnemySpawner"]
+[editable path="CocobirdSpawn/EnemySpawner2"]
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="SeesawPlatform"]

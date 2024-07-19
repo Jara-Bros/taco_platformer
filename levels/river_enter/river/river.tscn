@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=23 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c8ida3dkuhtec" path="res://platforms/river_waterfall/river_rock_2.tscn" id="8_bl4a8"]
 [ext_resource type="Texture2D" uid="uid://cr3up8qcjyuu6" path="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png" id="8_ill8y"]
 [ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="8_v5kaj"]
-[ext_resource type="Texture2D" uid="uid://qorc65pudr6o" path="res://levels/river_enter/river/sprites/churro.png" id="9_4wgfw"]
 [ext_resource type="AudioStream" uid="uid://b3uvtfqae00ku" path="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3" id="9_n0kkp"]
 [ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff/rock_cliff.tscn" id="10_kwnlj"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
@@ -213,31 +212,9 @@ points = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.6481
 position = Vector2(401, -174)
 angular_velocity = 1.0
 
-[node name="CollisionShape2D" parent="SeesawPlatform" index="0"]
-position = Vector2(-1.83362, -4.91109)
-
-[node name="CollisionShape2D" parent="SeesawPlatform/Area2D" index="0"]
-position = Vector2(-2.32327, -5.65961)
-
-[node name="Sprite2D" parent="SeesawPlatform" index="2"]
-position = Vector2(1.99999, -8)
-rotation = -1.06815
-texture = ExtResource("9_4wgfw")
-
 [node name="SeesawPlatform2" parent="." instance=ExtResource("8_v5kaj")]
 position = Vector2(194, -156)
 angular_velocity = 1.0
-
-[node name="CollisionShape2D" parent="SeesawPlatform2" index="0"]
-position = Vector2(-1.83362, -4.91109)
-
-[node name="CollisionShape2D" parent="SeesawPlatform2/Area2D" index="0"]
-position = Vector2(-2.32327, -5.65961)
-
-[node name="Sprite2D" parent="SeesawPlatform2" index="2"]
-position = Vector2(1.99999, -8)
-rotation = -1.06815
-texture = ExtResource("9_4wgfw")
 
 [node name="RiverRock" type="Node" parent="."]
 

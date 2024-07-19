@@ -1,56 +1,123 @@
-[gd_scene load_steps=13 format=3 uid="uid://ox70u3quukqy"]
+[gd_scene load_steps=29 format=3 uid="uid://ox70u3quukqy"]
 
 [ext_resource type="Script" path="res://levels/beach/beach.gd" id="1_a43xn"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_qskqb"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_cs1v4"]
 [ext_resource type="PackedScene" uid="uid://jm3eymraihod" path="res://tBleu/bleu_npc.tscn" id="3_mflb0"]
+[ext_resource type="AudioStream" uid="uid://ba6the5hamxfy" path="res://audio/music/gelato_beach.mp3" id="4_nwgxa"]
 [ext_resource type="Script" path="res://NPC/scripts/bleu_trigger.gd" id="4_oc8as"]
 [ext_resource type="Texture2D" uid="uid://ce4no77qam7km" path="res://levels/river_enter/river/sprites/sand-beach-png-9.png" id="4_tqawb"]
 [ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river_enter/river/sprites/plaintain.png" id="5_2rtet"]
 [ext_resource type="Texture2D" uid="uid://574gx80qll3e" path="res://levels/beach/sprites/palm_tree_beach.jpg" id="6_qcghf"]
+[ext_resource type="Script" path="res://enemies/corpo/corpo_npc.gd" id="7_dg8jo"]
+[ext_resource type="Texture2D" uid="uid://bx8exrmbqq4t0" path="res://enemies/corpo/corpo_idle_walk_stun_sheet.png" id="7_ickto"]
 [ext_resource type="Texture2D" uid="uid://cb0m0ckiuf7pi" path="res://levels/river_enter/river/sprites/tall_grass.png" id="7_newyv"]
 [ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="8_gvugd"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="8_mllrr"]
 [ext_resource type="PackedScene" uid="uid://d2h83di63usuk" path="res://gui/thanks_play/thanks_for_playing.tscn" id="11_uk7t2"]
+[ext_resource type="Texture2D" uid="uid://dk8wskb3aldgd" path="res://levels/beach/sprites/food_truck.png" id="14_n1o51"]
+[ext_resource type="Texture2D" uid="uid://vluasgujukmg" path="res://levels/beach/sprites/pina_colada_sign.png" id="15_anywn"]
+[ext_resource type="Script" path="res://levels/beach/food_truck.gd" id="15_c1v58"]
+[ext_resource type="Texture2D" uid="uid://b3q4rp5o5okq5" path="res://levels/beach/sprites/texico_beach_welcome_sign.png" id="16_rthvq"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="17_koytp"]
+[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://enemies/tomato_tom/river/ttom_river_sheet.png" id="18_lu4h1"]
+[ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://enemies/spawner/enemy_spawner.tscn" id="19_laf70"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3f6dg"]
-radius = 29.0689
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0dx2"]
+radius = 31.4006
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijcre"]
+atlas = ExtResource("7_ickto")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up2eq"]
+atlas = ExtResource("7_ickto")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6su6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijcre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up2eq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4nsr6"]
+radius = 42.2019
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mskl6"]
+radius = 53.1936
 
 [node name="Beach" type="Node2D"]
 script = ExtResource("1_a43xn")
 
 [node name="Taco" parent="." instance=ExtResource("1_qskqb")]
-position = Vector2(326, -25)
+position = Vector2(330, -29)
+
+[node name="BeachWaves" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gvugd")
+volume_db = -15.0
+autoplay = true
+
+[node name="BeachBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nwgxa")
+volume_db = -10.0
+autoplay = true
 
 [node name="BleuNPC" parent="." instance=ExtResource("3_mflb0")]
 z_index = 1
-position = Vector2(-177, -7)
+position = Vector2(-177, -6)
+script = ExtResource("4_oc8as")
 
 [node name="Sprite2D" parent="BleuNPC" index="0"]
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="BleuNPC"]
-position = Vector2(22, -5)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("4_oc8as")
+[node name="InteractionArea" parent="BleuNPC" instance=ExtResource("8_mllrr")]
+action_name = "talk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BleuNPC/Area2D"]
-shape = SubResource("CircleShape2D_3f6dg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BleuNPC/InteractionArea"]
+shape = SubResource("CircleShape2D_u0dx2")
 
-[node name="Timer" type="Timer" parent="BleuNPC/Area2D"]
-wait_time = 10.0
-one_shot = true
+[node name="Timer" type="Timer" parent="BleuNPC"]
+wait_time = 7.0
+
+[node name="CorpoNPC" type="Node2D" parent="."]
+script = ExtResource("7_dg8jo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CorpoNPC"]
+position = Vector2(-508, -34)
+sprite_frames = SubResource("SpriteFrames_h6su6")
+
+[node name="InteractionArea" parent="CorpoNPC" instance=ExtResource("8_mllrr")]
+position = Vector2(-508, -52)
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorpoNPC/InteractionArea"]
+shape = SubResource("CircleShape2D_4nsr6")
 
 [node name="Land" parent="." instance=ExtResource("2_cs1v4")]
 visible = false
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(-226, 16, 188, -23, 452, 19, 27, 22)
+polygon = PackedVector2Array(-571, 22, -571, -11, -571, -238, -560, -239, -540, 5, -496, 3, -414, 7, -310, 4, -263, 11, -236, 16, -72, -2, 188, -23, 293.568, -6.20511, 368, -5, 452, 19, 266, -1, 83, 0, 15, 13)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(-226, 16, 188, -23, 452, 19, 27, 22, -226, 16)
+points = PackedVector2Array(-571, 22, -571, -11, -571, -238, -560, -239, -540, 5, -496, 3, -414, 7, -310, 4, -263, 11, -236, 16, -72, -2, 188, -23, 293.568, -6.20511, 368, -5, 452, 19, 266, -1, 83, 0, 15, 13, -571, 22)
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Land2" parent="." instance=ExtResource("2_cs1v4")]
+visible = false
+
+[node name="Polygon2D" parent="Land2" index="0"]
+polygon = PackedVector2Array(37, 30, 38, 61, 431, 58, 421, 21, 386, 21, 394, 43, 54, 48, 54, 19, 38, 18)
+
+[node name="Line2D" parent="Land2" index="1"]
+points = PackedVector2Array(37, 30, 38, 61, 431, 58, 421, 21, 386, 21, 394, 43, 54, 48, 54, 19, 38, 18, 37, 30)
 
 [node name="Sand" type="Node" parent="."]
 
@@ -58,6 +125,36 @@ points = PackedVector2Array(-226, 16, 188, -23, 452, 19, 27, 22, -226, 16)
 position = Vector2(-100, 13)
 rotation = -4.36604e-05
 scale = Vector2(0.8586, 0.762391)
+texture = ExtResource("4_tqawb")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sand"]
+position = Vector2(-374, 16)
+rotation = -4.36604e-05
+scale = Vector2(0.8586, 0.762391)
+texture = ExtResource("4_tqawb")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Sand"]
+position = Vector2(-648, 5.00001)
+rotation = 0.10457
+scale = Vector2(0.8586, 0.762391)
+texture = ExtResource("4_tqawb")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Sand"]
+position = Vector2(-509, 19)
+rotation = 0.0214187
+scale = Vector2(0.8586, 0.762391)
+texture = ExtResource("4_tqawb")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Sand"]
+position = Vector2(-490, -3)
+rotation = 0.0162822
+scale = Vector2(0.8586, 0.762391)
+texture = ExtResource("4_tqawb")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Sand"]
+position = Vector2(-268, 4)
+rotation = 0.0950029
+scale = Vector2(0.531232, 0.762391)
 texture = ExtResource("4_tqawb")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sand"]
@@ -79,12 +176,14 @@ scale = Vector2(0.8586, 0.762391)
 texture = ExtResource("4_tqawb")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sand"]
+z_index = -1
 position = Vector2(253, 20)
 rotation = -0.0021562
 scale = Vector2(0.8586, 0.762391)
 texture = ExtResource("4_tqawb")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sand"]
+z_index = -1
 position = Vector2(-21.0001, 20)
 rotation = -0.0021562
 scale = Vector2(0.8586, 0.762391)
@@ -97,18 +196,18 @@ scale = Vector2(0.8586, 0.762391)
 texture = ExtResource("4_tqawb")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sand"]
+z_index = -1
 position = Vector2(383, 20)
 rotation = -0.0021562
 scale = Vector2(0.8586, 0.762391)
 texture = ExtResource("4_tqawb")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sand"]
-position = Vector2(193, -10)
-rotation = 0.011802
-scale = Vector2(0.8586, 0.762391)
+z_index = -1
+position = Vector2(192, -17)
+rotation = -0.000331104
+scale = Vector2(0.8586, 0.688818)
 texture = ExtResource("4_tqawb")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
 
 [node name="Plaintain" type="StaticBody2D" parent="."]
 collision_mask = 2
@@ -125,52 +224,95 @@ rotation = -0.850303
 scale = Vector2(0.0409602, 0.0447124)
 polygon = PackedVector2Array(1545.67, -2522.87, -277.789, -1205.13, -600.015, -320.989, -433.169, 497.189, 92.083, 1384.25, 354.277, 1590.04, 1407.61, 1129.77, 1312.51, -1918.69)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Plaintain"]
-position = Vector2(-158, -20)
-rotation = -0.850303
-scale = Vector2(0.0409602, 0.0447124)
-polygon = PackedVector2Array(3346.39, -4983.02, -1900.73, -762.938, -1190.21, -292.738, 3845.72, -4462.01)
+[node name="WelcomeSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-407, -83)
+rotation = 0.00216328
+scale = Vector2(0.344417, 0.316929)
+texture = ExtResource("16_rthvq")
+
+[node name="FoodTruck" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(117, -51)
+rotation = 0.00216328
+scale = Vector2(0.760689, 0.776089)
+texture = ExtResource("14_n1o51")
+script = ExtResource("15_c1v58")
+
+[node name="FoodTruckSign" type="Sprite2D" parent="FoodTruck"]
+position = Vector2(15.7894, 6.4091)
+rotation = -0.00212035
+scale = Vector2(0.104261, 0.0875688)
+skew = -8.67844e-05
+texture = ExtResource("15_anywn")
+
+[node name="InteractionArea" parent="FoodTruck" instance=ExtResource("8_mllrr")]
+position = Vector2(-64.4294, -6.30596)
+action_name = "order"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodTruck/InteractionArea"]
+shape = SubResource("CircleShape2D_mskl6")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 z_index = -1
 scroll_offset = Vector2(158, -282)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -2
 position = Vector2(-67, -74)
 scale = Vector2(0.691667, 0.58548)
 texture = ExtResource("6_qcghf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CanvasLayer" parent="." instance=ExtResource("11_uk7t2")]
+visible = false
+
+[node name="TomatoTomCharacter" parent="." instance=ExtResource("17_koytp")]
+z_index = 1
+position = Vector2(175, 44)
+
+[node name="Sprite2D" parent="TomatoTomCharacter" index="0"]
+texture = ExtResource("18_lu4h1")
+frame = 1
+
+[node name="TomatoTomCharacter2" parent="." instance=ExtResource("17_koytp")]
+z_index = 1
+position = Vector2(225, 40)
+
+[node name="Sprite2D" parent="TomatoTomCharacter2" index="0"]
+texture = ExtResource("18_lu4h1")
+frame = 2
+
+[node name="EnemySpawner" parent="." instance=ExtResource("19_laf70")]
+position = Vector2(-582, -154)
+
+[node name="Beachgrass" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Beachgrass"]
 z_index = 1
 position = Vector2(625, -133)
 texture = ExtResource("7_newyv")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="Beachgrass"]
 z_index = 1
 position = Vector2(587, -135)
 texture = ExtResource("7_newyv")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
+[node name="Sprite2D4" type="Sprite2D" parent="Beachgrass"]
 z_index = 1
 position = Vector2(333, 127)
 texture = ExtResource("7_newyv")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
+[node name="Sprite2D5" type="Sprite2D" parent="Beachgrass"]
 z_index = 1
 position = Vector2(123, 167)
 texture = ExtResource("7_newyv")
 
-[node name="BeachWaves" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_gvugd")
-autoplay = true
-
-[node name="CanvasLayer" parent="." instance=ExtResource("11_uk7t2")]
-visible = false
-
-[connection signal="body_entered" from="BleuNPC/Area2D" to="BleuNPC/Area2D" method="_on_body_entered"]
-[connection signal="timeout" from="BleuNPC/Area2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="BleuNPC/Timer" to="BleuNPC" method="_on_timer_timeout"]
 
 [editable path="Taco"]
 [editable path="BleuNPC"]
 [editable path="Land"]
+[editable path="Land2"]
 [editable path="CanvasLayer"]
+[editable path="TomatoTomCharacter"]
+[editable path="TomatoTomCharacter2"]

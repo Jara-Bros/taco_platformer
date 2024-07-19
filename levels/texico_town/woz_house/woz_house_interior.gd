@@ -1,7 +1,9 @@
 extends Node2D
 
-
 @onready var taco: Player = $Taco
+@onready var camera_2d: Camera2D = $Taco/Camera2D
+
+
 
 # Player spawn location from woz house -> woz house interior
 var player_spawn_location_dict = {
@@ -11,9 +13,9 @@ var player_spawn_location_dict = {
 # Set player camera limits
 func _ready():
 	taco.sprite_2d.flip_h = true
-	taco.get_child(3).set_limit(SIDE_BOTTOM, 48)
-	taco.get_child(3).set_limit(SIDE_RIGHT, 240)
-	taco.get_child(3).set_limit(SIDE_LEFT, -176)
+	camera_2d.set_limit(SIDE_BOTTOM, 48)
+	camera_2d.set_limit(SIDE_RIGHT, 240)
+	camera_2d.set_limit(SIDE_LEFT, -176)
 	
 	
 

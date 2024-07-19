@@ -5,4 +5,5 @@ extends Node2D
 
 func _ready() -> void:
 	camera_2d.set_limit(SIDE_RIGHT, 1250)
+	camera_2d.set_limit(SIDE_LEFT, -300)
 	

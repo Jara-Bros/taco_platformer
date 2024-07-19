@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://06cto0g06omy"]
+
+[ext_resource type="PackedScene" uid="uid://bowc71pajomo6" path="res://gui/time_out/time_out_hand.tscn" id="1_at5eh"]
+
+[node name="TimeOut" type="CanvasLayer"]
+
+[node name="TimeOutHand" parent="." instance=ExtResource("1_at5eh")]
