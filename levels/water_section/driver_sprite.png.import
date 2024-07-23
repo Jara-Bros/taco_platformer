@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dworexixfuy1e"
 path.s3tc="res://.godot/imported/driver_sprite.png-e4f6c27ac1b04c2d4b8a9fea65fa31ea.s3tc.ctex"
+path.etc2="res://.godot/imported/driver_sprite.png-e4f6c27ac1b04c2d4b8a9fea65fa31ea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://levels/water_section/driver_sprite.png"
-dest_files=["res://.godot/imported/driver_sprite.png-e4f6c27ac1b04c2d4b8a9fea65fa31ea.s3tc.ctex"]
+dest_files=["res://.godot/imported/driver_sprite.png-e4f6c27ac1b04c2d4b8a9fea65fa31ea.s3tc.ctex", "res://.godot/imported/driver_sprite.png-e4f6c27ac1b04c2d4b8a9fea65fa31ea.etc2.ctex"]
 
 [params]
 

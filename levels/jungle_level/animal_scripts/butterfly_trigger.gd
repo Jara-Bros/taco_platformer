@@ -17,7 +17,7 @@ func _on_timer_timeout() -> void:
 	animation_player.play("move")
 
 func change_scenes():
-	var river = load("res://levels/river/river.tscn").instantiate()
+	var river = load("res://levels/river_enter/river/river.tscn").instantiate()
 	river.get_child(0).position = river.get_spawn_location("butterfly_enter")
 	SceneManager.change_scenes(river)
 	jungle_level.queue_free()

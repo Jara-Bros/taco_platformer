@@ -218,3 +218,5 @@ autoplay = true
 
 [connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
 [connection signal="body_entered" from="OfficeDoor" to="." method="_on_office_door_body_entered"]
+
+[editable path="Taco"]

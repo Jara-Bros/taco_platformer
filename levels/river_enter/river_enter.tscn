@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cgoktp4idsa4y"]
+[gd_scene load_steps=28 format=3 uid="uid://cgoktp4idsa4y"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_cwnxr"]
 [ext_resource type="Script" path="res://levels/river_enter/river_enter.gd" id="1_kwksa"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://enemies/tomato_tom/river/ttom_river_sheet.png" id="15_ifcf1"]
 [ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://enemies/spawner/enemy_spawner.tscn" id="16_sx0dr"]
 [ext_resource type="Script" path="res://levels/river_enter/ride_enter.gd" id="19_3jxce"]
+[ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="20_21xv1"]
 
 [sub_resource type="Curve2D" id="Curve2D_vetbr"]
 _data = {
@@ -76,15 +77,15 @@ size = Vector2(36, 108)
 script = ExtResource("1_kwksa")
 
 [node name="Taco" parent="." instance=ExtResource("1_cwnxr")]
-position = Vector2(-62, -89)
+position = Vector2(1150, -215)
 
-[node name="Camera2D" parent="Taco" index="4"]
+[node name="Camera2D" parent="Taco" index="2"]
 offset = Vector2(-64, 0)
 
 [node name="CocobirdSpawn" type="Node" parent="."]
 
 [node name="EnemySpawner" parent="CocobirdSpawn" instance=ExtResource("16_sx0dr")]
-position = Vector2(602, -182)
+position = Vector2(282, -274)
 
 [node name="EnemySpawner2" parent="CocobirdSpawn" instance=ExtResource("16_sx0dr")]
 position = Vector2(-355, -164)
@@ -245,6 +246,10 @@ script = ExtResource("19_3jxce")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RideEnter"]
 shape = SubResource("RectangleShape2D_vh7x4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_21xv1")
+autoplay = true
 
 [connection signal="body_entered" from="PlaintainBoat/AnimatableBody2D/DisableInput" to="PlaintainBoat/AnimatableBody2D/DisableInput" method="_on_body_entered"]
 [connection signal="body_entered" from="RideEnter" to="RideEnter" method="_on_body_entered"]
