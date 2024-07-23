@@ -484,3 +484,5 @@ autoplay = true
 
 [connection signal="body_entered" from="Barb/BarbTalk" to="Barb" method="_on_barb_talk_body_entered"]
 [connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
+
+[editable path="Taco"]

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var taco: Player = $Taco
 @onready var barb: CharacterBody2D = $Barb
+@onready var camera_2d: Camera2D = $Taco/Camera2D
 
 
 var player_spawn_location_dict = {
@@ -10,9 +11,9 @@ var player_spawn_location_dict = {
 
 
 func _ready() -> void:
-	taco.get_child(3).set_limit(SIDE_BOTTOM, 16)
-	taco.get_child(3).set_limit(SIDE_LEFT, -111)
-	taco.get_child(3).set_limit(SIDE_RIGHT, 624)
+	camera_2d.set_limit(SIDE_BOTTOM, 16)
+	camera_2d.set_limit(SIDE_LEFT, -111)
+	camera_2d.set_limit(SIDE_RIGHT, 624)
 
 
 func get_spawn_location(_spawn : String):

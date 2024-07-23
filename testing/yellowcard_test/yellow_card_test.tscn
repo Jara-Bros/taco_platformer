@@ -11,7 +11,7 @@
 [node name="TimeOutHand" parent="." instance=ExtResource("5_q7el3")]
 
 [node name="Taco" parent="." instance=ExtResource("1_gjot3")]
-position = Vector2(0, 0)
+position = Vector2(-120, -81)
 
 [node name="TomatoTomCharacter" parent="." instance=ExtResource("3_4dsxt")]
 position = Vector2(171, -61)

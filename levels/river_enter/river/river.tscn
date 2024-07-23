@@ -19,19 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://d0dxh2krrk25w" path="res://platforms/river_waterfall/river_rock_1.tscn" id="16_6ndlo"]
 [ext_resource type="Script" path="res://levels/river_enter/river/river_ride_enter.gd" id="17_nomcm"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="20_myjr6"]
-[ext_resource type="Script" path="res://levels/river_enter/river/river_ride_2.gd" id="21_ailx4"]
+[ext_resource type="Script" path="res://levels/river_enter/river/river_ride_secret_enter.gd" id="20_ymqbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvoly"]
 size = Vector2(72, 180)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gux64"]
-size = Vector2(26, 84)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4exyj"]
+size = Vector2(32, 98)
 
 [node name="Waterfall" type="Node2D"]
 script = ExtResource("1_terlw")
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(-443, 198)
+position = Vector2(512, 850)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
@@ -451,15 +451,17 @@ script = ExtResource("17_nomcm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideEnter"]
 shape = SubResource("RectangleShape2D_fvoly")
 
-[node name="RiverRide" type="Area2D" parent="."]
-position = Vector2(25, 840)
-script = ExtResource("21_ailx4")
+[node name="RiverRideSecretEnter" type="Area2D" parent="."]
+position = Vector2(-1, 831)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("20_ymqbs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRide"]
-shape = SubResource("RectangleShape2D_gux64")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideSecretEnter"]
+shape = SubResource("RectangleShape2D_4exyj")
 
 [connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
-[connection signal="body_entered" from="RiverRide" to="RiverRide" method="_on_body_entered"]
+[connection signal="body_entered" from="RiverRideSecretEnter" to="RiverRideSecretEnter" method="_on_body_entered"]
 
 [editable path="Taco"]
 [editable path="CanvasLayer"]

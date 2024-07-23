@@ -304,7 +304,7 @@ size = Vector2(159.436, 50.5566)
 script = ExtResource("1_g1na8")
 
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
-position = Vector2(510, -427)
+position = Vector2(511, -426)
 
 [node name="ForestBG" type="Parallax2D" parent="."]
 z_index = -5
@@ -889,7 +889,7 @@ autoplay = true
 [node name="BallBox" parent="." node_paths=PackedStringArray("player_removal_node") instance=ExtResource("21_p4mlw")]
 z_index = 5
 position = Vector2(-1796, 619)
-transformation_node = "res://levels/testing/transformations/bowling_ball/bowling_ball_transform.tscn"
+transformation_node = "res://testing/transformations/bowling_ball/bowling_ball_transform.tscn"
 spawn_location = Vector2(-2025, 590)
 player_removal_node = NodePath("../Taco")
 sprite_2d_image = ExtResource("39_cufwd")

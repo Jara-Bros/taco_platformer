@@ -221,3 +221,5 @@ shape = SubResource("RectangleShape2D_y13sg")
 
 [connection signal="body_entered" from="BarbOffice" to="." method="_on_barb_office_body_entered"]
 [connection signal="body_entered" from="GalleryOne" to="." method="_on_gallery_one_body_entered"]
+
+[editable path="Taco"]
