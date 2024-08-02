@@ -3,9 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
 [ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="3_ijhxa"]
+[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_nl3sv"]
 [ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_qao02"]
 [ext_resource type="AudioStream" uid="uid://bumc3f4eri6h7" path="res://audio/music/jungle_bm.mp3" id="4_7tiu3"]
 [ext_resource type="AudioStream" uid="uid://dvhqo8l4tfsdl" path="res://audio/sfx/leave_rustle_fx.wav" id="4_8t4d5"]
+[ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_spihg"]
 [ext_resource type="Script" path="res://levels/jungle_level/change_scene/swap_scene.gd" id="4_y5pbf"]
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="6_8vxpm"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="6_vid0p"]
@@ -34,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://d2du0rw81aa03" path="res://levels/jungle_level/sprites/forest_floor_bg.png" id="32_8ufg2"]
 [ext_resource type="Texture2D" uid="uid://duwrdkc86y38a" path="res://levels/jungle_level/sprites/404-4043223_leaves-pile-png-transparent-png-removebg-preview.png" id="33_pt14t"]
 [ext_resource type="AudioStream" uid="uid://dbcysbxdydmo6" path="res://audio/sfx/leave_crunch_sfx.mp3" id="34_t5h3o"]
-[ext_resource type="Script" path="res://levels/jungle_level/retry_zone/retry_zone.gd" id="35_6s33m"]
 [ext_resource type="Texture2D" uid="uid://cn3ev5vc1yuji" path="res://levels/jungle_level/sprites/mango.png" id="39_cufwd"]
 [ext_resource type="Texture2D" uid="uid://4nu5wdyec3eu" path="res://levels/jungle_level/sprites/monarch-butterfly-K6V8QZD-600-removebg-preview.png" id="40_8hx5d"]
 [ext_resource type="Texture2D" uid="uid://kxkxueh33kq0" path="res://levels/jungle_level/sprites/purple_leaf.png" id="45_ds23g"]
@@ -49,8 +50,6 @@
 [ext_resource type="Texture2D" uid="uid://b1s7t1daflm8y" path="res://levels/jungle_level/sprites/ivy.png" id="53_2iro0"]
 [ext_resource type="Texture2D" uid="uid://cl3oowcpx33no" path="res://levels/jungle_level/sprites/fern.png" id="54_4tj8e"]
 [ext_resource type="Texture2D" uid="uid://cgcskghdefymb" path="res://levels/jungle_level/sprites/sharp_rock_cliff.png" id="54_qq2ns"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xu6pb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1jgq"]
 size = Vector2(20, 86)
@@ -306,6 +305,17 @@ script = ExtResource("1_g1na8")
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
 position = Vector2(511, -426)
 
+[node name="SoccerBall" parent="." instance=ExtResource("3_nl3sv")]
+position = Vector2(339, -21)
+
+[node name="PlatformLabel" parent="." instance=ExtResource("4_spihg")]
+offset_left = 222.0
+offset_top = -105.0
+offset_right = 456.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 35
+text = "Press F to Kick"
+
 [node name="ForestBG" type="Parallax2D" parent="."]
 z_index = -5
 scroll_scale = Vector2(0.1, 0.1)
@@ -316,15 +326,6 @@ script = ExtResource("13_vw6jl")
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG"]
 position = Vector2(8, -132)
 texture = ExtResource("32_8ufg2")
-
-[node name="RestartZone" type="Area2D" parent="."]
-position = Vector2(-3495, 1784)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("35_6s33m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RestartZone"]
-shape = SubResource("WorldBoundaryShape2D_xu6pb")
 
 [node name="SwapScene" type="Area2D" parent="."]
 position = Vector2(-4429, 8)
@@ -337,7 +338,7 @@ shape = SubResource("RectangleShape2D_e1jgq")
 
 [node name="AmazonAmbient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7tiu3")
-volume_db = -2.0
+volume_db = -20.0
 autoplay = true
 
 [node name="TreeBranch" type="Sprite2D" parent="."]
@@ -1406,7 +1407,6 @@ libraries = {
 position = Vector2(0.519287, 0.85498)
 shape = SubResource("RectangleShape2D_em0rb")
 
-[connection signal="body_entered" from="RestartZone" to="RestartZone" method="_on_body_entered"]
 [connection signal="body_entered" from="SwapScene" to="SwapScene" method="_on_body_entered"]
 [connection signal="timeout" from="PlatformStart/StaticBody2D/Timer" to="PlatformStart/StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform/Area2D" to="TrapPlatform" method="_on_area_2d_body_entered"]

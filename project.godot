@@ -23,8 +23,7 @@ buses/default_bus_layout="res://audio/buses/default_bus_layout.tres"
 
 [autoload]
 
-SceneManager="*res://autoloads/scene_manager/scene_manager.gd"
-SaveManager="*res://autoloads/save_manager/save_manager.gd"
+SceneManager="*res://autoloads/global_scene_manager/global_scene_manager.tscn"
 ResumeQuitMenu="*res://gui/menus/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
@@ -34,11 +33,13 @@ InteractionManager="*res://interaction/interaction_manager/interaction_manager.t
 
 directories/dch_directory={
 "abe": "res://dialogue/characters/abe.dch",
+"andy": "res://dialogue/characters/andy.dch",
 "barb": "res://dialogue/characters/barb.dch",
 "bleu_test_character": "res://testing/dialogue_test/bleu_test_character.dch",
 "corpo_01": "res://dialogue/characters/corpo_01.dch",
 "esmeralda": "res://dialogue/characters/esmeralda.dch",
 "limona": "res://dialogue/characters/limona.dch",
+"nico": "res://dialogue/characters/nico.dch",
 "taco": "res://dialogue/characters/taco.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
@@ -49,6 +50,7 @@ directories/dtl_directory={
 "bleu_test_timeline": "res://testing/dialogue_test/bleu_test_timeline.dtl",
 "butterfly_ride_timeline": "res://dialogue/timelines/hints/butterfly_ride_timeline.dtl",
 "corpo_01_timeline": "res://dialogue/timelines/corpo_01_timeline.dtl",
+"demo_intro_timeline": "res://dialogue/timelines/demo_intro_timeline.dtl",
 "esmeralda_timeline": "res://dialogue/timelines/esmeralda_timeline.dtl",
 "leftover_test_timeline": "res://testing/dialogue_test/leftover_test_timeline.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
@@ -83,7 +85,7 @@ text/autopauses={}
 glossary/default_case_sensitive=true
 layout/end_behaviour=1
 choices/hotkey_behaviour=1
-text/autoadvance_enabled=true
+text/autoadvance_enabled=false
 text/autoadvance_fixed_delay=0.5
 
 [display]

@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.15564, 0.582433, 0.996094, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "limona_style_textbox"
+},
+"default_portrait": "default",
+"description": "",
+"display_name": "Nico",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"default": {
+"export_overrides": {
+"image": "\"res://dialogue/timelines/hints/1649369426820-removebg-preview.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

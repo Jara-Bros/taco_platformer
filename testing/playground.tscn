@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://c0vhvglx6s7ib"]
+[gd_scene load_steps=9 format=4 uid="uid://c0vhvglx6s7ib"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ryeh2"]
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
+[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="2_eogff"]
 [ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="2_wdves"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
@@ -50,6 +51,8 @@ position = Vector2(1, 0)
 
 [node name="Taco" parent="." instance=ExtResource("1_ryeh2")]
 position = Vector2(95, -15)
+
+[node name="SoccerBall" parent="." instance=ExtResource("2_eogff")]
 
 [node name="SeesawPlatform" parent="." instance=ExtResource("2_wdves")]
 position = Vector2(317, -55)
