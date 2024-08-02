@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=47 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="3_ptwvw"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="3_w60un"]
 [ext_resource type="PackedScene" uid="uid://cos6tnjxn68bl" path="res://platforms/chips/orange_chip.tscn" id="5_4idp4"]
 [ext_resource type="Texture2D" uid="uid://4eonpltpsc5c" path="res://levels/texico_town/sprites/cloud-removebg-preview.png" id="5_i4mxj"]
 [ext_resource type="PackedScene" uid="uid://b5obv2chr5j4v" path="res://platforms/chips/purple_chip.tscn" id="6_06j4d"]
@@ -900,6 +901,8 @@ libraries = {
 "": SubResource("AnimationLibrary_m0iky")
 }
 autoplay = "move"
+
+[node name="QuickReload" parent="." instance=ExtResource("3_w60un")]
 
 [node name="TacoTalkTrigger" type="Area2D" parent="."]
 z_index = 3

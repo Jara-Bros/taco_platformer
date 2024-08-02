@@ -9,9 +9,8 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
-	var boogie_test = load("res://levels/boogie/boogie_test.tscn").instantiate()
 	taco.input_enabled = false
 	Dialogic.start("limona_timeline")
 	await Dialogic.timeline_ended
-	SceneManager.change_scenes(boogie_test)
+	SceneManager.switch_scene("BoogieBoard")
 	taco.input_enabled = true
