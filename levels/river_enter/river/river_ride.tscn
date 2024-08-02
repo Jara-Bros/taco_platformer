@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddw7t4fpurv20" path="res://NPC/sprites/abe/abe_happy_portrait.png" id="8_box27"]
 [ext_resource type="Script" path="res://levels/river_enter/river/beach_enter.gd" id="11_vyrev"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="12_7kpjg"]
+[ext_resource type="Texture2D" uid="uid://ce4no77qam7km" path="res://levels/river_enter/river/sprites/sand-beach-png-9.png" id="12_i7dfl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ljtt2"]
 
@@ -19,9 +20,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_76jkj"]
 radius = 29.5956
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yu1xc"]
-radius = 30.1496
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhnwf"]
 size = Vector2(60, 262)
@@ -51,9 +49,11 @@ texture = ExtResource("2_r7k7k")
 [node name="RiverBG" type="Parallax2D" parent="."]
 z_index = -1
 scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(252, 331)
+scroll_offset = Vector2(252, 372)
 autoscroll = Vector2(45, 0)
 repeat_times = 99
+follow_viewport = false
+ignore_camera_scroll = true
 script = ExtResource("3_mjc6a")
 
 [node name="River" type="Sprite2D" parent="RiverBG"]
@@ -62,7 +62,7 @@ scale = Vector2(0.672778, 0.434124)
 texture = ExtResource("4_7cagb")
 
 [node name="BarrierT" type="StaticBody2D" parent="."]
-position = Vector2(960, 384)
+position = Vector2(966, 427)
 rotation = 3.13964
 
 [node name="BarrierTop" type="CollisionShape2D" parent="BarrierT"]
@@ -70,14 +70,14 @@ position = Vector2(0, 1)
 shape = SubResource("WorldBoundaryShape2D_ljtt2")
 
 [node name="BarrierB" type="StaticBody2D" parent="."]
-position = Vector2(957, 816)
+position = Vector2(961, 579)
 rotation = 0.0263055
 
 [node name="BarrierBottom" type="CollisionShape2D" parent="BarrierB"]
 shape = SubResource("WorldBoundaryShape2D_30sn7")
 
 [node name="Abe" type="CharacterBody2D" parent="."]
-position = Vector2(601, 632)
+position = Vector2(654, 539)
 collision_mask = 2
 
 [node name="Abe" type="Sprite2D" parent="Abe"]
@@ -93,21 +93,31 @@ script = ExtResource("7_new6o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Abe/Abe/InteractionArea"]
 shape = SubResource("CircleShape2D_76jkj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Abe"]
-shape = SubResource("CircleShape2D_yu1xc")
-
 [node name="RiverBM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vrsl5")
 autoplay = true
 
 [node name="BeachEnter" type="Area2D" parent="."]
-position = Vector2(403, 516)
+position = Vector2(225, 465)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("11_vyrev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeachEnter"]
+position = Vector2(-21, 0)
 shape = SubResource("RectangleShape2D_rhnwf")
+
+[node name="Sandbar" type="Sprite2D" parent="BeachEnter"]
+position = Vector2(-124, 79)
+rotation = 0.0477564
+scale = Vector2(2.06579, 0.713175)
+texture = ExtResource("12_i7dfl")
+
+[node name="Sandbar2" type="Sprite2D" parent="BeachEnter"]
+position = Vector2(-131, 94)
+rotation = 0.0672121
+scale = Vector2(1.22114, 0.778764)
+texture = ExtResource("12_i7dfl")
 
 [node name="Coins" type="Node" parent="."]
 

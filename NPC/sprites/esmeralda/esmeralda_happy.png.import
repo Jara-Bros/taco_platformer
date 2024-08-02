@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4w54xwdbwpv4"
-path="res://.godot/imported/hand_close.png-3c8398a0b937dfbd994e149e3cfabc0e.ctex"
+uid="uid://dio5bprm3s3qp"
+path="res://.godot/imported/esmeralda_happy.png-80d86663362ea1a82e22def5f6b656ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/icons/time_out/hand_close.png"
-dest_files=["res://.godot/imported/hand_close.png-3c8398a0b937dfbd994e149e3cfabc0e.ctex"]
+source_file="res://NPC/sprites/esmeralda/esmeralda_happy.png"
+dest_files=["res://.godot/imported/esmeralda_happy.png-80d86663362ea1a82e22def5f6b656ca.ctex"]
 
 [params]
 

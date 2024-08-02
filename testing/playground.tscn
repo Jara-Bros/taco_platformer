@@ -1,7 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://c0vhvglx6s7ib"]
 
+
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
 [ext_resource type="PackedScene" uid="uid://bqnx3eqh750vq" path="res://enemies/swoopers/swoopers.tscn" id="2_fld8d"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
 texture = ExtResource("1_ugepv")
@@ -49,6 +51,7 @@ position = Vector2(585, 395)
 
 [node name="Swoopers" parent="." instance=ExtResource("2_fld8d")]
 position = Vector2(-72, -146)
+
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1

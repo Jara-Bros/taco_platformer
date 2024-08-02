@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=23 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c8ida3dkuhtec" path="res://platforms/river_waterfall/river_rock_2.tscn" id="8_bl4a8"]
 [ext_resource type="Texture2D" uid="uid://cr3up8qcjyuu6" path="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png" id="8_ill8y"]
 [ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="8_v5kaj"]
-[ext_resource type="Texture2D" uid="uid://qorc65pudr6o" path="res://levels/river_enter/river/sprites/churro.png" id="9_4wgfw"]
 [ext_resource type="AudioStream" uid="uid://b3uvtfqae00ku" path="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3" id="9_n0kkp"]
 [ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff/rock_cliff.tscn" id="10_kwnlj"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
@@ -20,19 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://d0dxh2krrk25w" path="res://platforms/river_waterfall/river_rock_1.tscn" id="16_6ndlo"]
 [ext_resource type="Script" path="res://levels/river_enter/river/river_ride_enter.gd" id="17_nomcm"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="20_myjr6"]
-[ext_resource type="Script" path="res://levels/river_enter/river/river_ride_2.gd" id="21_ailx4"]
+[ext_resource type="Script" path="res://levels/river_enter/river/river_ride_secret_enter.gd" id="20_ymqbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvoly"]
 size = Vector2(72, 180)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gux64"]
-size = Vector2(26, 84)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4exyj"]
+size = Vector2(32, 98)
 
 [node name="Waterfall" type="Node2D"]
 script = ExtResource("1_terlw")
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(-443, 198)
+position = Vector2(512, 850)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
@@ -213,31 +212,9 @@ points = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.6481
 position = Vector2(401, -174)
 angular_velocity = 1.0
 
-[node name="CollisionShape2D" parent="SeesawPlatform" index="0"]
-position = Vector2(-1.83362, -4.91109)
-
-[node name="CollisionShape2D" parent="SeesawPlatform/Area2D" index="0"]
-position = Vector2(-2.32327, -5.65961)
-
-[node name="Sprite2D" parent="SeesawPlatform" index="2"]
-position = Vector2(1.99999, -8)
-rotation = -1.06815
-texture = ExtResource("9_4wgfw")
-
 [node name="SeesawPlatform2" parent="." instance=ExtResource("8_v5kaj")]
 position = Vector2(194, -156)
 angular_velocity = 1.0
-
-[node name="CollisionShape2D" parent="SeesawPlatform2" index="0"]
-position = Vector2(-1.83362, -4.91109)
-
-[node name="CollisionShape2D" parent="SeesawPlatform2/Area2D" index="0"]
-position = Vector2(-2.32327, -5.65961)
-
-[node name="Sprite2D" parent="SeesawPlatform2" index="2"]
-position = Vector2(1.99999, -8)
-rotation = -1.06815
-texture = ExtResource("9_4wgfw")
 
 [node name="RiverRock" type="Node" parent="."]
 
@@ -474,15 +451,17 @@ script = ExtResource("17_nomcm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideEnter"]
 shape = SubResource("RectangleShape2D_fvoly")
 
-[node name="RiverRide" type="Area2D" parent="."]
-position = Vector2(25, 840)
-script = ExtResource("21_ailx4")
+[node name="RiverRideSecretEnter" type="Area2D" parent="."]
+position = Vector2(-1, 831)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("20_ymqbs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRide"]
-shape = SubResource("RectangleShape2D_gux64")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideSecretEnter"]
+shape = SubResource("RectangleShape2D_4exyj")
 
 [connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
-[connection signal="body_entered" from="RiverRide" to="RiverRide" method="_on_body_entered"]
+[connection signal="body_entered" from="RiverRideSecretEnter" to="RiverRideSecretEnter" method="_on_body_entered"]
 
 [editable path="Taco"]
 [editable path="CanvasLayer"]

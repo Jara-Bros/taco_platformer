@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bowc71pajomo6"]
 
-[ext_resource type="Script" path="res://gui/icons/time_out/time_out_hand.gd" id="1_q86yf"]
-[ext_resource type="Texture2D" uid="uid://dk5m03joqxa6s" path="res://gui/icons/time_out/hand_flat.png" id="1_u3f3e"]
-[ext_resource type="Texture2D" uid="uid://4w54xwdbwpv4" path="res://gui/icons/time_out/hand_close.png" id="2_mhilf"]
+[ext_resource type="Script" path="res://gui/time_out/time_out_hand.gd" id="1_q86yf"]
+[ext_resource type="Texture2D" uid="uid://dk5m03joqxa6s" path="res://gui/time_out/hand_flat.png" id="1_u3f3e"]
+[ext_resource type="Texture2D" uid="uid://4w54xwdbwpv4" path="res://gui/time_out/hand_close.png" id="2_mhilf"]
 
 [sub_resource type="Animation" id="Animation_gqgbp"]
 length = 0.001

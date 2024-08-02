@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk5m03joqxa6s"
-path="res://.godot/imported/hand_flat.png-61a1e480f88a2626bf5bd4ef19dcdc82.ctex"
+uid="uid://cvgwn5jvebycg"
+path="res://.godot/imported/1649369426820-removebg-preview.png-8662f49c92d8cfa15efec22f46868811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/icons/time_out/hand_flat.png"
-dest_files=["res://.godot/imported/hand_flat.png-61a1e480f88a2626bf5bd4ef19dcdc82.ctex"]
+source_file="res://dialogue/timelines/hints/1649369426820-removebg-preview.png"
+dest_files=["res://.godot/imported/1649369426820-removebg-preview.png-8662f49c92d8cfa15efec22f46868811.ctex"]
 
 [params]
 

@@ -1,42 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=16 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
-[ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="3_pr8ws"]
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
-[ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="5_1q463"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lae5"]
-atlas = ExtResource("3_pr8ws")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwinq"]
-atlas = ExtResource("3_pr8ws")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8p2l6"]
-atlas = ExtResource("3_pr8ws")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f2t21"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6lae5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwinq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8p2l6")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5c55u"]
 radius = 11.0
@@ -220,21 +186,17 @@ position = Vector2(0, -2)
 texture = ExtResource("2_ctlwh")
 hframes = 11
 
-[node name="YellowRedCard" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
-sprite_frames = SubResource("SpriteFrames_f2t21")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_5c55u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
 "": SubResource("AnimationLibrary_040re")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [node name="TacoShoes" type="Area2D" parent="."]
 position = Vector2(0, 16)
@@ -247,9 +209,6 @@ shape = SubResource("RectangleShape2D_seodx")
 [node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rgfs5")
 volume_db = -4.0
-
-[node name="WhistleFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_1q463")
 
 [node name="Timers" type="Node" parent="."]
 

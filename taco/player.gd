@@ -32,8 +32,8 @@ var prev_state
 @onready var taco_shoes_collision: CollisionShape2D = $TacoShoes/CollisionShape2D
 
 
-@onready var yellow_red_card: AnimatedSprite2D = $YellowRedCard
-@onready var whistle_fx: AudioStreamPlayer2D = $WhistleFX
+#@onready var yellow_red_card: AnimatedSprite2D = $YellowRedCard
+#@onready var whistle_fx: AudioStreamPlayer2D = $WhistleFX
 
 
 var item = null
@@ -271,24 +271,26 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
 		bounce(1.5)
-		yellow_card_counter += 1
-		change_card_sprite(yellow_card_counter)
+		#yellow_card_counter += 1
+		#change_card_sprite(yellow_card_counter)
 		
 
-func change_card_sprite(c : int):
-	match c:
-		0:
-			yellow_red_card.frame = 0
-		
-		1:
-			yellow_red_card.frame = 1
-		2:
-			yellow_red_card.frame = 2
-		3: 
-			yellow_red_card.frame = 3
-			whistle_fx.play()
-		_:
-			pass
+#func change_card_sprite(c : int):
+	#match c:
+		#0:
+			#yellow_red_card.frame = 0
+		#
+		#1:
+			#yellow_red_card.frame = 1
+		#2:
+			#yellow_red_card.frame = 3
+			#whistle_fx.play()
+			#await whistle_fx.finished
+			#get_tree().paused = true
+			#get_tree().reload_current_scene()
+			#
+		#_:
+			#pass
 
 
 func bounce(factor):
