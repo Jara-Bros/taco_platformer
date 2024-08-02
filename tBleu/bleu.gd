@@ -16,6 +16,7 @@ signal path_complete(direction)
 @onready var right_stick : PathFollow2D =  $RightStickParent/right_stick
 @onready var left_stick_parent : Path2D = $LeftStickParent
 @onready var right_stick_parent : Path2D = $RightStickParent
+@onready var raycast : RayCast2D = $RayCast2D
 enum bleu_state {FOLLOWING, PATH_TRACKING, FLYING, STUCK}
 var current_state = bleu_state.FOLLOWING
 var pathway_direction
@@ -41,7 +42,15 @@ func _physics_process(delta: float) -> void:
 		#update_bleu_sped()
 		var ideal_ball_position = ItemManager.get_player().global_position-player_mapping_vectors[player_direction]
 		if abs(global_position.distance_to(ideal_ball_position)) > 7: 
+			## returns the vectors towards the player
 			var distanceToPlayer = global_position.direction_to(ideal_ball_position)
+			## now we want to cast a raycast to see if that direction collides with anything
+			raycast.set_target_position(ideal_ball_position)
+			print(raycast.is_colliding())
+			#if raycast.is_colliding():
+				#while raycast.is_colliding():
+					#raycast.set_target_position(raycast.get_collision_normal())
+				#distanceToPlayer = raycast.target_position
 			var player_state = ItemManager.get_player().get_state()
 			var collide = move_and_collide(distanceToPlayer * delta * translation_speed)
 		

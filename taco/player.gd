@@ -269,7 +269,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Enemies"):
+	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
 		bounce(1.5)
 		yellow_card_counter += 1
 		change_card_sprite(yellow_card_counter)
@@ -283,11 +283,10 @@ func change_card_sprite(c : int):
 		1:
 			yellow_red_card.frame = 1
 		2:
+			yellow_red_card.frame = 2
+		3: 
 			yellow_red_card.frame = 3
 			whistle_fx.play()
-			await whistle_fx.finished
-			get_tree().paused = true
-			
 		_:
 			pass
 

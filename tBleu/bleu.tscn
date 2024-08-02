@@ -165,6 +165,9 @@ shape = SubResource("ConvexPolygonShape2D_6xnpp")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+modulate = Color(0.674373, 0.111562, 0.397205, 1)
+
 [connection signal="path_complete" from="." to="." method="_on_path_complete"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
