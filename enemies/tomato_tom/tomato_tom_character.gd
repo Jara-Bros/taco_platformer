@@ -60,6 +60,7 @@ func _physics_process(delta: float) -> void:
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		hits_from_player += 1
+		queue_free()
 		change_sprite(hits_from_player)
 		
 		

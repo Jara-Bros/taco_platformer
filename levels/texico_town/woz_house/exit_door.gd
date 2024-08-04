@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var taco: Player = $"../Taco"
+@onready var woz_house_interior: Node2D = $".."
+
 
 signal leave_woz(data)
 

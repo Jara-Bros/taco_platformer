@@ -11,7 +11,7 @@ class_name GlobalSceneManager
 var current_scene_alias : String = ""
 
 
-# Find the inital scene as defined in the project settings
+# Find the initial scene as defined in the project settings
 func _ready() -> void:
 	var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
 	current_scene_alias = scenes.find_key(main_scene)
@@ -57,8 +57,17 @@ func quit_game() -> void:
 # Return the number of scenes in the collection
 func get_scene_count() -> int:
 	return scenes.size()
-	
+
 
 # Return the alias of the current scene
 func get_current_scene_alias() -> String:
 	return current_scene_alias
+
+
+#TODO see if you can add/remove scenes as children for levels
+# you'll load/unload frequently
+func add_scene_child(_scene : Node2D):
+	add_child(_scene)
+
+func remove_scene_child(_scene : Node2D):
+	remove_child(_scene)

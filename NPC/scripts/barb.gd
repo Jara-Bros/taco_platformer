@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
-@onready var barb_talk: Area2D = $BarbTalk
+@onready var interaction_area: InteractionArea = $InteractionArea
+
 @onready var taco: Player = $"../Taco"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
+func _ready() -> void:
+	interaction_area.interact = Callable(self, "_on_interact")
 
-func _on_barb_talk_body_entered(_body: Node2D) -> void:
+
+func _on_interact():
 	taco.input_enabled = false
 	taco.animation_player.play("idle")
 	animation_player.play("idle")
@@ -14,4 +18,3 @@ func _on_barb_talk_body_entered(_body: Node2D) -> void:
 	await Dialogic.timeline_ended
 	animation_player.play("idle_up")
 	taco.input_enabled = true
-	barb_talk.queue_free()
