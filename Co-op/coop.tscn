@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5fyp5tb6hht2"]
+
+[ext_resource type="Script" path="res://Co-op/coop.gd" id="1_k4uqu"]
+
+[node name="Coop" type="Node"]
+script = ExtResource("1_k4uqu")

@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c0vhvglx6s7ib"]
+[gd_scene load_steps=9 format=4 uid="uid://c0vhvglx6s7ib"]
 
-
+[ext_resource type="PackedScene" uid="uid://c5fyp5tb6hht2" path="res://Co-op/coop.tscn" id="1_l012q"]
 [ext_resource type="Texture2D" uid="uid://gbqrvvd6bt1a" path="res://tilesets/testing/platform_demo_tileset.png" id="1_ugepv"]
-[ext_resource type="PackedScene" uid="uid://bqnx3eqh750vq" path="res://enemies/swoopers/swoopers.tscn" id="2_fld8d"]
-
+[ext_resource type="PackedScene" uid="uid://b6al3ahqmnc8j" path="res://tBleu/new_bleu/new_bleu.tscn" id="1_xttd1"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_8by4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5jug"]
 texture = ExtResource("1_ugepv")
@@ -49,9 +49,15 @@ sources/0 = SubResource("TileSetAtlasSource_3gfnr")
 [node name="Playground" type="Node2D"]
 position = Vector2(585, 395)
 
-[node name="Swoopers" parent="." instance=ExtResource("2_fld8d")]
-position = Vector2(-72, -146)
+[node name="Coop" parent="." node_paths=PackedStringArray("taco_camera", "bleu_camera") instance=ExtResource("1_l012q")]
+taco_camera = NodePath("Taco")
+bleu_camera = NodePath("NewBleu")
 
+[node name="Taco" parent="Coop" instance=ExtResource("2_8by4p")]
+position = Vector2(1112, 352)
+
+[node name="NewBleu" parent="Coop" instance=ExtResource("1_xttd1")]
+position = Vector2(632, 368)
 
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -1

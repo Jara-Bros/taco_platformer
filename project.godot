@@ -28,6 +28,7 @@ ResumeQuitMenu="*res://gui/menus/resume_quit_menu/resume_quit_menu.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
 InteractionManager="*res://interaction/interaction_manager/interaction_manager.tscn"
+PersistantDataHandler="*res://autoloads/persistent_data_handler/persistance_data.tscn"
 
 [dialogic]
 

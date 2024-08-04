@@ -31,3 +31,7 @@ func _on_woz_talk_trigger_body_entered(_body: Node2D) -> void:
 	Dialogic.start("woz_timeline")
 	await Dialogic.timeline_ended
 	taco.input_enabled = true
+
+
+func _on_exit_door_leave_woz(data):
+	SceneManager.switch_scene("DiosMio", data)

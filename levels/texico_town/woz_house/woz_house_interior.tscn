@@ -348,3 +348,4 @@ shape = SubResource("RectangleShape2D_y1wku")
 [connection signal="body_entered" from="Woz/WozTrigger" to="Woz" method="_on_woz_trigger_body_entered"]
 [connection signal="body_entered" from="WozkuBook/Area2D" to="WozkuBook" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
+[connection signal="leave_woz" from="ExitDoor" to="." method="_on_exit_door_leave_woz"]

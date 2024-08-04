@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=45 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
 [ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
-[ext_resource type="Script" path="res://levels/texico_town/dios_mio/taco_talk_trigger.gd" id="35_55rki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
@@ -121,8 +120,6 @@ _data = {
 "RESET": SubResource("Animation_xnxn4"),
 "move": SubResource("Animation_qqyqg")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud32s"]
 
 [node name="DiosMio" type="Node2D" groups=["Level"]]
 script = ExtResource("1_86lqk")
@@ -904,17 +901,9 @@ autoplay = "move"
 
 [node name="QuickReload" parent="." instance=ExtResource("3_w60un")]
 
-[node name="TacoTalkTrigger" type="Area2D" parent="."]
-z_index = 3
-position = Vector2(439, -82)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("35_55rki")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TacoTalkTrigger"]
-shape = SubResource("RectangleShape2D_ud32s")
-
-[connection signal="body_entered" from="TacoTalkTrigger" to="TacoTalkTrigger" method="_on_body_entered"]
+[connection signal="enter_woz_house" from="WozTeahouse/ShojiDoor" to="." method="_on_shoji_door_enter_woz_house"]
+[connection signal="barb_gallery_switch" from="BarbGallery/Gallery" to="." method="_on_gallery_barb_gallery_switch"]
+[connection signal="boogie_board_swtich" from="Boogie/Limona" to="." method="_on_limona_boogie_board_swtich"]
 
 [editable path="Taco"]
 [editable path="TBLand"]

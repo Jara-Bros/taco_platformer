@@ -4,6 +4,9 @@ class_name GlobalSceneManager
 # A collection of scenes in the game. Scenes are added via Inspector.
 @export var scenes : Dictionary = {}
 
+# A arbitary dict that stores data when switching scenes
+
+
 # Alias of the currently selected scene
 var current_scene_alias : String = ""
 
@@ -28,8 +31,20 @@ func remove_scene(scene_alias : String) -> void:
 
 
 # Switch to the requested scene based on its alias
-func switch_scene(scene_alias : String) -> void:
+func switch_scene(scene_alias : String, data : Dictionary) -> void:
 	get_tree().change_scene_to_file(scenes[scene_alias])
+	PersistantDataHandler.update_scene_data(scene_alias, data)
+	#transfer_data = data
+
+func set_initial_scene(scene_alias : String) -> void:
+	get_tree().change_scene_to_file(scenes[scene_alias])
+	PersistantDataHandler.initialize_scene(scene_alias)
+	
+func is_scene_initialized(scene):
+	return PersistantDataHandler.is_	
+	
+func get_transfer_data(scene):
+	return PersistantDataHandler.get_scene_data(scene)
 
 
 func restart_scene() -> void:

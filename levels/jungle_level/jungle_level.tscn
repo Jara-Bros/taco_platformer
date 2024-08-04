@@ -316,9 +316,6 @@ offset_bottom = -60.0
 theme_override_font_sizes/font_size = 35
 text = "Press F to Kick"
 
-[node name="WhistleFX" parent="Taco" index="7"]
-stream = null
-
 [node name="ForestBG" type="Parallax2D" parent="."]
 z_index = -5
 scroll_scale = Vector2(0.1, 0.1)

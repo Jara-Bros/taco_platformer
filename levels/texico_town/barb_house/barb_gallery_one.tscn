@@ -218,7 +218,9 @@ texture = ExtResource("7_8rym1")
 stream = ExtResource("9_dk1tb")
 autoplay = true
 
+[connection signal="barb_office_switch" from="OfficeDoor" to="." method="_on_office_door_barb_office_switch"]
 [connection signal="body_entered" from="OfficeDoor" to="OfficeDoor" method="_on_body_entered"]
+[connection signal="barb_gallery_to_dios_mio" from="ExitDoor" to="." method="_on_exit_door_barb_gallery_to_dios_mio"]
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
 
 [editable path="Taco"]

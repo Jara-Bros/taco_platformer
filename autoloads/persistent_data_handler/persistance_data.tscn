@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bojrflsu7ntst"]
+
+[ext_resource type="Script" path="res://autoloads/persistent_data_handler/persistance_data.gd" id="1_2v0t0"]
+
+[node name="PersistanceData" type="Node"]
+script = ExtResource("1_2v0t0")

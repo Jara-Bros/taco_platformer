@@ -292,7 +292,6 @@ func _on_area_2d_body_entered(body):
 		#_:
 			#pass
 
-
 func bounce(factor):
 	velocity.y = -1 * 300 * factor
 	if velocity.y >= 0:
