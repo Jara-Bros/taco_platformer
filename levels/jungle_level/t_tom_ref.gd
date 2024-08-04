@@ -1,18 +1,16 @@
-extends Sprite2D
+extends Node
 
+@onready var taco: Player = $"../Taco"
 @onready var interaction_area: InteractionArea = $InteractionArea
-@onready var dios_mio: Node2D = $"../.."
-@onready var taco: Player = $"../../Taco"
 
-signal boogie_board_swtich(data)
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
+
 func _on_interact():
 	taco.input_enabled = false
 	taco.animation_player.play("idle")
-	Dialogic.start("limona_timeline")
+	Dialogic.start("ttom_ref_timeline")
 	await Dialogic.timeline_ended
-	boogie_board_swtich.emit({})
 	taco.input_enabled = true

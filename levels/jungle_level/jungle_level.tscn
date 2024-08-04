@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=74 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
@@ -44,8 +44,12 @@
 [ext_resource type="AudioStream" uid="uid://dwop4ygf5a1gq" path="res://audio/sfx/Bear Growl - Sound Effect ProSounds.mp3" id="49_ais1g"]
 [ext_resource type="Texture2D" uid="uid://dhcdmnu17rxx8" path="res://levels/jungle_level/sprites/tropical_leaf_red.png" id="49_kn5wf"]
 [ext_resource type="Texture2D" uid="uid://bh5qykml1jxxh" path="res://levels/jungle_level/sprites/tropical_leaf_yellow.png" id="50_32kpj"]
+[ext_resource type="Texture2D" uid="uid://cemx5j4ikpgyf" path="res://enemies/tomato_tom/jungle/ttom_ref.png" id="51_b46vk"]
 [ext_resource type="Texture2D" uid="uid://ds5h4mi3a8kqk" path="res://levels/jungle_level/sprites/sunflower(1) - Copy.png" id="51_g7skd"]
 [ext_resource type="Script" path="res://levels/jungle_level/animal_scripts/butterfly_trigger.gd" id="51_npa2p"]
+[ext_resource type="Script" path="res://levels/jungle_level/t_tom_ref.gd" id="51_rmmxw"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="51_ssfvk"]
+[ext_resource type="Texture2D" uid="uid://c7teusd1o5lqn" path="res://enemies/tomato_tom/jungle/pngimg.com - whistle_PNG73.png" id="52_2fgp5"]
 [ext_resource type="Texture2D" uid="uid://ctt8d8q382cdc" path="res://levels/jungle_level/sprites/ladybug.png" id="52_w8qyx"]
 [ext_resource type="Texture2D" uid="uid://b1s7t1daflm8y" path="res://levels/jungle_level/sprites/ivy.png" id="53_2iro0"]
 [ext_resource type="Texture2D" uid="uid://cl3oowcpx33no" path="res://levels/jungle_level/sprites/fern.png" id="54_4tj8e"]
@@ -298,6 +302,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_em0rb"]
 size = Vector2(159.436, 50.5566)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jan0p"]
+radius = 21.0
 
 [node name="JungleLevel" type="Node2D"]
 script = ExtResource("1_g1na8")
@@ -1385,6 +1392,24 @@ libraries = {
 position = Vector2(0.519287, 0.85498)
 shape = SubResource("RectangleShape2D_em0rb")
 
+[node name="TTom_Ref" type="Node" parent="."]
+script = ExtResource("51_rmmxw")
+
+[node name="InteractionArea" parent="TTom_Ref" instance=ExtResource("51_ssfvk")]
+position = Vector2(477, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TTom_Ref/InteractionArea"]
+shape = SubResource("CircleShape2D_jan0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="TTom_Ref"]
+position = Vector2(480, -43)
+texture = ExtResource("51_b46vk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TTom_Ref"]
+position = Vector2(476, -43)
+scale = Vector2(0.0933333, 0.0766667)
+texture = ExtResource("52_2fgp5")
+
 [connection signal="body_entered" from="SwapScene" to="SwapScene" method="_on_body_entered"]
 [connection signal="timeout" from="PlatformStart/StaticBody2D/Timer" to="PlatformStart/StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform/Area2D" to="TrapPlatform" method="_on_area_2d_body_entered"]
@@ -1398,6 +1423,7 @@ shape = SubResource("RectangleShape2D_em0rb")
 [connection signal="timeout" from="ButterflyTrigger/Timer" to="ButterflyTrigger" method="_on_timer_timeout"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]
 [editable path="TToms/TomatoTomCharacter"]
 [editable path="TToms/TomatoTomCharacter2"]
 [editable path="TToms/TomatoTomCharacter3"]

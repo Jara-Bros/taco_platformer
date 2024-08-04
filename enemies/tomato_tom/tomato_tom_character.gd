@@ -14,6 +14,8 @@ extends CharacterBody2D
 
 var hits_from_player : int = 0
 
+func _ready():
+	change_sprite()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -61,11 +63,11 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		hits_from_player += 1
 		queue_free()
-		change_sprite(hits_from_player)
+
 		
-		
-func change_sprite(c : int):
-	match c:
+func change_sprite():
+	var sprite_num = randi_range(0, 2)
+	match sprite_num:
 		0:
 			sprite_2d.frame = 0
 		
