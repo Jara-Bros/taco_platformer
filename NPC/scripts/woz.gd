@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-@onready var woz_trigger: Area2D = $WozTrigger
+@onready var interaction_area: InteractionArea = $InteractionArea
+
 @onready var taco: Player = $"../Taco"
 
-
-func _on_woz_trigger_body_entered(_body: Node2D) -> void:
+func _ready() -> void:
+	interaction_area.interact = Callable(self, "_on_interact")
+	
+func _on_interact():
 	taco.input_enabled = false
 	taco.animation_player.play("idle")
 	Dialogic.start("woz_timeline")
 	await Dialogic.timeline_ended
 	taco.input_enabled = true
-	woz_trigger.queue_free()

@@ -38,4 +38,3 @@ func _sort_children2():
 		pos.x += rect.size.x + SEPARATION
 	
 	custom_minimum_size.y = pos.y + line_height
-

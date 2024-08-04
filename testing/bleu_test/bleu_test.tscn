@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://riukqy08q6t6"]
+
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_uorrt"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_qkuby"]
+[ext_resource type="PackedScene" uid="uid://c0um3phj8j8wk" path="res://tBleu/bleu.tscn" id="3_u7bd0"]
+
+[node name="BleuTest" type="Node2D"]
+
+[node name="Land" parent="." instance=ExtResource("1_uorrt")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-51, 3, 82, 5, 155, -20, 157, -73, 266, -35, 304, -2, 375, -1, 360, -268, 460, -277, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-51, 3, 82, 5, 155, -20, 157, -73, 266, -35, 304, -2, 375, -1, 360, -268, 460, -277, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126, -51, 3)
+
+[node name="Taco" parent="." instance=ExtResource("2_qkuby")]
+position = Vector2(10, -21)
+
+[node name="Bleu" parent="." instance=ExtResource("3_u7bd0")]
+
+[editable path="Land"]

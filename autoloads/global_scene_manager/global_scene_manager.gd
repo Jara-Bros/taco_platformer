@@ -4,11 +4,14 @@ class_name GlobalSceneManager
 # A collection of scenes in the game. Scenes are added via Inspector.
 @export var scenes : Dictionary = {}
 
+# A arbitary dict that stores data when switching scenes
+
+
 # Alias of the currently selected scene
 var current_scene_alias : String = ""
 
 
-# Find the inital scene as defined in the project settings
+# Find the initial scene as defined in the project settings
 func _ready() -> void:
 	var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
 	current_scene_alias = scenes.find_key(main_scene)
@@ -28,8 +31,20 @@ func remove_scene(scene_alias : String) -> void:
 
 
 # Switch to the requested scene based on its alias
-func switch_scene(scene_alias : String) -> void:
+func switch_scene(scene_alias : String, data : Dictionary) -> void:
 	get_tree().change_scene_to_file(scenes[scene_alias])
+	PersistantDataHandler.update_scene_data(scene_alias, data)
+	#transfer_data = data
+
+func set_initial_scene(scene_alias : String) -> void:
+	get_tree().change_scene_to_file(scenes[scene_alias])
+	PersistantDataHandler.initialize_scene(scene_alias)
+	
+func is_scene_initialized(scene):
+	return PersistantDataHandler.is_	
+	
+func get_transfer_data(scene):
+	return PersistantDataHandler.get_scene_data(scene)
 
 
 func restart_scene() -> void:
@@ -42,8 +57,17 @@ func quit_game() -> void:
 # Return the number of scenes in the collection
 func get_scene_count() -> int:
 	return scenes.size()
-	
+
 
 # Return the alias of the current scene
 func get_current_scene_alias() -> String:
 	return current_scene_alias
+
+
+#TODO see if you can add/remove scenes as children for levels
+# you'll load/unload frequently
+func add_scene_child(_scene : Node2D):
+	add_child(_scene)
+
+func remove_scene_child(_scene : Node2D):
+	remove_child(_scene)

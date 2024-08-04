@@ -58,8 +58,9 @@ func _physics_process(delta: float) -> void:
 
 # Handles changing sprites based on hits from player
 func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body.get_name() == "Taco":
+	if body.is_in_group("Player"):
 		hits_from_player += 1
+		queue_free()
 		change_sprite(hits_from_player)
 		
 		
@@ -75,3 +76,8 @@ func change_sprite(c : int):
 		_:
 			pass
 	
+
+
+func _on_ball_transformation_box_body_entered(body):
+	if body.is_in_group("Player"):
+		pass

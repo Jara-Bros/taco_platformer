@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctjq1jpjnwnem"]
+
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_8b1ad"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="2_aysfq"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_v6uxp"]
+
+[node name="BallTransformationTest" type="Node2D"]
+
+[node name="Land" parent="." instance=ExtResource("1_8b1ad")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-51, 3, 82, 5, 238, 1, 266, -35, 304, -2, 375, -1, 360, -268, 460, -277, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-51, 3, 82, 5, 238, 1, 266, -35, 304, -2, 375, -1, 360, -268, 460, -277, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126, -51, 3)
+
+[node name="TomatoTomCharacter" parent="." instance=ExtResource("2_aysfq")]
+
+[node name="Taco" parent="." instance=ExtResource("3_v6uxp")]
+
+[editable path="Land"]

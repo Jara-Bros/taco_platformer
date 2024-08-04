@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dvhqo8l4tfsdl" path="res://audio/sfx/leave_rustle_fx.wav" id="4_8t4d5"]
 [ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_spihg"]
 [ext_resource type="Script" path="res://levels/jungle_level/change_scene/swap_scene.gd" id="4_y5pbf"]
+[ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="6_0jer7"]
 [ext_resource type="PackedScene" uid="uid://yo2ih5itj6dl" path="res://platforms/scenes/chip_platform.tscn" id="6_8vxpm"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="6_vid0p"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="6_xxo7e"]
@@ -33,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="28_fis8l"]
 [ext_resource type="Texture2D" uid="uid://7gjjo1jf14fw" path="res://levels/jungle_level/sprites/beetle-chrysolina-fastuosa-bright-colorful-beetle-sticker-ub2df-x450-removebg-preview.png" id="29_yrsds"]
 [ext_resource type="Texture2D" uid="uid://dvd5yngh8se7o" path="res://levels/jungle_level/sprites/pngimg.com - bear_PNG1187.png" id="31_w7xyq"]
-[ext_resource type="Texture2D" uid="uid://d2du0rw81aa03" path="res://levels/jungle_level/sprites/forest_floor_bg.png" id="32_8ufg2"]
 [ext_resource type="Texture2D" uid="uid://duwrdkc86y38a" path="res://levels/jungle_level/sprites/404-4043223_leaves-pile-png-transparent-png-removebg-preview.png" id="33_pt14t"]
 [ext_resource type="AudioStream" uid="uid://dbcysbxdydmo6" path="res://audio/sfx/leave_crunch_sfx.mp3" id="34_t5h3o"]
 [ext_resource type="Texture2D" uid="uid://cn3ev5vc1yuji" path="res://levels/jungle_level/sprites/mango.png" id="39_cufwd"]
@@ -325,7 +325,7 @@ script = ExtResource("13_vw6jl")
 
 [node name="Sprite2D" type="Sprite2D" parent="ForestBG"]
 position = Vector2(8, -132)
-texture = ExtResource("32_8ufg2")
+texture = ExtResource("6_0jer7")
 
 [node name="SwapScene" type="Area2D" parent="."]
 position = Vector2(-4429, 8)
@@ -383,19 +383,19 @@ texture = ExtResource("9_l732w")
 
 [node name="Sprite2D" type="Sprite2D" parent="JungleFG"]
 z_index = 1
-position = Vector2(289, 45)
+position = Vector2(297, 93)
 rotation = -0.188491
 texture = ExtResource("10_pw77u")
 
 [node name="Sprite2D2" type="Sprite2D" parent="JungleFG"]
 z_index = 1
-position = Vector2(-631, 249)
+position = Vector2(-788, 249)
 rotation = 0.00295252
 texture = ExtResource("10_pw77u")
 
 [node name="Sprite2D3" type="Sprite2D" parent="JungleFG"]
 z_index = 1
-position = Vector2(-1281, 67)
+position = Vector2(-1368, 104)
 rotation = 0.00295252
 scale = Vector2(0.564909, 0.755687)
 texture = ExtResource("10_pw77u")
@@ -766,7 +766,7 @@ shape = SubResource("RectangleShape2D_nx31c")
 one_way_collision = true
 
 [node name="StaticPlatform4" parent="." instance=ExtResource("12_4mwl0")]
-position = Vector2(-2180, 251)
+position = Vector2(-2191, 275)
 
 [node name="Sprite2D" parent="StaticPlatform4" index="0"]
 rotation = -1.57351
@@ -778,8 +778,21 @@ rotation = 0.0261083
 shape = SubResource("RectangleShape2D_nx31c")
 one_way_collision = true
 
+[node name="StaticPlatform6" parent="." instance=ExtResource("12_4mwl0")]
+position = Vector2(-2153, 215)
+
+[node name="Sprite2D" parent="StaticPlatform6" index="0"]
+rotation = -1.57351
+scale = Vector2(0.151319, 0.200165)
+texture = ExtResource("13_384fi")
+
+[node name="CollisionShape2D" parent="StaticPlatform6" index="1"]
+rotation = 0.0261083
+shape = SubResource("RectangleShape2D_nx31c")
+one_way_collision = true
+
 [node name="StaticPlatform5" parent="." instance=ExtResource("12_4mwl0")]
-position = Vector2(-2208, 319)
+position = Vector2(-2220, 342)
 
 [node name="Sprite2D" parent="StaticPlatform5" index="0"]
 rotation = -1.57351
@@ -1288,43 +1301,13 @@ position = Vector2(-3891, 1422)
 
 [node name="IvyFern&Rock" type="Node" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2235, 246)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
-[node name="Sprite2D2" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2281, 259)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
-[node name="Sprite2D3" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2331, 261)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
 [node name="Sprite2D4" type="Sprite2D" parent="IvyFern&Rock"]
 position = Vector2(-2374, 272)
 scale = Vector2(0.423077, 0.323077)
 texture = ExtResource("53_2iro0")
 
-[node name="Sprite2D5" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2418, 292)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
 [node name="Sprite2D6" type="Sprite2D" parent="IvyFern&Rock"]
 position = Vector2(-2477, 297)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
-[node name="Sprite2D7" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2523, 304)
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("53_2iro0")
-
-[node name="Sprite2D8" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2585, 352)
 scale = Vector2(0.423077, 0.323077)
 texture = ExtResource("53_2iro0")
 
@@ -1338,11 +1321,6 @@ texture = ExtResource("54_4tj8e")
 z_index = 2
 position = Vector2(-2716, 476)
 rotation = -2.95291
-scale = Vector2(0.423077, 0.323077)
-texture = ExtResource("54_4tj8e")
-
-[node name="Sprite2D10" type="Sprite2D" parent="IvyFern&Rock"]
-position = Vector2(-2551, 484)
 scale = Vector2(0.423077, 0.323077)
 texture = ExtResource("54_4tj8e")
 
@@ -1434,6 +1412,7 @@ shape = SubResource("RectangleShape2D_em0rb")
 [editable path="BeetlePlatform"]
 [editable path="StaticPlatform"]
 [editable path="StaticPlatform4"]
+[editable path="StaticPlatform6"]
 [editable path="StaticPlatform5"]
 [editable path="TrapPlatform"]
 [editable path="TrapPlatform2"]

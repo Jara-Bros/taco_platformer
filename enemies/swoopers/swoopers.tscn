@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqnx3eqh750vq"]
+
+[ext_resource type="Script" path="res://enemies/swoopers/swoopers.gd" id="1_b0m7h"]
+[ext_resource type="Texture2D" uid="uid://dmoi1xrrakvf5" path="res://enemies/swoopers/Goonie_Artwork_-_Super_Mario_World_2-removebg-preview.png" id="1_gthaj"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="3_wbu1i"]
+
+[sub_resource type="Curve2D" id="Curve2D_lyc0c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, 3, 0, 0, 0, 0, 5, 12, 0, 0, 0, 0, 17, 24, 0, 0, 0, 0, 30, 28, 0, 0, 0, 0, 48, 29, 0, 0, 0, 0, 67, 28, 0, 0, 0, 0, 80, 25, 0, 0, 0, 0, 97, 17, 0, 0, 0, 0, 107, 11, 0, 0, 0, 0, 117, 1, 0, 0, 0, 0, 116, -1, 0, 0, 0, 0, 89, 12, 0, 0, 0, 0, 70, 21, 0, 0, 0, 0, 50, 21, 0, 0, 0, 0, 26, 20, 0, 0, 0, 0, 1, 3)
+}
+point_count = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_877g4"]
+size = Vector2(29, 9.5)
+
+[node name="Swoopers" type="Path2D"]
+curve = SubResource("Curve2D_lyc0c")
+script = ExtResource("1_b0m7h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(4, 3)
+rotation = 1.46014
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(4, 3)
+rotation = 1.46014
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(-3.8147e-06, 1)
+scale = Vector2(0.0573852, 0.0600437)
+texture = ExtResource("1_gthaj")
+
+[node name="InteractionArea" parent="AnimatableBody2D" instance=ExtResource("3_wbu1i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/InteractionArea"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_877g4")
+
+[connection signal="path_complete" from="." to="." method="_on_path_complete"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://co82qr0oc6pek"]
+[gd_scene load_steps=18 format=4 uid="uid://co82qr0oc6pek"]
 
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/woz_house_interior.gd" id="1_s64ea"]
 [ext_resource type="Texture2D" uid="uid://cubb57hcgpqa8" path="res://tilesets/texico_town/tea_room_tileset.png" id="2_obq6r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]
 [ext_resource type="Script" path="res://NPC/scripts/woz.gd" id="6_0yqhy"]
 [ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="7_30iqc"]
 [ext_resource type="Texture2D" uid="uid://dfacw550fpvko" path="res://levels/texico_town/woz_house/wozku_book.png" id="8_hepsp"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/wozku_book.gd" id="9_hvgsd"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/exit_door.gd" id="9_ws43i"]
@@ -275,11 +276,11 @@ physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_31q87")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ugriq"]
-radius = 17.1172
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2gl1"]
+radius = 17.4642
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_htm0a"]
-radius = 12.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_5itty"]
+radius = 14.0357
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1wku"]
 size = Vector2(24, 88)
@@ -314,27 +315,24 @@ hframes = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Woz"]
 
-[node name="WozTrigger" type="Area2D" parent="Woz"]
-z_index = 3
-position = Vector2(-1, 4)
-collision_layer = 0
-collision_mask = 2
+[node name="InteractionArea" parent="Woz" instance=ExtResource("7_30iqc")]
+z_index = 1
+position = Vector2(0, -10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Woz/WozTrigger"]
-shape = SubResource("CircleShape2D_ugriq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Woz/InteractionArea"]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_w2gl1")
 
 [node name="WozkuBook" type="Sprite2D" parent="."]
 position = Vector2(-150, 1)
 texture = ExtResource("8_hepsp")
 script = ExtResource("9_hvgsd")
 
-[node name="Area2D" type="Area2D" parent="WozkuBook"]
-position = Vector2(9, -8)
-collision_layer = 0
-collision_mask = 2
+[node name="InteractionArea" parent="WozkuBook" instance=ExtResource("7_30iqc")]
+position = Vector2(11, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WozkuBook/Area2D"]
-shape = SubResource("CircleShape2D_htm0a")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WozkuBook/InteractionArea"]
+shape = SubResource("CircleShape2D_5itty")
 
 [node name="ExitDoor" type="Area2D" parent="."]
 position = Vector2(226, -38)
@@ -345,6 +343,5 @@ script = ExtResource("9_ws43i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
 shape = SubResource("RectangleShape2D_y1wku")
 
-[connection signal="body_entered" from="Woz/WozTrigger" to="Woz" method="_on_woz_trigger_body_entered"]
-[connection signal="body_entered" from="WozkuBook/Area2D" to="WozkuBook" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
+[connection signal="leave_woz" from="ExitDoor" to="." method="_on_exit_door_leave_woz"]

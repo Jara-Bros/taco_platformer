@@ -119,7 +119,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	#for i in get_slide_collision_count():
 		#var collision = get_slide_collision(i)
-		#print("Collided with: ", collision.get_collider().name)
+		#if collision.get_collider().is_in_group("platforms"):
+			#pass
+			#print("Collided with: ", collision.get_collider().get_node("StaticBody2D").get_material())
 	#move_and_collide(move_toward(velocity.x, direction * speed, 50))
 	#move_and_slide()
 #
@@ -145,10 +147,6 @@ func _physics_process(delta: float) -> void:
 		#coyote_timer.start()
 		
 	
-	# Handles pushing RigidBodies
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		print(c.get_collider().get_property_list())
 
 
 	# Handles enable/disable TacoShoe collision box
@@ -254,7 +252,12 @@ func get_direction():
 func change_state(state):
 		current_state = state
 	
-
+func set_acceleration(accel):
+	acceleration = accel
+func set_speed(spe):
+	speed = spe
+func set_jump_velocity(new_jump):
+	jump_velocity = new_jump
 
 func _on_animation_player_animation_finished(anim_name):
 	if current_state == player_state.KICKING:
@@ -266,7 +269,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Enemies"):
+	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
 		bounce(1.5)
 		#yellow_card_counter += 1
 		#change_card_sprite(yellow_card_counter)
@@ -288,7 +291,6 @@ func _on_area_2d_body_entered(body):
 			#
 		#_:
 			#pass
-
 
 func bounce(factor):
 	velocity.y = -1 * 300 * factor

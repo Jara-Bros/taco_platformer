@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cisan0df18uat"]
+[gd_scene load_steps=26 format=4 uid="uid://cisan0df18uat"]
 
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_office.gd" id="1_esbgu"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_amgsr"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="4_cqi45"]
 [ext_resource type="Script" path="res://NPC/scripts/barb.gd" id="5_rfdt5"]
 [ext_resource type="Texture2D" uid="uid://c12qt0c32eimy" path="res://NPC/sprites/barb/barb_idle_happy_sheet.png" id="5_snnxt"]
-[ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="7_dimcd"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="7_lcqgd"]
 [ext_resource type="AudioStream" uid="uid://bomeghq83herd" path="res://audio/music/Fragile State - The Facts And The Dreams.mp3" id="8_eh6i3"]
+[ext_resource type="Script" path="res://levels/texico_town/barb_house/office_exit_door.gd" id="8_khoce"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_552cj"]
 texture = ExtResource("3_gbmgk")
@@ -414,10 +415,10 @@ _data = {
 radius = 4.0
 height = 36.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vxvht"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_66da7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypiwq"]
-size = Vector2(20, 144)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lw3s"]
+size = Vector2(38, 148)
 
 [node name="BarbOffice" type="Node2D"]
 script = ExtResource("1_esbgu")
@@ -461,28 +462,25 @@ autoplay = "idle_up"
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_cund5")
 
-[node name="BarbTalk" type="Area2D" parent="Barb"]
-position = Vector2(-18, 1)
+[node name="InteractionArea" parent="Barb" instance=ExtResource("7_lcqgd")]
+position = Vector2(-20, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barb/InteractionArea"]
+shape = SubResource("CircleShape2D_66da7")
+
+[node name="OfficeExitDoor" type="Area2D" parent="."]
+position = Vector2(-67, -73)
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("8_khoce")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barb/BarbTalk"]
-shape = SubResource("CircleShape2D_vxvht")
-
-[node name="ExitDoor" parent="." instance=ExtResource("7_dimcd")]
-position = Vector2(-57, -66)
-collision_layer = 0
-collision_mask = 2
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor"]
-shape = SubResource("RectangleShape2D_ypiwq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeExitDoor"]
+shape = SubResource("RectangleShape2D_7lw3s")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_eh6i3")
 autoplay = true
 
-[connection signal="body_entered" from="Barb/BarbTalk" to="Barb" method="_on_barb_talk_body_entered"]
-[connection signal="body_entered" from="ExitDoor" to="." method="_on_exit_door_body_entered"]
+[connection signal="body_entered" from="OfficeExitDoor" to="OfficeExitDoor" method="_on_body_entered"]
 
 [editable path="Taco"]
