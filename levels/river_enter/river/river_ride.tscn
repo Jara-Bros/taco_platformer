@@ -133,5 +133,6 @@ position = Vector2(843, 495)
 [node name="Barriers" type="Node" parent="."]
 
 [connection signal="body_entered" from="BeachEnter" to="BeachEnter" method="_on_body_entered"]
+[connection signal="enter_beach_from_river_ride" from="BeachEnter" to="." method="_on_beach_enter_enter_beach_from_river_ride"]
 
 [editable path="TacoPlaintainRide"]

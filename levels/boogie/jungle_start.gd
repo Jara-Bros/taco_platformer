@@ -9,4 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 	
 
 func _on_timer_timeout() -> void:
-	SceneManager.switch_scene("JungleLevel")
+	SceneManager.switch_scene("JungleLevel", {})

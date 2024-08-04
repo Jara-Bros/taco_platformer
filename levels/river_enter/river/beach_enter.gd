@@ -1,8 +1,6 @@
 extends Area2D
 
-var beach = load("res://levels/beach/beach.tscn").instantiate()
-@onready var river_ride: Node2D = $".."
+signal enter_beach_from_river_ride(data)
 
 func _on_body_entered(body: Node2D) -> void:
-	SceneManager.change_scenes(beach)
-	river_ride.queue_free()
+	enter_beach_from_river_ride.emit({})

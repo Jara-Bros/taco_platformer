@@ -253,6 +253,7 @@ autoplay = true
 
 [connection signal="body_entered" from="PlaintainBoat/AnimatableBody2D/DisableInput" to="PlaintainBoat/AnimatableBody2D/DisableInput" method="_on_body_entered"]
 [connection signal="body_entered" from="RideEnter" to="RideEnter" method="_on_body_entered"]
+[connection signal="river_ride_from_river_enter" from="RideEnter" to="." method="_on_ride_enter_river_ride_from_river_enter"]
 
 [editable path="Taco"]
 [editable path="CocobirdSpawn/EnemySpawner"]

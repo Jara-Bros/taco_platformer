@@ -7,10 +7,13 @@ script = ExtResource("1_cj7wt")
 scenes = {
 "BarbGallery": &"res://levels/texico_town/barb_house/barb_gallery_one.tscn",
 "BarbOffice": &"res://levels/texico_town/barb_house/barb_office.tscn",
+"Beach": &"res://levels/beach/beach.tscn",
 "BoogieBoard": &"res://levels/boogie/boogie_test.tscn",
 "DiosMio": &"res://levels/texico_town/dios_mio/texico_start.tscn",
 "JungleLevel": &"res://levels/jungle_level/jungle_level.tscn",
 "MainMenu": &"res://gui/menus/main_menu/main_menu.tscn",
+"RiverPlantain": &"res://levels/river_enter/river/river_ride.tscn",
+"RiverRideEnter": &"res://levels/river_enter/river_enter.tscn",
 "WaterfallLevel": &"res://levels/river_enter/river/river.tscn",
 "WozHouse": &"res://levels/texico_town/woz_house/woz_house_interior.tscn"
 }

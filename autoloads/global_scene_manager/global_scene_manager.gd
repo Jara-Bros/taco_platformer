@@ -32,7 +32,7 @@ func remove_scene(scene_alias : String) -> void:
 
 # Switch to the requested scene based on its alias
 func switch_scene(scene_alias : String, data : Dictionary) -> void:
-	get_tree().change_scene_to_file(scenes[scene_alias])
+	get_tree().change_scene_to_file.bind(scenes[scene_alias]).call_deferred()
 	PersistantDataHandler.update_scene_data(scene_alias, data)
 	#transfer_data = data
 

@@ -52,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://cgcskghdefymb" path="res://levels/jungle_level/sprites/sharp_rock_cliff.png" id="54_qq2ns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1jgq"]
-size = Vector2(20, 211)
+size = Vector2(20, 86)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3qg5"]
 animations = [{
@@ -334,7 +334,6 @@ collision_mask = 2
 script = ExtResource("4_y5pbf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwapScene"]
-position = Vector2(0, -62.5)
 shape = SubResource("RectangleShape2D_e1jgq")
 
 [node name="AmazonAmbient" type="AudioStreamPlayer" parent="."]
@@ -1409,7 +1408,6 @@ position = Vector2(0.519287, 0.85498)
 shape = SubResource("RectangleShape2D_em0rb")
 
 [connection signal="body_entered" from="SwapScene" to="SwapScene" method="_on_body_entered"]
-[connection signal="enter_waterfall" from="SwapScene" to="." method="_on_swap_scene_enter_waterfall"]
 [connection signal="timeout" from="PlatformStart/StaticBody2D/Timer" to="PlatformStart/StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform/Area2D" to="TrapPlatform" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TrapPlatform/Timer" to="TrapPlatform" method="_on_timer_timeout"]

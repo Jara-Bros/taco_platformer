@@ -7,6 +7,8 @@ extends Area2D
 
 @onready var animation_player: AnimationPlayer = $ButterflyRide/AnimationPlayer
 
+signal enter_waterfall_from_butterfly(data)
+
 func _on_body_entered(body: Node2D) -> void:
 	timer.start()
 	
@@ -17,5 +19,7 @@ func _on_timer_timeout() -> void:
 	animation_player.play("move")
 
 func change_scenes():
-	SceneManager.switch_scene("WaterfallLevel")
+	enter_waterfall_from_butterfly.emit({
+		"player_spawn_location": Vector2(700, 725)
+	})
 	
