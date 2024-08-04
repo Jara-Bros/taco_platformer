@@ -42,6 +42,7 @@ directories/dch_directory={
 "limona": "res://dialogue/characters/limona.dch",
 "nico": "res://dialogue/characters/nico.dch",
 "taco": "res://dialogue/characters/taco.dch",
+"ttom_ref_character": "res://dialogue/characters/ttom_ref_character.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
@@ -59,6 +60,7 @@ directories/dtl_directory={
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
 "taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",
+"ttom_ref_timeline": "res://dialogue/timelines/hints/ttom_ref_timeline.dtl",
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
 "wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
 }
