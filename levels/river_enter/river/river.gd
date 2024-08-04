@@ -19,6 +19,8 @@ func _ready() -> void:
 	camera_2d.set_limit(SIDE_TOP, -260)
 	camera_2d.set_limit(SIDE_RIGHT, 830)
 	camera_2d.set_limit(SIDE_LEFT, -550)
+	var initialized_data = SceneManager.get_transfer_data("WaterfallLevel")
+	$Taco.position = initialized_data["player_spawn_location"]
 	
 	#if taco.position.y > 700:
 		#camera_2d.set_limit(SIDE_TOP, 750)
@@ -29,3 +31,7 @@ func _ready() -> void:
 		#animation_player.play_backwards("fade_in")
 		#await animation_player.animation_finished
 		#taco.input_enabled = true
+
+
+func _on_river_ride_enter_river_ride_enter_from_waterfall(data):
+	SceneManager.switch_scene("RiverRideEnter", {})

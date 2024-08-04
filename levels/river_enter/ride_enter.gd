@@ -1,8 +1,7 @@
 extends Area2D
 
-@onready var river_enter: Node2D = $".."
 
-
+signal river_ride_from_river_enter(data)
 
 func _on_body_entered(body: Node2D) -> void:
-	SceneManager.switch_scene("RiverRide")
+	river_ride_from_river_enter.emit({})

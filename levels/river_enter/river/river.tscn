@@ -439,6 +439,7 @@ texture = ExtResource("20_f8bnm")
 flip_h = true
 
 [connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
+[connection signal="river_ride_enter_from_waterfall" from="RiverRideEnter" to="." method="_on_river_ride_enter_river_ride_enter_from_waterfall"]
 [connection signal="body_entered" from="RiverRideSecretEnter" to="RiverRideSecretEnter" method="_on_body_entered"]
 
 [editable path="Taco"]
