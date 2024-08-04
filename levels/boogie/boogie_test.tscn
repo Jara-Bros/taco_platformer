@@ -24,6 +24,21 @@ script = ExtResource("1_143n2")
 stream = ExtResource("9_jfmnq")
 autoplay = true
 
+[node name="BlackBorders" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BlackBorders"]
+offset_top = -10.0
+offset_right = 151.0
+offset_bottom = 658.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BlackBorders"]
+offset_left = 1001.0
+offset_top = -9.0
+offset_right = 1152.0
+offset_bottom = 659.0
+color = Color(0, 0, 0, 1)
+
 [node name="TacoBoogie" parent="." instance=ExtResource("1_l6ymw")]
 position = Vector2(5169, -3866)
 collision_layer = 3

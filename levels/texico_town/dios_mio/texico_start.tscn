@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=50 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iql1deag2yo" path="res://levels/texico_town/tb_house/vegas_sticker.png" id="18_7qekv"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/gallery.gd" id="18_ycis3"]
 [ext_resource type="Texture2D" uid="uid://ceffl8g1n22vl" path="res://levels/texico_town/tb_house/Screenshot_2024-07-07_174454-removebg-preview.png" id="19_74rp8"]
+[ext_resource type="Texture2D" uid="uid://0e4fbi3ur7i6" path="res://levels/arrows/wooden_arrow-removebg-preview.png" id="22_mr6lb"]
 [ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
 [ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
 [ext_resource type="Texture2D" uid="uid://co8up0texihcv" path="res://levels/texico_town/sprites/boogie_crossing_sign_orange-removebg-preview.png" id="24_yprev"]
@@ -36,8 +37,14 @@
 [ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
 
+[ext_resource type="Script" path="res://levels/texico_town/dios_mio/taco_talk_trigger.gd" id="35_55rki"]
+[ext_resource type="Script" path="res://levels/texico_town/dios_mio/arrow_sign.gd" id="38_tvu4s"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsev"]
+size = Vector2(305.556, 395.833)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiurn"]
 size = Vector2(15.8932, 201.86)
@@ -186,10 +193,10 @@ visible = false
 position = Vector2(-22, 207)
 
 [node name="Polygon2D" parent="LimLand" index="0"]
-polygon = PackedVector2Array(52, -12, 95, -47, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14)
+polygon = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14)
 
 [node name="Line2D" parent="LimLand" index="1"]
-points = PackedVector2Array(52, -12, 95, -47, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14, 52, -12)
+points = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14, 52, -12)
 
 [node name="Clouds" type="Node" parent="."]
 
@@ -581,6 +588,21 @@ position = Vector2(-23.4034, -1.66741e-05)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WozTeahouse/ShojiDoor/InteractionArea"]
 position = Vector2(0, 3.14713e-05)
 shape = SubResource("RectangleShape2D_8rjpq")
+
+[node name="Arrows" type="Node" parent="."]
+
+[node name="ArrowSign" type="Sprite2D" parent="Arrows"]
+z_index = 3
+position = Vector2(5, 191)
+scale = Vector2(0.144, 0.096)
+texture = ExtResource("22_mr6lb")
+flip_h = true
+script = ExtResource("38_tvu4s")
+
+[node name="InteractionArea" parent="Arrows/ArrowSign" instance=ExtResource("14_lnglo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/ArrowSign/InteractionArea"]
+shape = SubResource("RectangleShape2D_ndsev")
 
 [node name="BarbGallery" type="Node" parent="."]
 

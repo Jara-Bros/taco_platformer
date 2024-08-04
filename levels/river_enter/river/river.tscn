@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=26 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c2og30l0otgeo" path="res://levels/jungle_level/sprites/5122e5ac7d77d28c1015c449c5bf0ff6-removebg-preview.png" id="8_22vco"]
 [ext_resource type="PackedScene" uid="uid://c8ida3dkuhtec" path="res://platforms/river_waterfall/river_rock_2.tscn" id="8_bl4a8"]
 [ext_resource type="Texture2D" uid="uid://cr3up8qcjyuu6" path="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png" id="8_ill8y"]
-[ext_resource type="PackedScene" uid="uid://ck5ad31fi08k3" path="res://platforms/seesaw_platforms/seesaw_platform.tscn" id="8_v5kaj"]
 [ext_resource type="AudioStream" uid="uid://b3uvtfqae00ku" path="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3" id="9_n0kkp"]
 [ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff/rock_cliff.tscn" id="10_kwnlj"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
@@ -18,8 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://cgcskghdefymb" path="res://levels/jungle_level/sprites/sharp_rock_cliff.png" id="11_30ckp"]
 [ext_resource type="PackedScene" uid="uid://d0dxh2krrk25w" path="res://platforms/river_waterfall/river_rock_1.tscn" id="16_6ndlo"]
 [ext_resource type="Script" path="res://levels/river_enter/river/river_ride_enter.gd" id="17_nomcm"]
+[ext_resource type="Texture2D" uid="uid://0e4fbi3ur7i6" path="res://levels/arrows/wooden_arrow-removebg-preview.png" id="20_f8bnm"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="20_myjr6"]
 [ext_resource type="Script" path="res://levels/river_enter/river/river_ride_secret_enter.gd" id="20_ymqbs"]
+[ext_resource type="Script" path="res://levels/river_enter/river/river_arrow.gd" id="21_loban"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="22_s8nxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvoly"]
 size = Vector2(72, 180)
@@ -27,11 +29,14 @@ size = Vector2(72, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4exyj"]
 size = Vector2(32, 98)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jq3c"]
+radius = 211.179
+
 [node name="Waterfall" type="Node2D"]
 script = ExtResource("1_terlw")
 
 [node name="Taco" parent="." instance=ExtResource("1_1tf14")]
-position = Vector2(512, 850)
+position = Vector2(464, 923)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_s56se")]
 
@@ -42,13 +47,21 @@ autoplay = true
 
 [node name="LeafWall" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-123, -132)
-scale = Vector2(2.18824, 1)
+position = Vector2(-145, -145)
+scale = Vector2(1.62353, 0.822222)
 texture = ExtResource("7_ce4gh")
 
 [node name="LeafWall2" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(-565, 93)
+position = Vector2(-641, 98)
+rotation = 0.295962
+scale = Vector2(2.18824, 1)
+texture = ExtResource("7_ce4gh")
+
+[node name="LeafWall3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-109, 746)
+rotation = 0.295962
 scale = Vector2(2.18824, 1)
 texture = ExtResource("7_ce4gh")
 
@@ -122,70 +135,14 @@ rotation = -2.87911
 scale = Vector2(0.217391, 0.198895)
 texture = ExtResource("8_22vco")
 
-[node name="Sprite2D7" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-387, 364)
-rotation = -0.0123532
-scale = Vector2(0.217391, 0.198895)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D8" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-424, 347)
-rotation = -0.65259
-scale = Vector2(0.217391, 0.198895)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D9" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-480, 321)
-rotation = 0.10057
-scale = Vector2(0.217391, 0.198895)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D10" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-504, 302)
-rotation = -0.759039
-scale = Vector2(0.217391, 0.198895)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D11" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-522, 394)
-rotation = 0.999709
-scale = Vector2(0.427796, 0.435799)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D12" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-688, 385)
-rotation = 0.999709
-scale = Vector2(0.427796, 0.435799)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D13" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-640, 316)
-rotation = 0.999709
-scale = Vector2(0.427796, 0.435799)
-texture = ExtResource("8_22vco")
-
-[node name="Sprite2D14" type="Sprite2D" parent="SingleLeaf"]
-z_index = 1
-position = Vector2(-477, 354)
-rotation = 1.13195
-scale = Vector2(0.427796, 0.435799)
-texture = ExtResource("8_22vco")
-
 [node name="Land2" parent="." instance=ExtResource("1_jcuqo")]
 position = Vector2(-30, -4)
 
 [node name="Polygon2D" parent="Land2" index="0"]
-polygon = PackedVector2Array(-105, -151, -93, -126, -83, -109, -67, -86, -61, -47, -48, -10, -27, 29, 2, 53, -41, 59, -55, 83, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259)
+polygon = PackedVector2Array(-105, -151, -61, -47, -48, -10, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259)
 
 [node name="Line2D" parent="Land2" index="1"]
-points = PackedVector2Array(-105, -151, -93, -126, -83, -109, -67, -86, -61, -47, -48, -10, -27, 29, 2, 53, -41, 59, -55, 83, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259, -105, -151)
+points = PackedVector2Array(-105, -151, -61, -47, -48, -10, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259, -105, -151)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -2
@@ -208,13 +165,23 @@ polygon = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.648
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.6481, 882.029, 266.637, 911.106, 322.636, 913.129, 367.635, 914.147, 400.63, 928.16)
 
-[node name="SeesawPlatform" parent="." instance=ExtResource("8_v5kaj")]
-position = Vector2(401, -174)
-angular_velocity = 1.0
+[node name="Land3" parent="." instance=ExtResource("1_jcuqo")]
+position = Vector2(-122, 866)
 
-[node name="SeesawPlatform2" parent="." instance=ExtResource("8_v5kaj")]
-position = Vector2(194, -156)
-angular_velocity = 1.0
+[node name="Polygon2D" parent="Land3" index="0"]
+polygon = PackedVector2Array(-101, -32, 98, 16, 68, 105, -223, 10, -130, -286, 181, -297, 171, -193, -79, -167)
+
+[node name="Line2D" parent="Land3" index="1"]
+points = PackedVector2Array(-101, -32, 98, 16, 68, 105, -223, 10, -130, -286, 181, -297, 171, -193, -79, -167, -101, -32)
+
+[node name="Land4" parent="." instance=ExtResource("1_jcuqo")]
+visible = false
+
+[node name="Polygon2D" parent="Land4" index="0"]
+polygon = PackedVector2Array(165, 839, 192, 841, 251, 846, 351, 853, 383, 867, 413, 889, 416, 883, 385, 863, 352, 848, 251, 843, 193, 838, 165, 836, 133, 841, 116, 847, 118, 850, 138, 843)
+
+[node name="Line2D" parent="Land4" index="1"]
+points = PackedVector2Array(165, 839, 192, 841, 251, 846, 351, 853, 383, 867, 413, 889, 416, 883, 385, 863, 352, 848, 251, 843, 193, 838, 165, 836, 133, 841, 116, 847, 118, 850, 138, 843, 165, 839)
 
 [node name="RiverRock" type="Node" parent="."]
 
@@ -223,40 +190,8 @@ position = Vector2(754, 938)
 rotation = -0.40734
 
 [node name="RiverRock9" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(612, -205)
+position = Vector2(596, -175)
 rotation = -0.0259388
-
-[node name="RiverRock10" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(569, -201)
-rotation = -0.19324
-
-[node name="RiverRock11" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(525, -198)
-rotation = -0.031597
-
-[node name="RiverRock12" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(58, -184)
-rotation = -0.031597
-
-[node name="RiverRock13" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(15, -181)
-rotation = -0.031597
-
-[node name="RiverRock14" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(-106, -151)
-rotation = -0.031597
-
-[node name="RiverRock15" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(-74, -97)
-rotation = -0.031597
-
-[node name="RiverRock16" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(-58, -33)
-rotation = -0.031597
-
-[node name="RiverRock19" parent="RiverRock" instance=ExtResource("16_6ndlo")]
-position = Vector2(-4, 45)
-rotation = -0.031597
 
 [node name="RiverRock3" parent="RiverRock" instance=ExtResource("16_6ndlo")]
 position = Vector2(629, 953)
@@ -270,20 +205,17 @@ rotation = -0.078037
 position = Vector2(712, 945)
 rotation = -0.078037
 
-[node name="RiverRock17" parent="RiverRock" instance=ExtResource("8_bl4a8")]
-position = Vector2(-3, -124)
-
-[node name="RiverRock18" parent="RiverRock" instance=ExtResource("8_bl4a8")]
-position = Vector2(16, -62)
-
 [node name="RiverRock20" parent="RiverRock" instance=ExtResource("8_bl4a8")]
-position = Vector2(74, 82)
+position = Vector2(91, 43)
+
+[node name="RiverRock27" parent="RiverRock" instance=ExtResource("8_bl4a8")]
+position = Vector2(136, -32)
 
 [node name="RiverRock21" parent="RiverRock" instance=ExtResource("8_bl4a8")]
-position = Vector2(-33, 149)
+position = Vector2(37, 109)
 
 [node name="RiverRock22" parent="RiverRock" instance=ExtResource("8_bl4a8")]
-position = Vector2(62, 179)
+position = Vector2(134, 155)
 rotation = -0.393726
 
 [node name="RiverRock8" parent="RiverRock" instance=ExtResource("8_bl4a8")]
@@ -410,16 +342,19 @@ stream = ExtResource("11_2ywef")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-81, -121)
+position = Vector2(79, 8)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("20_myjr6")]
+position = Vector2(135, -77)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-63, -57)
+position = Vector2(124, 129)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-30, 120)
+position = Vector2(41, 71)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-284, 310)
+position = Vector2(-239, 297)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("20_myjr6")]
 position = Vector2(-70, 273)
@@ -428,10 +363,10 @@ position = Vector2(-70, 273)
 position = Vector2(-160, 279)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-373, 305)
+position = Vector2(-308, 303)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("20_myjr6")]
-position = Vector2(-476, 271)
+position = Vector2(-369, 308)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("20_myjr6")]
 position = Vector2(647, 928)
@@ -443,7 +378,7 @@ position = Vector2(588, 937)
 position = Vector2(533, 940)
 
 [node name="RiverRideEnter" type="Area2D" parent="."]
-position = Vector2(-590, 157)
+position = Vector2(-521, 177)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("17_nomcm")
@@ -452,13 +387,56 @@ script = ExtResource("17_nomcm")
 shape = SubResource("RectangleShape2D_fvoly")
 
 [node name="RiverRideSecretEnter" type="Area2D" parent="."]
-position = Vector2(-1, 831)
+position = Vector2(-43, 820)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("20_ymqbs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiverRideSecretEnter"]
 shape = SubResource("RectangleShape2D_4exyj")
+
+[node name="Arrows" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrows"]
+z_index = -1
+position = Vector2(310, -144)
+scale = Vector2(0.148, 0.12)
+texture = ExtResource("20_f8bnm")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Arrows"]
+z_index = -1
+position = Vector2(539, -205)
+scale = Vector2(0.148, 0.12)
+texture = ExtResource("20_f8bnm")
+flip_h = true
+script = ExtResource("21_loban")
+
+[node name="InteractionArea" parent="Arrows/Sprite2D3" instance=ExtResource("22_s8nxj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/Sprite2D3/InteractionArea"]
+shape = SubResource("CircleShape2D_5jq3c")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Arrows"]
+z_index = -1
+position = Vector2(13, 231)
+scale = Vector2(0.148, 0.12)
+texture = ExtResource("20_f8bnm")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="Arrows"]
+z_index = -1
+position = Vector2(-292, 310)
+scale = Vector2(0.148, 0.12)
+texture = ExtResource("20_f8bnm")
+flip_h = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="Arrows"]
+z_index = -1
+position = Vector2(31, 864)
+scale = Vector2(0.148, 0.12)
+texture = ExtResource("20_f8bnm")
+flip_h = true
 
 [connection signal="body_entered" from="RiverRideEnter" to="RiverRideEnter" method="_on_body_entered"]
 [connection signal="river_ride_enter_from_waterfall" from="RiverRideEnter" to="." method="_on_river_ride_enter_river_ride_enter_from_waterfall"]
@@ -468,8 +446,8 @@ shape = SubResource("RectangleShape2D_4exyj")
 [editable path="CanvasLayer"]
 [editable path="Land2"]
 [editable path="Land"]
-[editable path="SeesawPlatform"]
-[editable path="SeesawPlatform2"]
+[editable path="Land3"]
+[editable path="Land4"]
 [editable path="RockCliffs/RockCliff3"]
 [editable path="RockCliffs/RockCliff6"]
 [editable path="RockCliffs/RockCliff7"]

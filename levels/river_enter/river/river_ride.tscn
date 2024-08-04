@@ -122,10 +122,10 @@ texture = ExtResource("12_i7dfl")
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("12_7kpjg")]
-position = Vector2(888, 496)
+position = Vector2(888, 463)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("12_7kpjg")]
-position = Vector2(865, 522)
+position = Vector2(801, 461)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("12_7kpjg")]
 position = Vector2(843, 495)
