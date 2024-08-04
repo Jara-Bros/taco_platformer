@@ -43,6 +43,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsev"]
+size = Vector2(305.556, 395.833)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiurn"]
 size = Vector2(15.8932, 201.86)
