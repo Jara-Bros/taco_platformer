@@ -78,6 +78,10 @@ script = ExtResource("1_kwksa")
 
 [node name="Taco" parent="." instance=ExtResource("1_cwnxr")]
 position = Vector2(1150, -215)
+input_enabled = true
+ignore_camera = false
+fallMultiplier = 2
+lowJumpMultiplier = 10
 
 [node name="Camera2D" parent="Taco" index="2"]
 offset = Vector2(-64, 0)
@@ -257,6 +261,7 @@ autoplay = true
 [connection signal="river_ride_from_river_enter" from="RideEnter" to="." method="_on_ride_enter_river_ride_from_river_enter"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]
 [editable path="CocobirdSpawn/EnemySpawner"]
 [editable path="CocobirdSpawn/EnemySpawner2"]
 [editable path="Land"]
