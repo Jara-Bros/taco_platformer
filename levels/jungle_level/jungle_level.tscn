@@ -313,15 +313,15 @@ script = ExtResource("1_g1na8")
 position = Vector2(511, -426)
 
 [node name="SoccerBall" parent="." instance=ExtResource("3_nl3sv")]
-position = Vector2(339, -21)
+position = Vector2(236, -26)
 
 [node name="PlatformLabel" parent="." instance=ExtResource("4_spihg")]
-offset_left = 222.0
-offset_top = -105.0
-offset_right = 456.0
-offset_bottom = -60.0
+offset_left = 135.0
+offset_top = -81.0
+offset_right = 369.0
+offset_bottom = -36.0
 theme_override_font_sizes/font_size = 35
-text = "Press F to Kick"
+text = "Press A to Kick"
 
 [node name="ForestBG" type="Parallax2D" parent="."]
 z_index = -5
@@ -1397,17 +1397,17 @@ shape = SubResource("RectangleShape2D_em0rb")
 script = ExtResource("51_rmmxw")
 
 [node name="InteractionArea" parent="TTom_Ref" instance=ExtResource("51_ssfvk")]
-position = Vector2(477, -45)
+position = Vector2(334, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TTom_Ref/InteractionArea"]
 shape = SubResource("CircleShape2D_jan0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="TTom_Ref"]
-position = Vector2(480, -43)
+position = Vector2(336, -13)
 texture = ExtResource("51_b46vk")
 
 [node name="Sprite2D2" type="Sprite2D" parent="TTom_Ref"]
-position = Vector2(476, -43)
+position = Vector2(331, -12)
 scale = Vector2(0.0933333, 0.0766667)
 texture = ExtResource("52_2fgp5")
 

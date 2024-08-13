@@ -172,11 +172,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seodx"]
 size = Vector2(14, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vpg6i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l0td"]
 atlas = ExtResource("4_gmpc6")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tervp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5lrb"]
 atlas = ExtResource("4_gmpc6")
 region = Rect2(32, 0, 16, 16)
 
@@ -187,13 +187,13 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vpg6i")
+"texture": SubResource("AtlasTexture_1l0td")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tervp")
+"texture": SubResource("AtlasTexture_j5lrb")
 }],
 "loop": false,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -204,10 +204,14 @@ collision_mask = 5
 floor_stop_on_slope = false
 floor_max_angle = 1.13446
 script = ExtResource("1_q403v")
+input_enabled = null
+ignore_camera = null
 speed = 200
 acceleration = 45
 jump_velocity = -400
 gravity = 980
+fallMultiplier = null
+lowJumpMultiplier = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
@@ -255,15 +259,22 @@ one_shot = true
 wait_time = 0.07
 one_shot = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="yellow_red" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_xf45h")
-frame = 2
-frame_progress = 1.0
+animation = &"new_animation"
 
 [node name="TimeOutHand" parent="." instance=ExtResource("6_5obt8")]
+visible = false
+offset_left = 228.0
+offset_top = 5.0
+offset_right = 228.0
+offset_bottom = 5.0
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="TacoShoes" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="TimeOutHand"]

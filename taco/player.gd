@@ -31,10 +31,12 @@ var prev_state
 @onready var jump_fx: AudioStreamPlayer2D = $JumpFX
 @onready var taco_shoes_collision: CollisionShape2D = $TacoShoes/CollisionShape2D
 
-
-@onready var yellow_red_card: AnimatedSprite2D = $YellowRedCard
-@onready var whistle_fx: AudioStreamPlayer2D = $WhistleFX
+@onready var time_out_hand: Control = $TimeOutHand
+@onready var yellow_red: AnimatedSprite2D = $yellow_red
+@onready var whistle: AudioStreamPlayer2D = $Whistle
 @onready var time_out_player: AnimationPlayer = $TimeOutHand/AnimationPlayer
+@onready var taco: Player = $"."
+@onready var timer: Timer = $Timer
 
 
 
@@ -83,11 +85,11 @@ func _physics_process(delta: float) -> void:
 	
 
 		#Jump Physics
-	if velocity.y > 0: #Player is falling
-		velocity += Vector2.UP * (-9.81) * (fallMultiplier) #Falling action is faster than jumping action | Like in mario
+	#if velocity.y > 0: #Player is falling
+		#velocity.y +=  (-9.81) * (fallMultiplier) #Falling action is faster than jumping action | Like in mario
 
-	elif velocity.y < 0 && Input.is_action_just_released("ui_accept"): #Player is jumping 
-		velocity += Vector2.UP * (-9.81) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
+	#elif velocity.y < 0 && Input.is_action_just_released("ui_accept"): #Player is jumping 
+		#velocity.y +=  (-9.81) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
 
 	if is_on_floor():
 		#if current_state["movement"] == player_movement_state.IN_AIR:
@@ -271,7 +273,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_area_2d_body_entered(body):
-	if body.get_name() == "CorpoCharacter" or body.get_name() == "TomatoTomCharacter":
+	if body.get_name() == "CorpoCharacter" or body.is_in_group("TomatoTom"):
 		bounce(1.5)
 		yellow_card_counter += 1
 		change_card_sprite(yellow_card_counter)
@@ -280,20 +282,24 @@ func _on_area_2d_body_entered(body):
 func change_card_sprite(c : int):
 	match c:
 		0:
-			yellow_red_card.frame = 0
+			yellow_red.frame = 0
 		
 		1:
-			yellow_red_card.frame = 1
+			yellow_red.frame = 1
 		2:
-			yellow_red_card.frame = 3
-			whistle_fx.play()
-			await whistle_fx.finished
-			get_tree().paused = true
+			yellow_red.frame = 2
+			whistle.play()
+			animation_player.play("idle")
+			input_enabled = false
+			time_out_hand.visible = true
+			timer.start()
 			time_out_player.play("move_grab")
+			await time_out_player.animation_finished
 			get_tree().reload_current_scene()
 		
 		_:
 			pass
+
 
 func bounce(factor):
 	velocity.y = -1 * 300 * factor
@@ -310,3 +316,8 @@ func save():
 		"pos_y" : position.y
 	}
 	return save_dict
+
+
+func _on_timer_timeout() -> void:
+	sprite_2d.visible = false
+	yellow_red.visible = false
