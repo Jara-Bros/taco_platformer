@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://clenqkwdudjme"]
+
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="1_4ob7f"]
+[ext_resource type="Texture2D" uid="uid://cj0j80xscg7pq" path="res://white_box/salad_dream/ticket.png" id="1_g7663"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8edj"]
+size = Vector2(213.333, 106.667)
+
+[node name="OrderTicket" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+rotation = 1.5708
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g7663")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_4ob7f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_g8edj")
