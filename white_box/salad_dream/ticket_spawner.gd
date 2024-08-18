@@ -5,4 +5,4 @@ extends Node2D
 func _on_timer_timeout() -> void:
 	var ticket = order_ticket.instantiate()
 	ticket.position = position
-	get_parent().get_node("VBoxContainer").add_child(ticket)
+	get_parent().add_child(ticket)
