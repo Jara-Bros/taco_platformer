@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://on6woxr47sek"]
+
+[ext_resource type="Texture2D" uid="uid://blrcc7x0twdnr" path="res://white_box/salad_dream/salad_bowl.png" id="1_8fwqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv22x"]
+
+[node name="SaladBowl" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.096, 0.096)
+texture = ExtResource("1_8fwqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sv22x")

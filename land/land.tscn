@@ -9,6 +9,7 @@ script = ExtResource("1_y605o")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture_repeat = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_filter = 1
