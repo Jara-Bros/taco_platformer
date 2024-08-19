@@ -16,6 +16,10 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var fallMultiplier = 2 
 @export var lowJumpMultiplier = 10 
 
+# Force for pushing rigid bodies
+@export var push_force : int
+
+
 enum player_state {WALKING, IN_AIR, KICKING}
 var current_state
 var prev_state
@@ -47,8 +51,7 @@ var player_facing
 var global_delta
 
 
-# Force for pushing rigid bodies
-var push_force = 40.0
+
 
 
 # Counter for yellow card hits
@@ -121,14 +124,17 @@ func _physics_process(delta: float) -> void:
 			#velocity.x = move_toward(velocity.x, 0, acceleration)
 #
 	move_and_slide()
-	#for i in get_slide_collision_count():
-		#var collision = get_slide_collision(i)
-		#if collision.get_collider().is_in_group("platforms"):
-			#pass
-			#print("Collided with: ", collision.get_collider().get_node("StaticBody2D").get_material())
-	#move_and_collide(move_toward(velocity.x, direction * speed, 50))
-	#move_and_slide()
-#
+	
+	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+
+	# move_and_collide(move_toward(velocity.x, direction * speed, 50))
+	# move_and_slide()
+	
+	
 	## Add the gravity.
 	#
 	#if not is_on_floor_only() and Input.is_action_pressed("jump"):
