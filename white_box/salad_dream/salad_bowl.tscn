@@ -63,7 +63,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv22x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7w48"]
+size = Vector2(24, 19)
 
 [node name="SaladBowl" type="RigidBody2D"]
 
@@ -77,4 +78,5 @@ scale = Vector2(1.5, 1.125)
 sprite_frames = SubResource("SpriteFrames_6u4ep")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_sv22x")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_s7w48")

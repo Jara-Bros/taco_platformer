@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=21 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="4_gmpc6"]
 [ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="4_ifdp2"]
 [ext_resource type="PackedScene" uid="uid://bowc71pajomo6" path="res://gui/time_out/time_out_hand.tscn" id="6_5obt8"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5c55u"]
-radius = 11.0
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -218,9 +215,9 @@ position = Vector2(0, -2)
 texture = ExtResource("2_ctlwh")
 hframes = 11
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_5c55u")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 2)
+polygon = PackedVector2Array(-11, -5, -12, -2, -12, 3, -10, 4, -5, 4, -5, 11, 6, 11, 6, 4, 10, 4, 13, 3, 13, -2, 12, -5, 7, -10, -5, -10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
