@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=19 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_jsabd"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="2_1f306"]
@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_rbr1h"]
 [ext_resource type="Script" path="res://white_box/salad_dream/dress_hit_box.gd" id="5_b3mor"]
 [ext_resource type="FontFile" uid="uid://crex8u4nl138b" path="res://fonts/PixelOperator8.ttf" id="5_ewt8c"]
-[ext_resource type="Texture2D" uid="uid://bjppru0y4kren" path="res://white_box/salad_dream/ticket_machine.png" id="6_5eau1"]
 [ext_resource type="Script" path="res://white_box/salad_dream/cheese_hit_box.gd" id="6_784uy"]
 [ext_resource type="PackedScene" uid="uid://mrqmltca5exq" path="res://white_box/salad_dream/ticket_spawner.tscn" id="7_02i4k"]
-[ext_resource type="Texture2D" uid="uid://cj0j80xscg7pq" path="res://white_box/salad_dream/ticket.png" id="8_s50mh"]
 [ext_resource type="PackedScene" uid="uid://on6woxr47sek" path="res://white_box/salad_dream/salad_bowl.tscn" id="9_msx4c"]
-[ext_resource type="Script" path="res://white_box/salad_dream/kale_trigger.gd" id="13_vme4x"]
+[ext_resource type="Texture2D" uid="uid://qhwi00jeo4si" path="res://white_box/salad_dream/commercial_dishwasher_png.png" id="11_s8j27"]
+[ext_resource type="Texture2D" uid="uid://yll2p75ur0di" path="res://white_box/salad_dream/conveyor_belt-removebg-preview.png" id="12_cenc3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0e16x"]
 friction = 0.6
@@ -29,21 +28,13 @@ size = Vector2(18, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqcrn"]
 size = Vector2(18, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7isa"]
-size = Vector2(296, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewvd6"]
-size = Vector2(144, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwa1b"]
-size = Vector2(64, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7gtp"]
-size = Vector2(64, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvwav"]
+size = Vector2(422, 20)
 
 [node name="SaladDream" type="Node2D"]
 
 [node name="Taco" parent="." instance=ExtResource("1_jsabd")]
+position = Vector2(45, -117)
 input_enabled = true
 ignore_camera = false
 fallMultiplier = 2
@@ -58,34 +49,8 @@ physics_material_override = SubResource("PhysicsMaterial_0e16x")
 
 [node name="StaticPlatforms" type="Node" parent="."]
 
-[node name="StaticPlatform" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(-48, -128)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/StaticPlatform"]
-shape = SubResource("RectangleShape2D_nxqdo")
-one_way_collision = true
-
-[node name="ColorRect" type="ColorRect" parent="StaticPlatforms/StaticPlatform/CollisionShape2D2"]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="StaticPlatform2" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(-48, -56)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/StaticPlatform2"]
-shape = SubResource("RectangleShape2D_nxqdo")
-one_way_collision = true
-
-[node name="ColorRect" type="ColorRect" parent="StaticPlatforms/StaticPlatform2/CollisionShape2D2"]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="KaleBox" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(166, -54)
+position = Vector2(45, -90)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/KaleBox"]
 shape = SubResource("RectangleShape2D_nxqdo")
@@ -105,8 +70,27 @@ script = ExtResource("4_0mpeb")
 shape = SubResource("RectangleShape2D_ahbkh")
 debug_color = Color(0.931623, 2.48355e-05, 0.65203, 0.42)
 
+[node name="Kale" parent="StaticPlatforms/KaleBox" instance=ExtResource("4_rbr1h")]
+z_index = -1
+offset_left = -22.0
+offset_top = -27.0
+offset_right = 30.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("5_ewt8c")
+theme_override_font_sizes/font_size = 0
+text = "Kale"
+
+[node name="ColorRect" type="ColorRect" parent="StaticPlatforms/KaleBox/Kale"]
+z_index = -1
+layout_mode = 0
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 59.0
+offset_bottom = 18.0
+color = Color(0, 0.552941, 0, 1)
+
 [node name="DressingBox" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(265, -80)
+position = Vector2(155, -90)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/DressingBox"]
 shape = SubResource("RectangleShape2D_nxqdo")
@@ -126,8 +110,46 @@ script = ExtResource("5_b3mor")
 shape = SubResource("RectangleShape2D_muov6")
 debug_color = Color(0.89266, 0.00023045, 0.786556, 0.42)
 
+[node name="Dressing" parent="StaticPlatforms/DressingBox" instance=ExtResource("4_rbr1h")]
+z_index = -1
+offset_left = -56.0
+offset_top = -29.0
+offset_right = 52.0
+offset_bottom = -13.0
+theme_override_fonts/font = ExtResource("5_ewt8c")
+theme_override_font_sizes/font_size = 0
+text = "Dressing"
+
+[node name="ColorRect2" type="ColorRect" parent="StaticPlatforms/DressingBox/Dressing"]
+z_index = -1
+layout_mode = 0
+offset_left = 21.0
+offset_top = -1.0
+offset_right = 85.0
+offset_bottom = 19.0
+color = Color(0.857998, 0.783387, 1.15514e-06, 1)
+
 [node name="CheeseBox" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(363, -108)
+position = Vector2(270, -93)
+
+[node name="Cheese" parent="StaticPlatforms/CheeseBox" instance=ExtResource("4_rbr1h")]
+z_index = -1
+offset_left = -42.0
+offset_top = -24.0
+offset_right = 42.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("5_ewt8c")
+theme_override_font_sizes/font_size = 0
+text = "Cheese"
+
+[node name="ColorRect3" type="ColorRect" parent="StaticPlatforms/CheeseBox/Cheese"]
+z_index = -1
+layout_mode = 0
+offset_left = 11.0
+offset_top = -2.0
+offset_right = 75.0
+offset_bottom = 18.0
+color = Color(0.89717, 0.462634, 0.0716863, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/CheeseBox"]
 shape = SubResource("RectangleShape2D_nxqdo")
@@ -147,197 +169,40 @@ script = ExtResource("6_784uy")
 shape = SubResource("RectangleShape2D_mqcrn")
 debug_color = Color(0.871767, 0.000481115, 0.845424, 0.42)
 
-[node name="StaticPlatform6" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(280, -184)
+[node name="Land" parent="." instance=ExtResource("3_mxnvx")]
 
-[node name="ColorRect" type="ColorRect" parent="StaticPlatforms/StaticPlatform6"]
-offset_left = -144.0
-offset_top = -8.0
-offset_right = 152.0
-offset_bottom = 8.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/StaticPlatform6"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_u7isa")
-one_way_collision = true
-
-[node name="StaticPlatform7" parent="StaticPlatforms" instance=ExtResource("2_1f306")]
-position = Vector2(16, -184)
-
-[node name="ColorRect" type="ColorRect" parent="StaticPlatforms/StaticPlatform7"]
-offset_left = -72.0
-offset_top = -8.0
-offset_right = 72.0
-offset_bottom = 8.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticPlatforms/StaticPlatform7"]
-shape = SubResource("RectangleShape2D_ewvd6")
-one_way_collision = true
-
-[node name="Lands" type="Node" parent="."]
-
-[node name="Land" parent="Lands" instance=ExtResource("3_mxnvx")]
-
-[node name="Polygon2D" parent="Lands/Land" index="0"]
+[node name="Polygon2D" parent="Land" index="0"]
 color = Color(1, 1, 1, 1)
-polygon = PackedVector2Array(-48, 0, 64, 0, 120, -8, 120, -16, 123, -16, 123, -8, 128, -8, 128, 0, 128, 16, -144, 16, -144, -40, -72, -40, -64, -40, -64, -280, -56, -280, 448, -280, 448, -264, -56, -263.651, -56, -176, -56, -32, -136, -32, -136, 8, -48, 8)
+polygon = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -64, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -56, -263.651, -108, -118, -136, -32, -136, 8, -48, 8)
 
-[node name="Line2D" parent="Lands/Land" index="1"]
+[node name="Line2D" parent="Land" index="1"]
 visible = false
-points = PackedVector2Array(-48, 0, 64, 0, 120, -8, 120, -16, 123, -16, 123, -8, 128, -8, 128, 0, 128, 16, -144, 16, -144, -40, -72, -40, -64, -40, -64, -280, -56, -280, 448, -280, 448, -264, -56, -263.651, -56, -176, -56, -32, -136, -32, -136, 8, -48, 8, -48, 0)
-
-[node name="Land2" parent="Lands" instance=ExtResource("3_mxnvx")]
-
-[node name="Polygon2D" parent="Lands/Land2" index="0"]
-color = Color(1, 1, 1, 1)
-polygon = PackedVector2Array(432, -264, 432, -90, 447, -90, 466.509, -90, 467, -8, 499, -8, 501, -90, 447.058, -100.113, 448, -264)
-
-[node name="Line2D" parent="Lands/Land2" index="1"]
-visible = false
-points = PackedVector2Array(432, -264, 432, -90, 447, -90, 466.509, -90, 467, -8, 499, -8, 501, -90, 447.058, -100.113, 448, -264, 432, -264)
-
-[node name="Land3" parent="Lands" instance=ExtResource("3_mxnvx")]
-position = Vector2(0, 8)
-
-[node name="Polygon2D" parent="Lands/Land3" index="0"]
-color = Color(1, 1, 1, 1)
-polygon = PackedVector2Array(128, -16, 128, 0, 460, 0, 499, 0, 499, -16, 460, -16, 437, -16, 437, -21, 432, -21, 432, -16, 416, -16)
-
-[node name="Line2D" parent="Lands/Land3" index="1"]
-visible = false
-points = PackedVector2Array(128, -16, 128, 0, 460, 0, 499, 0, 499, -16, 460, -16, 437, -16, 437, -21, 432, -21, 432, -16, 416, -16, 128, -16)
-
-[node name="Cheese" parent="." instance=ExtResource("4_rbr1h")]
-z_index = -1
-offset_left = 346.0
-offset_top = -26.0
-offset_right = 430.0
-offset_bottom = -10.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Cheese"
-
-[node name="ColorRect3" type="ColorRect" parent="Cheese"]
-z_index = -1
-layout_mode = 0
-offset_left = 11.0
-offset_top = -2.0
-offset_right = 75.0
-offset_bottom = 18.0
-color = Color(0.89717, 0.462634, 0.0716863, 1)
+points = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -64, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -56, -263.651, -108, -118, -136, -32, -136, 8, -48, 8, 427, 7)
 
 [node name="Labels" type="Node" parent="."]
 
-[node name="PlatformLabel3" parent="Labels" instance=ExtResource("4_rbr1h")]
-offset_left = 136.0
-offset_top = -216.0
-offset_right = -846.0
-offset_bottom = -848.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Order Tickets"
+[node name="BowlSpawner" parent="." instance=ExtResource("7_02i4k")]
+position = Vector2(-99, -27)
 
-[node name="PlatformLabel4" parent="Labels" instance=ExtResource("4_rbr1h")]
-offset_left = 304.0
-offset_top = -256.0
-offset_right = -742.0
-offset_bottom = -869.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Meal 
-Drop-Off"
+[node name="WashingMachine" type="Sprite2D" parent="BowlSpawner"]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.292, 0.256)
+texture = ExtResource("11_s8j27")
+flip_h = true
 
-[node name="PlatformLabel8" parent="Labels" instance=ExtResource("4_rbr1h")]
-offset_left = -208.0
-offset_top = -64.0
-offset_right = -1220.0
-offset_bottom = -696.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Dishwasher"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(147, -18)
+scale = Vector2(0.473913, 0.203252)
+texture = ExtResource("12_cenc3")
 
-[node name="TicketSpawner" parent="." instance=ExtResource("7_02i4k")]
-position = Vector2(24, -176)
-
-[node name="TicketMachine" type="Sprite2D" parent="TicketSpawner"]
-position = Vector2(0, -16)
-scale = Vector2(0.21875, 0.0625)
-texture = ExtResource("6_5eau1")
-
-[node name="HowToTicket" type="Node" parent="."]
-
-[node name="HowToTickets" type="Sprite2D" parent="HowToTicket"]
-modulate = Color(0, 1, 1, 1)
-position = Vector2(8, -168)
-scale = Vector2(0.16, 0.133333)
-texture = ExtResource("8_s50mh")
-
-[node name="HowToTickets2" type="Sprite2D" parent="HowToTicket"]
-modulate = Color(0, 1, 1, 1)
-position = Vector2(48, -168)
-scale = Vector2(0.16, 0.133333)
-texture = ExtResource("8_s50mh")
-
-[node name="KaleTrigger" type="Area2D" parent="."]
-position = Vector2(185, -18)
-collision_layer = 0
-script = ExtResource("13_vme4x")
-
-[node name="Kale" parent="KaleTrigger" instance=ExtResource("4_rbr1h")]
-z_index = -1
-offset_left = -27.0
-offset_top = -7.0
-offset_right = 25.0
-offset_bottom = 9.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Kale"
-
-[node name="ColorRect" type="ColorRect" parent="KaleTrigger/Kale"]
-z_index = -1
-layout_mode = 0
-offset_left = -5.0
-offset_top = -2.0
-offset_right = 59.0
-offset_bottom = 18.0
-color = Color(0, 0.552941, 0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KaleTrigger"]
-shape = SubResource("RectangleShape2D_mwa1b")
-debug_color = Color(0.454767, 0.448339, 1, 0.42)
-
-[node name="DressingTrigger" type="Area2D" parent="."]
-position = Vector2(286, -18)
-
-[node name="Dressing" parent="DressingTrigger" instance=ExtResource("4_rbr1h")]
-z_index = -1
-offset_left = -53.0
-offset_top = -9.0
-offset_right = 55.0
-offset_bottom = 7.0
-theme_override_fonts/font = ExtResource("5_ewt8c")
-theme_override_font_sizes/font_size = 0
-text = "Dressing"
-
-[node name="ColorRect2" type="ColorRect" parent="DressingTrigger/Dressing"]
-z_index = -1
-layout_mode = 0
-offset_left = 21.0
-offset_top = -1.0
-offset_right = 85.0
-offset_bottom = 19.0
-color = Color(0.857998, 0.783387, 1.15514e-06, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DressingTrigger"]
-shape = SubResource("RectangleShape2D_g7gtp")
-debug_color = Color(0.451584, 0.449624, 1, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(-2.1101, 63.96)
+scale = Vector2(2.11009, 4.92)
+shape = SubResource("RectangleShape2D_xvwav")
 
 [connection signal="body_entered" from="StaticPlatforms/KaleBox/Area2D" to="StaticPlatforms/KaleBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="StaticPlatforms/DressingBox/Area2D" to="StaticPlatforms/DressingBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="StaticPlatforms/CheeseBox/Area2D" to="StaticPlatforms/CheeseBox/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="KaleTrigger" to="KaleTrigger" method="_on_body_entered"]
 
 [editable path="SaladBowl"]
-[editable path="Lands/Land"]
-[editable path="Lands/Land2"]
-[editable path="Lands/Land3"]
+[editable path="Land"]
