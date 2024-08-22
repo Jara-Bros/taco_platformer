@@ -1,20 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=23 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_jsabd"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="2_1f306"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="3_mxnvx"]
-[ext_resource type="Script" path="res://white_box/salad_dream/kale_box_hit.gd" id="4_0mpeb"]
+[ext_resource type="Script" path="res://white_box/salad_dream/kale_hit_box.gd" id="4_0mpeb"]
 [ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_rbr1h"]
 [ext_resource type="Script" path="res://white_box/salad_dream/dress_hit_box.gd" id="5_b3mor"]
 [ext_resource type="FontFile" uid="uid://crex8u4nl138b" path="res://fonts/PixelOperator8.ttf" id="5_ewt8c"]
 [ext_resource type="Script" path="res://white_box/salad_dream/cheese_hit_box.gd" id="6_784uy"]
-[ext_resource type="PackedScene" uid="uid://mrqmltca5exq" path="res://white_box/salad_dream/ticket_spawner.tscn" id="7_02i4k"]
-[ext_resource type="PackedScene" uid="uid://on6woxr47sek" path="res://white_box/salad_dream/salad_bowl.tscn" id="9_msx4c"]
+[ext_resource type="PackedScene" uid="uid://mrqmltca5exq" path="res://white_box/salad_dream/bowl_spawner.tscn" id="7_02i4k"]
 [ext_resource type="Texture2D" uid="uid://qhwi00jeo4si" path="res://white_box/salad_dream/commercial_dishwasher_png.png" id="11_s8j27"]
+[ext_resource type="Texture2D" uid="uid://c4utqjo64bh7n" path="res://white_box/salad_dream/waiter.png" id="12_8mjak"]
 [ext_resource type="Texture2D" uid="uid://yll2p75ur0di" path="res://white_box/salad_dream/conveyor_belt-removebg-preview.png" id="12_cenc3"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0e16x"]
-friction = 0.6
+[ext_resource type="Script" path="res://white_box/salad_dream/waiter_area.gd" id="12_mqdd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxqdo"]
 size = Vector2(16, 16)
@@ -28,8 +26,48 @@ size = Vector2(18, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqcrn"]
 size = Vector2(18, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvwav"]
-size = Vector2(422, 20)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3ro2w"]
+
+[sub_resource type="Animation" id="Animation_mbosi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-51, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_may4t"]
+resource_name = "move"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-51, -16), Vector2(370, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e616e"]
+_data = {
+"RESET": SubResource("Animation_mbosi"),
+"move": SubResource("Animation_may4t")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xd536"]
+size = Vector2(38, 44)
 
 [node name="SaladDream" type="Node2D"]
 
@@ -40,12 +78,6 @@ ignore_camera = false
 fallMultiplier = 2
 lowJumpMultiplier = 10
 push_force = 10
-
-[node name="SaladBowl" parent="." instance=ExtResource("9_msx4c")]
-position = Vector2(148, -19)
-collision_layer = 4
-collision_mask = 3
-physics_material_override = SubResource("PhysicsMaterial_0e16x")
 
 [node name="StaticPlatforms" type="Node" parent="."]
 
@@ -182,27 +214,48 @@ points = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -64, -280, -56
 [node name="Labels" type="Node" parent="."]
 
 [node name="BowlSpawner" parent="." instance=ExtResource("7_02i4k")]
-position = Vector2(-99, -27)
+position = Vector2(-51, -35)
 
 [node name="WashingMachine" type="Sprite2D" parent="BowlSpawner"]
-position = Vector2(0, 3.8147e-06)
+position = Vector2(-47, 5)
 scale = Vector2(0.292, 0.256)
 texture = ExtResource("11_s8j27")
 flip_h = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(147, -18)
+[node name="BeltSprite" type="Sprite2D" parent="."]
+position = Vector2(153, -15)
 scale = Vector2(0.473913, 0.203252)
 texture = ExtResource("12_cenc3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-position = Vector2(-2.1101, 63.96)
-scale = Vector2(2.11009, 4.92)
-shape = SubResource("RectangleShape2D_xvwav")
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-51, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("WorldBoundaryShape2D_3ro2w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_e616e")
+}
+autoplay = "move"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(410, -47)
+collision_layer = 0
+monitorable = false
+script = ExtResource("12_mqdd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-33, 6)
+shape = SubResource("RectangleShape2D_xd536")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.133791, 0.172897)
+texture = ExtResource("12_8mjak")
 
 [connection signal="body_entered" from="StaticPlatforms/KaleBox/Area2D" to="StaticPlatforms/KaleBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="StaticPlatforms/DressingBox/Area2D" to="StaticPlatforms/DressingBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="StaticPlatforms/CheeseBox/Area2D" to="StaticPlatforms/CheeseBox/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 
-[editable path="SaladBowl"]
 [editable path="Land"]
