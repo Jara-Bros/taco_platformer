@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjppru0y4kren"
-path="res://.godot/imported/ticket_machine.png-1d05230eac0bc8fe8471cc224ca42de0.ctex"
+uid="uid://c4utqjo64bh7n"
+path="res://.godot/imported/waiter.png-7920bea6c0deb2323dc3547ac6fc0832.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://white_box/salad_dream/ticket_machine.png"
-dest_files=["res://.godot/imported/ticket_machine.png-1d05230eac0bc8fe8471cc224ca42de0.ctex"]
+source_file="res://white_box/salad_dream/waiter.png"
+dest_files=["res://.godot/imported/waiter.png-7920bea6c0deb2323dc3547ac6fc0832.ctex"]
 
 [params]
 
