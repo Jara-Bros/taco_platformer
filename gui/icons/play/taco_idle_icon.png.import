@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3w73n1e21855"
-path="res://.godot/imported/Screenshot 2024-07-10 205518.png-be781299801174eff3ebbf533701b287.ctex"
+uid="uid://f3ff8j0d54ms"
+path="res://.godot/imported/taco_idle_icon.png-e5780b47bfb6f43e402de43634e1d8a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/menus/main_menu/Screenshot 2024-07-10 205518.png"
-dest_files=["res://.godot/imported/Screenshot 2024-07-10 205518.png-be781299801174eff3ebbf533701b287.ctex"]
+source_file="res://gui/icons/play/taco_idle_icon.png"
+dest_files=["res://.godot/imported/taco_idle_icon.png-e5780b47bfb6f43e402de43634e1d8a3.ctex"]
 
 [params]
 
