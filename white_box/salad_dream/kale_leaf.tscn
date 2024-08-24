@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cihntlm2ytl1s"]
+
+[ext_resource type="Texture2D" uid="uid://ckby2rfbt5olt" path="res://white_box/salad_dream/kale_leaf.png" id="1_ayahw"]
+
+[node name="KaleLeaf" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -2, -11, -2, -11, -1, -9, 0, -8, 0, -8, 1, -10, 1, -11, 2, -10, 3, -8, 2, -7, 1, -5, 2, -3, 2, -1, 4, 1, 5, 4, 6, 6, 7, 8, 6, 10, 5, 11, 4, 9, 3, 8, 2, 7, 1, 6, 0, 6, -1, 8, -2, 9, -3, 10, -5, 10, -6, 8, -7, 5, -7, 2, -6, 0, -5, -2, -3, -3, -2, -5, -1, -7, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.0372994, 0.0333496)
+texture = ExtResource("1_ayahw")
