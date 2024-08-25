@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cgoktp4idsa4y"]
+[gd_scene load_steps=30 format=3 uid="uid://cgoktp4idsa4y"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_cwnxr"]
 [ext_resource type="Script" path="res://levels/river_enter/river_enter.gd" id="1_kwksa"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c0nap3q7xwv2j" path="res://levels/river_enter/river/sprites/forest_river_bg.png" id="4_lsqyn"]
 [ext_resource type="Script" path="res://levels/river_enter/river_bg.gd" id="4_qirtr"]
 [ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="5_mf3m7"]
+[ext_resource type="Texture2D" uid="uid://fqb0bcrum7pf" path="res://land/jungle/block_grass.png" id="5_xgo8t"]
+[ext_resource type="Texture2D" uid="uid://crmdbktkvij12" path="res://land/jungle/block_outline.png" id="6_nvtpc"]
 [ext_resource type="Script" path="res://levels/river_enter/water_bg.gd" id="6_v4pqv"]
 [ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river_enter/river/sprites/sea_png.png" id="7_1yaqj"]
 [ext_resource type="Texture2D" uid="uid://jbs7cx1q7tly" path="res://levels/river_enter/river/sprites/plaintain.png" id="9_trfup"]
@@ -97,10 +99,13 @@ position = Vector2(-355, -164)
 [node name="Land" parent="." instance=ExtResource("2_55oi7")]
 
 [node name="Polygon2D" parent="Land" index="0"]
+color = Color(1, 1, 1, 1)
+texture = ExtResource("5_xgo8t")
 polygon = PackedVector2Array(1203, -452, 785, -452, 782, -413, 1200, -395, 1196, -181, 1160, -186, 1103, -176, 1056, -151, 1035, -119, 998, -101, 943, -98, 901, -83, 879, -36, 850, -34, 811, -40, 793.519, 74.2608, 785, 133, 788, 151, 814, 234, 1387, 235, 1321, -452)
 
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(1203, -452, 785, -452, 782, -413, 1200, -395, 1196, -181, 1160, -186, 1103, -176, 1056, -151, 1035, -119, 998, -101, 943, -98, 901, -83, 879, -36, 850, -34, 811, -40, 793.519, 74.2608, 785, 133, 788, 151, 814, 234, 1387, 235, 1321, -452, 1203, -452)
+texture = ExtResource("6_nvtpc")
 
 [node name="RiverBG" type="Parallax2D" parent="."]
 z_index = -2
@@ -181,6 +186,7 @@ texture = ExtResource("5_mf3m7")
 position = Vector2(814, -16.5)
 
 [node name="Polygon2D" parent="Land2" index="0"]
+color = Color(1, 1, 1, 1)
 texture = ExtResource("13_hsmm8")
 polygon = PackedVector2Array(-291, 47.5, 0, 47.5, 0, 5.5, -52, 2.5, -56, -17.5, -89, -14.5, -96, -33.5, -153, -34.5, -154.281, 1.35815, -162, 8.5, -187.963, 8.52783, -234, 2.5, -271, -52.5, -302, -39.5, -326, -49.5, -366, -38.5, -381, 0.5, -435, 9.5, -457, -9.5, -473, -57.5, -511, -83.5, -574, -65.5, -593, -41.5, -590, -12.5, -595, 5.5, -792, 14.5, -790, -25.5, -824, -47.5, -919, -48.5, -954, 6.5, -958, 44.5, -919, 41.5, -599, 46.5, -533, 46.5, -365, 46.5)
 

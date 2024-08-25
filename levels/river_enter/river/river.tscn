@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsmwcwtpe4cni"]
+[gd_scene load_steps=28 format=3 uid="uid://dsmwcwtpe4cni"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_1tf14"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_jcuqo"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://c8ida3dkuhtec" path="res://platforms/river_waterfall/river_rock_2.tscn" id="8_bl4a8"]
 [ext_resource type="Texture2D" uid="uid://cr3up8qcjyuu6" path="res://levels/jungle_level/sprites/butterfly_chrysalis_edit.png" id="8_ill8y"]
 [ext_resource type="AudioStream" uid="uid://b3uvtfqae00ku" path="res://audio/sfx/Waterfall - SFX - SOUND Effects.mp3" id="9_n0kkp"]
+[ext_resource type="Texture2D" uid="uid://fqb0bcrum7pf" path="res://land/jungle/block_grass.png" id="9_xfivg"]
 [ext_resource type="PackedScene" uid="uid://cr6oyy4m7l0q4" path="res://levels/jungle_level/rock_cliff/rock_cliff.tscn" id="10_kwnlj"]
+[ext_resource type="Texture2D" uid="uid://crmdbktkvij12" path="res://land/jungle/block_outline.png" id="10_nxo7k"]
 [ext_resource type="AudioStream" uid="uid://dvi4hu8s52nfg" path="res://audio/sfx/wing_flap_edit.mp3" id="10_tltc5"]
 [ext_resource type="AudioStream" uid="uid://d4f2oiqn6nsyl" path="res://audio/music/los_cantadores_intro_p2.mp3" id="11_2ywef"]
 [ext_resource type="Texture2D" uid="uid://cgcskghdefymb" path="res://levels/jungle_level/sprites/sharp_rock_cliff.png" id="11_30ckp"]
@@ -139,10 +141,13 @@ texture = ExtResource("8_22vco")
 position = Vector2(-30, -4)
 
 [node name="Polygon2D" parent="Land2" index="0"]
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9_xfivg")
 polygon = PackedVector2Array(-105, -151, -61, -47, -48, -10, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259)
 
 [node name="Line2D" parent="Land2" index="1"]
 points = PackedVector2Array(-105, -151, -61, -47, -48, -10, -135, 90, -202, 78, -443, -39, -656, -70, -702, 80, -613, 243, -316, 356, -333, 389, -350, 409, -532, 407, -707, 403, -694, 269, -709, 81, -605, -258, -259, -261, -68, -259, -105, -151)
+texture = ExtResource("10_nxo7k")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -2
@@ -156,23 +161,28 @@ scale = Vector2(0.454, 0.283667)
 texture = ExtResource("5_3olem")
 
 [node name="Land" parent="." instance=ExtResource("1_jcuqo")]
-visible = false
 
 [node name="Polygon2D" parent="Land" index="0"]
 rotation = -0.000398951
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9_xfivg")
 polygon = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.6481, 882.029, 266.637, 911.106, 322.636, 913.129, 367.635, 914.147)
 
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(400.63, 928.16, 429, 962, 381, 971, 71, 943, 72.6481, 882.029, 266.637, 911.106, 322.636, 913.129, 367.635, 914.147, 400.63, 928.16)
+texture = ExtResource("10_nxo7k")
 
 [node name="Land3" parent="." instance=ExtResource("1_jcuqo")]
 position = Vector2(-122, 866)
 
 [node name="Polygon2D" parent="Land3" index="0"]
+color = Color(1, 1, 1, 1)
+texture = ExtResource("9_xfivg")
 polygon = PackedVector2Array(-101, -32, 98, 16, 68, 105, -223, 10, -130, -286, 181, -297, 171, -193, -79, -167)
 
 [node name="Line2D" parent="Land3" index="1"]
 points = PackedVector2Array(-101, -32, 98, 16, 68, 105, -223, 10, -130, -286, 181, -297, 171, -193, -79, -167, -101, -32)
+texture = ExtResource("10_nxo7k")
 
 [node name="Land4" parent="." instance=ExtResource("1_jcuqo")]
 visible = false
@@ -443,6 +453,7 @@ flip_h = true
 [connection signal="body_entered" from="RiverRideSecretEnter" to="RiverRideSecretEnter" method="_on_body_entered"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]
 [editable path="CanvasLayer"]
 [editable path="Land2"]
 [editable path="Land"]
