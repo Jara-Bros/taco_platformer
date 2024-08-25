@@ -1,31 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://clenqkwdudjme"]
+[gd_scene load_steps=2 format=3 uid="uid://clenqkwdudjme"]
 
-[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="1_4ob7f"]
-[ext_resource type="Script" path="res://white_box/salad_dream/order_ticket.gd" id="1_dxitu"]
-[ext_resource type="Texture2D" uid="uid://cj0j80xscg7pq" path="res://white_box/salad_dream/ticket.png" id="1_g7663"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_34wb6"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ailtw"]
-radius = 8.0
-height = 32.0
+[node name="OrderTicket" type="Control"]
+layout_mode = 3
+anchor_right = 0.124
+anchor_bottom = 0.063
+offset_right = 1.15199
+offset_bottom = -4.824
+grow_horizontal = 2
+grow_vertical = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8edj"]
-size = Vector2(32, 16)
+[node name="ColorOutline" type="ColorRect" parent="."]
+offset_right = 145.0
+offset_bottom = 37.0
+color = Color(1, 0, 0, 1)
 
-[node name="OrderTicket" type="RigidBody2D"]
-rotation = 1.5708
-script = ExtResource("1_dxitu")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 144.0
+offset_bottom = 36.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.09548e-09)
-rotation = 1.56969
-shape = SubResource("CapsuleShape2D_ailtw")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.52588e-05, 0)
-scale = Vector2(0.118029, 0.12047)
-texture = ExtResource("1_g7663")
-
-[node name="InteractionArea" parent="." instance=ExtResource("1_4ob7f")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("RectangleShape2D_g8edj")
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 146.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_34wb6")
+text = "1 SALAD
+NO CHEESE"

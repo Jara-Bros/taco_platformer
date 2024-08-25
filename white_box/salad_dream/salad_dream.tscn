@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=27 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_diydj"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_jsabd"]
+[ext_resource type="Script" path="res://white_box/salad_dream/order_line.gd" id="1_up24m"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="2_1f306"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_uo4qm"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="3_mxnvx"]
@@ -13,11 +14,7 @@
 [ext_resource type="Script" path="res://white_box/salad_dream/cheese_hit_box.gd" id="6_784uy"]
 [ext_resource type="PackedScene" uid="uid://mrqmltca5exq" path="res://white_box/salad_dream/bowl_spawner.tscn" id="7_02i4k"]
 [ext_resource type="Texture2D" uid="uid://qhwi00jeo4si" path="res://white_box/salad_dream/commercial_dishwasher_png.png" id="11_s8j27"]
-[ext_resource type="Texture2D" uid="uid://c4utqjo64bh7n" path="res://white_box/salad_dream/waiter.png" id="12_8mjak"]
 [ext_resource type="Texture2D" uid="uid://yll2p75ur0di" path="res://white_box/salad_dream/conveyor_belt-removebg-preview.png" id="12_cenc3"]
-[ext_resource type="Script" path="res://white_box/salad_dream/waiter_area.gd" id="12_mqdd1"]
-[ext_resource type="PackedScene" uid="uid://on6woxr47sek" path="res://white_box/salad_dream/salad_bowl.tscn" id="17_aq21q"]
-[ext_resource type="Script" path="res://white_box/salad_dream/item_remove_zone.gd" id="17_ykovw"]
 
 [sub_resource type="Resource" id="Resource_3ca7g"]
 script = ExtResource("3_wm0u2")
@@ -84,6 +81,21 @@ size = Vector2(38, 44)
 
 [node name="SaladDream" type="Node2D"]
 
+[node name="OrderLine" type="HFlowContainer" parent="."]
+offset_left = -56.0
+offset_top = -264.0
+offset_right = 390.0
+offset_bottom = -223.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 140
+script = ExtResource("1_up24m")
+
+[node name="Timer" type="Timer" parent="OrderLine"]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 2
 position = Vector2(158, -122)
@@ -100,7 +112,7 @@ zoom = Vector2(2, 2)
 tween_resource = SubResource("Resource_3ca7g")
 
 [node name="Taco" parent="." instance=ExtResource("1_jsabd")]
-position = Vector2(101, -169)
+position = Vector2(82, -141)
 input_enabled = true
 ignore_camera = false
 fallMultiplier = 2
@@ -110,7 +122,7 @@ push_force = 10
 [node name="IngredientBoxes" type="Node" parent="."]
 
 [node name="KaleBox" parent="IngredientBoxes" instance=ExtResource("2_1f306")]
-position = Vector2(63, -183)
+position = Vector2(47, -169)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientBoxes/KaleBox"]
 shape = SubResource("RectangleShape2D_nxqdo")
@@ -151,7 +163,7 @@ offset_bottom = 18.0
 color = Color(0, 0.552941, 0, 1)
 
 [node name="DressingBox" parent="IngredientBoxes" instance=ExtResource("2_1f306")]
-position = Vector2(173, -183)
+position = Vector2(157, -169)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="IngredientBoxes/DressingBox"]
 shape = SubResource("RectangleShape2D_nxqdo")
@@ -192,7 +204,7 @@ offset_bottom = 19.0
 color = Color(0.857998, 0.783387, 1.15514e-06, 1)
 
 [node name="CheeseBox" parent="IngredientBoxes" instance=ExtResource("2_1f306")]
-position = Vector2(288, -186)
+position = Vector2(272, -172)
 
 [node name="Cheese" parent="IngredientBoxes/CheeseBox" instance=ExtResource("4_rbr1h")]
 z_index = -1
@@ -251,11 +263,6 @@ scale = Vector2(0.292, 0.256)
 texture = ExtResource("11_s8j27")
 flip_h = true
 
-[node name="BeltSprite" type="Sprite2D" parent="."]
-position = Vector2(153, -15)
-scale = Vector2(0.473913, 0.203252)
-texture = ExtResource("12_cenc3")
-
 [node name="ConveyorBelt" type="AnimatableBody2D" parent="."]
 position = Vector2(-51, -16)
 
@@ -268,36 +275,30 @@ libraries = {
 }
 autoplay = "move"
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(410, -47)
-collision_layer = 0
-monitorable = false
-script = ExtResource("12_mqdd1")
+[node name="BeltSprite" type="Sprite2D" parent="."]
+position = Vector2(153, -15)
+scale = Vector2(0.473913, 0.203252)
+texture = ExtResource("12_cenc3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-33, 6)
+[node name="OrderChecker" type="StaticBody2D" parent="."]
+position = Vector2(393, -46)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrderChecker"]
 shape = SubResource("RectangleShape2D_xd536")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.133791, 0.172897)
-texture = ExtResource("12_8mjak")
-
-[node name="ItemRemoveZone" type="Area2D" parent="."]
+[node name="ItemRemoveZone" type="StaticBody2D" parent="."]
 position = Vector2(149, 59)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("17_ykovw")
+collision_layer = 16
+collision_mask = 0
 
 [node name="ItemRemoveZone" type="CollisionShape2D" parent="ItemRemoveZone"]
 shape = SubResource("WorldBoundaryShape2D_g3t4n")
 
-[node name="SaladBowl" parent="." instance=ExtResource("17_aq21q")]
-position = Vector2(-8, -30)
-
+[connection signal="timeout" from="OrderLine/Timer" to="OrderLine" method="_on_timer_timeout"]
 [connection signal="body_entered" from="IngredientBoxes/KaleBox/Area2D" to="IngredientBoxes/KaleBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="IngredientBoxes/DressingBox/Area2D" to="IngredientBoxes/DressingBox/Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="IngredientBoxes/CheeseBox/Area2D" to="IngredientBoxes/CheeseBox/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="ItemRemoveZone" to="ItemRemoveZone" method="_on_body_entered"]
 
 [editable path="Land"]

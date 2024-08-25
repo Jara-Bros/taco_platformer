@@ -25,5 +25,5 @@ func is_scene_in_data(field):
 	return SCENE_DATA.has(field)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
