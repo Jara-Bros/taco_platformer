@@ -223,3 +223,4 @@ shape = SubResource("RectangleShape2D_y13sg")
 [connection signal="body_entered" from="GalleryOne" to="." method="_on_gallery_one_body_entered"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]

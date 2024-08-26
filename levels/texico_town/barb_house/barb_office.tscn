@@ -481,6 +481,8 @@ shape = SubResource("RectangleShape2D_7lw3s")
 stream = ExtResource("8_eh6i3")
 autoplay = true
 
+[connection signal="barb_gallery_one_switch" from="OfficeExitDoor" to="." method="_on_office_exit_door_barb_gallery_one_switch"]
 [connection signal="body_entered" from="OfficeExitDoor" to="OfficeExitDoor" method="_on_body_entered"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]

@@ -33,38 +33,8 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 [dialogic]
 
-directories/dch_directory={
-"abe": "res://dialogue/characters/abe.dch",
-"andy": "res://dialogue/characters/andy.dch",
-"barb": "res://dialogue/characters/barb.dch",
-"bleu_test_character": "res://testing/dialogue_test/bleu_test_character.dch",
-"corpo_01": "res://dialogue/characters/corpo_01.dch",
-"esmeralda": "res://dialogue/characters/esmeralda.dch",
-"limona": "res://dialogue/characters/limona.dch",
-"nico": "res://dialogue/characters/nico.dch",
-"taco": "res://dialogue/characters/taco.dch",
-"ttom_ref_character": "res://dialogue/characters/ttom_ref_character.dch",
-"woz": "res://dialogue/characters/woz.dch"
-}
-directories/dtl_directory={
-"abe_timeline": "res://dialogue/timelines/abe_timeline.dtl",
-"barb_test_timeline": "res://testing/dialogue_test/barb_test_timeline.dtl",
-"barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
-"bleu_test_timeline": "res://testing/dialogue_test/bleu_test_timeline.dtl",
-"butterfly_ride_timeline": "res://dialogue/timelines/hints/butterfly_ride_timeline.dtl",
-"corpo_01_timeline": "res://dialogue/timelines/corpo_01_timeline.dtl",
-"demo_intro_timeline": "res://dialogue/timelines/demo_intro_timeline.dtl",
-"dios_mio_direction_timeline": "res://dialogue/timelines/hints/dios_mio_direction_timeline.dtl",
-"esmeralda_timeline": "res://dialogue/timelines/esmeralda_timeline.dtl",
-"leftover_test_timeline": "res://testing/dialogue_test/leftover_test_timeline.dtl",
-"limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
-"river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
-"taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
-"taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",
-"ttom_ref_timeline": "res://dialogue/timelines/hints/ttom_ref_timeline.dtl",
-"woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
-"wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 layout/style_list=["res://dialogue/styles/woz_style_vn.tres", "res://dialogue/styles/barb_style.tres", "res://NPC/sprites/limona/limona_style_textbox.tres"]
 layout/default_style="res://dialogic/styles/woz_style.tres"
 variables={}
@@ -105,7 +75,7 @@ movie_writer/movie_file="C:/Users/nicoj/godot_projects/taco_and_bleu_proto/taco_
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [global_group]
 

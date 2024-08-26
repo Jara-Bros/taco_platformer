@@ -224,3 +224,4 @@ autoplay = true
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
 
 [editable path="Taco"]
+[editable path="Taco/TimeOutHand"]
