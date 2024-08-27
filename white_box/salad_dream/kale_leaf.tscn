@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hvwpt"]
 radius = 9.0
 
-[node name="KaleLeaf" type="RigidBody2D"]
+[node name="KaleLeaf" type="RigidBody2D" groups=["ingredient"]]
 collision_layer = 8
 collision_mask = 8
 

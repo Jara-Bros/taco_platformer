@@ -23,9 +23,12 @@ func _process(_delta):
 func connect_item_to_player(instance_id, group):
 	var list_of_balls = get_tree().get_nodes_in_group(group)
 	for ball in list_of_balls:
+		print( ball.get_instance_id())
 		if ball.get_instance_id() == instance_id:
 			var player = get_player()
 			player.set_item(ball)
+			
+			#player.reparent(ball)
 
 func get_player():
 	var player_node = get_tree().get_nodes_in_group("Player")[0]  

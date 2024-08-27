@@ -13,8 +13,8 @@ var current_scene_alias : String = ""
 
 # Find the initial scene as defined in the project settings
 func _ready() -> void:
-	var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
-	current_scene_alias = scenes.find_key(main_scene)
+	#var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
+	current_scene_alias = get_tree().current_scene.name
 
 
 
@@ -34,7 +34,6 @@ func remove_scene(scene_alias : String) -> void:
 func switch_scene(scene_alias : String, data : Dictionary) -> void:
 	get_tree().change_scene_to_file.bind(scenes[scene_alias]).call_deferred()
 	PersistantDataHandler.update_scene_data(scene_alias, data)
-	#transfer_data = data
 
 func set_initial_scene(scene_alias : String) -> void:
 	get_tree().change_scene_to_file(scenes[scene_alias])
