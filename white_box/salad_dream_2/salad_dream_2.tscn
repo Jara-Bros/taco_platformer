@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg7n5hrsecyg0"]
+
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_rqrc8"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_msw4u"]
+[ext_resource type="PackedScene" uid="uid://deemxk8fyn22l" path="res://white_box/salad_dream_2/bowl_spawner.tscn" id="4_nfp38"]
+[ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="5_bmp8c"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_7gaaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h32m0"]
+size = Vector2(64, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4kcq"]
+size = Vector2(39, 16)
+
+[node name="SaladDream2" type="Node2D"]
+position = Vector2(134, 259)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(158, -122)
+zoom = Vector2(2, 2)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("6_7gaaq")
+
+[node name="Land" parent="." instance=ExtResource("1_rqrc8")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-84, 21, -94, -300, 416, -271, 441, -273, 453, -292, 429, 36, 440, -279, 168, -290, -125, -296, -136, 7, -135, -265, -106, -237, 405, -233, 400, -208, -99, -216, -92, -103, -21, -104, -20, -78, -87, -80)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-84, 21, -94, -300, 416, -271, 441, -273, 453, -292, 429, 36, 440, -279, 168, -290, -125, -296, -136, 7, -135, -265, -106, -237, 405, -233, 400, -208, -99, -216, -92, -103, -21, -104, -20, -78, -87, -80, -84, 21)
+
+[node name="Taco" parent="." instance=ExtResource("2_msw4u")]
+position = Vector2(77, -170)
+
+[node name="BowlSpawner" parent="." instance=ExtResource("4_nfp38")]
+position = Vector2(-70, -128)
+
+[node name="LettucePlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(-16, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LettucePlatform"]
+position = Vector2(50, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="LettucePlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="BottomPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(137, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPlatform"]
+position = Vector2(49, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="BottomPlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="TomatoPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(301, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TomatoPlatform"]
+position = Vector2(49, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="TomatoPlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="CuttingPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(177, -71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CuttingPlatform"]
+position = Vector2(49, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="CuttingPlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="CucumberPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(161, -138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CucumberPlatform"]
+position = Vector2(49, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="CucumberPlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="DishwasherPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(-84, -106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DishwasherPlatform"]
+position = Vector2(31, 6)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="DishwasherPlatform"]
+offset_right = 62.0
+offset_bottom = 14.0
+
+[node name="MixingPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(32, -148)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MixingPlatform"]
+position = Vector2(49, 7.5)
+shape = SubResource("RectangleShape2D_h32m0")
+
+[node name="ColorRect" type="ColorRect" parent="MixingPlatform"]
+offset_right = 101.0
+offset_bottom = 16.0
+
+[node name="TopRightPlatform" parent="." instance=ExtResource("5_bmp8c")]
+position = Vector2(337, -123)
+
+[node name="ColorRect" type="ColorRect" parent="TopRightPlatform"]
+offset_right = 40.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightPlatform"]
+position = Vector2(19.5, 7)
+shape = SubResource("RectangleShape2D_r4kcq")
+
+[editable path="Land"]

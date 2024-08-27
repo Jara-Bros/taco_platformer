@@ -4,3 +4,16 @@
 
 [node name="PersistanceData" type="Node"]
 script = ExtResource("1_2v0t0")
+SCENE_DATA = {
+"BarbGallery": {},
+"BarbOffice": {},
+"Beach": {},
+"BoogieBoard": {},
+"DiosMio": {},
+"JungleLevel": {},
+"MainMenu": {},
+"RiverPlantain": {},
+"RiverRideEnter": {},
+"WaterfallLevel": {},
+"WozHouse": {}
+}

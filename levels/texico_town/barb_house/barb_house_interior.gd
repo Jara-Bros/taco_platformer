@@ -17,6 +17,8 @@ func _ready():
 	var initialized_data = SceneManager.get_transfer_data("BarbGallery")
 	if initialized_data.has("player_spawn_location") == true:
 		$Taco.position = initialized_data["player_spawn_location"]
+	else:
+		$Taco.position = player_spawn_location_dict["exit_door"]
 
 func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]

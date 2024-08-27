@@ -1,7 +1,3 @@
 [gd_scene format=3 uid="uid://005hfo8610ur"]
 
 [node name="StaticPlatform" type="StaticBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
