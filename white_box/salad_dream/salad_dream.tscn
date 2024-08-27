@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=30 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_diydj"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_jsabd"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://mrqmltca5exq" path="res://white_box/salad_dream/bowl_spawner.tscn" id="7_02i4k"]
 [ext_resource type="Texture2D" uid="uid://qhwi00jeo4si" path="res://white_box/salad_dream/commercial_dishwasher_png.png" id="11_s8j27"]
 [ext_resource type="Texture2D" uid="uid://yll2p75ur0di" path="res://white_box/salad_dream/conveyor_belt-removebg-preview.png" id="12_cenc3"]
+[ext_resource type="Script" path="res://white_box/salad_dream/order_checker.gd" id="16_7ep5r"]
+[ext_resource type="PackedScene" uid="uid://d2oqirov1e7n3" path="res://white_box/salad_dream/order_area/order_area.tscn" id="17_abbqa"]
 
 [sub_resource type="Resource" id="Resource_3ca7g"]
 script = ExtResource("3_wm0u2")
@@ -78,6 +80,9 @@ _data = {
 size = Vector2(38, 44)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g3t4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rklou"]
+size = Vector2(28, 172)
 
 [node name="SaladDream" type="Node2D"]
 
@@ -248,11 +253,11 @@ debug_color = Color(0.871767, 0.000481115, 0.845424, 0.42)
 
 [node name="Polygon2D" parent="Land" index="0"]
 color = Color(1, 1, 1, 1)
-polygon = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -64, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -56, -263.651, -106, -122, 427, -122, 428, -107, -110, -107, -136, -32, -136, 8, -48, 8)
+polygon = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -145, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -106, -264, -106, -122, 427, -122, 428, -107, -136, -108, -136, -32, -136, 8, -48, 8)
 
 [node name="Line2D" parent="Land" index="1"]
 visible = false
-points = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -64, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -56, -263.651, -106, -122, 427, -122, 428, -107, -110, -107, -136, -32, -136, 8, -48, 8, 427, 7)
+points = PackedVector2Array(427, 7, 447, 15, -144, 16, -144, -40, -145, -280, -56, -280, 448, -280, 448, 12, 427, 4, 423.846, -263.983, -106, -264, -106, -122, 427, -122, 428, -107, -136, -108, -136, -32, -136, 8, -48, 8, 427, 7)
 
 [node name="BowlSpawner" parent="." instance=ExtResource("7_02i4k")]
 position = Vector2(-51, -35)
@@ -265,6 +270,8 @@ flip_h = true
 
 [node name="ConveyorBelt" type="AnimatableBody2D" parent="."]
 position = Vector2(-51, -16)
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorBelt"]
 shape = SubResource("WorldBoundaryShape2D_3ro2w")
@@ -276,17 +283,22 @@ libraries = {
 autoplay = "move"
 
 [node name="BeltSprite" type="Sprite2D" parent="."]
-position = Vector2(153, -15)
-scale = Vector2(0.473913, 0.203252)
+position = Vector2(186, -17)
+scale = Vector2(0.536956, 0.203252)
 texture = ExtResource("12_cenc3")
 
 [node name="OrderChecker" type="StaticBody2D" parent="."]
-position = Vector2(393, -46)
+position = Vector2(374, -46)
 collision_layer = 32
 collision_mask = 0
+script = ExtResource("16_7ep5r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrderChecker"]
 shape = SubResource("RectangleShape2D_xd536")
+
+[node name="OrderArea" parent="OrderChecker" instance=ExtResource("17_abbqa")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrderChecker/OrderArea"]
 
 [node name="ItemRemoveZone" type="StaticBody2D" parent="."]
 position = Vector2(149, 59)
@@ -295,6 +307,14 @@ collision_mask = 0
 
 [node name="ItemRemoveZone" type="CollisionShape2D" parent="ItemRemoveZone"]
 shape = SubResource("WorldBoundaryShape2D_g3t4n")
+
+[node name="BowlRemoveZone" type="StaticBody2D" parent="."]
+position = Vector2(515, -105)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BowlRemoveZone"]
+shape = SubResource("RectangleShape2D_rklou")
 
 [connection signal="timeout" from="OrderLine/Timer" to="OrderLine" method="_on_timer_timeout"]
 [connection signal="body_entered" from="IngredientBoxes/KaleBox/Area2D" to="IngredientBoxes/KaleBox/Area2D" method="_on_body_entered"]
