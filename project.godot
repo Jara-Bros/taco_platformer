@@ -30,7 +30,6 @@ ItemManager="*res://autoloads/item_manager/item_manager.gd"
 InteractionManager="*res://interaction/interaction_manager/interaction_manager.tscn"
 PersistantDataHandler="*res://autoloads/persistent_data_handler/persistance_data.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-OrderManager="*res://white_box/salad_dream/order_manager/order_manager.tscn"
 
 [dialogic]
 
