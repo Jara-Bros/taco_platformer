@@ -7,7 +7,7 @@
 friction = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12prk"]
-size = Vector2(72, 38)
+size = Vector2(91, 49)
 
 [node name="SaladBowl" type="RigidBody2D"]
 collision_layer = 8
@@ -29,6 +29,7 @@ collision_mask = 16
 script = ExtResource("2_ldpg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BowlRemove"]
+position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_12prk")
 
 [connection signal="body_entered" from="BowlRemove" to="BowlRemove" method="_on_body_entered"]

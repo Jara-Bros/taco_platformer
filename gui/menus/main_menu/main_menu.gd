@@ -1,13 +1,16 @@
 extends Control
 
 @onready var button_v_box: VBoxContainer = $MarginContainer/ButtonVBox
+@onready var animation_player: AnimationPlayer = $ActTransition/AnimationPlayer
 
 func _ready() -> void:
 	focus_button()
 
 
 func _on_start_button_pressed() -> void:
-	SceneManager.set_initial_scene("DiosMio")
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	SceneManager.set_initial_scene("KitchenSequence")
 
 
 func _on_quit_button_pressed() -> void:

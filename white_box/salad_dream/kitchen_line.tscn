@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgmgfg1awxob2"]
+
+[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://white_box/salad_dream/restaurant_kitchen_shelf.jpg" id="1_v5ys0"]
+[ext_resource type="Texture2D" uid="uid://dufh8wqw7l1xn" path="res://NPC/sprites/manager/manager.png" id="2_o6iq8"]
+
+[sub_resource type="GDScript" id="GDScript_4yi4y"]
+
+[node name="KitchenLine" type="Node2D"]
+script = SubResource("GDScript_4yi4y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1512.0
+offset_top = -1016.0
+offset_right = 1656.0
+offset_bottom = 616.0
+texture = ExtResource("1_v5ys0")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -1056.0
+offset_top = 464.0
+offset_right = 2584.0
+offset_bottom = 2080.0
+texture = ExtResource("1_v5ys0")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = 1
+offset_left = -1504.0
+offset_top = -1528.0
+offset_right = 1664.0
+offset_bottom = 104.0
+texture = ExtResource("1_v5ys0")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(840, 480)
+scale = Vector2(22, 22)
+texture = ExtResource("2_o6iq8")
+hframes = 4
+frame = 1
