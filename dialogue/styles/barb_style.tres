@@ -22,9 +22,10 @@ overrides = {}
 script = ExtResource("1_amjye")
 scene = ExtResource("4_w7h8k")
 overrides = {
-"box_animation_in": "1",
-"box_animation_out": "1",
+"box_animation_in": "0",
+"box_animation_out": "0",
 "box_color_use_global": "false",
+"box_margin_bottom": "0.0",
 "name_label_box_use_global_color": "false",
 "name_label_custom_font_size": "45.0",
 "name_label_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
@@ -33,7 +34,7 @@ overrides = {
 "name_label_use_global_font_size": "false",
 "next_indicator_animation": "1",
 "normal_font": "\"res://fonts/dialogue_box/pokemon-emerald.ttf\"",
-"text_size": "50.0",
+"text_size": "45.0",
 "text_use_global_color": "false",
 "text_use_global_font": "false",
 "text_use_global_size": "false",
@@ -59,7 +60,7 @@ overrides = {}
 
 [resource]
 script = ExtResource("7_y8c64")
-name = "barb_style"
+name = "text_only_style"
 base_overrides = {}
 layers = Array[ExtResource("1_amjye")]([SubResource("Resource_bedk3"), SubResource("Resource_irid1"), SubResource("Resource_iuvb4"), SubResource("Resource_m2f8k"), SubResource("Resource_o7cug")])
 metadata/_latest_layer = 2

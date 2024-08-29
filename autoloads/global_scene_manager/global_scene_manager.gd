@@ -63,8 +63,6 @@ func get_current_scene_alias() -> String:
 	return current_scene_alias
 
 
-#TODO see if you can add/remove scenes as children for levels
-# you'll load/unload frequently
 func add_scene_child(_scene : Node2D):
 	add_child(_scene)
 

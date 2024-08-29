@@ -1,0 +1,184 @@
+[gd_scene load_steps=14 format=3 uid="uid://ks4y085gbeac"]
+
+[ext_resource type="Script" path="res://white_box/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
+[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://white_box/salad_dream/restaurant_kitchen_shelf.jpg" id="1_klq4l"]
+[ext_resource type="Texture2D" uid="uid://dufh8wqw7l1xn" path="res://NPC/sprites/manager/manager.png" id="2_kbf05"]
+[ext_resource type="Texture2D" uid="uid://clxqf47rjknpv" path="res://NPC/sprites/jeff/jeff.png" id="3_6okn2"]
+[ext_resource type="Texture2D" uid="uid://2r2lhoxipq0e" path="res://NPC/sprites/empanada_twins/empanada_twin_1.png" id="4_gd4lv"]
+[ext_resource type="Texture2D" uid="uid://jwcoevgjeylp" path="res://NPC/sprites/empanada_twins/empanada_twin_2.png" id="5_feuxi"]
+[ext_resource type="PackedScene" uid="uid://dgmgfg1awxob2" path="res://white_box/salad_dream/kitchen_line.tscn" id="6_l2w4m"]
+
+[sub_resource type="Animation" id="Animation_ob4e6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KitchenLine:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Manager:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Manager:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_vmgva"]
+resource_name = "black_off"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l1fgw"]
+resource_name = "kitchen_line_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KitchenLine:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_yd6ji"]
+resource_name = "kitchen_sequence"
+
+[sub_resource type="Animation" id="Animation_sqsen"]
+resource_name = "manager_talk"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Manager:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0f8de"]
+_data = {
+"RESET": SubResource("Animation_ob4e6"),
+"black_off": SubResource("Animation_vmgva"),
+"kitchen_line_off": SubResource("Animation_l1fgw"),
+"kitchen_sequence": SubResource("Animation_yd6ji"),
+"manager_talk": SubResource("Animation_sqsen")
+}
+
+[node name="KitchenSequence" type="Node2D"]
+script = ExtResource("1_ga4vx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 648.0
+texture = ExtResource("1_klq4l")
+expand_mode = 1
+
+[node name="Manager" type="Sprite2D" parent="."]
+position = Vector2(608, 480)
+scale = Vector2(10.5, 9)
+texture = ExtResource("2_kbf05")
+hframes = 4
+frame = 2
+
+[node name="Jeff" type="Sprite2D" parent="."]
+position = Vector2(152, 464)
+scale = Vector2(9, 9)
+texture = ExtResource("3_6okn2")
+hframes = 2
+
+[node name="Empanada1" type="Sprite2D" parent="."]
+position = Vector2(1816, 584)
+scale = Vector2(9, 9)
+texture = ExtResource("4_gd4lv")
+
+[node name="Empanada2" type="Sprite2D" parent="."]
+position = Vector2(1496, 584)
+scale = Vector2(9, 9)
+texture = ExtResource("5_feuxi")
+
+[node name="KitchenLine" parent="." instance=ExtResource("6_l2w4m")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0f8de")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -136.0
+offset_right = 1520.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

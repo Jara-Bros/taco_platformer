@@ -1,19 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://clenqkwdudjme"]
 
-[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_34wb6"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_ktihc"]
 
 [node name="OrderTicket" type="Control"]
 layout_mode = 3
-anchor_right = 0.124
-anchor_bottom = 0.063
-offset_right = 1.15199
-offset_bottom = -4.824
-grow_horizontal = 2
-grow_vertical = 2
+anchor_right = 0.153
+anchor_bottom = 0.049
+offset_right = -176.256
+offset_bottom = -31.752
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorOutline" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 145.0
+offset_right = 177.0
 offset_bottom = 37.0
 color = Color(1, 0, 0, 1)
 
@@ -21,7 +20,7 @@ color = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 144.0
+offset_right = 176.0
 offset_bottom = 36.0
 
 [node name="Label" type="Label" parent="."]
@@ -31,6 +30,6 @@ offset_top = 2.0
 offset_right = 146.0
 offset_bottom = 37.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_34wb6")
+theme_override_fonts/font = ExtResource("1_ktihc")
 text = "1 SALAD
-NO CHEESE"
+NO DRESSING"

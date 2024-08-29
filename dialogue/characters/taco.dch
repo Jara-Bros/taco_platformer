@@ -12,7 +12,7 @@
 "description": "",
 "display_name": "Taco",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["T"],
 "offset": Vector2(0, 0),
 "portraits": {
 "taco_default": {
