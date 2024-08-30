@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=71 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_nl3sv"]
 [ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="3_qao02"]
 [ext_resource type="AudioStream" uid="uid://bumc3f4eri6h7" path="res://audio/music/jungle_bm.mp3" id="4_7tiu3"]
-[ext_resource type="AudioStream" uid="uid://dvhqo8l4tfsdl" path="res://audio/sfx/leave_rustle_fx.wav" id="4_8t4d5"]
 [ext_resource type="PackedScene" uid="uid://dkrmpx4da2n5k" path="res://platforms/platform_label.tscn" id="4_spihg"]
 [ext_resource type="Script" path="res://levels/jungle_level/change_scene/swap_scene.gd" id="4_y5pbf"]
 [ext_resource type="Texture2D" uid="uid://caeannx8rsrun" path="res://levels/jungle_level/sprites/foresttisha-85sstock.png" id="6_0jer7"]
@@ -19,11 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://dbspl35rj4bcr" path="res://levels/jungle_level/sprites/tree-branch-stick-png.png" id="9_uw3uv"]
 [ext_resource type="Texture2D" uid="uid://dyvyy5mlfkjg1" path="res://enemies/tomato_tom/jungle/TTom_Jungle_Sheet-export.png" id="10_cn8j6"]
 [ext_resource type="Texture2D" uid="uid://bh3i25afu5bpr" path="res://levels/jungle_level/sprites/360_F_623866757_zWyQENx9JgkVuSfl50nys3pouq8eL6PD-removebg-preview.png" id="10_pw77u"]
-[ext_resource type="Script" path="res://levels/jungle_level/platform_start.gd" id="10_ytymv"]
 [ext_resource type="Script" path="res://platforms/static_platform/static_platform.gd" id="12_1rtoe"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="12_4mwl0"]
 [ext_resource type="Texture2D" uid="uid://bg3gsd5lcaivn" path="res://levels/jungle_level/sprites/pink_hawthorn.png" id="13_1lj0c"]
-[ext_resource type="Texture2D" uid="uid://bhrbvh0gomkve" path="res://levels/jungle_level/sprites/Screenshot_2024-07-07_142050-removebg-preview.png" id="13_384fi"]
 [ext_resource type="Script" path="res://levels/jungle_level/parallax/parallax_2d.gd" id="13_vw6jl"]
 [ext_resource type="PackedScene" uid="uid://dmii312fxp0ss" path="res://testing/kick_test/butterfly_eggs.tscn" id="14_kdh1r"]
 [ext_resource type="Texture2D" uid="uid://civ6kn5ylsux" path="res://levels/jungle_level/sprites/glass_pineapple.png" id="14_r2e01"]
@@ -36,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="28_fis8l"]
 [ext_resource type="Texture2D" uid="uid://7gjjo1jf14fw" path="res://levels/jungle_level/sprites/beetle-chrysolina-fastuosa-bright-colorful-beetle-sticker-ub2df-x450-removebg-preview.png" id="29_yrsds"]
 [ext_resource type="Texture2D" uid="uid://dvd5yngh8se7o" path="res://levels/jungle_level/sprites/pngimg.com - bear_PNG1187.png" id="31_w7xyq"]
-[ext_resource type="Texture2D" uid="uid://duwrdkc86y38a" path="res://levels/jungle_level/sprites/404-4043223_leaves-pile-png-transparent-png-removebg-preview.png" id="33_pt14t"]
 [ext_resource type="AudioStream" uid="uid://dbcysbxdydmo6" path="res://audio/sfx/leave_crunch_sfx.mp3" id="34_t5h3o"]
 [ext_resource type="Texture2D" uid="uid://cn3ev5vc1yuji" path="res://levels/jungle_level/sprites/mango.png" id="39_cufwd"]
 [ext_resource type="Texture2D" uid="uid://4nu5wdyec3eu" path="res://levels/jungle_level/sprites/monarch-butterfly-K6V8QZD-600-removebg-preview.png" id="40_8hx5d"]
@@ -202,9 +198,6 @@ _data = {
 "move": SubResource("Animation_0bmt5")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx31c"]
-size = Vector2(143.999, 13.9999)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sojpg"]
 size = Vector2(132, 8)
 
@@ -357,23 +350,6 @@ position = Vector2(-1188, -73)
 rotation = 3.30654
 scale = Vector2(0.929095, 1)
 texture = ExtResource("9_uw3uv")
-
-[node name="PlatformStart" type="Node" parent="."]
-
-[node name="LeafRustle" type="AudioStreamPlayer2D" parent="PlatformStart"]
-stream = ExtResource("4_8t4d5")
-autoplay = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PlatformStart"]
-script = ExtResource("10_ytymv")
-
-[node name="Timer" type="Timer" parent="PlatformStart/StaticBody2D"]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlatformStart/StaticBody2D"]
-polygon = PackedVector2Array(489, -423, 502, -407, 523, -407, 530, -426, 515, -440, 535, -430, 530, -402, 498, -402, 483, -421, 494, -442, 506, -442)
 
 [node name="JungleFGStart" type="Node" parent="."]
 
@@ -768,70 +744,18 @@ autoplay = "move"
 [node name="StaticPlatform" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-111, -7)
 
-[node name="Sprite2D" parent="StaticPlatform" index="0"]
-rotation = -1.57351
-scale = Vector2(0.151319, 0.200165)
-texture = ExtResource("13_384fi")
-
-[node name="CollisionShape2D" parent="StaticPlatform" index="1"]
-rotation = 0.0261083
-shape = SubResource("RectangleShape2D_nx31c")
-one_way_collision = true
-
 [node name="StaticPlatform4" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2191, 275)
-
-[node name="Sprite2D" parent="StaticPlatform4" index="0"]
-rotation = -1.57351
-scale = Vector2(0.151319, 0.200165)
-texture = ExtResource("13_384fi")
-
-[node name="CollisionShape2D" parent="StaticPlatform4" index="1"]
-rotation = 0.0261083
-shape = SubResource("RectangleShape2D_nx31c")
-one_way_collision = true
 
 [node name="StaticPlatform6" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2153, 215)
 
-[node name="Sprite2D" parent="StaticPlatform6" index="0"]
-rotation = -1.57351
-scale = Vector2(0.151319, 0.200165)
-texture = ExtResource("13_384fi")
-
-[node name="CollisionShape2D" parent="StaticPlatform6" index="1"]
-rotation = 0.0261083
-shape = SubResource("RectangleShape2D_nx31c")
-one_way_collision = true
-
 [node name="StaticPlatform5" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2220, 342)
-
-[node name="Sprite2D" parent="StaticPlatform5" index="0"]
-rotation = -1.57351
-scale = Vector2(0.151319, 0.200165)
-texture = ExtResource("13_384fi")
-
-[node name="CollisionShape2D" parent="StaticPlatform5" index="1"]
-position = Vector2(-3, 0)
-rotation = 0.0261083
-shape = SubResource("RectangleShape2D_nx31c")
-one_way_collision = true
 
 [node name="TrapPlatform" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-1844, 120)
 script = ExtResource("12_1rtoe")
-
-[node name="Sprite2D" parent="TrapPlatform" index="0"]
-position = Vector2(2, -9)
-rotation = -0.00167599
-scale = Vector2(0.21877, 0.0968765)
-texture = ExtResource("33_pt14t")
-
-[node name="CollisionShape2D" parent="TrapPlatform" index="1"]
-position = Vector2(5, 2)
-rotation = 0.00387131
-shape = SubResource("RectangleShape2D_nx31c")
 
 [node name="Area2D" type="Area2D" parent="TrapPlatform"]
 position = Vector2(-4, -9)
@@ -853,17 +777,6 @@ one_shot = true
 position = Vector2(-1847, 240)
 script = ExtResource("12_1rtoe")
 
-[node name="Sprite2D" parent="TrapPlatform2" index="0"]
-position = Vector2(2, -9)
-rotation = -0.00167599
-scale = Vector2(0.21877, 0.0968765)
-texture = ExtResource("33_pt14t")
-
-[node name="CollisionShape2D" parent="TrapPlatform2" index="1"]
-position = Vector2(5, 2)
-rotation = 0.00387131
-shape = SubResource("RectangleShape2D_nx31c")
-
 [node name="Area2D" type="Area2D" parent="TrapPlatform2"]
 position = Vector2(-4, -9)
 collision_layer = 0
@@ -884,17 +797,6 @@ autoplay = true
 [node name="TrapPlatform3" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-1864, 344)
 script = ExtResource("12_1rtoe")
-
-[node name="Sprite2D" parent="TrapPlatform3" index="0"]
-position = Vector2(2, -9)
-rotation = -0.00167599
-scale = Vector2(0.21877, 0.0968765)
-texture = ExtResource("33_pt14t")
-
-[node name="CollisionShape2D" parent="TrapPlatform3" index="1"]
-position = Vector2(5, 2)
-rotation = 0.00387131
-shape = SubResource("RectangleShape2D_nx31c")
 
 [node name="Area2D" type="Area2D" parent="TrapPlatform3"]
 position = Vector2(-4, -9)
@@ -1418,7 +1320,6 @@ texture = ExtResource("52_2fgp5")
 
 [connection signal="body_entered" from="SwapScene" to="SwapScene" method="_on_body_entered"]
 [connection signal="enter_waterfall" from="SwapScene" to="." method="_on_swap_scene_enter_waterfall"]
-[connection signal="timeout" from="PlatformStart/StaticBody2D/Timer" to="PlatformStart/StaticBody2D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform/Area2D" to="TrapPlatform" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="TrapPlatform/Timer" to="TrapPlatform" method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrapPlatform2/Area2D" to="TrapPlatform2" method="_on_area_2d_body_entered"]

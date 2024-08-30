@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
+	Dialogic.start("manager_offscreen_1_timeline")
 
 
 

@@ -13,7 +13,7 @@ collision_mask = 8
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.995541, 0.794329, 0.472721, 1)
-polygon = PackedVector2Array(-2, -10, 2, -10, 5, -9, 7, -7, 9, -5, 10, -1, 10, 2, 9, 5, 8, 7, 5, 9, 2, 10, -1, 10, -4, 9, -6, 8, -8, 6, -9, 4, -10, 1, -10, -2, -9, -5, -6, -8)
+polygon = PackedVector2Array(-2, -10, -1, -9, 8, -1, 9, 3, 8, 7, 5, 9, -4, 9, -6, 8, -8, 6, -7, 3, -4, -3, -3, -9)
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bi728")
