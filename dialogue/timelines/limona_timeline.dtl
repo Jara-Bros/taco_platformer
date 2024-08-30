@@ -1,7 +1,6 @@
-[style name="limona_style_textbox"]
+[style name="text_&_pic_style"]
 limona (limona_idle): . . .
 [wait time="0.5"]
 limona (limona_talk): Hey T.
-[wait time="0.8"]
 limona (limona_question): You tryna boogie?
 [end_timeline]

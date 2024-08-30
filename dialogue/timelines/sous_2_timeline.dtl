@@ -1,0 +1,4 @@
+[style name="text_only_style"]
+sous_chef: T?
+[wait time="1.0"]
+[end_timeline]

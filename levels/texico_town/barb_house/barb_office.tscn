@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cisan0df18uat"]
+[gd_scene load_steps=27 format=4 uid="uid://cisan0df18uat"]
 
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_office.gd" id="1_esbgu"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_amgsr"]
@@ -420,6 +420,9 @@ height = 36.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lw3s"]
 size = Vector2(38, 148)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbn4"]
+size = Vector2(20, 318)
+
 [node name="BarbOffice" type="Node2D"]
 script = ExtResource("1_esbgu")
 
@@ -480,6 +483,14 @@ shape = SubResource("RectangleShape2D_7lw3s")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_eh6i3")
 autoplay = true
+
+[node name="CollisionShape2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(630, -20)
+shape = SubResource("RectangleShape2D_rfbn4")
 
 [connection signal="barb_gallery_one_switch" from="OfficeExitDoor" to="." method="_on_office_exit_door_barb_gallery_one_switch"]
 [connection signal="body_entered" from="OfficeExitDoor" to="OfficeExitDoor" method="_on_body_entered"]

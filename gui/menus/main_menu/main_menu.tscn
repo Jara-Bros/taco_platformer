@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2mtvr7ax7guf"]
+[gd_scene load_steps=12 format=3 uid="uid://d2mtvr7ax7guf"]
 
 [ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_4l72j"]
 [ext_resource type="Script" path="res://gui/menus/main_menu/main_menu.gd" id="1_fcjyx"]
 [ext_resource type="Theme" uid="uid://ddkpie7d28xv7" path="res://themes/default_theme.tres" id="1_odqg3"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="3_exrli"]
+[ext_resource type="Texture2D" uid="uid://dhfo3ntyog2xk" path="res://taco/sprites/taco_happy.png" id="5_33bxb"]
+[ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="6_b2xwb"]
 [ext_resource type="PackedScene" uid="uid://bermbu6qd8ncx" path="res://gui/boot_page/splash_pages.tscn" id="12_7oxl1"]
 
 [sub_resource type="Animation" id="Animation_e62ci"]
@@ -71,7 +73,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_p5gqw"]
 resource_name = "fade_in"
-length = 7.0
+length = 7.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -292,7 +294,19 @@ theme_override_fonts/font = ExtResource("3_exrli")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(270, 600)
+scale = Vector2(9, 9)
+texture = ExtResource("5_33bxb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(958, 583)
+scale = Vector2(9, 9)
+texture = ExtResource("6_b2xwb")
+flip_h = true
+
 [node name="SplashPages" parent="." instance=ExtResource("12_7oxl1")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]

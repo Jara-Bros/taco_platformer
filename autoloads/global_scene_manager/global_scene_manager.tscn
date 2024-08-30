@@ -11,6 +11,7 @@ scenes = {
 "BoogieBoard": &"res://levels/boogie/boogie_test.tscn",
 "DiosMio": &"res://levels/texico_town/dios_mio/texico_start.tscn",
 "JungleLevel": &"res://levels/jungle_level/jungle_level.tscn",
+"KitchenLineSequence": &"res://white_box/salad_dream/kitchen_line_t_sequence.tscn",
 "KitchenSequence": &"res://white_box/salad_dream/kitchen_sequence.tscn",
 "MainMenu": &"res://gui/menus/main_menu/main_menu.tscn",
 "RiverPlantain": &"res://levels/river_enter/river/river_ride.tscn",

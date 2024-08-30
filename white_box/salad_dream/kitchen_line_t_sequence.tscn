@@ -1,0 +1,210 @@
+[gd_scene load_steps=18 format=3 uid="uid://d2ws85mymqjvb"]
+
+[ext_resource type="Script" path="res://white_box/salad_dream/kitchen_line_t_sequence.gd" id="1_btbis"]
+[ext_resource type="Texture2D" uid="uid://dh4yvs7tjbhpj" path="res://white_box/salad_dream/restaurant_kichen.jpg" id="1_h8nhx"]
+[ext_resource type="Texture2D" uid="uid://34db2sheef44" path="res://taco/sprites/taco_restaurant_animation_sheet.png" id="2_qdbdb"]
+[ext_resource type="Texture2D" uid="uid://bh76uw1rlv0b0" path="res://NPC/sprites/sous/sous.png" id="4_h8nr8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s51xb"]
+atlas = ExtResource("2_qdbdb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcude"]
+atlas = ExtResource("2_qdbdb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne20s"]
+atlas = ExtResource("2_qdbdb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nnwh"]
+atlas = ExtResource("2_qdbdb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8l4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s51xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcude")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne20s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nnwh")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_katob"]
+atlas = ExtResource("4_h8nr8")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj6xy"]
+atlas = ExtResource("4_h8nr8")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytc6y"]
+atlas = ExtResource("4_h8nr8")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtic1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_katob")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_44agv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TacoKitchen:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(864, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TacoKitchen:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(536, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TacoKitchen:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dpyen"]
+resource_name = "sous_talk"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sous")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_vlyfk"]
+resource_name = "taco_kitchen_move"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TacoKitchen:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(296, -0.25, 0, 0.25, 0, 296, -0.25, 0, 0.25, 0, 640, -0.25, 0, 0.25, 0, 450, -0.25, 0, 0.25, 0, 550, -0.25, 0, 0.25, 0, 235, -0.25, 0, 0.25, 0, 700, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.03333, 1.5, 2.5, 3.46667, 4.43333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TacoKitchen:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(560, -0.25, 0, 0.25, 0, 560, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TacoKitchen:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.56667, 2.1, 2.53333, 2.66667, 3.53333, 4.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ox4g4"]
+_data = {
+"RESET": SubResource("Animation_44agv"),
+"sous_talk": SubResource("Animation_dpyen"),
+"taco_kitchen_move": SubResource("Animation_vlyfk")
+}
+
+[node name="KitchenLineTaco" type="Node2D"]
+script = ExtResource("1_btbis")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 612.0
+offset_bottom = 408.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("1_h8nhx")
+
+[node name="TacoKitchen" type="AnimatedSprite2D" parent="."]
+position = Vector2(864, 536)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_i8l4j")
+animation = &"move"
+autoplay = "move"
+frame = 2
+frame_progress = 0.604058
+
+[node name="Sous" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(80, 456)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_dtic1")
+animation = &"talk"
+autoplay = "talk"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ox4g4")
+}

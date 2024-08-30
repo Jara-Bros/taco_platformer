@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=33 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="Script" path="res://white_box/salad_dream/salad_dream.gd" id="1_2ru35"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_diydj"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://yll2p75ur0di" path="res://white_box/salad_dream/conveyor_belt-removebg-preview.png" id="12_cenc3"]
 [ext_resource type="Script" path="res://white_box/salad_dream/order_checker.gd" id="16_7ep5r"]
 [ext_resource type="Texture2D" uid="uid://dh4yvs7tjbhpj" path="res://white_box/salad_dream/restaurant_kichen.jpg" id="17_dtyhd"]
+[ext_resource type="AudioStream" uid="uid://cqbfy3mqops5u" path="res://audio/sfx/Kitchen printer sounds..mp3" id="20_mwu3j"]
 
 [sub_resource type="Resource" id="Resource_3ca7g"]
 script = ExtResource("3_wm0u2")
@@ -262,13 +263,13 @@ debug_color = Color(0.871767, 0.000481115, 0.845424, 0.42)
 [node name="Land" parent="." instance=ExtResource("3_mxnvx")]
 
 [node name="Polygon2D" parent="Land" index="0"]
-color = Color(0.310617, 0.310617, 0.310617, 1)
+color = Color(0.29219, 0.29219, 0.29219, 1)
 polygon = PackedVector2Array(478, 9, 478, 46, -162, 48, -162, -287, 478, -287, 478, 8, 427, 7, 423.846, -263.983, -106, -264, -106, -122, 427, -122, 428, -107, -136, -108, -136, -32, -136, 8, -48, 8)
 
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(478, 9, 478, 46, -162, 48, -162, -287, 478, -287, 478, 8, 427, 7, 423.846, -263.983, -106, -264, -106, -122, 427, -122, 428, -107, -136, -108, -136, -32, -136, 8, -48, 8, 478, 9)
 width = 5.0
-default_color = Color(0.601223, 0.601223, 0.601223, 1)
+default_color = Color(0.140447, 0.140447, 0.140447, 1)
 joint_mode = 1
 begin_cap_mode = 0
 
@@ -324,6 +325,10 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BowlRemoveZone"]
 shape = SubResource("RectangleShape2D_rklou")
+
+[node name="KitchenPrinterSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_mwu3j")
+autoplay = true
 
 [connection signal="timeout" from="OrderLine/Timer" to="OrderLine" method="_on_timer_timeout"]
 [connection signal="body_entered" from="IngredientBoxes/KaleBox/Area2D" to="IngredientBoxes/KaleBox/Area2D" method="_on_body_entered"]
