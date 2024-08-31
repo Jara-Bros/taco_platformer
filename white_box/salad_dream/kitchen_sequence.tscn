@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ks4y085gbeac"]
+[gd_scene load_steps=28 format=3 uid="uid://ks4y085gbeac"]
 
 [ext_resource type="Script" path="res://white_box/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
 [ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://white_box/salad_dream/restaurant_kitchen_shelf.jpg" id="1_klq4l"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://jwcoevgjeylp" path="res://NPC/sprites/empanada_twins/empanada_twin_2.png" id="5_feuxi"]
 [ext_resource type="PackedScene" uid="uid://dgmgfg1awxob2" path="res://white_box/salad_dream/kitchen_line.tscn" id="6_l2w4m"]
 [ext_resource type="Texture2D" uid="uid://b84l1bb5dcm5q" path="res://NPC/sprites/empanada_twins/kitchen_dish.png" id="6_qmwke"]
+[ext_resource type="AudioStream" uid="uid://cqpwthtg6tun6" path="res://audio/sfx/chaotic_kitchen_sfx.mp3" id="9_g5438"]
+[ext_resource type="Texture2D" uid="uid://iyqr4q7x10lp" path="res://white_box/salad_dream/jeff_sock_pic.jpg" id="10_wge6o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lywgk"]
 atlas = ExtResource("4_gd4lv")
@@ -103,6 +105,42 @@ tracks/5/keys = {
 "points": PackedFloat32Array(552, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Jeff:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Jeff:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TextureRect2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vmgva"]
 resource_name = "black_off"
@@ -193,14 +231,215 @@ tracks/1/keys = {
 "values": [2, 0]
 }
 
+[sub_resource type="Animation" id="Animation_37tq5"]
+resource_name = "jeff_manager_talk"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jeff:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Manager:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_jrv01"]
+resource_name = "jeff_talk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jeff:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_1wmdw"]
+resource_name = "manager_talk_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_setke"]
+resource_name = "jeff_talk_2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jeff:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_nunqo"]
+resource_name = "sock_reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jeff:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Jeff:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Manager:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Manager:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_jayta"]
+resource_name = "manager_irritated"
+length = 1.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_c77p1"]
+resource_name = "manager_talk_right"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0f8de"]
 _data = {
 "RESET": SubResource("Animation_ob4e6"),
 "black_off": SubResource("Animation_vmgva"),
 "empanada_move": SubResource("Animation_06e1x"),
+"jeff_manager_talk": SubResource("Animation_37tq5"),
+"jeff_talk": SubResource("Animation_jrv01"),
+"jeff_talk_2": SubResource("Animation_setke"),
 "kitchen_line_off": SubResource("Animation_l1fgw"),
 "kitchen_sequence": SubResource("Animation_yd6ji"),
-"manager_talk": SubResource("Animation_sqsen")
+"manager_irritated": SubResource("Animation_jayta"),
+"manager_talk": SubResource("Animation_sqsen"),
+"manager_talk_2": SubResource("Animation_1wmdw"),
+"manager_talk_right": SubResource("Animation_c77p1"),
+"sock_reveal": SubResource("Animation_nunqo")
 }
 
 [node name="KitchenSequence" type="Node2D"]
@@ -265,3 +504,20 @@ offset_bottom = 800.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g5438")
+volume_db = 8.0
+autoplay = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 5
+offset_left = 280.0
+offset_top = 632.0
+offset_right = 899.0
+offset_bottom = 1324.0
+rotation = 4.71239
+texture = ExtResource("10_wge6o")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

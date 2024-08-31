@@ -6,7 +6,3 @@ extends StaticBody2D
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	timer.start()
-
-func _on_timer_timeout() -> void:
-	collision_shape.queue_free()
-	trigger_shape.queue_free()

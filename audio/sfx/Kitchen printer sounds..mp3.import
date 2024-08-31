@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Kitchen printer sounds..mp3-6423a3a3dd01a0e30
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

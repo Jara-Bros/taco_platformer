@@ -306,7 +306,6 @@ texture = ExtResource("6_b2xwb")
 flip_h = true
 
 [node name="SplashPages" parent="." instance=ExtResource("12_7oxl1")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]

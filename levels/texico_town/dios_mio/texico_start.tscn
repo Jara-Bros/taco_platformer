@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=53 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -36,7 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
 [ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
+[ext_resource type="Texture2D" uid="uid://dhapnasqatcef" path="res://levels/texico_town/sprites/dios_mio_zoomout.png" id="38_guork"]
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/arrow_sign.gd" id="38_tvu4s"]
+[ext_resource type="AudioStream" uid="uid://b353phm71xn05" path="res://audio/music/transition_in_music.wav" id="39_q6xsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
 size = Vector2(438.312, 195.875)
@@ -124,6 +126,43 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_xnxn4"),
 "move": SubResource("Animation_qqyqg")
+}
+
+[sub_resource type="Animation" id="Animation_ytsue"]
+resource_name = "transition_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bqgvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8qdn"]
+_data = {
+"RESET": SubResource("Animation_bqgvn"),
+"transition_in": SubResource("Animation_ytsue")
 }
 
 [node name="DiosMio" type="Node2D" groups=["Level"]]
@@ -898,6 +937,25 @@ libraries = {
 autoplay = "move"
 
 [node name="QuickReload" parent="." instance=ExtResource("3_w60un")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 5
+offset_left = 204.0
+offset_top = -203.0
+offset_right = 673.0
+offset_bottom = 26.0
+texture = ExtResource("38_guork")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h8qdn")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_q6xsg")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="enter_woz_house" from="WozTeahouse/ShojiDoor" to="." method="_on_shoji_door_enter_woz_house"]
 [connection signal="barb_gallery_switch" from="BarbGallery/Gallery" to="." method="_on_gallery_barb_gallery_switch"]

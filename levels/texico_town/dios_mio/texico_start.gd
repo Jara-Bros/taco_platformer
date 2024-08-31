@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var taco: Player = $Taco
 @onready var camera_2d: Camera2D = $Taco/Camera2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var initialized_data : Dictionary = {}
 
@@ -20,6 +21,8 @@ func _ready():
 	if initialized_data.has("player_spawn_location") == false:
 		$Taco.position = player_spawn_location_dict["initial_spawn_location"]
 		$Taco.input_enabled = false
+		animation_player.play("transition_in")
+		await animation_player.animation_finished
 		Dialogic.start("taco_start_timeline")
 		await Dialogic.timeline_ended
 		$Taco.input_enabled = true
