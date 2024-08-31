@@ -16,5 +16,8 @@ func _ready() -> void:
 	Dialogic.start("bleu_bed_convo_timeline")
 	bleu_sprite.frame = 1
 	await Dialogic.timeline_ended
+	Dialogic.start("bleu_bed_convo_2_timeline")
+	animation_player.play("black_on")
+	await Dialogic.timeline_ended
 	SceneManager.set_initial_scene("DiosMio")
 	

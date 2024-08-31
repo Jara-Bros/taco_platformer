@@ -1,21 +1,7 @@
 [style name="text_only_style"]
-[wait time="1.5"]
-manager: TABLE 14 BEEN WAITING\
-AN HOUR FOR THEIR FOOD.
-[wait time="1.0"]
-manager: Wake up Jeff.
+[wait time="0.5"]
+manager (manager_default): Wake up Jeff.
 manager: I'm gonna need hands\
 on this one.
-[wait time="0.5"]
-jeff: You got it.
-[wait time="1.0"]
-manager: Jeff.
-manager: Why aren't you wearing shoes?
-[wait time="0.5"]
-jeff: Decided to let the\
-dogs out.
-manager: What?
-jeff: Toes. They need fresh air\
-from time to time.
 [wait time="0.5"]
 [end_timeline]

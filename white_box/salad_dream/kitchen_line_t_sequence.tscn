@@ -69,8 +69,53 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytc6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6xy")
 }],
-"loop": true,
+"loop": false,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -198,11 +243,13 @@ frame_progress = 0.604058
 
 [node name="Sous" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(80, 456)
+position = Vector2(160, 456)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_dtic1")
 animation = &"talk"
 autoplay = "talk"
+frame = 16
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

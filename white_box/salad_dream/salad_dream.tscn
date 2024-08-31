@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwhaeqd7lapce"]
+[gd_scene load_steps=37 format=3 uid="uid://dwhaeqd7lapce"]
 
 [ext_resource type="Script" path="res://white_box/salad_dream/salad_dream.gd" id="1_2ru35"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_diydj"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://white_box/salad_dream/order_checker.gd" id="16_7ep5r"]
 [ext_resource type="Texture2D" uid="uid://dh4yvs7tjbhpj" path="res://white_box/salad_dream/restaurant_kichen.jpg" id="17_dtyhd"]
 [ext_resource type="AudioStream" uid="uid://cqbfy3mqops5u" path="res://audio/sfx/Kitchen printer sounds..mp3" id="20_mwu3j"]
+[ext_resource type="AudioStream" uid="uid://dysrumuro1w4k" path="res://audio/sfx/Kitchen Ambience Sound Effect.mp3" id="21_63105"]
 
 [sub_resource type="Resource" id="Resource_3ca7g"]
 script = ExtResource("3_wm0u2")
@@ -86,6 +87,67 @@ size = Vector2(38, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rklou"]
 size = Vector2(28, 172)
+
+[sub_resource type="Animation" id="Animation_mtcek"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_27bjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g73c2"]
+_data = {
+"RESET": SubResource("Animation_27bjs"),
+"fade_in": SubResource("Animation_mtcek")
+}
 
 [node name="SaladDream" type="Node2D"]
 script = ExtResource("1_2ru35")
@@ -328,7 +390,27 @@ shape = SubResource("RectangleShape2D_rklou")
 
 [node name="KitchenPrinterSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_mwu3j")
+volume_db = -3.0
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_63105")
+volume_db = 3.0
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_left = -167.0
+offset_top = -306.0
+offset_right = 477.0
+offset_bottom = 59.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g73c2")
+}
 
 [connection signal="timeout" from="OrderLine/Timer" to="OrderLine" method="_on_timer_timeout"]
 [connection signal="body_entered" from="IngredientBoxes/KaleBox/Area2D" to="IngredientBoxes/KaleBox/Area2D" method="_on_body_entered"]

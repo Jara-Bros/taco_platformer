@@ -1,0 +1,4 @@
+[style name="text_only_style"]
+bleu: Buenas noches.
+[wait time="1.7"]
+[end_timeline]

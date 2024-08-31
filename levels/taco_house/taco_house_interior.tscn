@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4qak7yy0h56v"]
+[gd_scene load_steps=12 format=3 uid="uid://c4qak7yy0h56v"]
 
 [ext_resource type="Texture2D" uid="uid://c1agfylelnpg7" path="res://levels/texico_town/sprites/Screenshot_2024-07-03_160116-removebg-preview.png" id="1_3cw0y"]
 [ext_resource type="Texture2D" uid="uid://c1l3qd8mjlyid" path="res://levels/taco_house/Guitar-Silhouette-colored.png" id="1_04snp"]
@@ -7,6 +7,43 @@
 [ext_resource type="Texture2D" uid="uid://dqg5g7r27tok5" path="res://levels/texico_town/sprites/gold_chip.png" id="2_uhuqb"]
 [ext_resource type="Texture2D" uid="uid://dschno6fcsu5f" path="res://tBleu/sprites/bleu_bedroom_sheet.png" id="5_845xr"]
 [ext_resource type="Texture2D" uid="uid://bc1bksntalgsm" path="res://taco/sprites/taco_woke_up.png" id="6_d72ys"]
+[ext_resource type="AudioStream" uid="uid://dfhpo0gx0l5ml" path="res://audio/sfx/nighttime_sfx.mp3" id="8_akciq"]
+
+[sub_resource type="Animation" id="Animation_o8oea"]
+resource_name = "black_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect8:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_pmvyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect8:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43f1d"]
+_data = {
+"RESET": SubResource("Animation_pmvyy"),
+"black_on": SubResource("Animation_o8oea")
+}
 
 [node name="TacoHouseInterior" type="Node2D"]
 script = ExtResource("1_baqvg")
@@ -109,3 +146,19 @@ texture = ExtResource("6_d72ys")
 flip_h = true
 hframes = 3
 frame = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_akciq")
+autoplay = true
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_right = 1305.0
+offset_bottom = 730.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_43f1d")
+}

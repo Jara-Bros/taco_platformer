@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c612sst2ruwnf"]
+[gd_scene load_steps=76 format=3 uid="uid://c612sst2ruwnf"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ey8kf"]
 [ext_resource type="Script" path="res://levels/jungle_level/jungle_level.gd" id="1_g1na8"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://fqb0bcrum7pf" path="res://land/jungle/block_grass.png" id="23_uet2e"]
 [ext_resource type="PackedScene" uid="uid://bj2oftpiuv11t" path="res://platforms/circle_platform/circle_platform.tscn" id="24_5w2fs"]
 [ext_resource type="Texture2D" uid="uid://crmdbktkvij12" path="res://land/jungle/block_outline.png" id="24_7l7ns"]
+[ext_resource type="Texture2D" uid="uid://d4bwjhkd2ym1o" path="res://platforms/jungle/surfb_3.png" id="26_at0eu"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="28_fis8l"]
 [ext_resource type="Texture2D" uid="uid://7gjjo1jf14fw" path="res://levels/jungle_level/sprites/beetle-chrysolina-fastuosa-bright-colorful-beetle-sticker-ub2df-x450-removebg-preview.png" id="29_yrsds"]
 [ext_resource type="Texture2D" uid="uid://dvd5yngh8se7o" path="res://levels/jungle_level/sprites/pngimg.com - bear_PNG1187.png" id="31_w7xyq"]
@@ -198,6 +199,18 @@ _data = {
 "move": SubResource("Animation_0bmt5")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd67m"]
+size = Vector2(116, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxrs3"]
+size = Vector2(102, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4xg5"]
+size = Vector2(126, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl6ms"]
+size = Vector2(179, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sojpg"]
 size = Vector2(132, 8)
 
@@ -305,7 +318,7 @@ radius = 21.0
 script = ExtResource("1_g1na8")
 
 [node name="Taco" parent="." instance=ExtResource("1_ey8kf")]
-position = Vector2(511, -426)
+position = Vector2(515, -506)
 
 [node name="SoccerBall" parent="." instance=ExtResource("3_nl3sv")]
 position = Vector2(236, -26)
@@ -747,15 +760,48 @@ position = Vector2(-111, -7)
 [node name="StaticPlatform4" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2191, 275)
 
+[node name="Sprite2D" type="Sprite2D" parent="StaticPlatform4"]
+rotation = 1.54848
+scale = Vector2(0.229775, 0.341529)
+texture = ExtResource("26_at0eu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticPlatform4"]
+shape = SubResource("RectangleShape2D_pd67m")
+one_way_collision = true
+
 [node name="StaticPlatform6" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2153, 215)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticPlatform6"]
+position = Vector2(-12, 0)
+shape = SubResource("RectangleShape2D_nxrs3")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticPlatform6"]
+rotation = 1.55701
+scale = Vector2(0.178994, 0.253361)
+texture = ExtResource("26_at0eu")
 
 [node name="StaticPlatform5" parent="." instance=ExtResource("12_4mwl0")]
 position = Vector2(-2220, 342)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticPlatform5"]
+shape = SubResource("RectangleShape2D_l4xg5")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticPlatform5"]
+position = Vector2(1, -9.53674e-07)
+rotation = 1.5665
+scale = Vector2(0.210829, 0.354992)
+texture = ExtResource("26_at0eu")
+
 [node name="TrapPlatform" parent="." instance=ExtResource("12_4mwl0")]
-position = Vector2(-1844, 120)
+position = Vector2(-872, 110)
 script = ExtResource("12_1rtoe")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TrapPlatform"]
+position = Vector2(-963, 0)
+shape = SubResource("RectangleShape2D_gl6ms")
 
 [node name="Area2D" type="Area2D" parent="TrapPlatform"]
 position = Vector2(-4, -9)

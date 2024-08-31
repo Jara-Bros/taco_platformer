@@ -28,9 +28,9 @@ expand_mode = 1
 [node name="TextureRect3" type="TextureRect" parent="."]
 z_index = 1
 offset_left = -1504.0
-offset_top = -1528.0
+offset_top = -1512.0
 offset_right = 1664.0
-offset_bottom = 104.0
+offset_bottom = 120.0
 texture = ExtResource("1_v5ys0")
 expand_mode = 1
 
