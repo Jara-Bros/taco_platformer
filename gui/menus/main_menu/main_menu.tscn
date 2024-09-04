@@ -93,7 +93,7 @@ tracks/1/path = NodePath("ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.25, 3, 5.5),
+"times": PackedFloat32Array(0, 2.25, 3, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true]
@@ -105,7 +105,7 @@ tracks/2/path = NodePath("ColorRect2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.25, 4.25, 5.5),
+"times": PackedFloat32Array(0, 2.25, 4.25, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true]
@@ -227,7 +227,7 @@ theme_override_fonts/font = ExtResource("1_4l72j")
 theme_override_font_sizes/font_size = 30
 text = "\"CHIPS FOR HIRE\""
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginMainMenuContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,11 +241,11 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginMainMenuContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginMainMenuContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.313726, 0.00392157, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -254,7 +254,7 @@ theme_override_font_sizes/font_size = 65
 text = "TACO&"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginMainMenuContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.435294, 0, 1, 1)
 theme_override_fonts/font = ExtResource("1_4l72j")
@@ -262,12 +262,12 @@ theme_override_font_sizes/font_size = 65
 text = "BLEU"
 horizontal_alignment = 1
 
-[node name="ButtonVBox" type="VBoxContainer" parent="MarginContainer"]
+[node name="ButtonVBox" type="VBoxContainer" parent="MarginMainMenuContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="StartButton" type="Button" parent="MarginContainer/ButtonVBox"]
+[node name="StartButton" type="Button" parent="MarginMainMenuContainer/ButtonVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -281,7 +281,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tflom")
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/ButtonVBox"]
+[node name="QuitButton" type="Button" parent="MarginMainMenuContainer/ButtonVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -294,12 +294,12 @@ theme_override_fonts/font = ExtResource("3_exrli")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="MarginMainMenuContainer"]
 position = Vector2(270, 600)
 scale = Vector2(9, 9)
 texture = ExtResource("5_33bxb")
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer"]
+[node name="Sprite2D2" type="Sprite2D" parent="MarginMainMenuContainer"]
 position = Vector2(958, 583)
 scale = Vector2(9, 9)
 texture = ExtResource("6_b2xwb")
@@ -308,5 +308,5 @@ flip_h = true
 [node name="SplashPages" parent="." instance=ExtResource("12_7oxl1")]
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginMainMenuContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginMainMenuContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]

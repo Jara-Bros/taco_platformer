@@ -17,7 +17,7 @@
 "portraits": {
 "manager_default": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/manager/manager.png\""
+"image": "\"res://NPC/sprites/manager/manager_portrait.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -10,7 +10,7 @@ size = Vector2(30, 9)
 radius = 9.0
 
 [node name="KaleLeaf" type="RigidBody2D" groups=["ingredient"]]
-collision_layer = 8
+collision_layer = 32
 collision_mask = 8
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]

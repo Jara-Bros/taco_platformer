@@ -10,7 +10,7 @@ size = Vector2(32, 10)
 radius = 8.06226
 
 [node name="Cheese" type="RigidBody2D" groups=["ingredient"]]
-collision_layer = 136
+collision_layer = 128
 collision_mask = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
