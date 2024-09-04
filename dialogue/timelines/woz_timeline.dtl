@@ -1,6 +1,7 @@
+[style name="woz_style"]
 join woz 3
-woz (woz_happy): Good afternoon!
-woz (woz_default): Sir, how can I be of service?
+woz (woz_happy): Hello, Gentleman.
+woz (woz_default): How may the Woz be of service?
 - Tea
 	woz (woz_happy): Of course. Did you bring the water?
 	[end_timeline]

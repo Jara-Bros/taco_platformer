@@ -6,7 +6,6 @@ extends Node2D
 @onready var order_ticket_no_dressing = preload("res://white_box/salad_dream/order_ticket_no_dressing.tscn")
 @onready var order_ticket_no_kale = preload("res://white_box/salad_dream/order_ticket_no_kale.tscn")
 
-# var order_dictionary = {}
 
 func _on_timer_timeout() -> void:
 	
@@ -16,6 +15,7 @@ func _on_timer_timeout() -> void:
 		0:
 			var no_chz = order_ticket_no_chz.instantiate()
 			get_child(1).add_child(no_chz)
+			
 		1:
 			var xdressing = order_ticket_xdressing.instantiate()
 			get_child(1).add_child(xdressing)

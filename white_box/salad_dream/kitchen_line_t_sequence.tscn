@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2ws85mymqjvb"]
+[gd_scene load_steps=19 format=3 uid="uid://d2ws85mymqjvb"]
 
 [ext_resource type="Script" path="res://white_box/salad_dream/kitchen_line_t_sequence.gd" id="1_btbis"]
 [ext_resource type="Texture2D" uid="uid://dh4yvs7tjbhpj" path="res://white_box/salad_dream/restaurant_kichen.jpg" id="1_h8nhx"]
 [ext_resource type="Texture2D" uid="uid://34db2sheef44" path="res://taco/sprites/taco_restaurant_animation_sheet.png" id="2_qdbdb"]
 [ext_resource type="Texture2D" uid="uid://bh76uw1rlv0b0" path="res://NPC/sprites/sous/sous.png" id="4_h8nr8"]
+[ext_resource type="AudioStream" uid="uid://dysrumuro1w4k" path="res://audio/sfx/Kitchen Ambience Sound Effect.mp3" id="5_n1o1i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s51xb"]
 atlas = ExtResource("2_qdbdb")
@@ -255,3 +256,7 @@ frame_progress = 1.0
 libraries = {
 "": SubResource("AnimationLibrary_ox4g4")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n1o1i")
+autoplay = true

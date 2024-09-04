@@ -1,6 +1,6 @@
 extends Control
 
-@onready var button_v_box: VBoxContainer = $MarginContainer/ButtonVBox
+@onready var button_v_box: VBoxContainer = $MarginMainMenuContainer/ButtonVBox
 @onready var animation_player: AnimationPlayer = $ActTransition/AnimationPlayer
 
 func _ready() -> void:

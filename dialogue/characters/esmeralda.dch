@@ -8,28 +8,28 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "esmeralda_happy",
+"default_portrait": "happy",
 "description": "",
 "display_name": "Esmeralda",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"esmeralda_happy": {
+"happy": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/esmeralda/esmeralda_happy.png\""
+"image": "\"res://NPC/sprites/esmeralda/esmeralda_happy_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 10),
-"scale": 1.0,
+"offset": Vector2(0, 0),
+"scale": 1,
 "scene": ""
 },
-"esmeralda_smile": {
+"smile": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/esmeralda/esmeralda_smile.png\""
+"image": "\"res://NPC/sprites/esmeralda/esmeralda_smile_portrait.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 10),
+"offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 }

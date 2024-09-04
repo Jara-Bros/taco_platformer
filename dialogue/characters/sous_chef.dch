@@ -8,12 +8,22 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "",
+"default_portrait": "default",
 "description": "",
 "display_name": "Sous Chef",
 "mirror": false,
 "nicknames": ["Su"],
 "offset": Vector2(0, 0),
-"portraits": {},
+"portraits": {
+"default": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/sous/sous_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+}
+},
 "scale": 1.0
 }
