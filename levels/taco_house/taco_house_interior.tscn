@@ -128,6 +128,11 @@ position = Vector2(951, 630)
 scale = Vector2(0.732258, 0.557214)
 texture = ExtResource("2_iu0yl")
 
+[node name="TortillaMoon" type="Sprite2D" parent="Nightsky"]
+position = Vector2(1001, 179)
+scale = Vector2(0.55, 0.517094)
+texture = ExtResource("10_sik0d")
+
 [node name="MountainChip" type="Sprite2D" parent="."]
 modulate = Color(0.647059, 0.639216, 1, 1)
 z_index = 3
@@ -232,7 +237,3 @@ color = Color(0, 0, 0, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(651, 430)
 zoom = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1036, 103)
-texture = ExtResource("10_sik0d")
