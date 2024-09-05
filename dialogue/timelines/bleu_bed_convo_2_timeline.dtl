@@ -1,4 +1,5 @@
 [style name="text_only_style"]
+bleu: But not tonight.
 bleu: Buenas noches.
-[wait time="1.7"]
+[wait time="1.0"]
 [end_timeline]

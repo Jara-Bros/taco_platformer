@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di5kh7d10sq6a"
-path="res://.godot/imported/sous_portrait.png-97dfe0f219ba19e4dcc13e3d7ad05388.ctex"
+uid="uid://bj1sq2r2j13fc"
+path="res://.godot/imported/sous_angry.png-c3f67527fadd2ddf57354f18c008ea87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/sous/sous_portrait.png"
-dest_files=["res://.godot/imported/sous_portrait.png-97dfe0f219ba19e4dcc13e3d7ad05388.ctex"]
+source_file="res://NPC/sprites/sous/sous_angry.png"
+dest_files=["res://.godot/imported/sous_angry.png-c3f67527fadd2ddf57354f18c008ea87.ctex"]
 
 [params]
 

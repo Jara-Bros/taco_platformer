@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://xlos1drbcyvw"]
+
+[ext_resource type="PackedScene" uid="uid://cos6tnjxn68bl" path="res://platforms/chips/orange_chip.tscn" id="1_wps33"]
+[ext_resource type="PackedScene" uid="uid://b5obv2chr5j4v" path="res://platforms/chips/purple_chip.tscn" id="2_fh6kn"]
+
+[node name="TBChipHammocks" type="Node"]
+
+[node name="OrangeChip" parent="." instance=ExtResource("1_wps33")]
+z_index = 3
+position = Vector2(619.83, -102.405)
+rotation = 4.80415
+scale = Vector2(0.116015, 0.132596)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 613.83
+offset_top = -173.405
+offset_right = 615.83
+offset_bottom = -105.405
+rotation = 0.162595
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 654.83
+offset_top = -175.405
+offset_right = 656.83
+offset_bottom = -107.405
+rotation = 0.162595
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 614.83
+offset_top = -177.405
+offset_right = 616.83
+offset_bottom = -109.405
+rotation = -0.30193
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 654.83
+offset_top = -177.405
+offset_right = 656.83
+offset_bottom = -109.405
+rotation = -0.30193
+color = Color(0, 0, 0, 1)
+
+[node name="PurpleChip" parent="." instance=ExtResource("2_fh6kn")]
+z_index = 2
+position = Vector2(661.83, -105.405)
+rotation = 4.69083
+scale = Vector2(0.107275, 0.1268)

@@ -1,0 +1,4 @@
+[style name="text_only_style"]
+mr_p (manager_default): Would you like to go back\
+to dish washing? [aa == 2]
+[end_timeline]

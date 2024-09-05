@@ -1,7 +1,5 @@
 [style name="text_only_style"]
-sous_chef: How those salads\
-lookin' T?
-sous_chef: You're not lost in\
-the weeds, right?
+sous: How those salads lookin' T?
+sous: You're not lost in the weeds, right?
 [wait time="1.0"]
 [end_timeline]

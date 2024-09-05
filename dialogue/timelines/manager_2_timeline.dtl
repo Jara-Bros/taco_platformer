@@ -1,7 +1,7 @@
 [style name="text_only_style"]
 [wait time="0.5"]
-manager (manager_default): Wake up Jeff.
-manager: I'm gonna need hands\
+mr_p (manager_default): Wake up Jeff.
+mr_p: I'm gonna need hands\
 on this one.
 [wait time="0.5"]
 [end_timeline]
