@@ -15,9 +15,24 @@ func renable_kick():
 
 func _ready() -> void:
 	disable_kick()
-	Dialogic.start("manager_offscreen_1_timeline")
-	await Dialogic.timeline_ended
-	animation_player.play("fade_in")
+	animation_player.play("mr_p_talk_sequence")
+	await animation_player.animation_finished
+	animation_player.play("sous_talk_sequence")
 	await animation_player.animation_finished
 	renable_kick()
 	SceneManager.set_initial_scene("TacoHouse")
+
+func manager_talk_one():
+	Dialogic.start("manager_offscreen_1_timeline")
+	
+func manager_talk_two():
+	Dialogic.start("manager_offscreen_2_timeline")
+
+func sous_talk_one():
+	Dialogic.start("sous_offscreen")
+	
+func sous_talk_two():
+	Dialogic.start("sous_offscreen_2")
+
+func play_animation_fade_in():
+	animation_player.play("fade_in")
