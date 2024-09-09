@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://mrqmltca5exq"]
 
-[ext_resource type="Script" path="res://white_box/salad_dream/bowl_spawner.gd" id="1_825va"]
+[ext_resource type="Script" path="res://land/salad_dream/bowl_spawner.gd" id="1_825va"]
 
 [node name="BowlSpawner" type="Node2D"]
 script = ExtResource("1_825va")

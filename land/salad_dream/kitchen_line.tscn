@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgmgfg1awxob2"]
 
-[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://white_box/salad_dream/restaurant_kitchen_shelf.jpg" id="1_v5ys0"]
+[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://land/salad_dream/restaurant_kitchen_shelf.jpg" id="1_v5ys0"]
 [ext_resource type="Texture2D" uid="uid://dufh8wqw7l1xn" path="res://NPC/sprites/manager/manager.png" id="2_o6iq8"]
 
 [sub_resource type="GDScript" id="GDScript_4yi4y"]
