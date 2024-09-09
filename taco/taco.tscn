@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=22 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_jl8s6"]
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
 [ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="4_gmpc6"]
 [ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="4_ifdp2"]
@@ -201,14 +202,9 @@ collision_mask = 5
 floor_stop_on_slope = false
 floor_max_angle = 1.13446
 script = ExtResource("1_q403v")
-input_enabled = null
-ignore_camera = null
 speed = 200
 acceleration = 45
 jump_velocity = -400
-gravity = 980
-fallMultiplier = null
-lowJumpMultiplier = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
@@ -220,7 +216,12 @@ position = Vector2(0, 2)
 polygon = PackedVector2Array(-11, -5, -12, -2, -12, 3, -10, 4, -5, 4, -5, 11, 6, 11, 6, 4, 10, 4, 13, 3, 13, -2, 12, -5, 7, -10, -5, -10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
 zoom = Vector2(3, 3)
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("3_jl8s6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {

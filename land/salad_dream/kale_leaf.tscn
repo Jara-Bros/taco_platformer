@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cihntlm2ytl1s"]
 
-[ext_resource type="Texture2D" uid="uid://ckby2rfbt5olt" path="res://white_box/salad_dream/kale_leaf.png" id="1_ayahw"]
-[ext_resource type="Script" path="res://white_box/salad_dream/kale_remove_box.gd" id="2_afy37"]
+[ext_resource type="Texture2D" uid="uid://ckby2rfbt5olt" path="res://land/salad_dream/kale_leaf.png" id="1_ayahw"]
+[ext_resource type="Script" path="res://land/salad_dream/kale_remove_box.gd" id="2_afy37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ksy0"]
 size = Vector2(30, 9)

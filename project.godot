@@ -119,8 +119,8 @@ text/autocolor_names=true
 
 [display]
 
+window/size/initial_position_type=4
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor]
 
@@ -128,7 +128,7 @@ movie_writer/movie_file="C:/Users/nicoj/godot_projects/taco_and_bleu_proto/taco_
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [global_group]
 

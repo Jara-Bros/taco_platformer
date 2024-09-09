@@ -12,8 +12,7 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
-@export var gravity : int
-@export var fallMultiplier = 2 
+@export var fall_multiplier : float 
 @export var lowJumpMultiplier = 10 
 
 # Force for pushing rigid bodies
@@ -42,15 +41,13 @@ var prev_state
 @onready var taco: Player = $"."
 @onready var timer: Timer = $Timer
 
-
-
 var item = null
 
 var direction
 var player_facing
 var global_delta
 
-
+var gravity : float = 980.0
 
 
 
@@ -77,31 +74,35 @@ func _ready():
 #
 	#
 var old_velocity
+
+
 func _physics_process(delta: float) -> void:
+
 	if not input_enabled:
 		return
 	
+	
 	direction = Input.get_axis("move_left", "move_right")
 
-	# For walk and run speeds
-	velocity.y += gravity * delta
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	
 
-		#Jump Physics
-	#if velocity.y > 0: #Player is falling
-		#velocity.y +=  (-9.81) * (fallMultiplier) #Falling action is faster than jumping action | Like in mario
+	#Jump Physics
+	if velocity.y > 0: #Player is falling
+		velocity.y *= fall_multiplier #Falling action is faster than jumping action | Like in mario
 
-	#elif velocity.y < 0 && Input.is_action_just_released("ui_accept"): #Player is jumping 
-		#velocity.y +=  (-9.81) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
 
-	if is_on_floor():
-		#if current_state["movement"] == player_movement_state.IN_AIR:
-			#change_state("movement", player_movement_state.WALKING)
-		if Input.is_action_just_pressed("jump"): 
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y = jump_velocity / 4
+		
+	if Input.is_action_just_pressed("jump") and is_on_floor(): 
 			jump_fx.play()
 			velocity = Vector2.UP * -1 * jump_velocity #Normal Jump action
 			change_state(player_state.IN_AIR)
-			
+		
+
 
 	
 	if direction:
@@ -117,12 +118,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, acceleration)
 		else:
 			velocity.x = move_toward(velocity.x, 0, acceleration)
-		#change_state("lateral", player_lateral_movement_state.STILL)
-		#if not is_on_floor_only():
-			#velocity.x = move_toward(velocity.x, 0, 13)
-		#else:
-			#velocity.x = move_toward(velocity.x, 0, acceleration)
-#
+
 	move_and_slide()
 	
 	
@@ -155,60 +151,29 @@ func _physics_process(delta: float) -> void:
 		#buffer_timer.start()
 	#if current_state["vertical"] == player_vertical_movement_state.ON_GROUND:
 		#coyote_timer.start()
-		
-	
-
-
-	# Handles enable/disable TacoShoe collision box
-	#if is_on_floor():
-		#taco_shoes_collision.set_deferred("disabled", true)
-	#else:
-		#taco_shoes_collision.set_deferred("disabled", false)
 
 
 
-		
-		
-		
-	## Handle jump.
-	#if Input.is_action_pressed("jump") and current_state["vertical"] == player_vertical_movement_state.GOING_UP and variable_jump_height_timer.is_stopped() == false:
-		#jump_deceleration(delta, variable_jump_height_timer.time_left)
-	#
-	#if Input.is_action_just_pressed("jump") and is_on_floor_only():
-		#change_state("vertical", player_vertical_movement_state.GOING_UP)
-		#variable_jump_height_timer.start()
-		#jump_deceleration(delta, variable_jump_height_timer.time_left)
-		##change_state("vertical", player_vertical_movement_state.GOING_UP)
-		##velocity.y = jump_velocity
-		##if direction:
-			##velocity.x = direction * speed
-	#if Input.is_action_just_released("jump") and not is_on_floor_only():
-		#change_state("vertical", player_vertical_movement_state.FALLING_DOWN)
-		#move_toward(velocity.y ,0 , -500)
-		#velocity.y = 0
-	# Handle action
 	if Input.is_action_just_pressed("item"):
 		prev_state = current_state
 		current_state = player_state.KICKING
 		animation_player.play("kick")
 		if item != null:
-			#animation_player.play("kick")
 			item.kick()
 			item = null
 	if Input.is_action_just_pressed("bleu"):
 		
 		if item != null:
 			## TODO : ADD THROW ANIMATION
-			#animation_player.play("kick")
 			item.throw()
 			#item = null
 	if Input.is_action_just_pressed("ground_pound"):
 		# stick in ground
 		if item != null:
 			## TODO : ADD GROUND POUND ANIMATION
-			#animation_player.play("kick")
 			item.stick()
 			#item = null
+	
 	# Flip sprite
 	if direction > 0:
 		player_facing = 1
@@ -324,6 +289,7 @@ func save():
 	return save_dict
 
 
+# Removes card sprites above player
 func _on_timer_timeout() -> void:
 	sprite_2d.visible = false
 	yellow_red.visible = false

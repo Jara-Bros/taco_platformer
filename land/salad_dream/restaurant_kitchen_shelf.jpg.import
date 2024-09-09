@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4yvs7tjbhpj"
-path="res://.godot/imported/restaurant_kichen.jpg-45bc4b9223da84093882f3673848cb94.ctex"
+uid="uid://dvydnwcv1ff7o"
+path="res://.godot/imported/restaurant_kitchen_shelf.jpg-1c7ac14e566258b9b850fbe8a88e655e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://white_box/salad_dream/restaurant_kichen.jpg"
-dest_files=["res://.godot/imported/restaurant_kichen.jpg-45bc4b9223da84093882f3673848cb94.ctex"]
+source_file="res://land/salad_dream/restaurant_kitchen_shelf.jpg"
+dest_files=["res://.godot/imported/restaurant_kitchen_shelf.jpg-1c7ac14e566258b9b850fbe8a88e655e.ctex"]
 
 [params]
 

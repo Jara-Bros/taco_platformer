@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qhwi00jeo4si"
-path="res://.godot/imported/commercial_dishwasher_png.png-9955e3f72c7dcde1381cbfba3df6f3b9.ctex"
+uid="uid://dh4yvs7tjbhpj"
+path="res://.godot/imported/restaurant_kichen.jpg-622ae2c8fcef331e6d84e7a569354fa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://white_box/salad_dream/commercial_dishwasher_png.png"
-dest_files=["res://.godot/imported/commercial_dishwasher_png.png-9955e3f72c7dcde1381cbfba3df6f3b9.ctex"]
+source_file="res://land/salad_dream/restaurant_kichen.jpg"
+dest_files=["res://.godot/imported/restaurant_kichen.jpg-622ae2c8fcef331e6d84e7a569354fa9.ctex"]
 
 [params]
 
