@@ -749,7 +749,7 @@ func _check_visibility() -> void:
 #region Public Functions
 
 ## Updates the limit sides based what has been set to define it
-## This should be automatic, but can be called manully if need be.
+## This should be automatic, but can be called manually if need be.
 func update_limit_all_sides() -> void:
 	var limit_rect: Rect2
 

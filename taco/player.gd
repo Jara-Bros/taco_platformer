@@ -12,8 +12,6 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
-@export var fall_multiplier : float 
-@export var lowJumpMultiplier = 10 
 
 # Force for pushing rigid bodies
 @export var push_force : int
@@ -47,8 +45,8 @@ var direction
 var player_facing
 var global_delta
 
-var gravity : float = 980.0
-
+const GRAVITY := 980
+const FALL_GRAVITY := 1750
 
 
 # Counter for yellow card hits
@@ -71,9 +69,11 @@ func _ready():
 	#if Input.is_action_just_pressed("jump") and velocity.y > 0 and coyote_timer.is_stopped() == false:
 		#jump_deceleration(global_delta, variable_jump_height_timer.wait_time)
 	##
-#
-	#
-var old_velocity
+
+func _get_gravity(velocity: Vector2):
+	if velocity.y < 0:
+		return GRAVITY
+	return FALL_GRAVITY
 
 
 func _physics_process(delta: float) -> void:
@@ -86,15 +86,8 @@ func _physics_process(delta: float) -> void:
 
 	
 	if not is_on_floor():
-		velocity.y += gravity * delta
-	
-
-	#Jump Physics
-	if velocity.y > 0: #Player is falling
-		velocity.y *= fall_multiplier #Falling action is faster than jumping action | Like in mario
-
-
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y += _get_gravity(velocity) * delta
+		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y = jump_velocity / 4
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
