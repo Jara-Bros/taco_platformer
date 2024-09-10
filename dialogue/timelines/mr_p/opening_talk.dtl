@@ -1,0 +1,23 @@
+[style name="vn_style"]
+join mr_p 3
+join jeff 1
+[wait time="2.0"]
+join mr_p (mr_p_speechless) 3
+[wait time="1.0"]
+join mr_p (mr_p_look_p) 3
+[wait time="1.0"]
+mr_p (mr_p_shout_left): STATIONS PREPPED NOW!
+mr_p (mr_p_shout_right): WE GOT 300 ON THE BOOKS!
+jeff (jeff_talk_flip): What?
+join jeff (jeff_idle_flip) 1
+mr_p (mr_p_look_left_angry): What do you mean what?
+mr_p (mr_p_look_left_angry): Don't you work here?
+join mr_p (mr_p_look_left_angry_listening) 3
+jeff (jeff_talk_flip): Only on days that end in y.
+join jeff (jeff_idle_flip) 1
+[wait time="1.0"]
+mr_p (mr_p_look_up_quiet): Oh no.
+mr_p (mr_p_look_up_quiet): It's here.
+[wait time="0.5"]
+join mr_p (mr_p_quiet) 3
+[wait time="1.0"]

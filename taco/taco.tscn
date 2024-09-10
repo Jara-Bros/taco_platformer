@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=21 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_jl8s6"]
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
 [ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="4_gmpc6"]
 [ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="4_ifdp2"]
@@ -204,7 +203,7 @@ floor_max_angle = 1.13446
 script = ExtResource("1_q403v")
 speed = 200
 acceleration = 45
-jump_velocity = -400
+jump_velocity = -350
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
@@ -217,11 +216,15 @@ polygon = PackedVector2Array(-11, -5, -12, -2, -12, 3, -10, 4, -5, 4, -5, 11, 6,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
+offset = Vector2(0, -25)
 zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.6
+drag_right_margin = 0.15
 editor_draw_limits = true
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("3_jl8s6")
+editor_draw_drag_margin = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["Player"]]
 libraries = {
@@ -238,7 +241,7 @@ shape = SubResource("RectangleShape2D_seodx")
 
 [node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_rgfs5")
-volume_db = -4.0
+volume_db = -80.0
 
 [node name="Whistle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ifdp2")

@@ -29,7 +29,6 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
 InteractionManager="*res://interaction/interaction_manager/interaction_manager.tscn"
 PersistantDataHandler="*res://autoloads/persistent_data_handler/persistance_data.tscn"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [dialogic]
 
@@ -76,6 +75,7 @@ directories/dtl_directory={
 "manager_offscreen_1_timeline": "res://dialogue/timelines/manager_offscreen_1_timeline.dtl",
 "manager_offscreen_2_timeline": "res://dialogue/timelines/manager_offscreen_2_timeline.dtl",
 "manager_timeline": "res://dialogue/timelines/manager_timeline.dtl",
+"opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
 "sous_offscreen": "res://dialogue/timelines/sous_offscreen_1.dtl",
@@ -116,6 +116,7 @@ choices/hotkey_behaviour=1
 text/autoadvance_enabled=false
 text/autoadvance_fixed_delay=0.5
 text/autocolor_names=true
+animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_out.gd"
 
 [display]
 
@@ -128,7 +129,7 @@ movie_writer/movie_file="C:/Users/nicoj/godot_projects/taco_and_bleu_proto/taco_
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
 
 [global_group]
 
