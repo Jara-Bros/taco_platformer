@@ -1,0 +1,47 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0, 0.988281, 0.362885, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "vn_style"
+},
+"default_portrait": "host_idle",
+"description": "",
+"display_name": "Coli",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, -10),
+"portraits": {
+"host_idle": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/ezzy_staff/ezzy_host_idle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1.0,
+"scene": ""
+},
+"host_oh": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/ezzy_staff/ezzy_host_oh.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"host_talk": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/ezzy_staff/ezzy_host_talk.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.8
+}
