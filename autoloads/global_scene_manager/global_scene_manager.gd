@@ -4,8 +4,9 @@ class_name GlobalSceneManager
 # A collection of scenes in the game. Scenes are added via Inspector.
 @export var scenes : Dictionary = {}
 
-# A arbitary dict that stores data when switching scenes
+# An arbitary dict that stores data when switching scenes
 
+var persistent_data : Dictionary = {}
 
 # Alias of the currently selected scene
 var current_scene_alias : String = ""
@@ -40,7 +41,7 @@ func set_initial_scene(scene_alias : String) -> void:
 	PersistantDataHandler.initialize_scene(scene_alias)
 	
 func is_scene_initialized(scene):
-	return PersistantDataHandler.is_	
+	return PersistantDataHandler.is_scene_in_data(scene)	
 	
 func get_transfer_data(scene):
 	return PersistantDataHandler.get_scene_data(scene)

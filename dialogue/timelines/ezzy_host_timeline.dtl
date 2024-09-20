@@ -1,0 +1,8 @@
+join ezzy_host (host_idle) 3
+ezzy_host: * hummming *
+ezzy_host (host_oh): hm?
+[signal arg="hungry_mob"]
+ezzy_host (host_idle): (Those guys look pretty hungry!)
+[wait time="3.0"]
+ezzy_host (host_talk): Hi, welcome to Ez-
+[signal arg="mob_blast"]
