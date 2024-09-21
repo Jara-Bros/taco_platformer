@@ -22,5 +22,4 @@ mr_p (mr_p_look_up_quiet): It's here.
 [wait time="0.5"]
 join mr_p (mr_p_quiet) 3
 [wait time="1.0"]
-[signal arg="switch_to_front"]
 [end_timeline]

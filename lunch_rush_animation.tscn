@@ -236,14 +236,15 @@ hframes = 2
 
 [node name="HostWall" type="TextureRect" parent="Front"]
 visible = false
+z_index = 2
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_xny67")
 
-[node name="HostStand" type="Sprite2D" parent="Front"]
+[node name="HostStand" type="Sprite2D" parent="Front/HostWall"]
 visible = false
-position = Vector2(210, 142)
-scale = Vector2(3.90625, 2.25)
+position = Vector2(174, 141)
+scale = Vector2(2.17187, 1.64583)
 texture = ExtResource("7_62ys6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
