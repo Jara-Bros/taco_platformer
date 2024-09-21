@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckgols7uhfjf3"]
+[gd_scene load_steps=16 format=3 uid="uid://ckgols7uhfjf3"]
 
 [ext_resource type="Texture2D" uid="uid://cea6ofeqxpfvj" path="res://animation/kitchen_bg.png" id="1_ftknp"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_animation.gd" id="1_kqxat"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://2r2lhoxipq0e" path="res://NPC/sprites/empanada_twins/empanada_twin_1.png" id="6_x5llh"]
 [ext_resource type="Texture2D" uid="uid://bli1dq2e826u2" path="res://levels/lunch_rush_level/sprites/kitchen_bg_2.png" id="6_xny67"]
 [ext_resource type="Texture2D" uid="uid://brd1po2ehaeac" path="res://levels/lunch_rush_level/sprites/host_stand.png" id="7_62ys6"]
+[ext_resource type="Texture2D" uid="uid://s76nh7tfxyig" path="res://NPC/sprites/ezzy_staff/ezzy_host_sheet.png" id="9_v7tta"]
+[ext_resource type="Texture2D" uid="uid://ttndphthfgi2" path="res://animation/mob_far/mob_far_sheet.png" id="10_8s55l"]
 
 [sub_resource type="Animation" id="Animation_a4o16"]
 length = 0.001
@@ -94,6 +96,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MobFar:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("MobFar:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_qcx07"]
@@ -188,11 +214,40 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_fe6v7"]
+resource_name = "mob_far"
+length = 1.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MobFar:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MobFar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_elusg"]
 _data = {
 "RESET": SubResource("Animation_a4o16"),
 "empanada_walk": SubResource("Animation_qcx07"),
-"ezzy_front_transition": SubResource("Animation_2d5tc")
+"ezzy_front_transition": SubResource("Animation_2d5tc"),
+"mob_far": SubResource("Animation_fe6v7")
 }
 
 [node name="LunchRushAnimation" type="Node2D"]
@@ -217,17 +272,20 @@ expand_mode = 1
 [node name="BG" type="Node" parent="."]
 
 [node name="RestaurantWall" type="TextureRect" parent="BG"]
+visible = false
 z_index = -1
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("1_ftknp")
 
 [node name="Clock" type="Sprite2D" parent="BG"]
+visible = false
 position = Vector2(105, 77)
 texture = ExtResource("3_wwocd")
 hframes = 2
 
 [node name="PrepSign" type="Sprite2D" parent="BG"]
+visible = false
 position = Vector2(164, 80)
 texture = ExtResource("5_hrxa5")
 hframes = 2
@@ -235,16 +293,14 @@ hframes = 2
 [node name="Front" type="Node" parent="."]
 
 [node name="HostWall" type="TextureRect" parent="Front"]
-visible = false
-z_index = 2
+z_index = -2
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_xny67")
 
 [node name="HostStand" type="Sprite2D" parent="Front/HostWall"]
-visible = false
-position = Vector2(174, 141)
-scale = Vector2(2.17187, 1.64583)
+position = Vector2(176, 141)
+scale = Vector2(1.83594, 1.32291)
 texture = ExtResource("7_62ys6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -254,6 +310,7 @@ libraries = {
 autoplay = "ezzy_front_transition"
 
 [node name="EmpanadaTwin" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(302, 153)
 texture = ExtResource("6_x5llh")
 hframes = 4
@@ -262,3 +319,16 @@ hframes = 4
 physics_interpolation_mode = 2
 position = Vector2(149, 120)
 zoom = Vector2(6, 6)
+
+[node name="Coli" type="Sprite2D" parent="."]
+position = Vector2(182, 113)
+texture = ExtResource("9_v7tta")
+hframes = 3
+
+[node name="MobFar" type="Sprite2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(143, 118)
+scale = Vector2(0.728125, 0.672222)
+texture = ExtResource("10_8s55l")
+hframes = 3
