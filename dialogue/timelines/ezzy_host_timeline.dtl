@@ -1,6 +1,8 @@
-join ezzy_host (host_idle) 3
-ezzy_host: * hummming *
+join ezzy_host 3
+[wait time="2.0"]
+ezzy_host (host_idle): * hummming *
 ezzy_host (host_oh): hm?
+[wait time="2.0"]
 [signal arg="hungry_mob"]
 ezzy_host (host_idle): (Those guys look pretty hungry!)
 [wait time="3.0"]

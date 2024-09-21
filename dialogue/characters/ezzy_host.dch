@@ -13,7 +13,7 @@
 "display_name": "Coli",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, -10),
+"offset": Vector2(-50, -100),
 "portraits": {
 "host_idle": {
 "export_overrides": {
@@ -43,5 +43,5 @@
 "scene": ""
 }
 },
-"scale": 0.8
+"scale": 0.6
 }
