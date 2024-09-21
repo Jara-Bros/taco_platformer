@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sphy7bdq827t"
-path="res://.godot/imported/ezzy_host_oh.png-e1e9b8b5ae8e261ba229a2ae64e5780c.ctex"
+uid="uid://ttndphthfgi2"
+path="res://.godot/imported/mob_far_sheet.png-186948bfe2a4a40bfeb070fdf0101ef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/ezzy_staff/ezzy_host_oh.png"
-dest_files=["res://.godot/imported/ezzy_host_oh.png-e1e9b8b5ae8e261ba229a2ae64e5780c.ctex"]
+source_file="res://animation/mob_far/mob_far_sheet.png"
+dest_files=["res://.godot/imported/mob_far_sheet.png-186948bfe2a4a40bfeb070fdf0101ef8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w74ywhdr2qwf"
-path="res://.godot/imported/ezzy_host_idle.png-aafddfe714b92513ddb0c6a9cba401e2.ctex"
+uid="uid://s76nh7tfxyig"
+path="res://.godot/imported/ezzy_host_sheet.png-93069076f7f6c1d8ca5bb1d4b39199e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/ezzy_staff/ezzy_host_idle.png"
-dest_files=["res://.godot/imported/ezzy_host_idle.png-aafddfe714b92513ddb0c6a9cba401e2.ctex"]
+source_file="res://NPC/sprites/ezzy_staff/ezzy_host_sheet.png"
+dest_files=["res://.godot/imported/ezzy_host_sheet.png-93069076f7f6c1d8ca5bb1d4b39199e8.ctex"]
 
 [params]
 
