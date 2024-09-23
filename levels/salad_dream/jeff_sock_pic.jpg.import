@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvydnwcv1ff7o"
-path="res://.godot/imported/restaurant_kitchen_shelf.jpg-1c7ac14e566258b9b850fbe8a88e655e.ctex"
+uid="uid://iyqr4q7x10lp"
+path="res://.godot/imported/jeff_sock_pic.jpg-bb9217b7ff5c8b6bb3bbe09afd2f6ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/restaurant_kitchen_shelf.jpg"
-dest_files=["res://.godot/imported/restaurant_kitchen_shelf.jpg-1c7ac14e566258b9b850fbe8a88e655e.ctex"]
+source_file="res://levels/salad_dream/jeff_sock_pic.jpg"
+dest_files=["res://.godot/imported/jeff_sock_pic.jpg-bb9217b7ff5c8b6bb3bbe09afd2f6ff4.ctex"]
 
 [params]
 

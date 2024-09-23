@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://on6woxr47sek"]
 
-[ext_resource type="Texture2D" uid="uid://blrcc7x0twdnr" path="res://land/salad_dream/salad_bowl.png" id="1_8fwqg"]
-[ext_resource type="Script" path="res://land/salad_dream/bowl_remove.gd" id="2_ldpg7"]
+[ext_resource type="Texture2D" uid="uid://blrcc7x0twdnr" path="res://levels/salad_dream/salad_bowl.png" id="1_8fwqg"]
+[ext_resource type="Script" path="res://levels/salad_dream/bowl_remove.gd" id="2_ldpg7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g6y1y"]
 friction = 0.5

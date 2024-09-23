@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qhwi00jeo4si"
-path="res://.godot/imported/commercial_dishwasher_png.png-07b795f6159b5aa6130f9af4671ef31c.ctex"
+uid="uid://blrcc7x0twdnr"
+path="res://.godot/imported/salad_bowl.png-e43a612a1dc3f7e2317dff02fd822083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/commercial_dishwasher_png.png"
-dest_files=["res://.godot/imported/commercial_dishwasher_png.png-07b795f6159b5aa6130f9af4671ef31c.ctex"]
+source_file="res://levels/salad_dream/salad_bowl.png"
+dest_files=["res://.godot/imported/salad_bowl.png-e43a612a1dc3f7e2317dff02fd822083.ctex"]
 
 [params]
 

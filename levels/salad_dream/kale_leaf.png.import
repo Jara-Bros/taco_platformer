@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4fwito8un8wv"
-path="res://.godot/imported/shredded_cheese.png-e524fa521e14141e137a0d732e85eaa1.ctex"
+uid="uid://ckby2rfbt5olt"
+path="res://.godot/imported/kale_leaf.png-5cce42a2a082ec987e34978250b3e9c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/shredded_cheese.png"
-dest_files=["res://.godot/imported/shredded_cheese.png-e524fa521e14141e137a0d732e85eaa1.ctex"]
+source_file="res://levels/salad_dream/kale_leaf.png"
+dest_files=["res://.godot/imported/kale_leaf.png-5cce42a2a082ec987e34978250b3e9c9.ctex"]
 
 [params]
 

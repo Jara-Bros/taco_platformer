@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blrcc7x0twdnr"
-path="res://.godot/imported/salad_bowl.png-4dcbf2a3495b1deaf17457335a8bb647.ctex"
+uid="uid://dvydnwcv1ff7o"
+path="res://.godot/imported/restaurant_kitchen_shelf.jpg-d74d32c5c708e7b02ee7245855f03ca9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/salad_bowl.png"
-dest_files=["res://.godot/imported/salad_bowl.png-4dcbf2a3495b1deaf17457335a8bb647.ctex"]
+source_file="res://levels/salad_dream/restaurant_kitchen_shelf.jpg"
+dest_files=["res://.godot/imported/restaurant_kitchen_shelf.jpg-d74d32c5c708e7b02ee7245855f03ca9.ctex"]
 
 [params]
 

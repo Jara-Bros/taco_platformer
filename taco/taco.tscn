@@ -1,11 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2nvjfxk0ropj"]
+[gd_scene load_steps=15 format=3 uid="uid://d2nvjfxk0ropj"]
 
 [ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
 [ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
 [ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
-[ext_resource type="Texture2D" uid="uid://4lpyk64wyqt0" path="res://taco/sprites/yellow_red_card.png" id="4_gmpc6"]
-[ext_resource type="AudioStream" uid="uid://dxlsefp2pi2ks" path="res://audio/sfx/Whistle Sound Effect!.mp3" id="4_ifdp2"]
-[ext_resource type="PackedScene" uid="uid://bowc71pajomo6" path="res://gui/time_out/time_out_hand.tscn" id="6_5obt8"]
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -169,31 +166,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seodx"]
 size = Vector2(14, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1l0td"]
-atlas = ExtResource("4_gmpc6")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5lrb"]
-atlas = ExtResource("4_gmpc6")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xf45h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1l0td")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j5lrb")
-}],
-"loop": false,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
 [node name="Taco" type="CharacterBody2D" groups=["Persist", "Player"]]
 position = Vector2(0, -14)
 collision_layer = 2
@@ -243,39 +215,8 @@ shape = SubResource("RectangleShape2D_seodx")
 stream = ExtResource("3_rgfs5")
 volume_db = -80.0
 
-[node name="Whistle" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ifdp2")
-
-[node name="Timers" type="Node" parent="."]
-
-[node name="CoyoteTimer" type="Timer" parent="Timers"]
-wait_time = 0.1
-one_shot = true
-
-[node name="BufferTimer" type="Timer" parent="Timers"]
-wait_time = 0.1
-one_shot = true
-
-[node name="VariableJumpHeightTimer" type="Timer" parent="Timers"]
-wait_time = 0.07
-one_shot = true
-
-[node name="yellow_red" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -17)
-sprite_frames = SubResource("SpriteFrames_xf45h")
-animation = &"new_animation"
-
-[node name="TimeOutHand" parent="." instance=ExtResource("6_5obt8")]
-visible = false
-offset_left = 228.0
-offset_top = 5.0
-offset_right = 228.0
-offset_bottom = 5.0
-
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="TacoShoes" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-
-[editable path="TimeOutHand"]

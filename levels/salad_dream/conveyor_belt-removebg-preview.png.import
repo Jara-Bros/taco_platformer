@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckby2rfbt5olt"
-path="res://.godot/imported/kale_leaf.png-a4c3af8ce1bb2bca07ce01a443474a53.ctex"
+uid="uid://yll2p75ur0di"
+path="res://.godot/imported/conveyor_belt-removebg-preview.png-2e402666ae58a88f5b649d1a39ce885e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/kale_leaf.png"
-dest_files=["res://.godot/imported/kale_leaf.png-a4c3af8ce1bb2bca07ce01a443474a53.ctex"]
+source_file="res://levels/salad_dream/conveyor_belt-removebg-preview.png"
+dest_files=["res://.godot/imported/conveyor_belt-removebg-preview.png-2e402666ae58a88f5b649d1a39ce885e.ctex"]
 
 [params]
 

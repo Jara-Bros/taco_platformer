@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckgols7uhfjf3"]
+[gd_scene load_steps=18 format=3 uid="uid://ckgols7uhfjf3"]
 
 [ext_resource type="Texture2D" uid="uid://cea6ofeqxpfvj" path="res://animation/kitchen_bg.png" id="1_ftknp"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_animation.gd" id="1_kqxat"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bli1dq2e826u2" path="res://levels/lunch_rush_level/sprites/kitchen_bg_2.png" id="6_xny67"]
 [ext_resource type="Texture2D" uid="uid://brd1po2ehaeac" path="res://levels/lunch_rush_level/sprites/host_stand.png" id="7_62ys6"]
 [ext_resource type="Texture2D" uid="uid://s76nh7tfxyig" path="res://NPC/sprites/ezzy_staff/ezzy_host_sheet.png" id="9_v7tta"]
-[ext_resource type="Texture2D" uid="uid://ttndphthfgi2" path="res://animation/mob_far/mob_far_sheet.png" id="10_8s55l"]
+[ext_resource type="Texture2D" uid="uid://ttndphthfgi2" path="res://animation/mob/mob_far/mob_far_sheet.png" id="10_8s55l"]
+[ext_resource type="Texture2D" uid="uid://1u6nsn05t1fb" path="res://enemies/hungry_mob/hungry_mob.png" id="11_y283c"]
 
 [sub_resource type="Animation" id="Animation_a4o16"]
 length = 0.001
@@ -116,6 +117,30 @@ tracks/8/path = NodePath("MobFar:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("HungryMob:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 145)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("HungryMob:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -242,18 +267,48 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_63qoj"]
+resource_name = "mob_rush"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HungryMob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.46667, 1.76667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 145), Vector2(268, 149), Vector2(174, 141), Vector2(165, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HungryMob:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_elusg"]
 _data = {
 "RESET": SubResource("Animation_a4o16"),
 "empanada_walk": SubResource("Animation_qcx07"),
 "ezzy_front_transition": SubResource("Animation_2d5tc"),
-"mob_far": SubResource("Animation_fe6v7")
+"mob_far": SubResource("Animation_fe6v7"),
+"mob_rush": SubResource("Animation_63qoj")
 }
 
 [node name="LunchRushAnimation" type="Node2D"]
 script = ExtResource("1_kqxat")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
 offset_left = 53.0
 offset_top = 66.0
 offset_right = 245.0
@@ -307,7 +362,6 @@ texture = ExtResource("7_62ys6")
 libraries = {
 "": SubResource("AnimationLibrary_elusg")
 }
-autoplay = "ezzy_front_transition"
 
 [node name="EmpanadaTwin" type="Sprite2D" parent="."]
 visible = false
@@ -332,3 +386,9 @@ position = Vector2(143, 118)
 scale = Vector2(0.728125, 0.672222)
 texture = ExtResource("10_8s55l")
 hframes = 3
+
+[node name="HungryMob" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 145)
+scale = Vector2(0.690234, 0.71875)
+texture = ExtResource("11_y283c")

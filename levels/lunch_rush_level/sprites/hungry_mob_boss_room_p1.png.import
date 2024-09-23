@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4yvs7tjbhpj"
-path="res://.godot/imported/restaurant_kichen.jpg-622ae2c8fcef331e6d84e7a569354fa9.ctex"
+uid="uid://bon58n3kldqfi"
+path="res://.godot/imported/hungry_mob_boss_room_p1.png-840afbbc125bc8600ff6ef10ad11ed90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/restaurant_kichen.jpg"
-dest_files=["res://.godot/imported/restaurant_kichen.jpg-622ae2c8fcef331e6d84e7a569354fa9.ctex"]
+source_file="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png"
+dest_files=["res://.godot/imported/hungry_mob_boss_room_p1.png-840afbbc125bc8600ff6ef10ad11ed90.ctex"]
 
 [params]
 

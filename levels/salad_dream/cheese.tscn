@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dewir463iffyt"]
 
-[ext_resource type="Texture2D" uid="uid://d4fwito8un8wv" path="res://land/salad_dream/shredded_cheese.png" id="1_0jse1"]
-[ext_resource type="Script" path="res://land/salad_dream/cheese_remove_box.gd" id="2_jfge2"]
+[ext_resource type="Texture2D" uid="uid://d4fwito8un8wv" path="res://levels/salad_dream/shredded_cheese.png" id="1_0jse1"]
+[ext_resource type="Script" path="res://levels/salad_dream/cheese_remove_box.gd" id="2_jfge2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndti2"]
 size = Vector2(32, 10)
