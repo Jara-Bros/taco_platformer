@@ -1,15 +1,15 @@
 [gd_scene load_steps=28 format=3 uid="uid://ks4y085gbeac"]
 
-[ext_resource type="Script" path="res://land/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
-[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://land/salad_dream/restaurant_kitchen_shelf.jpg" id="1_klq4l"]
+[ext_resource type="Script" path="res://levels/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
+[ext_resource type="Texture2D" uid="uid://dvydnwcv1ff7o" path="res://levels/salad_dream/restaurant_kitchen_shelf.jpg" id="1_klq4l"]
 [ext_resource type="Texture2D" uid="uid://dufh8wqw7l1xn" path="res://NPC/sprites/manager/manager.png" id="2_kbf05"]
 [ext_resource type="Texture2D" uid="uid://clxqf47rjknpv" path="res://NPC/sprites/jeff/jeff.png" id="3_6okn2"]
 [ext_resource type="Texture2D" uid="uid://2r2lhoxipq0e" path="res://NPC/sprites/empanada_twins/empanada_twin_1.png" id="4_gd4lv"]
 [ext_resource type="Texture2D" uid="uid://jwcoevgjeylp" path="res://NPC/sprites/empanada_twins/empanada_twin_2.png" id="5_feuxi"]
-[ext_resource type="PackedScene" uid="uid://dgmgfg1awxob2" path="res://land/salad_dream/kitchen_line.tscn" id="6_l2w4m"]
+[ext_resource type="PackedScene" uid="uid://dgmgfg1awxob2" path="res://levels/salad_dream/kitchen_line.tscn" id="6_l2w4m"]
 [ext_resource type="Texture2D" uid="uid://b84l1bb5dcm5q" path="res://NPC/sprites/empanada_twins/kitchen_dish.png" id="6_qmwke"]
 [ext_resource type="AudioStream" uid="uid://cqpwthtg6tun6" path="res://audio/sfx/chaotic_kitchen_sfx.mp3" id="9_g5438"]
-[ext_resource type="Texture2D" uid="uid://iyqr4q7x10lp" path="res://land/salad_dream/jeff_sock_pic.jpg" id="10_wge6o"]
+[ext_resource type="Texture2D" uid="uid://iyqr4q7x10lp" path="res://levels/salad_dream/jeff_sock_pic.jpg" id="10_wge6o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lywgk"]
 atlas = ExtResource("4_gd4lv")

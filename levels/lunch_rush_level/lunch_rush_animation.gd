@@ -40,4 +40,6 @@ func _on_dialogic_signal(argument:String):
 	elif argument == "mob_far":
 		mob_far.visible = true
 		anim_player.play("mob_far")
+	elif argument == "mob_rush":
+		anim_player.play("mob_rush")
 		

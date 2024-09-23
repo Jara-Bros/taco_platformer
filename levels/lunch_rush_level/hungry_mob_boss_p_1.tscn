@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckouel6khp0ka"]
+
+[ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
+[ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_4hsex"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_grgq2"]
+[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="4_ag1lj"]
+[ext_resource type="Texture2D" uid="uid://cpbk1c0vo43sm" path="res://taco/Item/soccer_ball/lettuce_ball.png" id="5_7kjqw"]
+[ext_resource type="Texture2D" uid="uid://bh76uw1rlv0b0" path="res://NPC/sprites/sous/sous.png" id="5_ogi3o"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_i8s3j"]
+
+[node name="HungryMobBossP1" type="Node2D"]
+script = ExtResource("1_p5dx3")
+
+[node name="KitchenFG" type="Sprite2D" parent="."]
+position = Vector2(224, 96)
+scale = Vector2(1, 1.06667)
+texture = ExtResource("1_dhfk1")
+
+[node name="Taco" parent="." instance=ExtResource("2_grgq2")]
+position = Vector2(288, 144)
+
+[node name="Camera2D" parent="Taco" index="2"]
+limit_left = -16
+limit_right = 416
+limit_bottom = 216
+
+[node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
+position = Vector2(312, 128)
+
+[node name="Sprite2D" parent="SoccerBall" index="1"]
+position = Vector2(-2.02656e-06, -0.500008)
+scale = Vector2(1.25, 1.1875)
+texture = ExtResource("5_7kjqw")
+
+[node name="Land" parent="." instance=ExtResource("2_4hsex")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(440, 192, 440, 40, 424, 40, 424, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192)
+
+[node name="Line2D" parent="Land" index="1"]
+visible = false
+points = PackedVector2Array(440, 192, 440, 40, 424, 40, 424, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192, 440, 192)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(368, 152)
+texture = ExtResource("5_ogi3o")
+hframes = 3
+
+[node name="QuickReload" parent="." instance=ExtResource("6_i8s3j")]
+
+[editable path="Taco"]
+[editable path="SoccerBall"]
+[editable path="Land"]

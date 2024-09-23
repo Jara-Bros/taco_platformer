@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ttndphthfgi2"
-path="res://.godot/imported/mob_far_sheet.png-186948bfe2a4a40bfeb070fdf0101ef8.ctex"
+uid="uid://1u6nsn05t1fb"
+path="res://.godot/imported/hungry_mob.png-6b7d0ae95ca9228fcd170b7c7c4a5a94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/mob_far/mob_far_sheet.png"
-dest_files=["res://.godot/imported/mob_far_sheet.png-186948bfe2a4a40bfeb070fdf0101ef8.ctex"]
+source_file="res://enemies/hungry_mob/hungry_mob.png"
+dest_files=["res://.godot/imported/hungry_mob.png-6b7d0ae95ca9228fcd170b7c7c4a5a94.ctex"]
 
 [params]
 

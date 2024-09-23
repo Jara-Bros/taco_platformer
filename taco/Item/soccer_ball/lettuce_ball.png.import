@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iyqr4q7x10lp"
-path="res://.godot/imported/jeff_sock_pic.jpg-38e7f7c54cf5a0ce97b335802150eace.ctex"
+uid="uid://cpbk1c0vo43sm"
+path="res://.godot/imported/lettuce_ball.png-d2b7fe2e047609d454a47d46a8f624ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/jeff_sock_pic.jpg"
-dest_files=["res://.godot/imported/jeff_sock_pic.jpg-38e7f7c54cf5a0ce97b335802150eace.ctex"]
+source_file="res://taco/Item/soccer_ball/lettuce_ball.png"
+dest_files=["res://.godot/imported/lettuce_ball.png-d2b7fe2e047609d454a47d46a8f624ce.ctex"]
 
 [params]
 

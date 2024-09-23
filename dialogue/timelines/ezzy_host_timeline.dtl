@@ -6,5 +6,5 @@ ezzy_host: hm?
 ezzy_host (host_idle): (Those guys look pretty hungry!)
 [wait time="3.0"]
 [signal arg="change_to_talk"]
-ezzy_host (host_talk): Hi, welcome to Ez-
-[signal arg="mob_blast"]
+ezzy_host (host_talk): Hi, welcome to Ez- [aa=0.5]
+[signal arg="mob_rush"]

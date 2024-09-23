@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yll2p75ur0di"
-path="res://.godot/imported/conveyor_belt-removebg-preview.png-45fa641cef1c46a03c22e473f843a8c3.ctex"
+uid="uid://dh4yvs7tjbhpj"
+path="res://.godot/imported/restaurant_kichen.jpg-a27095f2d82b4fcc0926146e850912e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://land/salad_dream/conveyor_belt-removebg-preview.png"
-dest_files=["res://.godot/imported/conveyor_belt-removebg-preview.png-45fa641cef1c46a03c22e473f843a8c3.ctex"]
+source_file="res://levels/salad_dream/restaurant_kichen.jpg"
+dest_files=["res://.godot/imported/restaurant_kichen.jpg-a27095f2d82b4fcc0926146e850912e2.ctex"]
 
 [params]
 

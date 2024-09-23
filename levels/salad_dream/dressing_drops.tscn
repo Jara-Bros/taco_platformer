@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6gql0f7o4pln"]
 
-[ext_resource type="Script" path="res://land/salad_dream/dressing_remove_box.gd" id="1_xo2gd"]
+[ext_resource type="Script" path="res://levels/salad_dream/dressing_remove_box.gd" id="1_xo2gd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bi728"]
 radius = 4.0
