@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://cv3nnw2pv382v" path="res://platforms/seesaw_platforms/pineapple_slice.png" id="12_0ckr1"]
 [ext_resource type="Texture2D" uid="uid://dbu4bm22ojcow" path="res://land/river/river_grass_block.png" id="13_hsmm8"]
 [ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="13_toi5k"]
-[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="14_w4jnf"]
-[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://enemies/tomato_tom/river/ttom_river_sheet.png" id="15_ifcf1"]
-[ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://enemies/spawner/enemy_spawner.tscn" id="16_sx0dr"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://natives/tomato_tom/tomato_tom_character.tscn" id="14_w4jnf"]
+[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://natives/tomato_tom/river/ttom_river_sheet.png" id="15_ifcf1"]
+[ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://natives/spawner/enemy_spawner.tscn" id="16_sx0dr"]
 [ext_resource type="Script" path="res://levels/river_enter/ride_enter.gd" id="19_3jxce"]
 [ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="20_21xv1"]
 
