@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://brd1po2ehaeac" path="res://levels/lunch_rush_level/sprites/host_stand.png" id="7_62ys6"]
 [ext_resource type="Texture2D" uid="uid://s76nh7tfxyig" path="res://NPC/sprites/ezzy_staff/ezzy_host_sheet.png" id="9_v7tta"]
 [ext_resource type="Texture2D" uid="uid://ttndphthfgi2" path="res://animation/mob/mob_far/mob_far_sheet.png" id="10_8s55l"]
-[ext_resource type="Texture2D" uid="uid://1u6nsn05t1fb" path="res://enemies/hungry_mob/hungry_mob.png" id="11_y283c"]
+[ext_resource type="Texture2D" uid="uid://1u6nsn05t1fb" path="res://natives/hungry_mob/hungry_mob.png" id="11_y283c"]
 
 [sub_resource type="Animation" id="Animation_a4o16"]
 length = 0.001

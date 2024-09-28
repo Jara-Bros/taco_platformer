@@ -25,17 +25,9 @@ var prev_state
 @onready var animation_player = $AnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
 
-@onready var coyote_timer: Timer = $Timers/CoyoteTimer
-@onready var buffer_timer: Timer = $Timers/BufferTimer
-@onready var variable_jump_height_timer: Timer = $Timers/VariableJumpHeightTimer
-
 @onready var jump_fx: AudioStreamPlayer2D = $JumpFX
 @onready var taco_shoes_collision: CollisionShape2D = $TacoShoes/CollisionShape2D
 
-@onready var time_out_hand: Control = $TimeOutHand
-@onready var yellow_red: AnimatedSprite2D = $yellow_red
-@onready var whistle: AudioStreamPlayer2D = $Whistle
-@onready var time_out_player: AnimationPlayer = $TimeOutHand/AnimationPlayer
 @onready var taco: Player = $"."
 @onready var timer: Timer = $Timer
 
@@ -239,30 +231,6 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "CorpoCharacter" or body.is_in_group("TomatoTom"):
 		bounce(1.5)
-		yellow_card_counter += 1
-		change_card_sprite(yellow_card_counter)
-		
-
-func change_card_sprite(c : int):
-	match c:
-		0:
-			yellow_red.frame = 0
-		
-		1:
-			yellow_red.frame = 1
-		2:
-			yellow_red.frame = 2
-			whistle.play()
-			animation_player.play("idle")
-			input_enabled = false
-			time_out_hand.visible = true
-			timer.start()
-			time_out_player.play("move_grab")
-			await time_out_player.animation_finished
-			get_tree().reload_current_scene()
-		
-		_:
-			pass
 
 
 func bounce(factor):
@@ -280,9 +248,3 @@ func save():
 		"pos_y" : position.y
 	}
 	return save_dict
-
-
-# Removes card sprites above player
-func _on_timer_timeout() -> void:
-	sprite_2d.visible = false
-	yellow_red.visible = false

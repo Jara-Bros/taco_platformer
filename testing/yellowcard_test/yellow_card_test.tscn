@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_gjot3"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="1_i64tc"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_qcbp1"]
-[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="3_4dsxt"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://natives/tomato_tom/tomato_tom_character.tscn" id="3_4dsxt"]
 [ext_resource type="PackedScene" uid="uid://bowc71pajomo6" path="res://gui/time_out/time_out_hand.tscn" id="5_q7el3"]
 
 [node name="YellowCardTest" type="Node2D"]

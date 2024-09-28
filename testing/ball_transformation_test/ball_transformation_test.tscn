@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctjq1jpjnwnem"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_8b1ad"]
-[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://enemies/tomato_tom/tomato_tom_character.tscn" id="2_aysfq"]
+[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://natives/tomato_tom/tomato_tom_character.tscn" id="2_aysfq"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_v6uxp"]
 
 [node name="BallTransformationTest" type="Node2D"]

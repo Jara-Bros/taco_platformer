@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy7qxsnmbkvc2"]
+
+[ext_resource type="Script" path="res://natives/tomato_tom/river/t_tom_river.gd" id="1_rcg2h"]
+[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://natives/tomato_tom/river/ttom_river_sheet.png" id="1_wescu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrl7h"]
+
+[node name="TTomRiver" type="CharacterBody2D"]
+script = ExtResource("1_rcg2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wescu")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_nrl7h")

@@ -1,0 +1,156 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcf757ob75bav"]
+
+[ext_resource type="Script" path="res://white_box/tutorial/tutorial.gd" id="1_4e4bf"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_tahh3"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_j8ojj"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="3_fe0f4"]
+[ext_resource type="PackedScene" uid="uid://l23b53maxqrh" path="res://natives/tomato_tom/survey/survey_tom.tscn" id="5_apqn2"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_evh3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2qji"]
+size = Vector2(47, 121)
+
+[sub_resource type="Animation" id="Animation_s6lbu"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.792747, 0.232844, 0.638333, 1), Color(0.792157, 0.231373, 0.639216, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_chvtr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.792747, 0.232844, 0.638333, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exqn0"]
+_data = {
+"RESET": SubResource("Animation_chvtr"),
+"fade_out": SubResource("Animation_s6lbu")
+}
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_4e4bf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -101.0
+offset_top = -141.0
+offset_right = 298.0
+offset_bottom = -38.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 17.0
+offset_right = 206.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "taco house
+(pink guitar)"
+
+[node name="Taco" parent="." instance=ExtResource("1_tahh3")]
+
+[node name="Land" parent="." instance=ExtResource("2_j8ojj")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-28, 11, 89, -1, 191, -65, 208, 225, -482, 244, -462, 171, -300, 128, -255, 87, -183, 84, -177, 26, -124, 9)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-28, 11, 89, -1, 191, -65, 208, 225, -482, 244, -462, 171, -300, 128, -255, 87, -183, 84, -177, 26, -124, 9, -28, 11)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Land2" parent="." instance=ExtResource("2_j8ojj")]
+position = Vector2(-746, 62)
+rotation = 3.09133
+
+[node name="Polygon2D" parent="Land2" index="0"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -224.48, -294.65, -408.883, -350.986, -558.161, -468.634, -631.068, -472.301, -654.115, -551.559, -488.219, -565.242, -366.491, -497.04, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996)
+
+[node name="Line2D" parent="Land2" index="1"]
+points = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -224.48, -294.65, -408.883, -350.986, -558.161, -468.634, -631.068, -472.301, -654.115, -551.559, -488.219, -565.242, -366.491, -497.04, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996, -28, 11)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Land3" parent="." instance=ExtResource("2_j8ojj")]
+position = Vector2(418, 741)
+rotation = 11.4883
+
+[node name="Polygon2D" parent="Land3" index="0"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -224.48, -294.65, -408.883, -350.986, -558.161, -468.634, -631.068, -472.301, -750.55, -945.418, -551.875, -852.33, -366.491, -497.04, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996)
+
+[node name="Line2D" parent="Land3" index="1"]
+points = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -224.48, -294.65, -408.883, -350.986, -558.161, -468.634, -631.068, -472.301, -750.55, -945.418, -551.875, -852.33, -366.491, -497.04, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996, -28, 11)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Coin" parent="." instance=ExtResource("3_fe0f4")]
+position = Vector2(-800, 140)
+
+[node name="HiddenArea" type="Area2D" parent="."]
+position = Vector2(-658, 174)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenArea"]
+z_index = 1
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_k2qji")
+
+[node name="ColorRect2" type="ColorRect" parent="HiddenArea"]
+offset_left = -291.0
+offset_top = -131.0
+offset_right = 26.0
+offset_bottom = 69.0
+color = Color(0.792747, 0.232844, 0.638333, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HiddenArea"]
+libraries = {
+"": SubResource("AnimationLibrary_exqn0")
+}
+
+[node name="SurveyTom" parent="." instance=ExtResource("5_apqn2")]
+position = Vector2(-134, -15)
+
+[node name="QuickReload" parent="." instance=ExtResource("6_evh3f")]
+
+[connection signal="area_entered" from="HiddenArea" to="." method="_on_hidden_area_area_entered"]
+
+[editable path="Land"]
+[editable path="Land2"]
+[editable path="Land3"]
