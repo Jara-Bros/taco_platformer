@@ -41,10 +41,6 @@ const GRAVITY := 980
 const FALL_GRAVITY := 1750
 
 
-# Counter for yellow card hits
-var yellow_card_counter : int = 0
-
-
 func _ready():
 	current_state = player_state.WALKING
 	player_facing = 1
@@ -52,15 +48,6 @@ func _ready():
 		remove_child(camera_2d)
 	
 	
-	
-#
-#func _input(event):
-	## buffer timer
-	#if Input.is_action_just_pressed("jump") and is_on_floor_only() and buffer_timer.is_stopped() == false:
-		#jump_deceleration(global_delta, variable_jump_height_timer.wait_time)
-	#if Input.is_action_just_pressed("jump") and velocity.y > 0 and coyote_timer.is_stopped() == false:
-		#jump_deceleration(global_delta, variable_jump_height_timer.wait_time)
-	##
 
 func _get_gravity(velocity: Vector2):
 	if velocity.y < 0:
@@ -84,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
 			jump_fx.play()
-			velocity = Vector2.UP * -1 * jump_velocity #Normal Jump action
+			velocity = Vector2.UP * -1 * jump_velocity # Normal Jump action
 			change_state(player_state.IN_AIR)
 		
 
@@ -107,36 +94,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
+	# To move rigid bodies upon contact
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-
-	# move_and_collide(move_toward(velocity.x, direction * speed, 50))
-	# move_and_slide()
-	
-	
-	## Add the gravity.
-	#
-	#if not is_on_floor_only() and Input.is_action_pressed("jump"):
-		#velocity.y += 1.5 * gravity * delta
-	#if not is_on_floor_only() and Input.is_action_pressed("jump") == false and current_state["vertical"] == player_vertical_movement_state.GOING_UP:
-		##print("decelerating before peak")
-		#velocity.y += 1.75 * gravity * delta
-	#if not is_on_floor_only() and current_state["vertical"] == player_vertical_movement_state.FALLING_DOWN:
-		#print("falling")
-		#velocity.y += 1 * gravity * delta
-	#if velocity.y < 0:
-		#change_state("vertical", player_vertical_movement_state.GOING_UP)
-	#elif velocity.y == 0 and is_on_floor_only():
-		#change_state("vertical", player_vertical_movement_state.ON_GROUND)
-	#elif velocity.y == 0 and not is_on_floor_only():
-		#change_state("vertical", player_vertical_movement_state.FALLING_DOWN)
-	#if velocity.y > 0:
-		#buffer_timer.start()
-	#if current_state["vertical"] == player_vertical_movement_state.ON_GROUND:
-		#coyote_timer.start()
-
 
 
 	if Input.is_action_just_pressed("item"):

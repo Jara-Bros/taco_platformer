@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0pot462ott1b"]
+
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="1_pc1hm"]
+[ext_resource type="Script" path="res://gui/menus/pause_menu/pause_menu.gd" id="1_rfyk2"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton")
+focus_neighbor_bottom = NodePath("AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/QuitButton")
+focus_mode = 2
+script = ExtResource("1_rfyk2")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.8
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pc1hm")
+theme_override_font_sizes/font_size = 40
+text = "Save"
+
+[node name="QuitButton" type="Button" parent="AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pc1hm")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
