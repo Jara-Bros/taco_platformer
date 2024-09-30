@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcf757ob75bav"]
+[gd_scene load_steps=17 format=3 uid="uid://bcf757ob75bav"]
 
 [ext_resource type="Script" path="res://white_box/tutorial/tutorial.gd" id="1_4e4bf"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_tahh3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://l23b53maxqrh" path="res://natives/tomato_tom/survey/survey_tom.tscn" id="5_apqn2"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_evh3f"]
 [ext_resource type="PackedScene" uid="uid://cald5fle2ilk1" path="res://collectibles/premios/premio.tscn" id="7_ebnff"]
+[ext_resource type="PackedScene" uid="uid://b3eaaquccx2xm" path="res://testing/hidden_area/hidden_area.tscn" id="10_kbvjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2qji"]
 size = Vector2(47, 121)
@@ -41,6 +42,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.792747, 0.232844, 0.638333, 1), Color(0.792157, 0.231373, 0.639216, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_exqn0"]
@@ -75,7 +90,7 @@ text = "taco house
 (pink guitar)"
 
 [node name="Taco" parent="." instance=ExtResource("1_tahh3")]
-position = Vector2(-589, 181)
+position = Vector2(-587, 176)
 
 [node name="SoccerBall" parent="." instance=ExtResource("3_xlh0x")]
 position = Vector2(-281, 513)
@@ -118,10 +133,10 @@ position = Vector2(-2023, 409)
 rotation = 1.53177
 
 [node name="Polygon2D" parent="Land10/Land7" index="0"]
-polygon = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 125.203, -310.352, 241.517, -469.936, 322.744, -499.789, 297.463, -646.888, 279.576, -752.666, 241.726, -962.302, 290.947, -941.366, 390.216, -869.438, 432.555, -646.617, 208, 225, -527, 170)
+polygon = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 322.744, -499.789, 449.293, -613.939, 208, 225, -527, 170)
 
 [node name="Line2D" parent="Land10/Land7" index="1"]
-points = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 125.203, -310.352, 241.517, -469.936, 322.744, -499.789, 297.463, -646.888, 279.576, -752.666, 241.726, -962.302, 290.947, -941.366, 390.216, -869.438, 432.555, -646.617, 208, 225, -527, 170, -631.068, -472.301)
+points = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 322.744, -499.789, 449.293, -613.939, 208, 225, -527, 170, -631.068, -472.301)
 
 [node name="Land4" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1294, 334)
@@ -328,6 +343,20 @@ offset_right = 14.244
 offset_bottom = 12.7744
 rotation = -0.00742765
 
+[node name="HiddenArea2" parent="." instance=ExtResource("10_kbvjb")]
+position = Vector2(-1916, 434)
+collision_layer = 0
+collision_mask = 2
+
+[node name="ColorRect" parent="HiddenArea2" index="0"]
+offset_left = -148.0
+offset_top = -82.0
+offset_right = 55.0
+offset_bottom = 53.0
+
+[node name="CollisionShape2D" parent="HiddenArea2" index="1"]
+position = Vector2(40, -15)
+
 [connection signal="area_entered" from="HiddenArea" to="." method="_on_hidden_area_area_entered"]
 [connection signal="area_entered" from="SoccerSwitch" to="." method="_on_soccer_switch_area_entered"]
 
@@ -343,3 +372,4 @@ rotation = -0.00742765
 [editable path="Land10/Land9"]
 [editable path="Land10/Land10"]
 [editable path="Land10/Land11"]
+[editable path="HiddenArea2"]
