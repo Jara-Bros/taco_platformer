@@ -23,7 +23,6 @@ func _ready():
 
 
 func _process(delta):
-	print(current_state)
 	if current_state == freedom_state.COLLECTED:
 
 		var player_direction = ItemManager.get_player().get_direction()
