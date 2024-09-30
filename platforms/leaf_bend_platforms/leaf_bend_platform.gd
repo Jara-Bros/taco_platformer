@@ -14,20 +14,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if current_state == player_detector_state_machine.ON:
-		## rotate down 
-		if rotation < 35:
+	if current_state == player_detector_state_machine.ON && (rotation == 0 or rotation < 35):
 			rotation += rotation_speed * delta
-		else:
-			pass
-
-  
+	elif current_state == player_detector_state_machine.ON && rotation == 35:
+			rotation = rotation * rotation_speed
 # TODO: stop bend leaf jitter aft hitting maximum rotation 
-	if current_state == player_detector_state_machine.OFF:
+	elif current_state == player_detector_state_machine.OFF && (rotation > 0):
 		## player not on rotate off
-		if rotation > 0: 
-			rotation -= rotation_speed * delta 
-	pass
+		rotation -= rotation_speed * delta
+	elif current_state == player_detector_state_machine.OFF && rotation == 0:
+		rotation = rotation * rotation_speed
+				
 
 
 func _on_player_detector_body_entered(body):

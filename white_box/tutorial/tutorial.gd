@@ -32,4 +32,3 @@ func _on_soccer_switch_area_entered(area: Area2D) -> void:
 	block_platform_2.collision_layer = 1
 	block_platform_3.visible = true
 	block_platform_3.collision_layer = 1
-	
