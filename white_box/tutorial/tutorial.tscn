@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcf757ob75bav"]
+[gd_scene load_steps=21 format=3 uid="uid://bcf757ob75bav"]
 
 [ext_resource type="Script" path="res://white_box/tutorial/tutorial.gd" id="1_4e4bf"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_tahh3"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://l23b53maxqrh" path="res://natives/tomato_tom/survey/survey_tom.tscn" id="5_apqn2"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_evh3f"]
 [ext_resource type="PackedScene" uid="uid://cald5fle2ilk1" path="res://collectibles/premios/premio.tscn" id="7_ebnff"]
+[ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="10_f2g3f"]
+[ext_resource type="PackedScene" uid="uid://basv3p4jb1huf" path="res://obstacles/swing_obstacle.tscn" id="11_wu122"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2qji"]
 size = Vector2(47, 121)
@@ -53,10 +55,77 @@ _data = {
 radius = 20.2237
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qh2u1"]
-size = Vector2(27.219, 24.7477)
+size = Vector2(27.219, 146.359)
+
+[sub_resource type="Animation" id="Animation_76jn3"]
+resource_name = "move_up"
+length = 2.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GymDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32.0001, -96), Vector2(-32, -256)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GymDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dhg25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GymDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32.0001, -96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jandb"]
+_data = {
+"RESET": SubResource("Animation_dhg25"),
+"move_up": SubResource("Animation_76jn3")
+}
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_4e4bf")
+
+[node name="QuickReload" parent="." instance=ExtResource("6_evh3f")]
 
 [node name="THome" type="ColorRect" parent="."]
 offset_left = -101.0
@@ -75,13 +144,22 @@ text = "taco house
 (pink guitar)"
 
 [node name="Taco" parent="." instance=ExtResource("1_tahh3")]
-position = Vector2(-589, 181)
+position = Vector2(-1017, 361)
 
 [node name="SoccerBall" parent="." instance=ExtResource("3_xlh0x")]
 position = Vector2(-281, 513)
 
 [node name="Sprite2D" parent="SoccerBall" index="1"]
 texture = ExtResource("4_utij4")
+
+[node name="SwingObstacle" parent="." instance=ExtResource("11_wu122")]
+position = Vector2(-1225, 339)
+
+[node name="SwingObstacle2" parent="." instance=ExtResource("11_wu122")]
+position = Vector2(-1358, 338)
+
+[node name="SwingObstacle3" parent="." instance=ExtResource("11_wu122")]
+position = Vector2(-1481, 335)
 
 [node name="Land10" type="Node" parent="."]
 
@@ -98,104 +176,20 @@ position = Vector2(-746, 62)
 rotation = 3.09133
 
 [node name="Polygon2D" parent="Land10/Land2" index="0"]
-polygon = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996)
+polygon = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, -81.0834, -378.552, -38.1377, -376.391, 174.607, -246.539, 253.477, -142.445, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996)
 
 [node name="Line2D" parent="Land10/Land2" index="1"]
-points = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, 29.7015, -291.876, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996, -28, 11)
+points = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, -81.0834, -378.552, -38.1377, -376.391, 174.607, -246.539, 253.477, -142.445, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996, -28, 11)
 
 [node name="Land3" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-51, 556)
 rotation = -1.07807
 
 [node name="Polygon2D" parent="Land10/Land3" index="0"]
-polygon = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170)
+polygon = PackedVector2Array(-631.068, -472.301, -737.018, -727.962, -345.567, -990.341, -300.026, -901.29, -383.078, -664.883, -341.386, -585.116, -347.843, -580.23, -311.538, -512.61, -351.593, -489.969, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170)
 
 [node name="Line2D" parent="Land10/Land3" index="1"]
-points = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -631.068, -472.301)
-
-[node name="Land7" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-2023, 409)
-rotation = 1.53177
-
-[node name="Polygon2D" parent="Land10/Land7" index="0"]
-polygon = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 125.203, -310.352, 241.517, -469.936, 322.744, -499.789, 297.463, -646.888, 279.576, -752.666, 241.726, -962.302, 290.947, -941.366, 390.216, -869.438, 432.555, -646.617, 208, 225, -527, 170)
-
-[node name="Line2D" parent="Land10/Land7" index="1"]
-points = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -939.153, -418.864, -1033.84, -330.08, -1027.03, -341.482, -896.058, -290.897, -833.551, -218.23, -550.221, -345.13, -513.87, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, -35.4956, 37.6438, 68.6593, 35.7058, 75.6535, -167.74, 125.203, -310.352, 241.517, -469.936, 322.744, -499.789, 297.463, -646.888, 279.576, -752.666, 241.726, -962.302, 290.947, -941.366, 390.216, -869.438, 432.555, -646.617, 208, 225, -527, 170, -631.068, -472.301)
-
-[node name="Land4" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1294, 334)
-rotation = 0.247516
-scale = Vector2(1, 1)
-
-[node name="Polygon2D" parent="Land10/Land4" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land4" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land5" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1480, 332)
-
-[node name="Polygon2D" parent="Land10/Land5" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land5" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land6" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1663, 378)
-rotation = -0.29098
-
-[node name="Polygon2D" parent="Land10/Land6" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land6" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land8" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1399, 446)
-rotation = 0.0313684
-scale = Vector2(1, 1)
-
-[node name="Polygon2D" parent="Land10/Land8" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land8" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land9" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1578, 469)
-rotation = 0.0313684
-scale = Vector2(1, 1)
-
-[node name="Polygon2D" parent="Land10/Land9" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land9" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land10" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1466, 561)
-rotation = 0.283013
-scale = Vector2(1, 1)
-
-[node name="Polygon2D" parent="Land10/Land10" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land10" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
-
-[node name="Land11" parent="Land10" instance=ExtResource("2_j8ojj")]
-position = Vector2(-1276, 538)
-rotation = -0.492312
-scale = Vector2(1, 1)
-
-[node name="Polygon2D" parent="Land10/Land11" index="0"]
-polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
-
-[node name="Line2D" parent="Land10/Land11" index="1"]
-points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
+points = PackedVector2Array(-631.068, -472.301, -737.018, -727.962, -345.567, -990.341, -300.026, -901.29, -383.078, -664.883, -341.386, -585.116, -347.843, -580.23, -311.538, -512.61, -351.593, -489.969, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -631.068, -472.301)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -252,94 +246,92 @@ libraries = {
 [node name="SurveyTom" parent="." instance=ExtResource("5_apqn2")]
 position = Vector2(-134, -15)
 
-[node name="QuickReload" parent="." instance=ExtResource("6_evh3f")]
-
 [node name="SoccerSwitch" type="Area2D" parent="."]
-position = Vector2(-631, 557)
-rotation = 0.0147344
+position = Vector2(-628, 607)
 collision_layer = 0
 collision_mask = 8
 
 [node name="ColorRect" type="ColorRect" parent="SoccerSwitch"]
-offset_left = -15.0
-offset_top = -24.0
-offset_right = 25.0
-offset_bottom = 16.0
-rotation = 0.217153
+offset_left = -19.0001
+offset_top = -17.0
+offset_right = 20.9999
+offset_bottom = 23.0
 color = Color(1, 0.137255, 0.129412, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoccerSwitch"]
+position = Vector2(0.999939, 3)
 shape = SubResource("CircleShape2D_5evtl")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="SoccerSwitch"]
-visible = false
-position = Vector2(622.725, -566.237)
-rotation = -0.0147344
-collision_layer = 2
+[node name="GymDoor" type="StaticBody2D" parent="SoccerSwitch"]
+position = Vector2(-32.0001, -96)
 collision_mask = 0
 
-[node name="BlockPlatform" type="CollisionShape2D" parent="SoccerSwitch/StaticBody2D"]
-position = Vector2(-489, 573)
-rotation = 0.0147344
+[node name="ColorRect" type="ColorRect" parent="SoccerSwitch/GymDoor"]
+offset_left = -12.8484
+offset_top = -73.1514
+offset_right = 15.1516
+offset_bottom = 75.8486
+
+[node name="BlockPlatform" type="CollisionShape2D" parent="SoccerSwitch/GymDoor"]
+position = Vector2(-0.421332, 0.0624855)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qh2u1")
 
-[node name="ColorRect" type="ColorRect" parent="SoccerSwitch/StaticBody2D/BlockPlatform"]
-offset_left = -13.756
-offset_top = -12.2256
-offset_right = 14.244
-offset_bottom = 12.7744
-rotation = -0.00742765
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoccerSwitch"]
+libraries = {
+"": SubResource("AnimationLibrary_jandb")
+}
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="SoccerSwitch"]
-visible = false
-position = Vector2(564.186, -602.378)
-rotation = -0.0147344
-collision_layer = 2
-collision_mask = 0
+[node name="Rollers" type="Node" parent="."]
 
-[node name="BlockPlatform" type="CollisionShape2D" parent="SoccerSwitch/StaticBody2D2"]
-position = Vector2(-489, 573)
-rotation = 0.0147344
-shape = SubResource("RectangleShape2D_qh2u1")
+[node name="Roller" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-813, 559)
+rotation_speed = 15
 
-[node name="ColorRect" type="ColorRect" parent="SoccerSwitch/StaticBody2D2/BlockPlatform"]
-offset_left = -13.756
-offset_top = -12.2256
-offset_right = 14.244
-offset_bottom = 12.7744
-rotation = -0.00742765
+[node name="Roller2" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-837, 528)
+rotation_speed = 15
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="SoccerSwitch"]
-visible = false
-position = Vector2(504.677, -636.505)
-rotation = -0.0147344
-collision_layer = 2
-collision_mask = 0
+[node name="Roller3" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-862, 500)
+rotation_speed = 15
 
-[node name="BlockPlatform" type="CollisionShape2D" parent="SoccerSwitch/StaticBody2D3"]
-position = Vector2(-489, 573)
-rotation = 0.0147344
-shape = SubResource("RectangleShape2D_qh2u1")
+[node name="Roller4" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-887, 472)
+rotation_speed = 15
 
-[node name="ColorRect" type="ColorRect" parent="SoccerSwitch/StaticBody2D3/BlockPlatform"]
-offset_left = -13.756
-offset_top = -12.2256
-offset_right = 14.244
-offset_bottom = 12.7744
-rotation = -0.00742765
+[node name="Roller5" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-912, 444)
+rotation_speed = 15
 
+[node name="Roller6" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-937, 418)
+rotation_speed = 15
+
+[node name="Roller7" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-963, 390)
+rotation_speed = 15
+
+[node name="Bridge" parent="." instance=ExtResource("2_j8ojj")]
+position = Vector2(-1268, 393)
+
+[node name="Polygon2D" parent="Bridge" index="0"]
+polygon = PackedVector2Array(28, -3, 177, -2, 179, 21, -321, 21, -321, -4)
+
+[node name="Line2D" parent="Bridge" index="1"]
+points = PackedVector2Array(28, -3, 177, -2, 179, 21, -321, 21, -321, -4, 28, -3)
+
+[connection signal="body_entered" from="SwingObstacle/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SwingObstacle2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SwingObstacle3/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="area_entered" from="HiddenArea" to="." method="_on_hidden_area_area_entered"]
 [connection signal="area_entered" from="SoccerSwitch" to="." method="_on_soccer_switch_area_entered"]
 
 [editable path="SoccerBall"]
+[editable path="SwingObstacle"]
+[editable path="SwingObstacle2"]
+[editable path="SwingObstacle3"]
 [editable path="Land10/Land"]
 [editable path="Land10/Land2"]
 [editable path="Land10/Land3"]
-[editable path="Land10/Land7"]
-[editable path="Land10/Land4"]
-[editable path="Land10/Land5"]
-[editable path="Land10/Land6"]
-[editable path="Land10/Land8"]
-[editable path="Land10/Land9"]
-[editable path="Land10/Land10"]
-[editable path="Land10/Land11"]
+[editable path="Bridge"]
