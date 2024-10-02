@@ -17,7 +17,7 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var push_force : int
 
 
-enum player_state {WALKING, IN_AIR, KICKING}
+enum player_state {WALKING, IN_AIR, KICKING, HIT}
 var current_state
 var prev_state
 
@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 	
 	
 	direction = Input.get_axis("move_left", "move_right")
-
+	
+	
 	
 	if not is_on_floor():
 		velocity.y += _get_gravity(velocity) * delta

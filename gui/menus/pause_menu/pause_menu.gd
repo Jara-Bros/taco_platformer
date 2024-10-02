@@ -1,6 +1,6 @@
 extends Control
 
-@onready var save_button: Button = $AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton
+# @onready var save_button: Button = $AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +27,8 @@ func _on_quit_button_pressed() -> void:
 ## Figure out why save_button.grab_focus() returns null
 
 func show_pause_menu():
-	save_button.grab_focus()
-
+	# save_button.grab_focus()
+	pass
+	
 func hide_pause_menu():
 	visible = false
