@@ -20,7 +20,8 @@ idle_jump_velocity = -25
 shape = SubResource("CircleShape2D_o5lll")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.125023, 0.875015)
+position = Vector2(2.38419e-07, 1.19209e-07)
+scale = Vector2(0.0708221, 0.0681046)
 texture = ExtResource("1_ggngm")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

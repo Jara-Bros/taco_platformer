@@ -81,7 +81,7 @@ directories/dtl_directory={
 "opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
-"sous_offscreen": "res://dialogue/timelines/sous_offscreen_1.dtl",
+"sous_offscreen_1": "res://dialogue/timelines/sous_offscreen_1.dtl",
 "sous_offscreen_2": "res://dialogue/timelines/sous_offscreen_2.dtl",
 "sous_timeline": "res://dialogue/timelines/sous_timeline.dtl",
 "taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",

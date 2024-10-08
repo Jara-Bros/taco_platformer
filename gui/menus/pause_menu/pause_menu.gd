@@ -1,10 +1,11 @@
 extends Control
 
-@onready var save_button: Button = $AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton
-
+var save_button
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
+	print(get_child_count())
+	save_button = $AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -126,7 +126,6 @@ points = PackedVector2Array(-631.068, -472.301, -471.375, -793.404, -413.425, -9
 [node name="Land4" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1294, 334)
 rotation = 0.247516
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Land10/Land4" index="0"]
 polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
@@ -156,7 +155,6 @@ points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
 [node name="Land8" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1399, 446)
 rotation = 0.0313684
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Land10/Land8" index="0"]
 polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
@@ -167,7 +165,6 @@ points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
 [node name="Land9" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1578, 469)
 rotation = 0.0313684
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Land10/Land9" index="0"]
 polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
@@ -178,7 +175,6 @@ points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
 [node name="Land10" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1466, 561)
 rotation = 0.283013
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Land10/Land10" index="0"]
 polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)
@@ -189,7 +185,6 @@ points = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47, -17, -14)
 [node name="Land11" parent="Land10" instance=ExtResource("2_j8ojj")]
 position = Vector2(-1276, 538)
 rotation = -0.492312
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Land10/Land11" index="0"]
 polygon = PackedVector2Array(-17, -14, 52, -30, 126, -17, 54, 47)

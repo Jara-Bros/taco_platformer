@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu6idm6qmeax4"]
+
+[ext_resource type="Script" path="res://platforms/moving_platform/moving_platform.gd" id="1_pev7k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o46bl"]
+size = Vector2(68, 21)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_v67ug"]
+specular_color = Color(0.740853, 0.603558, 0.580939, 1)
+
+[node name="MovingPlatform" type="StaticBody2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_pev7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_o46bl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -35.0
+offset_top = -10.0
+offset_right = 35.0
+offset_bottom = 11.0
+texture = SubResource("CanvasTexture_v67ug")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

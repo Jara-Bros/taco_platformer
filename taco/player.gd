@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		current_state = player_state.KICKING
 		animation_player.play("kick")
 		if item != null:
-			item.kick()
+			#item.kick()
 			item = null
 	if Input.is_action_just_pressed("bleu"):
 		

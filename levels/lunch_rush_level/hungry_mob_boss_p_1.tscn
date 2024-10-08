@@ -20,7 +20,7 @@ texture = ExtResource("1_dhfk1")
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
 position = Vector2(288, 144)
 
-[node name="Camera2D" parent="Taco" index="2"]
+[node name="Camera2D" parent="Taco" index="3"]
 limit_left = -16
 limit_right = 416
 limit_bottom = 216
