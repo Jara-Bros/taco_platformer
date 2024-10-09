@@ -12,7 +12,6 @@ position = Vector2(64, -16)
 [node name="Land" parent="." instance=ExtResource("2_f02c0")]
 
 [node name="Polygon2D" parent="Land" index="0"]
-color = Color(1, 1, 1, 1)
 polygon = PackedVector2Array(-24, 0, -24, 24, -48, 24, -48, 56, -96, 56, -96, 80, -136, 80, -136, 112, -208, 112, -208, 144, -16, 144, -16, 0)
 
 [node name="Line2D" parent="Land" index="1"]
@@ -22,7 +21,6 @@ texture = ExtResource("5_tv6s2")
 [node name="Land2" parent="." instance=ExtResource("2_f02c0")]
 
 [node name="Polygon2D" parent="Land2" index="0"]
-color = Color(1, 1, 1, 1)
 polygon = PackedVector2Array(0, 0, 0, 64, 128, 64, 304, 64, 304, 0)
 
 [node name="Line2D" parent="Land2" index="1"]

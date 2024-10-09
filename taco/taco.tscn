@@ -195,6 +195,8 @@ speed = 200
 acceleration = 45
 jump_velocity = -350
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
 texture = ExtResource("2_ctlwh")

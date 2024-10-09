@@ -5,6 +5,8 @@ extends CharacterBody2D
 enum freedom_state {REMOVED, COLLECTED, KICKED}
 var current_state 
 var moving_direction
+var ball_direction
+var holding_direction
 @export var translation_speed : int
 @export var rotation_speed : int
 @export var idle_jump_velocity : int
@@ -23,6 +25,12 @@ func _ready():
 
 
 func _process(delta):
+	
+	if Input.is_action_pressed("move_up"):
+		holding_direction = 1
+	else:
+		holding_direction = -1
+	
 	if current_state == freedom_state.COLLECTED:
 
 		var player_direction = ItemManager.get_player().get_direction()
@@ -36,11 +44,24 @@ func _process(delta):
 	
 	elif current_state == freedom_state.KICKED:
 		velocity.y += gravity * delta
-		if moving_direction > 0:
-			velocity.x = 300
-		else:
-			velocity.x = -300	
-		move_and_slide()	
+		
+		var collision_info = move_and_collide(velocity * delta)
+		if collision_info:
+			print(velocity)
+			velocity = velocity.bounce(collision_info.get_normal())
+			ball_direction = ball_direction * -1
+		#if ball_direction > 0:
+			#velocity.x = 300
+		#else:
+			#velocity.x = -300	
+		#move_and_slide()	
+		#for i in get_slide_collision_count():
+			#var collision = get_slide_collision(i)
+			#
+			#if collision.get_collider().is_in_group("Land"):
+				#velocity = velocity.bounce(collision.get_normal())
+				
+				
 	elif current_state == freedom_state.REMOVED:
 
 #		
@@ -56,6 +77,13 @@ func _process(delta):
 		#move_and_slide()	
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("item"):
+		if holding_direction == 1:
+			kick(Vector2(0, 500))
+		else:	
+			kick(Vector2(500, -400))
+
 func is_currently_on_flor():
 	if $RayCast2D.get_collider() != null:
 		if $RayCast2D.get_collider().get_name() == "floor":
@@ -63,10 +91,12 @@ func is_currently_on_flor():
 	return false
 
 
-func kick():
+func kick(vec : Vector2):
 	moving_direction = ItemManager.get_player().get_direction()
 	current_state = freedom_state.KICKED
-	velocity.y = -400
+	ball_direction = moving_direction
+	velocity.y = vec.y
+	velocity.x = vec.x * ball_direction
 	
 
 	
@@ -104,14 +134,14 @@ func _on_area_2d_body_entered(body):
 		if current_state == freedom_state.REMOVED or current_state == freedom_state.KICKED:
 			ItemManager.connect_item_to_player(get_instance_id(), "soccer_ball")
 			current_state = freedom_state.COLLECTED
-	elif body.get_name() == "wall":
-		if current_state == freedom_state.KICKED:
-			moving_direction = 0
-	elif body.get_name() == "floor":
-		if current_state == freedom_state.KICKED:
-			
-			current_state = freedom_state.REMOVED
-			velocity=Vector2(0,0)
+	#elif body.get_name() == "wall":
+		#if current_state == freedom_state.KICKED:
+			#moving_direction = 0
+	#elif body.get_name() == "floor":
+		#if current_state == freedom_state.KICKED:
+			#
+			#current_state = freedom_state.REMOVED
+			#velocity=Vector2(0,0)
 	elif body.get_name() == "TomatoTomCharacter":
 		for enemey in get_tree().get_nodes_in_group("Enemies"):
 			if enemey.get_instance_id() == body.get_instance_id():
@@ -119,6 +149,6 @@ func _on_area_2d_body_entered(body):
 				queue_free()
 	
 
-func _on_visible_on_screen_enabler_2d_screen_exited():
-	current_state = freedom_state.REMOVED
-	velocity=Vector2(0,0)
+#func _on_visible_on_screen_enabler_2d_screen_exited():
+	#current_state = freedom_state.REMOVED
+	#velocity=Vector2(0,0)
