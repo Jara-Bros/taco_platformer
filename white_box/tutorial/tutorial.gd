@@ -2,17 +2,22 @@ extends Node2D
 
 @onready var anim_player: AnimationPlayer = $HiddenArea/AnimationPlayer
 @onready var color_rect: ColorRect = $SoccerSwitch/ColorRect
+@onready var taco: Player = $Taco
 
-@onready var block_platform: StaticBody2D = $SoccerSwitch/StaticBody2D
-@onready var block_platform_2: StaticBody2D = $SoccerSwitch/StaticBody2D2
-@onready var block_platform_3: StaticBody2D = $SoccerSwitch/StaticBody2D3
+@onready var gym_door_anim_player: AnimationPlayer = $SoccerSwitch/AnimationPlayer
 
+
+@onready var swing_anim_player: AnimationPlayer = $SwingObstacles/SwingObstacle/AnimationPlayer
+@onready var swing_anim_player_2: AnimationPlayer = $SwingObstacles/SwingObstacle2/AnimationPlayer
+@onready var swing_anim_player_3: AnimationPlayer = $SwingObstacles/SwingObstacle3/AnimationPlayer
 
 
 func _ready() -> void:
-	pass # Replace with function body.
+	swing_anim_player_3.play("swing")
+	swing_anim_player.play("swing")
+	
 
-
+	
 
 func _process(_delta: float) -> void:
 	pass
@@ -24,11 +29,15 @@ func _on_hidden_area_area_entered(_area: Area2D) -> void:
 
 func _on_soccer_switch_area_entered(area: Area2D) -> void:
 	color_rect.visible = false
+	gym_door_anim_player.play("move_up")
 	
-	# Activate block platforms!
-	block_platform.visible = true
-	block_platform.collision_layer = 1
-	block_platform_2.visible = true
-	block_platform_2.collision_layer = 1
-	block_platform_3.visible = true
-	block_platform_3.collision_layer = 1
+
+# Signal for when the swing hits Taco
+# Sets collision mask for walls to false
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	taco.set_collision_mask_value(1, 0)
+
+
+func _on_timer_timeout() -> void:
+	# Delayed start for asynchronous swinging obstacles
+	swing_anim_player_2.play("swing")
