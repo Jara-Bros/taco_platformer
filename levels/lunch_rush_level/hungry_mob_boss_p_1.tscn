@@ -30,7 +30,7 @@ scale = Vector2(1, 1.06667)
 texture = ExtResource("1_dhfk1")
 
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
-position = Vector2(715, 96)
+position = Vector2(288, 144)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
 position = Vector2(312, 128)
@@ -431,7 +431,6 @@ slow drop"
 
 [node name="Land8" parent="Cabinets" instance=ExtResource("2_4hsex")]
 position = Vector2(1520, 120)
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Cabinets/Land8" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -443,7 +442,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [node name="Land9" parent="Cabinets" instance=ExtResource("2_4hsex")]
 position = Vector2(1592, 166)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="Cabinets/Land9" index="0"]
 position = Vector2(2.00003, 0.0017873)
