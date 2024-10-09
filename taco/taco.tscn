@@ -204,7 +204,7 @@ hframes = 11
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 2)
-polygon = PackedVector2Array(-11, -5, -12, -2, -12, 3, -10, 4, -5, 4, -5, 11, 6, 11, 6, 4, 10, 4, 13, 3, 13, -2, 12, -5, 7, -10, -5, -10)
+polygon = PackedVector2Array(-10, -5, -11, 2, -5, 4, -5, 11, 6, 11, 6, 4, 11, 3, 12, -2, 10, -5, 6, -9, -5, -9)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
