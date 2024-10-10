@@ -5,7 +5,6 @@ var save_button
 func _ready() -> void:
 	visible = false
 	print(get_child_count())
-	save_button = $AspectRatioContainer/PanelContainer/CenterContainer/VBoxContainer/SaveButton
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
