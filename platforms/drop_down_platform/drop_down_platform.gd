@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 	if ray_cast.is_colliding():
 		if Input.is_action_just_pressed("move_down"):
 			collision_shape.disabled = true
-			print('see ya')
 			platform_restore_timer.start()
 			
 
