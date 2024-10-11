@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=25 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
@@ -12,52 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="9_djago"]
 [ext_resource type="Texture2D" uid="uid://seemit6euwmt" path="res://levels/lunch_rush_level/sprites/hungry_mob.png" id="9_whr14"]
 
-[sub_resource type="Curve2D" id="Curve2D_030jg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1418, 102, 0, 0, 0, 0, 1417, 126, 0, 0, 0, 0, 1417, 168, 0.561865, 0.187288, -0.561865, -0.187288, 1419, 214, 0, 0, 0, 0, 1414, 268)
-}
-point_count = 5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gmmw"]
-size = Vector2(103, 38)
-
-[sub_resource type="Animation" id="Animation_ypl3d"]
-resource_name = "move_block"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_53cpv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mknvv"]
-_data = {
-"RESET": SubResource("Animation_53cpv"),
-"move_block": SubResource("Animation_ypl3d")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfobp"]
 size = Vector2(160, 8)
 
@@ -66,6 +20,146 @@ size = Vector2(512, 8)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b1yb"]
 height = 36.0
+
+[sub_resource type="Curve2D" id="Curve2D_4af8a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1424, 112, 0, 0, 0, 0, 1424, 128, 0, 0, 0, 0, 1424, 144, 0, 0, 0, 0, 1424, 160, 0, 0, 0, 0, 1424, 176, 0, 0, 0, 0, 1424, 192, 0, 0, 0, 0, 1424, 208, 0, 0, 0, 0, 1424, 264)
+}
+point_count = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycx7f"]
+size = Vector2(80, 40)
+
+[sub_resource type="Animation" id="Animation_7otxq"]
+resource_name = "fall_block"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.8462]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cv87n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uarq0"]
+_data = {
+"RESET": SubResource("Animation_cv87n"),
+"fall_block": SubResource("Animation_7otxq")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_3weos"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1800, 176, 0, 0, 0, 0, 1800, 208, 0, 0, 0, 0, 1800, 232, 0, 0, 0, 0, 1800, 240)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31my4"]
+size = Vector2(88, 40)
+
+[sub_resource type="Animation" id="Animation_685xi"]
+resource_name = "fall_block"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.7231]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_thlc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5fqu"]
+_data = {
+"RESET": SubResource("Animation_thlc6"),
+"fall_block": SubResource("Animation_685xi")
+}
 
 [node name="HungryMobBossP1" type="Node2D"]
 script = ExtResource("1_p5dx3")
@@ -92,49 +186,6 @@ texture = ExtResource("5_ogi3o")
 hframes = 3
 
 [node name="QuickReload" parent="." instance=ExtResource("6_i8s3j")]
-
-[node name="Land" parent="." instance=ExtResource("2_4hsex")]
-
-[node name="Polygon2D" parent="Land" index="0"]
-color = Color(0.61339, 0.61339, 0.61339, 1)
-polygon = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192)
-
-[node name="Line2D" parent="Land" index="1"]
-visible = false
-points = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192, 864, 192)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_030jg")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1418, 102)
-rotation = 1.61244
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Path2D/PathFollow2D"]
-rotation = -1.83259
-
-[node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
-position = Vector2(45.3773, -15.9029)
-rotation = -3.14159
-target_position = Vector2(88.5897, 12.3222)
-collision_mask = 2
-
-[node name="Polygon2D" type="Polygon2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
-position = Vector2(-10, -9)
-polygon = PackedVector2Array(-39, 28, 64, 28, 64, -10, -39, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/AnimatableBody2D"]
-shape = SubResource("RectangleShape2D_0gmmw")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
-rotation = -1.83259
-remote_path = NodePath("../AnimatableBody2D")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_mknvv")
-}
 
 [node name="Shelves" type="Node" parent="."]
 
@@ -498,8 +549,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land9" parent="Cabinets" instance=ExtResource("2_4hsex")]
-position = Vector2(1592, 166)
-rotation = -1.57169
+position = Vector2(1616, 136)
 
 [node name="Polygon2D" parent="Cabinets/Land9" index="0"]
 position = Vector2(2.00003, 0.0017873)
@@ -517,17 +567,6 @@ rotation = -3.14159
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
 
 [node name="Line2D" parent="Cabinets/Land10" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land12" parent="Cabinets" instance=ExtResource("2_4hsex")]
-position = Vector2(1816, 179)
-rotation = 1.57079
-
-[node name="Polygon2D" parent="Cabinets/Land12" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/Land12" index="1"]
 visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
@@ -577,6 +616,82 @@ polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
 [node name="Line2D" parent="Cabinets/Land15" index="1"]
 visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="FallPlatform" type="Node" parent="."]
+
+[node name="Path2D" type="Path2D" parent="FallPlatform"]
+curve = SubResource("Curve2D_4af8a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="FallPlatform/Path2D"]
+position = Vector2(1424, 112)
+rotation = 1.5708
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="FallPlatform/Path2D/PathFollow2D"]
+rotation = -1.5708
+
+[node name="Polygon2D" type="Polygon2D" parent="FallPlatform/Path2D/PathFollow2D/AnimatableBody2D"]
+polygon = PackedVector2Array(-40, -8, 40, -8, 40, 8, 40, 32, -40, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallPlatform/Path2D/PathFollow2D/AnimatableBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_ycx7f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FallPlatform/Path2D/PathFollow2D/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_uarq0")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="FallPlatform/Path2D/PathFollow2D/AnimatableBody2D"]
+position = Vector2(32, -16)
+rotation = 1.56505
+target_position = Vector2(-0.41394, 71.9988)
+collision_mask = 2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FallPlatform/Path2D/PathFollow2D"]
+rotation = -1.5708
+remote_path = NodePath("../AnimatableBody2D")
+
+[node name="Path2D2" type="Path2D" parent="FallPlatform"]
+curve = SubResource("Curve2D_3weos")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="FallPlatform/Path2D2"]
+position = Vector2(1800, 176)
+rotation = 1.5708
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="FallPlatform/Path2D2/PathFollow2D"]
+rotation = -1.5708
+
+[node name="Polygon2D" type="Polygon2D" parent="FallPlatform/Path2D2/PathFollow2D/AnimatableBody2D"]
+polygon = PackedVector2Array(-73, -30, -73, 10, 15, 10, 15, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallPlatform/Path2D2/PathFollow2D/AnimatableBody2D"]
+position = Vector2(-29, -10)
+shape = SubResource("RectangleShape2D_31my4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FallPlatform/Path2D2/PathFollow2D/AnimatableBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_x5fqu")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="FallPlatform/Path2D2/PathFollow2D/AnimatableBody2D"]
+position = Vector2(15, -34)
+rotation = 1.57079
+target_position = Vector2(-0.000198364, 88)
+collision_mask = 2
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FallPlatform/Path2D2/PathFollow2D"]
+rotation = -1.5708
+remote_path = NodePath("../AnimatableBody2D")
+
+[node name="Land" parent="." instance=ExtResource("2_4hsex")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+color = Color(0.61339, 0.61339, 0.61339, 1)
+polygon = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192)
+
+[node name="Line2D" parent="Land" index="1"]
+visible = false
+points = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 264, 176, 264, 136, 256, 136, 256, 176, -8.37704, 176, -8, 40, -24, 40, -24, 192, 864, 192)
 
 [node name="Land4" parent="." instance=ExtResource("2_4hsex")]
 position = Vector2(1267, 166)
@@ -741,7 +856,6 @@ texture = ExtResource("9_whr14")
 
 [editable path="Taco"]
 [editable path="SoccerBall"]
-[editable path="Land"]
 [editable path="Shelves/DropDownPlatform"]
 [editable path="Shelves/DropDownPlatform2"]
 [editable path="Shelves/DropDownPlatform3"]
@@ -772,11 +886,11 @@ texture = ExtResource("9_whr14")
 [editable path="Cabinets/Land8"]
 [editable path="Cabinets/Land9"]
 [editable path="Cabinets/Land10"]
-[editable path="Cabinets/Land12"]
 [editable path="Cabinets/Land11"]
 [editable path="Cabinets/Land13"]
 [editable path="Cabinets/Land14"]
 [editable path="Cabinets/Land15"]
+[editable path="Land"]
 [editable path="Land4"]
 [editable path="Land6"]
 [editable path="Land13"]
