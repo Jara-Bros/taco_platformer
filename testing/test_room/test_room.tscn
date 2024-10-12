@@ -9,6 +9,7 @@
 script = ExtResource("1_bjtb1")
 
 [node name="Taco" parent="." instance=ExtResource("1_ow40n")]
+position = Vector2(-104, -16)
 
 [node name="Land" parent="." instance=ExtResource("2_2asnp")]
 position = Vector2(0, 16)
