@@ -190,7 +190,7 @@ func set_speed(spe):
 func set_jump_velocity(new_jump):
 	jump_velocity = new_jump
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	if current_state == player_state.KICKING:
 		if prev_state == player_state.KICKING:
 			current_state = player_state.WALKING
