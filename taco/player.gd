@@ -156,13 +156,6 @@ func _physics_process(delta: float) -> void:
 				animation_player.play("idle")
 
 
-	# For falling through platforms
-	# TODO: Get Taco to fall through a platform by pressing "down:
-	# Attempt: When pressing down && on platform, shoot out a ray cast pointing down 
-	## if the ray cast comes back false (doesn't contact anything)
-	## call a method to disable taco's collision shape
-	## set a timer; on timeout, restore taco's collision shape
-
 
 func disable():
 	input_enabled = false

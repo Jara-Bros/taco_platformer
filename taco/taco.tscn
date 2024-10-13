@@ -194,6 +194,7 @@ script = ExtResource("1_q403v")
 speed = 200
 acceleration = 45
 jump_velocity = -350
+push_force = 40
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 

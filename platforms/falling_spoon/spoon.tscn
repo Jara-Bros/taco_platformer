@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://lri63e8intw4"]
+
+[ext_resource type="Script" path="res://platforms/falling_spoon/spoon.gd" id="1_hlm0u"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ayigs"]
+bounce = 0.25
+
+[node name="Spoon" type="RigidBody2D"]
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_ayigs")
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 2)
+script = ExtResource("1_hlm0u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, -60, -2, -8, -10, 10, -9, 17, -5, 22, 0, 24, 6, 22, 9, 17, 10, 10, 2, -8, 5, -60, 4, -68, 0, -69, -4, -68)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.942606, 0.931133, 0, 1)
+polygon = PackedVector2Array(-2, -8, -10, 10, -9, 17, -5, 22, 0, 24, 6, 22, 9, 17, 10, 10, 2, -8, 5, -59, 4, -68, 0, -69, -4, -68, -5, -59)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+rotation = 1.5708
+target_position = Vector2(9.53674e-07, 20)
+collision_mask = 2
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+rotation = -1.5708
+target_position = Vector2(9.53674e-07, 20)
+collision_mask = 2
+
+[node name="ImpulseTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="timeout" from="ImpulseTimer" to="." method="_on_impulse_timer_timeout"]
