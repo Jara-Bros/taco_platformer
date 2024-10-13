@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=28 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://seemit6euwmt" path="res://levels/lunch_rush_level/sprites/hungry_mob.png" id="9_whr14"]
 [ext_resource type="PackedScene" uid="uid://bv3c0hs8icaf" path="res://platforms/move_platform/move_plat.tscn" id="11_e1lls"]
 [ext_resource type="PackedScene" uid="uid://dlftnhvkqkwod" path="res://platforms/fall_platform/fall_plat.tscn" id="11_x4k8d"]
+[ext_resource type="PackedScene" uid="uid://lri63e8intw4" path="res://platforms/falling_spoon/spoon.tscn" id="13_4osrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfobp"]
 size = Vector2(160, 8)
@@ -22,6 +23,21 @@ size = Vector2(512, 8)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b1yb"]
 height = 36.0
+
+[sub_resource type="Animation" id="Animation_sgner"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_n4wcp"]
 resource_name = "move_block"
@@ -40,7 +56,13 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-16, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_sgner"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nx0a6"]
+_data = {
+"RESET": SubResource("Animation_sgner"),
+"move_block": SubResource("Animation_n4wcp")
+}
+
+[sub_resource type="Animation" id="Animation_glpm1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -53,12 +75,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nx0a6"]
-_data = {
-"RESET": SubResource("Animation_sgner"),
-"move_block": SubResource("Animation_n4wcp")
 }
 
 [sub_resource type="Animation" id="Animation_xgajg"]
@@ -78,12 +94,18 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-32, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_glpm1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1l8p"]
+_data = {
+"RESET": SubResource("Animation_glpm1"),
+"move_block": SubResource("Animation_xgajg")
+}
+
+[sub_resource type="Animation" id="Animation_7fsh2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../../CabwDraw/MovePlatform2/MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -91,12 +113,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1l8p"]
-_data = {
-"RESET": SubResource("Animation_glpm1"),
-"move_block": SubResource("Animation_xgajg")
 }
 
 [sub_resource type="Animation" id="Animation_ha10k"]
@@ -114,21 +130,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-32, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7fsh2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../CabwDraw/MovePlatform2/MovePlat:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mgdvs"]
@@ -149,7 +150,7 @@ scale = Vector2(1, 1.06667)
 texture = ExtResource("1_dhfk1")
 
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
-position = Vector2(2016, 648)
+position = Vector2(2291, 432)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
 position = Vector2(312, 128)
@@ -623,16 +624,16 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land20" parent="Cabinets/StaticCabs" instance=ExtResource("2_4hsex")]
-position = Vector2(2461, 528)
+position = Vector2(2471, 528)
 rotation = -1.5708
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land20" index="0"]
 position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24.0005, -184, -24, 80, 56.0002, 79.9999, 55.9995, -184)
+polygon = PackedVector2Array(-24.0005, -184, -25.0004, 125, 55.9995, 125, 55.9995, -184)
 
 [node name="Line2D" parent="Cabinets/StaticCabs/Land20" index="1"]
 visible = false
-points = PackedVector2Array(-24.0005, -184, -24, 80, 56.0002, 79.9999, 55.9995, -184, -24.0005, -184)
+points = PackedVector2Array(-24.0005, -184, -25.0004, 125, 55.9995, 125, 55.9995, -184, -24.0005, -184)
 
 [node name="CabwDraw" parent="Cabinets" instance=ExtResource("2_4hsex")]
 position = Vector2(2192, 667)
@@ -714,14 +715,24 @@ libraries = {
 "": SubResource("AnimationLibrary_mgdvs")
 }
 
-[node name="Label" type="Label" parent="Cabinets"]
-offset_left = 2288.0
-offset_top = 368.0
-offset_right = 2328.0
-offset_bottom = 391.0
-text = "knock over
-spoon
-"
+[node name="Land" parent="." instance=ExtResource("2_4hsex")]
+position = Vector2(2492, 422)
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32, -19, -32)
+
+[node name="Land3" parent="." instance=ExtResource("2_4hsex")]
+position = Vector2(2648, 536)
+
+[node name="Polygon2D" parent="Land3" index="0"]
+polygon = PackedVector2Array(-56, -64, -48, -64, -48, 56, 168, 56, 168, 64, -56, 64)
+
+[node name="Line2D" parent="Land3" index="1"]
+visible = false
+points = PackedVector2Array(-56, -64, -48, -64, -48, 56, 168, 56, 168, 64, -56, 64, -56, -64)
 
 [node name="FallPlatform" type="Node" parent="."]
 
@@ -776,6 +787,10 @@ target_position = Vector2(-99, 0.000358582)
 [node name="PlatRayCast" parent="FallPlatform/FallPlat3/Path2D/PathFollow2D/AnimatableBody2D" index="3"]
 position = Vector2(26, -72)
 target_position = Vector2(-102, -0.000366211)
+
+[node name="Spoon" parent="." instance=ExtResource("13_4osrn")]
+position = Vector2(2405, 462)
+rotation = 1.57079
 
 [node name="CuttingBoard" parent="." instance=ExtResource("2_4hsex")]
 position = Vector2(1856, 632)
@@ -1022,6 +1037,8 @@ texture = ExtResource("9_whr14")
 [editable path="Cabinets/CabwDraw2/MovePlatform"]
 [editable path="Cabinets/CabwD3"]
 [editable path="Cabinets/CabwD3/MovePlatform3"]
+[editable path="Land"]
+[editable path="Land3"]
 [editable path="FallPlatform/FallPlat"]
 [editable path="FallPlatform/FallPlat2"]
 [editable path="FallPlatform/FallPlat3"]
