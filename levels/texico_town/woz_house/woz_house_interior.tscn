@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="5_adt7u"]
 [ext_resource type="Script" path="res://NPC/scripts/woz.gd" id="6_0yqhy"]
 [ext_resource type="Texture2D" uid="uid://b6y7oud0pushc" path="res://NPC/sprites/woz/woz_idle_walk_sheet.png" id="6_umnpt"]
-[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="7_30iqc"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_30iqc"]
 [ext_resource type="Texture2D" uid="uid://dfacw550fpvko" path="res://levels/texico_town/woz_house/wozku_book.png" id="8_hepsp"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/wozku_book.gd" id="9_hvgsd"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/exit_door.gd" id="9_ws43i"]

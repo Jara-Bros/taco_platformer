@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://riukqy08q6t6"]
 
-[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_uorrt"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_uorrt"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_qkuby"]
 [ext_resource type="PackedScene" uid="uid://c0um3phj8j8wk" path="res://tBleu/bleu.tscn" id="3_u7bd0"]
 

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dccma7f5v5gmx" path="res://NPC/npc.tscn" id="4_cqi45"]
 [ext_resource type="Script" path="res://NPC/scripts/barb.gd" id="5_rfdt5"]
 [ext_resource type="Texture2D" uid="uid://c12qt0c32eimy" path="res://NPC/sprites/barb/barb_idle_happy_sheet.png" id="5_snnxt"]
-[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="7_lcqgd"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_lcqgd"]
 [ext_resource type="AudioStream" uid="uid://bomeghq83herd" path="res://audio/music/Fragile State - The Facts And The Dreams.mp3" id="8_eh6i3"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/office_exit_door.gd" id="8_khoce"]
 

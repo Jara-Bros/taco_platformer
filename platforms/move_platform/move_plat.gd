@@ -10,7 +10,7 @@ func _ready() -> void:
 		add_child(coll)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		var points := PackedVector2Array($Polygon2D.polygon)
 		points.append($Polygon2D.polygon[0])

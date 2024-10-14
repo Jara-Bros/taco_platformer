@@ -1,16 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwg541hw1q2wg"]
+[gd_scene load_steps=5 format=3 uid="uid://bwg541hw1q2wg"]
 
 [ext_resource type="Script" path="res://testing/test_room/test_room.gd" id="1_bjtb1"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ow40n"]
-[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="2_2asnp"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_2asnp"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="3_76aew"]
-[ext_resource type="PackedScene" uid="uid://djqd3l3tsunm5" path="res://testing/test_room/move_blocks_test/move_blocks.tscn" id="5_p426n"]
 
 [node name="TestRoom" type="Node2D"]
 script = ExtResource("1_bjtb1")
 
 [node name="Taco" parent="." instance=ExtResource("1_ow40n")]
-position = Vector2(64, -235)
+position = Vector2(7, -116)
 
 [node name="Land" parent="." instance=ExtResource("2_2asnp")]
 position = Vector2(0, 16)
@@ -24,23 +23,10 @@ points = PackedVector2Array(-192, 16, 192, 16, 192, 96, -192, 96, -192, 16)
 
 [node name="QuickReload" parent="." instance=ExtResource("3_76aew")]
 
-[node name="MoveBlocks" parent="." instance=ExtResource("5_p426n")]
-position = Vector2(30, -137)
-
-[node name="MoveBlocks2" parent="." instance=ExtResource("5_p426n")]
-position = Vector2(23, 22)
-
-[node name="MoveBlocks3" parent="." instance=ExtResource("5_p426n")]
-position = Vector2(64, -58)
-
 [node name="Label" type="Label" parent="."]
 offset_left = -139.0
 offset_top = -68.0
 offset_right = -99.0
 offset_bottom = -45.0
-text = "get these to
-topple over 
-when you walk
-to one side"
 
 [editable path="Land"]

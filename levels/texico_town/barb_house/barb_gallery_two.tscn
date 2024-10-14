@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_jx5rw"]
 [ext_resource type="Script" path="res://levels/texico_town/barb_house/barb_gallery_two.gd" id="1_vintk"]
 [ext_resource type="Texture2D" uid="uid://cbram5nofadaw" path="res://tilesets/texico_town/kitchen_tileset.png" id="2_6vfxh"]
-[ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://room_transition/room_transition.tscn" id="3_8qrvk"]
+[ext_resource type="PackedScene" uid="uid://d15ai6pgnn5xb" path="res://gui/room_transition/room_transition.tscn" id="3_8qrvk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_djfcp"]
 texture = ExtResource("2_6vfxh")
