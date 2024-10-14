@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk0m6cul1g8na"]
 
-[ext_resource type="Script" path="res://obstacles/water_bowl/water_bowl.gd" id="1_uk1hc"]
-[ext_resource type="PackedScene" uid="uid://bdisylk5lvclg" path="res://taco/Statuses/ranch.tscn" id="2_gasdp"]
+[ext_resource type="Script" path="res://platforms/water_bowl/water_bowl.gd" id="1_uk1hc"]
+[ext_resource type="PackedScene" uid="uid://bdisylk5lvclg" path="res://taco/Statuses/ranch/ranch.tscn" id="2_gasdp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7mji"]
 size = Vector2(199, 115)

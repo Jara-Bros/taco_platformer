@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=32 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cpbk1c0vo43sm" path="res://taco/Item/soccer_ball/lettuce_ball.png" id="5_7kjqw"]
 [ext_resource type="Texture2D" uid="uid://bh76uw1rlv0b0" path="res://NPC/sprites/sous/sous.png" id="5_ogi3o"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="6_i8s3j"]
-[ext_resource type="PackedScene" uid="uid://i7d0fr4voxd" path="res://tools/save_point/save_point.tscn" id="8_2dxag"]
 [ext_resource type="PackedScene" uid="uid://b5ttw35eibwq" path="res://platforms/drop_down_platform/drop_down_platform.tscn" id="8_t8151"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="9_djago"]
 [ext_resource type="Texture2D" uid="uid://seemit6euwmt" path="res://levels/lunch_rush_level/sprites/hungry_mob.png" id="9_whr14"]
@@ -184,8 +183,6 @@ scale = Vector2(1.25, 1.1875)
 texture = ExtResource("5_7kjqw")
 
 [node name="QuickReload" parent="." instance=ExtResource("6_i8s3j")]
-
-[node name="SavePoint" parent="." instance=ExtResource("8_2dxag")]
 
 [node name="Shelves" type="Node" parent="."]
 

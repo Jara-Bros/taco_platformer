@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjctgsmxoeht"]
+
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_m25iv"]
+[ext_resource type="PackedScene" uid="uid://cpjt7e7yqdqg2" path="res://platforms/slippery_platform/slippery_platform.tscn" id="2_r35g7"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_rowoq"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="4_3kdkk"]
+
+[node name="SlipperyPlatformTest" type="Node2D"]
+
+[node name="Land" parent="." groups=["Land"] instance=ExtResource("1_m25iv")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-51, 3, 82, 5, 238, 1, 304, -2, 1131, -6, 1111, 39, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-51, 3, 82, 5, 238, 1, 304, -2, 1131, -6, 1111, 39, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126, -51, 3)
+
+[node name="SlipperyPlatform" parent="." instance=ExtResource("2_r35g7")]
+position = Vector2(235, -16)
+
+[node name="Taco" parent="." instance=ExtResource("3_rowoq")]
+position = Vector2(-87, -155)
+
+[node name="QuickReload" parent="." instance=ExtResource("4_3kdkk")]
+
+[editable path="Land"]

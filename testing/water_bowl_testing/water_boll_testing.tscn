@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv1bdra8aft01"]
 
-[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="1_ii75m"]
-[ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://obstacles/water_bowl/water_bowl.tscn" id="2_hc7ti"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_ii75m"]
+[ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="2_hc7ti"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="3_cw3yt"]
 
 [node name="WaterBollTesting" type="Node2D"]
