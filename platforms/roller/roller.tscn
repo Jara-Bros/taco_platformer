@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bx0jo7ovyow4m"]
 
-[ext_resource type="Script" path="res://roller.gd" id="1_eu2uk"]
+[ext_resource type="Script" path="res://platforms/roller/roller.gd" id="1_eu2uk"]
 [ext_resource type="Texture2D" uid="uid://ohqcmpjfnojx" path="res://platforms/jungle/pngtree-moonbeam-flower-png-image_6531463-removebg-preview.png" id="2_wqetf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vi8vl"]

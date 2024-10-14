@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://gui/boot_page/splash_pages.gd" id="1_hc2ej"]
 [ext_resource type="Texture2D" uid="uid://bhdt44s8serg2" path="res://gui/boot_page/studio_page.png" id="1_x1aqw"]
 [ext_resource type="Texture2D" uid="uid://7umpkyvt3pem" path="res://gui/boot_page/made_in_godot.jpg" id="2_6w4a4"]
-[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="4_h0pi7"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="4_h0pi7"]
 
 [sub_resource type="Animation" id="Animation_hemx4"]
 length = 0.001

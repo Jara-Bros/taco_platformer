@@ -10,14 +10,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	# When raycast hits "drop down platform" && button down is pressed,
 	# disable platform's collision shape
 	if ray_cast.is_colliding():
 		if Input.is_action_just_pressed("move_down"):
 			collision_shape.disabled = true
-			print('see ya')
 			platform_restore_timer.start()
 			
 

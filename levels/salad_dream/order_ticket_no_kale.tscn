@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blg2x86exa3q8"]
 
-[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_m84lx"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_m84lx"]
 
 [node name="OrderTicket" type="Control"]
 layout_mode = 3

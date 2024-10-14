@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0pot462ott1b"]
 
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="1_pc1hm"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="1_pc1hm"]
 [ext_resource type="Script" path="res://gui/menus/pause_menu/pause_menu.gd" id="1_rfyk2"]
 
 [node name="PauseMenu" type="Control"]

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://ddkpie7d28xv7"]
 
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="1_egpr1"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="1_egpr1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqkkx"]
 

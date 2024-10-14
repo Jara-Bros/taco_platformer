@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://nfwx70nk6p4d" path="res://levels/river_enter/river/sprites/sea_png.png" id="4_7cagb"]
 [ext_resource type="PackedScene" uid="uid://cp6oi7jighbuy" path="res://levels/river_enter/river/taco_plaintain_ride.tscn" id="5_dgayr"]
 [ext_resource type="AudioStream" uid="uid://bfgo2c4oqk5px" path="res://audio/music/river_slow_bm_edit.mp3" id="6_vrsl5"]
-[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://interaction/interaction_area/interaction_area.tscn" id="7_22r81"]
+[ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_22r81"]
 [ext_resource type="Script" path="res://levels/river_enter/river/abe.gd" id="7_new6o"]
 [ext_resource type="Texture2D" uid="uid://ddw7t4fpurv20" path="res://NPC/sprites/abe/abe_happy_portrait.png" id="8_box27"]
 [ext_resource type="Script" path="res://levels/river_enter/river/beach_enter.gd" id="11_vyrev"]
-[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://collectibles/coins/coin.tscn" id="12_7kpjg"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://items/coins/coin.tscn" id="12_7kpjg"]
 [ext_resource type="Texture2D" uid="uid://ce4no77qam7km" path="res://levels/river_enter/river/sprites/sand-beach-png-9.png" id="12_i7dfl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ljtt2"]
