@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdisylk5lvclg"]
+
+[ext_resource type="Script" path="res://taco/Statuses/ranch.gd" id="1_70xlp"]
+
+[node name="Ranch" type="Node2D" groups=["status"]]
+script = ExtResource("1_70xlp")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
