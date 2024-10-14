@@ -25,10 +25,10 @@ buses/default_bus_layout="res://audio/buses/default_bus_layout.tres"
 
 SceneManager="*res://autoloads/global_scene_manager/global_scene_manager.tscn"
 PauseMenu="*res://gui/menus/pause_menu/pause_menu.gd"
-SaveManager="*res://save_manager.gd"
+SaveManager="*res://autoloads/save_manager/save_manager (2).gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ItemManager="*res://autoloads/item_manager/item_manager.gd"
-InteractionManager="*res://interaction/interaction_manager/interaction_manager.tscn"
+InteractionManager="*res://autoloads/interaction/interaction_manager/interaction_manager.tscn"
 PersistantDataHandler="*res://autoloads/persistent_data_handler/persistance_data.tscn"
 
 [dialogic]

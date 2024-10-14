@@ -1,0 +1,403 @@
+[gd_scene load_steps=22 format=3 uid="uid://bcf757ob75bav"]
+
+[ext_resource type="Script" path="res://testing/white_box/tutorial/tutorial.gd" id="1_4e4bf"]
+[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_tahh3"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_j8ojj"]
+[ext_resource type="PackedScene" uid="uid://etwbd3iquu7x" path="res://items/coins/coin.tscn" id="3_fe0f4"]
+[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_xlh0x"]
+[ext_resource type="Texture2D" uid="uid://dgixi1yldjtya" path="res://taco/Item/soccer_ball/guac_ball.png" id="4_utij4"]
+[ext_resource type="PackedScene" uid="uid://l23b53maxqrh" path="res://NPC/natives/tomato_tom/survey/survey_tom.tscn" id="5_apqn2"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_evh3f"]
+[ext_resource type="PackedScene" uid="uid://cald5fle2ilk1" path="res://items/premios/premio.tscn" id="7_ebnff"]
+[ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="10_f2g3f"]
+[ext_resource type="PackedScene" uid="uid://basv3p4jb1huf" path="res://obstacles/swing_obstacle.tscn" id="11_wu122"]
+[ext_resource type="Texture2D" uid="uid://c1l218wq5j1a8" path="res://platforms/sprites/green_chip.png" id="12_28i81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2qji"]
+size = Vector2(47, 121)
+
+[sub_resource type="Animation" id="Animation_chvtr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.792747, 0.232844, 0.638333, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s6lbu"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.792747, 0.232844, 0.638333, 1), Color(0.792157, 0.231373, 0.639216, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exqn0"]
+_data = {
+"RESET": SubResource("Animation_chvtr"),
+"fade_out": SubResource("Animation_s6lbu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5evtl"]
+radius = 20.2237
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh2u1"]
+size = Vector2(27.219, 146.359)
+
+[sub_resource type="Animation" id="Animation_dhg25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GymDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32.0001, -96)]
+}
+
+[sub_resource type="Animation" id="Animation_76jn3"]
+resource_name = "move_up"
+length = 2.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GymDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32.0001, -96), Vector2(-32, -256)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GymDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jandb"]
+_data = {
+"RESET": SubResource("Animation_dhg25"),
+"move_up": SubResource("Animation_76jn3")
+}
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_4e4bf")
+
+[node name="QuickReload" parent="." instance=ExtResource("6_evh3f")]
+
+[node name="THome" type="ColorRect" parent="."]
+offset_left = -101.0
+offset_top = -141.0
+offset_right = 298.0
+offset_bottom = -38.0
+
+[node name="Label" type="Label" parent="THome"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 17.0
+offset_right = 206.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "taco house
+(pink guitar)"
+
+[node name="Taco" parent="." instance=ExtResource("1_tahh3")]
+position = Vector2(-1099, 494)
+
+[node name="SoccerBall" parent="." instance=ExtResource("3_xlh0x")]
+position = Vector2(-281, 513)
+
+[node name="Sprite2D" parent="SoccerBall" index="1"]
+texture = ExtResource("4_utij4")
+
+[node name="Land10" type="Node" parent="."]
+
+[node name="Land" parent="Land10" instance=ExtResource("2_j8ojj")]
+
+[node name="Polygon2D" parent="Land10/Land" index="0"]
+polygon = PackedVector2Array(-28, 11, 89, -1, 191, -65, 208, 225, -419, 180, -384, 119, -300, 128, -255, 87, -183, 84, -177, 26, -124, 9)
+
+[node name="Line2D" parent="Land10/Land" index="1"]
+points = PackedVector2Array(-28, 11, 89, -1, 191, -65, 208, 225, -419, 180, -384, 119, -300, 128, -255, 87, -183, 84, -177, 26, -124, 9, -28, 11)
+
+[node name="Land2" parent="Land10" instance=ExtResource("2_j8ojj")]
+position = Vector2(-746, 62)
+rotation = 3.09133
+
+[node name="Polygon2D" parent="Land10/Land2" index="0"]
+polygon = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, -81.0834, -378.552, -38.1377, -376.391, 174.607, -246.539, 253.477, -142.445, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996)
+
+[node name="Line2D" parent="Land10/Land2" index="1"]
+points = PackedVector2Array(-28, 11, 197.768, -50.1274, 24.1751, -182.015, -91.8854, -163.823, -205.346, -157.516, -270.999, -205.875, -266.64, -252.716, -408.883, -350.986, -254.104, -422.3, -81.0834, -378.552, -38.1377, -376.391, 174.607, -246.539, 253.477, -142.445, 208, 225, -527, 170, -300, 128, -255, 87, -183, 84, -138.014, -42.9882, -29.6364, -87.5996, -28, 11)
+
+[node name="Land3" parent="Land10" instance=ExtResource("2_j8ojj")]
+position = Vector2(-51, 556)
+rotation = -1.07807
+
+[node name="Polygon2D" parent="Land10/Land3" index="0"]
+polygon = PackedVector2Array(-631.068, -472.301, -754.734, -752.501, -649.203, -815.97, -887.935, -1271.19, -863.266, -1284.44, -606.816, -1419.85, -599.248, -1405.76, -796.797, -1306.5, -634.29, -826.247, -615.788, -836.18, -531.784, -686.06, -492.61, -708.227, -560.188, -831.981, -331.376, -963.91, -300.026, -901.29, -383.078, -664.883, -341.386, -585.116, -347.843, -580.23, -311.538, -512.61, -351.593, -489.969, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170)
+
+[node name="Line2D" parent="Land10/Land3" index="1"]
+points = PackedVector2Array(-631.068, -472.301, -754.734, -752.501, -649.203, -815.97, -887.935, -1271.19, -863.266, -1284.44, -606.816, -1419.85, -599.248, -1405.76, -796.797, -1306.5, -634.29, -826.247, -615.788, -836.18, -531.784, -686.06, -492.61, -708.227, -560.188, -831.981, -331.376, -963.91, -300.026, -901.29, -383.078, -664.883, -341.386, -585.116, -347.843, -580.23, -311.538, -512.61, -351.593, -489.969, -264.083, -326.976, -214.177, -318.585, -159.938, -253.499, -47.3612, -151.634, 75.6535, -167.74, 258.858, -269.335, 316.453, -160.304, 208, 225, -527, 170, -631.068, -472.301)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-230, 57)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-298, 65)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-342, 107)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-506, 194)
+rotation = 0.108177
+
+[node name="Coin5" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-434, 242)
+rotation = 0.108177
+
+[node name="Coin6" parent="Coins" instance=ExtResource("3_fe0f4")]
+position = Vector2(-393, 316)
+rotation = 0.108177
+
+[node name="Premios" type="Node" parent="."]
+
+[node name="Premio" parent="Premios" instance=ExtResource("7_ebnff")]
+position = Vector2(-852, 146)
+
+[node name="SwingObstacles" type="Node" parent="."]
+
+[node name="SwingObstacle" parent="SwingObstacles" instance=ExtResource("11_wu122")]
+position = Vector2(-1224, 369)
+
+[node name="SwingObstacle2" parent="SwingObstacles" instance=ExtResource("11_wu122")]
+position = Vector2(-1357, 368)
+
+[node name="SwingObstacle3" parent="SwingObstacles" instance=ExtResource("11_wu122")]
+position = Vector2(-1480, 366)
+
+[node name="Area2D" parent="SwingObstacles/SwingObstacle3" index="2"]
+position = Vector2(20, 20)
+
+[node name="Timer" type="Timer" parent="SwingObstacles"]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="HiddenArea" type="Area2D" parent="."]
+position = Vector2(-658, 174)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HiddenArea"]
+z_index = 1
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_k2qji")
+
+[node name="ColorRect2" type="ColorRect" parent="HiddenArea"]
+z_index = 1
+offset_left = -291.0
+offset_top = -131.0
+offset_right = 26.0
+offset_bottom = 69.0
+color = Color(0.792747, 0.232844, 0.638333, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HiddenArea"]
+libraries = {
+"": SubResource("AnimationLibrary_exqn0")
+}
+
+[node name="SurveyTom" parent="." instance=ExtResource("5_apqn2")]
+position = Vector2(-134, -15)
+
+[node name="SoccerSwitch" type="Area2D" parent="."]
+position = Vector2(-628, 607)
+collision_layer = 0
+collision_mask = 8
+
+[node name="ColorRect" type="ColorRect" parent="SoccerSwitch"]
+offset_left = -19.0001
+offset_top = -17.0
+offset_right = 20.9999
+offset_bottom = 23.0
+color = Color(1, 0.137255, 0.129412, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoccerSwitch"]
+position = Vector2(0.999939, 3)
+shape = SubResource("CircleShape2D_5evtl")
+
+[node name="GymDoor" type="StaticBody2D" parent="SoccerSwitch"]
+position = Vector2(-32.0001, -96)
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="SoccerSwitch/GymDoor"]
+offset_left = -12.8484
+offset_top = -73.1514
+offset_right = 15.1516
+offset_bottom = 75.8486
+
+[node name="BlockPlatform" type="CollisionShape2D" parent="SoccerSwitch/GymDoor"]
+position = Vector2(-0.421332, 0.0624855)
+shape = SubResource("RectangleShape2D_qh2u1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoccerSwitch"]
+libraries = {
+"": SubResource("AnimationLibrary_jandb")
+}
+
+[node name="Rollers" type="Node" parent="."]
+
+[node name="Roller" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-813, 559)
+rotation_speed = 15
+
+[node name="Roller2" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-837, 528)
+rotation_speed = 15
+
+[node name="Roller3" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-862, 500)
+rotation_speed = 15
+
+[node name="Roller4" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-887, 472)
+rotation_speed = 15
+
+[node name="Roller5" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-912, 444)
+rotation_speed = 15
+
+[node name="Roller6" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-937, 418)
+rotation_speed = 15
+
+[node name="Roller7" parent="Rollers" instance=ExtResource("10_f2g3f")]
+position = Vector2(-963, 390)
+rotation_speed = 15
+
+[node name="Bridge" parent="." instance=ExtResource("2_j8ojj")]
+position = Vector2(-1267, 423)
+
+[node name="Polygon2D" parent="Bridge" index="0"]
+polygon = PackedVector2Array(28, -3, 177, -2, 179, 21, -296.782, 21, -321, 21, -321, -4)
+
+[node name="Line2D" parent="Bridge" index="1"]
+points = PackedVector2Array(28, -3, 177, -2, 179, 21, -296.782, 21, -321, 21, -321, -4, 28, -3)
+
+[node name="PitPlatforms" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PitPlatforms"]
+position = Vector2(-1071, 653)
+
+[node name="Sprite2D" type="Sprite2D" parent="PitPlatforms/StaticBody2D"]
+position = Vector2(2, -2)
+rotation = -1.88964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_28i81")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PitPlatforms/StaticBody2D"]
+polygon = PackedVector2Array(-21, -1, 7, -14, 20, -26, 22, 15)
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="PitPlatforms"]
+position = Vector2(-1075, 600)
+
+[node name="Sprite2D" type="Sprite2D" parent="PitPlatforms/StaticBody2D2"]
+position = Vector2(2, -2)
+rotation = -1.88964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_28i81")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PitPlatforms/StaticBody2D2"]
+polygon = PackedVector2Array(-21, -1, 7, -14, 20, -26, 22, 15)
+one_way_collision = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="PitPlatforms"]
+position = Vector2(-1077, 536)
+
+[node name="Sprite2D" type="Sprite2D" parent="PitPlatforms/StaticBody2D3"]
+position = Vector2(2, -2)
+rotation = -1.88964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_28i81")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PitPlatforms/StaticBody2D3"]
+polygon = PackedVector2Array(-21, -1, 7, -14, 20, -26, 22, 15)
+one_way_collision = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="PitPlatforms"]
+position = Vector2(-1080, 471)
+
+[node name="Sprite2D" type="Sprite2D" parent="PitPlatforms/StaticBody2D4"]
+position = Vector2(2, -2)
+rotation = -1.88964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("12_28i81")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PitPlatforms/StaticBody2D4"]
+polygon = PackedVector2Array(-21, -1, 7, -14, 20, -26, 22, 15)
+one_way_collision = true
+
+[connection signal="body_entered" from="SwingObstacles/SwingObstacle/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SwingObstacles/SwingObstacle2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SwingObstacles/SwingObstacle3/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="SwingObstacles/Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="HiddenArea" to="." method="_on_hidden_area_area_entered"]
+[connection signal="area_entered" from="SoccerSwitch" to="." method="_on_soccer_switch_area_entered"]
+
+[editable path="Taco"]
+[editable path="SoccerBall"]
+[editable path="Land10/Land"]
+[editable path="Land10/Land2"]
+[editable path="Land10/Land3"]
+[editable path="SwingObstacles/SwingObstacle"]
+[editable path="SwingObstacles/SwingObstacle2"]
+[editable path="SwingObstacles/SwingObstacle3"]
+[editable path="Bridge"]

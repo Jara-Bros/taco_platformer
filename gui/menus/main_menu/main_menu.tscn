@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://d2mtvr7ax7guf"]
 
-[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_4l72j"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_4l72j"]
 [ext_resource type="Script" path="res://gui/menus/main_menu/main_menu.gd" id="1_fcjyx"]
 [ext_resource type="Theme" uid="uid://ddkpie7d28xv7" path="res://themes/default_theme.tres" id="1_odqg3"]
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://fonts/dialogue_box/pokemon-emerald.ttf" id="3_exrli"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="3_exrli"]
 [ext_resource type="Texture2D" uid="uid://dhfo3ntyog2xk" path="res://taco/sprites/taco_happy.png" id="5_33bxb"]
 [ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="6_b2xwb"]
 [ext_resource type="PackedScene" uid="uid://bermbu6qd8ncx" path="res://gui/boot_page/splash_pages.tscn" id="12_7oxl1"]

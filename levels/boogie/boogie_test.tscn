@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/boogie/boogie_test.gd" id="1_143n2"]
 [ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/boogie/taco_boogie.tscn" id="1_l6ymw"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="2_drpj1"]
-[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://land/land.tscn" id="4_84nhj"]
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="4_84nhj"]
 [ext_resource type="Texture2D" uid="uid://cr2ugmxfydfy0" path="res://levels/jungle_level/sprites/lush-rainforest-canopy-png-nss-rm4k6l339fenad5d.png" id="4_hw1kv"]
 [ext_resource type="Texture2D" uid="uid://dqg5g7r27tok5" path="res://levels/texico_town/sprites/gold_chip.png" id="5_dt6co"]
 [ext_resource type="Texture2D" uid="uid://4eonpltpsc5c" path="res://levels/texico_town/sprites/cloud-removebg-preview.png" id="6_okyc3"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://deemxk8fyn22l"]
+
+[ext_resource type="Texture2D" uid="uid://brmek7ot3lxbp" path="res://testing/white_box/salad_dream_2/bowl_spawner.png" id="1_7623p"]
+[ext_resource type="Script" path="res://testing/white_box/salad_dream_2/bowl_spawner.gd" id="1_hdi8x"]
+[ext_resource type="PackedScene" uid="uid://0xumxy80mefw" path="res://testing/white_box/salad_dream_2/bowl.tscn" id="2_6lpem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr344"]
+size = Vector2(24, 43)
+
+[node name="BowlSpawner" type="Node2D"]
+script = ExtResource("1_hdi8x")
+bowl_scene = ExtResource("2_6lpem")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -1.00001)
+scale = Vector2(0.234615, 0.239286)
+texture = ExtResource("1_7623p")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_wr344")

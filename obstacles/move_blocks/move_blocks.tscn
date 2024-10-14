@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://djqd3l3tsunm5"]
+
+[node name="MoveBlocks" type="RigidBody2D"]
+mass = 0.5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -64, 0, -80, 72, -80, 88, -64, 88, 8, -16, 8)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.701303, 0.337748, 0.767657, 1)
+polygon = PackedVector2Array(-16, 8, 88, 8, 88, -64, 72, -80, 0, -80, 0, -80, -8, -72, -16, -64)
