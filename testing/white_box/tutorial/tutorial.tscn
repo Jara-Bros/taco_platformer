@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_xlh0x"]
 [ext_resource type="Texture2D" uid="uid://dgixi1yldjtya" path="res://taco/Item/soccer_ball/guac_ball.png" id="4_utij4"]
 [ext_resource type="PackedScene" uid="uid://l23b53maxqrh" path="res://NPC/natives/tomato_tom/survey/survey_tom.tscn" id="5_apqn2"]
-[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="6_evh3f"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="6_evh3f"]
 [ext_resource type="PackedScene" uid="uid://cald5fle2ilk1" path="res://items/premios/premio.tscn" id="7_ebnff"]
 [ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="10_f2g3f"]
 [ext_resource type="PackedScene" uid="uid://basv3p4jb1huf" path="res://obstacles/swing_obstacle.tscn" id="11_wu122"]
