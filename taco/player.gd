@@ -78,7 +78,6 @@ func _physics_process(delta: float) -> void:
 		
 
 
-	
 	if direction:
 		if current_state == player_state.WALKING:
 			velocity.x = move_toward(velocity.x, direction * speed, 50)

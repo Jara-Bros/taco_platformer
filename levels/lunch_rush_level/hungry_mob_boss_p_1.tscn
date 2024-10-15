@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=33 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
@@ -14,7 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bv3c0hs8icaf" path="res://platforms/move_platform/move_plat.tscn" id="11_e1lls"]
 [ext_resource type="PackedScene" uid="uid://dlftnhvkqkwod" path="res://platforms/fall_platform/fall_plat.tscn" id="11_x4k8d"]
 [ext_resource type="PackedScene" uid="uid://lri63e8intw4" path="res://platforms/falling_spoon/spoon.tscn" id="13_4osrn"]
+[ext_resource type="PackedScene" uid="uid://cpjt7e7yqdqg2" path="res://platforms/slippery_platform/slippery_platform.tscn" id="13_iw2up"]
 [ext_resource type="PackedScene" uid="uid://djqd3l3tsunm5" path="res://obstacles/move_blocks/move_blocks.tscn" id="15_o26y7"]
+[ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="16_2ca4i"]
+[ext_resource type="PackedScene" uid="uid://bnb50332vdfw6" path="res://taco/Statuses/StatusRemover/StatusRemover.tscn" id="17_4q1j2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfobp"]
 size = Vector2(160, 8)
@@ -139,14 +142,8 @@ _data = {
 "move_block": SubResource("Animation_ha10k")
 }
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sqhts"]
-friction = 0.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbsc"]
 size = Vector2(26, 176)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qaqov"]
-size = Vector2(274, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oyma"]
 size = Vector2(536, 16)
@@ -172,8 +169,7 @@ texture = ExtResource("5_ogi3o")
 hframes = 3
 
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
-
-position = Vector2(525, 37)
+position = Vector2(1704, 472)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
 position = Vector2(312, 128)
@@ -752,23 +748,19 @@ polygon = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32)
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32, -19, -32)
 
-[node name="CuttingBoard" parent="." instance=ExtResource("2_4hsex")]
-position = Vector2(1856, 632)
-physics_material_override = SubResource("PhysicsMaterial_sqhts")
+[node name="CutBoardSlippery" parent="." instance=ExtResource("13_iw2up")]
+position = Vector2(1820, 611)
+rotation = 0.785397
 
-[node name="Polygon2D" parent="CuttingBoard" index="0"]
-polygon = PackedVector2Array(-64, -32, 128, 56, 128, 48, -64, -40)
+[node name="CollisionShape2D" parent="CutBoardSlippery/Area2D" index="0"]
+position = Vector2(-4.34778, -6.11273)
 
-[node name="Line2D" parent="CuttingBoard" index="1"]
-points = PackedVector2Array(-64, -32, 128, 56, 128, 48, -64, -40, -64, -32)
-default_color = Color(0, 0.792157, 0.564706, 1)
-
-[node name="Label" type="Label" parent="CuttingBoard"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.956863, 1, 0.133333, 1)
-text = "needs
-slippery"
+[node name="Label" type="Label" parent="CutBoardSlippery"]
+offset_left = -4.24258
+offset_top = -56.5685
+offset_right = 35.7574
+offset_bottom = -33.5685
+text = "only works up??"
 
 [node name="FallPlatform" type="Node" parent="."]
 
@@ -904,24 +896,6 @@ polygon = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00
 visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001, -24, -8.00001)
 
-[node name="Sauced" type="Area2D" parent="."]
-position = Vector2(3176, 400)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sauced"]
-position = Vector2(12, 11)
-shape = SubResource("RectangleShape2D_qaqov")
-
-[node name="SaucedTimer" type="Timer" parent="Sauced"]
-wait_time = 4.0
-
-[node name="Polygon2D" type="Polygon2D" parent="Sauced"]
-position = Vector2(0, 11)
-scale = Vector2(1, 2.1)
-color = Color(0.997032, 0.991941, 0, 1)
-polygon = PackedVector2Array(-125, -10, -125, 10, 149, 10, 149, -10)
-
 [node name="SaladSection" type="Node" parent="."]
 
 [node name="Land" parent="SaladSection" instance=ExtResource("2_4hsex")]
@@ -929,20 +903,20 @@ position = Vector2(3088, 408)
 collision_layer = 4
 
 [node name="Polygon2D" parent="SaladSection/Land" index="0"]
-polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16)
+polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64)
 
 [node name="Line2D" parent="SaladSection/Land" index="1"]
-points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, -40, -24)
+points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64, -40, -24)
 
 [node name="Land2" parent="SaladSection" instance=ExtResource("2_4hsex")]
 position = Vector2(3272, 416)
 collision_layer = 4
 
 [node name="Polygon2D" parent="SaladSection/Land2" index="0"]
-polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 56, -32)
+polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641)
 
 [node name="Line2D" parent="SaladSection/Land2" index="1"]
-points = PackedVector2Array(-8, 8, -24, 16, 56, 16, 56, -32, -8, 8)
+points = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641, -8, 8)
 
 [node name="SaladSection4" type="StaticBody2D" parent="SaladSection"]
 position = Vector2(3056, 440)
@@ -995,6 +969,31 @@ polygon = PackedVector2Array(-8, -8, -8, 8, 528, 8, 528, -8)
 position = Vector2(260, 0)
 shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
+
+[node name="AndysRanch" type="Node" parent="."]
+
+[node name="WaterBowl" parent="AndysRanch" instance=ExtResource("16_2ca4i")]
+position = Vector2(3104, 319)
+
+[node name="CollisionShape2D" parent="AndysRanch/WaterBowl" index="0"]
+polygon = PackedVector2Array(-127.5, -14.5, -92.5, 51.5, -52.5, 73.5, 60.5, 73.5, 97.5, 54.5, 137.5, -14.5)
+
+[node name="Polygon2D" parent="AndysRanch/WaterBowl" index="1"]
+z_index = 6
+color = Color(1, 1, 0.678431, 0.815686)
+polygon = PackedVector2Array(-48, 24, -13, 90, 26, 112, 142, 112, 177, 93, 217, 24)
+
+[node name="StatusRemover" parent="AndysRanch" instance=ExtResource("17_4q1j2")]
+position = Vector2(3467, 389)
+
+[node name="CollisionShape2D" parent="AndysRanch/StatusRemover" index="0"]
+polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
+
+[node name="StatusRemover2" parent="AndysRanch" instance=ExtResource("17_4q1j2")]
+position = Vector2(3031, 325)
+
+[node name="CollisionShape2D" parent="AndysRanch/StatusRemover2" index="0"]
+polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
 
 [node name="SinkSection" type="Node" parent="."]
 
@@ -1135,9 +1134,6 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [connection signal="body_entered" from="PushForceChanged" to="." method="_on_push_force_changed_body_entered"]
-[connection signal="body_entered" from="Sauced" to="." method="_on_sauced_body_entered"]
-[connection signal="body_exited" from="Sauced" to="." method="_on_sauced_body_exited"]
-[connection signal="timeout" from="Sauced/SaucedTimer" to="." method="_on_timer_timeout"]
 
 [editable path="Taco"]
 [editable path="SoccerBall"]
@@ -1188,7 +1184,7 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [editable path="Cabinets/CabwD3/MovePlatform3"]
 [editable path="EntryFloor"]
 [editable path="Land"]
-[editable path="CuttingBoard"]
+[editable path="CutBoardSlippery"]
 [editable path="FallPlatform/FallPlat"]
 [editable path="FallPlatform/FallPlat2"]
 [editable path="FallPlatform/FallPlat3"]
@@ -1198,6 +1194,9 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [editable path="Land6"]
 [editable path="SaladSection/Land"]
 [editable path="SaladSection/Land2"]
+[editable path="AndysRanch/WaterBowl"]
+[editable path="AndysRanch/StatusRemover"]
+[editable path="AndysRanch/StatusRemover2"]
 [editable path="SinkSection/Land14"]
 [editable path="SinkSection/Land15"]
 [editable path="SinkSection/Land16"]
