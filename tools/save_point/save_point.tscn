@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://i7d0fr4voxd"]
+
+[ext_resource type="Script" path="res://tools/save_point/save_point.gd" id="1_01uka"]
+
+[node name="SavePoint" type="Node2D"]
+script = ExtResource("1_01uka")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="LabelTimer" to="." method="_on_label_timer_timeout"]

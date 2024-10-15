@@ -12,6 +12,7 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var speed : int
 @export var acceleration : int
 @export var jump_velocity : int
+@export var ignore_gravity: bool
 
 # Force for pushing rigid bodies
 @export var push_force : int
@@ -37,7 +38,7 @@ var direction
 var player_facing
 var global_delta
 
-const GRAVITY := 980
+var GRAVITY := 980
 const FALL_GRAVITY := 1750
 
 
@@ -65,7 +66,8 @@ func _physics_process(delta: float) -> void:
 
 	
 	if not is_on_floor():
-		velocity.y += _get_gravity(velocity) * delta
+		if !ignore_gravity:
+			velocity.y += _get_gravity(velocity) * delta
 		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y = jump_velocity / 4
 		
