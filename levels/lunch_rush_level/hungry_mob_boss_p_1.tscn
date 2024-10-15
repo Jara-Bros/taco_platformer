@@ -172,7 +172,7 @@ texture = ExtResource("5_ogi3o")
 hframes = 3
 
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
-position = Vector2(3024, 320)
+position = Vector2(2562, 363)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
 position = Vector2(312, 128)
@@ -925,6 +925,7 @@ polygon = PackedVector2Array(-125, -10, -125, 10, 149, 10, 149, -10)
 
 [node name="Land" parent="SaladSection" instance=ExtResource("2_4hsex")]
 position = Vector2(3088, 408)
+collision_layer = 4
 
 [node name="Polygon2D" parent="SaladSection/Land" index="0"]
 polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16)
@@ -934,6 +935,7 @@ points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, -40, -24)
 
 [node name="Land2" parent="SaladSection" instance=ExtResource("2_4hsex")]
 position = Vector2(3272, 416)
+collision_layer = 4
 
 [node name="Polygon2D" parent="SaladSection/Land2" index="0"]
 polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 56, -32)
@@ -998,7 +1000,6 @@ one_way_collision = true
 [node name="Land14" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(6024, -592)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land14" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -1010,7 +1011,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [node name="Land15" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(6040, -648)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land15" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -1022,7 +1022,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [node name="Land16" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(6048, -808)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land16" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -1034,7 +1033,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [node name="Land17" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(6048, -704)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land17" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -1046,7 +1044,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [node name="Land18" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(6112, -440)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land18" index="0"]
 polygon = PackedVector2Array(-104.014, 15.907, -104.072, 79.907, -104.185, 207.267, -168.186, 207.85, -168.3, 335.85, -104.3, 335.907, -104.415, 463.907, 23.5852, 464.021, -40.3576, 399.964, -72.3004, 335.935, -72.2718, 303.935, -104.265, 295.907, -104.222, 247.907, -72.2217, 247.935, -72.1859, 207.935, -40.1287, 143.964, 24, 80, 23.9857, 16.0215)
@@ -1128,7 +1125,6 @@ points = PackedVector2Array(-16, -24, 40, -128, 40, -8, -16, -8, -16, -24)
 [node name="Land13" parent="SinkSection" instance=ExtResource("2_4hsex")]
 position = Vector2(5992, -536)
 rotation = -1.57169
-scale = Vector2(1, 1)
 
 [node name="Polygon2D" parent="SinkSection/Land13" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
