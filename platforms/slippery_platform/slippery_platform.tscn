@@ -1,34 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpjt7e7yqdqg2"]
+[gd_scene load_steps=4 format=3 uid="uid://cpjt7e7yqdqg2"]
 
 [ext_resource type="Script" path="res://platforms/slippery_platform/slippery_platform.gd" id="1_eorvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7cvw"]
-size = Vector2(301, 15)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_kdbob"]
+size = Vector2(216, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctw2c"]
-size = Vector2(302, 17)
+size = Vector2(217.045, 13.2309)
 
 [node name="SlipperyPlatform" type="StaticBody2D"]
 script = ExtResource("1_eorvk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_g7cvw")
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-112, -8, -112, 0, 104, 0, 104, -8)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -151.0
-offset_top = -8.0
-offset_right = 151.0
-offset_bottom = 10.0
-texture = SubResource("CanvasTexture_kdbob")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_g7cvw")
+debug_color = Color(0.973323, 0, 0.434807, 0.42)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 0.5)
+position = Vector2(-4, -4)
 shape = SubResource("RectangleShape2D_ctw2c")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
