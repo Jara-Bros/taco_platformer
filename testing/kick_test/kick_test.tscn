@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_q2ntw"]
 [ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_lf5ov"]
 [ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="4_v6hxs"]
-[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://testing/quick_reload/quick_reload.tscn" id="5_bskbv"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_bskbv"]
 
 [node name="KickTest" type="Node2D"]
 
