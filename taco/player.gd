@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	direction = Input.get_axis("move_left", "move_right")
 
-	
+
 	if not is_on_floor():
 		if !ignore_gravity:
 			velocity.y += _get_gravity(velocity) * delta
@@ -72,12 +72,11 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_velocity / 4
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
-			jump_fx.play()
-			velocity = Vector2.UP * -1 * jump_velocity # Normal Jump action
-			change_state(player_state.IN_AIR)
-		
-
-
+		jump_fx.play()
+		velocity = Vector2.UP * -1 * jump_velocity # Normal Jump action
+		change_state(player_state.IN_AIR)
+			
+			
 	if direction:
 		if current_state == player_state.WALKING:
 			velocity.x = move_toward(velocity.x, direction * speed, 50)
