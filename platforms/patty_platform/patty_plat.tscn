@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8chalvkwwmwg"]
+
+[ext_resource type="Script" path="res://platforms/patty_platform/patty_plat.gd" id="1_m2326"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_142mn"]
+height = 80.0
+
+[node name="PattyPlat" type="StaticBody2D" groups=["BouncePlatforms"]]
+rotation = 1.5708
+collision_layer = 5
+script = ExtResource("1_m2326")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_142mn")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.462745, 0.203922, 0.00784314, 1)
+polygon = PackedVector2Array(-12, 32, -7, 39, 1, 40, 8, 36, 10, 28, 10, -32, 6, -38, -1, -40, -9, -37, -12, -31)

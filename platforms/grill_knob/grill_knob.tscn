@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrr04tiub5yj"]
+
+[ext_resource type="Script" path="res://platforms/grill_knob/grill_knob.gd" id="1_rc1xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uawjm"]
+size = Vector2(74, 16)
+
+[node name="GrillKnob" type="AnimatableBody2D"]
+script = ExtResource("1_rc1xi")
+rotation_speed = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_uawjm")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-36, -8, -36, 8, 38, 8, 38, -8)
+
+[node name="TurnLeft" type="RayCast2D" parent="."]
+position = Vector2(-5, -10)
+rotation = 1.5708
+target_position = Vector2(0.000101089, 28)
+collision_mask = 2
+
+[node name="TurnRight" type="RayCast2D" parent="."]
+position = Vector2(5, -10)
+rotation = -1.5708
+target_position = Vector2(-0.000108719, 30)
+collision_mask = 2

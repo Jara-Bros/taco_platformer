@@ -1,17 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq78fixuhoy24"]
+[gd_scene load_steps=2 format=3 uid="uid://dq78fixuhoy24"]
 
 [ext_resource type="Script" path="res://platforms/flattop/flat_top.gd" id="1_lqupx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6ur"]
-size = Vector2(632, 16)
-
-[node name="FlatTop" type="Area2D"]
+[node name="FlatTop" type="RayCast2D"]
+collision_mask = 2
 script = ExtResource("1_lqupx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4a6ur")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

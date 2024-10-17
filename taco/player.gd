@@ -195,7 +195,11 @@ func _on_animation_player_animation_finished(_anim_name):
 func _on_area_2d_body_entered(body):
 	if body.get_name() == "CorpoCharacter" or body.is_in_group("TomatoTom"):
 		bounce(1.5)
-
+		
+	if body.is_in_group("BouncePlatforms"):
+		bounce(1)
+	elif body.is_in_group("BouncePlatforms2"):
+		bounce(1.25)
 
 func bounce(factor):
 	velocity.y = -1 * 300 * factor

@@ -3,8 +3,6 @@ extends Area2D
 var player : Node2D = null
 @export var ranch_node : PackedScene
 
-@onready var timer: Timer = $Timer
-@onready var taco: Player = $"../Taco"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
