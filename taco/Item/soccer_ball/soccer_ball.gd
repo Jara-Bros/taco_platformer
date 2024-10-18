@@ -39,8 +39,8 @@ func _process(delta):
 		var ideal_ball_position = ItemManager.get_player().global_position-player_mapping_vectors[player_direction]
 		if abs(global_position.distance_to(ideal_ball_position)) > 7:
 			var distanceToPlayer = global_position.direction_to(ideal_ball_position)
-			var player_state = ItemManager.get_player().get_state()
-			var collide = move_and_collide(distanceToPlayer * delta * translation_speed)
+			var _player_state = ItemManager.get_player().get_state()
+			var _collide = move_and_collide(distanceToPlayer * delta * translation_speed)
 	
 	elif current_state == freedom_state.KICKED:
 		velocity.y += gravity * delta

@@ -193,7 +193,7 @@ floor_max_angle = 1.13446
 script = ExtResource("1_q403v")
 speed = 200
 acceleration = 45
-jump_velocity = -350
+jump_velocity = -350.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 

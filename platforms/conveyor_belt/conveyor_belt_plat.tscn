@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://platforms/conveyor_belt/conveyor_belt_plat.gd" id="1_0suya"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctd4y"]
-height = 52.0
+height = 122.0
 
 [node name="ConveyorBeltPlat" type="AnimatableBody2D" groups=["ConveyorBelt"]]
 script = ExtResource("1_0suya")
@@ -11,7 +11,7 @@ move_speed = 60.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.341176, 0.964706, 0.592157, 1)
-polygon = PackedVector2Array(0, -10, -16, -10, -20, -9, -23, -7, -25, -4, -26, 0, -24, 6, -20, 9, -16, 10, 16, 10, 20, 9, 23, 7, 25, 4, 26, 0, 25, -4, 23, -7, 20, -9, 16, -10)
+polygon = PackedVector2Array(53, -10, -16, -10, -52, -10, -56, -8, -61, -3, -59, 6, -53, 10, 53, 10, 59, 6, 61, -1, 59, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -4.71239
