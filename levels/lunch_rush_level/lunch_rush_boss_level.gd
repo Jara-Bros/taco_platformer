@@ -2,8 +2,16 @@ extends Node2D
 
 @onready var taco: Player = $Taco
 
+@onready var initial_camera: Camera2D = $KitchenEncounterSection/InitialCamera
 
 func _ready() -> void:
+	
+	# Make Kitchen Encounter Camera priority
+	# When boss is hit x times, revert priority
+	# back to Taco's
+	
+	## Commented out for debugging
+	# initial_camera.make_current()
 	pass
 
 func _process(_delta: float) -> void:
