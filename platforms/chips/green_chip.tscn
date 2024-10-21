@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccwhya1i0s87x"]
-
-[ext_resource type="Texture2D" uid="uid://c1l218wq5j1a8" path="res://platforms/sprites/green_chip.png" id="1_gwb0l"]
-
-[node name="GreenChip" type="Sprite2D"]
-texture = ExtResource("1_gwb0l")

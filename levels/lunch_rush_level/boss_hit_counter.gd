@@ -3,11 +3,11 @@ extends Area2D
 @onready var initial_camera: Camera2D = $"../InitialCamera"
 @onready var progress_barrier: StaticBody2D = $"../ProgressBarrier"
 
-var hit_counter : int = 0
-
 
 func _on_body_entered(_body: Node2D) -> void:
-	if hit_counter < 4:
+	var hit_counter : int = 0
+	var max_hits : int = 4
+	if hit_counter < max_hits:
 		hit_counter += 1
 	else:
 		progress_barrier.queue_free()

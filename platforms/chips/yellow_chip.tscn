@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqu00asxkw81y"]
-
-[ext_resource type="Texture2D" uid="uid://c7is07p34kinb" path="res://platforms/sprites/Screenshot_2024-07-03_172503-removebg-preview.png" id="1_nlced"]
-
-[node name="YellowChip" type="Sprite2D"]
-modulate = Color(1, 0.388235, 1, 1)
-texture = ExtResource("1_nlced")

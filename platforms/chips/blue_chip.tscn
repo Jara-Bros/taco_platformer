@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bik5j3tf8g2k0"]
-
-[ext_resource type="Texture2D" uid="uid://cynmslr3jrtae" path="res://levels/texico_town/sprites/Screenshot_2024-07-02_130440-removebg-preview.png" id="1_c1jee"]
-
-[node name="BlueChip" type="Sprite2D"]
-texture = ExtResource("1_c1jee")
