@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=61 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_boss_level.gd" id="1_twhxi"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="2_qvf01"]
@@ -42,6 +42,21 @@ height = 44.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stxyc"]
 size = Vector2(24, 8)
 
+[sub_resource type="Animation" id="Animation_yo48h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1496, 192)]
+}
+
 [sub_resource type="Animation" id="Animation_agk6l"]
 resource_name = "fall"
 length = 0.25
@@ -58,7 +73,16 @@ tracks/0/keys = {
 "values": [Vector2(1496, 195), Vector2(1496, 264)]
 }
 
-[sub_resource type="Animation" id="Animation_yo48h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jweca"]
+_data = {
+"RESET": SubResource("Animation_yo48h"),
+"fall": SubResource("Animation_agk6l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05he3"]
+size = Vector2(24, 16)
+
+[sub_resource type="Animation" id="Animation_t76ia"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -70,17 +94,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1496, 192)]
+"values": [Vector2(1301, 336)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jweca"]
-_data = {
-"RESET": SubResource("Animation_yo48h"),
-"fall": SubResource("Animation_agk6l")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_05he3"]
-size = Vector2(24, 16)
 
 [sub_resource type="Animation" id="Animation_1w7pq"]
 resource_name = "fall"
@@ -98,21 +113,6 @@ tracks/0/keys = {
 "values": [Vector2(1301, 336), Vector2(1301, 408)]
 }
 
-[sub_resource type="Animation" id="Animation_t76ia"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1301, 336)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ismld"]
 _data = {
 "RESET": SubResource("Animation_t76ia"),
@@ -126,6 +126,33 @@ size = Vector2(240, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlphi"]
 size = Vector2(256, 16)
+
+[sub_resource type="Animation" id="Animation_cnmjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1920, 976)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_6repb"]
 resource_name = "close"
@@ -156,40 +183,30 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_cnmjp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1920, 976)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43j62"]
 _data = {
 "RESET": SubResource("Animation_cnmjp"),
 "close": SubResource("Animation_6repb")
 }
 
-[sub_resource type="Animation" id="Animation_sgner"]
+[sub_resource type="Animation" id="Animation_d6roa"]
+resource_name = "move"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.85, 1.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_drpih"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -204,35 +221,35 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_n4wcp"]
-resource_name = "move_block"
-length = 2.25
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcsal"]
+_data = {
+"RESET": SubResource("Animation_drpih"),
+"move": SubResource("Animation_d6roa")
+}
+
+[sub_resource type="Animation" id="Animation_f8gbt"]
+resource_name = "move"
+length = 2.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.75, 1.5),
+"times": PackedFloat32Array(0.75, 1.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-16, 0)]
+"values": [Vector2(0, -10), Vector2(130, -10)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nx0a6"]
-_data = {
-"RESET": SubResource("Animation_sgner"),
-"move_block": SubResource("Animation_n4wcp")
-}
-
-[sub_resource type="Animation" id="Animation_glpm1"]
+[sub_resource type="Animation" id="Animation_vyijm"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -242,35 +259,53 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_xgajg"]
-resource_name = "move_block"
-length = 1.75
+[sub_resource type="Animation" id="Animation_6sm4l"]
+resource_name = "move_mirror"
+length = 2.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.75, 1.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-32, 0)]
+"values": [Vector2(0, 0), Vector2(-130, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1l8p"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_baf6i"]
 _data = {
-"RESET": SubResource("Animation_glpm1"),
-"move_block": SubResource("Animation_xgajg")
+"RESET": SubResource("Animation_vyijm"),
+"move": SubResource("Animation_f8gbt"),
+"move_mirror": SubResource("Animation_6sm4l")
 }
 
-[sub_resource type="Animation" id="Animation_7fsh2"]
+[sub_resource type="Animation" id="Animation_aeltm"]
+resource_name = "move"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovePlat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.65, 1.65),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(160, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f6smm"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../CabwDraw/MovePlatform2/MovePlat:position")
+tracks/0/path = NodePath("MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -280,27 +315,28 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ha10k"]
-resource_name = "move_block"
-length = 2.0
+[sub_resource type="Animation" id="Animation_0dqi5"]
+resource_name = "move_mirror"
+length = 2.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../CabwDraw/MovePlatform2/MovePlat:position")
+tracks/0/path = NodePath("MovePlat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.25, 1),
+"times": PackedFloat32Array(0.85, 1.85),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-32, 0)]
+"values": [Vector2(0, 0), Vector2(-160, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgdvs"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsjr0"]
 _data = {
-"RESET": SubResource("Animation_7fsh2"),
-"move_block": SubResource("Animation_ha10k")
+"RESET": SubResource("Animation_f6smm"),
+"move": SubResource("Animation_aeltm"),
+"move_mirror": SubResource("Animation_0dqi5")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbsc"]
@@ -321,7 +357,7 @@ script = ExtResource("1_twhxi")
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
-position = Vector2(1624, 976)
+position = Vector2(2352, 664)
 push_force = 50
 
 [node name="KitchenEncounterSection" type="Node" parent="."]
@@ -1112,10 +1148,10 @@ points = PackedVector2Array(-128, -64, -112, -64, -112, 734, -128, 734, -128, 64
 position = Vector2(0, 162)
 
 [node name="Polygon2D" parent="OvenPanRack/Land3" index="0"]
-polygon = PackedVector2Array(1152, 680, 1152, 862, 2176, 862, 2176, 838, 1216, 838, 1216, 680)
+polygon = PackedVector2Array(1152, 680, 1152, 862, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 838, 1216, 838, 1216, 680)
 
 [node name="Line2D" parent="OvenPanRack/Land3" index="1"]
-points = PackedVector2Array(1152, 680, 1152, 862, 2176, 862, 2176, 838, 1216, 838, 1216, 680, 1152, 680)
+points = PackedVector2Array(1152, 680, 1152, 862, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 838, 1216, 838, 1216, 680, 1152, 680)
 
 [node name="FallBlock" type="StaticBody2D" parent="OvenPanRack"]
 position = Vector2(1496, 192)
@@ -1245,207 +1281,275 @@ autoplay = "close"
 
 [node name="Cabinets" type="Node" parent="."]
 
-[node name="StaticCabs" type="Node" parent="Cabinets"]
+[node name="Cabinet1" type="Node" parent="Cabinets"]
 
-[node name="Land8" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(256, 526)
+[node name="Base" type="StaticBody2D" parent="Cabinets/Cabinet1"]
+position = Vector2(2240, 920)
 
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land8" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet1/Base"]
+polygon = PackedVector2Array(-32, -240, -32, -16, 144, -16, 144, -240)
 
-[node name="Line2D" parent="Cabinets/StaticCabs/Land8" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet1/Base"]
+position = Vector2(0, 0.941177)
+scale = Vector2(1, 0.941176)
+color = Color(0.364975, 0.581518, 0.723014, 1)
+polygon = PackedVector2Array(-32, -256, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -256)
 
-[node name="Land9" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(585, 556)
+[node name="Base2" type="StaticBody2D" parent="Cabinets/Cabinet1"]
+position = Vector2(2656, 920)
 
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land9" index="0"]
-position = Vector2(2.00003, 0.0017873)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet1/Base2"]
+polygon = PackedVector2Array(-32, -216, -32, -16, 144, -16, 144, -216)
 
-[node name="Line2D" parent="Cabinets/StaticCabs/Land9" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet1/Base2"]
+position = Vector2(0, 3.00002)
+scale = Vector2(1, 0.941176)
+color = Color(0.364975, 0.581518, 0.723014, 1)
+polygon = PackedVector2Array(-32, -232.688, -32, -221.469, -40, -222, -40, -45.6875, -32, -45.6875, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -232.688)
 
-[node name="Land10" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(689, 732)
-rotation = -3.14159
+[node name="MovePlatform" parent="Cabinets/Cabinet1" instance=ExtResource("12_25ipx")]
+position = Vector2(2256, 754)
 
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land10" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="Polygon2D" parent="Cabinets/Cabinet1/MovePlatform/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16)
 
-[node name="Line2D" parent="Cabinets/StaticCabs/Land10" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="Line2D" parent="Cabinets/Cabinet1/MovePlatform/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16, -32, -40)
 
-[node name="Land11" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(617, 780)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land11" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land11" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land14" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(433, 772)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land14" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land14" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land15" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(353, 753)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land15" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land15" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land17" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(489, 948)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land17" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land17" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land18" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(593, 980)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land18" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land18" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land19" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(681, 1004)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land19" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land19" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="Land20" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(2471, 528)
-rotation = -1.5708
-
-[node name="Polygon2D" parent="Cabinets/StaticCabs/Land20" index="0"]
-position = Vector2(-2, -3.77576e-05)
-polygon = PackedVector2Array(-24.0005, -184, -24.0007, 205, 55.9993, 205, 55.9995, -184)
-
-[node name="Line2D" parent="Cabinets/StaticCabs/Land20" index="1"]
-visible = false
-points = PackedVector2Array(-24.0005, -184, -24.0007, 205, 55.9993, 205, 55.9995, -184, -24.0005, -184)
-
-[node name="CabwDraw" parent="Cabinets" instance=ExtResource("8_r5f54")]
-position = Vector2(2192, 667)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/CabwDraw" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/CabwDraw" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="MovePlatform" parent="Cabinets/CabwDraw" instance=ExtResource("12_25ipx")]
-position = Vector2(32, 15.9999)
-rotation = 3.14159
-
-[node name="MovePlatform2" parent="Cabinets/CabwDraw" instance=ExtResource("12_25ipx")]
-position = Vector2(8, 32)
-
-[node name="CabwDraw2" parent="Cabinets" instance=ExtResource("8_r5f54")]
-position = Vector2(2064, 587)
-rotation = -3.14159
-
-[node name="Polygon2D" parent="Cabinets/CabwDraw2" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="Cabinets/CabwDraw2" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
-
-[node name="MovePlatform3" parent="Cabinets/CabwDraw2" instance=ExtResource("12_25ipx")]
-position = Vector2(-15.9999, 51)
-rotation = 3.14159
-
-[node name="AnimationPlayer" parent="Cabinets/CabwDraw2/MovePlatform3/MovePlat" index="2"]
-autoplay = ""
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cabinets/CabwDraw2/MovePlatform3/MovePlat" index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet1/MovePlatform/MovePlat" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_nx0a6")
+"": SubResource("AnimationLibrary_hcsal")
 }
-autoplay = "move_block"
+autoplay = "move"
 
-[node name="MovePlatform" parent="Cabinets/CabwDraw2" instance=ExtResource("12_25ipx")]
-position = Vector2(-8.00002, -6.99998)
+[node name="MovePlatform2" parent="Cabinets/Cabinet1" instance=ExtResource("12_25ipx")]
+position = Vector2(2256, 832)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Cabinets/CabwDraw2/MovePlatform/MovePlat" index="3"]
+[node name="Polygon2D" parent="Cabinets/Cabinet1/MovePlatform2/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16)
+
+[node name="Line2D" parent="Cabinets/Cabinet1/MovePlatform2/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16, -32, -40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet1/MovePlatform2/MovePlat" index="2"]
+root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_k1l8p")
+"": SubResource("AnimationLibrary_baf6i")
 }
-autoplay = "move_block"
+autoplay = "move"
 
-[node name="CabwD3" parent="Cabinets" instance=ExtResource("8_r5f54")]
-position = Vector2(2216, 536)
-rotation = -3.14159
+[node name="MovePlatform3" parent="Cabinets/Cabinet1" instance=ExtResource("12_25ipx")]
+position = Vector2(2256, 888)
 
-[node name="Polygon2D" parent="Cabinets/CabwD3" index="0"]
-position = Vector2(0, -3.05176e-05)
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="Polygon2D" parent="Cabinets/Cabinet1/MovePlatform3/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16)
 
-[node name="Line2D" parent="Cabinets/CabwD3" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="Line2D" parent="Cabinets/Cabinet1/MovePlatform3/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, -16, 144, -16, 144, 0, 128, 0, 128, 16, -32, 16, -32, -40)
 
-[node name="MovePlatform" parent="Cabinets/CabwD3" instance=ExtResource("12_25ipx")]
-
-[node name="MovePlatform3" parent="Cabinets/CabwD3" instance=ExtResource("12_25ipx")]
-position = Vector2(-7.99976, 72.0001)
-rotation = 3.14159
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/CabwD3/MovePlatform3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet1/MovePlatform3"]
 libraries = {
-"": SubResource("AnimationLibrary_mgdvs")
+"": SubResource("AnimationLibrary_nsjr0")
 }
+autoplay = "move"
+
+[node name="Cabinet2" type="Node" parent="Cabinets"]
+
+[node name="Base" type="StaticBody2D" parent="Cabinets/Cabinet2"]
+position = Vector2(2656, 704)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet2/Base"]
+polygon = PackedVector2Array(-32, -240, -32, -16, 144, -16, 144, -240)
+
+[node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet2/Base"]
+position = Vector2(0, 0.941177)
+scale = Vector2(1, 0.941176)
+color = Color(0.364975, 0.581518, 0.723014, 1)
+polygon = PackedVector2Array(-32, -256, -32, -16, -24, -16, -24, -1, -16, -1, -16, -16, 128, -16, 128, -1, 136, -1, 136, -16, 144, -16, 144, -256)
+
+[node name="Base2" type="StaticBody2D" parent="Cabinets/Cabinet2"]
+position = Vector2(2240, 664)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet2/Base2"]
+polygon = PackedVector2Array(-32, -216, -32, -16, 144, -16, 144, -216)
+
+[node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet2/Base2"]
+position = Vector2(0, 3.00002)
+scale = Vector2(1, 0.941176)
+color = Color(0.364975, 0.581518, 0.723014, 1)
+polygon = PackedVector2Array(-32, -232.688, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -45.6875, 152, -45.6875, 152, -224.188, 144.406, -223.625, 144, -232.688)
+
+[node name="MovePlatform" parent="Cabinets/Cabinet2" instance=ExtResource("12_25ipx")]
+position = Vector2(2656, 518)
+
+[node name="Polygon2D" parent="Cabinets/Cabinet2/MovePlatform/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, 16, -32, 16, -32, 2, -48, 2, -48, -14, -32, -14)
+
+[node name="Line2D" parent="Cabinets/Cabinet2/MovePlatform/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, 16, -32, 16, -32, 2, -48, 2, -48, -14, -32, -14, -32, -40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet2/MovePlatform/MovePlat" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_hcsal")
+}
+autoplay = "move"
+
+[node name="MovePlatform2" parent="Cabinets/Cabinet2" instance=ExtResource("12_25ipx")]
+position = Vector2(2656, 596)
+
+[node name="Polygon2D" parent="Cabinets/Cabinet2/MovePlatform2/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, 0, 128, 16, -32, 16, -32, -2, -48, -2, -48, -18, -32, -18)
+
+[node name="Line2D" parent="Cabinets/Cabinet2/MovePlatform2/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, 0, 128, 16, -32, 16, -32, -2, -48, -2, -48, -18, -32, -18, -32, -40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet2/MovePlatform2/MovePlat" index="2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_baf6i")
+}
+autoplay = "move_mirror"
+
+[node name="MovePlatform3" parent="Cabinets/Cabinet2" instance=ExtResource("12_25ipx")]
+position = Vector2(2656, 672)
+
+[node name="Polygon2D" parent="Cabinets/Cabinet2/MovePlatform3/MovePlat" index="0"]
+polygon = PackedVector2Array(-32, -40, 128, -40, 128, 16, -32, 16, -32, -4, -48, -4, -48, -20, -32, -20)
+
+[node name="Line2D" parent="Cabinets/Cabinet2/MovePlatform3/MovePlat" index="1"]
+points = PackedVector2Array(-32, -40, 128, -40, 128, 16, -32, 16, -32, -4, -48, -4, -48, -20, -32, -20, -32, -40)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cabinets/Cabinet2/MovePlatform3"]
+libraries = {
+"": SubResource("AnimationLibrary_nsjr0")
+}
+autoplay = "move_mirror"
 
 [node name="Land" parent="." instance=ExtResource("8_r5f54")]
-position = Vector2(2552, 426)
+position = Vector2(2981, 1386)
 
 [node name="Polygon2D" parent="Land" index="0"]
 polygon = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32)
 
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32, -19, -32)
+
+[node name="StaticCabs" type="Node" parent="."]
+
+[node name="Land8" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(256, 526)
+
+[node name="Polygon2D" parent="StaticCabs/Land8" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land8" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land9" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(585, 556)
+
+[node name="Polygon2D" parent="StaticCabs/Land9" index="0"]
+position = Vector2(2.00003, 0.0017873)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land9" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land10" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(689, 732)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land10" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land10" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land11" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(617, 780)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land11" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land11" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land14" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(433, 772)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land14" index="0"]
+position = Vector2(0, -3.05176e-05)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land14" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land15" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(353, 753)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land15" index="0"]
+position = Vector2(0, -3.05176e-05)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land15" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land17" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(489, 948)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land17" index="0"]
+position = Vector2(0, -3.05176e-05)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land17" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land18" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(593, 980)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land18" index="0"]
+position = Vector2(0, -3.05176e-05)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land18" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land19" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(681, 1004)
+rotation = -3.14159
+
+[node name="Polygon2D" parent="StaticCabs/Land19" index="0"]
+position = Vector2(0, -3.05176e-05)
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="StaticCabs/Land19" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land20" parent="StaticCabs" instance=ExtResource("8_r5f54")]
+position = Vector2(2900, 1488)
+rotation = -1.5708
+
+[node name="Polygon2D" parent="StaticCabs/Land20" index="0"]
+position = Vector2(-2, -3.77576e-05)
+polygon = PackedVector2Array(-21.9998, -63, -22.0007, 201, 57.9993, 201, 58.0002, -62.9998)
+
+[node name="Line2D" parent="StaticCabs/Land20" index="1"]
+visible = false
+points = PackedVector2Array(-21.9998, -63, -22.0007, 201, 57.9993, 201, 58.0002, -62.9998, -21.9998, -63)
 
 [node name="FallPlatform" type="Node" parent="."]
 
@@ -1502,12 +1606,12 @@ position = Vector2(26, -72)
 target_position = Vector2(-102, -0.000366211)
 
 [node name="Spoon" parent="." instance=ExtResource("14_3qhd7")]
-position = Vector2(2443, 456)
+position = Vector2(2872, 1416)
 rotation = 1.5708
 y_impulse = -4
 
 [node name="PushForceChanged" type="Area2D" parent="."]
-position = Vector2(2613, 414)
+position = Vector2(3042, 1374)
 collision_layer = 0
 collision_mask = 2
 
@@ -1518,31 +1622,31 @@ shape = SubResource("RectangleShape2D_ptbsc")
 [node name="EightPan" type="Node" parent="."]
 
 [node name="MoveBlocks" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2768, 672)
+position = Vector2(3197, 1632)
 
 [node name="MoveBlocks2" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2784, 592)
+position = Vector2(3213, 1552)
 
 [node name="MoveBlocks3" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2800, 512)
+position = Vector2(3229, 1472)
 
 [node name="MoveBlocks7" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2824, 424)
+position = Vector2(3253, 1384)
 
 [node name="MoveBlocks4" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2896, 672)
+position = Vector2(3325, 1632)
 
 [node name="MoveBlocks5" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2912, 592)
+position = Vector2(3341, 1552)
 
 [node name="MoveBlocks6" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2928, 512)
+position = Vector2(3357, 1472)
 
 [node name="MoveBlocks8" parent="EightPan" instance=ExtResource("15_sn3u5")]
-position = Vector2(2960, 424)
+position = Vector2(3389, 1384)
 
 [node name="Land3" parent="." instance=ExtResource("8_r5f54")]
-position = Vector2(2696, 672)
+position = Vector2(3125, 1632)
 
 [node name="Polygon2D" parent="Land3" index="0"]
 position = Vector2(0, -1)
@@ -1564,7 +1668,7 @@ points = PackedVector2Array(-64, -40, 256, -40, 256, 48, 680, 48, 680, 88, -64, 
 [node name="SaladSection" type="Node" parent="."]
 
 [node name="Land" parent="SaladSection" instance=ExtResource("8_r5f54")]
-position = Vector2(3088, 408)
+position = Vector2(3517, 1368)
 
 [node name="Polygon2D" parent="SaladSection/Land" index="0"]
 polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64)
@@ -1573,7 +1677,7 @@ polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1,
 points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64, -40, -24)
 
 [node name="Land2" parent="SaladSection" instance=ExtResource("8_r5f54")]
-position = Vector2(3272, 416)
+position = Vector2(3701, 1376)
 
 [node name="Polygon2D" parent="SaladSection/Land2" index="0"]
 polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641)
@@ -1582,7 +1686,7 @@ polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 
 points = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641, -8, 8)
 
 [node name="SaladSection" parent="SaladSection" instance=ExtResource("8_r5f54")]
-position = Vector2(3200, 448)
+position = Vector2(3629, 1408)
 
 [node name="Polygon2D" parent="SaladSection/SaladSection" index="0"]
 polygon = PackedVector2Array(-152, -16, -152, 0, -152, 48, -128, 48, -128, 0, 128, 0, 128.25, -16)
@@ -1591,7 +1695,7 @@ polygon = PackedVector2Array(-152, -16, -152, 0, -152, 48, -128, 48, -128, 0, 12
 points = PackedVector2Array(-152, -16, -152, 0, -152, 48, -128, 48, -128, 0, 128, 0, 128.25, -16, -152, -16)
 
 [node name="SaladSection2" parent="SaladSection" instance=ExtResource("8_r5f54")]
-position = Vector2(3360, 595)
+position = Vector2(3789, 1555)
 rotation = 1.57079
 
 [node name="Polygon2D" parent="SaladSection/SaladSection2" index="0"]
@@ -1601,7 +1705,7 @@ polygon = PackedVector2Array(-147, -24.0007, -123, -16.0007, -115.188, -0.000885
 points = PackedVector2Array(-147, -24.0007, -123, -16.0007, -115.188, -0.00088501, 320, 0, 320, -16, -131, -32.0007, -130.999, -112.001, -154.999, -112.001, -147, -24.0007)
 
 [node name="SaladSection5" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 504)
+position = Vector2(3485, 1464)
 collision_layer = 4
 collision_mask = 2
 
@@ -1614,7 +1718,7 @@ shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
 
 [node name="SaladSection6" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 568)
+position = Vector2(3485, 1528)
 collision_layer = 4
 collision_mask = 2
 
@@ -1627,7 +1731,7 @@ shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
 
 [node name="SaladSection7" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 632)
+position = Vector2(3485, 1592)
 collision_layer = 4
 collision_mask = 2
 
@@ -1642,7 +1746,7 @@ one_way_collision = true
 [node name="AndysRanch" type="Node" parent="."]
 
 [node name="WaterBowl" parent="AndysRanch" instance=ExtResource("16_wx537")]
-position = Vector2(3104, 319)
+position = Vector2(3533, 1279)
 
 [node name="CollisionShape2D" parent="AndysRanch/WaterBowl" index="0"]
 polygon = PackedVector2Array(-127.5, -14.5, -92.5, 51.5, -52.5, 73.5, 60.5, 73.5, 97.5, 54.5, 137.5, -14.5)
@@ -1653,13 +1757,13 @@ color = Color(1, 1, 0.678431, 0.815686)
 polygon = PackedVector2Array(-48, 24, -13, 90, 26, 112, 142, 112, 177, 93, 217, 24)
 
 [node name="StatusRemover" parent="AndysRanch" instance=ExtResource("17_j5r72")]
-position = Vector2(3480, 394)
+position = Vector2(3909, 1354)
 
 [node name="CollisionShape2D" parent="AndysRanch/StatusRemover" index="0"]
 polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
 
 [node name="StatusRemover2" parent="AndysRanch" instance=ExtResource("17_j5r72")]
-position = Vector2(3032, 304)
+position = Vector2(3461, 1264)
 
 [node name="CollisionShape2D" parent="AndysRanch/StatusRemover2" index="0"]
 polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
@@ -2060,25 +2164,23 @@ you up --->"
 [editable path="OvenPanRack/Land"]
 [editable path="OvenPanRack/Land2"]
 [editable path="OvenPanRack/Land3"]
-[editable path="Cabinets/StaticCabs/Land8"]
-[editable path="Cabinets/StaticCabs/Land9"]
-[editable path="Cabinets/StaticCabs/Land10"]
-[editable path="Cabinets/StaticCabs/Land11"]
-[editable path="Cabinets/StaticCabs/Land14"]
-[editable path="Cabinets/StaticCabs/Land15"]
-[editable path="Cabinets/StaticCabs/Land17"]
-[editable path="Cabinets/StaticCabs/Land18"]
-[editable path="Cabinets/StaticCabs/Land19"]
-[editable path="Cabinets/StaticCabs/Land20"]
-[editable path="Cabinets/CabwDraw"]
-[editable path="Cabinets/CabwDraw/MovePlatform"]
-[editable path="Cabinets/CabwDraw/MovePlatform2"]
-[editable path="Cabinets/CabwDraw2"]
-[editable path="Cabinets/CabwDraw2/MovePlatform3"]
-[editable path="Cabinets/CabwDraw2/MovePlatform"]
-[editable path="Cabinets/CabwD3"]
-[editable path="Cabinets/CabwD3/MovePlatform3"]
+[editable path="Cabinets/Cabinet1/MovePlatform"]
+[editable path="Cabinets/Cabinet1/MovePlatform2"]
+[editable path="Cabinets/Cabinet1/MovePlatform3"]
+[editable path="Cabinets/Cabinet2/MovePlatform"]
+[editable path="Cabinets/Cabinet2/MovePlatform2"]
+[editable path="Cabinets/Cabinet2/MovePlatform3"]
 [editable path="Land"]
+[editable path="StaticCabs/Land8"]
+[editable path="StaticCabs/Land9"]
+[editable path="StaticCabs/Land10"]
+[editable path="StaticCabs/Land11"]
+[editable path="StaticCabs/Land14"]
+[editable path="StaticCabs/Land15"]
+[editable path="StaticCabs/Land17"]
+[editable path="StaticCabs/Land18"]
+[editable path="StaticCabs/Land19"]
+[editable path="StaticCabs/Land20"]
 [editable path="FallPlatform/FallPlat"]
 [editable path="FallPlatform/FallPlat2"]
 [editable path="FallPlatform/FallPlat3"]
