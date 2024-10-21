@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdhbygg0ixnws"
-path="res://.godot/imported/sunflower(1).png-fce9fc4d085b167dec3d5781725d23ef.ctex"
+uid="uid://dk2yfrijb7pa2"
+path="res://.godot/imported/kitchen_boss_encounter.png-541c45aa2b163dc6552775a96ab78f36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://platforms/jungle/sunflower(1).png"
-dest_files=["res://.godot/imported/sunflower(1).png-fce9fc4d085b167dec3d5781725d23ef.ctex"]
+source_file="res://levels/lunch_rush_level/sprites/kitchen_boss_encounter.png"
+dest_files=["res://.godot/imported/kitchen_boss_encounter.png-541c45aa2b163dc6552775a96ab78f36.ctex"]
 
 [params]
 

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5obv2chr5j4v"]
-
-[ext_resource type="Texture2D" uid="uid://cgt42ubtctlb4" path="res://levels/texico_town/sprites/purple_chip.png" id="1_007ir"]
-
-[node name="PurpleChip" type="Sprite2D"]
-texture = ExtResource("1_007ir")
