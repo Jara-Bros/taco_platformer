@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cos6tnjxn68bl"]
-
-[ext_resource type="Texture2D" uid="uid://b7nxt6locqdy8" path="res://levels/texico_town/sprites/orange_chip.png" id="1_rqm7q"]
-
-[node name="OrangeChip" type="Sprite2D"]
-texture = ExtResource("1_rqm7q")

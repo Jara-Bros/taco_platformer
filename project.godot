@@ -120,7 +120,7 @@ animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimatio
 [display]
 
 window/size/viewport_width=640
-window/size/viewport_height=380
+window/size/viewport_height=360
 window/size/initial_position_type=4
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=59 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_boss_level.gd" id="1_twhxi"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="2_qvf01"]
@@ -12,9 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://b5ttw35eibwq" path="res://platforms/drop_down_platform/drop_down_platform.tscn" id="10_4pfok"]
 [ext_resource type="PackedScene" uid="uid://005hfo8610ur" path="res://platforms/static_platform/static_platform.tscn" id="11_u8u3g"]
 [ext_resource type="PackedScene" uid="uid://bv3c0hs8icaf" path="res://platforms/move_platform/move_plat.tscn" id="12_25ipx"]
+[ext_resource type="Script" path="res://platforms/oven_pan_plat/fall_block.gd" id="12_cmi2m"]
+[ext_resource type="PackedScene" uid="uid://dplylb2p845m0" path="res://platforms/oven_pan_plat/oven_pan.tscn" id="12_qefv4"]
+[ext_resource type="Script" path="res://levels/lunch_rush_level/fall_block_2.gd" id="13_cu3re"]
 [ext_resource type="PackedScene" uid="uid://dlftnhvkqkwod" path="res://platforms/fall_platform/fall_plat.tscn" id="13_tcms7"]
 [ext_resource type="PackedScene" uid="uid://lri63e8intw4" path="res://platforms/falling_spoon/spoon.tscn" id="14_3qhd7"]
 [ext_resource type="PackedScene" uid="uid://djqd3l3tsunm5" path="res://obstacles/move_blocks/move_blocks.tscn" id="15_sn3u5"]
+[ext_resource type="Script" path="res://levels/lunch_rush_level/fall_block_3.gd" id="15_ublbl"]
 [ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="16_wx537"]
 [ext_resource type="PackedScene" uid="uid://bnb50332vdfw6" path="res://taco/Statuses/StatusRemover/StatusRemover.tscn" id="17_j5r72"]
 [ext_resource type="PackedScene" uid="uid://dq78fixuhoy24" path="res://platforms/flattop/flat_top.tscn" id="18_0smtn"]
@@ -34,6 +38,156 @@ size = Vector2(512, 8)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5b1yb"]
 radius = 3.0
 height = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stxyc"]
+size = Vector2(24, 8)
+
+[sub_resource type="Animation" id="Animation_agk6l"]
+resource_name = "fall"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1496, 195), Vector2(1496, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_yo48h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1496, 192)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jweca"]
+_data = {
+"RESET": SubResource("Animation_yo48h"),
+"fall": SubResource("Animation_agk6l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05he3"]
+size = Vector2(24, 16)
+
+[sub_resource type="Animation" id="Animation_1w7pq"]
+resource_name = "fall"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1301, 336), Vector2(1301, 408)]
+}
+
+[sub_resource type="Animation" id="Animation_t76ia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1301, 336)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ismld"]
+_data = {
+"RESET": SubResource("Animation_t76ia"),
+"fall": SubResource("Animation_1w7pq")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvj4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ptvx"]
+size = Vector2(240, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlphi"]
+size = Vector2(256, 16)
+
+[sub_resource type="Animation" id="Animation_6repb"]
+resource_name = "close"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 960), Vector2(1920, 960), Vector2(1920, 856)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.85),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cnmjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1920, 976)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43j62"]
+_data = {
+"RESET": SubResource("Animation_cnmjp"),
+"close": SubResource("Animation_6repb")
+}
 
 [sub_resource type="Animation" id="Animation_sgner"]
 length = 0.001
@@ -167,7 +321,7 @@ script = ExtResource("1_twhxi")
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
-position = Vector2(640, 152)
+position = Vector2(1624, 976)
 push_force = 50
 
 [node name="KitchenEncounterSection" type="Node" parent="."]
@@ -217,11 +371,11 @@ points = PackedVector2Array(-7, -141, -7, 12, 13, 12, 13, -141, -7, -141)
 
 [node name="Polygon2D" parent="KitchenEncounterSection/EntryFloor" index="0"]
 color = Color(0.61339, 0.61339, 0.61339, 1)
-polygon = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 353, 177, 353, 136, 262, 136, 261.904, 176.787, 0, 177, 0, 191)
+polygon = PackedVector2Array(1232, 192, 1232, 176, 353, 177, 353, 136, 262, 136, 261.904, 176.787, 0, 177, 0, 191)
 
 [node name="Line2D" parent="KitchenEncounterSection/EntryFloor" index="1"]
 visible = false
-points = PackedVector2Array(864, 192, 944, 192, 944, 224, 944, 272, 992.126, 272, 992, 328, 1064, 328, 1064.33, 272, 1344, 272, 1344, 256, 1328, 256, 1312, 232, 1280, 232, 1263.5, 256, 1224, 256, 1208, 232, 1176, 232, 1160, 256, 1047.68, 256, 1048, 312, 1008, 312, 1008.19, 256, 976, 256, 976, 216, 1088, 216, 1088, 192, 1232, 192, 1232, 176, 353, 177, 353, 136, 262, 136, 261.904, 176.787, 0, 177, 0, 191, 864, 192)
+points = PackedVector2Array(1232, 192, 1232, 176, 353, 177, 353, 136, 262, 136, 261.904, 176.787, 0, 177, 0, 191, 1232, 192)
 
 [node name="ShelfOverhead" parent="KitchenEncounterSection" instance=ExtResource("8_r5f54")]
 position = Vector2(305, 92)
@@ -244,6 +398,7 @@ script = ExtResource("9_n4c4l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenEncounterSection/BossHitCounter"]
 position = Vector2(42, -12)
 shape = SubResource("RectangleShape2D_3r6j1")
+one_way_collision_margin = 20.0
 
 [node name="Polygon2D" type="Polygon2D" parent="KitchenEncounterSection/BossHitCounter"]
 color = Color(0.964706, 0.572549, 0.839216, 0.384314)
@@ -418,19 +573,6 @@ scale = Vector2(1, 1.13793)
 polygon = PackedVector2Array(19, -20.2727, -21, -20.2727, -29, -27.3031, 27, -27.3031)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlateMaze/Plates/Shelf1/Plate9"]
-position = Vector2(-1, -3.00001)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_5b1yb")
-
-[node name="Plate10" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 138)
-
-[node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate10" index="0"]
-position = Vector2(0, 23.069)
-scale = Vector2(1, 1.13793)
-polygon = PackedVector2Array(19, -20.2727, -21, -20.2727, -29, -27.3031, 27, -27.3031)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlateMaze/Plates/Shelf1/Plate10"]
 position = Vector2(-1, -3.00001)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
@@ -946,12 +1088,167 @@ position = Vector2(-1, -3.00001)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
+[node name="OvenPanRack" type="Node" parent="."]
+
+[node name="Land" parent="OvenPanRack" instance=ExtResource("8_r5f54")]
+position = Vector2(1368, 193)
+
+[node name="Polygon2D" parent="OvenPanRack/Land" index="0"]
+polygon = PackedVector2Array(-128, -64, -112, -64, -112, -0.938065, -96, -1, -96, 7, -112, 7, -112, 127, -96, 127, -96, 135, -112, 135, -112, 255, -96, 255, -96, 263, -112, 263, -112, 447, -96, 447, -96, 455, -112, 455, -112, 639, -96, 639, -96, 647, -112, 647, -112, 735, -128, 735)
+
+[node name="Line2D" parent="OvenPanRack/Land" index="1"]
+points = PackedVector2Array(-128, -64, -112, -64, -112, -0.938065, -96, -1, -96, 7, -112, 7, -112, 127, -96, 127, -96, 135, -112, 135, -112, 255, -96, 255, -96, 263, -112, 263, -112, 447, -96, 447, -96, 455, -112, 455, -112, 639, -96, 639, -96, 647, -112, 647, -112, 735, -128, 735, -128, -64)
+
+[node name="Land2" parent="OvenPanRack" instance=ExtResource("8_r5f54")]
+position = Vector2(1672, 194)
+
+[node name="Polygon2D" parent="OvenPanRack/Land2" index="0"]
+polygon = PackedVector2Array(-128, -64, -112, -64, -112, 734, -128, 734, -128, 646, -144, 646, -144, 638, -128, 638, -128, 454, -144, 454, -144, 446, -128, 446, -128, 262, -144, 262, -144, 254, -128, 254, -128, 141.926, -128, 134, -144, 134, -144, 126, -128, 126, -128, 13.659, -128, 6, -128, -2)
+
+[node name="Line2D" parent="OvenPanRack/Land2" index="1"]
+points = PackedVector2Array(-128, -64, -112, -64, -112, 734, -128, 734, -128, 646, -144, 646, -144, 638, -128, 638, -128, 454, -144, 454, -144, 446, -128, 446, -128, 262, -144, 262, -144, 254, -128, 254, -128, 141.926, -128, 134, -144, 134, -144, 126, -128, 126, -128, 13.659, -128, 6, -128, -2, -128, -64)
+
+[node name="Land3" parent="OvenPanRack" instance=ExtResource("8_r5f54")]
+position = Vector2(0, 162)
+
+[node name="Polygon2D" parent="OvenPanRack/Land3" index="0"]
+polygon = PackedVector2Array(1152, 680, 1152, 862, 2176, 862, 2176, 838, 1216, 838, 1216, 680)
+
+[node name="Line2D" parent="OvenPanRack/Land3" index="1"]
+points = PackedVector2Array(1152, 680, 1152, 862, 2176, 862, 2176, 838, 1216, 838, 1216, 680, 1152, 680)
+
+[node name="FallBlock" type="StaticBody2D" parent="OvenPanRack"]
+position = Vector2(1496, 192)
+script = ExtResource("12_cmi2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenPanRack/FallBlock"]
+shape = SubResource("RectangleShape2D_stxyc")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OvenPanRack/FallBlock"]
+libraries = {
+"": SubResource("AnimationLibrary_jweca")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="OvenPanRack/FallBlock"]
+position = Vector2(11, -27)
+target_position = Vector2(-144, 0)
+collision_mask = 2
+
+[node name="FallBlock2" type="StaticBody2D" parent="OvenPanRack"]
+position = Vector2(1301, 336)
+script = ExtResource("13_cu3re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenPanRack/FallBlock2"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_05he3")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OvenPanRack/FallBlock2"]
+libraries = {
+"": SubResource("AnimationLibrary_ismld")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="OvenPanRack/FallBlock2"]
+position = Vector2(-5, -40)
+rotation = -1.57079
+target_position = Vector2(0.000244141, 112)
+collision_mask = 2
+
+[node name="OvenPan" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
+position = Vector2(1386, 190)
+
+[node name="OvenPan2" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
+position = Vector2(1413, 317)
+
+[node name="OvenPan3" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
+position = Vector2(1400, 448)
+
+[node name="FallBlock3" type="StaticBody2D" parent="OvenPanRack"]
+position = Vector2(1400, 464)
+script = ExtResource("15_ublbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenPanRack/FallBlock3"]
+shape = SubResource("RectangleShape2D_dvj4l")
+
+[node name="RayCast2D" type="RayCast2D" parent="OvenPanRack/FallBlock3"]
+position = Vector2(107, -40)
+target_position = Vector2(-139, 0)
+collision_mask = 2
+
+[node name="OvenPan4" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
+position = Vector2(1400, 576)
+
+[node name="FallBlock4" type="StaticBody2D" parent="OvenPanRack"]
+position = Vector2(1400, 592)
+script = ExtResource("15_ublbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenPanRack/FallBlock4"]
+shape = SubResource("RectangleShape2D_dvj4l")
+
+[node name="RayCast2D" type="RayCast2D" parent="OvenPanRack/FallBlock4"]
+position = Vector2(72, -32)
+target_position = Vector2(0, -24)
+
+[node name="OvenPan5" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
+position = Vector2(1400, 702)
+
+[node name="FallBlock5" type="StaticBody2D" parent="OvenPanRack"]
+position = Vector2(1400, 718)
+script = ExtResource("15_ublbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenPanRack/FallBlock5"]
+shape = SubResource("RectangleShape2D_dvj4l")
+
+[node name="RayCast2D" type="RayCast2D" parent="OvenPanRack/FallBlock5"]
+position = Vector2(107, -40)
+target_position = Vector2(-139, 0)
+
+[node name="Oven" type="Node" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Oven"]
+position = Vector2(1920, 958)
+color = Color(0.434664, 0.120958, 0.755074, 1)
+polygon = PackedVector2Array(-144, -158, 144, -158, 144, 42, -144, 42)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Oven"]
+position = Vector2(1920, 958)
+color = Color(0.258092, 0.0489632, 0.465411, 1)
+polygon = PackedVector2Array(-136, -142, 136, -142, 136, 26, -136, 26)
+
+[node name="OvenRack" type="StaticBody2D" parent="Oven"]
+position = Vector2(1920, 928)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/OvenRack"]
+shape = SubResource("RectangleShape2D_3ptvx")
+one_way_collision = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Oven/OvenRack"]
+color = Color(0.647059, 0.647059, 0.647059, 0.333333)
+polygon = PackedVector2Array(-120, -8, -120, 8, 120, 8, 120, -8)
+
+[node name="OvenDoor" type="StaticBody2D" parent="Oven"]
+position = Vector2(1920, 976)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/OvenDoor"]
+shape = SubResource("RectangleShape2D_hlphi")
+
+[node name="Polygon2D" type="Polygon2D" parent="Oven/OvenDoor"]
+color = Color(0.955136, 0.555342, 0.61309, 1)
+polygon = PackedVector2Array(-128, -8, -128, 8, 128, 8, 128, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Oven/OvenDoor"]
+libraries = {
+"": SubResource("AnimationLibrary_43j62")
+}
+autoplay = "close"
+
 [node name="Cabinets" type="Node" parent="."]
 
 [node name="StaticCabs" type="Node" parent="Cabinets"]
 
 [node name="Land8" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1520, 120)
+position = Vector2(256, 526)
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land8" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
@@ -961,7 +1258,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land9" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1616, 136)
+position = Vector2(585, 556)
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land9" index="0"]
 position = Vector2(2.00003, 0.0017873)
@@ -972,7 +1269,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land10" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1720, 312)
+position = Vector2(689, 732)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land10" index="0"]
@@ -983,7 +1280,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land11" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1648, 360)
+position = Vector2(617, 780)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land11" index="0"]
@@ -994,7 +1291,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land14" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1464, 352)
+position = Vector2(433, 772)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land14" index="0"]
@@ -1006,7 +1303,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land15" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1384, 333)
+position = Vector2(353, 753)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land15" index="0"]
@@ -1018,7 +1315,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land17" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1520, 528)
+position = Vector2(489, 948)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land17" index="0"]
@@ -1030,7 +1327,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land18" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1624, 560)
+position = Vector2(593, 980)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land18" index="0"]
@@ -1042,7 +1339,7 @@ visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
 [node name="Land19" parent="Cabinets/StaticCabs" instance=ExtResource("8_r5f54")]
-position = Vector2(1712, 584)
+position = Vector2(681, 1004)
 rotation = -3.14159
 
 [node name="Polygon2D" parent="Cabinets/StaticCabs/Land19" index="0"]
@@ -1153,7 +1450,7 @@ points = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32, -19, -32)
 [node name="FallPlatform" type="Node" parent="."]
 
 [node name="FallPlat" parent="FallPlatform" instance=ExtResource("13_tcms7")]
-position = Vector2(1408, 112)
+position = Vector2(377, 684)
 
 [node name="Polygon2D" parent="FallPlatform/FallPlat/Path2D/PathFollow2D/AnimatableBody2D" index="0"]
 polygon = PackedVector2Array(-16, 32, 24, 32, 24, -72, -16, -72)
@@ -1171,7 +1468,7 @@ rotation = 1.5708
 target_position = Vector2(-102, -0.000366211)
 
 [node name="FallPlat2" parent="FallPlatform" instance=ExtResource("13_tcms7")]
-position = Vector2(1760, 166)
+position = Vector2(729, 586)
 
 [node name="Polygon2D" parent="FallPlatform/FallPlat2/Path2D/PathFollow2D/AnimatableBody2D" index="0"]
 polygon = PackedVector2Array(-16, 32, 24, 32, 24, -72, -16, -72)
@@ -1188,7 +1485,7 @@ position = Vector2(26, -72)
 target_position = Vector2(-102, -0.000366211)
 
 [node name="FallPlat3" parent="FallPlatform" instance=ExtResource("13_tcms7")]
-position = Vector2(1536, 280)
+position = Vector2(505, 700)
 
 [node name="Polygon2D" parent="FallPlatform/FallPlat3/Path2D/PathFollow2D/AnimatableBody2D" index="0"]
 polygon = PackedVector2Array(-16, 32, 24, 32, 24, -72, -16, -72)
@@ -1256,33 +1553,13 @@ visible = false
 points = PackedVector2Array(-24, -209, 0, -209, 0, 9, 664, 9, 664, 25, -24, 25, -24, -209)
 
 [node name="Land2" parent="." instance=ExtResource("8_r5f54")]
-position = Vector2(1536, 640)
+position = Vector2(505, 1060)
 
 [node name="Polygon2D" parent="Land2" index="0"]
 polygon = PackedVector2Array(-64, -40, 256, -40, 256, 48, 680, 48, 680, 88, -64, 88)
 
 [node name="Line2D" parent="Land2" index="1"]
 points = PackedVector2Array(-64, -40, 256, -40, 256, 48, 680, 48, 680, 88, -64, 88, -64, -40)
-
-[node name="Land4" parent="." instance=ExtResource("8_r5f54")]
-position = Vector2(1267, 166)
-
-[node name="Polygon2D" parent="Land4" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001)
-
-[node name="Line2D" parent="Land4" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001, -24, -8.00001)
-
-[node name="Land6" parent="." instance=ExtResource("8_r5f54")]
-position = Vector2(1336, 120)
-
-[node name="Polygon2D" parent="Land6" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001)
-
-[node name="Line2D" parent="Land6" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001, -24, -8.00001)
 
 [node name="SaladSection" type="Node" parent="."]
 
@@ -1741,7 +2018,6 @@ you up --->"
 [editable path="PlateMaze/Plates/Shelf1/Plate6"]
 [editable path="PlateMaze/Plates/Shelf1/Plate8"]
 [editable path="PlateMaze/Plates/Shelf1/Plate9"]
-[editable path="PlateMaze/Plates/Shelf1/Plate10"]
 [editable path="PlateMaze/Plates/Shelf1/Plate11"]
 [editable path="PlateMaze/Plates/Shelf1/Plate12"]
 [editable path="PlateMaze/Plates/Shelf1/Plate13"]
@@ -1781,6 +2057,9 @@ you up --->"
 [editable path="PlateMaze/Plates/Shelf3/Plate30"]
 [editable path="PlateMaze/Plates/Shelf3/Plate31"]
 [editable path="PlateMaze/Plates/Shelf3/Plate32"]
+[editable path="OvenPanRack/Land"]
+[editable path="OvenPanRack/Land2"]
+[editable path="OvenPanRack/Land3"]
 [editable path="Cabinets/StaticCabs/Land8"]
 [editable path="Cabinets/StaticCabs/Land9"]
 [editable path="Cabinets/StaticCabs/Land10"]
@@ -1805,8 +2084,6 @@ you up --->"
 [editable path="FallPlatform/FallPlat3"]
 [editable path="Land3"]
 [editable path="Land2"]
-[editable path="Land4"]
-[editable path="Land6"]
 [editable path="SaladSection/Land"]
 [editable path="SaladSection/Land2"]
 [editable path="SaladSection/SaladSection"]

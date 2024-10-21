@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dplylb2p845m0"]
 
-[ext_resource type="Script" path="res://platforms/plate_platform/plate.gd" id="1_2shrx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvkrg"]
+size = Vector2(256, 16)
 
 [sub_resource type="Animation" id="Animation_rxjxj"]
 resource_name = "move_fast_right"
@@ -10,15 +11,15 @@ _data = {
 "move_fast_right": SubResource("Animation_rxjxj")
 }
 
-[node name="Plate" type="AnimatableBody2D"]
-script = ExtResource("1_2shrx")
+[node name="OvenPan" type="RigidBody2D"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-48, -16, -40, 0, -48, 8, 48, 8, 40, 0, 48, -16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_tvkrg")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.941176, 1, 0.490196, 1)
-polygon = PackedVector2Array(-48, -16, -40, 0, -48, 8, 48, 8, 40, 0, 48, -16)
+polygon = PackedVector2Array(-128, -16, -128, 0, 128, 0, 128, -16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

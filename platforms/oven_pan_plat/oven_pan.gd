@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends RigidBody2D
 
 
 @export var move_speed : int = 0
