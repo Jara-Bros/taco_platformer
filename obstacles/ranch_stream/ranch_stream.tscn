@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0gcext5xol1p"]
+
+[ext_resource type="Script" path="res://obstacles/ranch_stream/ranch_stream.gd" id="1_n25hr"]
+[ext_resource type="PackedScene" uid="uid://bdisylk5lvclg" path="res://taco/Statuses/ranch/ranch.tscn" id="2_avnd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kajsg"]
+size = Vector2(37, 402)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tds2m"]
+
+[node name="RanchStream" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_n25hr")
+ranch_packed_scene = ExtResource("2_avnd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 40)
+shape = SubResource("RectangleShape2D_kajsg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -20.0
+offset_top = -161.0
+offset_right = 18.0
+offset_bottom = 243.0
+texture = SubResource("CanvasTexture_tds2m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

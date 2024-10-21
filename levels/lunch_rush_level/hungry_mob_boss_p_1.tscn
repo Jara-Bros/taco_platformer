@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=49 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Texture2D" uid="uid://bon58n3kldqfi" path="res://levels/lunch_rush_level/sprites/hungry_mob_boss_room_p1.png" id="1_dhfk1"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/hungry_mob_boss_p_1.gd" id="1_p5dx3"]
@@ -15,7 +15,16 @@
 [ext_resource type="PackedScene" uid="uid://bv3c0hs8icaf" path="res://platforms/move_platform/move_plat.tscn" id="11_e1lls"]
 [ext_resource type="PackedScene" uid="uid://dlftnhvkqkwod" path="res://platforms/fall_platform/fall_plat.tscn" id="11_x4k8d"]
 [ext_resource type="PackedScene" uid="uid://lri63e8intw4" path="res://platforms/falling_spoon/spoon.tscn" id="13_4osrn"]
+[ext_resource type="PackedScene" uid="uid://cpjt7e7yqdqg2" path="res://platforms/slippery_platform/slippery_platform.tscn" id="13_iw2up"]
 [ext_resource type="PackedScene" uid="uid://djqd3l3tsunm5" path="res://obstacles/move_blocks/move_blocks.tscn" id="15_o26y7"]
+[ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="16_2ca4i"]
+[ext_resource type="PackedScene" uid="uid://bnb50332vdfw6" path="res://taco/Statuses/StatusRemover/StatusRemover.tscn" id="17_4q1j2"]
+[ext_resource type="PackedScene" uid="uid://ddyjllehahadu" path="res://obstacles/grill_fire/grill_fire.tscn" id="20_l13je"]
+[ext_resource type="PackedScene" uid="uid://c8chalvkwwmwg" path="res://platforms/patty_platform/patty_plat.tscn" id="22_p5w36"]
+[ext_resource type="PackedScene" uid="uid://b45fijp2mxc1a" path="res://items/button/button.tscn" id="23_a4n2d"]
+[ext_resource type="PackedScene" uid="uid://cdjbi4f7sccbc" path="res://platforms/patty_platform/patty_plat_mw.tscn" id="23_ocgbe"]
+[ext_resource type="PackedScene" uid="uid://bibdabkk2m88t" path="res://spawner/convey_belt_plat_spawn/convey_belt_plat_spawn.tscn" id="24_2saxe"]
+[ext_resource type="PackedScene" uid="uid://b0gcext5xol1p" path="res://obstacles/ranch_stream/ranch_stream.tscn" id="24_gnwno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfobp"]
 size = Vector2(160, 8)
@@ -140,17 +149,36 @@ _data = {
 "move_block": SubResource("Animation_ha10k")
 }
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sqhts"]
-friction = 0.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbsc"]
-size = Vector2(26, 176)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qaqov"]
-size = Vector2(274, 42)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiupy"]
+size = Vector2(288, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oyma"]
-size = Vector2(536, 16)
+size = Vector2(312, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0op2"]
+size = Vector2(526, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1gk4"]
+size = Vector2(29, 11)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3n1qc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0pcj"]
+font_size = 7
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oylkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsh3d"]
+size = Vector2(920, 37)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hga7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1i3m"]
+size = Vector2(380, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcjah"]
+size = Vector2(718, 26)
 
 [node name="HungryMobBossP1" type="Node2D"]
 script = ExtResource("1_p5dx3")
@@ -173,7 +201,7 @@ texture = ExtResource("5_ogi3o")
 hframes = 3
 
 [node name="Taco" parent="." instance=ExtResource("2_grgq2")]
-position = Vector2(525, 37)
+position = Vector2(2544, 333)
 
 [node name="SoccerBall" parent="." instance=ExtResource("4_ag1lj")]
 position = Vector2(312, 128)
@@ -754,24 +782,6 @@ polygon = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32)
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(-19, -32, -19, 47, 25, 47, 25, -32, -19, -32)
 
-[node name="CuttingBoard" parent="." instance=ExtResource("2_4hsex")]
-position = Vector2(1856, 632)
-physics_material_override = SubResource("PhysicsMaterial_sqhts")
-
-[node name="Polygon2D" parent="CuttingBoard" index="0"]
-polygon = PackedVector2Array(-64, -32, 128, 56, 128, 48, -64, -40)
-
-[node name="Line2D" parent="CuttingBoard" index="1"]
-points = PackedVector2Array(-64, -32, 128, 56, 128, 48, -64, -40, -64, -32)
-default_color = Color(0, 0.792157, 0.564706, 1)
-
-[node name="Label" type="Label" parent="CuttingBoard"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.956863, 1, 0.133333, 1)
-text = "needs
-slippery"
-
 [node name="FallPlatform" type="Node" parent="."]
 
 [node name="FallPlat" parent="FallPlatform" instance=ExtResource("11_x4k8d")]
@@ -831,51 +841,17 @@ position = Vector2(2443, 456)
 rotation = 1.5708
 y_impulse = -4
 
-[node name="PushForceChanged" type="Area2D" parent="."]
-position = Vector2(2613, 414)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PushForceChanged"]
-position = Vector2(3, -38)
-shape = SubResource("RectangleShape2D_ptbsc")
-
-[node name="EightPan" type="Node" parent="."]
-
-[node name="MoveBlocks" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2768, 672)
-
-[node name="MoveBlocks2" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2784, 592)
-
-[node name="MoveBlocks3" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2800, 512)
-
-[node name="MoveBlocks7" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2824, 424)
-
-[node name="MoveBlocks4" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2896, 672)
-
-[node name="MoveBlocks5" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2912, 592)
-
-[node name="MoveBlocks6" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2928, 512)
-
-[node name="MoveBlocks8" parent="EightPan" instance=ExtResource("15_o26y7")]
-position = Vector2(2960, 424)
-
 [node name="Land3" parent="." instance=ExtResource("2_4hsex")]
 position = Vector2(2696, 672)
 
 [node name="Polygon2D" parent="Land3" index="0"]
-position = Vector2(0, -1)
-polygon = PackedVector2Array(-24, -209, 0, -209, 0, 9, 568, 9, 568, 25, -24, 25)
+position = Vector2(-10.6744, 71.3462)
+scale = Vector2(0.555233, 1.34615)
+polygon = PackedVector2Array(-24, -209, 0, -209, 0, 9, 664, 9, 664, 25, -24, 25)
 
 [node name="Line2D" parent="Land3" index="1"]
 visible = false
-points = PackedVector2Array(-24, -209, 0, -209, 0, 9, 568, 9, 568, 25, -24, 25, -24, -209)
+points = PackedVector2Array(-24, -209, 0, -209, 0, 9, 664, 9, 664, 25, -24, 25, -24, -209)
 
 [node name="Land2" parent="." instance=ExtResource("2_4hsex")]
 position = Vector2(1536, 640)
@@ -906,238 +882,474 @@ polygon = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00
 visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 7.99999, 24, 7.99999, 24, -8.00001, -24, -8.00001)
 
-[node name="Sauced" type="Area2D" parent="."]
-position = Vector2(3176, 400)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sauced"]
-position = Vector2(12, 11)
-shape = SubResource("RectangleShape2D_qaqov")
-
-[node name="SaucedTimer" type="Timer" parent="Sauced"]
-wait_time = 4.0
-
-[node name="Polygon2D" type="Polygon2D" parent="Sauced"]
-position = Vector2(0, 11)
-scale = Vector2(1, 2.1)
-color = Color(0.997032, 0.991941, 0, 1)
-polygon = PackedVector2Array(-125, -10, -125, 10, 149, 10, 149, -10)
-
 [node name="SaladSection" type="Node" parent="."]
 
 [node name="Land" parent="SaladSection" instance=ExtResource("2_4hsex")]
-position = Vector2(3088, 408)
+position = Vector2(2735, 521)
 
 [node name="Polygon2D" parent="SaladSection/Land" index="0"]
-polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16)
+polygon = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64)
 
 [node name="Line2D" parent="SaladSection/Land" index="1"]
-points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, -40, -24)
+points = PackedVector2Array(-40, -24, -40, 24, 24, 24, 40, 24, 24, 16, 3, 1, 1, -2, -5, -12, -20, -41, -32, -64, -40, -64, -40, -24)
 
 [node name="Land2" parent="SaladSection" instance=ExtResource("2_4hsex")]
-position = Vector2(3272, 416)
+position = Vector2(2919, 529)
 
 [node name="Polygon2D" parent="SaladSection/Land2" index="0"]
-polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 56, -32)
+polygon = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641)
 
 [node name="Line2D" parent="SaladSection/Land2" index="1"]
-points = PackedVector2Array(-8, 8, -24, 16, 56, 16, 56, -32, -8, 8)
+points = PackedVector2Array(-8, 8, -24, 16, 56, 16, 58, -72, 49, -72, 29, -38, 11, -7, 8.50625, -2.31641, -8, 8)
 
-[node name="SaladSection4" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 440)
-collision_layer = 4
-collision_mask = 2
+[node name="SaladSection" parent="SaladSection" instance=ExtResource("2_4hsex")]
+position = Vector2(2847, 561)
 
-[node name="Polygon2D" type="Polygon2D" parent="SaladSection/SaladSection4"]
-polygon = PackedVector2Array(-8, -8, -8, 8, 528, 8, 528, -8)
+[node name="Polygon2D" parent="SaladSection/SaladSection" index="0"]
+polygon = PackedVector2Array(-152, -16, -152, 0, -152, 48, -128, 48, -128, 0, 128, 0, 128.25, -16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladSection/SaladSection4"]
-position = Vector2(260, 0)
-shape = SubResource("RectangleShape2D_5oyma")
-one_way_collision = true
+[node name="Line2D" parent="SaladSection/SaladSection" index="1"]
+points = PackedVector2Array(-152, -16, -152, 0, -152, 48, -128, 48, -128, 0, 128, 0, 128.25, -16, -152, -16)
+
+[node name="SaladSection2" parent="SaladSection" instance=ExtResource("2_4hsex")]
+position = Vector2(3007, 708)
+rotation = 1.57079
+
+[node name="Polygon2D" parent="SaladSection/SaladSection2" index="0"]
+position = Vector2(-133.9, 27.9982)
+polygon = PackedVector2Array(-147, -24.0007, -123, -16.0007, -115.188, -0.00088501, 320, 0, 320, -16, -131, -32.0007, -127.998, -251.001, 276.002, -256.998, 282.002, -280.998, -128.998, -287.001, -152.998, -291.001)
+
+[node name="Line2D" parent="SaladSection/SaladSection2" index="1"]
+position = Vector2(-133.9, 27.9982)
+points = PackedVector2Array(-147, -24.0007, -123, -16.0007, -115.188, -0.00088501, 320, 0, 320, -16, -131, -32.0007, -127.998, -251.001, 276.002, -256.998, 282.002, -280.998, -128.998, -287.001, -152.998, -291.001, -147, -24.0007)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladSection/SaladSection2"]
+position = Vector2(-262.999, -117.002)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_aiupy")
 
 [node name="SaladSection5" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 504)
+position = Vector2(2703, 617)
 collision_layer = 4
 collision_mask = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="SaladSection/SaladSection5"]
-polygon = PackedVector2Array(-8, -8, -8, 8, 528, 8, 528, -8)
+polygon = PackedVector2Array(-8, -8, -8, 8, 304, 8, 304, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaladSection/SaladSection5"]
-position = Vector2(260, 0)
+position = Vector2(148, 0)
 shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
 
 [node name="SaladSection6" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 568)
+position = Vector2(2703, 681)
 collision_layer = 4
 collision_mask = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="SaladSection/SaladSection6"]
-polygon = PackedVector2Array(-8, -8, -8, 8, 528, 8, 528, -8)
+polygon = PackedVector2Array(-8, -8, -8, 8, 304, 8, 304, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaladSection/SaladSection6"]
-position = Vector2(260, 0)
+position = Vector2(148, 0)
 shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
 
 [node name="SaladSection7" type="StaticBody2D" parent="SaladSection"]
-position = Vector2(3056, 632)
+position = Vector2(2703, 745)
 collision_layer = 4
 collision_mask = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="SaladSection/SaladSection7"]
-polygon = PackedVector2Array(-8, -8, -8, 8, 528, 8, 528, -8)
+polygon = PackedVector2Array(-8, -8, -8, 8, 304, 8, 304, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaladSection/SaladSection7"]
-position = Vector2(260, 0)
+position = Vector2(148, 0)
 shape = SubResource("RectangleShape2D_5oyma")
 one_way_collision = true
 
-[node name="SinkSection" type="Node" parent="."]
+[node name="AndysRanch" type="Node" parent="."]
 
-[node name="Land14" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(6024, -592)
-rotation = -1.57169
+[node name="WaterBowl" parent="AndysRanch" instance=ExtResource("16_2ca4i")]
+position = Vector2(2751, 432)
 
-[node name="Polygon2D" parent="SinkSection/Land14" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="CollisionShape2D" parent="AndysRanch/WaterBowl" index="0"]
+polygon = PackedVector2Array(-127.5, -14.5, -92.5, 51.5, -52.5, 73.5, 60.5, 73.5, 97.5, 54.5, 137.5, -14.5)
 
-[node name="Line2D" parent="SinkSection/Land14" index="1"]
+[node name="Polygon2D" parent="AndysRanch/WaterBowl" index="1"]
+z_index = 6
+color = Color(1, 1, 0.678431, 0.815686)
+polygon = PackedVector2Array(-48, 24, -13, 90, 26, 112, 142, 112, 177, 93, 217, 24)
+
+[node name="StatusRemover" parent="AndysRanch" instance=ExtResource("17_4q1j2")]
+position = Vector2(3077, 362)
+
+[node name="CollisionShape2D" parent="AndysRanch/StatusRemover" index="0"]
+position = Vector2(-57, 23)
+polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
+
+[node name="StatusRemover2" parent="AndysRanch" instance=ExtResource("17_4q1j2")]
+position = Vector2(2679, 417)
+
+[node name="CollisionShape2D" parent="AndysRanch/StatusRemover2" index="0"]
+polygon = PackedVector2Array(-13, 39, 10, 39, 10, -108, -12, -108)
+
+[node name="GrillSection" type="Node" parent="."]
+
+[node name="GrillTop" parent="GrillSection" instance=ExtResource("2_4hsex")]
+
+[node name="Polygon2D" parent="GrillSection/GrillTop" index="0"]
+position = Vector2(-613, 0)
+polygon = PackedVector2Array(3952, 416, 3952, 592, 4456, 592, 4464, 616, 4480, 616, 4480, 416)
+
+[node name="Line2D" parent="GrillSection/GrillTop" index="1"]
+position = Vector2(-613, 0)
+points = PackedVector2Array(3952, 416, 3952, 592, 4456, 592, 4464, 616, 4480, 616, 4480, 416, 3952, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrillSection/GrillTop"]
+position = Vector2(3603, 427)
+shape = SubResource("RectangleShape2D_v0op2")
+
+[node name="GreasyFloor" parent="GrillSection" instance=ExtResource("13_iw2up")]
+position = Vector2(3587, 866)
+scale = Vector2(1, 0.997568)
+
+[node name="Polygon2D" parent="GrillSection/GreasyFloor" index="0"]
+position = Vector2(-83.2703, -12)
+scale = Vector2(2.08108, 2.00001)
+polygon = PackedVector2Array(-120, -8, -120, 0, 176, 0, 176, -8)
+
+[node name="CollisionShape2D" parent="GrillSection/GreasyFloor" index="1"]
 visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+position = Vector2(-24.5, -20)
 
-[node name="Land15" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(6040, -648)
-rotation = -1.57169
-
-[node name="Polygon2D" parent="SinkSection/Land15" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
-
-[node name="Line2D" parent="SinkSection/Land15" index="1"]
+[node name="Area2D" parent="GrillSection/GreasyFloor" index="2"]
 visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+position = Vector2(-9, -5)
 
-[node name="Land16" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(6048, -808)
-rotation = -1.57169
+[node name="CollisionShape2D" parent="GrillSection/GreasyFloor/Area2D" index="0"]
+position = Vector2(-14, -15.5)
 
-[node name="Polygon2D" parent="SinkSection/Land16" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="Line2D" type="Line2D" parent="GrillSection/GreasyFloor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(90.255, -20.502)
+rotation = -0.00484288
+scale = Vector2(0.905206, 1.01051)
+points = PackedVector2Array(-465, -7, -443.186, -7, -392.824, -7, 215, -7, 215, 9, -465, 9, -465, -7)
+width = 5.0
+default_color = Color(0.588235, 0.588235, 0, 1)
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
 
-[node name="Line2D" parent="SinkSection/Land16" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="Land5" parent="GrillSection" instance=ExtResource("2_4hsex")]
+position = Vector2(3795, 909)
 
-[node name="Land17" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(6048, -704)
-rotation = -1.57169
+[node name="Polygon2D" parent="GrillSection/Land5" index="0"]
+position = Vector2(67.5238, -192.062)
+scale = Vector2(0.0204688, 15.5625)
+polygon = PackedVector2Array(-465, -7, 215, -7, 215, 9, -465, 9)
 
-[node name="Polygon2D" parent="SinkSection/Land17" index="0"]
-polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+[node name="Line2D" parent="GrillSection/Land5" index="1"]
+position = Vector2(63.9951, -223.183)
+rotation = -1.57062
+scale = Vector2(0.36734, 0.997108)
+points = PackedVector2Array(-465, -7, 215, -7, 215, 9, -465, 9, -465, -7)
 
-[node name="Line2D" parent="SinkSection/Land17" index="1"]
-visible = false
-points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+[node name="GrillFires" type="Node" parent="GrillSection"]
 
-[node name="Land18" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(6112, -440)
-rotation = -1.57169
+[node name="GrillFire" parent="GrillSection/GrillFires" instance=ExtResource("20_l13je")]
+position = Vector2(3418, 393)
 
-[node name="Polygon2D" parent="SinkSection/Land18" index="0"]
-polygon = PackedVector2Array(-104.014, 15.907, -104.072, 79.907, -104.185, 207.267, -168.186, 207.85, -168.3, 335.85, -104.3, 335.907, -104.415, 463.907, 23.5852, 464.021, -40.3576, 399.964, -72.3004, 335.935, -72.2718, 303.935, -104.265, 295.907, -104.222, 247.907, -72.2217, 247.935, -72.1859, 207.935, -40.1287, 143.964, 24, 80, 23.9857, 16.0215)
+[node name="GrillFire2" parent="GrillSection/GrillFires" instance=ExtResource("20_l13je")]
+position = Vector2(3558, 393)
 
-[node name="Line2D" parent="SinkSection/Land18" index="1"]
-visible = false
-points = PackedVector2Array(-104.014, 15.907, -104.072, 79.907, -104.185, 207.267, -168.186, 207.85, -168.3, 335.85, -104.3, 335.907, -104.415, 463.907, 23.5852, 464.021, -40.3576, 399.964, -72.3004, 335.935, -72.2718, 303.935, -104.265, 295.907, -104.222, 247.907, -72.2217, 247.935, -72.1859, 207.935, -40.1287, 143.964, 24, 80, 23.9857, 16.0215, -104.014, 15.907)
+[node name="GrillFire3" parent="GrillSection/GrillFires" instance=ExtResource("20_l13je")]
+position = Vector2(3705, 393)
 
-[node name="Label" type="Label" parent="SinkSection/Land18"]
-offset_left = -128.186
-offset_top = 207.885
-offset_right = 22.8141
-offset_bottom = 230.885
-rotation = 1.54238
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "bowl of dirty dishes"
+[node name="PattyPlat" parent="GrillSection" instance=ExtResource("22_p5w36")]
+position = Vector2(3489, 398)
+
+[node name="PattyPlatMW" parent="GrillSection" instance=ExtResource("23_ocgbe")]
+position = Vector2(3633, 398)
+scale = Vector2(1, 1.2175)
+
+[node name="Button" parent="GrillSection" instance=ExtResource("23_a4n2d")]
+position = Vector2(3410, 771)
+collision_layer = 8
+collision_mask = 2
+call_arguments = [NodePath("GrillSection/GrillFires/GrillFire"), NodePath("GrillSection/GrillFires/GrillFire2"), NodePath("GrillSection/GrillFires/GrillFire3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrillSection/Button"]
+position = Vector2(14.5, 5.5)
+shape = SubResource("RectangleShape2D_g1gk4")
+
+[node name="TextureRect" type="TextureRect" parent="GrillSection/Button"]
+offset_right = 29.0
+offset_bottom = 11.0
+texture = SubResource("CanvasTexture_3n1qc")
 metadata/_edit_use_anchors_ = true
 
-[node name="Land19" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5640, -832)
+[node name="Label" type="Label" parent="GrillSection/Button"]
+offset_left = 1.0
+offset_right = 29.0
+offset_bottom = 11.0
+text = "click me"
+label_settings = SubResource("LabelSettings_g0pcj")
+metadata/_edit_use_anchors_ = true
 
-[node name="Polygon2D" parent="SinkSection/Land19" index="0"]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8)
+[node name="RanchStreamSection" type="Node" parent="."]
 
-[node name="Line2D" parent="SinkSection/Land19" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8, -16, -24)
+[node name="RanchStream" parent="RanchStreamSection" instance=ExtResource("24_gnwno")]
+position = Vector2(3944, 216)
 
-[node name="Land20" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5704, -832)
+[node name="StaticPlatform" parent="RanchStreamSection" instance=ExtResource("9_djago")]
+position = Vector2(3939, 443)
+collision_mask = 2
 
-[node name="Polygon2D" parent="SinkSection/Land20" index="0"]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RanchStreamSection/StaticPlatform"]
+shape = SubResource("RectangleShape2D_oylkm")
 
-[node name="Line2D" parent="SinkSection/Land20" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8, -16, -24)
+[node name="Salamander" type="Node" parent="."]
 
-[node name="Land21" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5768, -832)
+[node name="ConveyBeltPlatSpawn" parent="Salamander" instance=ExtResource("24_2saxe")]
+position = Vector2(4170, 409)
 
-[node name="Polygon2D" parent="SinkSection/Land21" index="0"]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8)
+[node name="Area2D" parent="Salamander/ConveyBeltPlatSpawn" index="0"]
+position = Vector2(528, 8)
 
-[node name="Line2D" parent="SinkSection/Land21" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 16, -24, 16, 8, -16, 8, -16, -24)
+[node name="ConveyBeltPlatSpawn2" parent="Salamander" instance=ExtResource("24_2saxe")]
+position = Vector2(4682, 497)
+move_left = true
+move_right = false
 
-[node name="Land22" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5824, -872)
+[node name="Area2D" parent="Salamander/ConveyBeltPlatSpawn2" index="0"]
+position = Vector2(-504, 0)
 
-[node name="Polygon2D" parent="SinkSection/Land22" index="0"]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, -8, -16, -8)
+[node name="Land7" parent="Salamander" instance=ExtResource("2_4hsex")]
+position = Vector2(4074, 489)
 
-[node name="Line2D" parent="SinkSection/Land22" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 16, -24, 16, -8, -16, -8, -16, -24)
+[node name="Polygon2D" parent="Salamander/Land7" index="0"]
+polygon = PackedVector2Array(-32, -16, -32, 48, 32, 48, 32, -40, 600, -40, 600, -64, -32, -64)
 
-[node name="Land23" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5912, -872)
+[node name="Line2D" parent="Salamander/Land7" index="1"]
+points = PackedVector2Array(-32, -16, -32, 48, 32, 48, 32, -40, 600, -40, 600, -64, -32, -64, -32, -16)
 
-[node name="Polygon2D" parent="SinkSection/Land23" index="0"]
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, -8, -16, -8)
+[node name="Land8" parent="Salamander" instance=ExtResource("2_4hsex")]
+position = Vector2(4810, 449)
+rotation = -3.14159
 
-[node name="Line2D" parent="SinkSection/Land23" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 16, -24, 16, -8, -16, -8, -16, -24)
+[node name="Polygon2D" parent="Salamander/Land8" index="0"]
+polygon = PackedVector2Array(-28.9995, 137, -28.9995, 177, 763, 176.998, 763, 144.998, 27.0005, 145, 27.0005, 137, 27, -63.0001, 608, -64.0016, 608, -88.0016, -29, -86.9999)
 
-[node name="Land24" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5992, -848)
+[node name="Line2D" parent="Salamander/Land8" index="1"]
+points = PackedVector2Array(-28.9995, 137, -28.9995, 177, 763, 176.998, 763, 144.998, 27.0005, 145, 27.0005, 137, 27, -63.0001, 608, -64.0016, 608, -88.0016, -29, -86.9999, -28.9995, 137)
 
-[node name="Polygon2D" parent="SinkSection/Land24" index="0"]
-polygon = PackedVector2Array(-16, -24, 40, -128, 40, -8, -16, -8)
+[node name="ServePlateSection" type="Node" parent="."]
 
-[node name="Line2D" parent="SinkSection/Land24" index="1"]
-visible = false
-points = PackedVector2Array(-16, -24, 40, -128, 40, -8, -16, -8, -16, -24)
+[node name="Land7" parent="ServePlateSection" instance=ExtResource("2_4hsex")]
+position = Vector2(128, 64)
 
-[node name="Land13" parent="SinkSection" instance=ExtResource("2_4hsex")]
-position = Vector2(5992, -536)
+[node name="Polygon2D" parent="ServePlateSection/Land7" index="0"]
+position = Vector2(-566, 281)
+polygon = PackedVector2Array(4480, 640, 4480, 704, 5404, 704, 5404, 640)
+
+[node name="Line2D" parent="ServePlateSection/Land7" index="1"]
+position = Vector2(-566, 281)
+points = PackedVector2Array(4480, 640, 4480, 704, 5404, 704, 5404, 640, 4480, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ServePlateSection/Land7"]
+position = Vector2(4377, 939.5)
+shape = SubResource("RectangleShape2D_fsh3d")
+
+[node name="ConveyBeltPlatSpawn" parent="ServePlateSection" instance=ExtResource("24_2saxe")]
+position = Vector2(4127, 960)
+
+[node name="Area2D" parent="ServePlateSection/ConveyBeltPlatSpawn" index="0"]
+position = Vector2(776, -8)
+
+[node name="AnimationPlayer" parent="ServePlateSection/ConveyBeltPlatSpawn" index="1"]
+autoplay = "spawn_plate"
+
+[node name="PlateStairs" type="Node" parent="ServePlateSection"]
+
+[node name="Land14" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5319, 968)
 rotation = -1.57169
 
-[node name="Polygon2D" parent="SinkSection/Land13" index="0"]
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land14" index="0"]
 polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
 
-[node name="Line2D" parent="SinkSection/Land13" index="1"]
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land14" index="1"]
 visible = false
 points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
 
-[connection signal="body_entered" from="PushForceChanged" to="." method="_on_push_force_changed_body_entered"]
-[connection signal="body_entered" from="Sauced" to="." method="_on_sauced_body_entered"]
-[connection signal="body_exited" from="Sauced" to="." method="_on_sauced_body_exited"]
-[connection signal="timeout" from="Sauced/SaucedTimer" to="." method="_on_timer_timeout"]
+[node name="Land15" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5335, 912)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land15" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land15" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land16" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5518, 676)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land16" index="0"]
+polygon = PackedVector2Array(0.0062561, -7.00049, -0.0679016, 75.9995, 6.9321, 76.0059, 7.00626, -6.99414)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land16" index="1"]
+visible = false
+points = PackedVector2Array(0.0062561, -7.00049, -0.0679016, 75.9995, 6.9321, 76.0059, 7.00626, -6.99414, 0.0062561, -7.00049)
+
+[node name="Land17" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5431, 693)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land17" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land17" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land13" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5287, 1024)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land13" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land13" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land19" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5380, 799)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land19" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land19" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land20" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5396, 743)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land20" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land20" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="Land21" parent="ServePlateSection/PlateStairs" instance=ExtResource("2_4hsex")]
+position = Vector2(5348, 855)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="ServePlateSection/PlateStairs/Land21" index="0"]
+polygon = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001)
+
+[node name="Line2D" parent="ServePlateSection/PlateStairs/Land21" index="1"]
+visible = false
+points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -8.00001)
+
+[node name="EightPan" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="EightPan"]
+position = Vector2(4933, 1315.89)
+
+[node name="TextureRect" type="TextureRect" parent="EightPan/StaticBody2D"]
+offset_top = -12.0
+offset_right = 379.0
+offset_bottom = 23.0
+texture = SubResource("CanvasTexture_hga7r")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EightPan/StaticBody2D"]
+position = Vector2(188.982, 6.11328)
+shape = SubResource("RectangleShape2D_d1i3m")
+
+[node name="MoveBlocks" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(4960.98, 1313)
+
+[node name="MoveBlocks2" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(4976.98, 1233)
+
+[node name="MoveBlocks3" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(4992.98, 1153)
+
+[node name="MoveBlocks7" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(5016.98, 1065)
+
+[node name="MoveBlocks4" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(5088.98, 1313)
+
+[node name="MoveBlocks5" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(5104.98, 1233)
+
+[node name="MoveBlocks6" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(5120.98, 1153)
+
+[node name="MoveBlocks8" parent="EightPan" instance=ExtResource("15_o26y7")]
+position = Vector2(5152.98, 1065)
+
+[node name="SinkSection" type="Node" parent="."]
+
+[node name="Sink" parent="SinkSection" instance=ExtResource("2_4hsex")]
+position = Vector2(5452, 1167)
+rotation = -1.57169
+
+[node name="Polygon2D" parent="SinkSection/Sink" index="0"]
+polygon = PackedVector2Array(-103.968, -36.0933, -104.072, 79.907, -104.185, 207.267, -168.186, 207.85, -168.3, 335.85, -104.3, 335.907, -102.465, 519.908, 24.5327, 523.021, 24.5433, 511.021, -14.4495, 502.986, -60.411, 459.945, -70.3797, 424.937, -72.3004, 335.935, -72.2718, 303.935, -104.272, 303.906, -104.222, 247.907, -72.2217, 247.935, -72.1859, 207.935, -70.1116, 124.937, -56.0696, 77.9492, -23.05, 55.979, 5.96423, 40.0049, 23.9732, 30.021, 23.9857, 16.0215, 141.017, -18.8745, 141.032, -35.8745)
+
+[node name="Line2D" parent="SinkSection/Sink" index="1"]
+visible = false
+points = PackedVector2Array(-103.968, -36.0933, -104.072, 79.907, -104.185, 207.267, -168.186, 207.85, -168.3, 335.85, -104.3, 335.907, -102.465, 519.908, 24.5327, 523.021, 24.5433, 511.021, -14.4495, 502.986, -60.411, 459.945, -70.3797, 424.937, -72.3004, 335.935, -72.2718, 303.935, -104.272, 303.906, -104.222, 247.907, -72.2217, 247.935, -72.1859, 207.935, -70.1116, 124.937, -56.0696, 77.9492, -23.05, 55.979, 5.96423, 40.0049, 23.9732, 30.021, 23.9857, 16.0215, 141.017, -18.8745, 141.032, -35.8745, -103.968, -36.0933)
+
+[node name="WaterBowl" parent="SinkSection" instance=ExtResource("16_2ca4i")]
+position = Vector2(5638, 1126)
+is_water = true
+
+[node name="CollisionShape2D" parent="SinkSection/WaterBowl" index="0"]
+polygon = PackedVector2Array(-234.5, -21.5, -207.5, 27.5, -187.5, 57.5, -139.5, 71.5, -57.5, 73.5, -17.067, 73.8159, -16.5, 106.5, 37.5, 105.5, 37.391, 74.2413, 70.5, 74.5, 159.5, 71.5, 194.5, 62.5, 223.5, 30.5, 236.5, 15.5, 244.5, -22.5)
+
+[node name="Polygon2D" parent="SinkSection/WaterBowl" index="1"]
+z_index = 6
+color = Color(0.376471, 0.831373, 0.921569, 0.647059)
+polygon = PackedVector2Array(-155, 17, -131, 63, -109, 97, -61, 111, 22, 113, 62, 113, 62, 145, 118, 145, 118, 113, 150, 113, 237, 110, 274, 100, 317, 54, 324, 17)
+
+[node name="Land7" parent="." instance=ExtResource("2_4hsex")]
+position = Vector2(1441, 16)
+
+[node name="Polygon2D" parent="Land7" index="0"]
+position = Vector2(-1189, 349)
+polygon = PackedVector2Array(5648, 912, 5648, 1112, 6424, 1112, 6424, 1016, 5712.97, 1016, 5712, 912)
+
+[node name="Line2D" parent="Land7" index="1"]
+position = Vector2(-1189, 349)
+points = PackedVector2Array(5648, 912, 5648, 1112, 6424, 1112, 6424, 1016, 5712.97, 1016, 5712, 912, 5648, 912)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Land7"]
+position = Vector2(4875, 1379)
+shape = SubResource("RectangleShape2D_rcjah")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6596.0
+offset_top = 1253.0
+offset_right = 6672.0
+offset_bottom = 1302.0
+text = "FOH Door
+(End)"
+
+[connection signal="generic_signal" from="GrillSection/Button" to="." method="_on_button_generic_signal"]
 
 [editable path="Taco"]
 [editable path="SoccerBall"]
@@ -1188,7 +1400,6 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [editable path="Cabinets/CabwD3/MovePlatform3"]
 [editable path="EntryFloor"]
 [editable path="Land"]
-[editable path="CuttingBoard"]
 [editable path="FallPlatform/FallPlat"]
 [editable path="FallPlatform/FallPlat2"]
 [editable path="FallPlatform/FallPlat3"]
@@ -1198,15 +1409,31 @@ points = PackedVector2Array(-24, -8.00001, -24, 80, 24, 80, 24, -8.00001, -24, -
 [editable path="Land6"]
 [editable path="SaladSection/Land"]
 [editable path="SaladSection/Land2"]
-[editable path="SinkSection/Land14"]
-[editable path="SinkSection/Land15"]
-[editable path="SinkSection/Land16"]
-[editable path="SinkSection/Land17"]
-[editable path="SinkSection/Land18"]
-[editable path="SinkSection/Land19"]
-[editable path="SinkSection/Land20"]
-[editable path="SinkSection/Land21"]
-[editable path="SinkSection/Land22"]
-[editable path="SinkSection/Land23"]
-[editable path="SinkSection/Land24"]
-[editable path="SinkSection/Land13"]
+[editable path="SaladSection/SaladSection"]
+[editable path="SaladSection/SaladSection2"]
+[editable path="AndysRanch/WaterBowl"]
+[editable path="AndysRanch/StatusRemover"]
+[editable path="AndysRanch/StatusRemover2"]
+[editable path="GrillSection/GrillTop"]
+[editable path="GrillSection/GreasyFloor"]
+[editable path="GrillSection/Land5"]
+[editable path="GrillSection/GrillFires/GrillFire"]
+[editable path="GrillSection/GrillFires/GrillFire2"]
+[editable path="GrillSection/GrillFires/GrillFire3"]
+[editable path="Salamander/ConveyBeltPlatSpawn"]
+[editable path="Salamander/ConveyBeltPlatSpawn2"]
+[editable path="Salamander/Land7"]
+[editable path="Salamander/Land8"]
+[editable path="ServePlateSection/Land7"]
+[editable path="ServePlateSection/ConveyBeltPlatSpawn"]
+[editable path="ServePlateSection/PlateStairs/Land14"]
+[editable path="ServePlateSection/PlateStairs/Land15"]
+[editable path="ServePlateSection/PlateStairs/Land16"]
+[editable path="ServePlateSection/PlateStairs/Land17"]
+[editable path="ServePlateSection/PlateStairs/Land13"]
+[editable path="ServePlateSection/PlateStairs/Land19"]
+[editable path="ServePlateSection/PlateStairs/Land20"]
+[editable path="ServePlateSection/PlateStairs/Land21"]
+[editable path="SinkSection/Sink"]
+[editable path="SinkSection/WaterBowl"]
+[editable path="Land7"]

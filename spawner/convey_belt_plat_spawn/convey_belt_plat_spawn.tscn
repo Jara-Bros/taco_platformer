@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bibdabkk2m88t"]
+
+[ext_resource type="Script" path="res://spawner/convey_belt_plat_spawn/convey_belt_plat_spawn.gd" id="1_ljl85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i2lv"]
+
+[sub_resource type="Animation" id="Animation_mdhro"]
+resource_name = "spawn_platform"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"init_platform"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hnybr"]
+resource_name = "spawn_plate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"init_plate"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7dut6"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00eku"]
+_data = {
+"RESET": SubResource("Animation_7dut6"),
+"spawn_plate": SubResource("Animation_hnybr"),
+"spawn_platform": SubResource("Animation_mdhro")
+}
+
+[node name="ConveyBeltPlatSpawn" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_ljl85")
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8i2lv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_00eku")
+}
+autoplay = "spawn_platform"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
