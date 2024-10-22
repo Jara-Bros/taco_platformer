@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://platforms/slippery_platform/slippery_platform.gd" id="1_eorvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7cvw"]
-size = Vector2(216, 8)
+size = Vector2(617, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ctw2c"]
-size = Vector2(217.045, 13.2309)
+size = Vector2(620, 19)
 
 [node name="SlipperyPlatform" type="StaticBody2D"]
 script = ExtResource("1_eorvk")
