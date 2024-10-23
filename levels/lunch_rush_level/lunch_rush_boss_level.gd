@@ -5,11 +5,11 @@ extends Node2D
 @onready var initial_camera: Camera2D = $KitchenEncounterSection/InitialCamera
 
 func _ready() -> void:
-	$GrillSection/Button.callable = func(fire_array):
-		for grill_fire in fire_array:
-			var grill_fire_node = get_node(grill_fire)
-			grill_fire_node.queue_free()
-	
+	#$GrillSection/Button.callable = func(fire_array):
+		#for grill_fire in fire_array:
+			#var grill_fire_node = get_node(grill_fire)
+			#grill_fire_node.queue_free()
+	pass
 
 func _process(_delta: float) -> void:
 	pass

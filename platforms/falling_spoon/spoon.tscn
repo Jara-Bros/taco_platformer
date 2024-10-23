@@ -5,7 +5,8 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ayigs"]
 bounce = 0.25
 
-[node name="Spoon" type="RigidBody2D"]
+[node name="Ladle" type="RigidBody2D" groups=["Utensil"]]
+rotation = 1.309
 mass = 0.25
 physics_material_override = SubResource("PhysicsMaterial_ayigs")
 center_of_mass_mode = 1
@@ -14,21 +15,17 @@ script = ExtResource("1_hlm0u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(1.25, 1.25)
-polygon = PackedVector2Array(-5, -60, -2, -8, -10, 10, -9, 17, -5, 22, 0, 24, 6, 22, 9, 17, 10, 10, 2, -8, 5, -60, 4, -68, 0, -69, -4, -68)
+polygon = PackedVector2Array(-3.26824, -24.8941, 11.0403, -10.2933, 16, 1.6, 17.5105, 8.83297, 15.2, 20, 8, 31.2, -0.761923, 33.7529, -18.1763, 30.7431, -19.2116, 34.6068, -0.8, 37.6, 9.6, 32.8, 17.6, 20, 20.6015, 9.66119, 20.1467, 2.08546, 17.5808, -6.88437, 12.6413, -13.1772, 0.443893, -26.3841, 33.2143, -151.775, 30.1234, -152.603)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 6
+position = Vector2(3.34606, 2.96713)
 scale = Vector2(1.25, 1.25)
 color = Color(0.6, 0.333333, 0.85098, 1)
-polygon = PackedVector2Array(-2, -8, -10, 10, -9, 17, -5, 22, 0, 24, 6, 22, 9, 17, 10, 10, 2, -8, 5, -59, 4, -68, 0, -69, -4, -68, -5, -59)
+polygon = PackedVector2Array(-21.8885, 32.2331, -3.70131, 35.45, 6.66234, 30.7729, 11.6169, 24.6464, 15.2329, 17.3332, 17.9246, 7.28748, 17.4699, -0.28825, 14.904, -9.25808, 9.96443, -15.5509, -1.46021, -28.5508, 30.5375, -154.149, 27.4465, -154.977, -5.94508, -27.2679, -1.36413, -22.7275, -20.853, 28.3695)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, 13)
+position = Vector2(5.17132, 38.6556)
 rotation = 1.5708
-target_position = Vector2(7.60555e-05, 21)
+target_position = Vector2(-63.4601, 8.87793)
 collision_mask = 2
-
-[node name="ImpulseTimer" type="Timer" parent="."]
-wait_time = 0.15
-one_shot = true
-
-[connection signal="timeout" from="ImpulseTimer" to="." method="_on_impulse_timer_timeout"]
