@@ -18,7 +18,7 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var ignore_gravity: bool
 
 # Force for pushing rigid bodies
-@export var push_force : int
+@export var push_force : float
 
 
 enum player_state {WALKING, IN_AIR, KICKING}
