@@ -1,6 +1,9 @@
 extends AnimatableBody2D
 
+
 @export var rotation_speed: int
+@export_enum("Left:-1", "Right:1") var rotation_direction: int
+
 
 enum player_detection_state_machine {ON, OFF}
 var current_state

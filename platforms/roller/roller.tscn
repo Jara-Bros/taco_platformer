@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx0jo7ovyow4m"]
+[gd_scene load_steps=4 format=3 uid="uid://bx0jo7ovyow4m"]
 
 [ext_resource type="Script" path="res://platforms/roller/roller.gd" id="1_eu2uk"]
-[ext_resource type="Texture2D" uid="uid://ohqcmpjfnojx" path="res://platforms/jungle/pngtree-moonbeam-flower-png-image_6531463-removebg-preview.png" id="2_wqetf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vi8vl"]
 radius = 18.0
@@ -17,12 +16,6 @@ rotation_speed = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vi8vl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 6
-position = Vector2(2.38419e-07, 0)
-scale = Vector2(0.143403, 0.123611)
-texture = ExtResource("2_wqetf")
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
@@ -30,6 +23,10 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color(0.980348, 0.552317, 0.145246, 1)
 shape = SubResource("CircleShape2D_4q45k")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

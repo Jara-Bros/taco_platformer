@@ -357,8 +357,7 @@ script = ExtResource("1_twhxi")
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
-position = Vector2(2672, 424)
-push_force = 0.5
+position = Vector2(656, 138)
 
 [node name="KitchenEncounterSection" type="Node" parent="."]
 
@@ -503,7 +502,7 @@ target_position = Vector2(-102, -0.000366211)
 [node name="Shelves" type="Node" parent="PlateMaze"]
 
 [node name="DropDownPlatform" parent="PlateMaze/Shelves" instance=ExtResource("10_4pfok")]
-position = Vector2(888, 64)
+position = Vector2(889, 23)
 collision_layer = 1
 
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform" index="0"]
@@ -522,7 +521,7 @@ shape = SubResource("RectangleShape2D_jxodg")
 one_way_collision = true
 
 [node name="DropDownPlatform2" parent="PlateMaze/Shelves" instance=ExtResource("10_4pfok")]
-position = Vector2(888, 109)
+position = Vector2(889, 68)
 collision_layer = 1
 
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform2" index="0"]
@@ -541,7 +540,7 @@ shape = SubResource("RectangleShape2D_jxodg")
 one_way_collision = true
 
 [node name="DropDownPlatform3" parent="PlateMaze/Shelves" instance=ExtResource("10_4pfok")]
-position = Vector2(888, 162)
+position = Vector2(889, 121)
 collision_layer = 1
 
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform3" index="0"]
@@ -564,7 +563,7 @@ one_way_collision = true
 [node name="Shelf1" type="Node" parent="PlateMaze/Plates"]
 
 [node name="Plate" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(749, 162)
+position = Vector2(750, 121)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate" index="0"]
 position = Vector2(0, 23.069)
@@ -577,7 +576,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate2" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(749, 154)
+position = Vector2(750, 113)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate2" index="0"]
 position = Vector2(0, 23.069)
@@ -590,7 +589,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate3" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(859, 162)
+position = Vector2(860, 121)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate3" index="0"]
 position = Vector2(0, 23.069)
@@ -603,7 +602,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate4" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(859, 154)
+position = Vector2(860, 113)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate4" index="0"]
 position = Vector2(0, 23.069)
@@ -616,7 +615,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate5" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(859, 146)
+position = Vector2(860, 105)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate5" index="0"]
 position = Vector2(0, 23.069)
@@ -629,7 +628,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate6" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(859, 138)
+position = Vector2(860, 97)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate6" index="0"]
 position = Vector2(0, 23.069)
@@ -642,7 +641,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate8" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 154)
+position = Vector2(983, 113)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate8" index="0"]
 position = Vector2(0, 23.069)
@@ -655,7 +654,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate9" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 146)
+position = Vector2(983, 105)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate9" index="0"]
 position = Vector2(0, 23.069)
@@ -668,7 +667,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate11" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1036, 162)
+position = Vector2(1037, 121)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate11" index="0"]
 position = Vector2(0, 23.069)
@@ -681,7 +680,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate12" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1036, 154)
+position = Vector2(1037, 113)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate12" index="0"]
 position = Vector2(0, 23.069)
@@ -694,7 +693,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate13" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1036, 146)
+position = Vector2(1037, 105)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate13" index="0"]
 position = Vector2(0, 23.069)
@@ -707,7 +706,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate14" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1036, 138)
+position = Vector2(1037, 97)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate14" index="0"]
 position = Vector2(0, 23.069)
@@ -720,7 +719,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate27" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1180, 162)
+position = Vector2(1181, 121)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate27" index="0"]
 position = Vector2(0, 23.069)
@@ -733,7 +732,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate28" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1180, 154)
+position = Vector2(1181, 113)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate28" index="0"]
 position = Vector2(0, 23.069)
@@ -746,7 +745,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate29" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1180, 146)
+position = Vector2(1181, 105)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate29" index="0"]
 position = Vector2(0, 23.069)
@@ -759,7 +758,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate30" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(1180, 138)
+position = Vector2(1181, 97)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate30" index="0"]
 position = Vector2(0, 23.069)
@@ -772,7 +771,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate7" parent="PlateMaze/Plates/Shelf1" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 162)
+position = Vector2(983, 121)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf1/Plate7" index="0"]
 position = Vector2(0, 23.069)
@@ -787,7 +786,7 @@ shape = SubResource("CapsuleShape2D_5b1yb")
 [node name="Shelf2" type="Node" parent="PlateMaze/Plates"]
 
 [node name="Plate15" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(802, 109)
+position = Vector2(803, 68)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate15" index="0"]
 position = Vector2(0, 23.069)
@@ -800,7 +799,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate16" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(802, 101)
+position = Vector2(803, 60)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate16" index="0"]
 position = Vector2(0, 23.069)
@@ -813,7 +812,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate17" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(802, 93)
+position = Vector2(803, 52)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate17" index="0"]
 position = Vector2(0, 23.069)
@@ -826,7 +825,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate18" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(802, 85)
+position = Vector2(803, 44)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate18" index="0"]
 position = Vector2(0, 23.069)
@@ -839,7 +838,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate19" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 109)
+position = Vector2(1044, 68)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate19" index="0"]
 position = Vector2(0, 23.069)
@@ -852,7 +851,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate20" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 101)
+position = Vector2(1044, 60)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate20" index="0"]
 position = Vector2(0, 23.069)
@@ -865,7 +864,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate21" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 93)
+position = Vector2(1044, 52)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate21" index="0"]
 position = Vector2(0, 23.069)
@@ -878,7 +877,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate22" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 85)
+position = Vector2(1044, 44)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate22" index="0"]
 position = Vector2(0, 23.069)
@@ -891,7 +890,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate23" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 109)
+position = Vector2(983, 68)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate23" index="0"]
 position = Vector2(0, 23.069)
@@ -904,7 +903,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate24" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 101)
+position = Vector2(983, 60)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate24" index="0"]
 position = Vector2(0, 23.069)
@@ -917,7 +916,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate25" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 93)
+position = Vector2(983, 52)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate25" index="0"]
 position = Vector2(0, 23.069)
@@ -930,7 +929,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate26" parent="PlateMaze/Plates/Shelf2" instance=ExtResource("11_u8u3g")]
-position = Vector2(982, 85)
+position = Vector2(983, 44)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf2/Plate26" index="0"]
 position = Vector2(0, 23.069)
@@ -945,7 +944,7 @@ shape = SubResource("CapsuleShape2D_5b1yb")
 [node name="Shelf3" type="Node" parent="PlateMaze/Plates"]
 
 [node name="Plate15" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(728, 64)
+position = Vector2(729, 23)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate15" index="0"]
 position = Vector2(0, 23.069)
@@ -958,7 +957,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate16" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(728, 56)
+position = Vector2(729, 15)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate16" index="0"]
 position = Vector2(0, 23.069)
@@ -971,7 +970,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate17" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(874, 64)
+position = Vector2(875, 23)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate17" index="0"]
 position = Vector2(0, 23.069)
@@ -984,7 +983,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate18" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(874, 56)
+position = Vector2(875, 15)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate18" index="0"]
 position = Vector2(0, 23.069)
@@ -997,7 +996,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate19" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(874, 48)
+position = Vector2(875, 7)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate19" index="0"]
 position = Vector2(0, 23.069)
@@ -1010,7 +1009,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate20" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(874, 40)
+position = Vector2(875, -1)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate20" index="0"]
 position = Vector2(0, 23.069)
@@ -1023,7 +1022,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate21" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 64)
+position = Vector2(1044, 23)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate21" index="0"]
 position = Vector2(0, 23.069)
@@ -1036,7 +1035,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate22" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 56)
+position = Vector2(1044, 15)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate22" index="0"]
 position = Vector2(0, 23.069)
@@ -1049,7 +1048,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate23" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 48)
+position = Vector2(1044, 7)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate23" index="0"]
 position = Vector2(0, 23.069)
@@ -1062,7 +1061,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate24" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 40)
+position = Vector2(1044, -1)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate24" index="0"]
 position = Vector2(0, 23.069)
@@ -1075,7 +1074,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate25" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 33)
+position = Vector2(1044, -8)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate25" index="0"]
 position = Vector2(0, 23.069)
@@ -1088,7 +1087,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate26" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1043, 25)
+position = Vector2(1044, -16)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate26" index="0"]
 position = Vector2(0, 23.069)
@@ -1101,7 +1100,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate27" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 64)
+position = Vector2(1116, 23)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate27" index="0"]
 position = Vector2(0, 23.069)
@@ -1114,7 +1113,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate28" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 56)
+position = Vector2(1116, 15)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate28" index="0"]
 position = Vector2(0, 23.069)
@@ -1127,7 +1126,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate29" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 48)
+position = Vector2(1116, 7)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate29" index="0"]
 position = Vector2(0, 23.069)
@@ -1140,7 +1139,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate30" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 40)
+position = Vector2(1116, -1)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate30" index="0"]
 position = Vector2(0, 23.069)
@@ -1153,7 +1152,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate31" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 33)
+position = Vector2(1116, -8)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate31" index="0"]
 position = Vector2(0, 23.069)
@@ -1166,7 +1165,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5b1yb")
 
 [node name="Plate32" parent="PlateMaze/Plates/Shelf3" instance=ExtResource("11_u8u3g")]
-position = Vector2(1115, 25)
+position = Vector2(1116, -16)
 
 [node name="Polygon2D" parent="PlateMaze/Plates/Shelf3/Plate32" index="0"]
 position = Vector2(0, 23.069)
