@@ -1,29 +1,30 @@
 extends AnimatableBody2D
 
 
+@onready var raycast_l: RayCast2D = $RayCastLeft
+@onready var raycast_r: RayCast2D = $RayCastRight
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
 @export var rotation_speed: int
+
+
+# X & Y must be equal
+@export var collision_scale_multiple := Vector2(1, 1)
+
 @export_enum("Left:-1", "Right:1") var rotation_direction: int
 
 
-enum player_detection_state_machine {ON, OFF}
-var current_state
-
-
 func _ready() -> void:
-	current_state = player_detection_state_machine.OFF
+	collision_shape.scale *= collision_scale_multiple
 
 
 func _process(delta: float) -> void:
-	if current_state == player_detection_state_machine.ON:
-		rotation += rotation_speed * delta
-	elif current_state == player_detection_state_machine.ON:
-		rotation += rotation_speed * delta * 0
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_name() == "TacoShoes":
-		current_state = player_detection_state_machine.ON
+	if raycast_l.is_colliding():
+		rotation -= rotation_speed * delta
 		
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.get_name() == "TacoShoes":
-		current_state = player_detection_state_machine.OFF
+	if raycast_r.is_colliding():
+		rotation += rotation_speed * delta
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

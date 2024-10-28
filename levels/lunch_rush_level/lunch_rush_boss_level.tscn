@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=86 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_boss_level.gd" id="1_twhxi"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="2_qvf01"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="16_wx537"]
 [ext_resource type="PackedScene" uid="uid://bnb50332vdfw6" path="res://taco/Statuses/StatusRemover/StatusRemover.tscn" id="17_j5r72"]
 [ext_resource type="PackedScene" uid="uid://dq78fixuhoy24" path="res://platforms/flattop/flat_top.tscn" id="18_0smtn"]
+[ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="18_llaq1"]
 [ext_resource type="PackedScene" uid="uid://cpjt7e7yqdqg2" path="res://platforms/slippery_platform/slippery_platform.tscn" id="19_fkkom"]
 [ext_resource type="PackedScene" uid="uid://cyrr04tiub5yj" path="res://platforms/grill_knob/grill_knob.tscn" id="20_6csqk"]
 [ext_resource type="PackedScene" uid="uid://ddyjllehahadu" path="res://obstacles/grill_fire/grill_fire.tscn" id="21_p1umm"]
@@ -339,6 +340,330 @@ _data = {
 "move_mirror": SubResource("Animation_0dqi5")
 }
 
+[sub_resource type="Animation" id="Animation_0d2kn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3176, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_3xirw"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3176, 315), Vector2(3176, 331)]
+}
+
+[sub_resource type="Animation" id="Animation_12crk"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3176, 331), Vector2(3176, 315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5d1s0"]
+_data = {
+"RESET": SubResource("Animation_0d2kn"),
+"move_down": SubResource("Animation_3xirw"),
+"move_up": SubResource("Animation_12crk")
+}
+
+[sub_resource type="Animation" id="Animation_govx6"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3272, 315), Vector2(3272, 331)]
+}
+
+[sub_resource type="Animation" id="Animation_td2o6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3272, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_icbg4"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3272, 331), Vector2(3272, 315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1qum1"]
+_data = {
+"RESET": SubResource("Animation_td2o6"),
+"move_down": SubResource("Animation_govx6"),
+"move_up": SubResource("Animation_icbg4")
+}
+
+[sub_resource type="Animation" id="Animation_opglg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3381, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_chq3i"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3381, 315), Vector2(3381, 331)]
+}
+
+[sub_resource type="Animation" id="Animation_s8sr6"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3381, 331), Vector2(3381, 315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rm7s3"]
+_data = {
+"RESET": SubResource("Animation_opglg"),
+"move_down": SubResource("Animation_chq3i"),
+"move_up": SubResource("Animation_s8sr6")
+}
+
+[sub_resource type="Animation" id="Animation_0k8y3"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3477, 315), Vector2(3477, 331)]
+}
+
+[sub_resource type="Animation" id="Animation_6xe7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3477, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_8blc2"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3477, 331), Vector2(3477, 315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dghdl"]
+_data = {
+"RESET": SubResource("Animation_6xe7k"),
+"move_down": SubResource("Animation_0k8y3"),
+"move_up": SubResource("Animation_8blc2")
+}
+
+[sub_resource type="Animation" id="Animation_kd3r6"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3570, 312), Vector2(3570, 325)]
+}
+
+[sub_resource type="Animation" id="Animation_qrr0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3570, 312)]
+}
+
+[sub_resource type="Animation" id="Animation_gdtse"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3570, 325), Vector2(3570, 312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2f32m"]
+_data = {
+"RESET": SubResource("Animation_qrr0s"),
+"move_down": SubResource("Animation_kd3r6"),
+"move_up": SubResource("Animation_gdtse")
+}
+
+[sub_resource type="Animation" id="Animation_r8thi"]
+resource_name = "move_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3654, 312), Vector2(3654, 325)]
+}
+
+[sub_resource type="Animation" id="Animation_68xge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3654, 312)]
+}
+
+[sub_resource type="Animation" id="Animation_le7ju"]
+resource_name = "move_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3654, 325), Vector2(3654, 312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0lh1"]
+_data = {
+"RESET": SubResource("Animation_68xge"),
+"move_down": SubResource("Animation_r8thi"),
+"move_up": SubResource("Animation_le7ju")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbsc"]
 size = Vector2(26, 176)
 
@@ -357,7 +682,8 @@ script = ExtResource("1_twhxi")
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
-position = Vector2(656, 138)
+position = Vector2(3096, 262)
+push_force = 2.0
 
 [node name="KitchenEncounterSection" type="Node" parent="."]
 
@@ -1499,19 +1825,146 @@ polygon = PackedVector2Array(-69.9997, -80.0002, -70.0035, 960, 73.9965, 960, 73
 visible = false
 points = PackedVector2Array(-69.9997, -80.0002, -70.0035, 960, 73.9965, 960, 73.9995, 144, 57.9995, 136, 58.0003, -79.9998, 82.0003, -79.9995, 82.0004, -95.9995, 42.0004, -95.9998, 42.0003, -79.9998, -69.9997, -80.0002)
 
-[node name="SoupBowl" type="StaticBody2D" parent="."]
+[node name="SoupSection" type="Node" parent="."]
+
+[node name="SoupBowl" type="StaticBody2D" parent="SoupSection"]
 position = Vector2(3112, 416)
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SoupBowl"]
-polygon = PackedVector2Array(-32, -120, -32, 16, 464, 16, 464, -16, 464, -120)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="SoupSection/SoupBowl"]
+polygon = PackedVector2Array(-32, -120, -32, -110.09, -32, 16, 600, 16, 600, -120, 584, -120, 584, -104, 544, -96, 408, -96, 232, -96, 112, -96, 24, -96, -16, -104, -16, -120)
 
-[node name="Polygon2D" type="Polygon2D" parent="SoupBowl"]
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/SoupBowl"]
+z_index = 6
 position = Vector2(0, 3.00002)
 scale = Vector2(1, 0.941176)
 color = Color(0.846658, 0.384729, 0.425847, 1)
-polygon = PackedVector2Array(-32, -130.688, -32, -20.1876, -32, 13.8125, 464, 13.8125, 464, -130.688)
+polygon = PackedVector2Array(-32, -130.688, -32, 13.8125, 600, 13.8125, 600, -130.688, 584, -130.688, 584, -113.688, 544, -105.188, 408, -105.188, 24, -105.188, -16, -113.688, -16, -130.688)
 
-[node name="Ladle" parent="." instance=ExtResource("14_3qhd7")]
+[node name="Potato" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3176, 315)
+
+[node name="RayCastLeft" parent="SoupSection/Potato" index="1"]
+position = Vector2(-18, -37)
+target_position = Vector2(-3.81885, 28.7474)
+
+[node name="RayCastRight" parent="SoupSection/Potato" index="2"]
+position = Vector2(21, -37)
+target_position = Vector2(20, 24)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Potato"]
+color = Color(0.680536, 0.339959, 0.0707222, 1)
+polygon = PackedVector2Array(-24, -24, -9, -32, 9, -32, 26, -21, 33, -4, 29, 17, 17, 29, -8, 33, -24, 23, -32, 7, -31, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Potato"]
+libraries = {
+"": SubResource("AnimationLibrary_5d1s0")
+}
+
+[node name="Corn" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3272, 315)
+
+[node name="RayCastLeft" parent="SoupSection/Corn" index="1"]
+position = Vector2(-14, -39)
+target_position = Vector2(-0.987793, 35.4546)
+
+[node name="RayCastRight" parent="SoupSection/Corn" index="2"]
+position = Vector2(14, -37)
+target_position = Vector2(24, 26)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Corn"]
+color = Color(0.888462, 0.88357, 0, 1)
+polygon = PackedVector2Array(-26, -21, -32, -8, -31, 13, -19, 27, -3, 33, 16, 30, 27, 19, 33, -1, 28, -18, 17, -29, 0, -33, -15, -29)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Corn"]
+libraries = {
+"": SubResource("AnimationLibrary_1qum1")
+}
+
+[node name="Potato2" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3381, 315)
+
+[node name="RayCastLeft" parent="SoupSection/Potato2" index="1"]
+position = Vector2(-16, -34)
+target_position = Vector2(-3.81885, 28.7474)
+
+[node name="RayCastRight" parent="SoupSection/Potato2" index="2"]
+position = Vector2(18, -34)
+target_position = Vector2(20, 24)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Potato2"]
+color = Color(0.680536, 0.339959, 0.0707222, 1)
+polygon = PackedVector2Array(-24, -24, -9, -32, 9, -32, 26, -21, 33, -4, 29, 17, 17, 29, -8, 33, -24, 23, -32, 7, -31, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Potato2"]
+libraries = {
+"": SubResource("AnimationLibrary_rm7s3")
+}
+
+[node name="Corn2" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3477, 315)
+
+[node name="RayCastLeft" parent="SoupSection/Corn2" index="1"]
+position = Vector2(-14, -39)
+target_position = Vector2(-0.987793, 35.4546)
+
+[node name="RayCastRight" parent="SoupSection/Corn2" index="2"]
+position = Vector2(14, -37)
+target_position = Vector2(24, 26)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Corn2"]
+color = Color(0.888462, 0.88357, 0, 1)
+polygon = PackedVector2Array(-26, -21, -32, -8, -31, 13, -19, 27, -3, 33, 16, 30, 27, 19, 33, -1, 28, -18, 17, -29, 0, -33, -15, -29)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Corn2"]
+libraries = {
+"": SubResource("AnimationLibrary_dghdl")
+}
+
+[node name="Carrot" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3570, 312)
+rotation_speed = 15
+collision_scale_multiple = Vector2(0.5, 0.5)
+
+[node name="RayCastLeft" parent="SoupSection/Carrot" index="1"]
+position = Vector2(-6, -19)
+target_position = Vector2(-5.87061, 21.4132)
+
+[node name="RayCastRight" parent="SoupSection/Carrot" index="2"]
+position = Vector2(9, -19)
+target_position = Vector2(14, 13)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Carrot"]
+color = Color(0.944664, 0.428398, 0.0481405, 1)
+polygon = PackedVector2Array(-14, -9, -3, -16, 7, -14, 14, -8, 16, 0, 16, 10, 8, 14, -3, 14, -9, 14, -16, 9, -16, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Carrot"]
+libraries = {
+"": SubResource("AnimationLibrary_2f32m")
+}
+
+[node name="Carrot2" parent="SoupSection" instance=ExtResource("18_llaq1")]
+position = Vector2(3654, 312)
+rotation_speed = 15
+collision_scale_multiple = Vector2(0.5, 0.5)
+
+[node name="RayCastLeft" parent="SoupSection/Carrot2" index="1"]
+position = Vector2(-7, -19)
+target_position = Vector2(-5.87061, 21.4132)
+
+[node name="RayCastRight" parent="SoupSection/Carrot2" index="2"]
+position = Vector2(8, -19)
+target_position = Vector2(14, 13)
+
+[node name="Polygon2D" type="Polygon2D" parent="SoupSection/Carrot2"]
+color = Color(0.944664, 0.428398, 0.0481405, 1)
+polygon = PackedVector2Array(-14, -9, -3, -16, 7, -14, 14, -8, 16, 0, 16, 10, 8, 14, -3, 14, -9, 14, -16, 9, -16, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SoupSection/Carrot2"]
+libraries = {
+"": SubResource("AnimationLibrary_s0lh1")
+}
+
+[node name="Ladle" parent="SoupSection" instance=ExtResource("14_3qhd7")]
 position = Vector2(2880, 416)
 y_impulse = -4
 
@@ -2014,6 +2467,12 @@ you up --->"
 
 [connection signal="body_entered" from="KitchenEncounterSection/LettuceBallSpawner/BallQueueFree" to="KitchenEncounterSection/LettuceBallSpawner" method="_on_ball_queue_free_body_entered"]
 [connection signal="body_entered" from="KitchenEncounterSection/BossHitCounter" to="KitchenEncounterSection/BossHitCounter" method="_on_body_entered"]
+[connection signal="body_entered" from="SoupSection/Potato/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SoupSection/Potato/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SoupSection/Corn/Area2D" to="SoupSection/Corn" method="_on_area_2d_body_c_entered"]
+[connection signal="body_exited" from="SoupSection/Corn/Area2D" to="." method="_on_area_2d_body_c_exited"]
+[connection signal="body_entered" from="SoupSection/Potato2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="SoupSection/Potato2/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="PushForceChanged" to="." method="_on_push_force_changed_body_entered"]
 
 [editable path="Taco"]
@@ -2084,7 +2543,13 @@ you up --->"
 [editable path="Cabinets/Cabinet2/MovePlatform3"]
 [editable path="Land"]
 [editable path="Land20"]
-[editable path="Ladle"]
+[editable path="SoupSection/Potato"]
+[editable path="SoupSection/Corn"]
+[editable path="SoupSection/Potato2"]
+[editable path="SoupSection/Corn2"]
+[editable path="SoupSection/Carrot"]
+[editable path="SoupSection/Carrot2"]
+[editable path="SoupSection/Ladle"]
 [editable path="Land3"]
 [editable path="Land2"]
 [editable path="SaladSection/Land"]
