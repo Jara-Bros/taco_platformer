@@ -3,32 +3,33 @@
 [ext_resource type="Script" path="res://platforms/roller/roller.gd" id="1_eu2uk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vi8vl"]
-radius = 18.0
+radius = 33.8378
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4q45k"]
-radius = 25.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_nifq7"]
+radius = 40.0
 
 [node name="Roller" type="AnimatableBody2D"]
-collision_mask = 0
 script = ExtResource("1_eu2uk")
 rotation_speed = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vi8vl")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-modulate = Color(0.980348, 0.552317, 0.145246, 1)
-shape = SubResource("CircleShape2D_4q45k")
-
 [node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-1.90735e-06, -8)
+rotation = 0.677717
+target_position = Vector2(-17.4802, 3.80021)
+collision_mask = 2
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(16, -8)
+collision_mask = 2
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nifq7")
+debug_color = Color(0.895561, 0.159537, 0.678484, 0.42)

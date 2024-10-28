@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwg541hw1q2wg"]
+[gd_scene load_steps=5 format=3 uid="uid://bwg541hw1q2wg"]
 
 [ext_resource type="Script" path="res://testing/test_room/test_room.gd" id="1_bjtb1"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ow40n"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_2asnp"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="3_76aew"]
-[ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="4_68av8"]
 
 [node name="TestRoom" type="Node2D"]
 script = ExtResource("1_bjtb1")
@@ -21,11 +20,6 @@ polygon = PackedVector2Array(-192, 16, 192, 16, 192, 96, -192, 96)
 [node name="Line2D" parent="Land" index="1"]
 visible = false
 points = PackedVector2Array(-192, 16, 192, 16, 192, 96, -192, 96, -192, 16)
-
-[node name="Roller" parent="." instance=ExtResource("4_68av8")]
-
-[node name="Polygon2D" type="Polygon2D" parent="Roller"]
-polygon = PackedVector2Array(-16, -16, -24, -8, -24, 0, -24, 8, -16, 16, -8, 24, 8, 24, 16, 16, 24, 8, 24, -8, 16, -16, 8, -24, -8, -24)
 
 [node name="QuickReload" parent="." instance=ExtResource("3_76aew")]
 
