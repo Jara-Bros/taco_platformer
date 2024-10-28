@@ -9,11 +9,11 @@ script = ExtResource("1_w8di3")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
-[node name="PlatformRestoreTimer" type="Timer" parent="."]
-wait_time = 0.5
+[node name="BodyRestoreTimer" type="Timer" parent="."]
+wait_time = 0.25
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -16)
 collision_mask = 2
 
-[connection signal="timeout" from="PlatformRestoreTimer" to="." method="_on_platform_restore_timer_timeout"]
+[connection signal="timeout" from="BodyRestoreTimer" to="." method="_on_body_restore_timer_timeout"]
