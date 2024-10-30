@@ -1,15 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwg541hw1q2wg"]
+[gd_scene load_steps=4 format=3 uid="uid://bwg541hw1q2wg"]
 
 [ext_resource type="Script" path="res://testing/test_room/test_room.gd" id="1_bjtb1"]
-[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ow40n"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_2asnp"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="3_76aew"]
 
 [node name="TestRoom" type="Node2D"]
 script = ExtResource("1_bjtb1")
-
-[node name="Taco" parent="." instance=ExtResource("1_ow40n")]
-position = Vector2(-67, 5)
 
 [node name="Land" parent="." instance=ExtResource("2_2asnp")]
 position = Vector2(0, 16)

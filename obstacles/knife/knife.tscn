@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gybmli68xc7i"]
+
+[ext_resource type="Script" path="res://obstacles/knife/knife.gd" id="1_x2x0r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lw6x5"]
+radius = 16.0
+height = 128.0
+
+[node name="Knife" type="AnimatableBody2D"]
+script = ExtResource("1_x2x0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lw6x5")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+color = Color(0.522268, 1, 0.998104, 1)
+polygon = PackedVector2Array(-16, -48, -8, -64, 8, -64, 16, -48, 16, 56, 8, 64, -8, 64, -16, 56)

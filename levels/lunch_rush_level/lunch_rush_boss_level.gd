@@ -6,10 +6,6 @@ extends Node2D
 @onready var initial_camera: Camera2D = $KitchenEncounterSection/InitialCamera
 
 # For soup ingredient bob animation
-@onready var anim_player_pot: AnimationPlayer = $SoupSection/Potato/AnimationPlayer
-@onready var anim_player_cor: AnimationPlayer = $SoupSection/Corn/AnimationPlayer
-@onready var anim_player_pot2: AnimationPlayer = $SoupSection/Potato2/AnimationPlayer
-@onready var anim_player_cor2: AnimationPlayer = $SoupSection/Corn2/AnimationPlayer
 @onready var anim_player_carr: AnimationPlayer = $SoupSection/Carrot/AnimationPlayer
 @onready var anim_player_carr2: AnimationPlayer = $SoupSection/Carrot2/AnimationPlayer
 
@@ -36,38 +32,6 @@ func _on_button_generic_signal() -> void:
 
 
 # For the soup ingredient bob animation
-func _on_area_2d_body_entered_p(_body: Node2D) -> void:
-	anim_player_pot.play("move_down")
-
-
-func _on_area_2d_body_exited_p(_body: Node2D) -> void:
-	anim_player_pot.play("move_up")
-
-
-func _on_area_2d_body_entered_c(_body: Node2D) -> void:
-	anim_player_cor.play("move_down")
-
-
-func _on_area_2d_body_exited_c(_body: Node2D) -> void:
-	anim_player_cor.play("move_up")
-
-
-func _on_area_2d_body_entered_p2(_body: Node2D) -> void:
-	anim_player_pot2.play("move_down")
-
-
-func _on_area_2d_body_exited_p2(_body: Node2D) -> void:
-	anim_player_pot2.play("move_up")
-
-
-func _on_area_2d_body_entered_c2(_body: Node2D) -> void:
-	anim_player_pot2.play("move_down")
-
-
-func _on_area_2d_body_exited_c2(_body: Node2D) -> void:
-	anim_player_cor2.play("move_up")
-
-
 func _on_area_2d_body_entered_carr(_body: Node2D) -> void:
 	anim_player_carr.play("move_down")
 

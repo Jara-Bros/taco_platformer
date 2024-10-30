@@ -13,10 +13,13 @@ func _process(delta):
 	pass
 
 
+#TODO Figure out how to transform Taco into a cube & attach to scene tree
+# without acquiring parent position from animatablebody2D
 func _on_body_entered(body):
 	if body.get_name() == "Taco":
 		get_tree().call_group("Player", "transform_node")
 		var instanced_transformation = load(type).instantiate()
-		get_parent().add_child(instanced_transformation)
+		get_parent().call_deferred("add_child", instanced_transformation)
+		body.queue_free()
 		queue_free()
 	pass # Replace with function body.
