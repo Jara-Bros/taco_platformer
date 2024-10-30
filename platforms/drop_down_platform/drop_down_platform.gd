@@ -16,16 +16,10 @@ func _process(_delta: float) -> void:
 	
 	# When raycast hits "drop down platform" && button down is pressed,
 	# disable platform's collision shape
-	disable_body_collision(taco)
-
-	
-
-func disable_body_collision(body : Node2D) -> void:
-	if ray_cast.is_colliding() && body.is_in_group("Player"):
+	if ray_cast.is_colliding() && ray_cast.get_collider().body.is_in_group("Player"):
 		if Input.is_action_just_pressed("move_down"):
 			collision_shape.disabled = true
 			body_restore_timer.start()
-
 
 
 func _on_body_restore_timer_timeout() -> void:
