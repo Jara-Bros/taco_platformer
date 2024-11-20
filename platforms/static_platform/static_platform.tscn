@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://005hfo8610ur"]
+[gd_scene load_steps=2 format=3 uid="uid://005hfo8610ur"]
+
+[ext_resource type="Texture2D" uid="uid://bbcrttkqto8sy" path="res://levels/lunch_rush_level/sprites/plate.png" id="1_mw6fa"]
 
 [node name="Plate" type="RigidBody2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_mw6fa")

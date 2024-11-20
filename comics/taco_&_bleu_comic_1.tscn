@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct8dmnr68wjpn"]
+
+[ext_resource type="Texture2D" uid="uid://cdfjs38yxb6xl" path="res://taco/sprites/taco_restart.png" id="1_kbskk"]
+[ext_resource type="Texture2D" uid="uid://bc1bksntalgsm" path="res://taco/sprites/taco_woke_up.png" id="2_4re3f"]
+[ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="2_8mxuy"]
+[ext_resource type="Texture2D" uid="uid://dtlxxbaoq1kft" path="res://tBleu/sprites/Bleu-Idle.png" id="3_1wxvf"]
+[ext_resource type="Texture2D" uid="uid://dqa5uuwi1xqib" path="res://taco/sprites/taco_unconvinced.png" id="3_cw45x"]
+[ext_resource type="Texture2D" uid="uid://lex4jb2lw2cm" path="res://taco/sprites/ms_taco.png" id="3_k57ac"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="4_7aov1"]
+[ext_resource type="Texture2D" uid="uid://b43gvvfpqqdlj" path="res://tBleu/sprites/bleu_whatever.png" id="6_np6hc"]
+[ext_resource type="Texture2D" uid="uid://dn0dr7aiyb0gu" path="res://taco/sprites/ms_taco_normal.png" id="8_eyn66"]
+
+[node name="Control" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = -120.0
+offset_right = 960.0
+offset_bottom = -112.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="Taco" type="Sprite2D" parent="."]
+position = Vector2(40, 136)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_kbskk")
+
+[node name="Taco2" type="Sprite2D" parent="."]
+position = Vector2(360, 136)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("2_4re3f")
+hframes = 3
+frame = 1
+
+[node name="Taco3" type="Sprite2D" parent="."]
+position = Vector2(40, 304)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_cw45x")
+
+[node name="Taco4" type="Sprite2D" parent="."]
+position = Vector2(360, 304)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_cw45x")
+
+[node name="Bleu" type="Sprite2D" parent="."]
+position = Vector2(208, 136)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("2_8mxuy")
+flip_h = true
+
+[node name="Bleu2" type="Sprite2D" parent="."]
+position = Vector2(560, 136)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_1wxvf")
+flip_h = true
+
+[node name="Bleu3" type="Sprite2D" parent="."]
+position = Vector2(280, 312)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("6_np6hc")
+
+[node name="MsTaco" type="Sprite2D" parent="."]
+position = Vector2(248, 144)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_k57ac")
+flip_h = true
+
+[node name="MsTaco2" type="Sprite2D" parent="."]
+position = Vector2(600, 136)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_k57ac")
+flip_h = true
+
+[node name="MsTaco3" type="Sprite2D" parent="."]
+position = Vector2(240, 312)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("3_k57ac")
+flip_h = true
+
+[node name="MsTaco4" type="Sprite2D" parent="."]
+position = Vector2(576, 312)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("8_eyn66")
+flip_h = true
+
+[node name="TacoTalk" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 146.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "hey b...
+what the...
+|"
+
+[node name="TacoTalk2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 64.0
+offset_right = 474.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "seems kinda
+copy-pastey
+|"
+
+[node name="TacoTalk3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 208.0
+offset_right = 146.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "yea idk...
+we'll see.
+|"
+
+[node name="TacoTalk4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 208.0
+offset_right = 466.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "how much
+did he pay you?
+|"
+
+[node name="BleuTalk" type="Label" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 24.0
+offset_right = 314.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "its ms. taco!
+she's gonna lead the new
+brand campaign for
+our video game.
+               |"
+
+[node name="BleuTalk2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 16.0
+offset_right = 634.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "well, marketing said we're
+underperforming with the
+\"female\" demographic. and
+who doesn't like ms.
+pac-man?"
+
+[node name="BleuTalk3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 216.0
+offset_right = 338.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "yea i know
+what that means.
+back to square zero.
+                            |"
+
+[node name="MsTacoTalk" type="Label" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 216.0
+offset_right = 682.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_7aov1")
+theme_override_font_sizes/font_size = 15
+text = "he said i
+could keep
+the bow.
+|"
