@@ -36,11 +36,14 @@ PersistantDataHandler="*res://autoloads/persistent_data_handler/persistance_data
 directories/dch_directory={
 "abe": "res://dialogue/characters/abe.dch",
 "andy": "res://dialogue/characters/andy.dch",
+"apple_mob": "res://dialogue/characters/apple_mob.dch",
 "barb": "res://dialogue/characters/barb.dch",
 "bleu": "res://dialogue/characters/bleu.dch",
+"corn_mob": "res://dialogue/characters/corn_mob.dch",
 "corpo_01": "res://dialogue/characters/corpo_01.dch",
 "esmeralda": "res://dialogue/characters/esmeralda.dch",
 "ezzy_host": "res://dialogue/characters/ezzy_host.dch",
+"grape_mob": "res://dialogue/characters/grape_mob.dch",
 "jeff": "res://dialogue/characters/jeff.dch",
 "limona": "res://dialogue/characters/limona.dch",
 "mr_p": "res://dialogue/characters/mr_p.dch",
@@ -53,6 +56,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "abe_timeline": "res://dialogue/timelines/abe_timeline.dtl",
+"apple_mob": "res://dialogue/timelines/apple_mob.dtl",
 "barb_timeline": "res://dialogue/timelines/barb_timeline.dtl",
 "bleu_bed_convo_2_timeline": "res://dialogue/timelines/bleu_bed_convo_2_timeline.dtl",
 "bleu_bed_convo_timeline": "res://dialogue/timelines/bleu_bed_convo_timeline.dtl",

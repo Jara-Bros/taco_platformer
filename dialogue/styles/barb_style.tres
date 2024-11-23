@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://deup3gk6oxny7"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=14 format=3 uid="uid://deup3gk6oxny7"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_amjye"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="2_8y7f6"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="5_h1epv"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="6_iwx1b"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="7_y8c64"]
+
+[sub_resource type="Resource" id="Resource_t4h8f"]
+script = ExtResource("1_amjye")
+overrides = {}
 
 [sub_resource type="Resource" id="Resource_bedk3"]
 script = ExtResource("1_amjye")
@@ -64,6 +68,10 @@ overrides = {}
 [resource]
 script = ExtResource("7_y8c64")
 name = "text_only_style"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_t4h8f")
+}
 base_overrides = {}
 layers = Array[ExtResource("1_amjye")]([SubResource("Resource_bedk3"), SubResource("Resource_irid1"), SubResource("Resource_iuvb4"), SubResource("Resource_m2f8k"), SubResource("Resource_o7cug")])
 metadata/_latest_layer = 2

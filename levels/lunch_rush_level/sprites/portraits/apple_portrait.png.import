@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6bss1ke2rb43"
-path="res://.godot/imported/talavera_tileset_full.png-9394752d10a70d84de8844a54a7af979.ctex"
+uid="uid://duxff5fhnpp88"
+path="res://.godot/imported/apple_portrait.png-674156d444cca157e998d2ff0f131b5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/lunch_rush_level/sprites/talavera_tileset_full.png"
-dest_files=["res://.godot/imported/talavera_tileset_full.png-9394752d10a70d84de8844a54a7af979.ctex"]
+source_file="res://levels/lunch_rush_level/sprites/portraits/apple_portrait.png"
+dest_files=["res://.godot/imported/apple_portrait.png-674156d444cca157e998d2ff0f131b5e.ctex"]
 
 [params]
 

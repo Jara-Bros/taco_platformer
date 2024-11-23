@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.96875, 1, 0, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "text_&_pic_style"
+},
+"default_portrait": "default",
+"description": "",
+"display_name": "Cobby",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"default": {
+"export_overrides": {
+"image": "\"res://levels/lunch_rush_level/sprites/portraits/corn_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}
