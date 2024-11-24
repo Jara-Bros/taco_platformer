@@ -7,8 +7,15 @@ extends Area2D
 func _on_body_entered(_body: Node2D) -> void:
 	var hit_counter : int = 0
 	var max_hits : int = 4
+
 	if hit_counter < max_hits:
-		hit_counter += 1
+		match hit_counter:
+			1:
+				hit_counter += 1
+			2:
+				hit_counter += 1
+			3:
+				hit_counter += 1
 	else:
 		progress_barrier.queue_free()
 		initial_camera.set("enabled", false)
