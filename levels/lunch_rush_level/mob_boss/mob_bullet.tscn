@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccs1o1kdw8kbh"]
+
+[ext_resource type="Script" path="res://levels/lunch_rush_level/mob_boss/mob_bullet.gd" id="1_l1umr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_776uh"]
+size = Vector2(40, 40)
+
+[node name="MobBullet" type="RigidBody2D"]
+collision_layer = 4
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_l1umr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_776uh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

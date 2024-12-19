@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://d2nvjfxk0ropj"]
 
-[ext_resource type="Script" path="res://taco/player.gd" id="1_q403v"]
-[ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ctlwh"]
-[ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_rgfs5"]
+[ext_resource type="Script" path="res://taco/player.gd" id="1_gydf1"]
+[ext_resource type="Texture2D" uid="uid://dtdu0yfq4i17e" path="res://taco/sprites/taco_animation_sheet.png" id="2_ws15o"]
+[ext_resource type="AudioStream" uid="uid://vcam52cklwql" path="res://audio/sfx/jump.wav" id="3_h1vnn"]
 
 [sub_resource type="Animation" id="Animation_msvav"]
 length = 0.001
@@ -190,16 +190,14 @@ collision_layer = 2
 collision_mask = 5
 floor_stop_on_slope = false
 floor_max_angle = 1.13446
-script = ExtResource("1_q403v")
-speed = 200
-acceleration = 45
-jump_velocity = -350.0
+script = ExtResource("1_gydf1")
+jump_velocity = 350.0
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
-texture = ExtResource("2_ctlwh")
+texture = ExtResource("2_ws15o")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
@@ -232,7 +230,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_seodx")
 
 [node name="JumpFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_rgfs5")
+stream = ExtResource("3_h1vnn")
 volume_db = -80.0
 
 [node name="Timer" type="Timer" parent="."]

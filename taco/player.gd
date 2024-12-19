@@ -12,11 +12,9 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 
 @export var input_enabled:bool = true
 @export var ignore_camera:bool
-@export var speed : int
-@export var acceleration : int
 @export var jump_velocity : float
 @export var ignore_gravity: bool
-
+@export var zoom : Vector2 = Vector2(1,1)
 # Force for pushing rigid bodies
 @export var push_force : float
 
@@ -35,6 +33,8 @@ var prev_state
 @onready var taco: Player = $"."
 @onready var timer: Timer = $Timer
 
+var time_buffer : float = 0.01
+
 var item = null
 
 var direction
@@ -42,7 +42,7 @@ var player_facing
 var global_delta
 
 var GRAVITY := 980
-const FALL_GRAVITY := 1750
+const FALL_GRAVITY := 980
 
 
 func _ready():
@@ -52,6 +52,7 @@ func _ready():
 	player_facing = 1
 	if ignore_camera:
 		remove_child(camera_2d)
+	camera_2d.zoom = zoom
 	
 	
 
@@ -68,37 +69,38 @@ func _physics_process(delta: float) -> void:
 	
 	
 	direction = Input.get_axis("move_left", "move_right")
-
+ 
 
 	if not is_on_floor():
-		if !ignore_gravity:
-			velocity.y += _get_gravity(velocity) * delta
-		if Input.is_action_just_released("jump") and velocity.y < 0:
-			velocity.y = jump_velocity / 4.0
+		if !ignore_gravity  :
+			if Input.is_action_pressed("jump"):
+				velocity.y += 750 * delta
+			else:
+				velocity.y += 1500 * delta
+			 
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
 		jump_fx.play()
-		velocity = Vector2.UP * -1 * jump_velocity # Normal Jump action
+		velocity.y = -1 * jump_velocity
 		change_state(player_state.IN_AIR)
+		
+	if is_on_floor() and current_state == player_state.IN_AIR and velocity.y == 0:
+		change_state(player_state.WALKING)
 			
-			
-	if direction:
-		if current_state == player_state.WALKING:
-			velocity.x = move_toward(velocity.x, direction * speed, 50)
-		elif current_state == player_state.IN_AIR and direction * velocity.x < 0:
-			velocity = velocity.lerp(Vector2(direction * speed, velocity.y), acceleration * delta)
+	if current_state == player_state.WALKING:
+			if direction:
+				velocity.x = move_toward(velocity.x, direction * 225.5, 35)
+			else:
+				velocity.x = move_toward(velocity.x, 0, 30)
+	elif current_state == player_state.IN_AIR:
+		if (direction == 1 and velocity.x < 0) or (direction == -1 and velocity.x > 0):
+			velocity.x = move_toward(velocity.x, 0, 5)
+		elif direction == 0:
+			velocity.x = move_toward(velocity.x, 0, 9.5)
 		else:
-			velocity.x = move_toward(velocity.x, direction * speed, 50)
-			
-	else:
-		if current_state == player_state.WALKING:
-			velocity.x = move_toward(velocity.x, 0, acceleration)
-		else:
-			velocity.x = move_toward(velocity.x, 0, acceleration)
-
+			velocity.x = move_toward(velocity.x, direction * 325.5, 10)
 	move_and_slide()
-	
-	
+ 
 	# To move rigid bodies upon contact
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -181,10 +183,10 @@ func get_direction():
 func change_state(state):
 		current_state = state
 	
-func set_acceleration(accel):
-	acceleration = accel
-func set_speed(spe):
-	speed = spe
+#func set_acceleration(accel):
+	#acceleration = accel
+#func set_speed(spe):
+	#speed = spe
 func set_jump_velocity(new_jump):
 	jump_velocity = new_jump
 

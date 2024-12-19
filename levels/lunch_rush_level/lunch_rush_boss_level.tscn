@@ -646,7 +646,9 @@ color = Color(1, 1, 0.756863, 1)
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
+
 position = Vector2(2759, 384)
+
 push_force = 2.0
 
 [node name="KitchenEncounterSection" type="Node" parent="."]

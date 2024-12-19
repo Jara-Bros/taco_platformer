@@ -1,20 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://xtv14fx4gug0"]
+[gd_scene load_steps=7 format=3 uid="uid://xtv14fx4gug0"]
 
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_ucycd"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_q2ntw"]
-[ext_resource type="PackedScene" uid="uid://buo6w46yqhs5t" path="res://taco/Item/soccer_ball/soccer_ball.tscn" id="3_lf5ov"]
-[ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="4_v6hxs"]
+[ext_resource type="PackedScene" uid="uid://tpqbtigwc1fi" path="res://levels/lunch_rush_level/mob_boss/mob_boss.tscn" id="4_8iwsg"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_bskbv"]
+
+[sub_resource type="Curve2D" id="Curve2D_2kur6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 36, 9, 0, 0, 0, 0, 215, 15, 0, 0, 0, 0, 382, 6, 0, 0, 0, 0, 518, -4, 0, 0, 0, 0, 668, -7, 0, 0, 0, 0, 743, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_axajy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 36, 9, 0, 0, 0, 0, 215, 15, 0, 0, 0, 0, 382, 6, 0, 0, 0, 0, 518, -4, 0, 0, 0, 0, 668, -7, 0, 0, 0, 0, 743, 0)
+}
+point_count = 6
 
 [node name="KickTest" type="Node2D"]
 
-[node name="Taco" parent="." instance=ExtResource("1_ucycd")]
-position = Vector2(-2, -27)
-
-[node name="SoccerBall" parent="." instance=ExtResource("3_lf5ov")]
-position = Vector2(79, -19)
-
 [node name="Land" parent="." groups=["Land"] instance=ExtResource("2_q2ntw")]
+position = Vector2(82, 285)
 
 [node name="Polygon2D" parent="Land" index="0"]
 polygon = PackedVector2Array(-51, 3, 82, 5, 238, 1, 304, -2, 1131, -6, 1111, 39, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126)
@@ -22,21 +28,21 @@ polygon = PackedVector2Array(-51, 3, 82, 5, 238, 1, 304, -2, 1131, -6, 1111, 39,
 [node name="Line2D" parent="Land" index="1"]
 points = PackedVector2Array(-51, 3, 82, 5, 238, 1, 304, -2, 1131, -6, 1111, 39, 429, 36, -50, 60, -136, 7, -135, -126, -56, -126, -51, 3)
 
-[node name="MovingPlatform" parent="." instance=ExtResource("4_v6hxs")]
-position = Vector2(542, -58)
-
-[node name="MovingPlatform2" parent="." instance=ExtResource("4_v6hxs")]
-position = Vector2(597, -123)
-
-[node name="MovingPlatform3" parent="." instance=ExtResource("4_v6hxs")]
-position = Vector2(804, -121)
-
-[node name="MovingPlatform4" parent="." instance=ExtResource("4_v6hxs")]
-position = Vector2(709, -67)
-
-[node name="MovingPlatform5" parent="." instance=ExtResource("4_v6hxs")]
-position = Vector2(914, -61)
-
 [node name="QuickReload" parent="." instance=ExtResource("5_bskbv")]
+
+[node name="Taco" parent="." instance=ExtResource("1_ucycd")]
+position = Vector2(130, 261)
+ignore_camera = true
+
+[node name="MobBoss" parent="." instance=ExtResource("4_8iwsg")]
+position = Vector2(52, 257)
+curve = SubResource("Curve2D_2kur6")
+
+[node name="Path2D" type="Path2D" parent="MobBoss"]
+curve = SubResource("Curve2D_axajy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MobBoss/Path2D"]
+position = Vector2(36, 9)
+rotation = 0.033507
 
 [editable path="Land"]
