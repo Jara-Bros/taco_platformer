@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ckouel6khp0ka"]
+[gd_scene load_steps=89 format=3 uid="uid://ckouel6khp0ka"]
 
 [ext_resource type="Script" path="res://levels/lunch_rush_level/lunch_rush_boss_level.gd" id="1_twhxi"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="2_qvf01"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bv3c0hs8icaf" path="res://platforms/move_platform/move_plat.tscn" id="12_25ipx"]
 [ext_resource type="Script" path="res://platforms/oven_pan_plat/fall_block.gd" id="12_cmi2m"]
 [ext_resource type="PackedScene" uid="uid://dplylb2p845m0" path="res://platforms/oven_pan_plat/oven_pan.tscn" id="12_qefv4"]
+[ext_resource type="Texture2D" uid="uid://b7eqgeiaeycsq" path="res://platforms/sprites/plate_shelf.png" id="13_aijhu"]
 [ext_resource type="Script" path="res://levels/lunch_rush_level/fall_block_2.gd" id="13_cu3re"]
 [ext_resource type="PackedScene" uid="uid://dlftnhvkqkwod" path="res://platforms/fall_platform/fall_plat.tscn" id="13_tcms7"]
 [ext_resource type="PackedScene" uid="uid://lri63e8intw4" path="res://platforms/falling_spoon/spoon.tscn" id="14_3qhd7"]
@@ -23,10 +24,13 @@
 [ext_resource type="PackedScene" uid="uid://dk0m6cul1g8na" path="res://platforms/water_bowl/water_bowl.tscn" id="16_wx537"]
 [ext_resource type="PackedScene" uid="uid://bnb50332vdfw6" path="res://taco/Statuses/StatusRemover/StatusRemover.tscn" id="17_j5r72"]
 [ext_resource type="PackedScene" uid="uid://dq78fixuhoy24" path="res://platforms/flattop/flat_top.tscn" id="18_0smtn"]
+[ext_resource type="Texture2D" uid="uid://heqhtdgiky50" path="res://platforms/sprites/tray.png" id="18_1uf1d"]
 [ext_resource type="PackedScene" uid="uid://bx0jo7ovyow4m" path="res://platforms/roller/roller.tscn" id="18_llaq1"]
 [ext_resource type="PackedScene" uid="uid://cpjt7e7yqdqg2" path="res://platforms/slippery_platform/slippery_platform.tscn" id="19_fkkom"]
 [ext_resource type="PackedScene" uid="uid://gybmli68xc7i" path="res://obstacles/knife/knife.tscn" id="20_5s1jf"]
 [ext_resource type="PackedScene" uid="uid://cyrr04tiub5yj" path="res://platforms/grill_knob/grill_knob.tscn" id="20_6csqk"]
+[ext_resource type="Texture2D" uid="uid://i7xd14b15f83" path="res://platforms/sprites/easy_bake_oven.png" id="20_x6suy"]
+[ext_resource type="Texture2D" uid="uid://clsosadtcd1d6" path="res://platforms/sprites/kitchen_drawer.png" id="21_dve2m"]
 [ext_resource type="PackedScene" uid="uid://3adip62hd16w" path="res://taco/Item/transformation_box/transform_block.tscn" id="21_od5cr"]
 [ext_resource type="PackedScene" uid="uid://ddyjllehahadu" path="res://obstacles/grill_fire/grill_fire.tscn" id="21_p1umm"]
 [ext_resource type="PackedScene" uid="uid://c8chalvkwwmwg" path="res://platforms/patty_platform/patty_plat.tscn" id="22_adgcn"]
@@ -51,7 +55,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_gdmyj"]
 resource_name = "moving"
 length = 0.6
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -163,9 +167,6 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvj4l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ptvx"]
-size = Vector2(240, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlphi"]
 size = Vector2(256, 16)
 
@@ -207,10 +208,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1920, 960), Vector2(1920, 960), Vector2(1920, 856)]
+"values": [Vector2(2008, 1032), Vector2(2008, 920)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -260,7 +261,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.85, 1.85),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(100, 0)]
+"values": [Vector2(-25, 0), Vector2(100, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hcsal"]
@@ -645,7 +646,7 @@ color = Color(1, 1, 0.756863, 1)
 [node name="QuickReload" parent="." instance=ExtResource("2_qvf01")]
 
 [node name="Taco" parent="." instance=ExtResource("9_n12d8")]
-position = Vector2(364, 145)
+position = Vector2(2759, 384)
 push_force = 2.0
 
 [node name="KitchenEncounterSection" type="Node" parent="."]
@@ -810,7 +811,6 @@ collision_layer = 1
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform" index="0"]
 position = Vector2(0, 4)
 scale = Vector2(1, 0.5)
-color = Color(0.109804, 0.121569, 0.533333, 1)
 polygon = PackedVector2Array(-8, -8, -184, -8, -184, 8, 328, 8, 328, -8)
 
 [node name="RayCast2D" parent="PlateMaze/Shelves/DropDownPlatform" index="2"]
@@ -823,6 +823,11 @@ position = Vector2(72, 4)
 shape = SubResource("RectangleShape2D_jxodg")
 one_way_collision = true
 
+[node name="Sprite2D" type="Sprite2D" parent="PlateMaze/Shelves/DropDownPlatform"]
+position = Vector2(71.875, 5)
+scale = Vector2(4.00195, 0.359375)
+texture = ExtResource("13_aijhu")
+
 [node name="DropDownPlatform2" parent="PlateMaze/Shelves" instance=ExtResource("10_4pfok")]
 position = Vector2(889, 68)
 collision_layer = 1
@@ -830,7 +835,6 @@ collision_layer = 1
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform2" index="0"]
 position = Vector2(0, 4)
 scale = Vector2(1, 0.5)
-color = Color(0.109804, 0.121569, 0.533333, 1)
 polygon = PackedVector2Array(-8, -8, -184, -8, -184, 8, 328, 8, 328, -8)
 
 [node name="RayCast2D" parent="PlateMaze/Shelves/DropDownPlatform2" index="2"]
@@ -843,6 +847,11 @@ position = Vector2(72, 4)
 shape = SubResource("RectangleShape2D_jxodg")
 one_way_collision = true
 
+[node name="Sprite2D2" type="Sprite2D" parent="PlateMaze/Shelves/DropDownPlatform2"]
+position = Vector2(72, 5)
+scale = Vector2(4.00195, 0.359375)
+texture = ExtResource("13_aijhu")
+
 [node name="DropDownPlatform3" parent="PlateMaze/Shelves" instance=ExtResource("10_4pfok")]
 position = Vector2(889, 121)
 collision_layer = 1
@@ -850,7 +859,6 @@ collision_layer = 1
 [node name="Polygon2D" parent="PlateMaze/Shelves/DropDownPlatform3" index="0"]
 position = Vector2(0, 4)
 scale = Vector2(1, 0.5)
-color = Color(0.109804, 0.121569, 0.533333, 1)
 polygon = PackedVector2Array(-8, -8, -184, -8, -184, 8, 328, 8, 328, -8)
 
 [node name="RayCast2D" parent="PlateMaze/Shelves/DropDownPlatform3" index="2"]
@@ -862,6 +870,11 @@ target_position = Vector2(244, -3)
 position = Vector2(72, 4)
 shape = SubResource("RectangleShape2D_jxodg")
 one_way_collision = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="PlateMaze/Shelves/DropDownPlatform3"]
+position = Vector2(72, 6)
+scale = Vector2(4.00195, 0.359375)
+texture = ExtResource("13_aijhu")
 
 [node name="Plates" type="Node" parent="PlateMaze"]
 
@@ -1504,16 +1517,6 @@ polygon = PackedVector2Array(-128, -64, -112, -64, -112, 734, -128, 734, -128, 6
 [node name="Line2D" parent="OvenPanRack/Land2" index="1"]
 points = PackedVector2Array(-128, -64, -112, -64, -112, 734, -128, 734, -128, 646, -144, 646, -144, 638, -128, 638, -128, 454, -144, 454, -144, 446, -128, 446, -128, 262, -144, 262, -144, 254, -128, 254, -128, 141.926, -128, 134, -144, 134, -144, 126, -128, 126, -128, 13.659, -128, 6, -128, -2, -128, -64)
 
-[node name="Land3" parent="OvenPanRack" instance=ExtResource("8_r5f54")]
-position = Vector2(0, 162)
-
-[node name="Polygon2D" parent="OvenPanRack/Land3" index="0"]
-color = Color(0.894118, 0, 0.494118, 1)
-polygon = PackedVector2Array(1152, 680, 1152, 862, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 838, 1216, 838, 1216, 680)
-
-[node name="Line2D" parent="OvenPanRack/Land3" index="1"]
-points = PackedVector2Array(1152, 680, 1152, 862, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 838, 1216, 838, 1216, 680, 1152, 680)
-
 [node name="FallBlock" type="StaticBody2D" parent="OvenPanRack"]
 position = Vector2(1496, 192)
 script = ExtResource("12_cmi2m")
@@ -1555,11 +1558,26 @@ collision_mask = 2
 [node name="OvenPan" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
 position = Vector2(1386, 190)
 
+[node name="Sprite2D" type="Sprite2D" parent="OvenPanRack/OvenPan"]
+position = Vector2(1.52588e-05, 3)
+scale = Vector2(2, 1.75)
+texture = ExtResource("18_1uf1d")
+
 [node name="OvenPan2" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
 position = Vector2(1413, 317)
 
+[node name="Sprite2D2" type="Sprite2D" parent="OvenPanRack/OvenPan2"]
+position = Vector2(-1.90735e-06, 2.99999)
+scale = Vector2(2, 1.75)
+texture = ExtResource("18_1uf1d")
+
 [node name="OvenPan3" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
 position = Vector2(1400, 448)
+
+[node name="Sprite2D3" type="Sprite2D" parent="OvenPanRack/OvenPan3"]
+position = Vector2(9.53674e-07, -7.62939e-06)
+scale = Vector2(2, 1.75)
+texture = ExtResource("18_1uf1d")
 
 [node name="FallBlock3" type="StaticBody2D" parent="OvenPanRack"]
 position = Vector2(1400, 464)
@@ -1576,6 +1594,11 @@ collision_mask = 2
 [node name="OvenPan4" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
 position = Vector2(1400, 576)
 
+[node name="Sprite2D4" type="Sprite2D" parent="OvenPanRack/OvenPan4"]
+position = Vector2(0, -7.62939e-06)
+scale = Vector2(2, 1.75)
+texture = ExtResource("18_1uf1d")
+
 [node name="FallBlock4" type="StaticBody2D" parent="OvenPanRack"]
 position = Vector2(1400, 592)
 script = ExtResource("15_ublbl")
@@ -1590,6 +1613,11 @@ target_position = Vector2(0, -24)
 [node name="OvenPan5" parent="OvenPanRack" instance=ExtResource("12_qefv4")]
 position = Vector2(1400, 702)
 
+[node name="Sprite2D5" type="Sprite2D" parent="OvenPanRack/OvenPan5"]
+position = Vector2(0, 1.99999)
+scale = Vector2(2, 1.75)
+texture = ExtResource("18_1uf1d")
+
 [node name="FallBlock5" type="StaticBody2D" parent="OvenPanRack"]
 position = Vector2(1400, 718)
 script = ExtResource("15_ublbl")
@@ -1603,26 +1631,10 @@ target_position = Vector2(-139, 0)
 
 [node name="Oven" type="Node" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="Oven"]
-position = Vector2(1920, 958)
-color = Color(0.434664, 0.120958, 0.755074, 1)
-polygon = PackedVector2Array(-144, -158, 144, -158, 144, 42, -144, 42)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Oven"]
-position = Vector2(1920, 958)
-color = Color(0.258092, 0.0489632, 0.465411, 1)
-polygon = PackedVector2Array(-136, -142, 136, -142, 136, 26, -136, 26)
-
-[node name="OvenRack" type="StaticBody2D" parent="Oven"]
-position = Vector2(1920, 928)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/OvenRack"]
-shape = SubResource("RectangleShape2D_3ptvx")
-one_way_collision = true
-
-[node name="Polygon2D" type="Polygon2D" parent="Oven/OvenRack"]
-color = Color(0.647059, 0.647059, 0.647059, 0.333333)
-polygon = PackedVector2Array(-120, -8, -120, 8, 120, 8, 120, -8)
+[node name="Sprite2D" type="Sprite2D" parent="Oven"]
+position = Vector2(2008, 964)
+scale = Vector2(1.11133, 0.666016)
+texture = ExtResource("20_x6suy")
 
 [node name="OvenDoor" type="StaticBody2D" parent="Oven"]
 position = Vector2(1920, 976)
@@ -1631,7 +1643,7 @@ position = Vector2(1920, 976)
 shape = SubResource("RectangleShape2D_hlphi")
 
 [node name="Polygon2D" type="Polygon2D" parent="Oven/OvenDoor"]
-color = Color(0.955136, 0.555342, 0.61309, 1)
+color = Color(0.886533, 0.791736, 1, 1)
 polygon = PackedVector2Array(-128, -8, -128, 8, 128, 8, 128, -8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Oven/OvenDoor"]
@@ -1645,16 +1657,23 @@ autoplay = "close"
 [node name="Cabinet1" type="Node" parent="Cabinets"]
 
 [node name="Base" type="StaticBody2D" parent="Cabinets/Cabinet1"]
+z_index = 2
 position = Vector2(2240, 920)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet1/Base"]
 polygon = PackedVector2Array(-32, -240, -32, -16, 144, -16, 144, -240)
 
 [node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet1/Base"]
+visible = false
 position = Vector2(0, 0.941177)
 scale = Vector2(1, 0.941176)
 color = Color(0.364975, 0.581518, 0.723014, 1)
 polygon = PackedVector2Array(-32, -256, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -256)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cabinets/Cabinet1/Base"]
+position = Vector2(56, -120)
+scale = Vector2(1.08333, 1.0625)
+texture = ExtResource("21_dve2m")
 
 [node name="Base2" type="StaticBody2D" parent="Cabinets/Cabinet1"]
 position = Vector2(2656, 920)
@@ -1663,10 +1682,16 @@ position = Vector2(2656, 920)
 polygon = PackedVector2Array(-32, -216, -32, -16, 144, -16, 144, -216)
 
 [node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet1/Base2"]
+visible = false
 position = Vector2(0, 3.00002)
 scale = Vector2(1, 0.941176)
 color = Color(0.364975, 0.581518, 0.723014, 1)
 polygon = PackedVector2Array(-32, -232.688, -32, -221.469, -40, -222, -40, -45.6875, -32, -45.6875, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -232.688)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Cabinets/Cabinet1/Base2"]
+position = Vector2(56, -120)
+scale = Vector2(1.08333, 1.0625)
+texture = ExtResource("21_dve2m")
 
 [node name="MovePlatform" parent="Cabinets/Cabinet1" instance=ExtResource("12_25ipx")]
 position = Vector2(2256, 754)
@@ -1717,16 +1742,23 @@ autoplay = "move"
 [node name="Cabinet2" type="Node" parent="Cabinets"]
 
 [node name="Base" type="StaticBody2D" parent="Cabinets/Cabinet2"]
+z_index = 2
 position = Vector2(2656, 704)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Cabinets/Cabinet2/Base"]
 polygon = PackedVector2Array(-32, -240, -32, -16, 144, -16, 144, -240)
 
 [node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet2/Base"]
+visible = false
 position = Vector2(0, 0.941177)
 scale = Vector2(1, 0.941176)
 color = Color(0.364975, 0.581518, 0.723014, 1)
 polygon = PackedVector2Array(-32, -256, -32, -16, -24, -16, -24, -1, -16, -1, -16, -16, 128, -16, 128, -1, 136, -1, 136, -16, 144, -16, 144, -256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Cabinets/Cabinet2/Base"]
+position = Vector2(56, -128)
+scale = Vector2(1.08333, 1)
+texture = ExtResource("21_dve2m")
 
 [node name="Base2" type="StaticBody2D" parent="Cabinets/Cabinet2"]
 position = Vector2(2240, 664)
@@ -1735,10 +1767,16 @@ position = Vector2(2240, 664)
 polygon = PackedVector2Array(-32, -216, -32, -16, 144, -16, 144, -216)
 
 [node name="Polygon2D" type="Polygon2D" parent="Cabinets/Cabinet2/Base2"]
+visible = false
 position = Vector2(0, 3.00002)
 scale = Vector2(1, 0.941176)
 color = Color(0.364975, 0.581518, 0.723014, 1)
 polygon = PackedVector2Array(-32, -232.688, -32, -16, -24, -16, -24, 16, -16, 16, -16, -16, 128, -16, 128, 16, 136, 16, 136, -16, 144, -16, 144, -45.6875, 152, -45.6875, 152, -224.188, 144.406, -223.625, 144, -232.688)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Cabinets/Cabinet2/Base2"]
+position = Vector2(56, -104)
+scale = Vector2(1.08333, 1)
+texture = ExtResource("21_dve2m")
 
 [node name="MovePlatform" parent="Cabinets/Cabinet2" instance=ExtResource("12_25ipx")]
 position = Vector2(2656, 518)
@@ -1786,6 +1824,16 @@ libraries = {
 }
 autoplay = "move_mirror"
 
+[node name="Land4" parent="." instance=ExtResource("8_r5f54")]
+position = Vector2(0, 162)
+
+[node name="Polygon2D" parent="Land4" index="0"]
+color = Color(0.894118, 0, 0.494118, 1)
+polygon = PackedVector2Array(1152, 680, 1152, 862, 1552, 862, 1552, 902, 1592, 902, 2144, 902, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 886, 1589, 883, 1551.77, 838, 1216, 838, 1216, 680)
+
+[node name="Line2D" parent="Land4" index="1"]
+points = PackedVector2Array(1152, 680, 1152, 862, 1552, 862, 1552, 902, 1592, 902, 2144, 902, 2824, 862, 2824, 774, 2168, 774, 2168, 806, 2144, 806, 2144, 886, 1589, 883, 1551.77, 838, 1216, 838, 1216, 680, 1152, 680)
+
 [node name="Land" parent="." instance=ExtResource("8_r5f54")]
 position = Vector2(2981, 1386)
 
@@ -1800,6 +1848,7 @@ position = Vector2(2880, 504)
 rotation = -1.5708
 
 [node name="Polygon2D" parent="Land20" index="0"]
+z_index = 2
 position = Vector2(-2, -3.77576e-05)
 color = Color(0.894118, 0, 0.494118, 1)
 polygon = PackedVector2Array(-69.9997, -80.0002, -70.0036, 1000, 73.9964, 1008, 73.9949, 1408, 121.995, 1408, 121.996, 976, 107.591, 960, 73.9965, 960, 73.997, 840, -30.0031, 840, -30.0007, 192, 73.9993, 192, 73.9995, 144, 57.9995, 136, 58.0003, -79.9998, 82.0003, -79.9995, 82.0004, -95.9995, 42.0004, -95.9998, 42.0003, -79.9998)
@@ -2561,13 +2610,13 @@ you up --->"
 [editable path="PlateMaze/Plates/Shelf3/Plate32"]
 [editable path="OvenPanRack/Land"]
 [editable path="OvenPanRack/Land2"]
-[editable path="OvenPanRack/Land3"]
 [editable path="Cabinets/Cabinet1/MovePlatform"]
 [editable path="Cabinets/Cabinet1/MovePlatform2"]
 [editable path="Cabinets/Cabinet1/MovePlatform3"]
 [editable path="Cabinets/Cabinet2/MovePlatform"]
 [editable path="Cabinets/Cabinet2/MovePlatform2"]
 [editable path="Cabinets/Cabinet2/MovePlatform3"]
+[editable path="Land4"]
 [editable path="Land"]
 [editable path="Land20"]
 [editable path="SoupSection/Potato"]

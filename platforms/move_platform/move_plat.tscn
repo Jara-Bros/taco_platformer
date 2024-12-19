@@ -8,10 +8,11 @@
 script = ExtResource("1_k7v5b")
 
 [node name="Polygon2D" type="Polygon2D" parent="MovePlat"]
+color = Color(0.552956, 0.552956, 0.552956, 1)
 polygon = PackedVector2Array(-32, 0, 32, 0, 32, 16, -32, 16)
 
 [node name="Line2D" type="Line2D" parent="MovePlat"]
 points = PackedVector2Array(-32, 0, 32, 0, 32, 16, -32, 16, -32, 0)
 width = 2.0
-default_color = Color(0, 0, 0.988235, 1)
+default_color = Color(0, 0, 0, 1)
 joint_mode = 1
