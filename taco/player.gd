@@ -47,7 +47,6 @@ const FALL_GRAVITY := 980
 
 func _ready():
 	
-	
 	current_state = player_state.WALKING
 	player_facing = 1
 	if ignore_camera:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2mtvr7ax7guf"]
+[gd_scene load_steps=13 format=3 uid="uid://d2mtvr7ax7guf"]
 
 [ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="1_4l72j"]
 [ext_resource type="Script" path="res://gui/menus/main_menu/main_menu.gd" id="1_fcjyx"]
 [ext_resource type="Theme" uid="uid://ddkpie7d28xv7" path="res://themes/default_theme.tres" id="1_odqg3"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="3_exrli"]
+[ext_resource type="Texture2D" uid="uid://yc2xt8dtxbfm" path="res://gui/menus/main_menu/t&b_title_page.png" id="3_unxp3"]
 [ext_resource type="Texture2D" uid="uid://dhfo3ntyog2xk" path="res://taco/sprites/taco_happy.png" id="5_33bxb"]
 [ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="6_b2xwb"]
 [ext_resource type="PackedScene" uid="uid://bermbu6qd8ncx" path="res://gui/boot_page/splash_pages.tscn" id="12_7oxl1"]
@@ -153,14 +154,22 @@ grow_vertical = 2
 theme = ExtResource("1_odqg3")
 script = ExtResource("1_fcjyx")
 
-[node name="TextureRect" type="ColorRect" parent="."]
-z_index = -2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_unxp3")
+
+[node name="Taco" type="Sprite2D" parent="."]
+position = Vector2(120, 256)
+scale = Vector2(6, 6)
+texture = ExtResource("5_33bxb")
+
+[node name="Bleu" type="Sprite2D" parent="."]
+position = Vector2(528, 256)
+scale = Vector2(6, 6)
+texture = ExtResource("6_b2xwb")
+flip_h = true
 
 [node name="ActTransition" type="ColorRect" parent="."]
 z_index = 5
@@ -232,35 +241,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -116.0
-offset_bottom = -116.0
+offset_top = -24.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
-
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginMainMenuContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="MarginMainMenuContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.313726, 0.00392157, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_4l72j")
-theme_override_font_sizes/font_size = 65
-text = "TACO&"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="MarginMainMenuContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.435294, 0, 1, 1)
-theme_override_fonts/font = ExtResource("1_4l72j")
-theme_override_font_sizes/font_size = 65
-text = "BLEU"
-horizontal_alignment = 1
 
 [node name="ButtonVBox" type="VBoxContainer" parent="MarginMainMenuContainer"]
 layout_mode = 2
@@ -294,19 +282,7 @@ theme_override_fonts/font = ExtResource("3_exrli")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginMainMenuContainer"]
-position = Vector2(270, 600)
-scale = Vector2(9, 9)
-texture = ExtResource("5_33bxb")
-
-[node name="Sprite2D2" type="Sprite2D" parent="MarginMainMenuContainer"]
-position = Vector2(958, 583)
-scale = Vector2(9, 9)
-texture = ExtResource("6_b2xwb")
-flip_h = true
-
 [node name="SplashPages" parent="." instance=ExtResource("12_7oxl1")]
-visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="MarginMainMenuContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
