@@ -10,12 +10,12 @@
 script = ExtResource("1_h2wq4")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_cqm5k"]
+[sub_resource type="Resource" id="Resource_0e4py"]
 script = ExtResource("1_h2wq4")
 scene = ExtResource("2_5tyt4")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_wgbpu"]
+[sub_resource type="Resource" id="Resource_yok61"]
 script = ExtResource("1_h2wq4")
 scene = ExtResource("3_jk61j")
 overrides = {
@@ -38,7 +38,7 @@ overrides = {
 "typing_sounds_mode": "1"
 }
 
-[sub_resource type="Resource" id="Resource_g2bg7"]
+[sub_resource type="Resource" id="Resource_vax0p"]
 script = ExtResource("1_h2wq4")
 scene = ExtResource("4_wqpe6")
 overrides = {
@@ -54,10 +54,13 @@ overrides = {
 [resource]
 script = ExtResource("5_y7a55")
 name = "woz_style"
-layer_list = Array[String]([])
+layer_list = Array[String](["10", "11", "12"])
 layer_info = {
-"": SubResource("Resource_vxys5")
+"": SubResource("Resource_vxys5"),
+"10": SubResource("Resource_0e4py"),
+"11": SubResource("Resource_yok61"),
+"12": SubResource("Resource_vax0p")
 }
 base_overrides = {}
-layers = Array[ExtResource("1_h2wq4")]([SubResource("Resource_cqm5k"), SubResource("Resource_wgbpu"), SubResource("Resource_g2bg7")])
+layers = Array[ExtResource("1_h2wq4")]([])
 metadata/_latest_layer = 1

@@ -14,12 +14,12 @@
 script = ExtResource("1_cv83q")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_2t52x"]
+[sub_resource type="Resource" id="Resource_8d1y8"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("2_378n3")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_c4iw0"]
+[sub_resource type="Resource" id="Resource_rf4uk"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("3_3jobp")
 overrides = {
@@ -37,17 +37,17 @@ overrides = {
 "use_global_fonts": "false"
 }
 
-[sub_resource type="Resource" id="Resource_ml23i"]
+[sub_resource type="Resource" id="Resource_883mb"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("4_qs0xs")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_b1jp8"]
+[sub_resource type="Resource" id="Resource_rpkkk"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("5_7cgtn")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_n0v4i"]
+[sub_resource type="Resource" id="Resource_4p8fd"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("6_0fawb")
 overrides = {
@@ -59,12 +59,12 @@ overrides = {
 "text_color_use_global": "false"
 }
 
-[sub_resource type="Resource" id="Resource_tjy7l"]
+[sub_resource type="Resource" id="Resource_snkfj"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("7_hqy2c")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_jeaxq"]
+[sub_resource type="Resource" id="Resource_1fw0d"]
 script = ExtResource("1_cv83q")
 scene = ExtResource("8_m5lqb")
 overrides = {}
@@ -72,12 +72,17 @@ overrides = {}
 [resource]
 script = ExtResource("9_pyt7t")
 name = "text_&_pic_style"
-layer_list = Array[String]([])
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16"])
 layer_info = {
-"": SubResource("Resource_7aa4i")
+"": SubResource("Resource_7aa4i"),
+"10": SubResource("Resource_8d1y8"),
+"11": SubResource("Resource_rf4uk"),
+"12": SubResource("Resource_883mb"),
+"13": SubResource("Resource_rpkkk"),
+"14": SubResource("Resource_4p8fd"),
+"15": SubResource("Resource_snkfj"),
+"16": SubResource("Resource_1fw0d")
 }
-base_overrides = {
-"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
-}
-layers = Array[ExtResource("1_cv83q")]([SubResource("Resource_2t52x"), SubResource("Resource_c4iw0"), SubResource("Resource_ml23i"), SubResource("Resource_b1jp8"), SubResource("Resource_n0v4i"), SubResource("Resource_tjy7l"), SubResource("Resource_jeaxq")])
+base_overrides = {}
+layers = Array[ExtResource("1_cv83q")]([])
 metadata/_latest_layer = 1

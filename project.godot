@@ -71,6 +71,7 @@ directories/dtl_directory={
 "fanart_3_timeline": "res://dialogue/timelines/hints/fanart_3_timeline.dtl",
 "jeff_2_timeline": "res://dialogue/timelines/jeff_2_timeline.dtl",
 "jeff_timeline": "res://dialogue/timelines/jeff_timeline.dtl",
+"kitchen_sequence": "res://dialogue/timelines/kitchen_sequence.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
 "manager_20_timeline": "res://dialogue/timelines/manager_20_timeline.dtl",
 "manager_2_timeline": "res://dialogue/timelines/manager_2_timeline.dtl",
@@ -90,8 +91,8 @@ directories/dtl_directory={
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
 "wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
 }
-layout/style_list=["res://dialogue/styles/woz_style_vn.tres", "res://dialogue/styles/barb_style.tres", "res://NPC/sprites/limona/limona_style_textbox.tres", "res://dialogue/styles/woz_style.tres"]
-layout/default_style="res://dialogic/styles/woz_style.tres"
+layout/style_list=["res://gui/fonts/dialogue_box/visual_novel.tres"]
+layout/default_style="res://gui/fonts/dialogue_box/visual_novel.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.02
@@ -120,6 +121,7 @@ text/autoadvance_enabled=false
 text/autoadvance_fixed_delay=0.5
 text/autocolor_names=true
 animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_out.gd"
+audio/max_channels=4.0
 
 [display]
 

@@ -3,10 +3,15 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var manager: Sprite2D = $Manager
 @onready var jeff: Sprite2D = $Jeff
+@onready var act_transition: AnimationPlayer = $ActTransition
+
 
 var data = null
 
+
 func _ready() -> void:
+	pass
+	
 	Dialogic.start("manager_timeline")
 	await Dialogic.timeline_ended
 	animation_player.play("black_off")
@@ -32,3 +37,7 @@ func _ready() -> void:
 	animation_player.play("manager_irritated")
 	await animation_player.animation_finished
 	SceneManager.set_initial_scene("KitchenLineSequence")
+
+
+func dialogic_conversation():
+	Dialogic.start("kitchen_sequence")
