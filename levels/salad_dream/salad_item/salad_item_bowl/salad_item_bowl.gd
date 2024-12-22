@@ -6,6 +6,7 @@ var player : Player = null
 var collected : bool = false
 var collect_tween : Tween
 var invincible : bool = false
+var dropped : bool = false
 @export var on_conveyer: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,15 +17,33 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_pressed("item") and $Label.visible:
+	if Input.is_action_just_pressed("item") and collected == false and $Label.visible:
 		item_tween()
+	if Input.is_action_just_pressed("item") and collected == true and invincible == false:
+		lock_to_conveyer_belt()
+	
+	#if dropped == true:
+		#position.y += 50 * delta
+	#
 	
 	if collected == true and invincible == false:
 		position = player.position + Vector2(0, -40) 
 	if on_conveyer:
 		position.x += 50 * delta
 
+	
+func item_tween():
+	invincible = true
+	collect_tween = create_tween()
+	collect_tween.connect("finished", tween_complete)
+	set_collision_layer_value(4, false)
+	collected = true
+	collect_tween.tween_property(self, "position", player.position + Vector2(0, -40), 0.3)
 
+
+func tween_complete():
+	set_collision_layer_value(4, true)
+	invincible = false
 
 func _on_area_entered(area):
 	if full == false:
@@ -35,17 +54,14 @@ func _on_area_entered(area):
 	if items == 3:
 		full = true
 		
-func item_tween():
-	collect_tween = create_tween()
-	collect_tween.connect("finished", tween_complete)
-	invincible = true
-	set_collision_layer_value(4, false)
-	collected = true
-	collect_tween.tween_property(self, "position", player.position + Vector2(0, -40), 0.3)
+func lock_to_conveyer_belt():
+	if ItemManager.on_conveyor == true:
+		var conveyer = get_tree().get_first_node_in_group("conveyor")
+		print(conveyer)
+		global_position = conveyer.global_position + Vector2(-50, -10)
+		collected = false
+		on_conveyer = true
 
-func tween_complete():
-	set_collision_layer_value(4, true)
-	invincible = false
 func _on_body_entered(body):
 	if body.is_in_group("Player") and full:
 		$Label.visible = true
@@ -55,4 +71,3 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	$Label.visible = false
-	pass # Replace with function body.

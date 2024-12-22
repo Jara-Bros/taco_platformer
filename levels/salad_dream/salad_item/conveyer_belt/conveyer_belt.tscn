@@ -12,10 +12,11 @@ size = Vector2(167, 20)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
+position = Vector2(83, 9.5)
 shape = SubResource("RectangleShape2D_rpebp")
 
-[node name="ConveyerBelt" type="Area2D" parent="."]
+[node name="ConveyerBelt" type="Area2D" parent="." groups=["conveyor"]]
+position = Vector2(82, 9)
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_pweov")
@@ -26,6 +27,7 @@ offset_top = -9.0
 offset_right = 84.0
 offset_bottom = 10.0
 color = Color(8.78386e-07, 0.242964, 0.247954, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyerBelt"]
 position = Vector2(1.5, 0)
