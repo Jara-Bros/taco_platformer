@@ -1,12 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ks4y085gbeac"]
+[gd_scene load_steps=28 format=3 uid="uid://ks4y085gbeac"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
 [ext_resource type="Texture2D" uid="uid://bv2r8p1tib2be" path="res://gui/screen_transitions/act_one_title.png" id="2_41bkt"]
 [ext_resource type="Texture2D" uid="uid://d2ekjcrbprge1" path="res://levels/salad_dream/kitchen_serving_counter_2.png" id="2_bdj46"]
-[ext_resource type="Texture2D" uid="uid://clxqf47rjknpv" path="res://NPC/sprites/jeff/jeff.png" id="3_6okn2"]
 [ext_resource type="Texture2D" uid="uid://2r2lhoxipq0e" path="res://NPC/sprites/empanada_twins/empanada_twin_1.png" id="4_gd4lv"]
 [ext_resource type="Texture2D" uid="uid://b8hxqaqa567os" path="res://levels/salad_dream/kitchen_bg.png" id="4_pclwo"]
-[ext_resource type="Texture2D" uid="uid://jwcoevgjeylp" path="res://NPC/sprites/empanada_twins/empanada_twin_2.png" id="5_feuxi"]
 [ext_resource type="Texture2D" uid="uid://b84l1bb5dcm5q" path="res://NPC/sprites/empanada_twins/kitchen_dish.png" id="6_qmwke"]
 [ext_resource type="AudioStream" uid="uid://cqpwthtg6tun6" path="res://audio/sfx/chaotic_kitchen_sfx.mp3" id="9_g5438"]
 
@@ -133,51 +131,17 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_ob4e6"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Empanada1:position:x")
+tracks/0/path = NodePath("Empanada1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1496, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Empanada1:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(552, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Jeff:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jeff:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(704, 304)]
 }
 
 [sub_resource type="Animation" id="Animation_vmgva"]
@@ -186,76 +150,30 @@ length = 0.5
 
 [sub_resource type="Animation" id="Animation_06e1x"]
 resource_name = "empanada_move"
-length = 6.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Empanada1:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1800, -0.25, 0, 0.25, 0, -228, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Empanada1:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(552, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_37tq5"]
-resource_name = "jeff_manager_talk"
 length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Jeff:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_jrv01"]
-resource_name = "jeff_talk"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Jeff:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_setke"]
-resource_name = "jeff_talk_2"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Jeff:frame")
+tracks/0/path = NodePath("Empanada1:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
+"update": 0,
+"values": [Vector2(896, 264), Vector2(-128, 264)]
 }
+
+[sub_resource type="Animation" id="Animation_37tq5"]
+resource_name = "jeff_manager_talk"
+length = 4.0
+
+[sub_resource type="Animation" id="Animation_jrv01"]
+resource_name = "jeff_talk"
+
+[sub_resource type="Animation" id="Animation_setke"]
+resource_name = "jeff_talk_2"
+length = 4.0
 
 [sub_resource type="Animation" id="Animation_l1fgw"]
 resource_name = "kitchen_line_off"
@@ -282,30 +200,6 @@ length = 3.0
 [sub_resource type="Animation" id="Animation_nunqo"]
 resource_name = "sock_reveal"
 length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Jeff:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Jeff:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0f8de"]
 _data = {
@@ -358,33 +252,21 @@ libraries = {
 }
 autoplay = "act_transition"
 
-[node name="Jeff" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(152, 464)
-scale = Vector2(9, 9)
-texture = ExtResource("3_6okn2")
-hframes = 2
-
 [node name="Empanada1" type="AnimatedSprite2D" parent="."]
-position = Vector2(1496, 552)
-scale = Vector2(9, 9)
+z_index = 2
+position = Vector2(704, 304)
+scale = Vector2(5.59375, 5)
 sprite_frames = SubResource("SpriteFrames_i1qgi")
 animation = &"move"
 autoplay = "move"
-frame = 1
-frame_progress = 0.540743
+frame_progress = 0.658596
 
 [node name="KitchenDish" type="Sprite2D" parent="Empanada1"]
 z_index = 2
 position = Vector2(-0.888905, -18.6667)
 texture = ExtResource("6_qmwke")
 
-[node name="Empanada2" type="Sprite2D" parent="."]
-position = Vector2(1840, 568)
-scale = Vector2(9, 9)
-texture = ExtResource("5_feuxi")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="EmpanadaAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0f8de")
 }
