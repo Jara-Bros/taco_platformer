@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://levels/salad_dream/kitchen_sequence.gd" id="1_ga4vx"]
 [ext_resource type="Texture2D" uid="uid://bv2r8p1tib2be" path="res://gui/screen_transitions/act_one_title.png" id="2_41bkt"]
-[ext_resource type="Texture2D" uid="uid://by6pcfbass3q4" path="res://levels/salad_dream/kitchen_serving_counter.png" id="2_gjn1s"]
+[ext_resource type="Texture2D" uid="uid://d2ekjcrbprge1" path="res://levels/salad_dream/kitchen_serving_counter_2.png" id="2_bdj46"]
 [ext_resource type="Texture2D" uid="uid://clxqf47rjknpv" path="res://NPC/sprites/jeff/jeff.png" id="3_6okn2"]
 [ext_resource type="Texture2D" uid="uid://2r2lhoxipq0e" path="res://NPC/sprites/empanada_twins/empanada_twin_1.png" id="4_gd4lv"]
 [ext_resource type="Texture2D" uid="uid://b8hxqaqa567os" path="res://levels/salad_dream/kitchen_bg.png" id="4_pclwo"]
@@ -15,7 +15,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/path = NodePath("ActTransition/TextureRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +27,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/path = NodePath("ActTransition/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,7 +39,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MrPKitchen:visible")
+tracks/2/path = NodePath("ActTransition/MrPKitchen:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -55,7 +55,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/path = NodePath("ActTransition/TextureRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -67,7 +67,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/path = NodePath("ActTransition/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -79,14 +79,28 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MrPKitchen:visible")
+tracks/2/path = NodePath("ActTransition/MrPKitchen:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dialogic_conversation"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g2ldy"]
@@ -316,26 +330,29 @@ script = ExtResource("1_ga4vx")
 [node name="KitchenBG" type="TextureRect" parent="."]
 offset_right = 640.0
 offset_bottom = 360.0
-texture = ExtResource("2_gjn1s")
+texture = ExtResource("2_bdj46")
 
-[node name="MrPKitchen" type="TextureRect" parent="."]
+[node name="ActTransition" type="Node" parent="."]
+
+[node name="MrPKitchen" type="TextureRect" parent="ActTransition"]
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("4_pclwo")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="ActTransition"]
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("2_41bkt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="ActTransition"]
 offset_left = 80.0
 offset_top = 160.0
 offset_right = 576.0
 offset_bottom = 200.0
 color = Color(0, 0, 0, 1)
 
-[node name="ActTransition" type="AnimationPlayer" parent="."]
+[node name="ActTransAnimation" type="AnimationPlayer" parent="ActTransition"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_g2ldy")
 }
