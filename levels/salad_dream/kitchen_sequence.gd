@@ -16,3 +16,4 @@ func dialogic_conversation():
 	empanada_1.visible = true
 	empanada_anim.play("empanada_move")
 	await Dialogic.timeline_ended
+	SceneManager.switch_scene("KitchenLineSequence", {})

@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2ws85mymqjvb"]
+[gd_scene load_steps=14 format=3 uid="uid://d2ws85mymqjvb"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/kitchen_line_t_sequence.gd" id="1_btbis"]
-[ext_resource type="Texture2D" uid="uid://dh4yvs7tjbhpj" path="res://levels/salad_dream/restaurant_kichen.jpg" id="1_h8nhx"]
 [ext_resource type="Texture2D" uid="uid://34db2sheef44" path="res://taco/sprites/taco_restaurant_animation_sheet.png" id="2_qdbdb"]
-[ext_resource type="Texture2D" uid="uid://bh76uw1rlv0b0" path="res://NPC/sprites/sous/sous.png" id="4_h8nr8"]
+[ext_resource type="Texture2D" uid="uid://bk2kt1sjvml0o" path="res://levels/salad_dream/kitchen_line_bg.png" id="2_wpx0i"]
 [ext_resource type="AudioStream" uid="uid://dysrumuro1w4k" path="res://audio/sfx/Kitchen Ambience Sound Effect.mp3" id="5_n1o1i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s51xb"]
@@ -40,85 +39,6 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 10.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_katob"]
-atlas = ExtResource("4_h8nr8")
-region = Rect2(0, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xj6xy"]
-atlas = ExtResource("4_h8nr8")
-region = Rect2(32, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytc6y"]
-atlas = ExtResource("4_h8nr8")
-region = Rect2(64, 0, 32, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dtic1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_katob")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytc6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj6xy")
-}],
-"loop": false,
-"name": &"talk",
-"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_44agv"]
@@ -160,17 +80,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_dpyen"]
 resource_name = "sous_talk"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sous")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
 
 [sub_resource type="Animation" id="Animation_vlyfk"]
 resource_name = "taco_kitchen_move"
@@ -195,7 +104,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(560, -0.25, 0, 0.25, 0, 560, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(286, -0.25, 0, 0.25, 0, 286, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 2)
 }
 tracks/2/type = "value"
@@ -222,35 +131,18 @@ _data = {
 script = ExtResource("1_btbis")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-z_index = -2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 612.0
-offset_bottom = 408.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-texture = ExtResource("1_h8nhx")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wpx0i")
 
 [node name="TacoKitchen" type="AnimatedSprite2D" parent="."]
 position = Vector2(864, 536)
-scale = Vector2(12, 12)
+scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_i8l4j")
 animation = &"move"
 autoplay = "move"
-frame = 2
-frame_progress = 0.604058
-
-[node name="Sous" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(160, 456)
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_dtic1")
-animation = &"talk"
-autoplay = "talk"
-frame = 16
-frame_progress = 1.0
+frame = 3
+frame_progress = 0.620445
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

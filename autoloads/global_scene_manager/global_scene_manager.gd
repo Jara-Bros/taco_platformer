@@ -1,12 +1,14 @@
 extends Node
 class_name GlobalSceneManager
 
+
 # A collection of scenes in the game. Scenes are added via Inspector.
 @export var scenes : Dictionary = {}
 
-# An arbitary dict that stores data when switching scenes
 
+# An arbitary dict that stores data when switching scenes
 var persistent_data : Dictionary = {}
+
 
 # Alias of the currently selected scene
 var current_scene_alias : String = ""
@@ -16,7 +18,6 @@ var current_scene_alias : String = ""
 func _ready() -> void:
 	#var main_scene : StringName = ProjectSettings.get_setting("application/run/main_scene")
 	current_scene_alias = get_tree().current_scene.name
-
 
 
 # Add a new scene to the scene collection
@@ -36,12 +37,15 @@ func switch_scene(scene_alias : String, data : Dictionary) -> void:
 	get_tree().change_scene_to_file.bind(scenes[scene_alias]).call_deferred()
 	PersistantDataHandler.update_scene_data(scene_alias, data)
 
+
 func set_initial_scene(scene_alias : String) -> void:
 	get_tree().change_scene_to_file(scenes[scene_alias])
 	PersistantDataHandler.initialize_scene(scene_alias)
 	
+	
 func is_scene_initialized(scene):
 	return PersistantDataHandler.is_scene_in_data(scene)	
+	
 	
 func get_transfer_data(scene):
 	return PersistantDataHandler.get_scene_data(scene)
@@ -49,6 +53,7 @@ func get_transfer_data(scene):
 
 func restart_scene() -> void:
 	get_tree().reload_current_scene()
+
 
 func quit_game() -> void:
 	get_tree().quit()
@@ -66,6 +71,7 @@ func get_current_scene_alias() -> String:
 
 func add_scene_child(_scene : Node2D):
 	add_child(_scene)
+
 
 func remove_scene_child(_scene : Node2D):
 	remove_child(_scene)
