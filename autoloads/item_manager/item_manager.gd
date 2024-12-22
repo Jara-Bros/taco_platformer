@@ -1,6 +1,6 @@
 extends Node
 
-
+var items = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +29,15 @@ func connect_item_to_player(instance_id, group):
 			player.set_item(ball)
 			
 			#player.reparent(ball)
+
+func add_to_items_list(item):
+	items.append(item)
+	
+func get_items_list():
+	return items.size()
+
+func clear_list():
+	items.clear()
 
 func get_player():
 	var player_node = get_tree().get_nodes_in_group("Player")[0]  

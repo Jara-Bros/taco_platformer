@@ -212,7 +212,9 @@ func bounce(factor : float):
 	if velocity.y >= 0:
 		jump_velocity = jump_velocity / 2.0
 
-
+func set_remote_path(path):
+	$RemoteTransform2D.remote_path = path
+	
 # To Save Game
 func save():
 	var save_dict = {
