@@ -1,7 +1,9 @@
-join mr_p right
+join mr_p (mr_p_talk) right
+join jeff (jeff_idle) left [mirrored="true"]
 mr_p: WHERE MY SALADS FOR TABLE 14 T?
 [wait time="1.0"]
-join jeff (jeff_idle) left
 join mr_p (mr_p_idle) right [mirrored="true"]
+join jeff (jeff_idle) left
 mr_p (mr_p_talk): Wake up Geff.
 mr_p (mr_p_talk): I'm gonna need hands on this one.
+[end_timeline]
