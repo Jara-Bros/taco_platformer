@@ -22,7 +22,7 @@ points = PackedVector2Array(-3, -2, 0, 359, 639, 359, 639, -1, 599, -3, 597, 142
 position = Vector2(240, 299)
 
 [node name="SaladItem" parent="." instance=ExtResource("3_4w3hx")]
-position = Vector2(254, 236)
+position = Vector2(460, 99)
 
 [node name="SaladItemBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(75, 200)
@@ -31,8 +31,9 @@ position = Vector2(75, 200)
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
 position = Vector2(170, 305)
+on_conveyer = false
 
 [node name="ConveyerBelt" parent="." instance=ExtResource("7_u0krj")]
-position = Vector2(324, 307)
+position = Vector2(373, 313)
 
 [editable path="Land"]
