@@ -12,17 +12,17 @@
 script = ExtResource("1_amjye")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_bedk3"]
+[sub_resource type="Resource" id="Resource_s1iwi"]
 script = ExtResource("1_amjye")
 scene = ExtResource("2_8y7f6")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_irid1"]
+[sub_resource type="Resource" id="Resource_6ukja"]
 script = ExtResource("1_amjye")
 scene = ExtResource("3_som50")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_iuvb4"]
+[sub_resource type="Resource" id="Resource_cm366"]
 script = ExtResource("1_amjye")
 scene = ExtResource("4_w7h8k")
 overrides = {
@@ -49,7 +49,7 @@ overrides = {
 "typing_sounds_mode": "1"
 }
 
-[sub_resource type="Resource" id="Resource_m2f8k"]
+[sub_resource type="Resource" id="Resource_432pg"]
 script = ExtResource("1_amjye")
 scene = ExtResource("5_h1epv")
 overrides = {
@@ -60,7 +60,7 @@ overrides = {
 "text_color_use_global": "false"
 }
 
-[sub_resource type="Resource" id="Resource_o7cug"]
+[sub_resource type="Resource" id="Resource_6oe88"]
 script = ExtResource("1_amjye")
 scene = ExtResource("6_iwx1b")
 overrides = {}
@@ -68,10 +68,15 @@ overrides = {}
 [resource]
 script = ExtResource("7_y8c64")
 name = "text_only_style"
-layer_list = Array[String]([])
+layer_list = Array[String](["10", "11", "12", "13", "14"])
 layer_info = {
-"": SubResource("Resource_t4h8f")
+"": SubResource("Resource_t4h8f"),
+"10": SubResource("Resource_s1iwi"),
+"11": SubResource("Resource_6ukja"),
+"12": SubResource("Resource_cm366"),
+"13": SubResource("Resource_432pg"),
+"14": SubResource("Resource_6oe88")
 }
 base_overrides = {}
-layers = Array[ExtResource("1_amjye")]([SubResource("Resource_bedk3"), SubResource("Resource_irid1"), SubResource("Resource_iuvb4"), SubResource("Resource_m2f8k"), SubResource("Resource_o7cug")])
+layers = Array[ExtResource("1_amjye")]([])
 metadata/_latest_layer = 2

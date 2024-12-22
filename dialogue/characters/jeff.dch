@@ -6,51 +6,33 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "visual_novel"
 },
-"default_portrait": "jeff_idle",
+"default_portrait": "jeff_talk",
 "description": "",
 "display_name": "Geff",
 "mirror": false,
 "nicknames": [""],
-"offset": Vector2(0, -50),
+"offset": Vector2(0, 0),
 "portraits": {
 "jeff_idle": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/jeff/jeff_idle.png\""
+"image": "\"res://NPC/sprites/jeff/jeff_idle_vn.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.8,
-"scene": ""
-},
-"jeff_idle_flip": {
-"export_overrides": {
-"image": "\"res://NPC/sprites/jeff/jeff_idle.png\""
-},
-"mirror": true,
-"offset": Vector2(0, 0),
-"scale": 0.8,
+"scale": 1,
 "scene": ""
 },
 "jeff_talk": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/jeff/jeff_talk.png\""
+"image": "\"res://NPC/sprites/jeff/jeff_talk_vn.png\""
 },
-"mirror": true,
+"mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.8,
-"scene": ""
-},
-"jeff_talk_flip": {
-"export_overrides": {
-"image": "\"res://NPC/sprites/jeff/jeff_talk.png\""
-},
-"mirror": true,
-"offset": Vector2(0, 0),
-"scale": 0.8,
+"scale": 1,
 "scene": ""
 }
 },
-"scale": 0.7
+"scale": 1.0
 }
