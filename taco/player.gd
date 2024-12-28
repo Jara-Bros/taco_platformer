@@ -17,8 +17,8 @@ var pass_kick_right : Vector2 = Vector2(400, 0)
 @export var zoom : Vector2 = Vector2(1,1)
 # Force for pushing rigid bodies
 @export var push_force : float
-
-
+@export var speed : int
+@export var acceleration : int
 enum player_state {WALKING, IN_AIR, KICKING}
 var current_state
 var prev_state
@@ -83,21 +83,17 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -1 * jump_velocity
 		change_state(player_state.IN_AIR)
 		
-	if is_on_floor() and current_state == player_state.IN_AIR and velocity.y == 0:
-		change_state(player_state.WALKING)
-			
-	if current_state == player_state.WALKING:
-			if direction:
-				velocity.x = move_toward(velocity.x, direction * 225.5, 35)
-			else:
-				velocity.x = move_toward(velocity.x, 0, 30)
-	elif current_state == player_state.IN_AIR:
-		if (direction == 1 and velocity.x < 0) or (direction == -1 and velocity.x > 0):
-			velocity.x = move_toward(velocity.x, 0, 5)
-		elif direction == 0:
-			velocity.x = move_toward(velocity.x, 0, 9.5)
+	if direction:
+		if current_state == player_state.WALKING:
+			velocity.x = move_toward(velocity.x, direction * speed, 50)
+		elif current_state == player_state.IN_AIR and direction * velocity.x < 0:
+			velocity = velocity.lerp(Vector2(direction * speed, velocity.y), acceleration * delta)
 		else:
-			velocity.x = move_toward(velocity.x, direction * 325.5, 10)
+			velocity.x = move_toward(velocity.x, direction * speed, 50)
+			
+	else:
+		if is_on_floor():
+			velocity.x = move_toward(velocity.x, 0, acceleration)
 	move_and_slide()
  
 	# To move rigid bodies upon contact

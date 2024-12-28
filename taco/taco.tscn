@@ -192,6 +192,8 @@ floor_stop_on_slope = false
 floor_max_angle = 1.13446
 script = ExtResource("1_gydf1")
 jump_velocity = 350.0
+speed = 200
+acceleration = 45
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
