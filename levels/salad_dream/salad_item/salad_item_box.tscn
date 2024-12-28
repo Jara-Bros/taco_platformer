@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5wnxcj5hpue" path="res://levels/salad_dream/salad_item/salad_item.tscn" id="2_45nvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0n2k"]
-size = Vector2(28, 27)
+size = Vector2(32, 32)
 
 [node name="SaladItemBox" type="Area2D"]
 collision_layer = 8
@@ -14,14 +14,14 @@ salad_item_packed_scene = ExtResource("2_45nvt")
 type = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -19.0
+offset_left = -24.0
+offset_top = -24.0
 offset_right = 8.0
 offset_bottom = 8.0
 color = Color(0.121569, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -5.5)
+position = Vector2(-8, -8)
 shape = SubResource("RectangleShape2D_o0n2k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
