@@ -5,14 +5,23 @@
 [node name="SaladDreamV2" type="Node2D"]
 
 [node name="Land" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(56, 8)
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(-192, -8, -192, 16, 192, 16, 192, -8)
+polygon = PackedVector2Array(-312, -8, -312, 16, -120, 16, -120, 56, 8, 56, 8, 16, 200, 16, 200, -8, 7.9838, -8, -8, -8, -8, 40, -104, 40, -104, -8, -120.495, -8)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(-192, -8, -192, 16, 192, 16, 192, -8, -192, -8)
+points = PackedVector2Array(-312, -8, -312, 16, -120, 16, -120, 56, 8, 56, 8, 16, 200, 16, 200, -8, 7.9838, -8, -8, -8, -8, 40, -104, 40, -104, -8, -120.495, -8, -312, -8)
+
+[node name="Label" type="Label" parent="Land"]
+offset_left = -104.0
+offset_top = -32.0
+offset_right = 6.0
+offset_bottom = -9.0
+text = "plate spawner"
 
 [node name="Land2" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(24, -16)
 
 [node name="Polygon2D" parent="Land2" index="0"]
 polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
@@ -20,8 +29,16 @@ polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
 [node name="Line2D" parent="Land2" index="1"]
 points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
 
+[node name="Label4" type="Label" parent="Land2"]
+offset_left = -72.0
+offset_top = -96.0
+offset_right = 36.0
+offset_bottom = -73.0
+text = "dressing
+"
+
 [node name="Land3" parent="." instance=ExtResource("1_66io1")]
-position = Vector2(0, -88)
+position = Vector2(24, -144)
 
 [node name="Polygon2D" parent="Land3" index="0"]
 polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
@@ -29,8 +46,15 @@ polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
 [node name="Line2D" parent="Land3" index="1"]
 points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
 
+[node name="Label" type="Label" parent="Land3"]
+offset_left = -72.0
+offset_top = -96.0
+offset_right = 36.0
+offset_bottom = -73.0
+text = "Conveyor belt"
+
 [node name="Land4" parent="." instance=ExtResource("1_66io1")]
-position = Vector2(136, -40)
+position = Vector2(-168, -16)
 
 [node name="Polygon2D" parent="Land4" index="0"]
 polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
@@ -38,7 +62,52 @@ polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
 [node name="Line2D" parent="Land4" index="1"]
 points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
 
+[node name="Label2" type="Label" parent="Land4"]
+offset_left = -56.0
+offset_top = -96.0
+offset_right = 52.0
+offset_bottom = -73.0
+text = "kale"
+
+[node name="Land5" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(216, -16)
+
+[node name="Polygon2D" parent="Land5" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land5" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
+[node name="Label3" type="Label" parent="Land5"]
+offset_left = -64.0
+offset_top = -96.0
+offset_right = 44.0
+offset_bottom = -73.0
+text = "cheese
+"
+
+[node name="Land6" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(-56, -96)
+
+[node name="Polygon2D" parent="Land6" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land6" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
+[node name="Land7" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(112, -96)
+
+[node name="Polygon2D" parent="Land7" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land7" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="Land3"]
 [editable path="Land4"]
+[editable path="Land5"]
+[editable path="Land6"]
+[editable path="Land7"]
