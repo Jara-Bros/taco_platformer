@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckby2rfbt5olt"
-path="res://.godot/imported/kale_leaf.png-5cce42a2a082ec987e34978250b3e9c9.ctex"
+uid="uid://c8memxd4vs1cr"
+path="res://.godot/imported/cheese_item.png-ac7204b07deae9dedbf21f242498c517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/salad_dream/kale_leaf.png"
-dest_files=["res://.godot/imported/kale_leaf.png-5cce42a2a082ec987e34978250b3e9c9.ctex"]
+source_file="res://levels/salad_dream/sprites/cheese_item.png"
+dest_files=["res://.godot/imported/cheese_item.png-ac7204b07deae9dedbf21f242498c517.ctex"]
 
 [params]
 

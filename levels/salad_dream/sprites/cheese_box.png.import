@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blrcc7x0twdnr"
-path="res://.godot/imported/salad_bowl.png-e43a612a1dc3f7e2317dff02fd822083.ctex"
+uid="uid://co3fojqoxmj8r"
+path="res://.godot/imported/cheese_box.png-ddbd60486cc7754ce068205ccaabccb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/salad_dream/salad_bowl.png"
-dest_files=["res://.godot/imported/salad_bowl.png-e43a612a1dc3f7e2317dff02fd822083.ctex"]
+source_file="res://levels/salad_dream/sprites/cheese_box.png"
+dest_files=["res://.godot/imported/cheese_box.png-ddbd60486cc7754ce068205ccaabccb4.ctex"]
 
 [params]
 

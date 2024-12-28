@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iyqr4q7x10lp"
-path="res://.godot/imported/jeff_sock_pic.jpg-bb9217b7ff5c8b6bb3bbe09afd2f6ff4.ctex"
+uid="uid://te236jnox7vy"
+path="res://.godot/imported/tomato_item.png-f07877b06684df9643dff358e51e716c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/salad_dream/jeff_sock_pic.jpg"
-dest_files=["res://.godot/imported/jeff_sock_pic.jpg-bb9217b7ff5c8b6bb3bbe09afd2f6ff4.ctex"]
+source_file="res://levels/salad_dream/sprites/tomato_item.png"
+dest_files=["res://.godot/imported/tomato_item.png-f07877b06684df9643dff358e51e716c.ctex"]
 
 [params]
 
