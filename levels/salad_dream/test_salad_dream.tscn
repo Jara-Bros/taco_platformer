@@ -42,7 +42,7 @@ visible = false
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(378, 225)
 
-[node name="LettuceBox" parent="." instance=ExtResource("4_sfhdy")]
+[node name="CheeseBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(445, 239)
 type = 1
 

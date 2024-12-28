@@ -5,7 +5,7 @@ var player: Player
 @export var offset: int = -40
 var invincible : bool
 var collect_tween : Tween
-@export_enum("KALE", "LETTUCE", "TOMATOES") var item_type
+@export_enum("KALE", "CHEESE", "TOMATOES") var item_type
 var current_type
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 		current_type = "KALE"
 	elif item_type == 1:
 		$ColorRect.color = Color.AZURE
-		current_type = "LETTUCE"
+		current_type = "CHEESE"
 	elif item_type == 2:
 		$ColorRect.color = Color.RED
 		current_type = "TOMATOES"

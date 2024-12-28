@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var salad_item_packed_scene : PackedScene
-@export_enum("KALE", "LETTUCE", "TOMATOES") var type
+@export_enum("KALE", "CHEESE", "TOMATOES") var type
 #signal item_created(item)
 
 # Called when the node enters the scene tree for the first time.

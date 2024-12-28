@@ -3,7 +3,7 @@ class_name Ticket extends Control
 # 0 == 
 var possible_ingredients_map = {
 	0: "KALE",
-	1: "LETTUCE",
+	1: "CHEESE",
 	2: "TOMATOES"
 }
 var ingredients	 = []
