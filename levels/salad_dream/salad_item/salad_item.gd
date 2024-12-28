@@ -32,16 +32,15 @@ func _process(delta):
 
 
 func _physics_process(delta):
-
 	if not is_on_floor() and not collected:
 		velocity.y += 450 * delta
+	# follow taco
 	if collected and collect_tween.is_running() == false:
 		position = player.position + Vector2(0, offset)
-	
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	if(body.is_in_group("Player") and invincible == false):
+	if(body.is_in_group("Player") and invincible == false and collected == false and ItemManager.get_items_list() <= 2):
 		ItemManager.add_to_items_list(self)
 		var item_list_size = ItemManager.get_items_list()
 		if(item_list_size == 0):

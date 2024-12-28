@@ -58,11 +58,11 @@ func _on_body_entered(body):
 	if body.is_in_group("Player") and full:
 		$Label.visible = true
 		player = body
+		
 	elif body.is_in_group("salad_item"):
 		if full == false:
 			ingredients.append(body.current_type)
 			body.queue_free()
-			print(ingredients)
 		
 	
 	# do this to initiate glowing sequence
@@ -74,3 +74,8 @@ func get_ingredients_in_bowl():
 
 func _on_body_exited(body):
 	$Label.visible = false
+
+# when the bowl is full, we dont want it to listen to 
+# items since otherwise it 
+func disable_salad_item_collision():
+	pass

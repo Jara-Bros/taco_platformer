@@ -31,12 +31,13 @@ type = 2
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-position = Vector2(170, 305)
+position = Vector2(552, 246)
 
 [node name="ConveyerBelt" parent="." instance=ExtResource("7_u0krj")]
 position = Vector2(324, 307)
 
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
+visible = false
 
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(378, 225)
@@ -46,6 +47,6 @@ position = Vector2(445, 239)
 type = 1
 
 [node name="LeafBendPlatform" parent="." instance=ExtResource("9_jp3vp")]
-position = Vector2(258, 236)
+position = Vector2(298, 102)
 
 [editable path="Land"]
