@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtjh51dfyyc76"]
+[gd_scene load_steps=7 format=3 uid="uid://dtjh51dfyyc76"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/conveyer_belt/conveyer_belt.gd" id="1_pweov"]
+[ext_resource type="Script" path="res://levels/salad_dream/salad_item/conveyer_belt/end.gd" id="2_5qe6s"]
+[ext_resource type="PackedScene" uid="uid://jnqqu76ofbye" path="res://levels/salad_dream/game_hud/meal_status_hud.tscn" id="3_f3ox2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpebp"]
 size = Vector2(164, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vih3"]
 size = Vector2(167, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdspi"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_mask = 3
@@ -33,6 +37,18 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_7vih3")
 
+[node name="End" type="Area2D" parent="."]
+position = Vector2(75, -15)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_5qe6s")
+hud_scene = ExtResource("3_f3ox2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+position = Vector2(80, 7)
+shape = SubResource("RectangleShape2D_tdspi")
+
 [connection signal="area_entered" from="ConveyerBelt" to="ConveyerBelt" method="_on_area_entered"]
 [connection signal="body_entered" from="ConveyerBelt" to="ConveyerBelt" method="_on_body_entered"]
 [connection signal="body_exited" from="ConveyerBelt" to="ConveyerBelt" method="_on_body_exited"]
+[connection signal="area_entered" from="End" to="End" method="_on_area_entered"]

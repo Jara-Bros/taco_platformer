@@ -8,9 +8,10 @@ size = Vector2(40, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3n8rq"]
 size = Vector2(42, 42)
 
-[node name="SaladItem" type="CharacterBody2D"]
+[node name="SaladItem" type="CharacterBody2D" groups=["salad_item"]]
 collision_layer = 8
 script = ExtResource("1_pc2r3")
+item_type = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -20.0
@@ -33,6 +34,13 @@ shape = SubResource("RectangleShape2D_3n8rq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 24.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 16
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

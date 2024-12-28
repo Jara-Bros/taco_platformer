@@ -5,10 +5,20 @@ var player: Player
 @export var offset: int = -40
 var invincible : bool
 var collect_tween : Tween
+@export_enum("KALE", "LETTUCE", "TOMATOES") var item_type
+var current_type
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if item_type == 0:
+		$ColorRect.color = Color.GREEN
+		current_type = "KALE"
+	elif item_type == 1:
+		$ColorRect.color = Color.AZURE
+		current_type = "LETTUCE"
+	elif item_type == 2:
+		$ColorRect.color = Color.RED
+		current_type = "TOMATOES"
+	$Label.text = current_type
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,7 +29,7 @@ func _process(delta):
 		$Timer.start()
 		invincible = true
 		
-		
+
 
 func _physics_process(delta):
 
@@ -47,7 +57,9 @@ func _on_area_2d_body_entered(body):
 		set_collision_layer_value(4, false)
 		collect_tween.tween_property(self, "position", player.position + Vector2(0, offset), 0.15)
 		collected = true
-	
+
+func set_item_type(item):
+	item_type = item
 
 func add_collision_layer():
 	set_collision_mask_value(1, true)

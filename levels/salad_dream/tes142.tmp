@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=9 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
 [ext_resource type="PackedScene" uid="uid://dtjh51dfyyc76" path="res://levels/salad_dream/salad_item/conveyer_belt/conveyer_belt.tscn" id="7_u0krj"]
 [ext_resource type="PackedScene" uid="uid://idwicpo18mhb" path="res://levels/salad_dream/game_hud/salad_hud.tscn" id="8_5scqi"]
-[ext_resource type="PackedScene" uid="uid://dfitd643ung0c" path="res://platforms/leaf_bend_platforms/leaf_bend_platform.tscn" id="9_jp3vp"]
 
 [node name="TestSaladDream" type="Node2D"]
 script = ExtResource("1_51ja2")
@@ -24,9 +23,8 @@ points = PackedVector2Array(-3, -2, 0, 359, 639, 359, 639, -1, 599, -3, 597, 142
 [node name="Taco" parent="." instance=ExtResource("2_12vjq")]
 position = Vector2(240, 299)
 
-[node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
+[node name="SaladItemBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(75, 200)
-type = 2
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
@@ -37,15 +35,5 @@ position = Vector2(170, 305)
 position = Vector2(324, 307)
 
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
-
-[node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(378, 225)
-
-[node name="LettuceBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(445, 239)
-type = 1
-
-[node name="LeafBendPlatform" parent="." instance=ExtResource("9_jp3vp")]
-position = Vector2(258, 236)
 
 [editable path="Land"]

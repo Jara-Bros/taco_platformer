@@ -1,12 +1,12 @@
 extends Area2D
 
-var items : int
 var player : Player = null
 @export var full : bool = false
 var collected : bool = false
 var collect_tween : Tween
 var invincible : bool = false
 var dropped : bool = false
+var ingredients = []
 @export var on_conveyer: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,19 +45,11 @@ func tween_complete():
 	set_collision_layer_value(4, true)
 	invincible = false
 
-func _on_area_entered(area):
-	if full == false:
-		items += 1
-		area.get_parent().queue_free()
-	
-	# do this to initiate glowing sequence
-	if items == 3:
-		full = true
-		
+
+
 func lock_to_conveyer_belt():
 	if ItemManager.on_conveyor == true:
 		var conveyer = get_tree().get_first_node_in_group("conveyor")
-		print(conveyer)
 		global_position = conveyer.global_position + Vector2(-50, -10)
 		collected = false
 		on_conveyer = true
@@ -66,8 +58,19 @@ func _on_body_entered(body):
 	if body.is_in_group("Player") and full:
 		$Label.visible = true
 		player = body
+	elif body.is_in_group("salad_item"):
+		if full == false:
+			ingredients.append(body.current_type)
+			body.queue_free()
+			print(ingredients)
 		
-
+	
+	# do this to initiate glowing sequence
+		if ingredients.size() == 3:
+			full = true
+		
+func get_ingredients_in_bowl():
+	return ingredients
 
 func _on_body_exited(body):
 	$Label.visible = false

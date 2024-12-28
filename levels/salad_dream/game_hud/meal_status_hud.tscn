@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://jnqqu76ofbye"]
+
+[ext_resource type="Script" path="res://levels/salad_dream/game_hud/meal_status_hud.gd" id="1_hncb0"]
+
+[node name="MealStatusHud" type="CanvasLayer" groups=["status_hud"]]
+script = ExtResource("1_hncb0")
+current_status = "GOOD"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 147.0
+offset_right = 312.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.0862745, 0, 0, 1)
+theme_override_font_sizes/font_size = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
