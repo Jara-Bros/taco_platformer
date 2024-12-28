@@ -8,20 +8,38 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "sous_angry",
+"default_portrait": "sous_idle",
 "description": "",
 "display_name": "Sous",
 "mirror": false,
 "nicknames": ["Sous"],
 "offset": Vector2(0, 0),
 "portraits": {
-"sous_angry": {
+"sous_idle": {
 "export_overrides": {
-"image": "\"res://NPC/sprites/sous/sous_angry.png\""
+"image": "\"res://NPC/sprites/sous/sous_idle_vn.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.9,
+"scene": ""
+},
+"sous_talk": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/sous/sous_talk_vn.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.9,
+"scene": ""
+},
+"sous_talk_2": {
+"export_overrides": {
+"image": "\"res://NPC/sprites/sous/sous_talk_2_vn.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.9,
 "scene": ""
 }
 },

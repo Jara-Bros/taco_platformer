@@ -1,20 +1,14 @@
 extends Node2D
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var sous: AnimatedSprite2D = $Sous
+@onready var taco_kitchen: AnimatedSprite2D = $TacoKitchen
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animation_player.play("taco_kitchen_move")
 	Dialogic.start("sous_timeline")
+	anim_player.play("taco_kitchen_move")
 	await Dialogic.timeline_ended
-	Dialogic.start("sous_2_timeline")
-	sous.play("default")
-	await Dialogic.timeline_ended
+	taco_kitchen.visible = false
 	SceneManager.set_initial_scene("SaladDream")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://858vqubg78k0"]
+
+[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_66io1"]
+
+[node name="SaladDreamV2" type="Node2D"]
+
+[node name="Land" parent="." instance=ExtResource("1_66io1")]
+
+[node name="Polygon2D" parent="Land" index="0"]
+polygon = PackedVector2Array(-192, -8, -192, 16, 192, 16, 192, -8)
+
+[node name="Line2D" parent="Land" index="1"]
+points = PackedVector2Array(-192, -8, -192, 16, 192, 16, 192, -8, -192, -8)
+
+[node name="Land2" parent="." instance=ExtResource("1_66io1")]
+
+[node name="Polygon2D" parent="Land2" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land2" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
+[node name="Land3" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(0, -88)
+
+[node name="Polygon2D" parent="Land3" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land3" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
+[node name="Land4" parent="." instance=ExtResource("1_66io1")]
+position = Vector2(136, -40)
+
+[node name="Polygon2D" parent="Land4" index="0"]
+polygon = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64)
+
+[node name="Line2D" parent="Land4" index="1"]
+points = PackedVector2Array(-64, -64, -64, -48, 8, -48, 8, -64, -64, -64)
+
+[editable path="Land"]
+[editable path="Land2"]
+[editable path="Land3"]
+[editable path="Land4"]

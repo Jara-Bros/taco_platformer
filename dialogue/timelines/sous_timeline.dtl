@@ -1,5 +1,7 @@
-[style name="text_only_style"]
-sous: How those salads lookin' T?
+join sous (sous_idle) leftmost
+[wait time="1.0"]
+sous (sous_talk): How those salads lookin' T?
 sous: You're not lost in the weeds, right?
 [wait time="1.0"]
+sous (sous_talk_2): T?
 [end_timeline]
