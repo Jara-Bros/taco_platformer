@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=20 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_12vjq"]
+[ext_resource type="PackedScene" uid="uid://bqen57gwilu4m" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_bowl_hud/salad_bowl_hud.tscn" id="3_x00q6"]
 [ext_resource type="PackedScene" uid="uid://cqqlkjgnw2qj2" path="res://levels/salad_dream/salad_item/salad_item_box.tscn" id="4_sfhdy"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_wfu06"]
 [ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
@@ -10,6 +11,22 @@
 [ext_resource type="Texture2D" uid="uid://brnswle34hihu" path="res://levels/salad_dream/sprites/kale_box.png" id="7_rih05"]
 [ext_resource type="PackedScene" uid="uid://idwicpo18mhb" path="res://levels/salad_dream/game_hud/salad_hud.tscn" id="8_5scqi"]
 [ext_resource type="Texture2D" uid="uid://co3fojqoxmj8r" path="res://levels/salad_dream/sprites/cheese_box.png" id="8_dwla7"]
+[ext_resource type="PackedScene" uid="uid://b6ajwb31q0n2v" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.tscn" id="12_vyk4b"]
+
+[sub_resource type="Animation" id="Animation_ua64r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(192, 128)]
+}
 
 [sub_resource type="Animation" id="Animation_0iptr"]
 resource_name = "move"
@@ -28,7 +45,13 @@ tracks/0/keys = {
 "values": [Vector2(192, 128), Vector2(92, 128)]
 }
 
-[sub_resource type="Animation" id="Animation_ua64r"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_caqbn"]
+_data = {
+"RESET": SubResource("Animation_ua64r"),
+"move": SubResource("Animation_0iptr")
+}
+
+[sub_resource type="Animation" id="Animation_pnu4u"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,13 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(192, 128)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_caqbn"]
-_data = {
-"RESET": SubResource("Animation_ua64r"),
-"move": SubResource("Animation_0iptr")
+"values": [Vector2(264, 136)]
 }
 
 [sub_resource type="Animation" id="Animation_77ogk"]
@@ -66,21 +83,6 @@ tracks/0/keys = {
 "values": [Vector2(264, 136), Vector2(364, 136)]
 }
 
-[sub_resource type="Animation" id="Animation_pnu4u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(264, 136)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3qgr1"]
 _data = {
 "RESET": SubResource("Animation_pnu4u"),
@@ -94,6 +96,12 @@ size = Vector2(128, 16)
 script = ExtResource("1_51ja2")
 
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
+
+[node name="SaladBowlHud" parent="." instance=ExtResource("3_x00q6")]
+offset_left = 151.0
+offset_top = 360.0
+offset_right = 348.0
+offset_bottom = 490.0
 
 [node name="Taco" parent="." instance=ExtResource("2_12vjq")]
 position = Vector2(240, 299)
@@ -231,9 +239,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_dwla7")
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-position = Vector2(312, 296)
+position = Vector2(312, 321)
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
+
+[node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
+position = Vector2(122, 199)
 
 [editable path="Land"]
 [editable path="Land2"]

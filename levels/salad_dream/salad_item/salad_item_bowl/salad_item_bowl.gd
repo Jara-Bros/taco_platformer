@@ -60,17 +60,32 @@ func _on_body_entered(body):
 		player = body
 		
 	elif body.is_in_group("salad_item"):
-		if full == false:
-			ingredients.append(body.current_type)
-			body.queue_free()
+		add_ingredient(body)
 		
 	
 	# do this to initiate glowing sequence
-		if ingredients.size() == 3:
+		if ingredients.size() > 0:
 			full = true
+	
+func add_ingredient(body):
+	if full == false:
 		
+		ingredients.append(body.current_type)
+		body.queue_free()
+		var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
+		if body.current_type == "KALE":
+			bowl_hud.increment_kale()
+		elif body.current_type == "CHEESE":
+			bowl_hud.increment_cheese()
+		else:
+			bowl_hud.increment_tomato()
+	
 func get_ingredients_in_bowl():
 	return ingredients
+
+func clear():
+	ingredients.clear()
+	full = false
 
 func _on_body_exited(body):
 	$Label.visible = false
