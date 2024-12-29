@@ -239,7 +239,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_dwla7")
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
+<<<<<<< Updated upstream
 position = Vector2(312, 321)
+=======
+position = Vector2(248, 312)
+>>>>>>> Stashed changes
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
