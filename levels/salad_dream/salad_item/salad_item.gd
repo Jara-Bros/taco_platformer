@@ -7,20 +7,31 @@ var invincible : bool
 var collect_tween : Tween
 @export_enum("KALE", "CHEESE", "TOMATOES") var item_type
 var current_type
-# Called when the node enters the scene tree for the first time.
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+var cheese_image = Image.load_from_file("res://levels/salad_dream/sprites/cheese_item.png")
+var cheese_texture = ImageTexture.create_from_image(cheese_image)
+
+var kale_image = Image.load_from_file("res://levels/salad_dream/sprites/kale_item.png")
+var kale_texture = ImageTexture.create_from_image(kale_image)
+
+var tomato_image = Image.load_from_file("res://levels/salad_dream/sprites/tomato_item.png")
+var tomato_texture = ImageTexture.create_from_image(tomato_image)
+
+
 func _ready():
 	if item_type == 0:
-		$ColorRect.color = Color.GREEN
+		$Sprite2D.texture = kale_texture
 		current_type = "KALE"
 	elif item_type == 1:
-		$ColorRect.color = Color.AZURE
+		$Sprite2D.texture = cheese_texture
 		current_type = "CHEESE"
 	elif item_type == 2:
-		$ColorRect.color = Color.RED
+		$Sprite2D.texture = tomato_texture
 		current_type = "TOMATOES"
-	$Label.text = current_type
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if Input.is_action_just_pressed("item"):
 		collected = false
