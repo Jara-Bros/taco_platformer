@@ -7,10 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if player_on != null:
-		player_on.position.x += 50 * delta
+ 
 
 
 func _on_area_entered(area):

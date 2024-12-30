@@ -11,19 +11,16 @@ func _process(delta):
 	pass
 	
 
-
-
-
-
 func _on_area_entered(area):
-	if area.is_in_group("bowl"):
+	if area.is_in_group("bowl") and area.collected == false:
 		var tickets = get_tree().get_nodes_in_group("ticket")
 		var ticket_found = null
 		for ticket in tickets:
 			var ingredients = area.get_ingredients_in_bowl()
 			if ticket.compare_ticket_ingredients(ingredients):
 				ticket_found = ticket
-		area.queue_free()
+				break
+		#area.queue_free()
 		var hud = hud_scene.instantiate()
 		if ticket_found != null:
 			ticket_found.queue_free()
@@ -32,5 +29,15 @@ func _on_area_entered(area):
 		else:
 			hud.set_type("BAD")
 		
-		
+		area.reset_bowl()
 		get_tree().current_scene.add_child(hud)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		$Label.visible = true
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		$Label.visible = false

@@ -28,7 +28,12 @@ func add_ingredient_to_ticket(text):
 
 func get_ticket_ingredients():
 	return ingredients
-
+func _to_string() -> String:
+	var final = ""
+	for ing in ingredients:
+		final += ing
+		final += " - "
+	return final
 func compare_ticket_ingredients(other):
 	for ing in ingredients:
 		if ing not in other:
@@ -37,4 +42,12 @@ func compare_ticket_ingredients(other):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$ColorRect/TimeLeft.text = str(int($Timer.time_left))
+	
+
+
+func _on_timer_timeout() -> void:
+	var hud = get_tree().get_first_node_in_group("salad_hud")
+	hud.decrease_taco_life()
+	$Timer.start()
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=18 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
@@ -8,89 +8,27 @@
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_wfu06"]
 [ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
 [ext_resource type="Texture2D" uid="uid://1hn0dnt13rjh" path="res://levels/salad_dream/sprites/tomato_box.png" id="6_i8da6"]
+[ext_resource type="PackedScene" uid="uid://dtjh51dfyyc76" path="res://levels/salad_dream/salad_item/conveyer_belt/conveyer_belt.tscn" id="6_iw03v"]
 [ext_resource type="Texture2D" uid="uid://brnswle34hihu" path="res://levels/salad_dream/sprites/kale_box.png" id="7_rih05"]
 [ext_resource type="PackedScene" uid="uid://idwicpo18mhb" path="res://levels/salad_dream/game_hud/salad_hud.tscn" id="8_5scqi"]
 [ext_resource type="Texture2D" uid="uid://co3fojqoxmj8r" path="res://levels/salad_dream/sprites/cheese_box.png" id="8_dwla7"]
 [ext_resource type="PackedScene" uid="uid://b6ajwb31q0n2v" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.tscn" id="12_vyk4b"]
-
-[sub_resource type="Animation" id="Animation_ua64r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(192, 128)]
-}
-
-[sub_resource type="Animation" id="Animation_0iptr"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(192, 128), Vector2(92, 128)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_caqbn"]
-_data = {
-"RESET": SubResource("Animation_ua64r"),
-"move": SubResource("Animation_0iptr")
-}
-
-[sub_resource type="Animation" id="Animation_pnu4u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(264, 136)]
-}
-
-[sub_resource type="Animation" id="Animation_77ogk"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(264, 136), Vector2(364, 136)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3qgr1"]
-_data = {
-"RESET": SubResource("Animation_pnu4u"),
-"move": SubResource("Animation_77ogk")
-}
+[ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="14_yaafx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82ea4"]
 size = Vector2(128, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_30a3t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 10.6714, -3.75784, 0, 0, 0, 0, 34.8688, -54.2602)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_38j2k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 10.6714, -3.75784, 0, 0, 0, 0, -13.526, 46.7445)
+}
+point_count = 2
 
 [node name="TestSaladDream" type="Node2D"]
 script = ExtResource("1_51ja2")
@@ -118,10 +56,10 @@ points = PackedVector2Array(-448, 0, -448, 360, 608, 360, 608, 440, 824, 440, 81
 position = Vector2(-168, 264)
 
 [node name="Polygon2D" parent="Land2" index="0"]
-polygon = PackedVector2Array(-24, -16, -24, 72, 120, 72, 240, 72)
+polygon = PackedVector2Array(-24, 0, -24, 72, 120, 72, 240, 72)
 
 [node name="Line2D" parent="Land2" index="1"]
-points = PackedVector2Array(-24, -16, -24, 72, 120, 72, 240, 72, -24, -16)
+points = PackedVector2Array(-24, 0, -24, 72, 120, 72, 240, 72, -24, 0)
 
 [node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
 position = Vector2(672, 344)
@@ -133,7 +71,7 @@ polygon = PackedVector2Array(-32, -16, -24, 16, 48, 56, 80, -48, 24, -16)
 points = PackedVector2Array(-32, -16, -24, 16, 48, 56, 80, -48, 24, -16, -32, -16)
 
 [node name="Land4" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(520, 192)
+position = Vector2(520, 152)
 
 [node name="Polygon2D" parent="Land4" index="0"]
 polygon = PackedVector2Array(-24, -16, -24, 16, 160, 16, 160, -16)
@@ -142,16 +80,16 @@ polygon = PackedVector2Array(-24, -16, -24, 16, 160, 16, 160, -16)
 points = PackedVector2Array(-24, -16, -24, 16, 160, 16, 160, -16, -24, -16)
 
 [node name="Land5" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(456, 256)
+position = Vector2(464, 256)
 
 [node name="Polygon2D" parent="Land5" index="0"]
-polygon = PackedVector2Array(-64, -48, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24)
+polygon = PackedVector2Array(-96, -72, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24)
 
 [node name="Line2D" parent="Land5" index="1"]
-points = PackedVector2Array(-64, -48, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24, -64, -48)
+points = PackedVector2Array(-96, -72, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24, -96, -72)
 
 [node name="Land6" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(232, 216)
+position = Vector2(224, 192)
 
 [node name="Polygon2D" parent="Land6" index="0"]
 polygon = PackedVector2Array(-72, -8, -72, 16, 144, 16, 144, -8)
@@ -160,7 +98,7 @@ polygon = PackedVector2Array(-72, -8, -72, 16, 144, 16, 144, -8)
 points = PackedVector2Array(-72, -8, -72, 16, 144, 16, 144, -8, -72, -8)
 
 [node name="Land9" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(32, 232)
+position = Vector2(24, 248)
 
 [node name="Polygon2D" parent="Land9" index="0"]
 polygon = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16)
@@ -168,64 +106,39 @@ polygon = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16)
 [node name="Line2D" parent="Land9" index="1"]
 points = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16, -32, -16)
 
-[node name="Land7" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(192, 128)
-
-[node name="Polygon2D" parent="Land7" index="0"]
-polygon = PackedVector2Array(-32, 8, -32, 24, 32, 24, 32, 8)
-
-[node name="Line2D" parent="Land7" index="1"]
-points = PackedVector2Array(-32, 8, -32, 24, 32, 24, 32, 8, -32, 8)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Land7"]
-libraries = {
-"": SubResource("AnimationLibrary_caqbn")
-}
-autoplay = "move"
-
-[node name="Land8" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(264, 136)
-
-[node name="Polygon2D" parent="Land8" index="0"]
-polygon = PackedVector2Array(-32, -16, 32, -16, 32, 0, -32, 0)
-
-[node name="Line2D" parent="Land8" index="1"]
-points = PackedVector2Array(-32, -16, 32, -16, 32, 0, -32, 0, -32, -16)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Land8"]
-libraries = {
-"": SubResource("AnimationLibrary_3qgr1")
-}
-autoplay = "move"
+[node name="ConveyorBelt" parent="." instance=ExtResource("6_iw03v")]
+position = Vector2(144, 72)
 
 [node name="DropOffPlat" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(256, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropOffPlat"]
+position = Vector2(128, -128)
 shape = SubResource("RectangleShape2D_82ea4")
 one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="DropOffPlat"]
-offset_left = -64.0
-offset_top = -8.0
-offset_right = 64.0
-offset_bottom = 8.0
+offset_left = 72.0
+offset_top = -136.0
+offset_right = 200.0
+offset_bottom = -120.0
 color = Color(0.2, 0.0588235, 1, 1)
 
 [node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(-152, 176)
+position = Vector2(-152, 200)
 type = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="TomatoBox"]
-position = Vector2(-8, -7.99999)
+[node name="Sprite2D2" type="Sprite2D" parent="TomatoBox"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_i8da6")
 
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(664, 112)
+position = Vector2(664, 56)
+type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="KaleBox"]
-position = Vector2(-8.00001, -8)
+position = Vector2(1.52588e-05, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_rih05")
 
@@ -234,17 +147,24 @@ position = Vector2(720, 232)
 type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CheeseBox"]
-position = Vector2(-8.00001, -8.00001)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_dwla7")
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-position = Vector2(312, 321)
+position = Vector2(240, 328)
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
-position = Vector2(248, 264)
+position = Vector2(328, 248)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("14_yaafx")]
+position = Vector2(88, 104)
+curve = SubResource("Curve2D_30a3t")
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("14_yaafx")]
+position = Vector2(256, 136)
+curve = SubResource("Curve2D_38j2k")
 
 [editable path="Land"]
 [editable path="Land2"]
@@ -253,5 +173,3 @@ position = Vector2(248, 264)
 [editable path="Land5"]
 [editable path="Land6"]
 [editable path="Land9"]
-[editable path="Land7"]
-[editable path="Land8"]

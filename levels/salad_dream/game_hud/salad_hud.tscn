@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/salad_dream/game_hud/salad_hud.gd" id="1_dmty6"]
 [ext_resource type="PackedScene" uid="uid://cog0fb53n1kpy" path="res://levels/salad_dream/ticket/Ticket.tscn" id="2_523l5"]
 
-[node name="SaladHud" type="CanvasLayer"]
+[node name="SaladHud" type="CanvasLayer" groups=["salad_hud"]]
 script = ExtResource("1_dmty6")
 ticket_scene = ExtResource("2_523l5")
 
@@ -27,20 +27,20 @@ offset_right = 174.0
 offset_bottom = 37.0
 text = "Tickets: "
 
-[node name="timer_label" type="Label" parent="."]
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 65.0
-offset_bottom = 35.0
-text = "Timer: "
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 50.0
+wait_time = 180.0
 autostart = true
 
 [node name="TicketTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 autostart = true
+
+[node name="TacoLives" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 16.0
+offset_right = 592.0
+offset_bottom = 39.0
+text = "Lives: 3"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TicketTimer" to="." method="_on_ticket_timer_timeout"]

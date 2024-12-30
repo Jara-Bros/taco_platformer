@@ -1,27 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqqlkjgnw2qj2"]
+[gd_scene load_steps=5 format=3 uid="uid://cqqlkjgnw2qj2"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_box.gd" id="1_skg3k"]
 [ext_resource type="PackedScene" uid="uid://cc5wnxcj5hpue" path="res://levels/salad_dream/salad_item/salad_item.tscn" id="2_45nvt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0n2k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cs8d"]
 size = Vector2(32, 32)
 
-[node name="SaladItemBox" type="Area2D"]
-collision_layer = 8
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0n2k"]
+size = Vector2(32, 8)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_skg3k")
 salad_item_packed_scene = ExtResource("2_45nvt")
-type = 0
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(0.121569, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, -8)
+shape = SubResource("RectangleShape2D_8cs8d")
+
+[node name="SaladItemBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladItemBox"]
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_o0n2k")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="SaladItemBox" to="." method="_on_salad_item_box_body_entered"]

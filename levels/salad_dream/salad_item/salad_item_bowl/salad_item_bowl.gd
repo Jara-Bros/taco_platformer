@@ -8,8 +8,10 @@ var invincible : bool = false
 var dropped : bool = false
 var ingredients = []
 @export var on_conveyer: bool
+var start_position: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	start_position = position
 	$Label.visible = false
 	pass # Replace with function body.
 
@@ -17,10 +19,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_pressed("item") and collected == false and $Label.visible:
+	if Input.is_action_just_pressed("item") and collected == false and $Label.visible and ItemManager.get_items_list() == 0:
 		item_tween()
 	if Input.is_action_just_pressed("item") and collected == true and invincible == false:
 		lock_to_conveyer_belt()
+	if player != null and get_overlapping_bodies().has(player)and ingredients.size() > 0:
+		$Label.visible = true
 	
 	#if dropped == true:
 		#position.y += 50 * delta
@@ -48,23 +52,20 @@ func tween_complete():
 
 
 func lock_to_conveyer_belt():
-	if ItemManager.on_conveyor == true:
-		var conveyer = get_tree().get_first_node_in_group("conveyor")
-		global_position = conveyer.global_position + Vector2(-50, -10)
-		collected = false
-		on_conveyer = true
+	collected = false
+	position = player.position
 
 func _on_body_entered(body):
-	if body.is_in_group("Player") and full:
-		$Label.visible = true
+	if body.is_in_group("Player"):
 		player = body
-		
-	elif body.is_in_group("salad_item"):
+	if body.is_in_group("salad_item"):
 		add_ingredient(body)
 		
 	
+		
+	
 	# do this to initiate glowing sequence
-		if ingredients.size() > 0:
+		if ingredients.size() > 3:
 			full = true
 	
 func add_ingredient(body):
@@ -94,3 +95,10 @@ func _on_body_exited(body):
 # items since otherwise it 
 func disable_salad_item_collision():
 	pass
+
+func reset_bowl():
+	position = start_position
+	ingredients = []
+	var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
+	bowl_hud.clear()
+	
