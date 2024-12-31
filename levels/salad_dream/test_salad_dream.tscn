@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=25 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_12vjq"]
 [ext_resource type="PackedScene" uid="uid://bqen57gwilu4m" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_bowl_hud/salad_bowl_hud.tscn" id="3_x00q6"]
+[ext_resource type="FontFile" uid="uid://c7wtyxbed0ksl" path="res://gui/fonts/Winter Prime Monoline.ttf" id="4_ggxdd"]
 [ext_resource type="PackedScene" uid="uid://cqqlkjgnw2qj2" path="res://levels/salad_dream/salad_item/salad_item_box.tscn" id="4_sfhdy"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_wfu06"]
 [ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
@@ -14,21 +15,25 @@
 [ext_resource type="Texture2D" uid="uid://co3fojqoxmj8r" path="res://levels/salad_dream/sprites/cheese_box.png" id="8_dwla7"]
 [ext_resource type="PackedScene" uid="uid://b6ajwb31q0n2v" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.tscn" id="12_vyk4b"]
 [ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="14_yaafx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82ea4"]
-size = Vector2(128, 16)
+[ext_resource type="Texture2D" uid="uid://cd7yvy38td6ii" path="res://levels/salad_dream/sprites/mozz_wheel.png" id="15_ciue2"]
+[ext_resource type="Texture2D" uid="uid://bbspipyjkautb" path="res://levels/salad_dream/sprites/cutting_board.png" id="16_1l2vr"]
+[ext_resource type="Texture2D" uid="uid://bbptw5rlhg7wt" path="res://levels/salad_dream/sprites/kale_pack.png" id="17_qm0uh"]
+[ext_resource type="Texture2D" uid="uid://d3f5fo34ruf30" path="res://levels/salad_dream/sprites/kitchen_shelf.png" id="18_a416p"]
+[ext_resource type="Texture2D" uid="uid://te236jnox7vy" path="res://levels/salad_dream/sprites/tomato_item.png" id="19_3nx1a"]
+[ext_resource type="Texture2D" uid="uid://cvwn76o3o3lls" path="res://levels/salad_dream/sprites/waiter_tray.png" id="20_xlu3l"]
+[ext_resource type="Texture2D" uid="uid://c68msbglbqjl2" path="res://levels/salad_dream/sprites/bowl_ticket.png" id="22_osjsq"]
 
 [sub_resource type="Curve2D" id="Curve2D_30a3t"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10.6714, -3.75784, 0, 0, 0, 0, 34.8688, -54.2602)
+"points": PackedVector2Array(0, 0, 0, 0, -41.1802, 104.461, 0, 0, 0, 0, 34.8688, -54.2602)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_38j2k"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10.6714, -3.75784, 0, 0, 0, 0, -13.526, 46.7445)
+"points": PackedVector2Array(0, 0, 0, 0, 48.6959, -83.1187, 0, 0, 0, 0, 10.6714, -3.75783, 0, 0, 0, 0, -10.0693, 39.5298, 0, 0, 0, 0, -13.526, 46.7445)
 }
-point_count = 2
+point_count = 4
 
 [node name="TestSaladDream" type="Node2D"]
 script = ExtResource("1_51ja2")
@@ -36,10 +41,90 @@ script = ExtResource("1_51ja2")
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
 
 [node name="SaladBowlHud" parent="." instance=ExtResource("3_x00q6")]
+z_index = 3
 offset_left = 151.0
 offset_top = 360.0
 offset_right = 348.0
 offset_bottom = 490.0
+color = Color(1, 1, 1, 1)
+
+[node name="Kale" parent="SaladBowlHud" index="0"]
+anchor_top = -0.169231
+anchor_right = 0.167513
+anchor_bottom = 0.0846154
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ggxdd")
+theme_override_font_sizes/font_size = 50
+
+[node name="Cheese" parent="SaladBowlHud" index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0406091
+anchor_top = -0.0846154
+anchor_right = 0.467005
+anchor_bottom = 0.169231
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ggxdd")
+theme_override_font_sizes/font_size = 50
+
+[node name="Cheese1" parent="SaladBowlHud" index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461929
+anchor_top = 0.0384615
+anchor_right = 0.461929
+anchor_bottom = 0.0384615
+
+[node name="Cheese2" parent="SaladBowlHud" index="6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461929
+anchor_top = 0.0384615
+anchor_right = 0.461929
+anchor_bottom = 0.0384615
+
+[node name="Cheese3" parent="SaladBowlHud" index="7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461929
+anchor_top = 0.0384615
+anchor_right = 0.461929
+anchor_bottom = 0.0384615
+
+[node name="Tomato" parent="SaladBowlHud" index="8"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0406091
+anchor_top = 0.0692308
+anchor_right = 0.502538
+anchor_bottom = 0.323077
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ggxdd")
+theme_override_font_sizes/font_size = 50
+
+[node name="Tomato1" parent="SaladBowlHud" index="9"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.456853
+anchor_top = 0.184615
+anchor_right = 0.456853
+anchor_bottom = 0.184615
+
+[node name="Tomato2" parent="SaladBowlHud" index="10"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.456853
+anchor_top = 0.184615
+anchor_right = 0.456853
+anchor_bottom = 0.184615
+
+[node name="Tomato3" parent="SaladBowlHud" index="11"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.456853
+anchor_top = 0.184615
+anchor_right = 0.456853
+anchor_bottom = 0.184615
 
 [node name="Taco" parent="." instance=ExtResource("2_12vjq")]
 position = Vector2(240, 299)
@@ -47,86 +132,37 @@ position = Vector2(240, 299)
 [node name="Land" parent="." instance=ExtResource("1_1cd3f")]
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(-448, 0, -448, 360, 608, 360, 608, 440, 824, 440, 816, 0, 752, 0, 752, 408, 656, 408, 640, 376, 640, 336, 440, 336, -192, 336, -192, 0)
+color = Color(0.607843, 0.678431, 0.717647, 1)
+polygon = PackedVector2Array(-176, 0, -176, 360, 744, 360, 744, 0, 704, 0, 704, 272, 576, 272, 576.474, 336, -136, 336, -136, 0)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(-448, 0, -448, 360, 608, 360, 608, 440, 824, 440, 816, 0, 752, 0, 752, 408, 656, 408, 640, 376, 640, 336, 440, 336, -192, 336, -192, 0, -448, 0)
+points = PackedVector2Array(-176, 0, -176, 360, 744, 360, 744, 0, 704, 0, 704, 272, 576, 272, 576.474, 336, -136, 336, -136, 0, -176, 0)
 
 [node name="Land2" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(-168, 264)
+visible = false
+position = Vector2(-120, 264)
 
 [node name="Polygon2D" parent="Land2" index="0"]
-polygon = PackedVector2Array(-24, 0, -24, 72, 120, 72, 240, 72)
+polygon = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72)
 
 [node name="Line2D" parent="Land2" index="1"]
-points = PackedVector2Array(-24, 0, -24, 72, 120, 72, 240, 72, -24, 0)
-
-[node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(672, 344)
-
-[node name="Polygon2D" parent="Land3" index="0"]
-polygon = PackedVector2Array(-32, -16, -24, 16, 48, 56, 80, -48, 24, -16)
-
-[node name="Line2D" parent="Land3" index="1"]
-points = PackedVector2Array(-32, -16, -24, 16, 48, 56, 80, -48, 24, -16, -32, -16)
+points = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72, -16, -64)
 
 [node name="Land4" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(520, 152)
+position = Vector2(547, 152)
 
 [node name="Polygon2D" parent="Land4" index="0"]
-polygon = PackedVector2Array(-24, -16, -24, 16, 160, 16, 160, -16)
+color = Color(0.607843, 0.678431, 0.717647, 1)
+polygon = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -88, 93, -88, 93, -32, 37, -32, 36.7894, 0)
 
 [node name="Line2D" parent="Land4" index="1"]
-points = PackedVector2Array(-24, -16, -24, 16, 160, 16, 160, -16, -24, -16)
+points = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -88, 93, -88, 93, -32, 37, -32, 36.7894, 0, -27, 0)
 
-[node name="Land5" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(464, 256)
-
-[node name="Polygon2D" parent="Land5" index="0"]
-polygon = PackedVector2Array(-96, -72, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24)
-
-[node name="Line2D" parent="Land5" index="1"]
-points = PackedVector2Array(-96, -72, -96, 24, -24, 80, 88, 80, 80, 48, 32, 32, 0, -24, -96, -72)
-
-[node name="Land6" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(224, 192)
-
-[node name="Polygon2D" parent="Land6" index="0"]
-polygon = PackedVector2Array(-72, -8, -72, 16, 144, 16, 144, -8)
-
-[node name="Line2D" parent="Land6" index="1"]
-points = PackedVector2Array(-72, -8, -72, 16, 144, 16, 144, -8, -72, -8)
-
-[node name="Land9" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(24, 248)
-
-[node name="Polygon2D" parent="Land9" index="0"]
-polygon = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16)
-
-[node name="Line2D" parent="Land9" index="1"]
-points = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16, -32, -16)
-
-[node name="ConveyorBelt" parent="." instance=ExtResource("6_iw03v")]
-position = Vector2(144, 72)
-
-[node name="DropOffPlat" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(256, 64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DropOffPlat"]
-position = Vector2(128, -128)
-shape = SubResource("RectangleShape2D_82ea4")
-one_way_collision = true
-
-[node name="ColorRect" type="ColorRect" parent="DropOffPlat"]
-offset_left = 72.0
-offset_top = -136.0
-offset_right = 200.0
-offset_bottom = -120.0
-color = Color(0.2, 0.0588235, 1, 1)
+[node name="DropOffPlat" parent="." instance=ExtResource("6_iw03v")]
+position = Vector2(144, 112)
 
 [node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(-152, 200)
+position = Vector2(-104, 141)
 type = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="TomatoBox"]
@@ -134,7 +170,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_i8da6")
 
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(664, 56)
+position = Vector2(664, -48)
 type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="KaleBox"]
@@ -143,7 +179,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_rih05")
 
 [node name="CheeseBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(720, 232)
+position = Vector2(656, 200)
 type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="CheeseBox"]
@@ -156,20 +192,184 @@ position = Vector2(240, 328)
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
-position = Vector2(328, 248)
+position = Vector2(376, 248)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("14_yaafx")]
-position = Vector2(88, 104)
+position = Vector2(144, 216)
 curve = SubResource("Curve2D_30a3t")
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("14_yaafx")]
-position = Vector2(256, 136)
+position = Vector2(336, 184)
 curve = SubResource("Curve2D_38j2k")
 
+[node name="PathFollow2D" parent="MovingPlatform2" index="0"]
+position = Vector2(48.6959, -83.1187)
+rotation = 2.01761
+
+[node name="AnimatableBody2D" parent="MovingPlatform2" index="1"]
+position = Vector2(48.6959, -83.1187)
+rotation = 2.01761
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="2"]
+position = Vector2(8.84533e-05, 7.99998)
+rotation = 3.14159
+
+[node name="MozzWheel" type="Sprite2D" parent="."]
+position = Vector2(640, 304)
+scale = Vector2(1.25, 1.5)
+texture = ExtResource("15_ciue2")
+
+[node name="MozzWheel2" type="Sprite2D" parent="."]
+position = Vector2(904, 352)
+scale = Vector2(1.25, 1.5)
+texture = ExtResource("15_ciue2")
+
+[node name="MozzWheel3" type="Sprite2D" parent="."]
+position = Vector2(792, 320)
+rotation = -1.5708
+scale = Vector2(1.25, 1.5)
+texture = ExtResource("15_ciue2")
+
+[node name="CuttingBoard" type="Sprite2D" parent="."]
+position = Vector2(-44.7533, 269.57)
+rotation = -0.960752
+scale = Vector2(0.361058, 1.87757)
+texture = ExtResource("16_1l2vr")
+
+[node name="KalePack2" type="Sprite2D" parent="."]
+position = Vector2(672, 128)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack3" type="Sprite2D" parent="."]
+position = Vector2(608, 128)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack" type="Sprite2D" parent="."]
+position = Vector2(672, 80)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack4" type="Sprite2D" parent="."]
+position = Vector2(920, 184)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack5" type="Sprite2D" parent="."]
+position = Vector2(920, 136)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack6" type="Sprite2D" parent="."]
+position = Vector2(784, 184)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack7" type="Sprite2D" parent="."]
+position = Vector2(784, 136)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack9" type="Sprite2D" parent="."]
+position = Vector2(848, 184)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack10" type="Sprite2D" parent="."]
+position = Vector2(848, 136)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack11" type="Sprite2D" parent="."]
+position = Vector2(848, 16)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack12" type="Sprite2D" parent="."]
+position = Vector2(920, 16)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KalePack8" type="Sprite2D" parent="."]
+position = Vector2(776, 16)
+scale = Vector2(1.25, 1)
+texture = ExtResource("17_qm0uh")
+
+[node name="KitchenShelf3" type="Sprite2D" parent="."]
+position = Vector2(8, 608)
+scale = Vector2(5, 4)
+texture = ExtResource("18_a416p")
+
+[node name="KitchenShelf4" type="Sprite2D" parent="."]
+position = Vector2(560, 608)
+scale = Vector2(5, 4)
+texture = ExtResource("18_a416p")
+
+[node name="KitchenShelf5" type="Sprite2D" parent="."]
+position = Vector2(288, 608)
+scale = Vector2(5, 4)
+texture = ExtResource("18_a416p")
+
+[node name="KitchenShelf" type="Sprite2D" parent="."]
+position = Vector2(-280, 184)
+scale = Vector2(5, 4)
+texture = ExtResource("18_a416p")
+
+[node name="KitchenShelf2" type="Sprite2D" parent="."]
+position = Vector2(848, 176)
+scale = Vector2(5, 4)
+texture = ExtResource("18_a416p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-200, 192)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-208, 160)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-232, 192)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-248, 160)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-272, 192)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-320, 192)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-208, 368)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(-256, 368)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(-304, 368)
+texture = ExtResource("19_3nx1a")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(228, 112)
+scale = Vector2(1.6875, 1.375)
+texture = ExtResource("20_xlu3l")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(280, 428)
+scale = Vector2(2.125, 2.625)
+texture = ExtResource("22_osjsq")
+
+[editable path="SaladBowlHud"]
 [editable path="Land"]
 [editable path="Land2"]
-[editable path="Land3"]
 [editable path="Land4"]
-[editable path="Land5"]
-[editable path="Land6"]
-[editable path="Land9"]
+[editable path="MovingPlatform2"]
