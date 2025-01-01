@@ -107,7 +107,7 @@ polygon = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16)
 points = PackedVector2Array(-32, -16, -32, 16, 96, 16, 96, -16, -32, -16)
 
 [node name="ConveyorBelt" parent="." instance=ExtResource("6_iw03v")]
-position = Vector2(144, 72)
+position = Vector2(143, 72)
 
 [node name="DropOffPlat" type="StaticBody2D" parent="."]
 visible = false

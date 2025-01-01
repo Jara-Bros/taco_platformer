@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://oqa0cqp2ks2c"]
+
+[ext_resource type="Script" path="res://levels/texico_ski/backdrop/backdrop.gd" id="1_oi6kc"]
+[ext_resource type="PackedScene" uid="uid://b1opsi833lbk3" path="res://levels/texico_ski/backdrop/chip/Chip.tscn" id="2_dh5o7"]
+
+[node name="Backdrop" type="Node2D"]
+script = ExtResource("1_oi6kc")
+chip = ExtResource("2_dh5o7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 641.0
+offset_bottom = 363.0
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 179.0
+offset_top = -91.0
+offset_right = 413.0
+offset_bottom = 653.0
+rotation = -0.951621
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -237.0
+offset_top = 228.0
+offset_right = -30.0
+offset_bottom = 887.0
+rotation = -0.913027
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Spawnrect" type="ColorRect" parent="."]
+visible = false
+offset_left = 297.0
+offset_top = 312.0
+offset_right = 641.0
+offset_bottom = 360.0
+color = Color(0, 1, 1, 1)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

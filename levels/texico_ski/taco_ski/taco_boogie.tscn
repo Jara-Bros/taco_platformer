@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://78x5qmlegq2w"]
+
+[ext_resource type="Script" path="res://levels/texico_ski/taco_ski/taco_boogie.gd" id="1_03qki"]
+[ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_o6lqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw0u3"]
+size = Vector2(26, 14)
+
+[sub_resource type="Curve2D" id="Curve2D_pxqlg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -0.977315, 0.211789, 0, 0, 0, 0, -30.4534, -40.2253, 0, 0, 0, 0, -0.146322, -0.344493)
+}
+point_count = 3
+
+[node name="TacoBoogie" type="CharacterBody2D" groups=["player"]]
+position = Vector2(0.929957, 0.367667)
+rotation = 0.589905
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_03qki")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("1_o6lqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -7)
+shape = SubResource("RectangleShape2D_tw0u3")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_pxqlg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-0.977315, 0.211789)
+rotation = -2.20068
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
