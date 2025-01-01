@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu6idm6qmeax4"]
+[gd_scene load_steps=7 format=3 uid="uid://cu6idm6qmeax4"]
 
 [ext_resource type="Script" path="res://platforms/moving_platform/moving_platform.gd" id="1_pev7k"]
+[ext_resource type="Texture2D" uid="uid://bnj0m5vwni20w" path="res://levels/salad_dream/sprites/japanese_knife.png" id="2_8bo6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv3u3"]
-size = Vector2(40, 16)
+size = Vector2(120.118, 24.5351)
 
 [sub_resource type="Animation" id="Animation_ilikd"]
 length = 0.001
@@ -59,8 +60,10 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(8, 0)
 rotation = -1.10715
+scale = Vector2(1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D"]
+visible = false
 offset_left = -16.0
 offset_top = -8.0
 offset_right = 24.0
@@ -68,8 +71,11 @@ offset_bottom = 8.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(4, 0)
+position = Vector2(0.354412, 4.03507)
 shape = SubResource("RectangleShape2D_lv3u3")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_8bo6v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

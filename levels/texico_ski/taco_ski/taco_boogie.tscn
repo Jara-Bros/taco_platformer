@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://78x5qmlegq2w"]
+[gd_scene load_steps=7 format=3 uid="uid://78x5qmlegq2w"]
 
 [ext_resource type="Script" path="res://levels/texico_ski/taco_ski/taco_boogie.gd" id="1_03qki"]
 [ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_o6lqv"]
@@ -11,6 +11,14 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -0.977315, 0.211789, 0, 0, 0, 0, -30.4534, -40.2253, 0, 0, 0, 0, -0.146322, -0.344493)
 }
 point_count = 3
+
+[sub_resource type="Animation" id="Animation_osnxl"]
+resource_name = "in_aiir"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqh6b"]
+_data = {
+"in_aiir": SubResource("Animation_osnxl")
+}
 
 [node name="TacoBoogie" type="CharacterBody2D" groups=["player"]]
 position = Vector2(0.929957, 0.367667)
@@ -35,3 +43,6 @@ position = Vector2(-0.977315, 0.211789)
 rotation = -2.20068
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wqh6b")
+}
