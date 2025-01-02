@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bimfonq63vlhp"]
+
+[ext_resource type="PackedScene" uid="uid://oqa0cqp2ks2c" path="res://levels/texico_ski/backdrop/backdrop.tscn" id="1_7tai8"]
+[ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/texico_ski/taco_ski/taco_boogie.tscn" id="1_pq5oh"]
+
+[node name="TexicoSki" type="Node2D"]
+
+[node name="Backdrop" parent="." instance=ExtResource("1_7tai8")]
+
+[node name="TacoBoogie" parent="." instance=ExtResource("1_pq5oh")]
+position = Vector2(102, 119)
