@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://idwicpo18mhb"]
+[gd_scene load_steps=4 format=3 uid="uid://idwicpo18mhb"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/game_hud/salad_hud.gd" id="1_dmty6"]
 [ext_resource type="PackedScene" uid="uid://cog0fb53n1kpy" path="res://levels/salad_dream/ticket/Ticket.tscn" id="2_523l5"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="3_ommsp"]
 
 [node name="SaladHud" type="CanvasLayer" groups=["salad_hud"]]
 script = ExtResource("1_dmty6")
 ticket_scene = ExtResource("2_523l5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 641.0
-offset_bottom = 56.0
-color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+offset_top = 16.0
+offset_right = 640.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 0.501961)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
 z_index = 1
@@ -21,11 +23,13 @@ offset_bottom = 102.0
 theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="."]
-offset_left = 111.0
-offset_top = 14.0
-offset_right = 174.0
-offset_bottom = 37.0
-text = "Tickets: "
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 182.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_ommsp")
+theme_override_font_sizes/font_size = 30
+text = "Salad Orders: "
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 180.0
@@ -36,11 +40,13 @@ wait_time = 15.0
 autostart = true
 
 [node name="TacoLives" type="Label" parent="."]
-offset_left = 552.0
+offset_left = 400.0
 offset_top = 16.0
-offset_right = 592.0
-offset_bottom = 39.0
-text = "Lives: 3"
+offset_right = 616.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("3_ommsp")
+theme_override_font_sizes/font_size = 30
+text = "Dead Orders:"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TicketTimer" to="." method="_on_ticket_timer_timeout"]

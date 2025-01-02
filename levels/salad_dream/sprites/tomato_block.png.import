@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c68msbglbqjl2"
-path="res://.godot/imported/bowl_ticket.png-c297f51a917985b95937efa60806a429.ctex"
+uid="uid://b3p03eviu47u1"
+path="res://.godot/imported/tomato_block.png-b7e03b3e504e03d1f9576dc8cb0716f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/salad_dream/sprites/bowl_ticket.png"
-dest_files=["res://.godot/imported/bowl_ticket.png-c297f51a917985b95937efa60806a429.ctex"]
+source_file="res://levels/salad_dream/sprites/tomato_block.png"
+dest_files=["res://.godot/imported/tomato_block.png-b7e03b3e504e03d1f9576dc8cb0716f1.ctex"]
 
 [params]
 

@@ -1,5 +1,9 @@
 class_name Ticket extends Control
 
+
+var ticket_font = load("res://gui/fonts/dialogue_box/pokemon-emerald.ttf")
+
+
 # 0 == 
 var possible_ingredients_map = {
 	0: "KALE",
@@ -17,14 +21,17 @@ func _ready():
 	for ing in ingredients:
 		add_ingredient_to_ticket(ing)
 
+
 func add_ingredient_to_ticket(text):
 	var label = Label.new()
 	label.text = text 
-	label.add_theme_font_size_override("font_size", 6)
+	label.add_theme_font_size_override("font_size", 15)
+	label.add_theme_font_override("font", ticket_font)
 	label.add_theme_color_override("font_color", Color.BLACK)
 	var vBox = VBoxContainer.new()
 	vBox.add_child(label)
 	$ColorRect/MainContainer.add_child(vBox)
+
 
 func get_ticket_ingredients():
 	return ingredients
@@ -44,7 +51,6 @@ func compare_ticket_ingredients(other):
 func _process(delta):
 	$ColorRect/TimeLeft.text = str(int($Timer.time_left))
 	
-
 
 func _on_timer_timeout() -> void:
 	var hud = get_tree().get_first_node_in_group("salad_hud")

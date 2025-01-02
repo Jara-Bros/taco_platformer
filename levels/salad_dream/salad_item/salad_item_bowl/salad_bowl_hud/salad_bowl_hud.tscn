@@ -1,106 +1,109 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqen57gwilu4m"]
+[gd_scene load_steps=5 format=3 uid="uid://bqen57gwilu4m"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_bowl_hud/salad_bowl_hud.gd" id="1_p0gir"]
+[ext_resource type="Texture2D" uid="uid://ccto8irr4upr8" path="res://levels/salad_dream/sprites/checkmark.png" id="2_nsedc"]
+[ext_resource type="Texture2D" uid="uid://bplbneyvyii2y" path="res://levels/salad_dream/sprites/post_it_note.png" id="2_q7q1t"]
+[ext_resource type="FontFile" uid="uid://crex8u4nl138b" path="res://gui/fonts/PixelOperator8.ttf" id="3_rrp46"]
 
-[node name="SaladBowlHud" type="ColorRect" groups=["bowl_hud"]]
-offset_left = 226.0
-offset_top = 242.0
-offset_right = 423.0
-offset_bottom = 372.0
-color = Color(0, 0, 0, 1)
+[node name="SaladBowlHud" type="Node2D" groups=["bowl_hud"]]
 script = ExtResource("1_p0gir")
 metadata/_edit_use_anchors_ = true
 
+[node name="PostItNote" type="Sprite2D" parent="."]
+position = Vector2(94, 56)
+scale = Vector2(3.0625, 1.75)
+texture = ExtResource("2_q7q1t")
+
 [node name="Kale" type="Label" parent="."]
-layout_mode = 2
 offset_left = 9.0
 offset_top = 14.0
 offset_right = 67.0
 offset_bottom = 37.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rrp46")
 text = "Kale
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Kale1" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="KaleCheck1" type="Sprite2D" parent="."]
+position = Vector2(80, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Kale2" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="KaleCheck2" type="Sprite2D" parent="."]
+position = Vector2(104, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Kale3" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="KaleCheck3" type="Sprite2D" parent="."]
+position = Vector2(128, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Cheese" type="Label" parent="."]
-layout_mode = 0
 offset_left = 9.0
 offset_top = 43.0
 offset_right = 65.0
 offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rrp46")
 text = "Cheese"
 metadata/_edit_use_anchors_ = true
 
-[node name="Cheese1" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 51.0
-offset_right = 89.0
-offset_bottom = 63.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="CheeseCheck1" type="Sprite2D" parent="."]
+position = Vector2(112, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Cheese2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 105.0
-offset_top = 51.0
-offset_right = 116.0
-offset_bottom = 62.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="CheeseCheck2" type="Sprite2D" parent="."]
+position = Vector2(136, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Cheese3" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 132.0
-offset_top = 52.0
-offset_right = 145.0
-offset_bottom = 64.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="CheeseCheck3" type="Sprite2D" parent="."]
+position = Vector2(160, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Tomato" type="Label" parent="."]
-layout_mode = 0
 offset_left = 9.0
 offset_top = 71.0
 offset_right = 49.0
 offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_rrp46")
 text = "Tomato"
 metadata/_edit_use_anchors_ = true
 
-[node name="Tomato1" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 79.0
-offset_top = 80.0
-offset_right = 91.0
-offset_bottom = 93.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="TomCheck1" type="Sprite2D" parent="."]
+position = Vector2(112, 80)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Tomato2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 80.0
-offset_right = 116.0
-offset_bottom = 92.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="TomCheck2" type="Sprite2D" parent="."]
+position = Vector2(136, 80)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Tomato3" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 132.0
-offset_top = 80.0
-offset_right = 145.0
-offset_bottom = 92.0
-color = Color(0.152941, 0.152941, 0.152941, 1)
+[node name="TomCheck3" type="Sprite2D" parent="."]
+position = Vector2(160, 80)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nsedc")
+hframes = 2
 metadata/_edit_use_anchors_ = true

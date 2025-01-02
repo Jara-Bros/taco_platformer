@@ -22,7 +22,7 @@ func _on_salad_item_box_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player")) and is_under(body):
 		var salad_instance = salad_item_packed_scene.instantiate()
 		salad_instance.set_item_type(type)
-		salad_instance.position = position + Vector2(0, -100)
+		salad_instance.position = position + Vector2(0, -50)
 		get_tree().current_scene.call_deferred("add_child", salad_instance)
 
 func is_under(body) -> bool:
