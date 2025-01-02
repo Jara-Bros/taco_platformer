@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://qhi37o0lkxqa" path="res://levels/salad_dream/sprites/kale_box - Copy.png" id="10_ajjdh"]
 [ext_resource type="Texture2D" uid="uid://bgharlxhlx8xd" path="res://levels/salad_dream/sprites/cheese_block.png" id="11_03gj2"]
 [ext_resource type="PackedScene" uid="uid://b6ajwb31q0n2v" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.tscn" id="12_vyk4b"]
-[ext_resource type="Texture2D" uid="uid://dpiuhyi64c1tu" path="res://levels/salad_dream/sprites/salad_bowl.png" id="14_lknbe"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="14_sx3ws"]
 [ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="14_yaafx"]
 [ext_resource type="Texture2D" uid="uid://cd7yvy38td6ii" path="res://levels/salad_dream/sprites/mozz_wheel.png" id="15_ciue2"]
 [ext_resource type="Texture2D" uid="uid://bbspipyjkautb" path="res://levels/salad_dream/sprites/cutting_board.png" id="16_1l2vr"]
@@ -209,7 +209,7 @@ position = Vector2(192, 336)
 [node name="Land" parent="." instance=ExtResource("1_1cd3f")]
 
 [node name="Polygon2D" parent="Land" index="0"]
-color = Color(0.607843, 0.678431, 0.717647, 1)
+color = Color(0.215686, 0.580392, 0.431373, 1)
 polygon = PackedVector2Array(-176, 0, -176, 360, 459.432, 360, 581.78, 360, 744, 360, 744, 0, 706, -9, 706, 276, 581, 273, 576, 319, 582, 336, 467.289, 336, -136, 336, -136, 0)
 
 [node name="Line2D" parent="Land" index="1"]
@@ -229,14 +229,27 @@ points = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72, -16, -64)
 position = Vector2(552, 136)
 
 [node name="Polygon2D" parent="Land4" index="0"]
-color = Color(0.607843, 0.678431, 0.717647, 1)
-polygon = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0)
+color = Color(0.215686, 0.580392, 0.431373, 1)
+polygon = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0)
 
 [node name="Line2D" parent="Land4" index="1"]
-points = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0, -27, 0)
+points = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0, -71, 0)
 
 [node name="DropOffPlat" parent="." instance=ExtResource("6_iw03v")]
-position = Vector2(216, 64)
+position = Vector2(165, 64)
+
+[node name="Label" parent="DropOffPlat/End" index="1"]
+visible = false
+offset_left = -96.0
+offset_right = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_sx3ws")
+theme_override_font_sizes/font_size = 16
+
+[node name="ServerTray" type="Sprite2D" parent="DropOffPlat"]
+position = Vector2(80, 8.00001)
+scale = Vector2(1.6875, 1.375)
+texture = ExtResource("20_xlu3l")
 
 [node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(-104, 120)
@@ -282,15 +295,27 @@ libraries = {
 z_index = 2
 position = Vector2(240, 328)
 
-[node name="Sprite2D" parent="SaladItemBowl" index="1"]
-position = Vector2(0, -40)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("14_lknbe")
+[node name="Sprite2D" parent="SaladItemBowl" index="0"]
+position = Vector2(0, -38)
+
+[node name="CollisionShape2D" parent="SaladItemBowl" index="1"]
+position = Vector2(0, -20)
+
+[node name="Label" parent="SaladItemBowl" index="2"]
+offset_left = -88.0
+offset_top = -72.0
+offset_right = 88.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_sx3ws")
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
 position = Vector2(160, 224)
+
+[node name="Sprite2D" parent="SaladClearBox" index="0"]
+scale = Vector2(0.625, 0.640625)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("14_yaafx")]
 position = Vector2(432, 176)
@@ -454,23 +479,11 @@ texture = ExtResource("19_3nx1a")
 position = Vector2(-304, 368)
 texture = ExtResource("19_3nx1a")
 
-[node name="ServerTray" type="Sprite2D" parent="."]
-position = Vector2(296, 72)
-scale = Vector2(1.6875, 1.375)
-texture = ExtResource("20_xlu3l")
-
-[node name="Label" type="Label" parent="ServerTray"]
-offset_left = -33.1852
-offset_top = 17.4545
-offset_right = 33.8148
-offset_bottom = 40.4545
-text = "Drop Off"
-
 [node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(64, -48)
+position = Vector2(18, -49)
 
 [node name="Polygon2D" parent="Land3" index="0"]
-color = Color(0.607843, 0.678431, 0.717647, 1)
+color = Color(0.215686, 0.580392, 0.431373, 1)
 polygon = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128)
 
 [node name="Line2D" parent="Land3" index="1"]
@@ -480,6 +493,7 @@ points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="Land4"]
+[editable path="DropOffPlat"]
 [editable path="TomatoBox"]
 [editable path="SaladItemBowl"]
 [editable path="SaladClearBox"]

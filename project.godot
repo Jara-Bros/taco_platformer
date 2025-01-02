@@ -84,6 +84,7 @@ directories/dtl_directory={
 "mr_p_initial_talk": "res://dialogue/timelines/mr_p/mr_p_initial_talk.dtl",
 "opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
+"salad_dream_instruction": "res://dialogue/timelines/hints/salad_dream_instruction.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
 "sous_offscreen_1": "res://dialogue/timelines/sous_offscreen_1.dtl",
 "sous_offscreen_2": "res://dialogue/timelines/sous_offscreen_2.dtl",
@@ -94,7 +95,7 @@ directories/dtl_directory={
 "woz_timeline": "res://dialogue/timelines/woz_timeline.dtl",
 "wozku_timeline": "res://dialogue/timelines/wozku_timeline.dtl"
 }
-layout/style_list=["res://gui/fonts/dialogue_box/visual_novel.tres"]
+layout/style_list=["res://gui/fonts/dialogue_box/visual_novel.tres", "res://dialogue/styles/hint.tres"]
 layout/default_style="res://gui/fonts/dialogue_box/visual_novel.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"

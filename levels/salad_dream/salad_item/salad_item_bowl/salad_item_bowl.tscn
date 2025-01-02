@@ -1,23 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx532vx4gga6"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.gd" id="1_raa87"]
-[ext_resource type="Texture2D" uid="uid://dwpauimgye33a" path="res://levels/salad_dream/sprites/salad_bowl - Copy.png" id="2_puxaq"]
+[ext_resource type="Texture2D" uid="uid://dpiuhyi64c1tu" path="res://levels/salad_dream/sprites/salad_bowl.png" id="2_s1d72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydd5o"]
-size = Vector2(65, 40)
+size = Vector2(80, 48)
 
 [node name="SaladItemBowl" type="Area2D" groups=["bowl"]]
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_raa87")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -12)
-shape = SubResource("RectangleShape2D_ydd5o")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -24)
-texture = ExtResource("2_puxaq")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_s1d72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ydd5o")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -40.0
