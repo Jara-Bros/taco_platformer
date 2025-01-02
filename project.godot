@@ -72,6 +72,8 @@ directories/dtl_directory={
 "jeff_2_timeline": "res://dialogue/timelines/jeff_2_timeline.dtl",
 "jeff_timeline": "res://dialogue/timelines/jeff_timeline.dtl",
 "kitchen_sequence": "res://dialogue/timelines/kitchen_sequence.dtl",
+"kitchen_sequence_three": "res://dialogue/timelines/kitchen_sequence_three.dtl",
+"kitchen_sequence_two": "res://dialogue/timelines/kitchen_sequence_two.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
 "manager_20_timeline": "res://dialogue/timelines/manager_20_timeline.dtl",
 "manager_2_timeline": "res://dialogue/timelines/manager_2_timeline.dtl",
@@ -79,6 +81,7 @@ directories/dtl_directory={
 "manager_offscreen_1_timeline": "res://dialogue/timelines/manager_offscreen_1_timeline.dtl",
 "manager_offscreen_2_timeline": "res://dialogue/timelines/manager_offscreen_2_timeline.dtl",
 "manager_timeline": "res://dialogue/timelines/manager_timeline.dtl",
+"mr_p_initial_talk": "res://dialogue/timelines/mr_p/mr_p_initial_talk.dtl",
 "opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
@@ -102,10 +105,10 @@ text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.05
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
-animations/join_default_wait=true
+animations/join_default_wait=false
 animations/leave_default_length=0.5
-animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/leave_default_wait=false
+animations/cross_fade_default_length=0.0
 animations/cross_fade_default_wait=true
 choices/autofocus_first=true
 choices/delay=0.2
@@ -120,8 +123,9 @@ choices/hotkey_behaviour=1
 text/autoadvance_enabled=false
 text/autoadvance_fixed_delay=0.5
 text/autocolor_names=true
-animations/join_default="res://addons/dialogic/Modules/Character/DefaultAnimations/instant_in_out.gd"
+animations/join_default="Instant In"
 audio/max_channels=4.0
+animations/leave_default="Instant Out"
 
 [display]
 

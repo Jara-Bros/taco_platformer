@@ -1,11 +1,23 @@
-join mr_p (mr_p_talk) right
+join mr_p (mr_p_idle) right
 join jeff (jeff_idle) left [mirrored="true"]
-mr_p: WHERE MY SALADS FOR TABLE 14 T?
+mr_p (mr_p_talk): Let's not repeat last week's \
+disaster yeah?
+join mr_p (mr_p_idle) right
 [wait time="1.0"]
-join mr_p (mr_p_talk) right [mirrored="true"]
+join mr_p (mr_p_idle) right [mirrored="true"]
+[wait time="1.0"]
 mr_p (mr_p_talk): Wake up Geff.
 join jeff (jeff_idle) left
 mr_p (mr_p_talk): I'm gonna need hands on this one.
+jeff (jeff_talk): You got it.
+join mr_p (mr_p_idle) right [mirrored="true"]
+join jeff (jeff_idle) left [mirrored="true"]
+[wait time="1.0"]
+mr_p (mr_p_talk): Hey Geff.
+join jeff left
+jeff (jeff_talk): Yeah?
+join jeff (jeff_idle) left
+mr_p (mr_p_talk): Why aren't you wearing shoes?
 leave mr_p [animation="Instant Out"]
 leave jeff [animation="Instant Out"]
 [end_timeline]

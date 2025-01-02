@@ -1,0 +1,13 @@
+join jeff (jeff_idle) left
+join mr_p right [mirrored="true"]
+mr_p (mr_p_talk): What?
+update mr_p (mr_p_idle)
+jeff (jeff_talk): My toes. It's good to air them out\
+from time to time.
+update jeff (jeff_idle)
+[wait time="1.0"]
+update mr_p (mr_p_unamused) right [mirrored="true"]
+[wait time="1.0"]
+leave mr_p
+leave jeff
+[end_timeline]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b84l1bb5dcm5q"
-path="res://.godot/imported/kitchen_dish.png-d80c9bbc928e675d31630bad4830552a.ctex"
+uid="uid://cgkwn54iswlda"
+path="res://.godot/imported/mr_p_unamused.png-75e37ad2a4949a9c6ae9c388a514d597.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/empanada_twins/kitchen_dish.png"
-dest_files=["res://.godot/imported/kitchen_dish.png-d80c9bbc928e675d31630bad4830552a.ctex"]
+source_file="res://NPC/sprites/manager/mr_p_unamused.png"
+dest_files=["res://.godot/imported/mr_p_unamused.png-75e37ad2a4949a9c6ae9c388a514d597.ctex"]
 
 [params]
 
