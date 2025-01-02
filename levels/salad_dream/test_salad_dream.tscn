@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=35 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://qhi37o0lkxqa" path="res://levels/salad_dream/sprites/kale_box - Copy.png" id="10_ajjdh"]
 [ext_resource type="Texture2D" uid="uid://bgharlxhlx8xd" path="res://levels/salad_dream/sprites/cheese_block.png" id="11_03gj2"]
 [ext_resource type="PackedScene" uid="uid://b6ajwb31q0n2v" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.tscn" id="12_vyk4b"]
+[ext_resource type="Texture2D" uid="uid://dpiuhyi64c1tu" path="res://levels/salad_dream/sprites/salad_bowl.png" id="14_lknbe"]
 [ext_resource type="PackedScene" uid="uid://cu6idm6qmeax4" path="res://platforms/moving_platform/moving_platform.tscn" id="14_yaafx"]
 [ext_resource type="Texture2D" uid="uid://cd7yvy38td6ii" path="res://levels/salad_dream/sprites/mozz_wheel.png" id="15_ciue2"]
 [ext_resource type="Texture2D" uid="uid://bbspipyjkautb" path="res://levels/salad_dream/sprites/cutting_board.png" id="16_1l2vr"]
@@ -281,6 +282,11 @@ libraries = {
 z_index = 2
 position = Vector2(240, 328)
 
+[node name="Sprite2D" parent="SaladItemBowl" index="1"]
+position = Vector2(0, -40)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_lknbe")
+
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
@@ -475,6 +481,7 @@ points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
 [editable path="Land2"]
 [editable path="Land4"]
 [editable path="TomatoBox"]
+[editable path="SaladItemBowl"]
 [editable path="SaladClearBox"]
 [editable path="MovingPlatform2"]
 [editable path="Land3"]
