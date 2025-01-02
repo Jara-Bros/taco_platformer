@@ -1,15 +1,98 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2mtvr7ax7guf"]
+[gd_scene load_steps=14 format=3 uid="uid://d2mtvr7ax7guf"]
 
 [ext_resource type="Script" path="res://gui/menus/main_menu/main_menu.gd" id="1_fcjyx"]
 [ext_resource type="Theme" uid="uid://ddkpie7d28xv7" path="res://themes/default_theme.tres" id="1_odqg3"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="3_exrli"]
-[ext_resource type="Texture2D" uid="uid://yc2xt8dtxbfm" path="res://gui/menus/main_menu/t&b_title_page.png" id="3_unxp3"]
-[ext_resource type="Texture2D" uid="uid://dhfo3ntyog2xk" path="res://taco/sprites/taco_happy.png" id="5_33bxb"]
-[ext_resource type="Texture2D" uid="uid://tsp0thivk6u5" path="res://tBleu/sprites/bleu_happy.png" id="6_b2xwb"]
+[ext_resource type="Texture2D" uid="uid://ju0tqayaijmv" path="res://gui/menus/main_menu/t&b_main_face_sheet.png" id="7_ld8ly"]
+[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="8_lr0tc"]
 [ext_resource type="PackedScene" uid="uid://do8f436xagsiy" path="res://gui/screen_transitions/fade_black.tscn" id="8_solsw"]
-[ext_resource type="PackedScene" uid="uid://bermbu6qd8ncx" path="res://gui/boot_page/splash_pages.tscn" id="12_7oxl1"]
+[ext_resource type="Texture2D" uid="uid://16jnjshq4xa" path="res://gui/menus/main_menu/godot_logo.svg" id="9_0vowc"]
+
+[sub_resource type="Animation" id="Animation_0ycav"]
+resource_name = "face_change"
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"face_change"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nogij"]
+_data = {
+"face_change": SubResource("Animation_0ycav")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tflom"]
+
+[sub_resource type="Animation" id="Animation_xc6mg"]
+resource_name = "splash_pages"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StudioSplash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GodotSplash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7xbuy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StudioSplash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GodotSplash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g77bf"]
+_data = {
+"RESET": SubResource("Animation_7xbuy"),
+"splash_pages": SubResource("Animation_xc6mg")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,30 +104,81 @@ grow_vertical = 2
 theme = ExtResource("1_odqg3")
 script = ExtResource("1_fcjyx")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="MainFace" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("7_ld8ly")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFace"]
+libraries = {
+"": SubResource("AnimationLibrary_nogij")
+}
+autoplay = "face_change"
+
+[node name="MainFaceTwo" type="Sprite2D" parent="."]
+position = Vector2(160, 270)
+texture = ExtResource("7_ld8ly")
+hframes = 8
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFaceTwo"]
+libraries = {
+"": SubResource("AnimationLibrary_nogij")
+}
+autoplay = "face_change"
+
+[node name="MainFaceThree" type="Sprite2D" parent="."]
+position = Vector2(480, 90)
+texture = ExtResource("7_ld8ly")
+hframes = 8
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFaceThree"]
+libraries = {
+"": SubResource("AnimationLibrary_nogij")
+}
+autoplay = "face_change"
+
+[node name="MainFaceFour" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("7_ld8ly")
+hframes = 8
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFaceFour"]
+libraries = {
+"": SubResource("AnimationLibrary_nogij")
+}
+autoplay = "face_change"
+
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_unxp3")
+offset_left = 166.0
+offset_top = 87.0
+offset_right = 477.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_lr0tc")
+theme_override_font_sizes/font_size = 32
+text = "TACO 
+& 
+BLEU"
+horizontal_alignment = 1
 
-[node name="Taco" type="Sprite2D" parent="."]
-position = Vector2(120, 232)
-scale = Vector2(6, 6)
-texture = ExtResource("5_33bxb")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 218.0
+offset_right = 373.0
+offset_bottom = 316.0
+color = Color(0, 0, 0, 0.219608)
 
-[node name="Bleu" type="Sprite2D" parent="."]
-position = Vector2(520, 240)
-scale = Vector2(6, 6)
-texture = ExtResource("6_b2xwb")
-flip_h = true
-
-[node name="MarginMainMenuContainer" type="MarginContainer" parent="."]
+[node name="MarginMainMenuContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -24.0
-offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -52,12 +186,12 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="ButtonVBox" type="VBoxContainer" parent="MarginMainMenuContainer"]
+[node name="ButtonVBox" type="VBoxContainer" parent="ColorRect/MarginMainMenuContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="StartButton" type="Button" parent="MarginMainMenuContainer/ButtonVBox"]
+[node name="StartButton" type="Button" parent="ColorRect/MarginMainMenuContainer/ButtonVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -65,13 +199,14 @@ focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../QuitButton")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_exrli")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tflom")
 text = "Play"
+flat = true
 
-[node name="QuitButton" type="Button" parent="MarginMainMenuContainer/ButtonVBox"]
+[node name="QuitButton" type="Button" parent="ColorRect/MarginMainMenuContainer/ButtonVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -79,23 +214,52 @@ focus_neighbor_top = NodePath("../StartButton")
 focus_neighbor_bottom = NodePath("../StartButton")
 focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../StartButton")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_exrli")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="SplashPages" parent="." instance=ExtResource("12_7oxl1")]
-layout_mode = 1
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 autostart = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_solsw")]
 
-[connection signal="pressed" from="MarginMainMenuContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginMainMenuContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="GodotSplash" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.93845, 0.93845, 0.93845, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="GodotSplash"]
+position = Vector2(320, 184)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_0vowc")
+
+[node name="StudioSplash" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+
+[node name="Label" type="Label" parent="StudioSplash"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 176.0
+offset_right = 456.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("8_lr0tc")
+text = "JARA BROS. STUDIO"
+
+[node name="SplashPagePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g77bf")
+}
+autoplay = "splash_pages"
+
+[connection signal="pressed" from="ColorRect/MarginMainMenuContainer/ButtonVBox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginMainMenuContainer/ButtonVBox/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="CanvasLayer"]
