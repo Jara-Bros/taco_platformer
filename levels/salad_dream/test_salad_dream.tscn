@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://hqj76tcbrgcc"]
+[gd_scene load_steps=34 format=3 uid="uid://hqj76tcbrgcc"]
 
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="1_1cd3f"]
 [ext_resource type="Script" path="res://levels/salad_dream/test_salad_dream.gd" id="1_51ja2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b75te2x51lktb" path="res://levels/salad_dream/sprites/kitchen_floor_tile.png" id="2_ijtvx"]
 [ext_resource type="PackedScene" uid="uid://bqen57gwilu4m" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_bowl_hud/salad_bowl_hud.tscn" id="3_x00q6"]
 [ext_resource type="PackedScene" uid="uid://cqqlkjgnw2qj2" path="res://levels/salad_dream/salad_item/salad_item_box.tscn" id="4_sfhdy"]
+[ext_resource type="Texture2D" uid="uid://34db2sheef44" path="res://taco/sprites/taco_restaurant_animation_sheet.png" id="5_ra5ma"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_wfu06"]
 [ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
 [ext_resource type="PackedScene" uid="uid://dtjh51dfyyc76" path="res://levels/salad_dream/salad_item/conveyer_belt/conveyer_belt.tscn" id="6_iw03v"]
@@ -21,6 +22,141 @@
 [ext_resource type="Texture2D" uid="uid://d3f5fo34ruf30" path="res://levels/salad_dream/sprites/kitchen_shelf.png" id="18_a416p"]
 [ext_resource type="Texture2D" uid="uid://te236jnox7vy" path="res://levels/salad_dream/sprites/tomato_item.png" id="19_3nx1a"]
 [ext_resource type="Texture2D" uid="uid://cvwn76o3o3lls" path="res://levels/salad_dream/sprites/waiter_tray.png" id="20_xlu3l"]
+
+[sub_resource type="Animation" id="Animation_em0or"]
+resource_name = "box_hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tomato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CheeseBox/Cheese:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qp25n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tomato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CheeseBox/Cheese:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hywbd"]
+_data = {
+"RESET": SubResource("Animation_qp25n"),
+"box_hit": SubResource("Animation_em0or")
+}
+
+[sub_resource type="Animation" id="Animation_cr78w"]
+resource_name = "box_hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kale:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.52588e-05, 0), Vector2(0, -16), Vector2(1.52588e-05, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gvnxn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kale:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.52588e-05, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dewnx"]
+_data = {
+"RESET": SubResource("Animation_gvnxn"),
+"box_hit": SubResource("Animation_cr78w")
+}
+
+[sub_resource type="Animation" id="Animation_v821d"]
+resource_name = "box_hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cheese:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jjhvw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cheese:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_os6qk"]
+_data = {
+"RESET": SubResource("Animation_jjhvw"),
+"box_hit": SubResource("Animation_v821d")
+}
 
 [sub_resource type="Curve2D" id="Curve2D_30a3t"]
 _data = {
@@ -56,8 +192,11 @@ stretch_mode = 1
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
 
 [node name="Taco" parent="." instance=ExtResource("2_12vjq")]
-position = Vector2(240, 299)
+position = Vector2(224, 120)
 scale = Vector2(2, 2)
+
+[node name="Sprite2D" parent="Taco" index="1"]
+texture = ExtResource("5_ra5ma")
 
 [node name="Camera2D" parent="Taco" index="3"]
 position = Vector2(0, -9.5)
@@ -96,40 +235,56 @@ polygon = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -96, 93, -
 points = PackedVector2Array(-27, 0, -27, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0, -27, 0)
 
 [node name="DropOffPlat" parent="." instance=ExtResource("6_iw03v")]
-position = Vector2(216, 72)
+position = Vector2(216, 64)
 
 [node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(-104, 141)
+position = Vector2(-104, 120)
 type = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="TomatoBox"]
+[node name="Tomato" type="Sprite2D" parent="TomatoBox"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_3602r")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TomatoBox"]
+libraries = {
+"": SubResource("AnimationLibrary_hywbd")
+}
+
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(664, -24)
+position = Vector2(664, -56)
 type = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="KaleBox"]
+[node name="Kale" type="Sprite2D" parent="KaleBox"]
 position = Vector2(1.52588e-05, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_ajjdh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KaleBox"]
+libraries = {
+"": SubResource("AnimationLibrary_dewnx")
+}
 
 [node name="CheeseBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(656, 200)
 type = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="CheeseBox"]
+[node name="Cheese" type="Sprite2D" parent="CheeseBox"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_03gj2")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseBox"]
+libraries = {
+"": SubResource("AnimationLibrary_os6qk")
+}
+
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
+z_index = 2
 position = Vector2(240, 328)
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
-position = Vector2(160, 256)
+position = Vector2(160, 224)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("14_yaafx")]
 position = Vector2(432, 176)
@@ -294,7 +449,7 @@ position = Vector2(-304, 368)
 texture = ExtResource("19_3nx1a")
 
 [node name="ServerTray" type="Sprite2D" parent="."]
-position = Vector2(296, 80)
+position = Vector2(296, 72)
 scale = Vector2(1.6875, 1.375)
 texture = ExtResource("20_xlu3l")
 
@@ -306,7 +461,7 @@ offset_bottom = 40.4545
 text = "Drop Off"
 
 [node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(64, -40)
+position = Vector2(64, -48)
 
 [node name="Polygon2D" parent="Land3" index="0"]
 color = Color(0.607843, 0.678431, 0.717647, 1)
@@ -319,5 +474,7 @@ points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="Land4"]
+[editable path="TomatoBox"]
+[editable path="SaladClearBox"]
 [editable path="MovingPlatform2"]
 [editable path="Land3"]

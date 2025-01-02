@@ -10,5 +10,4 @@ func _ready() -> void:
 	Dialogic.start("sous_timeline")
 	anim_player.play("taco_kitchen_move")
 	await Dialogic.timeline_ended
-	taco_kitchen.visible = false
 	SceneManager.set_initial_scene("SaladDream")
