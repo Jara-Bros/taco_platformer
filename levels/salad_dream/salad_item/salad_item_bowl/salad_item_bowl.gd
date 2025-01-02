@@ -58,7 +58,7 @@ func lock_to_conveyer_belt():
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
-	if body.is_in_group("salad_item"):
+	if body.is_in_group("salad_item") and body.collected == false:
 		add_ingredient(body)
 		
 	

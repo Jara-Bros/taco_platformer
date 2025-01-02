@@ -5,6 +5,8 @@ var player: Player
 @export var offset: int = -40
 var invincible : bool
 var collect_tween : Tween
+var just_spawned = false
+var spawn_direction
 @export_enum("KALE", "CHEESE", "TOMATOES") var item_type
 var current_type
 
@@ -43,6 +45,10 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	if just_spawned == true:
+		velocity.x = 100 * spawn_direction
+		rotation += spawn_direction * 0.25
+	
 	if not is_on_floor() and not collected:
 		velocity.y += 450 * delta
 	# follow taco
@@ -51,7 +57,13 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	if(body.is_in_group("Player") and invincible == false and collected == false and ItemManager.get_items_list() <= 2):
+	#if body.is_in_group("land"):
+		#play_bounce_tween()
+	if just_spawned == true:
+		just_spawned = false
+		velocity.x = 0
+		rotation = 0
+	if(body.is_in_group("Player") and invincible == false and collected == false and holding_bowl() == false and ItemManager.get_items_list() <= 2):
 		ItemManager.add_to_items_list(self)
 		var item_list_size = ItemManager.get_items_list()
 		if(item_list_size == 0):
@@ -67,7 +79,17 @@ func _on_area_2d_body_entered(body):
 		set_collision_layer_value(4, false)
 		collect_tween.tween_property(self, "position", player.position + Vector2(0, offset), 0.15)
 		collected = true
+	
+func holding_bowl():
+	var bowl = get_tree().get_first_node_in_group("bowl")
+	if bowl.collected == true:
+		return true
+	return false
 
+#func play_bounce_tween():
+	#var tween : Tween = create_tween()
+	#tween.tween_property(self, "global_position:y", -20, 0.75).as_relative().set_ease(Tween.EASE_OUT)
+	#
 func set_item_type(item):
 	item_type = item
 

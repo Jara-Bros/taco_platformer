@@ -7,7 +7,7 @@
 size = Vector2(164, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdspi"]
-size = Vector2(170, 20)
+size = Vector2(143, 13)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_mask = 3
@@ -31,7 +31,7 @@ script = ExtResource("2_5qe6s")
 hud_scene = ExtResource("3_f3ox2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(8, 7)
+position = Vector2(7.5, 3.5)
 shape = SubResource("RectangleShape2D_tdspi")
 
 [node name="Label" type="Label" parent="End"]

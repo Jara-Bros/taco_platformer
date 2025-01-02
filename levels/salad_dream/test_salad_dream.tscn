@@ -24,6 +24,33 @@
 [ext_resource type="Texture2D" uid="uid://te236jnox7vy" path="res://levels/salad_dream/sprites/tomato_item.png" id="19_3nx1a"]
 [ext_resource type="Texture2D" uid="uid://cvwn76o3o3lls" path="res://levels/salad_dream/sprites/waiter_tray.png" id="20_xlu3l"]
 
+[sub_resource type="Animation" id="Animation_qp25n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tomato:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CheeseBox/Cheese:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_em0or"]
 resource_name = "box_hit"
 length = 0.4
@@ -52,37 +79,25 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_qp25n"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hywbd"]
+_data = {
+"RESET": SubResource("Animation_qp25n"),
+"box_hit": SubResource("Animation_em0or")
+}
+
+[sub_resource type="Animation" id="Animation_gvnxn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Tomato:position")
+tracks/0/path = NodePath("Kale:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CheeseBox/Cheese:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hywbd"]
-_data = {
-"RESET": SubResource("Animation_qp25n"),
-"box_hit": SubResource("Animation_em0or")
+"values": [Vector2(1.52588e-05, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_cr78w"]
@@ -101,25 +116,25 @@ tracks/0/keys = {
 "values": [Vector2(1.52588e-05, 0), Vector2(0, -16), Vector2(1.52588e-05, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_gvnxn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dewnx"]
+_data = {
+"RESET": SubResource("Animation_gvnxn"),
+"box_hit": SubResource("Animation_cr78w")
+}
+
+[sub_resource type="Animation" id="Animation_jjhvw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kale:position")
+tracks/0/path = NodePath("Cheese:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.52588e-05, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dewnx"]
-_data = {
-"RESET": SubResource("Animation_gvnxn"),
-"box_hit": SubResource("Animation_cr78w")
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v821d"]
@@ -136,21 +151,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jjhvw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cheese:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_os6qk"]
@@ -267,6 +267,7 @@ libraries = {
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(664, -56)
 type = 0
+spawn_direction = -1
 
 [node name="Kale" type="Sprite2D" parent="KaleBox"]
 position = Vector2(1.52588e-05, 0)
@@ -281,6 +282,7 @@ libraries = {
 [node name="CheeseBox" parent="." instance=ExtResource("4_sfhdy")]
 position = Vector2(656, 200)
 type = 1
+spawn_direction = -1
 
 [node name="Cheese" type="Sprite2D" parent="CheeseBox"]
 scale = Vector2(0.5, 0.5)
