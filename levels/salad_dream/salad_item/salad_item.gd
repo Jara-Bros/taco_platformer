@@ -5,6 +5,7 @@ var player: Player
 @export var offset: int = -40
 var invincible : bool
 var collect_tween : Tween
+var just_spawned = false
 @export_enum("KALE", "CHEESE", "TOMATOES") var item_type
 var current_type
 
@@ -43,6 +44,11 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	
+	if just_spawned:
+		velocity.y += 450 * delta
+		velocity.x = 400 * delta
+	
 	if not is_on_floor() and not collected:
 		velocity.y += 450 * delta
 	# follow taco
@@ -67,6 +73,7 @@ func _on_area_2d_body_entered(body):
 		set_collision_layer_value(4, false)
 		collect_tween.tween_property(self, "position", player.position + Vector2(0, offset), 0.15)
 		collected = true
+	just_spawned = false
 
 func set_item_type(item):
 	item_type = item
