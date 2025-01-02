@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6ajwb31q0n2v"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ajwb31q0n2v"]
 
-[ext_resource type="Texture2D" uid="uid://b2ghnkjf51myl" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/new_bowl_block.png" id="1_f2q5n"]
+[ext_resource type="Texture2D" uid="uid://nomab2m5e4kx" path="res://levels/salad_dream/sprites/new_bowl_block.png" id="1_0334b"]
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl_clear_box/salad_clear_box.gd" id="1_uq4hn"]
-[ext_resource type="FontFile" uid="uid://ki2wl54c4trl" path="res://gui/fonts/main_menu_title/PressStart2P-Regular.ttf" id="2_w2856"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oejmt"]
 size = Vector2(35, 37)
@@ -10,12 +9,49 @@ size = Vector2(35, 37)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqdqd"]
 size = Vector2(35.1875, 7)
 
+[sub_resource type="Animation" id="Animation_vw8uk"]
+resource_name = "box_hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.5, -5), Vector2(4.5, -21), Vector2(4.5, -5)]
+}
+
+[sub_resource type="Animation" id="Animation_nsd85"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.5, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dr38g"]
+_data = {
+"RESET": SubResource("Animation_nsd85"),
+"box_hit": SubResource("Animation_vw8uk")
+}
+
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.5, -5)
-scale = Vector2(0.609375, 0.625)
-texture = ExtResource("1_f2q5n")
+scale = Vector2(0.992188, 0.992188)
+texture = ExtResource("1_0334b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4.5, -5.5)
@@ -30,15 +66,9 @@ script = ExtResource("1_uq4hn")
 position = Vector2(4.40625, 11.5)
 shape = SubResource("RectangleShape2D_xqdqd")
 
-[node name="Label" type="Label" parent="SaladClearBox"]
-offset_left = -27.0
-offset_top = -14.0
-offset_right = 37.0
-offset_bottom = 21.0
-theme_override_fonts/font = ExtResource("2_w2856")
-theme_override_font_sizes/font_size = 8
-text = "NEW
-BOWL"
-horizontal_alignment = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dr38g")
+}
 
 [connection signal="body_entered" from="SaladClearBox" to="SaladClearBox" method="_on_body_entered"]
