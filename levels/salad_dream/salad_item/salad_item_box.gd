@@ -27,9 +27,8 @@ func _on_salad_item_box_body_entered(body: Node2D) -> void:
 		anim_player_2.play("box_hit")
 		var salad_instance = salad_item_packed_scene.instantiate()
 		salad_instance.set_item_type(type)
-		salad_instance.position = position + Vector2(0, -50)
-		salad_instance.just_spawned = true
-		salad_instance.spawn_direction = spawn_direction
+		salad_instance.position = position + Vector2(0, -100)
+		salad_instance.apply_impulse(Vector2(spawn_direction * 40,-200),salad_instance.position)
 		get_tree().current_scene.call_deferred("add_child", salad_instance)
 
 func is_under(body) -> bool:

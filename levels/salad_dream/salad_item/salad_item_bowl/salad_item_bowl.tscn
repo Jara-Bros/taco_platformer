@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx532vx4gga6"]
+[gd_scene load_steps=5 format=3 uid="uid://bx532vx4gga6"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.gd" id="1_raa87"]
 [ext_resource type="Texture2D" uid="uid://dpiuhyi64c1tu" path="res://levels/salad_dream/sprites/salad_bowl.png" id="2_s1d72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydd5o"]
-size = Vector2(80, 48)
+size = Vector2(80, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4i0l"]
+size = Vector2(87, 1)
 
 [node name="SaladItemBowl" type="Area2D" groups=["bowl"]]
 collision_layer = 8
@@ -17,7 +20,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_s1d72")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_ydd5o")
 
 [node name="Label" type="Label" parent="."]
@@ -27,6 +30,15 @@ offset_right = 41.0
 offset_bottom = -33.0
 text = "[F] Pick Up"
 
+[node name="SaladItemArea2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladItemArea2D"]
+position = Vector2(0, -34)
+shape = SubResource("RectangleShape2D_u4i0l")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="replacing_by" from="." to="." method="_on_replacing_by"]
+[connection signal="body_entered" from="SaladItemArea2D" to="." method="_on_salad_item_area_2d_body_entered"]

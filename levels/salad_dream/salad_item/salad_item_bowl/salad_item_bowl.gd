@@ -53,16 +53,12 @@ func tween_complete():
 
 func lock_to_conveyer_belt():
 	collected = false
-	position = player.position
+	position = player.position + Vector2(0, 20)
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
-	if body.is_in_group("salad_item") and body.collected == false:
-		add_ingredient(body)
-		
-	
-		
+		$Label.visible = true	
 	
 	# do this to initiate glowing sequence
 		if ingredients.size() > 3:
@@ -102,3 +98,9 @@ func reset_bowl():
 	var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
 	bowl_hud.clear()
 	
+
+
+func _on_salad_item_area_2d_body_entered(body):
+	print(body, )
+	if body.is_in_group("salad_item"):
+		add_ingredient(body)
