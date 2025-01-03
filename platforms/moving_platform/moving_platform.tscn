@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnj0m5vwni20w" path="res://levels/salad_dream/sprites/japanese_knife.png" id="2_8bo6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv3u3"]
-size = Vector2(120.118, 24.5351)
+size = Vector2(89.8521, 20.1164)
 
 [sub_resource type="Animation" id="Animation_ilikd"]
 length = 0.001
@@ -60,7 +60,6 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(8, 0)
 rotation = -1.10715
-scale = Vector2(1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="AnimatableBody2D"]
 visible = false
