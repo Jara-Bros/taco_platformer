@@ -10,8 +10,8 @@ script = ExtResource("1_p0gir")
 metadata/_edit_use_anchors_ = true
 
 [node name="PostItNote" type="Sprite2D" parent="."]
-position = Vector2(74, 48)
-scale = Vector2(2.4375, 1.5)
+position = Vector2(89, 48)
+scale = Vector2(2.90625, 1.5)
 texture = ExtResource("2_q7q1t")
 
 [node name="Kale" type="Label" parent="."]

@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cqqlkjgnw2qj2" path="res://levels/salad_dream/salad_item/salad_item_box.tscn" id="4_sfhdy"]
 [ext_resource type="Texture2D" uid="uid://34db2sheef44" path="res://taco/sprites/taco_restaurant_animation_sheet.png" id="5_ra5ma"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="5_wfu06"]
-[ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="6_2vnib"]
 [ext_resource type="PackedScene" uid="uid://dtjh51dfyyc76" path="res://levels/salad_dream/salad_item/conveyer_belt/conveyer_belt.tscn" id="6_iw03v"]
 [ext_resource type="PackedScene" uid="uid://idwicpo18mhb" path="res://levels/salad_dream/game_hud/salad_hud.tscn" id="8_5scqi"]
+[ext_resource type="PackedScene" uid="uid://bx532vx4gga6" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.tscn" id="8_6vfpm"]
 [ext_resource type="Texture2D" uid="uid://b3p03eviu47u1" path="res://levels/salad_dream/sprites/tomato_block.png" id="9_3602r"]
 [ext_resource type="Texture2D" uid="uid://qhi37o0lkxqa" path="res://levels/salad_dream/sprites/kale_box - Copy.png" id="10_ajjdh"]
 [ext_resource type="Texture2D" uid="uid://bgharlxhlx8xd" path="res://levels/salad_dream/sprites/cheese_block.png" id="11_03gj2"]
@@ -283,9 +283,30 @@ texture = ExtResource("5_ra5ma")
 
 [node name="Camera2D" parent="Taco" index="3"]
 position = Vector2(0, -24)
+limit_left = -288
+limit_right = 510
+limit_bottom = 450
 
-[node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-position = Vector2(104, 306)
+[node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
+position = Vector2(520, 440)
+
+[node name="Polygon2D" parent="Land3" index="0"]
+polygon = PackedVector2Array(-8, -632, -8, 8, 8, 8, 8, -632)
+
+[node name="Line2D" parent="Land3" index="1"]
+points = PackedVector2Array(-8, -632, -8, 8, 8, 8, 8, -632, -8, -632)
+
+[node name="Land4" parent="." instance=ExtResource("1_1cd3f")]
+position = Vector2(-304, 440)
+
+[node name="Polygon2D" parent="Land4" index="0"]
+polygon = PackedVector2Array(-8, -632, -8, 8, 8, 8, 8, -632)
+
+[node name="Line2D" parent="Land4" index="1"]
+points = PackedVector2Array(-8, -632, -8, 8, 8, 8, 8, -632, -8, -632)
+
+[node name="SaladItemBowl" parent="." instance=ExtResource("8_6vfpm")]
+position = Vector2(137, 269)
 
 [node name="Land" parent="." instance=ExtResource("1_1cd3f")]
 position = Vector2(-56, 328)
@@ -324,7 +345,7 @@ offset_bottom = 8.0
 color = Color(0.454902, 0.376471, 1, 1)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(312, 256)
+position = Vector2(312, 264)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2(88, 0)
@@ -340,7 +361,7 @@ offset_bottom = 8.0
 color = Color(0.364706, 0.396078, 1, 1)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(432, 176)
+position = Vector2(432, 184)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-48, 0)
@@ -622,12 +643,9 @@ texture = ExtResource("19_3nx1a")
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
-[node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-position = Vector2(123, 303)
-full = false
-on_conveyer = false
-
 [editable path="Taco"]
+[editable path="Land3"]
+[editable path="Land4"]
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="DropOffPlat"]

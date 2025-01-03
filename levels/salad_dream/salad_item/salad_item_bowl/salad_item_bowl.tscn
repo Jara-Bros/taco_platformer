@@ -40,8 +40,4 @@ shape = SubResource("RectangleShape2D_pq3j5")
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="replacing_by" from="." to="." method="_on_replacing_by"]
-<<<<<<< Updated upstream
 [connection signal="body_entered" from="SaladItemArea2d" to="." method="_on_salad_item_area_2d_body_entered"]
-=======
-[connection signal="body_entered" from="SaladItemArea2d" to="." method="_on_salad_item_area_2d_body_entered"]
->>>>>>> Stashed changes
