@@ -73,6 +73,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0.354412, 4.03507)
 shape = SubResource("RectangleShape2D_lv3u3")
+one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_8bo6v")

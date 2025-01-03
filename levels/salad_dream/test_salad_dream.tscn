@@ -193,7 +193,7 @@ stretch_mode = 1
 [node name="SaladHud" parent="." instance=ExtResource("8_5scqi")]
 
 [node name="Taco" parent="." instance=ExtResource("2_12vjq")]
-position = Vector2(224, 120)
+position = Vector2(72, 272)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="Taco" index="1"]
@@ -210,14 +210,14 @@ position = Vector2(192, 336)
 
 [node name="Polygon2D" parent="Land" index="0"]
 color = Color(0.215686, 0.580392, 0.431373, 1)
-polygon = PackedVector2Array(-176, 0, -176, 360, 459.432, 360, 581.78, 360, 744, 360, 744, 0, 706, -9, 706, 276, 581, 273, 576, 319, 582, 336, 467.289, 336, -136, 336, -136, 0)
+polygon = PackedVector2Array(-320, -8, -320, 360, 459.432, 360, 581.78, 360, 872, 360, 873, -61, 834, -61, 835, 336, 582, 336, 467.289, 336, -280, 336, -280, -8)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(-176, 0, -176, 360, 459.432, 360, 581.78, 360, 744, 360, 744, 0, 706, -9, 706, 276, 581, 273, 576, 319, 582, 336, 467.289, 336, -136, 336, -136, 0, -176, 0)
+points = PackedVector2Array(-320, -8, -320, 360, 459.432, 360, 581.78, 360, 872, 360, 873, -61, 834, -61, 835, 336, 582, 336, 467.289, 336, -280, 336, -280, -8, -320, -8)
 
 [node name="Land2" parent="." instance=ExtResource("1_1cd3f")]
 visible = false
-position = Vector2(-120, 264)
+position = Vector2(-264, 264)
 
 [node name="Polygon2D" parent="Land2" index="0"]
 polygon = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72)
@@ -225,18 +225,24 @@ polygon = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72)
 [node name="Line2D" parent="Land2" index="1"]
 points = PackedVector2Array(-16, -64, -16, 8, 120, 72, 168, 72, -16, -64)
 
+[node name="CuttingBoard" type="Sprite2D" parent="."]
+position = Vector2(-184, 272)
+rotation = -0.960752
+scale = Vector2(0.361058, 1.87757)
+texture = ExtResource("16_1l2vr")
+
 [node name="Land4" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(552, 136)
+position = Vector2(672, 192)
 
 [node name="Polygon2D" parent="Land4" index="0"]
 color = Color(0.215686, 0.580392, 0.431373, 1)
-polygon = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0)
+polygon = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 96, -96, 96, -48, 32, -48, 32, 0)
 
 [node name="Line2D" parent="Land4" index="1"]
-points = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 93, -96, 93, -48, 29, -48, 29, 0, -71, 0)
+points = PackedVector2Array(-71, 0, -71, 16, 157, 16, 157, -16, 157, -96, 96, -96, 96, -48, 32, -48, 32, 0, -71, 0)
 
 [node name="DropOffPlat" parent="." instance=ExtResource("6_iw03v")]
-position = Vector2(165, 64)
+position = Vector2(63, 56)
 
 [node name="Label" parent="DropOffPlat/End" index="1"]
 visible = false
@@ -252,11 +258,20 @@ scale = Vector2(1.6875, 1.375)
 texture = ExtResource("20_xlu3l")
 
 [node name="TomatoBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(-104, 120)
+position = Vector2(-224, 96)
 type = 2
 
+[node name="CollisionShape2D" parent="TomatoBox" index="0"]
+position = Vector2(4, 4)
+
+[node name="SaladItemBox" parent="TomatoBox" index="1"]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" parent="TomatoBox/SaladItemBox" index="0"]
+position = Vector2(4, 0)
+
 [node name="Tomato" type="Sprite2D" parent="TomatoBox"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.6875)
 texture = ExtResource("9_3602r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TomatoBox"]
@@ -265,13 +280,13 @@ libraries = {
 }
 
 [node name="KaleBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(664, -56)
+position = Vector2(796, -19)
 type = 0
 spawn_direction = -1
 
 [node name="Kale" type="Sprite2D" parent="KaleBox"]
 position = Vector2(1.52588e-05, 0)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_ajjdh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KaleBox"]
@@ -280,12 +295,12 @@ libraries = {
 }
 
 [node name="CheeseBox" parent="." instance=ExtResource("4_sfhdy")]
-position = Vector2(656, 200)
+position = Vector2(752, 243)
 type = 1
 spawn_direction = -1
 
 [node name="Cheese" type="Sprite2D" parent="CheeseBox"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.732)
 texture = ExtResource("11_03gj2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CheeseBox"]
@@ -295,7 +310,7 @@ libraries = {
 
 [node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
 z_index = 2
-position = Vector2(240, 328)
+position = Vector2(178, 329)
 
 [node name="Sprite2D" parent="SaladItemBowl" index="0"]
 position = Vector2(0, -38)
@@ -305,26 +320,39 @@ position = Vector2(0, -20)
 
 [node name="Label" parent="SaladItemBowl" index="2"]
 offset_left = -88.0
-offset_top = -72.0
+offset_top = -81.0
 offset_right = 88.0
-offset_bottom = -49.0
+offset_bottom = -58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_sx3ws")
 
-[node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
-
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
-position = Vector2(160, 224)
+position = Vector2(82, 209)
 
 [node name="Sprite2D" parent="SaladClearBox" index="0"]
-scale = Vector2(0.625, 0.640625)
+scale = Vector2(0.75, 0.769)
+
+[node name="SaladClearBox" parent="SaladClearBox" index="2"]
+position = Vector2(-3, 4)
+
+[node name="CollisionShape2D" parent="SaladClearBox/SaladClearBox" index="0"]
+position = Vector2(7.40625, 11.5)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("14_yaafx")]
-position = Vector2(432, 176)
+position = Vector2(494, 243)
 curve = SubResource("Curve2D_30a3t")
 
+[node name="PathFollow2D" parent="MovingPlatform" index="0"]
+position = Vector2(-41.1802, 104.461)
+rotation = -1.12398
+
+[node name="AnimatableBody2D" parent="MovingPlatform" index="1"]
+position = Vector2(-41.1802, 104.461)
+rotation = -1.12398
+scale = Vector2(1, 1)
+
 [node name="MovingPlatform2" parent="." instance=ExtResource("14_yaafx")]
-position = Vector2(368, 264)
+position = Vector2(384, 120)
 curve = SubResource("Curve2D_38j2k")
 
 [node name="PathFollow2D" parent="MovingPlatform2" index="0"]
@@ -334,162 +362,159 @@ rotation = 2.01761
 [node name="AnimatableBody2D" parent="MovingPlatform2" index="1"]
 position = Vector2(48.6959, -83.1187)
 rotation = 2.01761
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" parent="MovingPlatform2/AnimatableBody2D" index="1"]
+rotation = -3.14159
 
 [node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="2"]
 position = Vector2(8.84533e-05, 7.99998)
 rotation = 3.14159
 
+[node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
+position = Vector2(144, 88)
+
+[node name="Polygon2D" parent="Land3" index="0"]
+position = Vector2(-227, -139)
+color = Color(0.215686, 0.580392, 0.431373, 1)
+polygon = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128)
+
+[node name="Line2D" parent="Land3" index="1"]
+position = Vector2(-227, -139)
+points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
+
 [node name="Sprites" type="Node" parent="."]
 
-[node name="MozzWheel" type="Sprite2D" parent="Sprites"]
-position = Vector2(640, 304)
-scale = Vector2(1.25, 1.375)
-texture = ExtResource("15_ciue2")
-
 [node name="MozzWheel2" type="Sprite2D" parent="Sprites"]
-position = Vector2(904, 352)
+position = Vector2(1016, 354)
 scale = Vector2(1.25, 1.5)
 texture = ExtResource("15_ciue2")
 
 [node name="MozzWheel3" type="Sprite2D" parent="Sprites"]
-position = Vector2(792, 320)
+position = Vector2(912, 323)
 rotation = -1.5708
 scale = Vector2(1.25, 1.5)
 texture = ExtResource("15_ciue2")
 
-[node name="CuttingBoard" type="Sprite2D" parent="Sprites"]
-position = Vector2(-44.7533, 269.57)
-rotation = -0.960752
-scale = Vector2(0.361058, 1.87757)
-texture = ExtResource("16_1l2vr")
-
 [node name="KalePack2" type="Sprite2D" parent="Sprites"]
-position = Vector2(672, 112)
+position = Vector2(800, 168)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack3" type="Sprite2D" parent="Sprites"]
-position = Vector2(608, 112)
+position = Vector2(736, 168)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack" type="Sprite2D" parent="Sprites"]
-position = Vector2(672, 64)
+position = Vector2(800, 120)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack4" type="Sprite2D" parent="Sprites"]
-position = Vector2(920, 184)
+position = Vector2(1040, 179)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack5" type="Sprite2D" parent="Sprites"]
-position = Vector2(920, 136)
+position = Vector2(1040, 132)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack6" type="Sprite2D" parent="Sprites"]
-position = Vector2(784, 184)
+position = Vector2(904, 180)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack7" type="Sprite2D" parent="Sprites"]
-position = Vector2(784, 136)
+position = Vector2(904, 132)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack9" type="Sprite2D" parent="Sprites"]
-position = Vector2(848, 184)
+position = Vector2(968, 180)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack10" type="Sprite2D" parent="Sprites"]
-position = Vector2(848, 136)
+position = Vector2(968, 132)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack11" type="Sprite2D" parent="Sprites"]
-position = Vector2(848, 16)
+position = Vector2(971, 13)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack12" type="Sprite2D" parent="Sprites"]
-position = Vector2(920, 16)
+position = Vector2(1043, 13)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KalePack8" type="Sprite2D" parent="Sprites"]
-position = Vector2(776, 16)
+position = Vector2(904, 13)
 scale = Vector2(1.25, 1)
 texture = ExtResource("17_qm0uh")
 
 [node name="KitchenShelf3" type="Sprite2D" parent="Sprites"]
 z_index = 2
-position = Vector2(-168, 552)
+position = Vector2(-528, 312)
 scale = Vector2(5, 4)
 texture = ExtResource("18_a416p")
 
 [node name="KitchenShelf5" type="Sprite2D" parent="Sprites"]
 z_index = 2
-position = Vector2(968, 520)
+position = Vector2(1136, 329)
 scale = Vector2(5, 4)
 texture = ExtResource("18_a416p")
 
 [node name="KitchenShelf" type="Sprite2D" parent="Sprites"]
-position = Vector2(-280, 184)
+position = Vector2(-424, 184)
 scale = Vector2(5, 4)
 texture = ExtResource("18_a416p")
 
 [node name="KitchenShelf2" type="Sprite2D" parent="Sprites"]
-position = Vector2(848, 176)
+position = Vector2(976, 179)
 scale = Vector2(5, 4)
 texture = ExtResource("18_a416p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites"]
-position = Vector2(-200, 192)
+position = Vector2(-344, 192)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
-position = Vector2(-208, 160)
+position = Vector2(-352, 160)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Sprites"]
-position = Vector2(-232, 192)
+position = Vector2(-376, 192)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Sprites"]
-position = Vector2(-248, 160)
+position = Vector2(-392, 160)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Sprites"]
-position = Vector2(-272, 192)
+position = Vector2(-416, 192)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Sprites"]
-position = Vector2(-320, 192)
+position = Vector2(-464, 192)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprites"]
-position = Vector2(-208, 368)
+position = Vector2(-352, 368)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Sprites"]
-position = Vector2(-256, 368)
+position = Vector2(-400, 368)
 texture = ExtResource("19_3nx1a")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprites"]
-position = Vector2(-304, 368)
+position = Vector2(-448, 368)
 texture = ExtResource("19_3nx1a")
 
-[node name="Land3" parent="." instance=ExtResource("1_1cd3f")]
-position = Vector2(18, -49)
-
-[node name="Polygon2D" parent="Land3" index="0"]
-color = Color(0.215686, 0.580392, 0.431373, 1)
-polygon = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128)
-
-[node name="Line2D" parent="Land3" index="1"]
-points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
+[node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
 [editable path="Taco"]
 [editable path="Land"]
@@ -499,5 +524,6 @@ points = PackedVector2Array(80, 128, 80, 144, 368, 144, 368, 128, 80, 128)
 [editable path="TomatoBox"]
 [editable path="SaladItemBowl"]
 [editable path="SaladClearBox"]
+[editable path="MovingPlatform"]
 [editable path="MovingPlatform2"]
 [editable path="Land3"]
