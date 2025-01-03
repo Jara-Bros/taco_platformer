@@ -358,24 +358,6 @@ libraries = {
 "": SubResource("AnimationLibrary_os6qk")
 }
 
-[node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
-z_index = 2
-position = Vector2(96, 309)
-
-[node name="Sprite2D" parent="SaladItemBowl" index="0"]
-position = Vector2(0, -38)
-
-[node name="CollisionShape2D" parent="SaladItemBowl" index="1"]
-position = Vector2(0, -20)
-
-[node name="Label" parent="SaladItemBowl" index="2"]
-offset_left = -88.0
-offset_top = -81.0
-offset_right = 88.0
-offset_bottom = -58.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("14_sx3ws")
-
 [node name="SaladClearBox" parent="." instance=ExtResource("12_vyk4b")]
 position = Vector2(82, 209)
 
@@ -399,10 +381,10 @@ rotation = -1.12398
 [node name="AnimatableBody2D" parent="MovingPlatform" index="1"]
 position = Vector2(-41.1802, 104.461)
 rotation = -1.12398
+scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" index="1"]
 position = Vector2(-0.000398636, 0.000184536)
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="2"]
 position = Vector2(-0.000401497, -3.99982)
@@ -566,11 +548,15 @@ texture = ExtResource("19_3nx1a")
 
 [node name="QuickReload" parent="." instance=ExtResource("5_wfu06")]
 
+[node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
+position = Vector2(123, 303)
+full = false
+on_conveyer = false
+
 [editable path="Taco"]
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="DropOffPlat"]
 [editable path="TomatoBox"]
-[editable path="SaladItemBowl"]
 [editable path="SaladClearBox"]
 [editable path="MovingPlatform"]

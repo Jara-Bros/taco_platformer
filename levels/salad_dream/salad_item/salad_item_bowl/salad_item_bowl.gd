@@ -42,7 +42,7 @@ func item_tween():
 	collect_tween.connect("finished", tween_complete)
 	set_collision_layer_value(4, false)
 	collected = true
-	collect_tween.tween_property(self, "position", player.position + Vector2(0, -40), 0.3)
+	collect_tween.tween_property(self, "position", player.position + Vector2(0, -20), 0.3)
 
 
 func tween_complete():
@@ -53,7 +53,7 @@ func tween_complete():
 
 func lock_to_conveyer_belt():
 	collected = false
-	position = player.position + Vector2(0, 20)
+	position = player.position + Vector2(0, 0)
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
@@ -101,6 +101,6 @@ func reset_bowl():
 
 
 func _on_salad_item_area_2d_body_entered(body):
-	print(body, )
-	if body.is_in_group("salad_item"):
+	var direction_to_vector : Vector2= global_position.direction_to(body.global_position)
+	if body.is_in_group("salad_item") and ((direction_to_vector.x<0.5 and direction_to_vector.x > 0) or (direction_to_vector.x > -0.5 and direction_to_vector.x < 0)) and (direction_to_vector.y> -1 and direction_to_vector.y < -0.5):
 		add_ingredient(body)

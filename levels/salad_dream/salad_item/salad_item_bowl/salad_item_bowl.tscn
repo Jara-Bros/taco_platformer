@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydd5o"]
 size = Vector2(48, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq3j5"]
+size = Vector2(54, 2)
+
 [node name="SaladItemBowl" type="Area2D" groups=["bowl"]]
 collision_layer = 8
 collision_mask = 10
@@ -26,15 +29,15 @@ offset_right = 41.0
 offset_bottom = -33.0
 text = "[F] Pick Up"
 
-[node name="SaladItemArea2D" type="Area2D" parent="."]
+[node name="SaladItemArea2d" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladItemArea2D"]
-position = Vector2(0, -34)
-shape = SubResource("RectangleShape2D_u4i0l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaladItemArea2d"]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_pq3j5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="replacing_by" from="." to="." method="_on_replacing_by"]
-[connection signal="body_entered" from="SaladItemArea2D" to="." method="_on_salad_item_area_2d_body_entered"]
+[connection signal="body_entered" from="SaladItemArea2d" to="." method="_on_salad_item_area_2d_body_entered"]
