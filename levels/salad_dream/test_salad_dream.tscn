@@ -308,6 +308,9 @@ points = PackedVector2Array(-8, -632, -8, 8, 8, 8, 8, -632, -8, -632)
 [node name="SaladItemBowl" parent="." instance=ExtResource("8_6vfpm")]
 position = Vector2(137, 269)
 
+[node name="SaladItemBowl" parent="." instance=ExtResource("6_2vnib")]
+position = Vector2(104, 306)
+
 [node name="Land" parent="." instance=ExtResource("1_1cd3f")]
 position = Vector2(-56, 328)
 
