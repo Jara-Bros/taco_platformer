@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgmgfg1awxob2"]
-
-[ext_resource type="Texture2D" uid="uid://dufh8wqw7l1xn" path="res://NPC/sprites/manager/manager.png" id="2_o6iq8"]
+[gd_scene load_steps=2 format=3 uid="uid://dgmgfg1awxob2"]
 
 [sub_resource type="GDScript" id="GDScript_4yi4y"]
 
@@ -17,6 +15,5 @@ expand_mode = 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(840, 480)
 scale = Vector2(22, 22)
-texture = ExtResource("2_o6iq8")
 hframes = 4
 frame = 1
