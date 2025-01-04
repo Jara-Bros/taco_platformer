@@ -33,14 +33,13 @@ func _on_area_entered(area):
 		get_tree().current_scene.add_child(hud)
 		
 
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		$Label.visible = true
 	
 	if body.is_in_group("salad_item"):
 		body.queue_free()
+
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
