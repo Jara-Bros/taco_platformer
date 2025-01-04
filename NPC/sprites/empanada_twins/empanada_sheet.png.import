@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2r2lhoxipq0e"
-path="res://.godot/imported/empanada_twin_1.png-74bdda5ba62562af4e0e2e2ee6bcb491.ctex"
+uid="uid://coufk0vmi5kdd"
+path="res://.godot/imported/empanada_sheet.png-0a92d6fc06ee682e164f61a105426c2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/empanada_twins/empanada_twin_1.png"
-dest_files=["res://.godot/imported/empanada_twin_1.png-74bdda5ba62562af4e0e2e2ee6bcb491.ctex"]
+source_file="res://NPC/sprites/empanada_twins/empanada_sheet.png"
+dest_files=["res://.godot/imported/empanada_sheet.png-0a92d6fc06ee682e164f61a105426c2d.ctex"]
 
 [params]
 
