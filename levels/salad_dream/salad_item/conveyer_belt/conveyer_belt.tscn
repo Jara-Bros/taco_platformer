@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jnqqu76ofbye" path="res://levels/salad_dream/game_hud/meal_status_hud.tscn" id="3_f3ox2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpebp"]
-size = Vector2(164, 19)
+size = Vector2(280, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdspi"]
 size = Vector2(143, 13)
@@ -19,7 +19,7 @@ color = Color(8.78386e-07, 0.242964, 0.247954, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(83, 9.5)
+position = Vector2(92, -4)
 shape = SubResource("RectangleShape2D_rpebp")
 one_way_collision = true
 
