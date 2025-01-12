@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://nkcm856megtp"]
+
+[ext_resource type="Texture2D" uid="uid://coufk0vmi5kdd" path="res://NPC/sprites/empanada_twins/empanada_sheet.png" id="1_5qrae"]
+[ext_resource type="Texture2D" uid="uid://csi4s15fw64c4" path="res://NPC/sprites/empanada_twins/dish.png" id="2_0ms4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6fb7"]
+atlas = ExtResource("1_5qrae")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5pk6"]
+atlas = ExtResource("1_5qrae")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oengx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6fb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5pk6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_oengx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.269386
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -35)
+texture = ExtResource("2_0ms4l")
