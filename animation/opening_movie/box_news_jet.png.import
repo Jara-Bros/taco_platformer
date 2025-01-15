@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpk5l5nu2ii0p"
-path="res://.godot/imported/prep_time_sign.png-4f55e2dfc7f142a6afa69a85f18aaf31.ctex"
+uid="uid://dgtnt8nto2xc"
+path="res://.godot/imported/box_news_jet.png-6428d7ade79c81c1ddcd57114fa77077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/prep_time_sign.png"
-dest_files=["res://.godot/imported/prep_time_sign.png-4f55e2dfc7f142a6afa69a85f18aaf31.ctex"]
+source_file="res://animation/opening_movie/box_news_jet.png"
+dest_files=["res://.godot/imported/box_news_jet.png-6428d7ade79c81c1ddcd57114fa77077.ctex"]
 
 [params]
 

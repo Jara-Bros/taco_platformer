@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cea6ofeqxpfvj"
-path="res://.godot/imported/kitchen_bg.png-0dc69b17c02d8729acf3b3bce88b21d3.ctex"
+uid="uid://ckcba78p5y2vi"
+path="res://.godot/imported/jet_back_door.png-b8aa0e8d40d756aa0bbfc25aae9f4a26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/kitchen_bg.png"
-dest_files=["res://.godot/imported/kitchen_bg.png-0dc69b17c02d8729acf3b3bce88b21d3.ctex"]
+source_file="res://animation/opening_movie/jet_back_door.png"
+dest_files=["res://.godot/imported/jet_back_door.png-b8aa0e8d40d756aa0bbfc25aae9f4a26.ctex"]
 
 [params]
 

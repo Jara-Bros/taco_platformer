@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12jdwid6cxbn"
-path="res://.godot/imported/clock.png-ef5a557dbc7443fa3937fd9d82d2bed1.ctex"
+uid="uid://cea6ofeqxpfvj"
+path="res://.godot/imported/kitchen_bg.png-c941a80a8d8c48c0dcb4267a6f569069.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/clock.png"
-dest_files=["res://.godot/imported/clock.png-ef5a557dbc7443fa3937fd9d82d2bed1.ctex"]
+source_file="res://animation/mob/kitchen_bg.png"
+dest_files=["res://.godot/imported/kitchen_bg.png-c941a80a8d8c48c0dcb4267a6f569069.ctex"]
 
 [params]
 
