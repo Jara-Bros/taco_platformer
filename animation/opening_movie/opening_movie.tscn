@@ -10,6 +10,33 @@
 [ext_resource type="Texture2D" uid="uid://ckcba78p5y2vi" path="res://animation/opening_movie/jet_back_door.png" id="6_dg2x8"]
 [ext_resource type="PackedScene" uid="uid://dwaoxjsa7wxyu" path="res://animation/opening_movie/corpo_box_container.tscn" id="8_jdrgi"]
 
+[sub_resource type="Animation" id="Animation_4rpoj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parallax2D4/CloudsMiddle:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_ekxpd"]
 resource_name = "main"
 length = 13.0
@@ -48,37 +75,25 @@ tracks/2/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_4rpoj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i72dh"]
+_data = {
+"RESET": SubResource("Animation_4rpoj"),
+"main": SubResource("Animation_ekxpd")
+}
+
+[sub_resource type="Animation" id="Animation_pyyxe"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:enabled")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Parallax2D4/CloudsMiddle:z_index")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i72dh"]
-_data = {
-"RESET": SubResource("Animation_4rpoj"),
-"main": SubResource("Animation_ekxpd")
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_obx0e"]
@@ -97,25 +112,25 @@ tracks/0/keys = {
 "values": [1.0472, 1.91986]
 }
 
-[sub_resource type="Animation" id="Animation_pyyxe"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mtyd"]
+_data = {
+"RESET": SubResource("Animation_pyyxe"),
+"turn_right": SubResource("Animation_obx0e")
+}
+
+[sub_resource type="Animation" id="Animation_od68m"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mtyd"]
-_data = {
-"RESET": SubResource("Animation_pyyxe"),
-"turn_right": SubResource("Animation_obx0e")
+"values": [Vector2(32, 216)]
 }
 
 [sub_resource type="Animation" id="Animation_p46dm"]
@@ -132,21 +147,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(32, 216), Vector2(664, 216)]
-}
-
-[sub_resource type="Animation" id="Animation_od68m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(32, 216)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgwnj"]
