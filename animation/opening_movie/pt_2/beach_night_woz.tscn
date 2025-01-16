@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://owy74wpxv31d"]
+
+[ext_resource type="Texture2D" uid="uid://bxpt6w6gjmsmu" path="res://animation/opening_movie/pt_2/opening_movie_pan_down.png" id="1_nnqab"]
+[ext_resource type="Script" path="res://animation/opening_movie/pt_2/beach_night_woz.gd" id="1_xc10k"]
+[ext_resource type="Texture2D" uid="uid://j55svjimel6i" path="res://animation/opening_movie/pt_2/woz_meditate_sheet.png" id="2_j2838"]
+
+[sub_resource type="Animation" id="Animation_jjuow"]
+resource_name = "pan_down"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 180), Vector2(320, 540)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_woz_dialogue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_n6ice"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcwwq"]
+_data = {
+"RESET": SubResource("Animation_n6ice"),
+"pan_down": SubResource("Animation_jjuow")
+}
+
+[node name="BeachNightWoz" type="Node2D"]
+script = ExtResource("1_xc10k")
+
+[node name="NightBeach" type="Sprite2D" parent="."]
+position = Vector2(320, 360)
+texture = ExtResource("1_nnqab")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dcwwq")
+}
+autoplay = "pan_down"
+
+[node name="Woz" type="Sprite2D" parent="."]
+position = Vector2(447, 573)
+scale = Vector2(2, 2)
+texture = ExtResource("2_j2838")
+hframes = 2
