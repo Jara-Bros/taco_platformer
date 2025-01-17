@@ -13,7 +13,6 @@ func set_type(type):
 	current_status = type
 	if current_status == "GOOD":
 		$Label.text = "GOOD"
-		$Label.add_theme_font_override()
 		$Label.add_theme_color_override("font_color", Color.SEA_GREEN)
 		
 	else:

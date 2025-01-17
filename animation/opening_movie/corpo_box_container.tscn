@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwaoxjsa7wxyu"]
+
+[ext_resource type="PackedScene" uid="uid://lqvae6215qh5" path="res://animation/opening_movie/corpo_box.tscn" id="1_gqwr4"]
+
+[sub_resource type="Animation" id="Animation_ioclc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:collision_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_3xbgv"]
+resource_name = "change_layer"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:collision_layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_867dh"]
+_data = {
+"RESET": SubResource("Animation_ioclc"),
+"change_layer": SubResource("Animation_3xbgv")
+}
+
+[node name="CorpoBoxContainer" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32, -64, -16, -64, -16, 24, 34, 49, 1, 43, -32, 32)
+
+[node name="CorpoBox" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-15, 3)
+
+[node name="CorpoBox2" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-10, 20)
+
+[node name="CorpoBox3" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-2, 15)
+
+[node name="CorpoBox4" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-13, 1)
+
+[node name="CorpoBox5" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-13, 15)
+
+[node name="CorpoBox6" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-9, 8)
+
+[node name="CorpoBox7" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-15, 9)
+
+[node name="CorpoBox8" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-10, 15)
+
+[node name="CorpoBox9" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-4, 13)
+
+[node name="CorpoBox10" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-4, 14)
+
+[node name="CorpoBox11" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-9, 13)
+
+[node name="CorpoBox12" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-5, 9)
+
+[node name="CorpoBox13" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-15, 19)
+
+[node name="CorpoBox14" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-8, 22)
+
+[node name="CorpoBox15" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-8, 6)
+
+[node name="CorpoBox16" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-12, 13)
+
+[node name="CorpoBox17" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-15, 14)
+
+[node name="CorpoBox18" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(0, 12)
+
+[node name="CorpoBox19" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-10, 8)
+
+[node name="CorpoBox20" parent="." instance=ExtResource("1_gqwr4")]
+position = Vector2(-4, 18)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-5, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2, -1)
+polygon = PackedVector2Array(2, 32, 8, 35, 26, 16, 20, 12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_867dh")
+}
+autoplay = "change_layer"
