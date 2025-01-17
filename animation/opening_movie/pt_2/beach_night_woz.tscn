@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://owy74wpxv31d"]
+[gd_scene load_steps=9 format=3 uid="uid://owy74wpxv31d"]
 
 [ext_resource type="Texture2D" uid="uid://bxpt6w6gjmsmu" path="res://animation/opening_movie/pt_2/opening_movie_pan_down.png" id="1_nnqab"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/beach_night_woz.gd" id="1_xc10k"]
 [ext_resource type="Texture2D" uid="uid://j55svjimel6i" path="res://animation/opening_movie/pt_2/woz_meditate_sheet.png" id="2_j2838"]
-[ext_resource type="Texture2D" uid="uid://bw77drfyeywf0" path="res://animation/opening_movie/pt_2/beach_night/corpo_box_side.png" id="4_y7tiy"]
+[ext_resource type="Texture2D" uid="uid://bw77drfyeywf0" path="res://animation/opening_movie/pt_2/corpo_box/corpo_box_side.png" id="4_y7tiy"]
 
 [sub_resource type="Animation" id="Animation_n6ice"]
 length = 0.001
@@ -18,6 +18,82 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(320, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CorpoBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(383, 326)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CorpoBox:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CorpoBox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5d11e"]
+resource_name = "corpo_box"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CorpoBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(383, 326), Vector2(383, 573)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CorpoBox:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 4.6, 4.7, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CorpoBox:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jjuow"]
@@ -53,6 +129,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcwwq"]
 _data = {
 "RESET": SubResource("Animation_n6ice"),
+"corpo_box": SubResource("Animation_5d11e"),
 "pan_down": SubResource("Animation_jjuow")
 }
 
@@ -76,9 +153,10 @@ autoplay = "pan_down"
 position = Vector2(447, 573)
 scale = Vector2(2, 2)
 texture = ExtResource("2_j2838")
-hframes = 2
+hframes = 3
 
 [node name="CorpoBox" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(383, 326)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_y7tiy")

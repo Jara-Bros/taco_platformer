@@ -2,15 +2,21 @@
 intro_woz: . . .
 intro_woz: . . .
 intro_woz: . . . (nine) . . .
-intro_woz: . . . 
+intro_woz: . . .
 intro_woz: . . .
 intro_woz: . . . (ten) . . .
 [wait time="2.0"]
-[signal arg="change_frame"]
+[signal arg="change_frame_one"]
 intro_woz: In the sand\
 Under moonlight . . .
 [wait time="1.0"]
-. . . meditating . . .
+intro_woz: . . . meditating . . .
 [wait time="2.0"]
 intro_woz: Refreshing!
-[end_timeline]
+[signal arg="play_corpo_box"]
+[wait time="6.0"]
+[signal arg="change_frame_two"]
+intro_woz: !
+[wait time="2.0"]
+(Move with D-Pad)
+[signal arg="change_frame_one"]
