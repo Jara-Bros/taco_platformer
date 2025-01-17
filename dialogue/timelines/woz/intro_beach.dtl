@@ -18,5 +18,6 @@ intro_woz: Refreshing!
 [signal arg="change_frame_two"]
 intro_woz: !
 [wait time="2.0"]
-(Move with D-Pad)
 [signal arg="change_frame_one"]
+(Move with the D-Pad)
+[end_timeline]

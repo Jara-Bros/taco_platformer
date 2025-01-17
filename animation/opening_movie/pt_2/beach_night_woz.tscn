@@ -1,59 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://owy74wpxv31d"]
+[gd_scene load_steps=17 format=3 uid="uid://owy74wpxv31d"]
 
 [ext_resource type="Texture2D" uid="uid://bxpt6w6gjmsmu" path="res://animation/opening_movie/pt_2/opening_movie_pan_down.png" id="1_nnqab"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/beach_night_woz.gd" id="1_xc10k"]
 [ext_resource type="Texture2D" uid="uid://j55svjimel6i" path="res://animation/opening_movie/pt_2/woz_meditate_sheet.png" id="2_j2838"]
 [ext_resource type="Texture2D" uid="uid://bw77drfyeywf0" path="res://animation/opening_movie/pt_2/corpo_box/corpo_box_side.png" id="4_y7tiy"]
+[ext_resource type="Texture2D" uid="uid://bh2ju7mdyfhhb" path="res://animation/opening_movie/pt_2/corpo_box/box_shadow.png" id="5_ig54h"]
+[ext_resource type="Texture2D" uid="uid://e02x002rvorp" path="res://animation/opening_movie/pt_2/empty_woz_hole.png" id="6_tffnx"]
+[ext_resource type="PackedScene" uid="uid://bgcx2jiha06lj" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
 
 [sub_resource type="Animation" id="Animation_n6ice"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("WozAtNight:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(320, 180)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CorpoBox:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(383, 326)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CorpoBox:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CorpoBox:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [Vector2(451, 559)]
 }
 
 [sub_resource type="Animation" id="Animation_5d11e"]
@@ -95,6 +62,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BoxShadow:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 4, 4.3, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BoxShadow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 4.45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_jjuow"]
 resource_name = "pan_down"
@@ -126,12 +117,142 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jvxyx"]
+resource_name = "woz_jump"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WozJump:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(449, 571), Vector2(449, 561), Vector2(449, 511), Vector2(449, 571)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Woz:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WozHole:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 1, 2, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WozJump:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WozHole:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Woz:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WozAtNight:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WozAtNight:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(451, 559)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcwwq"]
 _data = {
 "RESET": SubResource("Animation_n6ice"),
 "corpo_box": SubResource("Animation_5d11e"),
-"pan_down": SubResource("Animation_jjuow")
+"pan_down": SubResource("Animation_jjuow"),
+"woz_jump": SubResource("Animation_jvxyx")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p61fd"]
+atlas = ExtResource("2_j2838")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lghj"]
+atlas = ExtResource("2_j2838")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpyki"]
+atlas = ExtResource("2_j2838")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8y5h6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p61fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lghj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpyki")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="BeachNightWoz" type="Node2D"]
 script = ExtResource("1_xc10k")
@@ -149,11 +270,28 @@ libraries = {
 }
 autoplay = "pan_down"
 
+[node name="WozHole" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(447, 573)
+scale = Vector2(2, 2)
+texture = ExtResource("6_tffnx")
+hframes = 4
+
 [node name="Woz" type="Sprite2D" parent="."]
 position = Vector2(447, 573)
 scale = Vector2(2, 2)
 texture = ExtResource("2_j2838")
-hframes = 3
+hframes = 9
+frame = 1
+
+[node name="WozJump" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(449, 571)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8y5h6")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
 
 [node name="CorpoBox" type="Sprite2D" parent="."]
 visible = false
@@ -161,3 +299,20 @@ position = Vector2(383, 326)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_y7tiy")
 hframes = 4
+
+[node name="BoxShadow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(383, 602)
+texture = ExtResource("5_ig54h")
+hframes = 4
+
+[node name="WozAtNight" parent="." instance=ExtResource("7_wu8jw")]
+visible = false
+position = Vector2(451, 559)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(448, 656)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -32)
+polygon = PackedVector2Array(-128, -168, -104, -168, -104, -16, 176.211, -16, 176, -168, 192, -168, 192, 16, -128, 16)

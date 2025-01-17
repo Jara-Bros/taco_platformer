@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca31abd2ad15b"]
 
-[ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_y0ihp"]
+[ext_resource type="PackedScene" uid="uid://bgcx2jiha06lj" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="1_q7cs6"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_f02c0"]
 [ext_resource type="Texture2D" uid="uid://bdhygtq5pvmlr" path="res://platforms/land/line_marker.png" id="5_tv6s2"]
 
 [node name="ControlsWhiteBox" type="Node2D"]
 
-[node name="Taco" parent="." instance=ExtResource("1_y0ihp")]
-position = Vector2(64, -16)
+[node name="WozAtNight" parent="." instance=ExtResource("1_q7cs6")]
+position = Vector2(74, -52)
+
+[node name="Camera2D" type="Camera2D" parent="WozAtNight"]
 
 [node name="Land" parent="." instance=ExtResource("2_f02c0")]
 
