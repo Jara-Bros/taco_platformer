@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://360wcgioojof"]
+
+[ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_2xeli"]
+[ext_resource type="Script" path="res://levels/texico_race_ski/taco_race_ski/taco_race_ski.gd" id="1_g1mel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwkc8"]
+size = Vector2(32, 20.6753)
+
+[node name="TacoRaceSki" type="CharacterBody2D" groups=["Player"]]
+rotation = 0.519913
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_g1mel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.66234)
+shape = SubResource("RectangleShape2D_hwkc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.24477, 0.0393)
+texture = ExtResource("1_2xeli")
+
+[node name="StunnedTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="StunnedTimer" to="." method="_on_stunned_timer_timeout"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bubfesa8eocma"]
+
+[ext_resource type="Script" path="res://levels/texico_ski/hud/points_hud/points_hud.gd" id="1_itv44"]
+
+[node name="PointsHud" type="CanvasLayer" groups=["points_hud"]]
+script = ExtResource("1_itv44")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 39.0
+color = Color(0, 1, 1, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 7.0
+offset_right = 497.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Points: 0"

@@ -1,48 +1,109 @@
-[gd_scene load_steps=7 format=3 uid="uid://78x5qmlegq2w"]
+[gd_scene load_steps=9 format=3 uid="uid://78x5qmlegq2w"]
 
 [ext_resource type="Script" path="res://levels/texico_ski/taco_ski/taco_boogie.gd" id="1_03qki"]
 [ext_resource type="Texture2D" uid="uid://ck2c3dy72pt3m" path="res://taco/sprites/taco_boogie.png" id="1_o6lqv"]
+[ext_resource type="PackedScene" uid="uid://xp2q4rsgqnyr" path="res://levels/texico_ski/hud/landing_score_hud/landing_score_hud.tscn" id="2_dy6v7"]
+[ext_resource type="PackedScene" uid="uid://sflhk2wnanwb" path="res://levels/texico_ski/taco_ski/shadow_shader/ShadowShader.tscn" id="2_opmcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tw0u3"]
 size = Vector2(26, 14)
 
-[sub_resource type="Curve2D" id="Curve2D_pxqlg"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -0.977315, 0.211789, 0, 0, 0, 0, -30.4534, -40.2253, 0, 0, 0, 0, -0.146322, -0.344493)
+[sub_resource type="Animation" id="Animation_f43na"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.24477, -11.9607)]
 }
-point_count = 3
-
-[sub_resource type="Animation" id="Animation_osnxl"]
-resource_name = "in_aiir"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqh6b"]
-_data = {
-"in_aiir": SubResource("Animation_osnxl")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.23409, -3.67533)]
 }
 
-[node name="TacoBoogie" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="Animation" id="Animation_i55ra"]
+resource_name = "in_air"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5.24477, -11.9607), Vector2(-8.2913, -53.8577), Vector2(-0.963596, 7.42288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.23409, -3.67533), Vector2(0.155827, 12.6904)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aop4a"]
+_data = {
+"RESET": SubResource("Animation_f43na"),
+"in_air": SubResource("Animation_i55ra")
+}
+
+[node name="TacoBoogie" type="CharacterBody2D" groups=["pause", "player"]]
 position = Vector2(0.929957, 0.367667)
 rotation = 0.589905
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_03qki")
+landing_score_hud = ExtResource("2_dy6v7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -12)
-texture = ExtResource("1_o6lqv")
+[node name="ShadowShader" parent="." instance=ExtResource("2_opmcr")]
+visible = false
+offset_left = -13.7169
+offset_top = 9.9433
+offset_right = 24.2831
+offset_bottom = 27.9433
+rotation = -0.577961
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -7)
+position = Vector2(1.23409, -3.67533)
 shape = SubResource("RectangleShape2D_tw0u3")
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_pxqlg")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-0.977315, 0.211789)
-rotation = -2.20068
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.24477, -11.9607)
+texture = ExtResource("1_o6lqv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wqh6b")
+"": SubResource("AnimationLibrary_aop4a")
 }
+
+[node name="Label" type="Label" parent="."]
+offset_left = -13.4235
+offset_top = -43.365
+offset_right = 26.5765
+offset_bottom = -20.365
+rotation = -0.588698
+theme_override_colors/font_color = Color(0.10792, 0.151582, 0.091888, 1)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

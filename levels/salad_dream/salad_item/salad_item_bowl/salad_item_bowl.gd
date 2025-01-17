@@ -76,6 +76,9 @@ func add_ingredient(body):
 			bowl_hud.increment_cheese()
 		else:
 			bowl_hud.increment_tomato()
+			
+		if ingredients.size() == 3:
+			full = true
 	
 func get_ingredients_in_bowl():
 	return ingredients

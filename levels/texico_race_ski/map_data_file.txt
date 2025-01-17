@@ -1,0 +1,50 @@
+{
+	"path_length": 100,
+	"speed": 4,
+	"characters": {
+		"taco" : {
+			"obstacles" : [
+				{
+					"type": "nacho_boulder",
+					"location": 20,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 30,
+					"is_sendable": false
+				},
+			]
+		},
+		"limone" : {
+			"obstacles" : [
+				{
+					"type": "nacho_boulder",
+					"location": 20,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 30,
+					"is_sendable": false
+				},
+			]
+			
+		},
+		"third_racer": {
+			"obstacles" : [
+				{
+					"type": "nacho_boulder",
+					"location": 20,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 30,
+					"is_sendable": false
+				},
+			]
+		}
+	}
+
+}

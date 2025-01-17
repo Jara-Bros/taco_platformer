@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://xp2q4rsgqnyr"]
+
+[ext_resource type="Script" path="res://levels/texico_ski/hud/landing_score_hud/landing_score_hud.gd" id="1_s87p4"]
+
+[node name="LandingScoreHud" type="CanvasLayer"]
+script = ExtResource("1_s87p4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 168.0
+offset_top = 149.0
+offset_right = 292.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0.901961, 0, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

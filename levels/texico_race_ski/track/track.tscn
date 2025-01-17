@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr8fdh167thj5"]
+
+[ext_resource type="Script" path="res://levels/texico_race_ski/track/track.gd" id="1_ll18q"]
+[ext_resource type="PackedScene" uid="uid://bk4qcxew05txq" path="res://levels/texico_race_ski/track/obstacle/nacho_boulder.tscn" id="2_uhggj"]
+[ext_resource type="PackedScene" uid="uid://5qe1gymaceqi" path="res://levels/texico_race_ski/track/obstacle/speed_boost.tscn" id="3_73nmq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u27a5"]
+size = Vector2(643.079, 13.5103)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_owxtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gbhi"]
+size = Vector2(1.08813, 0.96033)
+
+[node name="Track" type="StaticBody2D"]
+rotation = 0.466003
+script = ExtResource("1_ll18q")
+nacho_boulder = ExtResource("2_uhggj")
+speed_boost = ExtResource("3_73nmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(323.357, 8.6299)
+shape = SubResource("RectangleShape2D_u27a5")
+debug_color = Color(0.838073, 0.279152, 0.673615, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21.1969, 20.3889)
+scale = Vector2(39.9635, 39.3982)
+texture = SubResource("CanvasTexture_owxtr")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
+position = Vector2(1.04962, -0.990058)
+remote_path = NodePath("../../Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(63.1432, -18.6176)
+scale = Vector2(39.9635, 39.3982)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.0256469, -0.00791276)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6gbhi")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4qcxew05txq"]
+
+[ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_py3hn"]
+[ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/nacho_boulder.gd" id="2_ecg4x"]
+
+[node name="NachoBoulder" instance=ExtResource("1_py3hn")]
+script = ExtResource("2_ecg4x")
+
+[node name="ColorRect" parent="." index="1"]
+color = Color(0.717647, 0, 0.192157, 1)

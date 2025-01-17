@@ -1,11 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://bimfonq63vlhp"]
+[gd_scene load_steps=8 format=3 uid="uid://bimfonq63vlhp"]
 
 [ext_resource type="PackedScene" uid="uid://oqa0cqp2ks2c" path="res://levels/texico_ski/backdrop/backdrop.tscn" id="1_7tai8"]
 [ext_resource type="PackedScene" uid="uid://78x5qmlegq2w" path="res://levels/texico_ski/taco_ski/taco_boogie.tscn" id="1_pq5oh"]
+[ext_resource type="Script" path="res://levels/texico_ski/texico_ski.gd" id="1_r6urb"]
+[ext_resource type="PackedScene" uid="uid://sn0nppsa1ffu" path="res://levels/texico_ski/hud/tutorial_hud/tutorial_hud.tscn" id="2_fvssp"]
+[ext_resource type="PackedScene" uid="uid://b1opsi833lbk3" path="res://levels/texico_ski/backdrop/chip/Chip.tscn" id="3_mhjnw"]
+[ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="4_hph0u"]
+[ext_resource type="PackedScene" uid="uid://bubfesa8eocma" path="res://levels/texico_ski/hud/points_hud/points_hud.tscn" id="7_1fllu"]
 
 [node name="TexicoSki" type="Node2D"]
+script = ExtResource("1_r6urb")
+tutorial_hud = ExtResource("2_fvssp")
 
 [node name="Backdrop" parent="." instance=ExtResource("1_7tai8")]
 
 [node name="TacoBoogie" parent="." instance=ExtResource("1_pq5oh")]
-position = Vector2(102, 119)
+position = Vector2(206, 173)
+
+[node name="QuickReload" parent="." instance=ExtResource("4_hph0u")]
+
+[node name="Chip" parent="." instance=ExtResource("3_mhjnw")]
+position = Vector2(473, 330)
+
+[node name="PointsHud" parent="." instance=ExtResource("7_1fllu")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 27.0
+offset_top = 271.0
+offset_right = 596.0
+offset_bottom = 279.0
+rotation = -0.501602
+color = Color(1, 0, 1, 1)
+
+[connection signal="start_trick_first_time" from="Chip" to="." method="_on_chip_start_trick_first_time"]
