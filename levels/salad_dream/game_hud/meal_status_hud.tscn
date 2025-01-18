@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jnqqu76ofbye"]
+[gd_scene load_steps=3 format=3 uid="uid://jnqqu76ofbye"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/game_hud/meal_status_hud.gd" id="1_hncb0"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="2_bnkpc"]
 
 [node name="MealStatusHud" type="CanvasLayer" groups=["status_hud"]]
 script = ExtResource("1_hncb0")
@@ -12,7 +13,9 @@ offset_top = 147.0
 offset_right = 312.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(0.0862745, 0, 0, 1)
-theme_override_font_sizes/font_size = 0
+theme_override_fonts/font = ExtResource("2_bnkpc")
+theme_override_font_sizes/font_size = 30
+text = "nice"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
