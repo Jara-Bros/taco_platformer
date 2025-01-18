@@ -50,7 +50,10 @@ func set_obstacle(obs: Dictionary):
 	obstacle_instance.add_to_group(object_name)
 	add_child(obstacle_instance)
 	return obstacle_instance
-						 
+			
+func set_can_move(state: bool):
+	can_move = state
+	#get_tree().call_group(object_name,"set_can_move", true)			 
 func slow_down():
 	set_speed(speed-2)
 	get_tree().call_group(object_name, "set_speed", speed-2)
@@ -58,8 +61,8 @@ func slow_down():
 	track_speed_state = -1
 	
 func speed_up():
-	set_speed(speed+2)
-	get_tree().call_group(object_name, "set_speed", speed+2)
+	set_speed(speed+1)
+	get_tree().call_group(object_name, "set_speed", speed+1)
 	$Timer.start()
 	track_speed_state = 1
 
@@ -68,8 +71,8 @@ func _on_timer_timeout():
 		set_speed(speed+2)
 		get_tree().call_group(object_name, "set_speed", speed+2)
 	else:
-		set_speed(speed-2)
-		get_tree().call_group(object_name, "set_speed", speed-2)
+		set_speed(speed-1)
+		get_tree().call_group(object_name, "set_speed", speed-1)
 	track_speed_state = 0
 
 func get_end_point_position():

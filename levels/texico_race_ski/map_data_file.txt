@@ -1,5 +1,5 @@
 {
-	"path_length": 100,
+	"path_length": 400,
 	"speed": 4,
 	"characters": {
 		"taco" : {

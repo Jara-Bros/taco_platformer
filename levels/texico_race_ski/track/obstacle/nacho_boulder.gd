@@ -13,4 +13,5 @@ func trigger_reaction(body) -> void:
 	body.spin_out()
 	var track = super.return_track()
 	track.slow_down()
+	body.move_back()
 	pass

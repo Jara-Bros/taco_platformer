@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5v16h5hdymyq"
+path="res://.godot/imported/Taco Race Ski Music.mp3-b69a96e86de37bf6b2d8bd61719d43dc.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Taco Race Ski Music.mp3"
+dest_files=["res://.godot/imported/Taco Race Ski Music.mp3-b69a96e86de37bf6b2d8bd61719d43dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

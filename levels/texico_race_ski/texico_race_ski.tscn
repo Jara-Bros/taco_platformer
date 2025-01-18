@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4wg0k0uftiqn"]
+[gd_scene load_steps=22 format=3 uid="uid://4wg0k0uftiqn"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/texico_race_ski.gd" id="1_1mnjn"]
 [ext_resource type="PackedScene" uid="uid://cs36lv6ohv086" path="res://levels/texico_race_ski/hud/completion_hud/completion_hud.tscn" id="2_1kvcb"]
@@ -7,12 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="4_sbrjp"]
 [ext_resource type="PackedScene" uid="uid://bmxilgpsdhqob" path="res://levels/texico_race_ski/hud/place_hud/place_hud.tscn" id="4_wh1e4"]
 [ext_resource type="PackedScene" uid="uid://oi438k0pc0k2" path="res://levels/texico_race_ski/npc_character_ski/npc_character.tscn" id="5_kgcyg"]
+[ext_resource type="AudioStream" uid="uid://5v16h5hdymyq" path="res://audio/music/Taco Race Ski Music.mp3" id="8_80t25"]
+[ext_resource type="PackedScene" uid="uid://f30ooq8uimft" path="res://levels/texico_race_ski/hud/countdown_hud/countdown_hud.tscn" id="9_pdpo6"]
+[ext_resource type="AudioStream" uid="uid://yx6xw2bafux" path="res://audio/music/countdown drumroll.mp3" id="10_toyv6"]
 
 [sub_resource type="Animation" id="Animation_00rk5"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -24,7 +27,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -40,7 +43,7 @@ resource_name = "spin_out"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -52,7 +55,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -69,39 +72,11 @@ _data = {
 "spin_out": SubResource("Animation_l7yj4")
 }
 
-[sub_resource type="Animation" id="Animation_jejlm"]
-resource_name = "spin_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(334, 40), Vector2(335, 26), Vector2(335, 9), Vector2(336, 23), Vector2(336, 36), Vector2(330, 51)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [-5.76831, -6.67579, -7.53628, -8.68272, -10.0, -10.4999]
-}
-
 [sub_resource type="Animation" id="Animation_5prrr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -113,7 +88,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -124,18 +99,12 @@ tracks/1/keys = {
 "values": [-5.76831]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh58t"]
-_data = {
-"RESET": SubResource("Animation_5prrr"),
-"spin_out": SubResource("Animation_jejlm")
-}
-
-[sub_resource type="Animation" id="Animation_tc2j0"]
+[sub_resource type="Animation" id="Animation_jejlm"]
 resource_name = "spin_out"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -143,11 +112,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(143, 235), Vector2(154, 208), Vector2(154, 184), Vector2(154, 200), Vector2(155, 217), Vector2(150, 238)]
+"values": [Vector2(334, 40), Vector2(335, 26), Vector2(335, 9), Vector2(336, 23), Vector2(336, 36), Vector2(330, 51)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -155,14 +124,20 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.519913, -0.481309, -1.874, -3.39449, -4.80149, -5.82074]
+"values": [-5.76831, -6.67579, -7.53628, -8.68272, -10.0, -10.4999]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nh58t"]
+_data = {
+"RESET": SubResource("Animation_5prrr"),
+"spin_out": SubResource("Animation_jejlm")
 }
 
 [sub_resource type="Animation" id="Animation_76mf1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -174,7 +149,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -185,10 +160,87 @@ tracks/1/keys = {
 "values": [0.519913]
 }
 
+[sub_resource type="Animation" id="Animation_tc2j0"]
+resource_name = "spin_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(143, 235), Vector2(154, 208), Vector2(154, 184), Vector2(154, 200), Vector2(155, 217), Vector2(150, 238)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.519913, -0.481309, -1.874, -3.39449, -4.80149, -5.82074]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f8faq"]
 _data = {
 "RESET": SubResource("Animation_76mf1"),
 "spin_out": SubResource("Animation_tc2j0")
+}
+
+[sub_resource type="Animation" id="Animation_84xx5"]
+resource_name = "countdown"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountdownHud")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["3"],
+"method": &"set_label_text"
+}, {
+"args": ["2"],
+"method": &"set_label_text"
+}, {
+"args": ["1"],
+"method": &"set_label_text"
+}, {
+"args": ["GO!"],
+"method": &"set_label_text"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_countdown_effect"
+}, {
+"args": [],
+"method": &"start_background_music"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnauy"]
+_data = {
+"countdown": SubResource("Animation_84xx5")
 }
 
 [node name="TexicoRaceSki" type="Node2D"]
@@ -200,10 +252,10 @@ completion_hud_scene = ExtResource("2_1kvcb")
 [node name="PlaceHud" parent="." instance=ExtResource("4_wh1e4")]
 
 [node name="Track" parent="." instance=ExtResource("2_uicdj")]
-position = Vector2(0, 49)
+position = Vector2(47, 113)
 
 [node name="TacoRaceSki" parent="." instance=ExtResource("3_7vcn6")]
-position = Vector2(178, 74)
+position = Vector2(189, 134)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TacoRaceSki"]
 libraries = {
@@ -211,13 +263,13 @@ libraries = {
 }
 
 [node name="Track2" parent="." instance=ExtResource("2_uicdj")]
-position = Vector2(192, 5)
+position = Vector2(103, -3.69549e-06)
 
 [node name="Track3" parent="." instance=ExtResource("2_uicdj")]
-position = Vector2(13, 194)
+position = Vector2(-13, 228)
 
 [node name="NpcCharacter" parent="." instance=ExtResource("5_kgcyg")]
-position = Vector2(334, 40)
+position = Vector2(233, 25)
 rotation = -5.76831
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="NpcCharacter"]
@@ -226,10 +278,25 @@ libraries = {
 }
 
 [node name="NpcCharacter2" parent="." instance=ExtResource("5_kgcyg")]
-position = Vector2(143, 235)
+position = Vector2(127, 260)
 rotation = 0.519913
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NpcCharacter2"]
 libraries = {
 "": SubResource("AnimationLibrary_f8faq")
 }
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_80t25")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cnauy")
+}
+
+[node name="CountdownHud" parent="." instance=ExtResource("9_pdpo6")]
+
+[node name="Countdown" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_toyv6")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -5,6 +5,7 @@ var type:String
 var is_sendable: bool
 var speed : int = 10
 var track
+var can_move : bool = false
 signal slow_down
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +24,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x -= speed
+	if can_move:
+		position.x -= speed
 	pass
 
 func set_parameters(dic: Dictionary):
@@ -39,6 +41,9 @@ func trigger_reaction(body) -> void:
 	
 func return_track():
 	return track
+
+func set_can_move(stat: bool):
+	can_move = stat
 
 func _on_body_entered(body):
 	if body.is_in_group("Player") and body.is_stunned == false:

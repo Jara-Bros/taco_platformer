@@ -4,9 +4,8 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -400.0
 
 var is_stunned : bool = false
-
 @onready var animation_player = $AnimationPlayer
-
+var track
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -26,6 +25,29 @@ func spin_out():
 	animation_player.play("spin_out")
 	is_stunned = true
 	$StunnedTimer.start()
+func move_back():
+	var gt = global_transform
+	var track_gt = track.global_transform
+	var local_transform: Transform2D = track_gt.affine_inverse()
+	var relative_position = local_transform * gt.origin
+	relative_position = Vector2(relative_position.x - 25, relative_position.y)
+	var t_global_position = track_gt * relative_position
+	var pos_tween = create_tween()
+	pos_tween.tween_property(self, "position", t_global_position, 0.5)
+	#global_position = t_global_position
+	
+	
+
+func move_forward():
+	var gt = global_transform
+	var track_gt = track.global_transform
+	var local_transform: Transform2D = track_gt.affine_inverse()
+	var relative_position = local_transform * gt.origin
+	relative_position = Vector2(relative_position.x + 25, relative_position.y)
+	var t_global_position = track_gt * relative_position
+	var pos_tween = create_tween()
+	pos_tween.tween_property(self, "position", t_global_position, 0.5)
+
 	
 	
 
