@@ -29,7 +29,13 @@ func play_woz_dialogue():
 	await Dialogic.timeline_ended
 	player_input = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func play_optoworm_dialogue():
+	Dialogic.start("opto_worm_intro")
+	await Dialogic.timeline_ended
+	# SceneManager switch
+
+
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("move_left") && player_input == true:
@@ -50,3 +56,4 @@ func _process(delta: float) -> void:
 		
 	if input_count == 8:
 		anim_player.play("woz_jump")
+		input_count += 1
