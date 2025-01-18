@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://d4g1hsukmhxvo"]
+[gd_scene load_steps=23 format=3 uid="uid://d4g1hsukmhxvo"]
 
 [ext_resource type="Script" path="res://animation/opening_movie/opening_movie.gd" id="1_0llp1"]
 [ext_resource type="Texture2D" uid="uid://deciensq7pcdc" path="res://animation/opening_movie/opening_movie_nightsky.png" id="1_jhb8m"]
 [ext_resource type="Texture2D" uid="uid://dresdbj2mf2gw" path="res://animation/opening_movie/opening_movie_clouds_close.png" id="1_m6cws"]
+[ext_resource type="AudioStream" uid="uid://cjt7hrrljj8w6" path="res://audio/sfx/opening_movie/boxes_falling_sfx.mp3" id="2_b4aew"]
 [ext_resource type="Texture2D" uid="uid://kkyxvs3tisyj" path="res://animation/opening_movie/opening_movie_clouds_far.png" id="2_lxh6w"]
 [ext_resource type="Texture2D" uid="uid://dgtnt8nto2xc" path="res://animation/opening_movie/box_news_jet.png" id="2_nxn2t"]
 [ext_resource type="Texture2D" uid="uid://bl6g2a0q5r82h" path="res://animation/opening_movie/opening_movie_clouds_middle.png" id="2_ybdvf"]
 [ext_resource type="Texture2D" uid="uid://b2sabs6dyexyy" path="res://animation/opening_movie/clouds.png" id="3_5teb1"]
+[ext_resource type="AudioStream" uid="uid://b5gnemsjmte8w" path="res://audio/sfx/opening_movie/box_fall_sfx.mp3" id="3_58li6"]
 [ext_resource type="Texture2D" uid="uid://ckcba78p5y2vi" path="res://animation/opening_movie/jet_back_door.png" id="6_dg2x8"]
 [ext_resource type="PackedScene" uid="uid://dwaoxjsa7wxyu" path="res://animation/opening_movie/corpo_box_container.tscn" id="8_jdrgi"]
 [ext_resource type="AudioStream" uid="uid://cp54g54b1v818" path="res://audio/sfx/opening_movie/029974_inside-the-robot-70923.mp3" id="10_38bvy"]
@@ -107,10 +109,10 @@ tracks/3/path = NodePath("PlaneSFX:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4, 7.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false]
+"values": [true, true, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -124,6 +126,80 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BoxesFallingSFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 10.5,
+"start_offset": 0.0,
+"stream": ExtResource("2_b4aew")
+}],
+"times": PackedFloat32Array(9)
+}
+tracks/5/use_blend = true
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BoxFallSFX")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_58li6")
+}],
+"times": PackedFloat32Array(9.96667)
+}
+tracks/6/use_blend = true
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BoxesFallingSFX")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 7.0,
+"start_offset": 3.1533,
+"stream": ExtResource("2_b4aew")
+}],
+"times": PackedFloat32Array(9.15)
+}
+tracks/7/use_blend = true
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BoxesFallingSFX")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 8.59563,
+"start_offset": 2.0271,
+"stream": ExtResource("2_b4aew")
+}],
+"times": PackedFloat32Array(10.1667)
+}
+tracks/8/use_blend = true
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"scene_changed"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i72dh"]
 _data = {
@@ -133,18 +209,6 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_pyyxe"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_obx0e"]
 resource_name = "turn_right"
@@ -245,6 +309,7 @@ texture = ExtResource("2_ybdvf")
 [node name="JetBackDoor" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(434, 297)
+rotation = 1.0472
 texture = ExtResource("6_dg2x8")
 offset = Vector2(0, -16)
 
@@ -292,10 +357,12 @@ position = Vector2(441, 267)
 [node name="DoorSFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(450, 270)
 stream = ExtResource("10_38bvy")
-volume_db = 2.0
 
 [node name="PlaneSFX" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(345, 276)
 stream = ExtResource("10_ohlq2")
 volume_db = 3.0
-autoplay = true
+
+[node name="BoxesFallingSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BoxFallSFX" type="AudioStreamPlayer2D" parent="."]

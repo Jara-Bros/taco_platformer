@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://owy74wpxv31d"]
+[gd_scene load_steps=23 format=3 uid="uid://owy74wpxv31d"]
 
 [ext_resource type="Texture2D" uid="uid://bxpt6w6gjmsmu" path="res://animation/opening_movie/pt_2/opening_movie_pan_down.png" id="1_nnqab"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/beach_night_woz.gd" id="1_xc10k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_f3myy"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/corpo_box.gd" id="7_rnn37"]
 [ext_resource type="PackedScene" uid="uid://bgcx2jiha06lj" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
+[ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="11_4fbiw"]
 
 [sub_resource type="Animation" id="Animation_n6ice"]
 length = 0.001
@@ -100,6 +101,36 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sd6du"]
+resource_name = "corpo_box_open"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CorpoBox:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.4, 0.5, 0.6, 0.7, 1.6, 1.7, 1.8, 1.9, 2, 2.3, 2.35, 2.4, 2.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 14, 15]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_optoworm_dialogue"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_jjuow"]
@@ -232,36 +263,6 @@ tracks/7/keys = {
 "values": [Vector2(451, 559)]
 }
 
-[sub_resource type="Animation" id="Animation_sd6du"]
-resource_name = "corpo_box_open"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CorpoBox:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.4, 0.5, 0.6, 0.7, 1.6, 1.7, 1.8, 1.9, 2, 2.3, 2.35, 2.4, 2.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 14, 15]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_optoworm_dialogue"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcwwq"]
 _data = {
 "RESET": SubResource("Animation_n6ice"),
@@ -378,3 +379,9 @@ position = Vector2(448, 656)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, -32)
 polygon = PackedVector2Array(-128, -168, -104, -168, -104, -16, -80, -16, -80, -56, -48, -56, -47.9321, -16, 176.211, -16, 176, -168, 192, -168, 192, 16, -128, 16)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(304, 584)
+stream = ExtResource("11_4fbiw")
+volume_db = -1.0
+autoplay = true
