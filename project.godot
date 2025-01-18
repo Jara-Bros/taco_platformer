@@ -53,6 +53,7 @@ directories/dch_directory={
 "sous_chef": "res://dialogue/characters/sous_chef.dch",
 "taco": "res://dialogue/characters/taco.dch",
 "ttom_ref_character": "res://dialogue/characters/ttom_ref_character.dch",
+"unknown": "res://dialogue/characters/unknown.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
@@ -85,6 +86,7 @@ directories/dtl_directory={
 "manager_timeline": "res://dialogue/timelines/manager_timeline.dtl",
 "mr_p_initial_talk": "res://dialogue/timelines/mr_p/mr_p_initial_talk.dtl",
 "opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
+"opto_worm_intro": "res://dialogue/timelines/opto_worm_intro.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "salad_dream_instruction": "res://dialogue/timelines/hints/salad_dream_instruction.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
@@ -265,12 +267,14 @@ move_up={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":11,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 move_down={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":12,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 reload={

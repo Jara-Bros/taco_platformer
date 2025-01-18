@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvl2vlisqr54g"]
+[gd_scene load_steps=9 format=3 uid="uid://cvl2vlisqr54g"]
 
+[ext_resource type="Script" path="res://animation/opening_movie/pt_2/opening_movie_pt_two.gd" id="1_6c27c"]
 [ext_resource type="Texture2D" uid="uid://cjk7tp3d6m12x" path="res://animation/opening_movie/pt_2/nightsky_vertical.png" id="1_imkho"]
 [ext_resource type="Texture2D" uid="uid://cii2fw4xx2kpp" path="res://animation/opening_movie/pt_2/clouds_close_vertical.png" id="2_8oxj3"]
 [ext_resource type="Texture2D" uid="uid://o3tlve0svnqv" path="res://animation/opening_movie/pt_2/corpo_box.png" id="3_gul3x"]
+[ext_resource type="AudioStream" uid="uid://be8a6biduqmb4" path="res://audio/sfx/opening_movie/parachute_sfx.mp3" id="4_1214w"]
 
 [sub_resource type="Animation" id="Animation_pjmoh"]
 length = 0.001
@@ -226,6 +228,35 @@ tracks/8/keys = {
 "update": 0,
 "values": [0.0, 0.0, 0.698132, -0.610865, -0.261799]
 }
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../AudioStreamPlayer2D")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_1214w")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/9/use_blend = true
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("..")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"changed_scene"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2qco"]
 _data = {
@@ -234,6 +265,7 @@ _data = {
 }
 
 [node name="OpeningMoviePtTwo" type="Node2D"]
+script = ExtResource("1_6c27c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(320.187, 180)
@@ -274,3 +306,5 @@ libraries = {
 "": SubResource("AnimationLibrary_c2qco")
 }
 autoplay = "drop"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

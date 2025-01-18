@@ -70,7 +70,7 @@ func update_hud(placings: Array[Dictionary]):
 	pass
 	
 func generate_obstacles(track,data_received):
-	var taco_number_of_obstacles = randi_range(3,data_received["path_length"] / 10)
+	var taco_number_of_obstacles = randi_range(data_received["path_length"] / 20, data_received["path_length"] / 10)
 	print(taco_number_of_obstacles)
 	var list_of_locations = []
 	for indx in range(1,taco_number_of_obstacles):
