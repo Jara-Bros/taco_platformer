@@ -9,7 +9,12 @@ var dropped : bool = false
 var ingredients = []
 @export var on_conveyer: bool
 var start_position: Vector2
-# Called when the node enters the scene tree for the first time.
+
+
+@onready var item_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
+
 func _ready():
 	start_position = position
 	$Label.visible = false
@@ -71,10 +76,13 @@ func add_ingredient(body):
 		body.queue_free()
 		var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
 		if body.current_type == "KALE":
+			item_sfx.play()
 			bowl_hud.increment_kale()
 		elif body.current_type == "CHEESE":
+			item_sfx.play()
 			bowl_hud.increment_cheese()
 		else:
+			item_sfx.play()
 			bowl_hud.increment_tomato()
 			
 		if ingredients.size() == 3:

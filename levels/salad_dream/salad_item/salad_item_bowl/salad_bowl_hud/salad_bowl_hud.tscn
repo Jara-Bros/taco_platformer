@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_bowl_hud/salad_bowl_hud.gd" id="1_p0gir"]
 [ext_resource type="Texture2D" uid="uid://ccto8irr4upr8" path="res://levels/salad_dream/sprites/checkmark.png" id="2_nsedc"]
-[ext_resource type="Texture2D" uid="uid://bplbneyvyii2y" path="res://levels/salad_dream/sprites/post_it_note.png" id="2_q7q1t"]
+[ext_resource type="Texture2D" uid="uid://cuoqt2jvhmfda" path="res://levels/salad_dream/sprites/whiteboard.png" id="2_pmfxe"]
 [ext_resource type="FontFile" uid="uid://crex8u4nl138b" path="res://gui/fonts/PixelOperator8.ttf" id="3_rrp46"]
 
 [node name="SaladBowlHud" type="Node2D" groups=["bowl_hud"]]
 script = ExtResource("1_p0gir")
 metadata/_edit_use_anchors_ = true
 
-[node name="PostItNote" type="Sprite2D" parent="."]
-position = Vector2(89, 48)
-scale = Vector2(2.90625, 1.5)
-texture = ExtResource("2_q7q1t")
+[node name="Whiteboard" type="Sprite2D" parent="."]
+position = Vector2(77.75, 46.75)
+scale = Vector2(0.913889, 0.985)
+texture = ExtResource("2_pmfxe")
 
 [node name="Kale" type="Label" parent="."]
 offset_left = 9.0
@@ -26,21 +26,21 @@ text = "Kale
 metadata/_edit_use_anchors_ = true
 
 [node name="KaleCheck1" type="Sprite2D" parent="."]
-position = Vector2(80, 24)
+position = Vector2(78, 19)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="KaleCheck2" type="Sprite2D" parent="."]
-position = Vector2(104, 24)
+position = Vector2(89, 20)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="KaleCheck3" type="Sprite2D" parent="."]
-position = Vector2(128, 24)
+position = Vector2(100, 20)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
@@ -57,21 +57,21 @@ text = "Cheese"
 metadata/_edit_use_anchors_ = true
 
 [node name="CheeseCheck1" type="Sprite2D" parent="."]
-position = Vector2(112, 48)
+position = Vector2(109, 48)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CheeseCheck2" type="Sprite2D" parent="."]
-position = Vector2(136, 48)
+position = Vector2(119, 49)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CheeseCheck3" type="Sprite2D" parent="."]
-position = Vector2(160, 48)
+position = Vector2(128, 49)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
@@ -88,21 +88,21 @@ text = "Tomato"
 metadata/_edit_use_anchors_ = true
 
 [node name="TomCheck1" type="Sprite2D" parent="."]
-position = Vector2(112, 80)
+position = Vector2(106, 78)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TomCheck2" type="Sprite2D" parent="."]
-position = Vector2(136, 80)
+position = Vector2(116, 78)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TomCheck3" type="Sprite2D" parent="."]
-position = Vector2(160, 80)
+position = Vector2(125, 78)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nsedc")
 hframes = 2

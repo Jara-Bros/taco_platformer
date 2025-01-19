@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cog0fb53n1kpy"]
+[gd_scene load_steps=4 format=3 uid="uid://cog0fb53n1kpy"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/ticket/ticket.gd" id="1_5q1ux"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="2_o1idk"]
+[ext_resource type="Texture2D" uid="uid://c2d8rxs76cxf4" path="res://levels/salad_dream/sprites/order_ticket.png" id="2_t11fs"]
 
 [node name="Ticket" type="Control" groups=["ticket"]]
 layout_mode = 3
@@ -12,10 +13,11 @@ offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_5q1ux")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 77.0
 offset_bottom = 93.0
+texture = ExtResource("2_t11fs")
 
 [node name="MainContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 0
@@ -29,23 +31,23 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/MainContainer/BoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0.737255, 1)
 theme_override_fonts/font = ExtResource("2_o1idk")
 theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 
 [node name="TimeLeft" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 80.0
-offset_right = 48.0
-offset_bottom = 103.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 57.0
+offset_top = 69.0
+offset_right = 97.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.721569, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o1idk")
 theme_override_font_sizes/font_size = 15
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 100.0
+wait_time = 30.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

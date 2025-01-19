@@ -27,7 +27,7 @@ func add_ingredient_to_ticket(text):
 	label.text = text 
 	label.add_theme_font_size_override("font_size", 15)
 	label.add_theme_font_override("font", ticket_font)
-	label.add_theme_color_override("font_color", Color.BLACK)
+	label.add_theme_color_override("font_color", Color.MEDIUM_BLUE)
 	var vBox = VBoxContainer.new()
 	vBox.add_child(label)
 	$ColorRect/MainContainer.add_child(vBox)

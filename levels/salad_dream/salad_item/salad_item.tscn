@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item.gd" id="1_pc2r3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu215"]
-radius = 21.0
+radius = 27.0185
 
 [node name="SaladItem" type="RigidBody2D" groups=["salad_item"]]
 collision_layer = 16
@@ -16,5 +16,6 @@ script = ExtResource("1_pc2r3")
 shape = SubResource("CircleShape2D_fu215")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

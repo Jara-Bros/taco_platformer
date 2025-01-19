@@ -110,9 +110,9 @@ func load_course():
 		track3.object_name = "track3"
 		track3.set_speed(data_received["speed"])
 		track3.race_complete.connect(race_completed)
-		generate_obstacles(track,data_received)
-		generate_obstacles(track2,data_received)
-		generate_obstacles(track3,data_received)
+		# generate_obstacles(track,data_received)
+		# generate_obstacles(track2,data_received)
+		# generate_obstacles(track3,data_received)
 		#for element in data_received["characters"]["taco"]["obstacles"]:
 			#track.set_obstacle(element)
 		#for element in data_received["characters"]["limone"]["obstacles"]:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx532vx4gga6"]
+[gd_scene load_steps=6 format=3 uid="uid://bx532vx4gga6"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/salad_item/salad_item_bowl/salad_item_bowl.gd" id="1_raa87"]
 [ext_resource type="Texture2D" uid="uid://dpiuhyi64c1tu" path="res://levels/salad_dream/sprites/salad_bowl.png" id="2_s1d72"]
+[ext_resource type="AudioStream" uid="uid://dhi14jsoc7sb1" path="res://audio/sfx/salad_dream/mixkit-game-ball-tap-2073.wav" id="3_aff7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ydd5o"]
 size = Vector2(48, 24)
@@ -36,6 +37,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SaladItemArea2d"]
 position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_pq3j5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_aff7d")
+volume_db = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
