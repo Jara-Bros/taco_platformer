@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw77drfyeywf0"
-path="res://.godot/imported/corpo_box_side.png-272f91defbcf1945a9cff7f41ff85093.ctex"
+path="res://.godot/imported/corpo_box_side.png-768034caaabad46ea427b1536daf5882.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation/opening_movie/pt_2/beach_night/corpo_box_side.png"
-dest_files=["res://.godot/imported/corpo_box_side.png-272f91defbcf1945a9cff7f41ff85093.ctex"]
+source_file="res://animation/opening_movie/pt_2/corpo_box/corpo_box_side.png"
+dest_files=["res://.godot/imported/corpo_box_side.png-768034caaabad46ea427b1536daf5882.ctex"]
 
 [params]
 

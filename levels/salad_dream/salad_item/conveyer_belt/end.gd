@@ -1,6 +1,12 @@
 extends Area2D
 
+
 @export var hud_scene: PackedScene
+
+@onready var good_sfx: AudioStreamPlayer2D = $GoodSFX
+@onready var bad_sfx: AudioStreamPlayer2D = $BadSFX
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -26,8 +32,10 @@ func _on_area_entered(area):
 			ticket_found.queue_free()
 			
 			hud.set_type("GOOD")
+			good_sfx.play()
 		else:
 			hud.set_type("BAD")
+			bad_sfx.play()
 		
 		area.reset_bowl()
 		get_tree().current_scene.add_child(hud)

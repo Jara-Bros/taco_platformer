@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgharlxhlx8xd"
-path="res://.godot/imported/cheese_block.png-7fc5c9501975452ba433f28272264ceb.ctex"
+uid="uid://bv3p4f02nlg5c"
+path="res://.godot/imported/woz_night_walk_sheet.png-4dae5ab5598dcca4e40c26e5b2d9efcf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/salad_dream/sprites/cheese_block.png"
-dest_files=["res://.godot/imported/cheese_block.png-7fc5c9501975452ba433f28272264ceb.ctex"]
+source_file="res://animation/opening_movie/pt_2/woz_night_walk_sheet.png"
+dest_files=["res://.godot/imported/woz_night_walk_sheet.png-4dae5ab5598dcca4e40c26e5b2d9efcf.ctex"]
 
 [params]
 

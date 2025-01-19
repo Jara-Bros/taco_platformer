@@ -1,13 +1,14 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
-# Called when the node enters the scene tree for the first time.
+
+@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var anim_player: AnimationPlayer = $"../AnimationPlayer"
+
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	interaction_area.interact = Callable(self, "_on_interact")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func play_animation():
-	self.play("open")
+func _on_interact():
+	anim_player.play("corpo_box_open")

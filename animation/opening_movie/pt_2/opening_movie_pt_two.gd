@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func scene_changed():
-	SceneManager.switch_scene("CorpoBoxFall", {})
+func changed_scene():
+	SceneManager.switch_scene("BeachNightWoz", {})

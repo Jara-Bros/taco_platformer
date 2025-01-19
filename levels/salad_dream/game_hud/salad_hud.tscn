@@ -32,11 +32,7 @@ theme_override_font_sizes/font_size = 30
 text = "Salad Orders: "
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 180.0
-autostart = true
-
-[node name="TicketTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 120.0
 autostart = true
 
 [node name="TacoLives" type="Label" parent="."]
@@ -49,4 +45,3 @@ theme_override_font_sizes/font_size = 30
 text = "Dead Orders:"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="TicketTimer" to="." method="_on_ticket_timer_timeout"]
