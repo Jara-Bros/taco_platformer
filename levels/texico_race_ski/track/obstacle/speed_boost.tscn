@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_4o80x"]
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/speed_boost.gd" id="2_wom3q"]
 
-[node name="SpeedBoost" instance=ExtResource("1_4o80x")]
+[node name="SpeedBoost" groups=["speed_boost"] instance=ExtResource("1_4o80x")]
 script = ExtResource("2_wom3q")
 
 [node name="CollisionShape2D" parent="." index="0"]

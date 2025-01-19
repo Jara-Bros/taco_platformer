@@ -53,6 +53,7 @@ directories/dch_directory={
 "sous_chef": "res://dialogue/characters/sous_chef.dch",
 "taco": "res://dialogue/characters/taco.dch",
 "ttom_ref_character": "res://dialogue/characters/ttom_ref_character.dch",
+"unknown": "res://dialogue/characters/unknown.dch",
 "woz": "res://dialogue/characters/woz.dch"
 }
 directories/dtl_directory={
@@ -85,11 +86,13 @@ directories/dtl_directory={
 "manager_timeline": "res://dialogue/timelines/manager_timeline.dtl",
 "mr_p_initial_talk": "res://dialogue/timelines/mr_p/mr_p_initial_talk.dtl",
 "opening_talk": "res://dialogue/timelines/mr_p/opening_talk.dtl",
+"opto_worm_intro": "res://dialogue/timelines/opto_worm_intro.dtl",
 "river_enter_direction_timeline": "res://dialogue/timelines/hints/river_enter_direction_timeline.dtl",
 "salad_dream_instruction": "res://dialogue/timelines/hints/salad_dream_instruction.dtl",
 "sous_2_timeline": "res://dialogue/timelines/sous_2_timeline.dtl",
 "sous_offscreen_1": "res://dialogue/timelines/sous_offscreen_1.dtl",
 "sous_offscreen_2": "res://dialogue/timelines/sous_offscreen_2.dtl",
+"sous_salad_hint": "res://dialogue/timelines/hints/sous_salad_hint.dtl",
 "sous_timeline": "res://dialogue/timelines/sous_timeline.dtl",
 "taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
 "taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",
@@ -134,7 +137,6 @@ animations/leave_default="Instant Out"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=4
 window/size/initial_position_type=4
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"

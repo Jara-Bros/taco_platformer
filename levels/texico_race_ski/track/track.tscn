@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr8fdh167thj5"]
+[gd_scene load_steps=9 format=3 uid="uid://cr8fdh167thj5"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/track.gd" id="1_ll18q"]
 [ext_resource type="PackedScene" uid="uid://bk4qcxew05txq" path="res://levels/texico_race_ski/track/obstacle/nacho_boulder.tscn" id="2_uhggj"]
 [ext_resource type="PackedScene" uid="uid://5qe1gymaceqi" path="res://levels/texico_race_ski/track/obstacle/speed_boost.tscn" id="3_73nmq"]
+[ext_resource type="PackedScene" uid="uid://btfj26an2gaht" path="res://levels/texico_race_ski/track/obstacle/flying_object.tscn" id="4_wlcyx"]
+[ext_resource type="PackedScene" uid="uid://2vkwnqy77cvl" path="res://levels/texico_race_ski/track/obstacle/marker.tscn" id="5_nc150"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u27a5"]
 size = Vector2(643.079, 13.5103)
@@ -18,6 +20,8 @@ script = ExtResource("1_ll18q")
 can_move = false
 nacho_boulder = ExtResource("2_uhggj")
 speed_boost = ExtResource("3_73nmq")
+flying_object = ExtResource("4_wlcyx")
+marker = ExtResource("5_nc150")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(323.357, 8.6299)

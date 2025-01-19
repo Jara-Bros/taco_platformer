@@ -8,6 +8,6 @@ func _ready():
 
 
 func trigger_reaction(body):
-	var track = super.return_track()
-	track.speed_up()
+	#var track = super.return_track()
+	#track.speed_up()
 	body.move_forward()

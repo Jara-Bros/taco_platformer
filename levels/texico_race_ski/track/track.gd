@@ -10,6 +10,8 @@ signal race_complete(track_name)
 @onready var sprite2d = $Sprite2D
 @export var nacho_boulder: PackedScene
 @export var speed_boost: PackedScene
+@export var flying_object: PackedScene
+@export var marker: PackedScene
 var track_speed_state: int
 # Called when the node enters the scene tree for the first time.
 func _ready():	
@@ -32,22 +34,34 @@ func set_size(si):
 
 func set_speed(spe):
 	speed = spe
-func set_obstacle(obs: Dictionary):
+func set_marker(obs: Dictionary):
+	var mark = marker.instantiate()
+	mark.obstacle = obs
+	mark.position.x  = obs["location"] * base_width
+	mark.position.y -=16
+	mark.speed = speed
+	mark.spawn_object = Callable(self, "set_obstacle")
+	mark.add_to_group(object_name)
+	add_child(mark)
+func set_obstacle(obs: Dictionary, pos):
 	var rect: Rect2 = $Sprite2D.get_rect()
 	var obstacle_instance = null
 	
 	if obs["type"] == "nacho_boulder":
 		obstacle_instance = nacho_boulder.instantiate()
-	else:
+	elif obs["type"] == "cheese_boost":
 		obstacle_instance = speed_boost.instantiate()
+	else:
+		obstacle_instance = flying_object.instantiate()
+	
 	obstacle_instance.set_parameters(obs)
-	obstacle_instance.position.x = obs["location"] * base_width
-	obstacle_instance.position.y -=16
+	obstacle_instance.position = pos
 	obstacle_instance.speed = speed
 	obstacle_instance.slow_down.connect(slow_down)
 	obstacle_instance.type = obs["type"]
 	obstacle_instance.track = self
 	obstacle_instance.add_to_group(object_name)
+	obstacle_instance.can_move = true
 	add_child(obstacle_instance)
 	return obstacle_instance
 			

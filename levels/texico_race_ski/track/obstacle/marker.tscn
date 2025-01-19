@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://2vkwnqy77cvl"]
+
+[ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/marker.gd" id="1_fhsta"]
+
+[node name="Marker" type="Marker2D"]
+script = ExtResource("1_fhsta")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-26, 0)
+scale = Vector2(2.6, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -28.0
+offset_right = 3.0
+offset_bottom = 12.0
+color = Color(0, 0, 1, 1)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

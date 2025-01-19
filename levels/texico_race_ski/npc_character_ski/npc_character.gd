@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 
 @onready var animation_player:AnimationPlayer
@@ -17,12 +17,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jum
+	if $RayCast2D.is_colliding() and is_on_floor():
+		
+		if $RayCast2D.get_collider().is_in_group("nacho_boulder"):
+			var will_jump = randi_range(0,1)
+			if will_jump == 1:
+				velocity.y = -400
+		elif $RayCast2D.get_collider().is_in_group("flying_object") and $RayCast2D.get_collider().is_high == false:
+			var will_jump = randi_range(0,1)
+			if will_jump == 1:
+				velocity.y = -400
+			
+	move_and_slide()
 
 
-func _on_timer_timeout():
-	apply_impulse(Vector2(0,-50))
-	pass # Replace with function body.
 
 func spin_out():
 	animation_player.play("spin_out")

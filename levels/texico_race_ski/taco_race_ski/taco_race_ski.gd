@@ -36,7 +36,8 @@ func move_back():
 	pos_tween.tween_property(self, "position", t_global_position, 0.5)
 	#global_position = t_global_position
 	
-	
+func bounce():
+	velocity.y = -300
 
 func move_forward():
 	var gt = global_transform
