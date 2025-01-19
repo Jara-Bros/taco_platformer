@@ -105,7 +105,8 @@ func disable_salad_item_collision():
 
 func reset_bowl():
 	position = start_position
-	ingredients = []
+	ingredients.clear()
+	full = false
 	var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
 	bowl_hud.clear()
 	
