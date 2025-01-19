@@ -70,7 +70,7 @@ func update_hud(placings: Array[Dictionary]):
 	pass
 	
 func generate_obstacles(track,data_received):
-	var taco_number_of_obstacles = randi_range(data_received["path_length"] / 20, data_received["path_length"] / 10)
+	var taco_number_of_obstacles = randi_range(2, 4)
 	print(taco_number_of_obstacles)
 	var list_of_locations = []
 	for indx in range(1,taco_number_of_obstacles):
@@ -110,15 +110,14 @@ func load_course():
 		track3.object_name = "track3"
 		track3.set_speed(data_received["speed"])
 		track3.race_complete.connect(race_completed)
-		# generate_obstacles(track,data_received)
-		# generate_obstacles(track2,data_received)
-		# generate_obstacles(track3,data_received)
-		#for element in data_received["characters"]["taco"]["obstacles"]:
-			#track.set_obstacle(element)
-		#for element in data_received["characters"]["limone"]["obstacles"]:
-			#track2.set_obstacle(element)
-		#for element in data_received["characters"]["third_racer"]["obstacles"]:
-			#track3.set_obstacle(element)
+
+
+		for element in data_received["characters"]["taco"]["obstacles"]:
+			track.set_marker(element)
+		for element in data_received["characters"]["limone"]["obstacles"]:
+			track2.set_marker(element)
+		for element in data_received["characters"]["third_racer"]["obstacles"]:
+			track3.set_marker(element)
 		
 		$TacoRaceSki.track = track
 		$NpcCharacter.track = track2
