@@ -1,35 +1,28 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=33 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
 [ext_resource type="Texture2D" uid="uid://b6tj7l5r05gos" path="res://levels/texico_town/sprites/Screenshot 2024-07-02 131002.png" id="3_ptwvw"]
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="3_w60un"]
+[ext_resource type="Texture2D" uid="uid://dqpk1665u3djb" path="res://levels/texico_town/dios_mio/dios_mio.png" id="4_e3fbd"]
 [ext_resource type="Texture2D" uid="uid://4eonpltpsc5c" path="res://levels/texico_town/sprites/cloud-removebg-preview.png" id="5_i4mxj"]
-[ext_resource type="PackedScene" uid="uid://xlos1drbcyvw" path="res://levels/texico_town/dios_mio/tb_chip_hammocks.tscn" id="6_vnl8q"]
-[ext_resource type="Texture2D" uid="uid://ciclbkgjm2mmv" path="res://levels/texico_town/woz_house/woz_house_.png" id="13_augcr"]
-[ext_resource type="Texture2D" uid="uid://7wqcs5din3l1" path="res://levels/texico_town/woz_house/woz_shoji_doors.png" id="14_8bkwh"]
+[ext_resource type="Texture2D" uid="uid://clv8rbmplkajk" path="res://levels/taco_house/taco_house.png" id="5_opbde"]
+[ext_resource type="Texture2D" uid="uid://bskumj0a6epff" path="res://levels/texico_town/dios_mio/woz_house.png" id="7_ptw7f"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/shoji_door.gd" id="14_7450t"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
-[ext_resource type="Texture2D" uid="uid://dqg5g7r27tok5" path="res://levels/texico_town/sprites/gold_chip.png" id="14_yo5bf"]
-[ext_resource type="Texture2D" uid="uid://3jlu11ktjgka" path="res://levels/texico_town/tb_house/guitar_tb_house.png" id="15_eggqw"]
 [ext_resource type="Texture2D" uid="uid://0e4fbi3ur7i6" path="res://levels/arrows/wooden_arrow-removebg-preview.png" id="22_mr6lb"]
 [ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
 [ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
 [ext_resource type="Texture2D" uid="uid://co8up0texihcv" path="res://levels/texico_town/sprites/boogie_crossing_sign_orange-removebg-preview.png" id="24_yprev"]
 [ext_resource type="Script" path="res://NPC/scripts/limona.gd" id="25_lycvo"]
 [ext_resource type="Texture2D" uid="uid://c4ilw0wp0lifm" path="res://levels/texico_town/sprites/boogie_boards.png" id="26_4u5g0"]
-[ext_resource type="Texture2D" uid="uid://bly5m086ha6t6" path="res://levels/texico_town/sprites/thumb_tack-removebg-preview.png" id="28_wxdb2"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="28_x3vh2"]
-[ext_resource type="Texture2D" uid="uid://bhk0lcto22uch" path="res://levels/texico_town/sprites/gold_thumbtack.png" id="30_seg0j"]
-[ext_resource type="Texture2D" uid="uid://dpvt0n2s0y8dq" path="res://levels/texico_town/sprites/blue_thumbtack.png" id="31_4jadm"]
-[ext_resource type="Texture2D" uid="uid://b846btno5qexi" path="res://levels/texico_town/sprites/pink_thumbtack.png" id="32_f737g"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
-[ext_resource type="Texture2D" uid="uid://dhapnasqatcef" path="res://levels/texico_town/sprites/dios_mio_zoomout.png" id="38_guork"]
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/arrow_sign.gd" id="38_tvu4s"]
 [ext_resource type="AudioStream" uid="uid://b353phm71xn05" path="res://audio/music/transition_in_music.wav" id="39_q6xsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
-size = Vector2(438.312, 195.875)
+size = Vector2(112, 58.204)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsev"]
 size = Vector2(305.556, 395.833)
@@ -115,34 +108,10 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_bqgvn"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_ytsue"]
 resource_name = "transition_in"
 length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h8qdn"]
 _data = {
@@ -164,6 +133,14 @@ offset_top = -898.0
 offset_right = 2063.0
 offset_bottom = 1257.0
 texture = ExtResource("3_ptwvw")
+
+[node name="DiosMio" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -344.0
+offset_top = -312.0
+offset_right = 1056.0
+offset_bottom = 1064.0
+texture = ExtResource("4_e3fbd")
 
 [node name="TBLand" parent="." instance=ExtResource("28_x3vh2")]
 visible = false
@@ -220,246 +197,23 @@ polygon = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 
 [node name="Line2D" parent="LimLand" index="1"]
 points = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14, 52, -12)
 
-[node name="Clouds" type="Node" parent="."]
+[node name="TacoHouse" type="Sprite2D" parent="."]
+position = Vector2(720, -8)
+rotation = 1.57079
+scale = Vector2(0.75, 0.84)
+texture = ExtResource("5_opbde")
 
-[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
-position = Vector2(-1111, 643)
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Clouds"]
-position = Vector2(-613, 590)
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Clouds"]
-position = Vector2(78, 570)
-rotation = -0.0501439
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Clouds"]
-position = Vector2(667, 560)
-rotation = -0.0501439
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Clouds"]
-position = Vector2(1331, 575)
-rotation = -0.0501439
-scale = Vector2(2.07097, 1.82587)
-texture = ExtResource("5_i4mxj")
-
-[node name="Chips" type="Node" parent="."]
-
-[node name="TBChipHammocks" parent="Chips" instance=ExtResource("6_vnl8q")]
-
-[node name="OrangeChip" parent="Chips/TBChipHammocks" index="0"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(638.83, 11.5947)
-script = null
-
-[node name="ColorRect" parent="Chips/TBChipHammocks" index="1"]
-offset_left = 632.83
-offset_top = -59.4053
-offset_right = 634.83
-offset_bottom = 8.59473
-
-[node name="ColorRect3" parent="Chips/TBChipHammocks" index="2"]
-offset_left = 673.83
-offset_top = -61.4053
-offset_right = 675.83
-offset_bottom = 6.59476
-
-[node name="ColorRect2" parent="Chips/TBChipHammocks" index="3"]
-offset_left = 633.83
-offset_top = -63.4053
-offset_right = 635.83
-offset_bottom = 4.59476
-
-[node name="ColorRect4" parent="Chips/TBChipHammocks" index="4"]
-offset_left = 673.83
-offset_top = -63.4053
-offset_right = 675.83
-offset_bottom = 4.59476
-
-[node name="PurpleChip" parent="Chips/TBChipHammocks" index="5"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(680.83, 8.59473)
-script = null
-
-[node name="BarbChips" type="Node" parent="Chips"]
-
-[node name="WozChips" type="Node" parent="Chips"]
-
-[node name="LimonaChips" type="Node" parent="Chips"]
-
-[node name="GoldChips" type="Node" parent="Chips"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(143, -30)
-rotation = 2.01557
-scale = Vector2(1.81284, 1.59735)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(460, 104)
-rotation = 0.470274
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(622, 364)
-rotation = 3.02424
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D5" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(365, 406)
-rotation = 2.69826
-scale = Vector2(1.0644, 1.0027)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D6" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(170, 204)
-rotation = 2.92244
-scale = Vector2(1.0644, 1.0027)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-199, 64)
-rotation = 0.763704
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D7" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-39, 282)
-rotation = 2.9189
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D8" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(55, 435)
-rotation = -1.31154
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D9" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(83, 307)
-rotation = 1.8323
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D10" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-106, 160)
-rotation = 3.98379
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D11" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(19, 205)
-rotation = 3.54499
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D12" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(320, 246)
-rotation = 1.91035
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D13" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(531, 417)
-rotation = 1.62215
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D14" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(222, 468)
-rotation = 1.49844
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D15" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-85, 446)
-rotation = 1.73318
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D16" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-204, 468)
-rotation = 1.73318
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="Sprite2D17" type="Sprite2D" parent="Chips/GoldChips"]
-z_index = -2
-position = Vector2(-330, 491)
-rotation = 1.73318
-scale = Vector2(0.807585, 0.702425)
-texture = ExtResource("14_yo5bf")
-
-[node name="TBHouse" type="Node" parent="."]
-
-[node name="Guitar" type="Sprite2D" parent="TBHouse"]
+[node name="WozHouse" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(489, -51)
-rotation = 0.875699
-scale = Vector2(0.735456, 0.709245)
-texture = ExtResource("15_eggqw")
-
-[node name="WozTeahouse" type="Node" parent="."]
-
-[node name="PickleHouse" type="Sprite2D" parent="WozTeahouse"]
-z_index = -1
-position = Vector2(-206, -44)
-scale = Vector2(0.405797, 0.39779)
-texture = ExtResource("13_augcr")
-
-[node name="ShojiDoor" type="Sprite2D" parent="WozTeahouse"]
-z_index = -1
-position = Vector2(-206, -32)
-scale = Vector2(0.173913, 0.176471)
-texture = ExtResource("14_8bkwh")
+position = Vector2(-8, -8)
+texture = ExtResource("7_ptw7f")
 script = ExtResource("14_7450t")
 
-[node name="InteractionArea" parent="WozTeahouse/ShojiDoor" instance=ExtResource("14_lnglo")]
-position = Vector2(-23.4034, -1.66741e-05)
+[node name="InteractionArea" parent="WozHouse" instance=ExtResource("14_lnglo")]
+position = Vector2(-16, 72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WozTeahouse/ShojiDoor/InteractionArea"]
-position = Vector2(0, 3.14713e-05)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WozHouse/InteractionArea"]
+position = Vector2(0, 2.89802)
 shape = SubResource("RectangleShape2D_8rjpq")
 
 [node name="Arrows" type="Node" parent="."]
@@ -508,183 +262,6 @@ position = Vector2(30, 6)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boogie/Limona/InteractionArea"]
 shape = SubResource("RectangleShape2D_j2e0x")
 
-[node name="ThumbTacks" type="Node" parent="."]
-
-[node name="Red" type="Node" parent="ThumbTacks"]
-
-[node name="Sprite2D7" type="Sprite2D" parent="ThumbTacks/Red"]
-z_index = 4
-position = Vector2(7, 138)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("28_wxdb2")
-
-[node name="Sprite2D8" type="Sprite2D" parent="ThumbTacks/Red"]
-z_index = 4
-position = Vector2(-54, 76)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("28_wxdb2")
-
-[node name="Sprite2D9" type="Sprite2D" parent="ThumbTacks/Red"]
-z_index = 4
-position = Vector2(-117, 33)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("28_wxdb2")
-
-[node name="Sprite2D10" type="Sprite2D" parent="ThumbTacks/Red"]
-z_index = 4
-position = Vector2(-195, 2.00001)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("28_wxdb2")
-
-[node name="Sprite2D11" type="Sprite2D" parent="ThumbTacks/Red"]
-z_index = 4
-position = Vector2(-285, -5)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("28_wxdb2")
-
-[node name="Gold" type="Node" parent="ThumbTacks"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(-113, 8)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(329, 74)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D3" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(323, 116)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D4" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(171, 348)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D5" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(-37, 385)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D6" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(498, 284)
-scale = Vector2(0.0715631, 0.0638298)
-texture = ExtResource("30_seg0j")
-
-[node name="Sprite2D7" type="Sprite2D" parent="ThumbTacks/Gold"]
-position = Vector2(-243, 134)
-scale = Vector2(0.0527306, 0.0468086)
-texture = ExtResource("30_seg0j")
-
-[node name="Blue" type="Node" parent="ThumbTacks"]
-
-[node name="Sprite2D7" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(74, 162)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D8" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(150, 202)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D9" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(265, 218)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D10" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(332, 292)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D11" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(419, 348)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D12" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(512, 359)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D13" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(625, 361)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D14" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(734, 316)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D15" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(822, 267)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Sprite2D18" type="Sprite2D" parent="ThumbTacks/Blue"]
-z_index = 4
-position = Vector2(881, 200)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("31_4jadm")
-
-[node name="Pink" type="Node" parent="ThumbTacks"]
-
-[node name="Sprite2D15" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-23, 226)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D16" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-107, 295)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D17" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-223, 324)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D18" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-339, 353)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D19" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-469, 349)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D20" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-400, 443)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
-[node name="Sprite2D21" type="Sprite2D" parent="ThumbTacks/Pink"]
-z_index = 4
-position = Vector2(-521, 418)
-scale = Vector2(0.064, 0.052)
-texture = ExtResource("32_f737g")
-
 [node name="WindBM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_rmilw")
 volume_db = -10.0
@@ -723,15 +300,6 @@ autoplay = "move"
 
 [node name="QuickReload" parent="." instance=ExtResource("3_w60un")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = 5
-offset_left = 204.0
-offset_top = -203.0
-offset_right = 673.0
-offset_bottom = 26.0
-texture = ExtResource("38_guork")
-expand_mode = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h8qdn")
@@ -742,7 +310,7 @@ stream = ExtResource("39_q6xsg")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="enter_woz_house" from="WozTeahouse/ShojiDoor" to="." method="_on_shoji_door_enter_woz_house"]
+[connection signal="enter_woz_house" from="WozHouse" to="." method="_on_shoji_door_enter_woz_house"]
 [connection signal="boogie_board_swtich" from="Boogie/Limona" to="." method="_on_limona_boogie_board_swtich"]
 
 [editable path="Taco"]
@@ -751,4 +319,3 @@ autoplay = true
 [editable path="BarbLand"]
 [editable path="BarbL2"]
 [editable path="LimLand"]
-[editable path="Chips/TBChipHammocks"]

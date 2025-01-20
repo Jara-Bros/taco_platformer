@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ri0aovfrqcw0"
-path="res://.godot/imported/tortilla_shell-removebg-preview.png-98f10972e9f55ec6c6441d275604ebfc.ctex"
+uid="uid://dqpk1665u3djb"
+path="res://.godot/imported/dios_mio.png-7a2c65e42cd2788d2c6772c07abc974e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/taco_house/tortilla_shell-removebg-preview.png"
-dest_files=["res://.godot/imported/tortilla_shell-removebg-preview.png-98f10972e9f55ec6c6441d275604ebfc.ctex"]
+source_file="res://levels/texico_town/dios_mio/dios_mio.png"
+dest_files=["res://.godot/imported/dios_mio.png-7a2c65e42cd2788d2c6772c07abc974e.ctex"]
 
 [params]
 

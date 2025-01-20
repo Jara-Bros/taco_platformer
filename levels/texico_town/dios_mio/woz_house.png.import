@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1l3qd8mjlyid"
-path="res://.godot/imported/Guitar-Silhouette-colored.png-18709e765fb321674bacd1a4dbc3c21b.ctex"
+uid="uid://bskumj0a6epff"
+path="res://.godot/imported/woz_house.png-f690bbc684b4b0b96c64e199cb496a84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/taco_house/Guitar-Silhouette-colored.png"
-dest_files=["res://.godot/imported/Guitar-Silhouette-colored.png-18709e765fb321674bacd1a4dbc3c21b.ctex"]
+source_file="res://levels/texico_town/dios_mio/woz_house.png"
+dest_files=["res://.godot/imported/woz_house.png-f690bbc684b4b0b96c64e199cb496a84.ctex"]
 
 [params]
 
