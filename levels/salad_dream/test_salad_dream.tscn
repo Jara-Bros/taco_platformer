@@ -1071,6 +1071,7 @@ autoplay = true
 
 [editable path="Land3"]
 [editable path="Land4"]
+[editable path="SaladHud"]
 [editable path="Taco"]
 [editable path="Land"]
 [editable path="Land2"]

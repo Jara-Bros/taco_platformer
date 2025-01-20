@@ -14,11 +14,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
  
 func _on_salad_item_box_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Player")) and is_under(body):

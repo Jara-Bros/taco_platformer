@@ -93,6 +93,7 @@ directories/dtl_directory={
 "sous_offscreen_1": "res://dialogue/timelines/sous_offscreen_1.dtl",
 "sous_offscreen_2": "res://dialogue/timelines/sous_offscreen_2.dtl",
 "sous_salad_hint": "res://dialogue/timelines/hints/sous_salad_hint.dtl",
+"sous_salad_rush": "res://dialogue/timelines/hints/sous_salad_rush.dtl",
 "sous_timeline": "res://dialogue/timelines/sous_timeline.dtl",
 "taco_finds_bleu_timeline": "res://dialogue/timelines/taco_finds_bleu_timeline.dtl",
 "taco_start_timeline": "res://dialogue/timelines/taco_start_timeline.dtl",

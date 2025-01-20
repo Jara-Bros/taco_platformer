@@ -28,7 +28,7 @@ offset_left = -40.0
 offset_top = -56.0
 offset_right = 41.0
 offset_bottom = -33.0
-text = "[F] Pick Up"
+text = "[X] Pick Up"
 
 [node name="SaladItemArea2d" type="Area2D" parent="."]
 collision_layer = 8

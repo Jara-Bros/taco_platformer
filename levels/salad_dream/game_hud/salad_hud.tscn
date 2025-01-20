@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://idwicpo18mhb"]
+[gd_scene load_steps=5 format=3 uid="uid://idwicpo18mhb"]
 
 [ext_resource type="Script" path="res://levels/salad_dream/game_hud/salad_hud.gd" id="1_dmty6"]
 [ext_resource type="PackedScene" uid="uid://cog0fb53n1kpy" path="res://levels/salad_dream/ticket/Ticket.tscn" id="2_523l5"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="3_ommsp"]
+[ext_resource type="AudioStream" uid="uid://cxnollrv7et1o" path="res://audio/sfx/salad_dream/kitchen_printer_sfx.mp3" id="4_gris7"]
 
 [node name="SaladHud" type="CanvasLayer" groups=["salad_hud"]]
 script = ExtResource("1_dmty6")
@@ -32,7 +33,7 @@ theme_override_font_sizes/font_size = 30
 text = "Salad Orders: "
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 15.0
 autostart = true
 
 [node name="TacoLives" type="Label" parent="."]
@@ -43,5 +44,8 @@ offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("3_ommsp")
 theme_override_font_sizes/font_size = 30
 text = "Dead Orders:"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gris7")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

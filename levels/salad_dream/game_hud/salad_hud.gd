@@ -5,15 +5,16 @@ extends CanvasLayer
 @onready var kitchen_ticket_sfx: AudioStreamPlayer2D = $KitchenTicketSFX
 
 
-var taco_lives = 3
-# Called when the node enters the scene tree for the first time.
+var taco_lives = 0
+
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
 
 func update_ticket(score: int):
 	$Label.text = "Score: " + str(score)
@@ -26,9 +27,9 @@ func add_new_ticket():
  
 
 func decrease_taco_life():
-	taco_lives -= 1
-	$TacoLives.text = "Lives: " + str(taco_lives)
-	if taco_lives == 0:
+	taco_lives += 1
+	$TacoLives.text = "Dead Orders: " + str(taco_lives)
+	if taco_lives == 3:
 		game_over()
 
 

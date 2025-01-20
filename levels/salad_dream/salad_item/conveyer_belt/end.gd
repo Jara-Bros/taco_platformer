@@ -7,6 +7,8 @@ extends Area2D
 @onready var bad_sfx: AudioStreamPlayer2D = $BadSFX
 
 
+var total_orders : int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -32,6 +34,7 @@ func _on_area_entered(area):
 			ticket_found.queue_free()
 			
 			hud.set_type("GOOD")
+			total_orders += 1
 			good_sfx.play()
 		else:
 			hud.set_type("BAD")
@@ -39,6 +42,10 @@ func _on_area_entered(area):
 		
 		area.reset_bowl()
 		get_tree().current_scene.add_child(hud)
+
+
+	if total_orders == 3:
+		Dialogic.start("sous_salad_rush")
 		
 
 func _on_body_entered(body: Node2D) -> void:

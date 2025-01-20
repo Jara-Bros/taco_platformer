@@ -36,7 +36,7 @@ func _ready():
 		current_type = "TOMATOES"
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 	#if Input.is_action_just_pressed("item"):
 		#collected = false
