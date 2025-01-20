@@ -47,7 +47,7 @@ func compare_ticket_ingredients(other):
 			return false
 	return true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	$ColorRect/TimeLeft.text = str(int($Timer.time_left))
 	

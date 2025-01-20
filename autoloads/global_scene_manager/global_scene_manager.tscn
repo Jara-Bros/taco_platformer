@@ -16,6 +16,7 @@ scenes = {
 "KitchenLineSequence": &"res://levels/salad_dream/kitchen_line_t_sequence.tscn",
 "KitchenSequence": &"res://levels/salad_dream/kitchen_sequence.tscn",
 "MainMenu": &"res://gui/menus/main_menu/main_menu.tscn",
+"OpeningMovie": "res://animation/opening_movie/opening_movie.tscn",
 "RiverPlantain": &"res://levels/river_enter/river/river_ride.tscn",
 "RiverRideEnter": &"res://levels/river_enter/river_enter.tscn",
 "SaladDream": "res://levels/salad_dream/test_salad_dream.tscn",

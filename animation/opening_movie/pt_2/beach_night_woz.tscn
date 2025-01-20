@@ -38,6 +38,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeOut:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5d11e"]
 resource_name = "corpo_box"
@@ -105,7 +117,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_sd6du"]
 resource_name = "corpo_box_open"
-length = 4.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,6 +143,18 @@ tracks/1/keys = {
 "args": [],
 "method": &"play_optoworm_dialogue"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeOut:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_jjuow"]
@@ -306,6 +330,14 @@ radius = 50.3587
 
 [node name="BeachNightWoz" type="Node2D"]
 script = ExtResource("1_xc10k")
+
+[node name="FadeOut" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
 
 [node name="NightBeach" type="Sprite2D" parent="."]
 position = Vector2(320, 360)

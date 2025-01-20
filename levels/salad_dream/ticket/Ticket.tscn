@@ -47,7 +47,7 @@ theme_override_fonts/font = ExtResource("2_o1idk")
 theme_override_font_sizes/font_size = 15
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 25.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

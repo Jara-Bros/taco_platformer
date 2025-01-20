@@ -12,6 +12,7 @@ var start_position: Vector2
 
 
 @onready var item_sfx: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 
@@ -55,10 +56,10 @@ func tween_complete():
 	invincible = false
 
 
-
 func lock_to_conveyer_belt():
 	collected = false
 	position = player.position + Vector2(0, 0)
+
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
@@ -86,6 +87,7 @@ func add_ingredient(body):
 			bowl_hud.increment_tomato()
 			
 		if ingredients.size() == 3:
+			sprite.frame = 1
 			full = true
 	
 func get_ingredients_in_bowl():

@@ -57,3 +57,7 @@ func _process(delta: float) -> void:
 	if input_count == 8:
 		anim_player.play("woz_jump")
 		input_count += 1
+
+
+func changed_scene():
+	SceneManager.switch_scene(" ", {})
