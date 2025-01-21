@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://5qe1gymaceqi"]
+[gd_scene load_steps=4 format=3 uid="uid://5qe1gymaceqi"]
 
 [ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_4o80x"]
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/speed_boost.gd" id="2_wom3q"]
+[ext_resource type="Texture2D" uid="uid://b0osdygimj6sg" path="res://levels/texico_race_ski/sprites/cheese_boost.png" id="3_p8efn"]
 
 [node name="SpeedBoost" groups=["speed_boost"] instance=ExtResource("1_4o80x")]
 script = ExtResource("2_wom3q")
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 13)
+position = Vector2(-0.5, 13)
 
 [node name="ColorRect" parent="." index="1"]
+visible = false
 offset_top = 7.0
 color = Color(0.827193, 0.585946, 0.00742619, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+position = Vector2(2.38419e-07, 13)
+scale = Vector2(3.21875, 1.1875)
+texture = ExtResource("3_p8efn")

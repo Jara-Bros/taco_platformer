@@ -95,6 +95,7 @@ func get_ingredients_in_bowl():
 
 func clear():
 	ingredients.clear()
+	sprite.frame = 0
 	full = false
 
 func _on_body_exited(body):
@@ -108,6 +109,7 @@ func disable_salad_item_collision():
 func reset_bowl():
 	position = start_position
 	ingredients.clear()
+	sprite.frame = 0
 	full = false
 	var bowl_hud = get_tree().get_first_node_in_group("bowl_hud")
 	bowl_hud.clear()

@@ -135,6 +135,9 @@ texture = ExtResource("4_e3fbd")
 [node name="Taco" parent="." instance=ExtResource("2_0cacu")]
 position = Vector2(623, -22)
 
+[node name="Camera2D" parent="Taco" index="3"]
+limit_left = -350
+
 [node name="ChipPlats" type="Node" parent="."]
 
 [node name="ChipPlat" parent="ChipPlats" instance=ExtResource("5_l32bp")]
@@ -147,34 +150,25 @@ position = Vector2(368, 33)
 position = Vector2(208, 97)
 
 [node name="ChipPlat4" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(452, 241)
+position = Vector2(332, 216)
 
 [node name="ChipPlat5" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(342, 207)
+position = Vector2(372, 125)
 
 [node name="ChipPlat6" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(-164, 377)
+
+[node name="ChipPlat7" parent="ChipPlats" instance=ExtResource("5_l32bp")]
 position = Vector2(-164, 377)
 
 [node name="ChipPlat9" parent="ChipPlats" instance=ExtResource("5_l32bp")]
 position = Vector2(60, 125)
 
 [node name="ChipPlat10" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(565, 300)
+position = Vector2(292, 297)
 
 [node name="ChipPlat12" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(697, 358)
-
-[node name="ChipPlat13" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(642, 441)
-
-[node name="ChipPlat14" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(534, 441)
-
-[node name="ChipPlat15" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(426, 441)
-
-[node name="ChipPlat16" parent="ChipPlats" instance=ExtResource("5_l32bp")]
-position = Vector2(319, 441)
+position = Vector2(228, 361)
 
 [node name="ChipPlat17" parent="ChipPlats" instance=ExtResource("5_l32bp")]
 position = Vector2(213, 446)
@@ -217,6 +211,15 @@ polygon = PackedVector2Array(48, -29, 8, 53, -121, -23)
 
 [node name="Line2D" parent="Land3" index="1"]
 points = PackedVector2Array(48, -29, 8, 53, -121, -23, 48, -29)
+
+[node name="Land4" parent="." instance=ExtResource("6_75a44")]
+position = Vector2(-187, 374)
+
+[node name="Polygon2D" parent="Land4" index="0"]
+polygon = PackedVector2Array(48, -29, -57, 35, -130.679, -21.7945, -130, -185, -103, -185, -103, -24)
+
+[node name="Line2D" parent="Land4" index="1"]
+points = PackedVector2Array(48, -29, -57, 35, -130.679, -21.7945, -130, -185, -103, -185, -103, -24, 48, -29)
 
 [node name="TacoHouse" type="Sprite2D" parent="."]
 position = Vector2(680, -3)
@@ -308,7 +311,9 @@ autoplay = true
 [connection signal="enter_woz_house" from="WozHouse" to="." method="_on_shoji_door_enter_woz_house"]
 [connection signal="boogie_board_swtich" from="Boogie/Limona" to="." method="_on_limona_boogie_board_swtich"]
 
+[editable path="Taco"]
 [editable path="ChipPlats/ChipPlat"]
 [editable path="Land"]
 [editable path="Land2"]
 [editable path="Land3"]
+[editable path="Land4"]

@@ -13,7 +13,7 @@ var track_to_player_mappings : Dictionary = {
 var racer_distances :Dictionary =  {
 	"taco": 0,
 	"limone": 0,
-	"thrid_racer": 0
+	"third_racer": 0
 }
 
 var place_string_map : Dictionary = {
@@ -25,11 +25,13 @@ var current_placings : Array[Dictionary] = []
 var is_loaded : bool = false
 var is_race_complete: bool = false
 @export var completion_hud_scene: PackedScene
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready():
 	$AnimationPlayer.play("countdown")
 	load_course()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta):
 	if is_loaded:
 		racer_distances["taco"] = get_distance($TacoRaceSki.global_transform,track.global_transform, track.get_end_point_position())
@@ -59,15 +61,16 @@ func _process(delta):
 			update_hud(new_placings)
 		pass
 
+
 func update_hud(placings: Array[Dictionary]):
 	var indx_found = placings.find({
 		"player": "taco",
 		"distance": racer_distances["taco"]
-		
 	})
 	$PlaceHud.update_place(place_string_map[indx_found])
 	current_placings = placings
 	pass
+	
 	
 func generate_obstacles(track,data_received):
 	var taco_number_of_obstacles = randi_range(2, 4)
@@ -90,6 +93,7 @@ func generate_obstacles(track,data_received):
 		}
 		list_of_locations.append(location)
 		track.set_obstacle(obstacle)
+
 
 func load_course():
 	var file = FileAccess.open("res://levels/texico_race_ski/map_data_file.txt", FileAccess.READ)
@@ -130,6 +134,7 @@ func get_distance(character_transform: Transform2D, track_transform: Transform2D
 	#print(relative_position, " ", area_position)
 	return relative_position.distance_to(area_position)
 
+
 func race_completed(object_name):
 	if is_race_complete == false:
 		var completion_hud_instance = completion_hud_scene.instantiate()
@@ -137,14 +142,18 @@ func race_completed(object_name):
 		get_tree().current_scene.add_child(completion_hud_instance)
 		is_race_complete = true
 
+
 func clear_countdown():
 	$CountdownHud.queue_free()
+	
 	
 func start_countdown_effect():
 	$Countdown.play()
 	
+	
 func start_background_music():
 	$BackgroundMusic.play()
+	
 	
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "countdown":

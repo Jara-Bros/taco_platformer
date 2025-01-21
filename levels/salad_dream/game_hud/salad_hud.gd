@@ -43,7 +43,7 @@ func decrease_taco_life():
 		Dialogic.start("sous_offscreen_2")
 		transition_anim_player.play("fade_out")
 		await transition_anim_player.animation_finished
-		SceneManager.switch_scene(" ", {})
+		SceneManager.switch_scene("TacoHouse", {})
 		
 
 
