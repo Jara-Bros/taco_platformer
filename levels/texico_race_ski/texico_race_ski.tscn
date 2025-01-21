@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://4wg0k0uftiqn"]
+[gd_scene load_steps=32 format=4 uid="uid://4wg0k0uftiqn"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/texico_race_ski.gd" id="1_1mnjn"]
 [ext_resource type="PackedScene" uid="uid://cs36lv6ohv086" path="res://levels/texico_race_ski/hud/completion_hud/completion_hud.tscn" id="2_1kvcb"]
@@ -9,9 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://oi438k0pc0k2" path="res://levels/texico_race_ski/npc_character_ski/npc_character.tscn" id="5_kgcyg"]
 [ext_resource type="Texture2D" uid="uid://b2mcrg52cicqq" path="res://tilesets/texico_town/texico_race_tileset.png" id="5_yfj5d"]
 [ext_resource type="AudioStream" uid="uid://5v16h5hdymyq" path="res://audio/music/Taco Race Ski Music.mp3" id="8_80t25"]
+[ext_resource type="Texture2D" uid="uid://b43djhfbwotnl" path="res://NPC/sprites/limona/limona_idle_vn.png" id="9_878g1"]
 [ext_resource type="PackedScene" uid="uid://f30ooq8uimft" path="res://levels/texico_race_ski/hud/countdown_hud/countdown_hud.tscn" id="9_pdpo6"]
+[ext_resource type="Texture2D" uid="uid://biw8amf243pfk" path="res://NPC/sprites/orangelo/orangelo_idle.png" id="10_0ky82"]
+[ext_resource type="Texture2D" uid="uid://5558yi05xuoy" path="res://NPC/sprites/limona/board_2.png" id="10_tb145"]
 [ext_resource type="AudioStream" uid="uid://yx6xw2bafux" path="res://audio/music/countdown drumroll.mp3" id="10_toyv6"]
 [ext_resource type="Texture2D" uid="uid://cd5s2sftr4ib4" path="res://levels/texico_race_ski/sprites/texico_race_bg.png" id="12_3if1b"]
+[ext_resource type="Texture2D" uid="uid://fm77nb5q6d4l" path="res://NPC/sprites/orangelo/board.png" id="12_o0e8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stj5w"]
 texture = ExtResource("5_yfj5d")
@@ -331,6 +335,15 @@ libraries = {
 "": SubResource("AnimationLibrary_nh58t")
 }
 
+[node name="Sprite2D" type="Sprite2D" parent="NpcCharacter"]
+position = Vector2(8.62348, -15.2196)
+texture = ExtResource("9_878g1")
+flip_h = true
+
+[node name="Board" type="Sprite2D" parent="NpcCharacter"]
+position = Vector2(5.54239, 38.2267)
+texture = ExtResource("10_tb145")
+
 [node name="NpcCharacter2" parent="." instance=ExtResource("5_kgcyg")]
 position = Vector2(127, 260)
 rotation = 0.519913
@@ -340,8 +353,17 @@ libraries = {
 "": SubResource("AnimationLibrary_f8faq")
 }
 
+[node name="Sprite2D" type="Sprite2D" parent="NpcCharacter2"]
+position = Vector2(-6.09977, -28.7714)
+texture = ExtResource("10_0ky82")
+
+[node name="Board" type="Sprite2D" parent="NpcCharacter2"]
+position = Vector2(-2.58504, 25.6772)
+texture = ExtResource("12_o0e8m")
+
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_80t25")
+volume_db = -3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -355,7 +377,7 @@ stream = ExtResource("10_toyv6")
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(320, 180)
+position = Vector2(320, 104)
 scale = Vector2(0.8, 0.72)
 texture = ExtResource("12_3if1b")
 

@@ -19,8 +19,8 @@
 "export_overrides": {
 "image": "\"res://taco/sprites/taco_idle.png\""
 },
-"mirror": true,
-"offset": Vector2(-10, 0),
+"mirror": false,
+"offset": Vector2(0, 0),
 "scale": 1.0,
 "scene": ""
 },

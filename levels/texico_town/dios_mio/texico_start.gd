@@ -7,7 +7,7 @@ extends Node2D
 var initialized_data : Dictionary = {}
 
 var player_spawn_location_dict = {
-	initial_spawn_location = Vector2(439,-82),
+	initial_spawn_location = Vector2(638,-31),
 	woz_front_door = Vector2(-225, -25),
 	barb_front_door = Vector2(650, 100)
 }
@@ -29,8 +29,15 @@ func _ready():
 	else:
 		$Taco.position = initialized_data["player_spawn_location"]
 		
-	
 
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+
+func _on_dialogic_signal(argument:String):
+	if argument == "change_scene":
+		SceneManager.switch_scene("TexicoRace", {})
+
+	
 func get_spawn_location(_spawn : String):
 	return player_spawn_location_dict[_spawn]
 	

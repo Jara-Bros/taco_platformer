@@ -21,6 +21,7 @@ scenes = {
 "RiverRideEnter": &"res://levels/river_enter/river_enter.tscn",
 "SaladDream": "res://levels/salad_dream/test_salad_dream.tscn",
 "TacoHouse": &"res://levels/taco_house/taco_house_interior.tscn",
+"TexicoRace": "res://levels/texico_race_ski/texico_race_ski.tscn",
 "WaterfallLevel": &"res://levels/river_enter/river/river.tscn",
 "WozHouse": &"res://levels/texico_town/woz_house/woz_house_interior.tscn"
 }

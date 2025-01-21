@@ -1,6 +1,8 @@
-[style name="text_&_pic_style"]
-limona (limona_idle): . . .
-[wait time="0.5"]
+[style name="visual_novel"]
+join limona (limona_idle) left [mirrored="true"]
 limona (limona_talk): Hey T.
-limona (limona_question): You tryna boogie?
-[end_timeline]
+limona (limona_talk): You tryna boogie?
+- Yes
+	[signal arg="change_scene"]
+- No
+	[end_timeline]
