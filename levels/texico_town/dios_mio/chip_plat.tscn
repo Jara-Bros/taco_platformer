@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4h1hma3a6q3i"]
+
+[ext_resource type="Texture2D" uid="uid://ceq5lx5nreo5y" path="res://levels/texico_town/dios_mio/chip.png" id="1_16o1i"]
+
+[node name="ChipPlat" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-31, -24, 53, -23, 32, 15, 4, 54, -28, 17, -49, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.3091e-06, -4.88758e-06)
+scale = Vector2(0.512, 0.512)
+texture = ExtResource("1_16o1i")

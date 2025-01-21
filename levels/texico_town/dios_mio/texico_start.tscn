@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c7evesaotjqsb"]
+[gd_scene load_steps=29 format=3 uid="uid://c7evesaotjqsb"]
 
 [ext_resource type="Script" path="res://levels/texico_town/dios_mio/texico_start.gd" id="1_86lqk"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="2_0cacu"]
@@ -6,26 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://be5yquf1mcps2" path="res://tools/quick_reload/quick_reload.tscn" id="3_w60un"]
 [ext_resource type="Texture2D" uid="uid://dqpk1665u3djb" path="res://levels/texico_town/dios_mio/dios_mio.png" id="4_e3fbd"]
 [ext_resource type="Texture2D" uid="uid://4eonpltpsc5c" path="res://levels/texico_town/sprites/cloud-removebg-preview.png" id="5_i4mxj"]
+[ext_resource type="PackedScene" uid="uid://b4h1hma3a6q3i" path="res://levels/texico_town/dios_mio/chip_plat.tscn" id="5_l32bp"]
 [ext_resource type="Texture2D" uid="uid://clv8rbmplkajk" path="res://levels/taco_house/taco_house.png" id="5_opbde"]
-[ext_resource type="Texture2D" uid="uid://bskumj0a6epff" path="res://levels/texico_town/dios_mio/woz_house.png" id="7_ptw7f"]
+[ext_resource type="Texture2D" uid="uid://cs68ofof3yiw7" path="res://levels/texico_town/dios_mio/woz_house_new.png" id="7_g7wcf"]
 [ext_resource type="Script" path="res://levels/texico_town/woz_house/shoji_door.gd" id="14_7450t"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="14_lnglo"]
-[ext_resource type="Texture2D" uid="uid://0e4fbi3ur7i6" path="res://levels/arrows/wooden_arrow-removebg-preview.png" id="22_mr6lb"]
 [ext_resource type="Texture2D" uid="uid://b3x58i4mudm6j" path="res://levels/texico_town/sprites/board_ramp-export.png" id="23_dj0b6"]
 [ext_resource type="Texture2D" uid="uid://cbnactlcssaa5" path="res://NPC/sprites/limona/limona_idle.png" id="24_26xmj"]
-[ext_resource type="Texture2D" uid="uid://co8up0texihcv" path="res://levels/texico_town/sprites/boogie_crossing_sign_orange-removebg-preview.png" id="24_yprev"]
 [ext_resource type="Script" path="res://NPC/scripts/limona.gd" id="25_lycvo"]
 [ext_resource type="Texture2D" uid="uid://c4ilw0wp0lifm" path="res://levels/texico_town/sprites/boogie_boards.png" id="26_4u5g0"]
-[ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="28_x3vh2"]
 [ext_resource type="AudioStream" uid="uid://bqickmur0hojm" path="res://audio/music/wind_soundswav.mp3" id="34_rmilw"]
-[ext_resource type="Script" path="res://levels/texico_town/dios_mio/arrow_sign.gd" id="38_tvu4s"]
 [ext_resource type="AudioStream" uid="uid://b353phm71xn05" path="res://audio/music/transition_in_music.wav" id="39_q6xsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjpq"]
-size = Vector2(112, 58.204)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndsev"]
-size = Vector2(305.556, 395.833)
+size = Vector2(88, 53.102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2e0x"]
 size = Vector2(32, 30)
@@ -142,103 +136,76 @@ offset_right = 1056.0
 offset_bottom = 1064.0
 texture = ExtResource("4_e3fbd")
 
-[node name="TBLand" parent="." instance=ExtResource("28_x3vh2")]
-visible = false
-z_index = 2
-position = Vector2(351, 18)
-collision_mask = 2
+[node name="ChipPlats" type="Node" parent="."]
 
-[node name="Polygon2D" parent="TBLand" index="0"]
-polygon = PackedVector2Array(-162, 21, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 143, -242, 123, -231, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 18, -229, 18, -212, 13)
+[node name="ChipPlat" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(512, 32)
 
-[node name="Line2D" parent="TBLand" index="1"]
-points = PackedVector2Array(-162, 21, -119, 7, -52, 39, -42, -36, 1, 20, 47, -48, 77, -36, 114, -16, 121, -57, 143, -242, 123, -231, 121, -102, 101, -87, 82, -73, 57, -61, 41, -52, 17, -46, -6, -45, -44, -46, -56, -38, -78, -20, -113, -2, -124, 3, -141, 7, -161, 10, -187, 11, -210, 9, -222, 7, -266, 6, -288, 8, -344, 56, -302, 52, -284, 22, -258, 18, -229, 18, -212, 13, -162, 21)
+[node name="ChipPlat7" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(620, 24)
 
-[node name="WozLand" parent="." instance=ExtResource("28_x3vh2")]
-visible = false
-position = Vector2(-2, 17)
-rotation = 0.286837
-collision_mask = 2
+[node name="ChipPlat2" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(384, 80)
 
-[node name="Polygon2D" parent="WozLand" index="0"]
-polygon = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -7.25848, 99.1025, -34.0802, 78.8641, -57.1618, 78.3743, -77.0209, 85.2748, -108.921, 65.4917, -120.307, 83.4464, -141.139, 72.9098, -165.745, 70.7847, -188.903, 45.295, -209.866, 83.799, -238.42, 85.9659, -320.348, 30.8949, -308.942, -32.9401, -276.94, 56.6669, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503)
+[node name="ChipPlat3" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(217, 80)
 
-[node name="Line2D" parent="WozLand" index="1"]
-points = PackedVector2Array(-31.4374, 66.616, -7.6657, 83.5837, 45.6327, 115.822, -7.25848, 99.1025, -34.0802, 78.8641, -57.1618, 78.3743, -77.0209, 85.2748, -108.921, 65.4917, -120.307, 83.4464, -141.139, 72.9098, -165.745, 70.7847, -188.903, 45.295, -209.866, 83.799, -238.42, 85.9659, -320.348, 30.8949, -308.942, -32.9401, -276.94, 56.6669, -232.189, 43.4667, -192.408, 36.9456, -149.123, 38.7739, -103.746, 44.1558, -60.0531, 61.503, -31.4374, 66.616)
+[node name="ChipPlat4" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(532, 224)
 
-[node name="BarbLand" parent="." instance=ExtResource("28_x3vh2")]
-visible = false
-position = Vector2(120, 288)
+[node name="ChipPlat5" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(301, 241)
 
-[node name="Polygon2D" parent="BarbLand" index="0"]
-polygon = PackedVector2Array(-47, -128, -11, -106, 31, -86, 74, -82, 125, -75, 153, -62, 216, 5, 302, 58, 399, 70, 490, 69, 488, -1, 485, -78, 481, -326, 763, -89, 771, -306, 797, -309, 808, -3, 703, -16, 682, 86, 612, 33, 593, 119, 506, 77, 451, 148, 393, 76, 353, 162, 299, 60, 193, 100, 214, 5, 101, 15, 143, -63, 85, 4, 38, -74, -27, -45, -60, -32)
+[node name="ChipPlat6" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(124, 241)
 
-[node name="Line2D" parent="BarbLand" index="1"]
-points = PackedVector2Array(-47, -128, -11, -106, 31, -86, 74, -82, 125, -75, 153, -62, 216, 5, 302, 58, 399, 70, 490, 69, 488, -1, 485, -78, 481, -326, 763, -89, 771, -306, 797, -309, 808, -3, 703, -16, 682, 86, 612, 33, 593, 119, 506, 77, 451, 148, 393, 76, 353, 162, 299, 60, 193, 100, 214, 5, 101, 15, 143, -63, 85, 4, 38, -74, -27, -45, -60, -32, -47, -128)
+[node name="ChipPlat8" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(-48, 120)
 
-[node name="BarbL2" parent="." instance=ExtResource("28_x3vh2")]
-visible = false
-z_index = 3
-position = Vector2(644, 149)
+[node name="ChipPlat9" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(96, 132)
 
-[node name="Polygon2D" parent="BarbL2" index="0"]
-polygon = PackedVector2Array(-2, -21, 55, -17, 113, 67, 0, 59, -61, -23)
+[node name="ChipPlat10" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(448, 339)
 
-[node name="Line2D" parent="BarbL2" index="1"]
-points = PackedVector2Array(-2, -21, 55, -17, 113, 67, 0, 59, -61, -23, -2, -21)
+[node name="ChipPlat11" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(795, 364)
 
-[node name="LimLand" parent="." instance=ExtResource("28_x3vh2")]
-visible = false
-position = Vector2(-22, 207)
+[node name="ChipPlat12" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(622, 403)
 
-[node name="Polygon2D" parent="LimLand" index="0"]
-polygon = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14)
+[node name="ChipPlat13" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(468, 495)
 
-[node name="Line2D" parent="LimLand" index="1"]
-points = PackedVector2Array(52, -12, 89.2388, -42.3106, 94.6125, -40.8865, 82, 93, 9, 39, 46, 132, -82, 97, -143, 213, -199, 126, -259, 240, -317, 156, -378, 239, -412, 186, -446, 152, -505, 240, -542, 183, -656, 142, -661, -115, -611, -115, -609, 151, -504, 152, -460, 152, -449, 138, -312, 141, -250, 133, -196, 112, -131, 103, -83, 84, 2, 14, 52, -12)
+[node name="ChipPlat14" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(304, 403)
+
+[node name="ChipPlat15" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(124, 403)
+
+[node name="ChipPlat16" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(-48, 364)
 
 [node name="TacoHouse" type="Sprite2D" parent="."]
-position = Vector2(720, -8)
+position = Vector2(680, -3)
 rotation = 1.57079
 scale = Vector2(0.75, 0.84)
 texture = ExtResource("5_opbde")
 
 [node name="WozHouse" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-8, -8)
-texture = ExtResource("7_ptw7f")
+position = Vector2(7, -24)
+texture = ExtResource("7_g7wcf")
 script = ExtResource("14_7450t")
 
 [node name="InteractionArea" parent="WozHouse" instance=ExtResource("14_lnglo")]
-position = Vector2(-16, 72)
+position = Vector2(-15, 96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WozHouse/InteractionArea"]
-position = Vector2(0, 2.89802)
+position = Vector2(0, -3.8147e-06)
 shape = SubResource("RectangleShape2D_8rjpq")
 
-[node name="Arrows" type="Node" parent="."]
-
-[node name="ArrowSign" type="Sprite2D" parent="Arrows"]
-z_index = 3
-position = Vector2(5, 191)
-scale = Vector2(0.144, 0.096)
-texture = ExtResource("22_mr6lb")
-flip_h = true
-script = ExtResource("38_tvu4s")
-
-[node name="InteractionArea" parent="Arrows/ArrowSign" instance=ExtResource("14_lnglo")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/ArrowSign/InteractionArea"]
-shape = SubResource("RectangleShape2D_ndsev")
-
 [node name="Boogie" type="Node" parent="."]
-
-[node name="BoogieSign" type="Sprite2D" parent="Boogie"]
-z_index = -1
-position = Vector2(-257, 200)
-rotation = 0.201885
-scale = Vector2(0.612856, 0.532696)
-texture = ExtResource("24_yprev")
 
 [node name="BoogieRamp" type="Sprite2D" parent="Boogie"]
 z_index = 1
@@ -314,8 +281,4 @@ autoplay = true
 [connection signal="boogie_board_swtich" from="Boogie/Limona" to="." method="_on_limona_boogie_board_swtich"]
 
 [editable path="Taco"]
-[editable path="TBLand"]
-[editable path="WozLand"]
-[editable path="BarbLand"]
-[editable path="BarbL2"]
-[editable path="LimLand"]
+[editable path="ChipPlats/ChipPlat"]
