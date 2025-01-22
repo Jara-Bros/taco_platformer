@@ -1,5 +1,5 @@
-[style name="woz_style"]
-join woz 3
+[style name="visual_novel"]
+join woz right
 woz (woz_happy): Hello, Gentleman.
 woz (woz_default): How may the Woz be of service?
 - Tea
@@ -8,8 +8,12 @@ woz (woz_default): How may the Woz be of service?
 - Meditation
 	woz (woz_default): Wonderful.
 	woz (woz_default): Take a deep breath.
+	leave woz
 	[wait time="9.0"]
+	join woz right
 	woz (woz_happy): And another.
+	leave woz
 	[wait time="8.0"]
+	join woz right
 	woz (woz_happy): Great work!
 [end_timeline]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://f30ooq8uimft"]
+[gd_scene load_steps=3 format=3 uid="uid://f30ooq8uimft"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/hud/countdown_hud/countdown_hud.gd" id="1_2qlq6"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="2_b1o6l"]
 
 [node name="CountdownHud" type="CanvasLayer"]
 script = ExtResource("1_2qlq6")
@@ -18,5 +19,6 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_b1o6l")
 theme_override_font_sizes/font_size = 20
 text = "3"

@@ -213,6 +213,7 @@ polygon = PackedVector2Array(48, -29, 8, 53, -121, -23)
 points = PackedVector2Array(48, -29, 8, 53, -121, -23, 48, -29)
 
 [node name="Land4" parent="." instance=ExtResource("6_75a44")]
+visible = false
 position = Vector2(-187, 374)
 
 [node name="Polygon2D" parent="Land4" index="0"]
