@@ -21,19 +21,31 @@ var place_string_map : Dictionary = {
 	1: "2nd",
 	2: "3rd"
 }
+
+var id_to_track_mapping : Dictionary 
 var current_placings : Array[Dictionary] = []
 var is_loaded : bool = false
 var is_race_complete: bool = false
 @export var completion_hud_scene: PackedScene
-
+var tick_counter:int
+var location: int
 
 func _ready():
 	$AnimationPlayer.play("countdown")
 	load_course()
+	id_to_track_mapping = {
+	0: $Track,
+	1: $Track2,
+	2: $Track3
+}
 
 
 func _process(delta):
+	
 	if is_loaded:
+		tick_counter+=1
+		if tick_counter % 12 == 0:
+			location += 1
 		racer_distances["taco"] = get_distance($TacoRaceSki.global_transform,track.global_transform, track.get_end_point_position())
 		racer_distances["limone"] = get_distance($NpcCharacter.global_transform,track2.global_transform, track2.get_end_point_position())
 		racer_distances["third_racer"] = get_distance($NpcCharacter2.global_transform,track3.global_transform, track3.get_end_point_position())
@@ -74,7 +86,6 @@ func update_hud(placings: Array[Dictionary]):
 	
 func generate_obstacles(track,data_received):
 	var taco_number_of_obstacles = randi_range(2, 4)
-	print(taco_number_of_obstacles)
 	var list_of_locations = []
 	for indx in range(1,taco_number_of_obstacles):
 		var taco_pick_obstacle = randi_range(0,1)
@@ -106,16 +117,19 @@ func load_course():
 		track.object_name = "track"
 		track.set_speed(data_received["speed"])
 		track.race_complete.connect(race_completed)
+		track.track_id = 0
 		track2.set_size(data_received["path_length"])
 		track2.object_name = "track2"
 		track2.set_speed(data_received["speed"])
 		track2.race_complete.connect(race_completed)
+		track2.track_id = 1
 		track3.set_size(data_received["path_length"])
 		track3.object_name = "track3"
 		track3.set_speed(data_received["speed"])
 		track3.race_complete.connect(race_completed)
+		track3.track_id = 2
 
-
+	
 		for element in data_received["characters"]["taco"]["obstacles"]:
 			track.set_marker(element)
 		for element in data_received["characters"]["limone"]["obstacles"]:
@@ -163,3 +177,21 @@ func _on_animation_player_animation_finished(anim_name):
 		get_tree().call_group("track3","set_can_move", true)
 		clear_countdown()
 	pass # Replace with function body.
+
+func toss_obstacle(source_track: int, dest_track:int, obs: Obstacle):
+
+	var obs_data_dict :Dictionary
+	## rounding to the nearest divisible by 5
+	obs_data_dict["location"] = (int(location/5) * 5) + 5
+	obs_data_dict["is_sendable"] = obs.is_sendable
+	obs_data_dict["type"] = obs.type
+	var local_transform: Transform2D = track.global_transform.affine_inverse()
+	if dest_track == 0:
+		var relative_position = local_transform * $NpcCharacter.global_transform.origin
+		id_to_track_mapping[dest_track].set_obstacle(obs_data_dict, Vector2(relative_position.x + (int(location/5) * 5) + 5, relative_position.y))
+	else:
+		var relative_position = local_transform * $NpcCharacter2.global_transform.origin
+		id_to_track_mapping[dest_track].set_obstacle(obs_data_dict, Vector2(relative_position.x + (int(location/5) * 5) + 5, relative_position.y))
+
+	
+	

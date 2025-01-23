@@ -4,7 +4,10 @@ var title: String = "TACO"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.text = "\n CONGRATS " + title
+	if title.to_lower() != "taco":
+		$Label.text = "C'mon Man"
+	else:
+		$Label.text = "\n CONGRATS " + title
 	pass # Replace with function body.
 
 

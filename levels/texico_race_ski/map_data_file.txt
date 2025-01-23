@@ -1,55 +1,309 @@
 {
-	"path_length": 100,
+	"path_length": 400,
 	"speed": 4,
 	"characters": {
-		"taco" : {
-			"obstacles" : [
+		"taco": {
+			"obstacles": [
 				{
 					"type": "flying_object",
-					"location": 20,
-					"is_sendable": false,
+					"location": 25,
+					"is_sendable": true,
+					"track_send": 1
 				},
 				{
 					"type": "cheese_boost",
-					"location": 30,
+					"location": 45,
 					"is_sendable": false
 				},
-								{
+				{
+					"type": "nacho_boulder",
+					"location": 65,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
 					"type": "flying_object",
-					"location": 40,
+					"location": 85,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 105,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 125,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 145,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 165,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "cheese_boost",
+					"location": 185,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 205,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 225,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 245,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "flying_object",
+					"location": 265,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 285,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "cheese_boost",
+					"location": 305,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 325,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 345,
 					"is_sendable": false
 				}
 			]
 		},
-		"limone" : {
-			"obstacles" : [
+		"limone": {
+			"obstacles": [
+				{
+					"type": "cheese_boost",
+					"location": 25,
+					"is_sendable": true,
+					"track_send": 0
+				},
 				{
 					"type": "nacho_boulder",
-					"location": 20,
+					"location": 35,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 55,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "cheese_boost",
+					"location": 75,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 95,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "flying_object",
+					"location": 115,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 135,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "cheese_boost",
+					"location": 155,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 175,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 195,
 					"is_sendable": false
 				},
 				{
 					"type": "cheese_boost",
-					"location": 30,
+					"location": 215,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "flying_object",
+					"location": 235,
 					"is_sendable": false
 				},
+				{
+					"type": "nacho_boulder",
+					"location": 255,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "cheese_boost",
+					"location": 275,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 295,
+					"is_sendable": true,
+					"track_send": 2
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 315,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 335,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "flying_object",
+					"location": 355,
+					"is_sendable": false
+				}
 			]
-			
 		},
 		"third_racer": {
-			"obstacles" : [
+			"obstacles": [
 				{
 					"type": "nacho_boulder",
 					"location": 20,
-					"is_sendable": false
+					"is_sendable": true,
+					"track_send": 0
 				},
 				{
 					"type": "cheese_boost",
 					"location": 30,
 					"is_sendable": false
 				},
+				{
+					"type": "flying_object",
+					"location": 50,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 70,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 90,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "flying_object",
+					"location": 110,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 130,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "cheese_boost",
+					"location": 150,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 170,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 190,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 210,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "flying_object",
+					"location": 230,
+					"is_sendable": false
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 250,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "cheese_boost",
+					"location": 270,
+					"is_sendable": false
+				},
+				{
+					"type": "flying_object",
+					"location": 290,
+					"is_sendable": true,
+					"track_send": 1
+				},
+				{
+					"type": "nacho_boulder",
+					"location": 310,
+					"is_sendable": false
+				},
+				{
+					"type": "cheese_boost",
+					"location": 330,
+					"is_sendable": true,
+					"track_send": 0
+				},
+				{
+					"type": "flying_object",
+					"location": 350,
+					"is_sendable": false
+				}
 			]
 		}
 	}
-
 }

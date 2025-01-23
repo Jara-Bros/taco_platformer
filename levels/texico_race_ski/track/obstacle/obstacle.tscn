@@ -1,27 +1,183 @@
-[gd_scene load_steps=3 format=3 uid="uid://bigxdpalbaawc"]
+[gd_scene load_steps=10 format=3 uid="uid://bigxdpalbaawc"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/obstacle.gd" id="1_rwrqd"]
+[ext_resource type="AudioStream" uid="uid://basnlyo2h0ydp" path="res://audio/sfx/pop-parry.mp3" id="2_w268o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyk70"]
 size = Vector2(28, 12)
+
+[sub_resource type="Animation" id="Animation_mvpjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D2/PathFollow2D:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gxl4w"]
+resource_name = "send"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.666667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3133, 0.6145, 0.9759]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.666667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.164061, 0.495674, 1.22871, 1.22871]
+}
+
+[sub_resource type="Animation" id="Animation_6chkt"]
+resource_name = "send_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D2/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.633333, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.1325, 0.3735, 0.6145, 0.8675, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.633333, 0.866667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.164061, 0.164061, 0.705113, 1.1589, 1.38579, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3lg7"]
+_data = {
+"RESET": SubResource("Animation_mvpjb"),
+"send": SubResource("Animation_gxl4w"),
+"send_down": SubResource("Animation_6chkt")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_1guse"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 26, -22, 0, 0, 0, 0, 60, -40, 0, 0, 0, 0, 86, -56, 0, 0, 0, 0, 114, -71, 0, 0, 0, 0, 133, -83, 0, 0, 0, 0, 148, -94, 0, 0, 0, 0, 185, -132)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_1icft"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 1, 0, 0, 0, 0, 4, 8, 0, 0, 0, 0, 8, 13, 0, 0, 0, 0, 14, 20, 0, 0, 0, 0, 19, 30, 0, 0, 0, 0, 28, 51, 0, 0, 0, 0, 38, 63, 0, 0, 0, 0, 44, 73, 0, 0, 0, 0, 48, 81, 0, 0, 0, 0, 60, 97, 0, 0, 0, 0, 94, 142)
+}
+point_count = 11
 
 [node name="Obstacle" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_rwrqd")
 
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+width = 1.0
+default_color = Color(1, 0.105882, 1, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qyk70")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -18.0
-offset_top = -22.0
-offset_right = 22.0
-offset_bottom = 18.0
-color = Color(1, 0.172549, 1, 1)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(39, 0)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.999996, 0.999996)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k3lg7")
+}
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1guse")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1, 0)
+rotation = -0.683709
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../Sprite2D")
+update_rotation = false
+update_scale = false
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1icft")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-2, 1)
+rotation = 0.86217
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D2/PathFollow2D"]
+remote_path = NodePath("../../../Sprite2D")
+update_rotation = false
+update_scale = false
+
+[node name="Parry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_w268o")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

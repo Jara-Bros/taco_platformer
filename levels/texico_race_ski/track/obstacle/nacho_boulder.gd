@@ -12,4 +12,4 @@ func trigger_reaction(body) -> void:
 	#var track = super.return_track()
 	#track.slow_down()
 	body.move_back()
-	pass
+	$AudioStreamPlayer2D.play()

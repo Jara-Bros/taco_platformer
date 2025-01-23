@@ -9,9 +9,9 @@ func _ready():
 		is_high=true
 	pass # Replace with function body.
 
- 
 
 func trigger_reaction(body) -> void:
+	
 	if body.is_in_group("Player") and $RayCast2D.is_colliding() == true:
 		body.bounce()
 	if body.is_in_group("Player") and $RayCast2D.is_colliding() == false:

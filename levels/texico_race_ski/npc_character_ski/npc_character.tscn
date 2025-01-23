@@ -1,12 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://oi438k0pc0k2"]
+[gd_scene load_steps=6 format=3 uid="uid://oi438k0pc0k2"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/npc_character_ski/npc_character.gd" id="1_h8p5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epygo"]
 size = Vector2(39, 37)
 
+[sub_resource type="Animation" id="Animation_6jaoe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.519913]
+}
+
+[sub_resource type="Animation" id="Animation_jl2ho"]
+resource_name = "speed_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.519913, 0.194861, -0.0692492, 0.155793, 0.520108]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6gkf"]
+_data = {
+"RESET": SubResource("Animation_6jaoe"),
+"speed_up": SubResource("Animation_jl2ho")
+}
+
 [node name="NpcCharacter" type="CharacterBody2D" groups=["Player"]]
-rotation = 0.520108
+rotation = 0.519913
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_h8p5j")
@@ -33,7 +69,18 @@ wait_time = 3.0
 one_shot = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(59.1652, 0.6873)
+position = Vector2(0.00618291, 8.06225)
+target_position = Vector2(106.419, -3.30651)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w6gkf")
+}
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(96.71, -48.4477)
 collision_mask = 4
 collide_with_areas = true
 

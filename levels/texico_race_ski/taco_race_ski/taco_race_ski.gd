@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 
 var is_stunned : bool = false
 @onready var animation_player = $AnimationPlayer
+@export var speed_up_scene: PackedScene
 var track
 func _physics_process(delta):
 	# Add the gravity.
@@ -18,11 +19,11 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
-
+	velocity.x=0
 	move_and_slide()
 
 func spin_out():
-	animation_player.play("spin_out")
+	#animation_player.play("spin_out")
 	is_stunned = true
 	$StunnedTimer.start()
 func move_back():
@@ -48,9 +49,11 @@ func move_forward():
 	var t_global_position = track_gt * relative_position
 	var pos_tween = create_tween()
 	pos_tween.tween_property(self, "position", t_global_position, 0.5)
+	$AnimationPlayer.play("speed_up")
+	var speed_visual_instance = speed_up_scene.instantiate()
+	get_tree().current_scene.add_child(speed_visual_instance)
+	
 
-	
-	
 
 
 func _on_stunned_timer_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://4wg0k0uftiqn"]
+[gd_scene load_steps=33 format=4 uid="uid://4wg0k0uftiqn"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/texico_race_ski.gd" id="1_1mnjn"]
 [ext_resource type="PackedScene" uid="uid://cs36lv6ohv086" path="res://levels/texico_race_ski/hud/completion_hud/completion_hud.tscn" id="2_1kvcb"]
@@ -292,7 +292,9 @@ _data = {
 "countdown": SubResource("Animation_84xx5")
 }
 
-[node name="TexicoRaceSki" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_c1eyy"]
+
+[node name="TexicoRaceSki" type="Node2D" groups=["texico_race_ski"]]
 script = ExtResource("1_1mnjn")
 completion_hud_scene = ExtResource("2_1kvcb")
 
@@ -315,7 +317,7 @@ position = Vector2(47, 113)
 position = Vector2(189, 134)
 scale = Vector2(2, 2)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TacoRaceSki"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="TacoRaceSki"]
 libraries = {
 "": SubResource("AnimationLibrary_i236g")
 }
@@ -328,7 +330,6 @@ position = Vector2(-13, 228)
 
 [node name="NpcCharacter" parent="." instance=ExtResource("5_kgcyg")]
 position = Vector2(233, 25)
-rotation = -5.76831
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="NpcCharacter"]
 libraries = {
@@ -346,9 +347,8 @@ texture = ExtResource("10_tb145")
 
 [node name="NpcCharacter2" parent="." instance=ExtResource("5_kgcyg")]
 position = Vector2(127, 260)
-rotation = 0.519913
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NpcCharacter2"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="NpcCharacter2"]
 libraries = {
 "": SubResource("AnimationLibrary_f8faq")
 }
@@ -380,5 +380,12 @@ z_index = -1
 position = Vector2(320, 104)
 scale = Vector2(0.8, 0.72)
 texture = ExtResource("12_3if1b")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c1eyy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(287, -18)
+rotation = 0.956133
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs36lv6ohv086"]
+[gd_scene load_steps=3 format=3 uid="uid://cs36lv6ohv086"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/hud/completion_hud/completion_hud.gd" id="1_b2p2s"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="2_sm12v"]
 
 [node name="CompletionHud" type="CanvasLayer"]
 script = ExtResource("1_b2p2s")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 242.0
-offset_top = 128.0
-offset_right = 356.0
-offset_bottom = 203.0
-theme_override_colors/font_color = Color(0, 0.898039, 0, 1)
+offset_left = 226.0
+offset_top = 100.0
+offset_right = 361.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0.89196, 0.6928, 0.586545, 1)
+theme_override_fonts/font = ExtResource("2_sm12v")
+theme_override_font_sizes/font_size = 39
 text = "
 CONGRATS!"
 

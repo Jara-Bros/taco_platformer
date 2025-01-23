@@ -13,6 +13,7 @@ signal race_complete(track_name)
 @export var flying_object: PackedScene
 @export var marker: PackedScene
 var track_speed_state: int
+var track_id: int
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	#$CollisionShape2D.shape.set_size($Sprite2D.get_rect().size)
@@ -59,6 +60,7 @@ func set_obstacle(obs: Dictionary, pos):
 	obstacle_instance.speed = speed
 	obstacle_instance.slow_down.connect(slow_down)
 	obstacle_instance.type = obs["type"]
+	obstacle_instance.is_sendable = obs["is_sendable"]
 	obstacle_instance.track = self
 	obstacle_instance.add_to_group(object_name)
 	obstacle_instance.can_move = true

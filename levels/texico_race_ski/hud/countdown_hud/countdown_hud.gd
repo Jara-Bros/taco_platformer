@@ -11,4 +11,6 @@ func _process(delta):
 	pass
 
 func set_label_text(tex):
+	if tex == "GO!":
+		$Label.add_theme_color_override("font_color", Color("#FF4F00"))
 	$Label.text = tex
