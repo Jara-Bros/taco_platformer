@@ -24,16 +24,16 @@ func _process(delta):
 
 	# Handle jump
 	if (low_raycast.is_colliding() or high_raycast.is_colliding()) and is_on_floor():
-		if low_raycast.is_colliding() and low_raycast.get_collider().is_in_group("nacho_boulder"):
+		if low_raycast.is_colliding() and low_raycast.get_collider() != null and low_raycast.get_collider().is_in_group("nacho_boulder"):
 			var jump_choice = [0, 1]
 			var probabilities = [0.5, 2]
 			if jump_choice[random.rand_weighted(probabilities)] == 1:
 				velocity.y = -400
-		elif (low_raycast.is_colliding() and low_raycast.get_collider().is_in_group("flying_object")):
+		elif (low_raycast.is_colliding() and low_raycast.get_collider() != null and low_raycast.get_collider().is_in_group("flying_object")):
 			var will_jump = randi_range(0,1)
 			if will_jump == 1:
 				velocity.y = -400
-		elif (high_raycast.is_colliding() and high_raycast.get_collider().is_in_group("flying_object")):
+		elif (high_raycast.is_colliding() and high_raycast.get_collider() != null and high_raycast.get_collider().is_in_group("flying_object")):
 			var will_jump = randi_range(0,1)
 			if will_jump == 1:
 				velocity.y = -400

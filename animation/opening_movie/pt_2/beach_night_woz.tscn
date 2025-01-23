@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://e02x002rvorp" path="res://animation/opening_movie/pt_2/empty_woz_hole.png" id="6_tffnx"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_f3myy"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/corpo_box.gd" id="7_rnn37"]
-[ext_resource type="PackedScene" uid="uid://bgcx2jiha06lj" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
+[ext_resource type="PackedScene" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
 [ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="11_4fbiw"]
 
 [sub_resource type="Animation" id="Animation_n6ice"]
