@@ -1099,6 +1099,7 @@ offset_bottom = -16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_sx3ws")
 theme_override_font_sizes/font_size = 8
+text = "[A] Pick Up"
 
 [node name="CollisionShape2D" parent="SaladItemBowl/SaladItemArea2d" index="0"]
 position = Vector2(0, -23)
