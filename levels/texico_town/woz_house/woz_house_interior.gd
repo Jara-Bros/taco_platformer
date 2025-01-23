@@ -7,17 +7,14 @@ extends Node2D
 
 # Player spawn location from woz house -> woz house interior
 var player_spawn_location_dict = {
-	exit_door = Vector2(162, -4)
+	exit_door = Vector2(0, 75)
 }
+
 
 # Set player camera limits
 func _ready():
+	camera_2d.zoom = Vector2(2, 2)
 	taco.sprite_2d.flip_h = true
-	camera_2d.set_limit(SIDE_BOTTOM, 48)
-	camera_2d.set_limit(SIDE_RIGHT, 240)
-	camera_2d.set_limit(SIDE_LEFT, -176)
-	
-	
 
 
 func get_spawn_location(_spawn : String):
