@@ -161,6 +161,9 @@ position = Vector2(-164, 377)
 [node name="ChipPlat7" parent="ChipPlats" instance=ExtResource("5_l32bp")]
 position = Vector2(-164, 377)
 
+[node name="ChipPlat8" parent="ChipPlats" instance=ExtResource("5_l32bp")]
+position = Vector2(-80, 416)
+
 [node name="ChipPlat9" parent="ChipPlats" instance=ExtResource("5_l32bp")]
 position = Vector2(60, 125)
 
