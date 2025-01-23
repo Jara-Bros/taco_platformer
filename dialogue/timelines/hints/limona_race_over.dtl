@@ -1,4 +1,6 @@
 [style name="visual_novel"]
+join limona center
 limona: Nice moves!
 limona: You really know how to boogie, huh.
+leave limona
 [end_timeline]

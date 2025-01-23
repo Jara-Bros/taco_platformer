@@ -16,4 +16,5 @@ woz (woz_default): How may the Woz be of service?
 	[wait time="8.0"]
 	join woz right
 	woz (woz_happy): Great work!
+leave woz
 [end_timeline]

@@ -6,3 +6,5 @@ limona: You tryna boogie?
 	[signal arg="change_scene"]
 - No
 	[end_timeline]
+leave limona
+[end_timeline]
