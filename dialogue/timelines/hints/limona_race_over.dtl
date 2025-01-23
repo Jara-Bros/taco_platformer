@@ -1,5 +1,5 @@
 [style name="visual_novel"]
-join limona center
+join limona left [mirrored="true"]
 limona: Nice moves!
 limona: You really know how to boogie, huh.
 leave limona
