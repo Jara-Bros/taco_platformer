@@ -7,7 +7,7 @@ script = ExtResource("1_cj7wt")
 scenes = {
 "BarbGallery": &"res://levels/texico_town/barb_house/barb_gallery_one.tscn",
 "BarbOffice": &"res://levels/texico_town/barb_house/barb_office.tscn",
-"Beach": &"res://levels/beach/beach.tscn",
+"Beach": "res://levels/beach/beach.tscn",
 "BeachNightWoz": "res://animation/opening_movie/pt_2/beach_night_woz.tscn",
 "BoogieBoard": &"res://levels/boogie/boogie_test.tscn",
 "CorpoBoxFall": "res://animation/opening_movie/pt_2/opening_movie_pt_two.tscn",

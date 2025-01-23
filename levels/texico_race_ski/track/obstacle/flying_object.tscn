@@ -1,8 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://btfj26an2gaht"]
+[gd_scene load_steps=8 format=3 uid="uid://btfj26an2gaht"]
 
 [ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_8yws6"]
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/flying_object.gd" id="2_mgfsf"]
-[ext_resource type="Texture2D" uid="uid://c14x8pv6k4k8s" path="res://NPC/natives/cocobird/cocobird.png" id="3_p3djb"]
+[ext_resource type="Texture2D" uid="uid://cfnfk24g38nw5" path="res://levels/texico_race_ski/sprites/cocobird.png" id="3_vw0gp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcuux"]
+atlas = ExtResource("3_vw0gp")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgp0m"]
+atlas = ExtResource("3_vw0gp")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xj3th"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcuux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgp0m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hrhh"]
 radius = 32.0156
@@ -17,7 +39,8 @@ collision_mask = 2
 [node name="VisibleOnScreenNotifier2D" parent="." index="3" groups=["flying_object"]]
 
 [node name="Sprite2D" parent="." index="4"]
-texture = ExtResource("3_p3djb")
+sprite_frames = SubResource("SpriteFrames_xj3th")
+frame_progress = 0.120849
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_4hrhh")

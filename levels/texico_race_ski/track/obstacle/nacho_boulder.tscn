@@ -1,9 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk4qcxew05txq"]
+[gd_scene load_steps=8 format=3 uid="uid://bk4qcxew05txq"]
 
 [ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_py3hn"]
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/nacho_boulder.gd" id="2_ecg4x"]
 [ext_resource type="AudioStream" uid="uid://bmqtk3iodpfve" path="res://audio/sfx/taco-crunch.mp3" id="4_fkuae"]
-[ext_resource type="Texture2D" uid="uid://u325vjw5hgl4" path="res://levels/texico_race_ski/track/obstacle/chip_rock.png" id="4_nf4ub"]
+[ext_resource type="Texture2D" uid="uid://ssljbaras1hq" path="res://levels/texico_race_ski/sprites/chip_rock.png" id="4_n0q3a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_learh"]
+atlas = ExtResource("4_n0q3a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0cu4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_learh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbasp"]
 radius = 40.0125
@@ -19,7 +34,7 @@ stream = ExtResource("4_fkuae")
 
 [node name="Sprite2D" parent="." index="4"]
 scale = Vector2(0.999994, 0.999994)
-texture = ExtResource("4_nf4ub")
+sprite_frames = SubResource("SpriteFrames_u0cu4")
 
 [node name="Area2D" parent="." index="5" groups=["nacho_boulder"]]
 

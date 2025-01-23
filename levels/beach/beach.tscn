@@ -1,26 +1,32 @@
-[gd_scene load_steps=21 format=3 uid="uid://ox70u3quukqy"]
+[gd_scene load_steps=25 format=3 uid="uid://ox70u3quukqy"]
 
 [ext_resource type="Script" path="res://levels/beach/beach.gd" id="1_a43xn"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_qskqb"]
+[ext_resource type="Texture2D" uid="uid://brvqg1vuyq0t2" path="res://taco/sprites/taco_idle.png" id="2_31jn0"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_cs1v4"]
 [ext_resource type="PackedScene" uid="uid://jm3eymraihod" path="res://tBleu/bleu_npc.tscn" id="3_mflb0"]
+[ext_resource type="Texture2D" uid="uid://dtlxxbaoq1kft" path="res://tBleu/sprites/Bleu-Idle.png" id="3_yieey"]
+[ext_resource type="Texture2D" uid="uid://c7cqbdexqo8lj" path="res://items/plaintain_1.png" id="4_h0rb7"]
 [ext_resource type="AudioStream" uid="uid://ba6the5hamxfy" path="res://audio/music/gelato_beach.mp3" id="4_nwgxa"]
 [ext_resource type="Script" path="res://NPC/scripts/bleu_trigger.gd" id="4_oc8as"]
 [ext_resource type="Texture2D" uid="uid://ce4no77qam7km" path="res://levels/river_enter/river/sprites/sand-beach-png-9.png" id="4_tqawb"]
+[ext_resource type="Texture2D" uid="uid://cpw18cnm2wumh" path="res://items/plaintain_2.png" id="5_nd6dq"]
+[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="6_usurj"]
 [ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="8_gvugd"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="8_mllrr"]
-[ext_resource type="PackedScene" path="res://gui/thanks_play/thanks_for_playing.tscn" id="11_uk7t2"]
 [ext_resource type="Texture2D" uid="uid://dk8wskb3aldgd" path="res://levels/beach/sprites/food_truck.png" id="14_n1o51"]
+[ext_resource type="Script" path="res://levels/beach/limona.gd" id="14_rjdh8"]
 [ext_resource type="Texture2D" uid="uid://vluasgujukmg" path="res://levels/beach/sprites/pina_colada_sign.png" id="15_anywn"]
 [ext_resource type="Script" path="res://levels/beach/food_truck.gd" id="15_c1v58"]
 [ext_resource type="Texture2D" uid="uid://b3q4rp5o5okq5" path="res://levels/beach/sprites/texico_beach_welcome_sign.png" id="16_rthvq"]
 [ext_resource type="Texture2D" uid="uid://cxyt1pry4f0tn" path="res://levels/beach/sprites/palm_tree_forest.jpg" id="17_664xe"]
-[ext_resource type="PackedScene" uid="uid://pl8lk43k0nuq" path="res://NPC/natives/tomato_tom/tomato_tom_character.tscn" id="17_koytp"]
-[ext_resource type="Texture2D" uid="uid://ccwo7k37ghrnl" path="res://NPC/natives/tomato_tom/river/ttom_river_sheet.png" id="18_lu4h1"]
-[ext_resource type="PackedScene" uid="uid://detchf2lt0mbt" path="res://NPC/natives/spawner/enemy_spawner.tscn" id="19_laf70"]
+[ext_resource type="Texture2D" uid="uid://vkl6uqg88kf7" path="res://NPC/sprites/limona/limona_talk_vn.png" id="20_ljlr4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0dx2"]
 radius = 31.4006
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lyg55"]
+radius = 66.7533
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mskl6"]
 radius = 53.1936
@@ -28,8 +34,51 @@ radius = 53.1936
 [node name="Beach" type="Node2D"]
 script = ExtResource("1_a43xn")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 925.0
+offset_bottom = 479.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+offset_left = 177.0
+offset_top = 84.0
+offset_right = 500.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("6_usurj")
+theme_override_font_sizes/font_size = 48
+text = "Thanks for playing!"
+
+[node name="Taco" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(394.5, 263.55)
+scale = Vector2(3, 3)
+texture = ExtResource("2_31jn0")
+flip_h = true
+
+[node name="Bleu" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(267.5, 263.55)
+scale = Vector2(3, 3)
+texture = ExtResource("3_yieey")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(255.5, 244.55)
+rotation = 3.14159
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_h0rb7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/TextureRect"]
+position = Vector2(412.5, 246.55)
+scale = Vector2(0.0774, 0.0414712)
+texture = ExtResource("5_nd6dq")
+
 [node name="Taco" parent="." instance=ExtResource("1_qskqb")]
-position = Vector2(-360, -172)
+position = Vector2(290, -22)
+
+[node name="Camera2D" parent="Taco" index="3"]
+limit_left = -400
+limit_right = 400
+limit_bottom = 50
 
 [node name="BeachWaves" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gvugd")
@@ -43,7 +92,7 @@ autoplay = true
 
 [node name="BleuNPC" parent="." instance=ExtResource("3_mflb0")]
 z_index = 1
-position = Vector2(-177, -6)
+position = Vector2(-135, 0)
 script = ExtResource("4_oc8as")
 
 [node name="Sprite2D" parent="BleuNPC" index="0"]
@@ -58,14 +107,26 @@ shape = SubResource("CircleShape2D_u0dx2")
 [node name="Timer" type="Timer" parent="BleuNPC"]
 wait_time = 7.0
 
+[node name="Limona" type="Sprite2D" parent="."]
+position = Vector2(223, -23)
+scale = Vector2(0.575, 0.625)
+texture = ExtResource("20_ljlr4")
+flip_h = true
+script = ExtResource("14_rjdh8")
+
+[node name="InteractionArea" parent="Limona" instance=ExtResource("8_mllrr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limona/InteractionArea"]
+shape = SubResource("CircleShape2D_lyg55")
+
 [node name="Land" parent="." instance=ExtResource("2_cs1v4")]
 visible = false
 
 [node name="Polygon2D" parent="Land" index="0"]
-polygon = PackedVector2Array(-844, 59, -1469, 59, -1428, 18, -1129, 22, -926, 19, -791, 20, -726, 16, -596, 18, -414, 19, -333, 17, -297, 17, -257, 15, -236, 16, -85, 16, 183, 16, 312, 18, 452, 13, 427, 48, 103, 54, -87, 53, -490, 50)
+polygon = PackedVector2Array(-844, 59, -1469, 59, -1428, 18, -1129, 22, -926, 19, -791, 20, -726, 16, -596, 18, -414, 19, -402, -359, -313, -359, -328, 7, -236, 16, -85, 16, 183, 16, 530, 15, 524, -243, 591, -243, 593, 54, 103, 54, -87, 53, -490, 50)
 
 [node name="Line2D" parent="Land" index="1"]
-points = PackedVector2Array(-844, 59, -1469, 59, -1428, 18, -1129, 22, -926, 19, -791, 20, -726, 16, -596, 18, -414, 19, -333, 17, -297, 17, -257, 15, -236, 16, -85, 16, 183, 16, 312, 18, 452, 13, 427, 48, 103, 54, -87, 53, -490, 50, -844, 59)
+points = PackedVector2Array(-844, 59, -1469, 59, -1428, 18, -1129, 22, -926, 19, -791, 20, -726, 16, -596, 18, -414, 19, -402, -359, -313, -359, -328, 7, -236, 16, -85, 16, 183, 16, 530, 15, 524, -243, 591, -243, 593, 54, 103, 54, -87, 53, -490, 50, -844, 59)
 
 [node name="Sand" type="Node" parent="."]
 
@@ -95,9 +156,9 @@ texture = ExtResource("4_tqawb")
 
 [node name="WelcomeSign" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(-731, -42)
+position = Vector2(-101, -81)
 rotation = 0.00216328
-scale = Vector2(0.344417, 0.316929)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("16_rthvq")
 
 [node name="FoodTruck" type="Sprite2D" parent="."]
@@ -139,34 +200,8 @@ scale = Vector2(0.803646, 0.663067)
 texture = ExtResource("17_664xe")
 flip_h = true
 
-[node name="CanvasLayer" parent="." instance=ExtResource("11_uk7t2")]
-visible = false
-
-[node name="TomatoTomCharacter" parent="." instance=ExtResource("17_koytp")]
-z_index = 1
-position = Vector2(175, 44)
-
-[node name="Sprite2D" parent="TomatoTomCharacter" index="0"]
-texture = ExtResource("18_lu4h1")
-frame = 1
-
-[node name="TomatoTomCharacter2" parent="." instance=ExtResource("17_koytp")]
-z_index = 1
-position = Vector2(225, 40)
-
-[node name="Sprite2D" parent="TomatoTomCharacter2" index="0"]
-texture = ExtResource("18_lu4h1")
-frame = 2
-
-[node name="EnemySpawner" parent="." instance=ExtResource("19_laf70")]
-position = Vector2(-582, -154)
-
 [connection signal="timeout" from="BleuNPC/Timer" to="BleuNPC" method="_on_timer_timeout"]
 
 [editable path="Taco"]
-[editable path="Taco/TimeOutHand"]
 [editable path="BleuNPC"]
 [editable path="Land"]
-[editable path="CanvasLayer"]
-[editable path="TomatoTomCharacter"]
-[editable path="TomatoTomCharacter2"]

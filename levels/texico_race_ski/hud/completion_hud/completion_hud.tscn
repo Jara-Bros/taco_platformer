@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs36lv6ohv086"]
+[gd_scene load_steps=6 format=3 uid="uid://cs36lv6ohv086"]
 
 [ext_resource type="Script" path="res://levels/texico_race_ski/hud/completion_hud/completion_hud.gd" id="1_b2p2s"]
 [ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="2_sm12v"]
+
+[sub_resource type="Animation" id="Animation_flvgt"]
+resource_name = "fade_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t8ttl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ukmn5"]
+_data = {
+"RESET": SubResource("Animation_t8ttl"),
+"fade_out": SubResource("Animation_flvgt")
+}
 
 [node name="CompletionHud" type="CanvasLayer"]
 script = ExtResource("1_b2p2s")
@@ -11,7 +48,7 @@ offset_left = 226.0
 offset_top = 100.0
 offset_right = 361.0
 offset_bottom = 183.0
-theme_override_colors/font_color = Color(0.89196, 0.6928, 0.586545, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_sm12v")
 theme_override_font_sizes/font_size = 39
 text = "
@@ -20,5 +57,18 @@ CONGRATS!"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ukmn5")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

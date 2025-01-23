@@ -8,6 +8,7 @@ extends Node2D
 
 func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
+	canvas_layer.visible = false
 
 func _on_interact():
 	taco.input_enabled = false

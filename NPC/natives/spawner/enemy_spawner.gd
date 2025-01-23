@@ -7,7 +7,3 @@ extends Node
 
 func _ready():
 	animation_player.play("spawn")
-
-func instance_cocobird():
-	var cocobird = load("res://enemies/cocobird/cocobird.tscn").instantiate()
-	add_child(cocobird)

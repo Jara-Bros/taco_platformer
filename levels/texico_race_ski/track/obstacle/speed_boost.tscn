@@ -1,9 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://5qe1gymaceqi"]
+[gd_scene load_steps=8 format=3 uid="uid://5qe1gymaceqi"]
 
 [ext_resource type="PackedScene" uid="uid://bigxdpalbaawc" path="res://levels/texico_race_ski/track/obstacle/obstacle.tscn" id="1_4o80x"]
 [ext_resource type="Script" path="res://levels/texico_race_ski/track/obstacle/speed_boost.gd" id="2_wom3q"]
 [ext_resource type="Texture2D" uid="uid://b0osdygimj6sg" path="res://levels/texico_race_ski/sprites/cheese_boost.png" id="3_p8efn"]
 [ext_resource type="AudioStream" uid="uid://bdohdfeb0q3so" path="res://audio/sfx/Squishy 2.mp3" id="4_256hv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ithg"]
+atlas = ExtResource("3_p8efn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e880i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ithg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og6q5"]
 size = Vector2(108, 12)
@@ -23,8 +38,8 @@ stream = ExtResource("4_256hv")
 
 [node name="Sprite2D" parent="." index="4"]
 position = Vector2(-13.4038, 10.1068)
-scale = Vector2(2.59375, 1)
-texture = ExtResource("3_p8efn")
+scale = Vector2(3.59375, 2.0625)
+sprite_frames = SubResource("SpriteFrames_e880i")
 
 [node name="Area2D" parent="." index="5"]
 position = Vector2(-0.0278397, -0.0278406)

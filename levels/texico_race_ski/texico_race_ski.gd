@@ -31,6 +31,8 @@ var tick_counter:int
 var location: int
 
 func _ready():
+	Dialogic.start("limona_race_hint")
+	await Dialogic.timeline_ended
 	$AnimationPlayer.play("countdown")
 	load_course()
 	id_to_track_mapping = {
