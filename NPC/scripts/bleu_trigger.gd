@@ -15,6 +15,7 @@ func _on_interact():
 	Dialogic.start("taco_finds_bleu_timeline")
 	await Dialogic.timeline_ended
 	canvas_layer.visible = true
+	set_process_input(false)
 	timer.start()
 
 
