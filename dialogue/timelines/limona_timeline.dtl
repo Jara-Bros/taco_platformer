@@ -1,7 +1,7 @@
 [style name="visual_novel"]
-join limona (limona_idle) left [mirrored="true"]
-limona (limona_talk): Hey T.
-limona (limona_talk): You tryna boogie?
+join limona left [mirrored="true"]
+limona: Hey T.
+limona: You tryna boogie?
 - Yes
 	[signal arg="change_scene"]
 - No
