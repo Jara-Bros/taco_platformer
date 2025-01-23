@@ -60,4 +60,4 @@ func _process(delta: float) -> void:
 
 
 func changed_scene():
-	SceneManager.switch_scene(" ", {})
+	SceneManager.switch_scene("TexicoStart", {})

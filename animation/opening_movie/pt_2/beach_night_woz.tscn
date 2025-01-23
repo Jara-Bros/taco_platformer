@@ -137,11 +137,14 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(3.5, 8),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"play_optoworm_dialogue"
+}, {
+"args": [],
+"method": &"changed_scene"
 }]
 }
 tracks/2/type = "value"
