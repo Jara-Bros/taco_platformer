@@ -1,10 +1,4 @@
 [style name="visual_novel"]
-intro_woz: . . .
-intro_woz: . . .
-intro_woz: . . . (nine) . . .
-intro_woz: . . .
-intro_woz: . . .
-intro_woz: . . . (ten) . . .
 [wait time="2.0"]
 [signal arg="change_frame_one"]
 intro_woz: In the sand\

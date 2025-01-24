@@ -4,16 +4,17 @@ woz (woz_happy): Hello, Gentleman.
 woz (woz_default): How may the Woz be of service?
 - Tea
 	woz (woz_happy): Of course. Did you bring the water?
+	leave woz
 	[end_timeline]
 - Meditation
 	woz (woz_default): Wonderful.
 	woz (woz_default): Take a deep breath.
 	leave woz
-	[wait time="9.0"]
+	[wait time="7.0"]
 	join woz right
 	woz (woz_happy): And another.
 	leave woz
-	[wait time="8.0"]
+	[wait time="6.0"]
 	join woz right
 	woz (woz_happy): Great work!
 	leave woz

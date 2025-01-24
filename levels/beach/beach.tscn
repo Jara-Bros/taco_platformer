@@ -1,17 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://ox70u3quukqy"]
+[gd_scene load_steps=20 format=3 uid="uid://ox70u3quukqy"]
 
 [ext_resource type="Script" path="res://levels/beach/beach.gd" id="1_a43xn"]
 [ext_resource type="PackedScene" uid="uid://d2nvjfxk0ropj" path="res://taco/taco.tscn" id="1_qskqb"]
-[ext_resource type="Texture2D" uid="uid://brvqg1vuyq0t2" path="res://taco/sprites/taco_idle.png" id="2_31jn0"]
 [ext_resource type="PackedScene" uid="uid://b2ft8po6xu77b" path="res://platforms/land/land.tscn" id="2_cs1v4"]
 [ext_resource type="PackedScene" uid="uid://jm3eymraihod" path="res://tBleu/bleu_npc.tscn" id="3_mflb0"]
-[ext_resource type="Texture2D" uid="uid://dtlxxbaoq1kft" path="res://tBleu/sprites/Bleu-Idle.png" id="3_yieey"]
-[ext_resource type="Texture2D" uid="uid://c7cqbdexqo8lj" path="res://items/plaintain_1.png" id="4_h0rb7"]
 [ext_resource type="AudioStream" uid="uid://ba6the5hamxfy" path="res://audio/music/gelato_beach.mp3" id="4_nwgxa"]
 [ext_resource type="Script" path="res://NPC/scripts/bleu_trigger.gd" id="4_oc8as"]
 [ext_resource type="Texture2D" uid="uid://ce4no77qam7km" path="res://levels/river_enter/river/sprites/sand-beach-png-9.png" id="4_tqawb"]
-[ext_resource type="Texture2D" uid="uid://cpw18cnm2wumh" path="res://items/plaintain_2.png" id="5_nd6dq"]
-[ext_resource type="FontFile" uid="uid://b3i13hxs1rmbd" path="res://gui/fonts/dialogue_box/pokemon-emerald.ttf" id="6_usurj"]
 [ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="8_gvugd"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="8_mllrr"]
 [ext_resource type="Texture2D" uid="uid://dk8wskb3aldgd" path="res://levels/beach/sprites/food_truck.png" id="14_n1o51"]
@@ -34,47 +29,9 @@ radius = 53.1936
 [node name="Beach" type="Node2D"]
 script = ExtResource("1_a43xn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 925.0
-offset_bottom = 479.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
-layout_mode = 0
-offset_left = 177.0
-offset_top = 84.0
-offset_right = 500.0
-offset_bottom = 133.0
-theme_override_fonts/font = ExtResource("6_usurj")
-theme_override_font_sizes/font_size = 48
-text = "Thanks for playing!"
-
-[node name="Taco" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(394.5, 263.55)
-scale = Vector2(3, 3)
-texture = ExtResource("2_31jn0")
-flip_h = true
-
-[node name="Bleu" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(267.5, 263.55)
-scale = Vector2(3, 3)
-texture = ExtResource("3_yieey")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(255.5, 244.55)
-rotation = 3.14159
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("4_h0rb7")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/TextureRect"]
-position = Vector2(412.5, 246.55)
-scale = Vector2(0.0774, 0.0414712)
-texture = ExtResource("5_nd6dq")
-
 [node name="Taco" parent="." instance=ExtResource("1_qskqb")]
 position = Vector2(290, -22)
+collision_mask = 15
 
 [node name="Camera2D" parent="Taco" index="3"]
 limit_left = -400
@@ -100,13 +57,11 @@ script = ExtResource("4_oc8as")
 flip_h = true
 
 [node name="InteractionArea" parent="BleuNPC" instance=ExtResource("8_mllrr")]
+monitorable = false
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BleuNPC/InteractionArea"]
 shape = SubResource("CircleShape2D_u0dx2")
-
-[node name="Timer" type="Timer" parent="BleuNPC"]
-wait_time = 7.0
 
 [node name="Limona" type="Sprite2D" parent="."]
 position = Vector2(223, -23)
@@ -116,6 +71,7 @@ flip_h = true
 script = ExtResource("14_rjdh8")
 
 [node name="InteractionArea" parent="Limona" instance=ExtResource("8_mllrr")]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limona/InteractionArea"]
 shape = SubResource("CircleShape2D_lyg55")
@@ -200,8 +156,6 @@ position = Vector2(-1071, 28)
 scale = Vector2(0.803646, 0.663067)
 texture = ExtResource("17_664xe")
 flip_h = true
-
-[connection signal="timeout" from="BleuNPC/Timer" to="BleuNPC" method="_on_timer_timeout"]
 
 [editable path="Taco"]
 [editable path="BleuNPC"]

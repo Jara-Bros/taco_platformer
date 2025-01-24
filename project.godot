@@ -77,6 +77,7 @@ directories/dtl_directory={
 "kitchen_sequence": "res://dialogue/timelines/kitchen_sequence.dtl",
 "kitchen_sequence_three": "res://dialogue/timelines/kitchen_sequence_three.dtl",
 "kitchen_sequence_two": "res://dialogue/timelines/kitchen_sequence_two.dtl",
+"limona_controls_hint": "res://dialogue/timelines/hints/limona_controls_hint.dtl",
 "limona_race_hint": "res://dialogue/timelines/hints/limona_race_hint.dtl",
 "limona_race_over": "res://dialogue/timelines/hints/limona_race_over.dtl",
 "limona_timeline": "res://dialogue/timelines/limona_timeline.dtl",
