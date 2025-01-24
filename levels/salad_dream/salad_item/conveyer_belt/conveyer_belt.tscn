@@ -9,7 +9,7 @@
 size = Vector2(280, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdspi"]
-size = Vector2(143, 13)
+size = Vector2(172, 96)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_mask = 3
@@ -33,7 +33,7 @@ script = ExtResource("2_5qe6s")
 hud_scene = ExtResource("3_f3ox2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
-position = Vector2(7.5, 3.5)
+position = Vector2(11, -38)
 shape = SubResource("RectangleShape2D_tdspi")
 
 [node name="Label" type="Label" parent="End"]
@@ -51,5 +51,6 @@ stream = ExtResource("3_l8mjf")
 stream = ExtResource("4_6pe2k")
 
 [connection signal="area_entered" from="End" to="End" method="_on_area_entered"]
+[connection signal="area_exited" from="End" to="End" method="_on_area_exited"]
 [connection signal="body_entered" from="End" to="End" method="_on_body_entered"]
 [connection signal="body_exited" from="End" to="End" method="_on_body_exited"]

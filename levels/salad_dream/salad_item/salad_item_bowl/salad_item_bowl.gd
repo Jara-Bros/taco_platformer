@@ -27,8 +27,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("item") and collected == false and $Label.visible and ItemManager.get_items_list() == 0:
 		item_tween()
-	if Input.is_action_just_pressed("item") and collected == true and invincible == false:
-		lock_to_conveyer_belt()
+	#if Input.is_action_just_pressed("item") and collected == true and invincible == false:
+		#lock_to_conveyer_belt()
 	if player != null and get_overlapping_bodies().has(player)and ingredients.size() > 0:
 		$Label.visible = true
 	
