@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://e02x002rvorp" path="res://animation/opening_movie/pt_2/empty_woz_hole.png" id="6_tffnx"]
 [ext_resource type="PackedScene" uid="uid://bwqjxr64gc2us" path="res://autoloads/interaction/interaction_area/interaction_area.tscn" id="7_f3myy"]
 [ext_resource type="Script" path="res://animation/opening_movie/pt_2/corpo_box.gd" id="7_rnn37"]
-[ext_resource type="PackedScene" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
+[ext_resource type="PackedScene" uid="uid://bgcx2jiha06lj" path="res://animation/opening_movie/pt_2/woz_night.tscn" id="7_wu8jw"]
 [ext_resource type="AudioStream" uid="uid://xnvih8t238x2" path="res://audio/sfx/beach_waves_sfx.mp3" id="11_4fbiw"]
 
 [sub_resource type="Animation" id="Animation_n6ice"]
@@ -329,7 +329,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7uv7"]
-radius = 50.3587
+radius = 25.0
 
 [node name="BeachNightWoz" type="Node2D"]
 script = ExtResource("1_xc10k")
@@ -394,6 +394,7 @@ script = ExtResource("7_rnn37")
 position = Vector2(4, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CorpoBox/InteractionArea"]
+position = Vector2(-4, 0)
 shape = SubResource("CircleShape2D_a7uv7")
 
 [node name="BoxShadow" type="Sprite2D" parent="."]
