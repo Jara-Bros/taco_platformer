@@ -4,7 +4,6 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Taco/Camera2D
 
 
-
 # Player spawn location from woz house -> woz house interior
 var player_spawn_location_dict = {
 	exit_door = Vector2(0, 75)
