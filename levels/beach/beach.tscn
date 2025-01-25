@@ -49,7 +49,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="BleuNPC" parent="." instance=ExtResource("3_mflb0")]
-z_index = 1
+z_index = 2
 position = Vector2(-135, 0)
 script = ExtResource("4_oc8as")
 
@@ -57,13 +57,14 @@ script = ExtResource("4_oc8as")
 flip_h = true
 
 [node name="InteractionArea" parent="BleuNPC" instance=ExtResource("8_mllrr")]
-monitorable = false
+priority = 1
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BleuNPC/InteractionArea"]
 shape = SubResource("CircleShape2D_u0dx2")
 
 [node name="Limona" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(223, -23)
 scale = Vector2(0.575, 0.625)
 texture = ExtResource("20_ljlr4")
@@ -71,7 +72,7 @@ flip_h = true
 script = ExtResource("14_rjdh8")
 
 [node name="InteractionArea" parent="Limona" instance=ExtResource("8_mllrr")]
-monitorable = false
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limona/InteractionArea"]
 shape = SubResource("CircleShape2D_lyg55")
@@ -119,7 +120,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("16_rthvq")
 
 [node name="FoodTruck" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 2
 position = Vector2(109, -49)
 rotation = 0.00216328
 scale = Vector2(0.760689, 0.776089)
@@ -134,7 +135,8 @@ skew = -8.67844e-05
 texture = ExtResource("15_anywn")
 
 [node name="InteractionArea" parent="FoodTruck" instance=ExtResource("8_mllrr")]
-position = Vector2(-77.5156, 20.7806)
+position = Vector2(-77.4843, 34.9542)
+priority = 1
 action_name = "order"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodTruck/InteractionArea"]
